@@ -1,0 +1,516 @@
+/*
+
+Xilinx Vivado v2018.3 (64-bit) [Major: 2018, Minor: 3]
+SW Build: 2405991 on Thu Dec  6 23:36:41 MST 2018
+IP Build: 2404404 on Fri Dec  7 01:43:56 MST 2018
+
+Process ID (PID): 1802238
+License: Customer
+
+Current time: 	Mon Jan 22 17:06:43 EST 2024
+Time zone: 	Eastern Standard Time (America/Toronto)
+
+OS: PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"
+OS Version: 5.10.0-27-amd64
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: :0
+Screen size: 1920x1200
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 146 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/nfs/ug/cad/cad1/Xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4
+Java executable location: 	/nfs/ug/cad/cad1/Xilinx/Vivado/2018.3/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	huanga49
+User home directory: /nfs/ug/homes-1/h/huanga49
+User working directory: /nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532
+User country: 	null
+User language: 	en
+User locale: 	en
+
+RDI_BASEROOT: /nfs/ug/cad/cad1/Xilinx/Vivado
+HDI_APPROOT: /cad1/Xilinx/Vivado/2018.3
+RDI_DATADIR: /nfs/ug/cad/cad1/Xilinx/Vivado/2018.3/data
+RDI_BINDIR: /nfs/ug/cad/cad1/Xilinx/Vivado/2018.3/bin
+
+Vivado preferences file location: /homes/h/huanga49/.Xilinx/Vivado/2018.3/vivado.xml
+Vivado preferences directory: /homes/h/huanga49/.Xilinx/Vivado/2018.3/
+Vivado layouts directory: /nfs/ug/homes-1/h/huanga49/.Xilinx/Vivado/2018.3/layouts
+PlanAhead jar file location: 	/nfs/ug/cad/cad1/Xilinx/Vivado/2018.3/lib/classes/planAhead.jar
+Vivado log file location: 	/nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/vivado.log
+Vivado journal file location: 	/nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-1802238-ug159
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /cad1/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINXD_LICENSE_FILE: 27012@mint.eecg.utoronto.ca:7062@u10e.vrg.utoronto.ca:6062@u10e.vrg.utoronto.ca
+XILINX_DSP: /cad1/Xilinx/Vivado/2018.3/ids_lite/ISE
+XILINX_PLANAHEAD: /cad1/Xilinx/Vivado/2018.3
+XILINX_SDK: /cad1/Xilinx/SDK/2018.3
+XILINX_VIVADO: /cad1/Xilinx/Vivado/2018.3
+XILINX_VIVADO_HLS: /cad1/Xilinx/Vivado/2018.3
+
+
+GUI allocated memory:	188 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 902 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+selectList(PAResourceQtoS.SyntheticaGettingStartedView_RECENT_PROJECTS, "/nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/group_demo.xpr", 0); // q (Q, cp)
+// [GUI Memory]: 109 MB (+111824kb) [00:00:05]
+// [Engine Memory]: 900 MB (+792529kb) [00:00:05]
+// bx (cp):  Open Project : addNotify
+// Opening Vivado Project: /nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/group_demo.xpr. Version: Vivado v2018.3 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project /nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/group_demo.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 939 MB. GUI used memory: 48 MB. Current time: 1/22/24, 5:06:45 PM EST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,002 MB (+59707kb) [00:00:09]
+// WARNING: HEventQueue.dispatchEvent() is taking  1159 ms.
+// Tcl Message: open_project /nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/group_demo.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/Albert/Documents/GitHub/ECE532/group_demo' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/cad1/Xilinx/Vivado/2018.3/data/ip'. 
+// Project name: group_demo; location: /nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo; part: xc7a100tcsg324-1
+// [Engine Memory]: 1,075 MB (+24214kb) [00:00:10]
+dismissDialog("Open Project"); // bx (cp)
+// a (cp): Critical Messages: addNotify
+// [Engine Memory]: 1,161 MB (+33277kb) [00:00:13]
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 14 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cp)
+selectButton(PAResourceOtoP.ProjectSettingsGadget_EDIT_PROJECT_SETTINGS, "Edit"); // h (C, cp)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// F (cp): Settings: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1055 ms.
+selectButton(PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT, (String) null); // q (a, F)
+// [GUI Memory]: 126 MB (+11606kb) [00:00:36]
+// c (F): Select Device: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,173 MB. GUI used memory: 77 MB. Current time: 1/22/24, 5:07:15 PM EST
+selectTable(PAResourceEtoH.FPGAChooser_FPGA_TABLE, "xc7a100tcsg324-1 ; 324 ; 210 ; 63400 ; 126800 ; 135 ; 0 ; 240 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 1 ; 6 ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05", 276, "xc7a100tcsg324-1", 0); // x (Q, c)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (c)
+dismissDialog("Select Device"); // c (F)
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, Simulation]", 1, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, Elaboration]", 2, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, Synthesis]", 3, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, Implementation]", 4, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, Bitstream]", 5, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Project]", 0, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, IP Defaults]", 1, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Source File]", 2, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, WebTalk]", 4, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Help]", 5, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Text Editor]", 6, true); // L (C, F) - Node
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, 3rd Party Simulators]", 7, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Colors]", 8, true); // L (C, F) - Node
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Selection Rules]", 9, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Shortcuts]", 10, false); // L (C, F)
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Remote Hosts]", 12, true); // L (C, F) - Node
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Remote Hosts]", 12, true); // L (C, F) - Node
+selectTree(PAResourceQtoS.SettingsDialog_OPTIONS_TREE, "[optionsRoot, Window Behavior]", 13, true); // L (C, F) - Node
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (F)
+dismissDialog("Settings"); // F (cp)
+// Elapsed time: 32 seconds
+selectLabel(PAResourceOtoP.ProjectDashboardView_DASHBOARD, "Dashboard"); // b (C, cp)
+selectTab(PAResourceOtoP.ProjectDashboardView_TABBED_PANE, PAResourceOtoP.ProjectDashboardView_OVERVIEW, "Overview", 0); // w (v, cp)
+selectButton(PAResourceOtoP.ProjectSettingsGadget_EDIT_PROJECT_SETTINGS, "Edit"); // h (C, cp)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// F (cp): Settings: addNotify
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, General]", 0, false); // L (C, F)
+selectButton(PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT, (String) null); // q (a, F)
+// [Engine Memory]: 1,513 MB (+308189kb) [00:01:39]
+// c (F): Select Device: addNotify
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // i (C, c)
+// [GUI Memory]: 162 MB (+31847kb) [00:01:42]
+// [Engine Memory]: 1,621 MB (+33677kb) [00:01:42]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,258 MB. GUI used memory: 80 MB. Current time: 1/22/24, 5:08:20 PM EST
+selectTable(PAResourceAtoD.BoardChooser_BOARD_TABLE, "Alpha-Data ADM-PCIE-7V3 ; Alpha-Data ADM-PCIE-7V3 ; alpha-data.com ; 1.1 ; xc7vx690tffg1157-2 ; 1157 ; 1.0 ; 600 ; 433200 ; 866400 ; 1470 ; 0 ; 3600 ; 20 ; 0 ; 0 ; 20 ; 0 ; 0 ; 0 ; 0 ; 0 ; 3 ; 20 ;  ;  ;  ;  ; 0.97 ; 0.97 ; 1.03", 0, "Alpha-Data ADM-PCIE-7V3", 0); // e (Q, c)
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Parts", 0); // i (C, c)
+// Elapsed time: 11 seconds
+setText("PAResourceEtoH.FPGAChooser_FPGA_TABLE_SEARCH_FIELD", "xc7a100tc"); // OverlayTextField (I, c)
+selectTable(PAResourceEtoH.FPGAChooser_FPGA_TABLE, "xc7a100tcsg324-1 ; 324 ; 210 ; 63400 ; 126800 ; 135 ; 0 ; 240 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 0 ; 1 ; 6 ;  ;  ;  ;  ; 0.95 ; 0.95 ; 1.05", 3, "xc7a100tcsg324-1", 0); // x (Q, c)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (c)
+dismissDialog("Select Device"); // c (F)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,275 MB. GUI used memory: 84 MB. Current time: 1/22/24, 5:08:50 PM EST
+// Elapsed time: 10 seconds
+selectButton(PAResourceTtoZ.VerilogOptionsChooserPanel_SPECIFY_COMPILATION_OPTIONS_FOR_VERILOG, (String) null); // q (a, F)
+// b (F): Verilog Options: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (b)
+dismissDialog("Verilog Options"); // b (F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Settings"); // F (cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1 (design_1.bd)]", 1, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1 (design_1.bd), design_1_clk_wiz_1_0 (design_1_clk_wiz_1_0.xci)]", 2, false, false, false, false, false, true); // B (D, cp) - Double Click
+// bx (cp):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: LOAD_FEATURE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// Tcl Message: open_bd_design {/nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/design_1.bd} 
+// TclEventType: RSB_OPEN_DIAGRAM
+// [Engine Memory]: 1,706 MB (+3888kb) [00:02:29]
+// TclEventType: RSB_CONNECTION_CHANGE
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: RSB_LOCK_CHANGE
+dismissDialog("Open Block Design"); // bx (cp)
+selectButton(PAResourceQtoS.SystemTab_BLOCKS, "2 blocks"); // h (cQ, cp)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_PIN
+// r (cp): Customize Pin: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (r)
+dismissDialog("Customize Pin"); // r (cp)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// O (cp):  Re-customize IP : addNotify
+// Tcl Message: ERROR: [Common 17-167] Type error 
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// r (cp): Re-customize IP: addNotify
+// [Engine Memory]: 1,804 MB (+14169kb) [00:02:45]
+// Tcl Message: ERROR: [Common 17-167] Type error ERROR: [Common 17-167] Type error 
+dismissDialog("Re-customize IP"); // O (cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,431 MB. GUI used memory: 98 MB. Current time: 1/22/24, 5:09:25 PM EST
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (r)
+dismissDialog("Re-customize IP"); // r (cp)
+selectButton(PAResourceQtoS.SystemTab_BLOCKS, "2 blocks"); // h (cQ, cp)
+selectButton(PAResourceQtoS.SystemTab_BLOCKS, "2 blocks"); // h (cQ, cp)
+selectButton(PAResourceQtoS.SystemTab_BLOCKS, "2 blocks"); // h (cQ, cp)
+selectTab((HResource) null, (HResource) null, "Signals", 2); // aI (aF, cp)
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aI (aF, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1 (design_1.bd), design_1_clk_wiz_1_0 (design_1_clk_wiz_1_0.xci)]", 2, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1 (design_1.bd), design_1_clk_wiz_1_0 (design_1_clk_wiz_1_0.xci)]", 2, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1 (design_1.bd), design_1_dlmb_bram_if_cntlr_0 (design_1_dlmb_bram_if_cntlr_0.xci)]", 3, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1 (design_1.bd)]", 1, true); // B (D, cp) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, design_1 (design_1.bd), design_1_clk_wiz_1_0 (design_1_clk_wiz_1_0.xci)]", 2, false); // B (D, cp)
+selectButton(PAResourceQtoS.SrcFilePropPanels_MORE_INFO, "more info"); // h (cQ, cp)
+// Elapsed time: 10 seconds
+selectButton(RDIResource.HPopupTitle_CLOSE, (String) null); // k (n, ResizableWindow)
+// Elapsed time: 59 seconds
+selectButton(PAResourceQtoS.SystemTab_UPGRADE_LATER, "Upgrade Later"); // h (cQ, cp)
+selectButton("PAResourceQtoS.SystemTab_YOU_SHOULD_UPGRADE_IP_LATER_USING_OK", "OK"); // JButton (C, I)
+selectMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // X (q, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_REPORT_IP_STATUS, "Report IP Status"); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_REPORTS, "Reports"); // X (q, cp)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_IP_STATUS
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a (g, cp)
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// ah (cp): Upgrade IP: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ah)
+// TclEventType: RSB_OPEN_DIAGRAM
+dismissDialog("Upgrade IP"); // ah (cp)
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// bx (cp):  Upgrade IP : addNotify
+// Tcl Message: upgrade_ip [get_ips  {design_1_clk_wiz_1_0 design_1_rst_clk_wiz_1_100M_0}] -log ip_upgrade.log 
+// Tcl Message: Upgrading '/nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/design_1.bd' 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: INFO: [IP_Flow 19-3420] Updated design_1_rst_clk_wiz_1_100M_0 to use current project options 
+// Tcl Message: Wrote  : </nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/design_1.bd>  Wrote  : </nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to '/nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips {design_1_clk_wiz_1_0 design_1_rst_clk_wiz_1_100M_0}] -no_script -sync -force -quiet 
+// a (cp): Critical Messages: addNotify
+// aI (cp): Generate Output Products: addNotify
+selectButton("PAResourceTtoZ.UpgradeIP_IP_UPGRADE_COMPLETED_OK", "OK"); // JButton (C, I)
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// bx (cp):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: generate_target all [get_files  /nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/design_1.bd] 
+// Tcl Message: ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source:  /clk_wiz_1/clk_in1  ERROR: [BD 41-1031] Hdl Generation failed for the IP Integrator design /nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/design_1.bd  
+// Tcl Message: ERROR: [Common 17-39] 'generate_target' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'generate_target' failed due to earlier errors.  
+// a (cp): Critical Messages: addNotify
+dismissDialog("Managing Output Products"); // bx (cp)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cp)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cp)
+selectButton(PAResourceQtoS.RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION, "Run Connection Automation"); // h (ct, cp)
+// w (cp): Run Connection Automation: addNotify
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (0 out of 6 selected), clk_wiz_1]", 1, true, false, ui.utils.TriState.False); // K (Q, w) - Node
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (0 out of 6 selected), clk_wiz_1, clk_in1]", 2, false, false, ui.utils.TriState.False); // K (Q, w)
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (0 out of 6 selected), clk_wiz_1, reset]", 3, false, false, ui.utils.TriState.False); // K (Q, w)
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (0 out of 6 selected), clk_wiz_1, clk_in1]", 2, false, false, ui.utils.TriState.False); // K (Q, w)
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (6 out of 6 selected)]", 0, true, true, ui.utils.TriState.True); // K (Q, w) - Node
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (6 out of 6 selected), clk_wiz_1]", 1, true, false, ui.utils.TriState.True); // K (Q, w) - Node
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (6 out of 6 selected), clk_wiz_1, clk_in1]", 2, false, false, ui.utils.TriState.True); // K (Q, w)
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (6 out of 6 selected), clk_wiz_1, reset]", 3, false, false, ui.utils.TriState.True); // K (Q, w)
+selectComboBox("Select Reset Polarity", "ACTIVE_LOW", 0); // a (Q, w)
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (6 out of 6 selected), microblaze_0, M_AXI_DC]", 5, false, false, ui.utils.TriState.True); // K (Q, w)
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (6 out of 6 selected), microblaze_0, M_AXI_IC]", 6, false, false, ui.utils.TriState.True); // K (Q, w)
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (6 out of 6 selected), microblaze_0, M_AXI_IP]", 7, false, false, ui.utils.TriState.True); // K (Q, w)
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (6 out of 6 selected), rst_clk_wiz_1_100M, ext_reset_in]", 9, false, false, ui.utils.TriState.True); // K (Q, w)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (w)
+dismissDialog("Run Connection Automation"); // w (cp)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: startgroup 
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {/clk_wiz_1/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0/M_AXI_IP} Slave {/microblaze_0_axi_intc/s_axi} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins microblaze_0/M_AXI_IP] 
+// bx (cp):  Run Connection Automation : addNotify
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+// TclEventType: RSB_ADD_OBJECT
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: XGUI_RESET_GUI_ELEMENT
+// Tcl Message: </microblaze_0_axi_intc/S_AXI/Reg> is being mapped into </microblaze_0/Instruction> at <0x41200000 [ 64K ]> 
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {/clk_wiz_1/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0/M_AXI_DC} Slave {/microblaze_0_axi_intc/s_axi} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins microblaze_0/M_AXI_DC] 
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/clk_wiz_1/clk_out1 (100 MHz)} Clk_slave {/clk_wiz_1/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/microblaze_0/M_AXI_IC} Slave {/microblaze_0_axi_intc/s_axi} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins microblaze_0/M_AXI_IC] 
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto} rst_polarity {ACTIVE_LOW}}  [get_bd_pins clk_wiz_1/reset] 
+// Tcl Message: INFO: [board_rule 100-100] create_bd_port -dir I reset_rtl_0 -type rst INFO: [board_rule 100-100] set_property CONFIG.POLARITY  /reset_rtl_0 INFO: [board_rule 100-100] connect_bd_net /reset_rtl_0 /clk_wiz_1/reset INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_LOW /reset_rtl_0 
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:board -config { Clk {New External Port (100 MHz)} Manual_Source {Auto}}  [get_bd_pins clk_wiz_1/clk_in1] 
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:board -config { Manual_Source {Auto} rst_polarity {ACTIVE_LOW}}  [get_bd_pins rst_clk_wiz_1_100M/ext_reset_in] 
+// Tcl Message: INFO: [board_rule 100-100] create_bd_port -dir I reset_rtl_0_0 -type rst INFO: [board_rule 100-100] set_property CONFIG.POLARITY  /reset_rtl_0_0 INFO: [board_rule 100-100] connect_bd_net /reset_rtl_0_0 /rst_clk_wiz_1_100M/ext_reset_in INFO: [board_rule 100-100] set_property CONFIG.POLARITY ACTIVE_LOW /reset_rtl_0_0 
+// Tcl Message: endgroup 
+dismissDialog("Run Connection Automation"); // bx (cp)
+ // selectButton(PAResourceItoN.IPStatusTablePanel_MORE_INFO, "IP board change"); // N
+ // selectButton(PAResourceItoN.IPStatusTablePanel_MORE_INFO, "IP board change"); // N (B, cp)
+selectTreeTable(PAResourceItoN.IPStatusTablePanel_IP_STATUS_TABLE, "/clk_wiz_1 ; true ; design_1_clk_wiz_1_0 [Clocking Wizard] (IP board change) ; design_1_clk_wiz_1_0 [Clocking Wizard] (IP board change) ; design_1_clk_wiz_1_0 [Clocking Wizard] (IP board change) ; Clocking Wizard ; 6.0 (Rev. 2) ; 6.0 (Rev. 2) ; design_1_clk_wiz_1_0 [Clocking Wizard] (IP board change) ; xc7a100tcsg324-1", 1, "design_1_clk_wiz_1_0 [Clocking Wizard] (IP board change)", 2, false); // B (Q, cp)
+// Elapsed time: 10 seconds
+selectButton(RDIResource.BaseReportTab_RERUN, "Rerun"); // h (cQ, cp)
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+// Elapsed time: 94 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // X (q, cp)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // ac (cp)
+selectMenuItem(RDIResourceCommand.RDICommands_SETTINGS, "Settings..."); // af (cp)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // X (q, cp)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// F (cp): Settings: addNotify
+selectButton(PAResourceQtoS.SettingsProjectGeneralPage_CHOOSE_DEVICE_FOR_YOUR_PROJECT, (String) null); // q (a, F)
+// [Engine Memory]: 2,008 MB (+118490kb) [00:07:21]
+// c (F): Select Device: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 1,511 MB. GUI used memory: 100 MB. Current time: 1/22/24, 5:14:00 PM EST
+selectTab(PAResourceOtoP.PartChooser_TABBED_PANE, (HResource) null, "Boards", 1); // i (C, c)
+// [GUI Memory]: 189 MB (+19358kb) [00:07:25]
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (c)
+dismissDialog("Select Device"); // c (F)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (F)
+dismissDialog("Settings"); // F (cp)
+// Elapsed time: 66 seconds
+closeMainWindow("group_demo - [/nfs/ug/homes-1/h/huanga49/ECE/ece532/ECE532/group_demo/group_demo.xpr] - Vivado 2018.3"); // cp
+// al (cp): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_DONT_SAVE, "Don't Save"); // a (al)
+// A (cp): Exit Vivado: addNotify
+dismissDialog("Save Project"); // al (cp)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (A)
+dismissDialog("Exit Vivado"); // A (cp)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aA, cp)
+closeTask("IP Integrator", "Block Design", "DesignTask.IP_INTEGRATOR");
+// A (cp): Confirm Close: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// HOptionPane Warning: 'Would you like to save 'Block Design - design_1' before closing? (Unsaved Changes)'
+dismissDialog("Confirm Close"); // A (cp)
+// bx (cp):  Close Block Designs : addNotify
+selectButton("PAResourceQtoS.SaveProjectUtils_THERE_UNSAVED_CHANGES_OK_TO_SAVE_No", "No"); // JButton (C, I)
+// TclEventType: RSB_CLOSE_DIAGRAM
+// TclEventType: REPORT_IP_STATUS_STALE
+// Tcl Message: close_bd_design [get_bd_designs design_1] 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Close Block Designs"); // bx (cp)
+selectButton(PAResourceTtoZ.TaskBanner_CLOSE, (String) null); // k (aA, cp)
+closeTask("Project Manager", "Project Manager", "DesignTask.PROJECT_MANAGER");
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_PROJECT
+// A (cp): Close Project: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// bx (cp):  Close Project : addNotify
+// TclEventType: PROJECT_CLOSE
+dismissDialog("Close Project"); // A (cp)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,436 MB. GUI used memory: 89 MB. Current time: 1/22/24, 5:15:31 PM EST
+// Tcl Message: close_project 
+dismissDialog("Close Project"); // bx (cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
