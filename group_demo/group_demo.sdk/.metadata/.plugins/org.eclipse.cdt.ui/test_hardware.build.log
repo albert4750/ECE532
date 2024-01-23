@@ -1,6 +1,21 @@
-13:16:06 **** Incremental Build of configuration Debug for project test_hardware ****
+13:20:46 **** Auto Build of configuration Debug for project test_hardware ****
 make all 
-make: Nothing to be done for 'all'.
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -I../../test_hardware_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: test_hardware.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../test_hardware_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "test_hardware.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: test_hardware.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size test_hardware.elf  |tee "test_hardware.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   6612	    336	   3108	  10056	   2748	test_hardware.elf
+'Finished building: test_hardware.elf.size'
+' '
 
-13:16:06 Build Finished (took 95ms)
+13:20:46 Build Finished (took 336ms)
 

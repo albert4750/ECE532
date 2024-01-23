@@ -5499,3 +5499,396 @@ Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-5
 
 !ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:16:06.657
 !MESSAGE XSCT command with result: [disconnect tcfchan#1], Result: [null, ]. Thread: Thread-131
+!SESSION 2024-01-23 13:19:53.102 -----------------------------------------------
+eclipse.buildId=2018.3
+java.version=1.8.0_112
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk
+
+!ENTRY org.eclipse.ui 2 0 2024-01-23 13:19:54.058
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-01-23 13:19:54.058
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY org.eclipse.ui 2 0 2024-01-23 13:19:54.386
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-01-23 13:19:54.386
+!MESSAGE Commands should really have a category: plug-in='com.xilinx.sdk.appwiz', id='com.xilinx.sdk.app.commands.ChangeAtfBuiltReferences', categoryId='com.xilinx.sdk.app.commands.category'
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:56.634
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-12
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:56.634
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:56.637
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-12
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:56.638
+!MESSAGE XSCT Command: [setws C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk], Thread: Thread-12
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:56.739
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:56.740
+!MESSAGE XSCT command with result: [setws C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk], Result: [null, ]. Thread: Thread-12
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:56.855
+!MESSAGE XSCT Command: [::hsi::utils::openhw C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.781
+!MESSAGE XSCT command with result: [::hsi::utils::openhw C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.900
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.903
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.903
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.905
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss], Result: [null, {"procname": "microblaze_0",
+"osname": "standalone",
+"osver": "6.8",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.906
+!MESSAGE XSCT Command: [hsi::utils::get_supported_os -json C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.910
+!MESSAGE XSCT command with result: [hsi::utils::get_supported_os -json C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf], Result: [null, {"microblaze_0": {"freertos10_xilinx_v1_2": {"name": "freertos10_xilinx",
+"version": "1.2",
+"desc": "FreeRTOS is a market leading open source RTOS",
+"compilerflags": "",
+"linkerflags": "-Wl,--start-group,-lxil,-lfreertos,-lgcc,-lc,--end-group",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/ThirdParty/bsp/freertos10_xilinx_v1_2",
+},
+"standalone_v6_8": {"name": "standalone",
+"version": "6.8",
+"desc": "Standalone is a simple, low-level software layer. It provides access to basic processor features such as caches, interrupts and exceptions as well as the basic features of a hosted environment, such as standard input and output, profiling, abort and exit.",
+"compilerflags": "",
+"linkerflags": "-Wl,--start-group,-lxil,-lgcc,-lc,--end-group",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/lib/bsp/standalone_v6_8",
+},
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.915
+!MESSAGE XSCT Command: [::hsi::utils::get_connected_periphs C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf microblaze_0], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.916
+!MESSAGE XSCT command with result: [::hsi::utils::get_connected_periphs C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf microblaze_0], Result: [null, axi_ethernetlite_0 axi_gpio_buttons axi_gpio_led axi_gpio_switches axi_timer_0 axi_uartlite_0 microblaze_0_axi_intc microblaze_0_local_memory_dlmb_bram_if_cntlr microblaze_0_local_memory_ilmb_bram_if_cntlr mig_7series_0]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.917
+!MESSAGE XSCT Command: [::hsi::utils::get_drivers_for_sw -json C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.919
+!MESSAGE XSCT command with result: [::hsi::utils::get_drivers_for_sw -json C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss], Result: [null, {"axi_ethernetlite_0": {"name": "emaclite",
+"ver": "4.3",
+},
+"axi_gpio_buttons": {"name": "gpio",
+"ver": "4.3",
+},
+"axi_gpio_led": {"name": "gpio",
+"ver": "4.3",
+},
+"axi_gpio_switches": {"name": "gpio",
+"ver": "4.3",
+},
+"axi_timer_0": {"name": "tmrctr",
+"ver": "4.5",
+},
+"axi_uartlite_0": {"name": "uartlite",
+"ver": "3.2",
+},
+"microblaze_0_axi_intc": {"name": "intc",
+"ver": "3.8",
+},
+"microblaze_0_local_memory_dlmb_bram_if_cntlr": {"name": "bram",
+"ver": "4.2",
+},
+"microblaze_0_local_memory_ilmb_bram_if_cntlr": {"name": "bram",
+"ver": "4.2",
+},
+"mig_7series_0": {"name": "mig_7series",
+"ver": "2.1",
+},
+"microblaze_0": {"name": "cpu",
+"ver": "2.8",
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.920
+!MESSAGE XSCT Command: [hsi::utils::get_drivers_for_hw -json C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.947
+!MESSAGE XSCT command with result: [hsi::utils::get_drivers_for_hw -json C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf], Result: [null, {"axi_ethernetlite_0": {"version": "3.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"emaclite_v4_3": {"name": "emaclite",
+"version": "4.3",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/emaclite_v4_3",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"axi_gpio_buttons": {"version": "2.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"gpio_v4_3": {"name": "gpio",
+"version": "4.3",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/gpio_v4_3",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"axi_gpio_led": {"version": "2.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"gpio_v4_3": {"name": "gpio",
+"version": "4.3",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/gpio_v4_3",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"axi_gpio_switches": {"version": "2.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"gpio_v4_3": {"name": "gpio",
+"version": "4.3",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/gpio_v4_3",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"axi_smc": {"version": "1.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"axi_timer_0": {"version": "2.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"tmrctr_v4_5": {"name": "tmrctr",
+"version": "4.5",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/tmrctr_v4_5",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"axi_uartlite_0": {"version": "2.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"uartlite_v3_2": {"name": "uartlite",
+"version": "3.2",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/uartlite_v3_2",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"clk_wiz_1": {"version": "6.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"clk_wiz_v1_2": {"name": "clk_wiz",
+"version": "1.2",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/clk_wiz_v1_2",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"ila_0": {"version": "6.2",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"mdm_1": {"version": "3.2",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"uartlite_v3_2": {"name": "uartlite",
+"version": "3.2",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/uartlite_v3_2",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"microblaze_0": {"version": "11.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"cpu_v2_8": {"name": "cpu",
+"version": "2.8",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/cpu_v2_8",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"microblaze_0_axi_intc": {"version": "4.1",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"intc_v3_8": {"name": "intc",
+"version": "3.8",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/intc_v3_8",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"microblaze_0_axi_periph": {"version": "2.1",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"microblaze_0_local_memory_dlmb_bram_if_cntlr": {"version": "4.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"bram_v4_2": {"name": "bram",
+"version": "4.2",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/bram_v4_2",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"microblaze_0_local_memory_dlmb_v10": {"version": "3.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"microblaze_0_local_memory_ilmb_bram_if_cntlr": {"version": "4.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"bram_v4_2": {"name": "bram",
+"version": "4.2",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/bram_v4_2",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"microblaze_0_local_memory_ilmb_v10": {"version": "3.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"microblaze_0_local_memory_lmb_bram": {"version": "8.4",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"microblaze_0_xlconcat": {"version": "2.1",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"mig_7series_0": {"version": "4.2",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+"mig_7series_v2_1": {"name": "mig_7series",
+"version": "2.1",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/mig_7series_v2_1",
+"compilerflags": "",
+"linkerflags": "",
+},
+},
+},
+"mii_to_rmii_0": {"version": "2.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"rst_clk_wiz_1_100M": {"version": "5.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+"rst_mig_7series_0_81M": {"version": "5.0",
+"driver_info": {"generic": {"name": "generic",
+"version": "2.0",
+"repo": "C:/Xilinx/SDK/2018.3/data/embeddedsw/XilinxProcessorIPLib/drivers/generic_v2_0",
+},
+},
+},
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.960
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss ], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.961
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss ], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.962
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.963
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss], Result: [null, {"procname": "microblaze_0",
+"osname": "standalone",
+"osver": "6.8",
+}]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.965
+!MESSAGE XSCT Command: [::hsi::utils::get_libs_from_sw C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.966
+!MESSAGE XSCT command with result: [::hsi::utils::get_libs_from_sw C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper_hw_platform_0/system.hdf C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss], Result: [null, ]. Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.967
+!MESSAGE XSCT Command: [::hsi::utils::closesw C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss], Thread: main
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-01-23 13:19:57.969
+!MESSAGE XSCT command with result: [::hsi::utils::closesw C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/test_hardware_bsp/system.mss], Result: [null, ]. Thread: main

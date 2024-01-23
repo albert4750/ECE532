@@ -511,3 +511,10 @@ con
 ----------------End of Script----------------
 
 13:16:06 INFO  : Disconnected from the channel tcfchan#1.
+13:19:55 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\Albert\Documents\GitHub\ECE532\group_demo\group_demo.sdk\temp_xsdb_launch_script.tcl
+13:19:56 INFO  : XSCT server has started successfully.
+13:19:56 INFO  : Successfully done setting XSCT server connection channel  
+13:19:56 INFO  : Successfully done setting SDK workspace  
+13:19:58 INFO  : Registering command handlers for SDK TCF services
+13:19:58 INFO  : Processing command line option -hwspec C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/design_1_wrapper.hdf.
+13:19:58 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
