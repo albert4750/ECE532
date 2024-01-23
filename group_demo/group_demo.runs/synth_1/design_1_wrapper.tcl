@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param tcl.collectionResultDisplayLimit 0
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -108,6 +110,10 @@ set_property used_in_implementation false [get_files -all c:/Users/Albert/Docume
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0.xdc]
+set_property used_in_synthesis false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ip/design_1_ila_0_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ip/design_1_ila_0_0/design_1_ila_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ip/design_1_s00_mmu_0/design_1_s00_mmu_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 

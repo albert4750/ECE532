@@ -327,6 +327,56 @@ proc create_root_design { parentCell } {
    CONFIG.USE_BOARD_FLOW {true} \
  ] $clk_wiz_1
 
+  # Create instance: ila_0, and set properties
+  set ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:ila:6.2 ila_0 ]
+  set_property -dict [ list \
+   CONFIG.ALL_PROBE_SAME_MU_CNT {1} \
+   CONFIG.C_PROBE0_MU_CNT {1} \
+   CONFIG.C_PROBE10_MU_CNT {1} \
+   CONFIG.C_PROBE11_MU_CNT {1} \
+   CONFIG.C_PROBE12_MU_CNT {1} \
+   CONFIG.C_PROBE13_MU_CNT {1} \
+   CONFIG.C_PROBE14_MU_CNT {1} \
+   CONFIG.C_PROBE15_MU_CNT {1} \
+   CONFIG.C_PROBE16_MU_CNT {1} \
+   CONFIG.C_PROBE17_MU_CNT {1} \
+   CONFIG.C_PROBE18_MU_CNT {1} \
+   CONFIG.C_PROBE19_MU_CNT {1} \
+   CONFIG.C_PROBE1_MU_CNT {1} \
+   CONFIG.C_PROBE20_MU_CNT {1} \
+   CONFIG.C_PROBE21_MU_CNT {1} \
+   CONFIG.C_PROBE22_MU_CNT {1} \
+   CONFIG.C_PROBE23_MU_CNT {1} \
+   CONFIG.C_PROBE24_MU_CNT {1} \
+   CONFIG.C_PROBE25_MU_CNT {1} \
+   CONFIG.C_PROBE26_MU_CNT {1} \
+   CONFIG.C_PROBE27_MU_CNT {1} \
+   CONFIG.C_PROBE28_MU_CNT {1} \
+   CONFIG.C_PROBE29_MU_CNT {1} \
+   CONFIG.C_PROBE2_MU_CNT {1} \
+   CONFIG.C_PROBE30_MU_CNT {1} \
+   CONFIG.C_PROBE31_MU_CNT {1} \
+   CONFIG.C_PROBE32_MU_CNT {1} \
+   CONFIG.C_PROBE33_MU_CNT {1} \
+   CONFIG.C_PROBE34_MU_CNT {1} \
+   CONFIG.C_PROBE35_MU_CNT {1} \
+   CONFIG.C_PROBE36_MU_CNT {1} \
+   CONFIG.C_PROBE37_MU_CNT {1} \
+   CONFIG.C_PROBE38_MU_CNT {1} \
+   CONFIG.C_PROBE39_MU_CNT {1} \
+   CONFIG.C_PROBE3_MU_CNT {1} \
+   CONFIG.C_PROBE40_MU_CNT {1} \
+   CONFIG.C_PROBE41_MU_CNT {1} \
+   CONFIG.C_PROBE42_MU_CNT {1} \
+   CONFIG.C_PROBE43_MU_CNT {1} \
+   CONFIG.C_PROBE4_MU_CNT {1} \
+   CONFIG.C_PROBE5_MU_CNT {1} \
+   CONFIG.C_PROBE6_MU_CNT {1} \
+   CONFIG.C_PROBE7_MU_CNT {1} \
+   CONFIG.C_PROBE8_MU_CNT {1} \
+   CONFIG.C_PROBE9_MU_CNT {1} \
+ ] $ila_0
+
   # Create instance: mdm_1, and set properties
   set mdm_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:mdm:3.2 mdm_1 ]
 
@@ -400,6 +450,7 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net microblaze_0_axi_dp [get_bd_intf_pins microblaze_0/M_AXI_DP] [get_bd_intf_pins microblaze_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M01_AXI [get_bd_intf_pins axi_uartlite_0/S_AXI] [get_bd_intf_pins microblaze_0_axi_periph/M01_AXI]
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M02_AXI [get_bd_intf_pins axi_ethernetlite_0/S_AXI] [get_bd_intf_pins microblaze_0_axi_periph/M02_AXI]
+connect_bd_intf_net -intf_net [get_bd_intf_nets microblaze_0_axi_periph_M02_AXI] [get_bd_intf_pins ila_0/SLOT_0_AXI] [get_bd_intf_pins microblaze_0_axi_periph/M02_AXI]
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M03_AXI [get_bd_intf_pins axi_timer_0/S_AXI] [get_bd_intf_pins microblaze_0_axi_periph/M03_AXI]
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M04_AXI [get_bd_intf_pins axi_gpio_buttons/S_AXI] [get_bd_intf_pins microblaze_0_axi_periph/M04_AXI]
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M05_AXI [get_bd_intf_pins axi_gpio_led/S_AXI] [get_bd_intf_pins microblaze_0_axi_periph/M05_AXI]
@@ -419,7 +470,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net clk_wiz_1_clk_out3 [get_bd_ports eth_ref_clk] [get_bd_pins clk_wiz_1/clk_out3] [get_bd_pins mii_to_rmii_0/ref_clk]
   connect_bd_net -net clk_wiz_1_locked [get_bd_pins clk_wiz_1/locked] [get_bd_pins rst_clk_wiz_1_100M/dcm_locked]
   connect_bd_net -net mdm_1_debug_sys_rst [get_bd_pins mdm_1/Debug_SYS_Rst] [get_bd_pins rst_clk_wiz_1_100M/mb_debug_sys_rst]
-  connect_bd_net -net microblaze_0_Clk [get_bd_pins axi_ethernetlite_0/s_axi_aclk] [get_bd_pins axi_gpio_buttons/s_axi_aclk] [get_bd_pins axi_gpio_led/s_axi_aclk] [get_bd_pins axi_gpio_switches/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins axi_timer_0/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins clk_wiz_1/clk_out1] [get_bd_pins microblaze_0/Clk] [get_bd_pins microblaze_0_axi_intc/processor_clk] [get_bd_pins microblaze_0_axi_intc/s_axi_aclk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/M02_ACLK] [get_bd_pins microblaze_0_axi_periph/M03_ACLK] [get_bd_pins microblaze_0_axi_periph/M04_ACLK] [get_bd_pins microblaze_0_axi_periph/M05_ACLK] [get_bd_pins microblaze_0_axi_periph/M06_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_axi_periph/S01_ACLK] [get_bd_pins microblaze_0_local_memory/LMB_Clk] [get_bd_pins rst_clk_wiz_1_100M/slowest_sync_clk]
+  connect_bd_net -net microblaze_0_Clk [get_bd_pins axi_ethernetlite_0/s_axi_aclk] [get_bd_pins axi_gpio_buttons/s_axi_aclk] [get_bd_pins axi_gpio_led/s_axi_aclk] [get_bd_pins axi_gpio_switches/s_axi_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins axi_timer_0/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins clk_wiz_1/clk_out1] [get_bd_pins ila_0/clk] [get_bd_pins microblaze_0/Clk] [get_bd_pins microblaze_0_axi_intc/processor_clk] [get_bd_pins microblaze_0_axi_intc/s_axi_aclk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/M02_ACLK] [get_bd_pins microblaze_0_axi_periph/M03_ACLK] [get_bd_pins microblaze_0_axi_periph/M04_ACLK] [get_bd_pins microblaze_0_axi_periph/M05_ACLK] [get_bd_pins microblaze_0_axi_periph/M06_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_axi_periph/S01_ACLK] [get_bd_pins microblaze_0_local_memory/LMB_Clk] [get_bd_pins rst_clk_wiz_1_100M/slowest_sync_clk]
   connect_bd_net -net microblaze_0_intr [get_bd_pins microblaze_0_axi_intc/intr] [get_bd_pins microblaze_0_xlconcat/dout]
   connect_bd_net -net mig_7series_0_mmcm_locked [get_bd_pins mig_7series_0/mmcm_locked] [get_bd_pins rst_mig_7series_0_81M/dcm_locked]
   connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins axi_smc/aclk1] [get_bd_pins mig_7series_0/ui_clk] [get_bd_pins rst_mig_7series_0_81M/slowest_sync_clk]
