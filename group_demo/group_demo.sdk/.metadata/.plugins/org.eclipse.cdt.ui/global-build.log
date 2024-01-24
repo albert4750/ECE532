@@ -2437,3 +2437,96 @@ make: Nothing to be done for 'all'.
 00:17:48 **** Incremental Build of configuration Debug for project warmup_demo ****
 make all 
 make: Nothing to be done for 'all'.
+01:08:54 **** Incremental Build of configuration Debug for project warmup_demo ****
+make all 
+make: Nothing to be done for 'all'.
+01:12:13 **** Incremental Build of configuration Debug for project warmup_demo ****
+make all 
+make: Nothing to be done for 'all'.
+01:15:10 **** Auto Build of configuration Debug for project warmup_demo ****
+make all 
+Building file: ../src/main.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../warmup_demo_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: warmup_demo.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../warmup_demo_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "warmup_demo.elf" ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: warmup_demo.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size warmup_demo.elf  |tee "warmup_demo.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112884	   1440	3962380	4076704	 3e34a0	warmup_demo.elf
+Finished building: warmup_demo.elf.size
+ 
+01:15:14 **** Incremental Build of configuration Debug for project warmup_demo ****
+make all 
+make: Nothing to be done for 'all'.
+01:16:16 **** Auto Build of configuration Debug for project warmup_demo ****
+make all 
+Building file: ../src/main.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../warmup_demo_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: warmup_demo.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../warmup_demo_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "warmup_demo.elf" ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: warmup_demo.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size warmup_demo.elf  |tee "warmup_demo.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112892	   1440	3962380	4076712	 3e34a8	warmup_demo.elf
+Finished building: warmup_demo.elf.size
+ 
+01:16:39 **** Incremental Build of configuration Debug for project warmup_demo ****
+make all 
+make: Nothing to be done for 'all'.
+01:17:29 **** Incremental Build of configuration Debug for project warmup_demo ****
+make all 
+make: Nothing to be done for 'all'.
+01:19:27 **** Auto Build of configuration Debug for project warmup_demo ****
+make all 
+Building file: ../src/main.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../warmup_demo_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: warmup_demo.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../warmup_demo_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "warmup_demo.elf" ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: warmup_demo.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size warmup_demo.elf  |tee "warmup_demo.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112872	   1440	3962376	4076688	 3e3490	warmup_demo.elf
+Finished building: warmup_demo.elf.size
+ 
+01:19:38 **** Incremental Build of configuration Debug for project warmup_demo ****
+make all 
+make: Nothing to be done for 'all'.
+01:20:47 **** Auto Build of configuration Debug for project warmup_demo ****
+make all 
+Building file: ../src/main.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../warmup_demo_bsp/microblaze_0/include -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: warmup_demo.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../warmup_demo_bsp/microblaze_0/lib -mlittle-endian -mcpu=v11.0 -mxl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "warmup_demo.elf" ./src/i2c_access.o ./src/iic_phyreset.o ./src/main.o ./src/platform.o ./src/platform_mb.o ./src/platform_ppc.o ./src/platform_zynq.o ./src/platform_zynqmp.o ./src/sfp.o ./src/si5324.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group -Wl,--start-group,-lxil,-llwip4,-lgcc,-lc,--end-group
+Finished building target: warmup_demo.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size warmup_demo.elf  |tee "warmup_demo.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 112836	   1440	3962380	4076656	 3e3470	warmup_demo.elf
+Finished building: warmup_demo.elf.size
+ 
+01:20:50 **** Incremental Build of configuration Debug for project warmup_demo ****
+make all 
+make: Nothing to be done for 'all'.
