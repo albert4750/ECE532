@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
 # Webtalk v2018.3 (64-bit)
-# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # 
-# Start of session at: Tue Jan 23 12:15:52 2024
-# Process ID: 23636
-# Current directory: C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/webtalk
-# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
-# Log file: C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/webtalk/webtalk.log
-# Journal file: C:/Users/Albert/Documents/GitHub/ECE532/group_demo/group_demo.sdk/webtalk\webtalk.jou
+# Start of session at: Tue Jan 23 18:37:09 2024
+# Process ID: 99646
+# Current directory: /home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.sdk/webtalk
+# Command line: wbtcv -mode batch -source sdk_webtalk.tcl
+# Log file: /home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.sdk/webtalk/webtalk.log
+# Journal file: /home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.sdk/webtalk/webtalk.jou
 #-----------------------------------------------------------
 source sdk_webtalk.tcl

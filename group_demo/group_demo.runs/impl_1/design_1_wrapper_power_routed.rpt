@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Tue Jan 23 13:09:22 2024
-| Host             : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date             : Tue Jan 23 21:48:58 2024
+| Host             : pop-os running 64-bit Pop!_OS 22.04 LTS
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
 | Device           : xc7a100tcsg324-1
@@ -54,14 +54,14 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.070 |       30 |       --- |             --- |
 | Slice Logic              |     0.024 |    35701 |       --- |             --- |
-|   LUT as Logic           |     0.019 |    12063 |     63400 |           19.03 |
+|   LUT as Logic           |     0.019 |    12042 |     63400 |           18.99 |
 |   LUT as Distributed RAM |     0.002 |     1194 |     19000 |            6.28 |
 |   Register               |     0.002 |    15442 |    126800 |           12.18 |
 |   CARRY4                 |    <0.001 |      346 |     15850 |            2.18 |
 |   LUT as Shift Register  |    <0.001 |      718 |     19000 |            3.78 |
 |   F7/F8 Muxes            |    <0.001 |      162 |     63400 |            0.26 |
 |   Others                 |    <0.001 |     1819 |       --- |             --- |
-| Signals                  |     0.034 |    25564 |       --- |             --- |
+| Signals                  |     0.034 |    25583 |       --- |             --- |
 | Block RAM                |     0.037 |     25.5 |       135 |           18.89 |
 | MMCM                     |     0.219 |        2 |         6 |           33.33 |
 | PLL                      |     0.115 |        1 |         6 |           16.67 |
@@ -190,8 +190,8 @@ Table of Contents
 |       inst                           |     0.107 |
 |     ila_0                            |     0.017 |
 |       inst                           |     0.017 |
-|     microblaze_0                     |     0.047 |
-|       U0                             |     0.047 |
+|     microblaze_0                     |     0.048 |
+|       U0                             |     0.048 |
 |     microblaze_0_axi_intc            |     0.001 |
 |       U0                             |     0.001 |
 |     microblaze_0_axi_periph          |     0.003 |
