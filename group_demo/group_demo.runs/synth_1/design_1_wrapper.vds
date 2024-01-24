@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Tue Jan 23 21:47:22 2024
-# Process ID: 328749
+# Start of session at: Wed Jan 24 01:04:51 2024
+# Process ID: 544935
 # Current directory: /home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/design_1_wrapper.vds
@@ -18,41 +18,41 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 328844 
+INFO: Helper process launched with PID 545019 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:00.73 ; elapsed = 00:00:00.87 . Memory (MB): peak = 1436.031 ; gain = 76.023 ; free physical = 18978 ; free virtual = 46579
+Starting RTL Elaboration : Time (s): cpu = 00:00:00.73 ; elapsed = 00:00:00.89 . Memory (MB): peak = 1436.031 ; gain = 76.023 ; free physical = 15895 ; free virtual = 45035
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_ethernetlite_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_ethernetlite_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_ethernetlite_0_0' (1#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_ethernetlite_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_ethernetlite_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_ethernetlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_ethernetlite_0_0' (1#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_ethernetlite_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'axi_ethernetlite_0' of module 'design_1_axi_ethernetlite_0_0' requires 34 connections, but only 33 given [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:431]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_0' (2#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_1_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_gpio_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_1_0' (3#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_gpio_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_2_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_gpio_2_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_2_0' (4#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_gpio_2_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (5#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_smc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_timer_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_timer_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_timer_0_0' (6#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_timer_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_0_0' (2#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_1_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_gpio_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_1_0' (3#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_gpio_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_gpio_2_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_gpio_2_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_gpio_2_0' (4#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_gpio_2_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_smc_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_smc_0' (5#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_smc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_timer_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_timer_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_timer_0_0' (6#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_timer_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'axi_timer_0' of module 'design_1_axi_timer_0_0' requires 26 connections, but only 23 given [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:613]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_uartlite_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_uartlite_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_uartlite_0_0' (7#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_uartlite_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_uartlite_0_0' (7#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_axi_uartlite_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'axi_uartlite_0' of module 'design_1_axi_uartlite_0_0' requires 22 connections, but only 21 given [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:637]
-INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_1_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_clk_wiz_1_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_1_0' (8#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_clk_wiz_1_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_1_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_clk_wiz_1_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_1_0' (8#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_clk_wiz_1_0_stub.v:5]
 WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:666]
-INFO: [Synth 8-6157] synthesizing module 'design_1_ila_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_ila_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_ila_0_0' (9#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_ila_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_mdm_1_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_mdm_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_mdm_1_0' (10#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_mdm_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_microblaze_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_0' (11#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ila_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_ila_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ila_0_0' (9#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_ila_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_mdm_1_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_mdm_1_0' (10#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_0' (11#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_microblaze_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'microblaze_0' of module 'design_1_microblaze_0_0' requires 145 connections, but only 127 given [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:700]
-INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_axi_intc_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_microblaze_0_axi_intc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_axi_intc_0' (12#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_axi_intc_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_axi_intc_0' (12#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_microblaze_0_axi_intc_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_axi_periph_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:1152]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_8RVYHO' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:2462]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_8RVYHO' (13#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:2462]
@@ -70,28 +70,28 @@ INFO: [Synth 8-6157] synthesizing module 'm06_couplers_imp_4YOIXL' [/home/xuangh
 INFO: [Synth 8-6155] done synthesizing module 'm06_couplers_imp_4YOIXL' (19#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:3268]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1RZP34U' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:3634]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1RZP34U' (20#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:3634]
-INFO: [Synth 8-6157] synthesizing module 'design_1_s00_mmu_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_s00_mmu_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_s00_mmu_0' (21#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_s00_mmu_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_s00_mmu_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_s00_mmu_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_s00_mmu_0' (21#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_s00_mmu_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_2REGHR' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:3780]
 INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_2REGHR' (22#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:3780]
-INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (23#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (23#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_xbar_0_stub.v:6]
 WARNING: [Synth 8-689] width (9) of port connection 'm_axi_arprot' does not match port width (21) of module 'design_1_xbar_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:2423]
 WARNING: [Synth 8-689] width (9) of port connection 'm_axi_awprot' does not match port width (21) of module 'design_1_xbar_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:2427]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_axi_periph_0' (24#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:1152]
 INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_1K0VQXK' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:3400]
-INFO: [Synth 8-6157] synthesizing module 'design_1_dlmb_bram_if_cntlr_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_dlmb_bram_if_cntlr_0' (25#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_dlmb_v10_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_dlmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_dlmb_v10_0' (26#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_dlmb_bram_if_cntlr_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_dlmb_bram_if_cntlr_0' (25#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_dlmb_v10_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_dlmb_v10_0' (26#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_dlmb_v10_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'dlmb_v10' of module 'design_1_dlmb_v10_0' requires 25 connections, but only 24 given [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:3546]
-INFO: [Synth 8-6157] synthesizing module 'design_1_ilmb_bram_if_cntlr_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_ilmb_bram_if_cntlr_0' (27#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_ilmb_v10_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_ilmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_ilmb_v10_0' (28#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ilmb_bram_if_cntlr_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ilmb_bram_if_cntlr_0' (27#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ilmb_v10_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ilmb_v10_0' (28#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_ilmb_v10_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'ilmb_v10' of module 'design_1_ilmb_v10_0' requires 25 connections, but only 24 given [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:3592]
-INFO: [Synth 8-6157] synthesizing module 'design_1_lmb_bram_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_lmb_bram_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_lmb_bram_0' (29#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_lmb_bram_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_lmb_bram_0' (29#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_lmb_bram_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'lmb_bram' of module 'design_1_lmb_bram_0' requires 16 connections, but only 14 given [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:3617]
 INFO: [Synth 8-6155] done synthesizing module 'microblaze_0_local_memory_imp_1K0VQXK' (30#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:3400]
 INFO: [Synth 8-6157] synthesizing module 'design_1_microblaze_0_xlconcat_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_xlconcat_0/synth/design_1_microblaze_0_xlconcat_0.v:58]
@@ -132,16 +132,16 @@ INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_1_xlconcat' [/home/xuang
 	Parameter NUM_PORTS bound to: 2 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_1_xlconcat' (31#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ipshared/2f66/hdl/xlconcat_v2_1_vl_rfs.v:14]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_microblaze_0_xlconcat_0' (32#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_xlconcat_0/synth/design_1_microblaze_0_xlconcat_0.v:58]
-INFO: [Synth 8-6157] synthesizing module 'design_1_mig_7series_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_mig_7series_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_mig_7series_0_0' (33#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_mig_7series_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_mig_7series_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_mig_7series_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_mig_7series_0_0' (33#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_mig_7series_0_0_stub.v:5]
 WARNING: [Synth 8-350] instance 'mig_7series_0' of module 'design_1_mig_7series_0_0' requires 66 connections, but only 55 given [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:1060]
-INFO: [Synth 8-6157] synthesizing module 'design_1_mii_to_rmii_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_mii_to_rmii_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_mii_to_rmii_0_0' (34#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_mii_to_rmii_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rst_clk_wiz_1_100M_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_rst_clk_wiz_1_100M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_clk_wiz_1_100M_0' (35#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_rst_clk_wiz_1_100M_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_mii_to_rmii_0_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_mii_to_rmii_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_mii_to_rmii_0_0' (34#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_mii_to_rmii_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_clk_wiz_1_100M_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_rst_clk_wiz_1_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_clk_wiz_1_100M_0' (35#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_rst_clk_wiz_1_100M_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'rst_clk_wiz_1_100M' of module 'design_1_rst_clk_wiz_1_100M_0' requires 10 connections, but only 8 given [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:1134]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rst_mig_7series_0_81M_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_rst_mig_7series_0_81M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_mig_7series_0_81M_0' (36#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-328749-pop-os/realtime/design_1_rst_mig_7series_0_81M_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_mig_7series_0_81M_0' [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_rst_mig_7series_0_81M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_mig_7series_0_81M_0' (36#1) [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/.Xil/Vivado-544935-pop-os/realtime/design_1_rst_mig_7series_0_81M_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'rst_mig_7series_0_81M' of module 'design_1_rst_mig_7series_0_81M_0' requires 10 connections, but only 6 given [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:1143]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'axi_ethernetlite_0'. This will prevent further optimization [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:431]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'microblaze_0_axi_periph'. This will prevent further optimization [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.srcs/sources_1/bd/design_1/synth/design_1.v:854]
@@ -239,7 +239,7 @@ WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnecte
 WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port S01_ACLK
 WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port S01_ARESETN
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1482.781 ; gain = 122.773 ; free physical = 18959 ; free virtual = 46549
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1482.781 ; gain = 122.773 ; free physical = 15879 ; free virtual = 45019
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -252,10 +252,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1482.781 ; gain = 122.773 ; free physical = 18951 ; free virtual = 46540
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1482.781 ; gain = 122.773 ; free physical = 15882 ; free virtual = 45022
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1482.781 ; gain = 122.773 ; free physical = 18951 ; free virtual = 46540
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1482.781 ; gain = 122.773 ; free physical = 15882 ; free virtual = 45022
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -316,26 +316,26 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/dont_touch.xdc]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1817.656 ; gain = 0.000 ; free physical = 18661 ; free virtual = 46262
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1817.664 ; gain = 0.000 ; free physical = 15619 ; free virtual = 44765
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1817.656 ; gain = 0.000 ; free physical = 18661 ; free virtual = 46262
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1817.664 ; gain = 0.000 ; free physical = 15619 ; free virtual = 44765
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instances
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1817.656 ; gain = 0.000 ; free physical = 18661 ; free virtual = 46262
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1817.656 ; gain = 0.000 ; free physical = 18661 ; free virtual = 46262
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1817.664 ; gain = 0.000 ; free physical = 15619 ; free virtual = 44765
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1817.664 ; gain = 0.000 ; free physical = 15619 ; free virtual = 44765
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18762 ; free virtual = 46365
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15776 ; free virtual = 44915
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18762 ; free virtual = 46365
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15776 ; free virtual = 44915
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -461,10 +461,10 @@ Applied set_property DONT_TOUCH = true for design_1_i/axi_gpio_switches. (constr
 Applied set_property DONT_TOUCH = true for design_1_i/ila_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/microblaze_0_axi_periph/s00_mmu. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18762 ; free virtual = 46364
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15776 ; free virtual = 44915
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18762 ; free virtual = 46363
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15776 ; free virtual = 44915
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -517,7 +517,7 @@ WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnecte
 WARNING: [Synth 8-3331] design design_1_microblaze_0_axi_periph_0 has unconnected port S00_ARESETN
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18762 ; free virtual = 46365
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15776 ; free virtual = 44918
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -545,13 +545,13 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/axi_ethernetli
 INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/axi_ethernetlite_0/phy_tx_clk' to pin 'design_1_i/mii_to_rmii_0/bbstub_rmii2mac_tx_clk/O'
 INFO: [Synth 8-5819] Moved 15 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18914 ; free virtual = 46496
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15590 ; free virtual = 44730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18914 ; free virtual = 46495
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15620 ; free virtual = 44760
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -563,7 +563,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18905 ; free virtual = 46487
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15611 ; free virtual = 44752
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -587,7 +587,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18904 ; free virtual = 46479
+Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15593 ; free virtual = 44734
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -600,7 +600,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18904 ; free virtual = 46479
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15593 ; free virtual = 44734
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -612,25 +612,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18904 ; free virtual = 46479
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15593 ; free virtual = 44734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18904 ; free virtual = 46479
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15593 ; free virtual = 44734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18904 ; free virtual = 46479
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15593 ; free virtual = 44734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18904 ; free virtual = 46479
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15593 ; free virtual = 44734
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -708,17 +708,17 @@ Report Instance Areas:
 |5     |    microblaze_0_local_memory |microblaze_0_local_memory_imp_1K0VQXK |   496|
 +------+------------------------------+--------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18904 ; free virtual = 46479
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15593 ; free virtual = 44734
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1817.656 ; gain = 122.773 ; free physical = 18957 ; free virtual = 46538
-Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18957 ; free virtual = 46538
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1817.664 ; gain = 122.773 ; free physical = 15632 ; free virtual = 44773
+Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15632 ; free virtual = 44773
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1817.656 ; gain = 0.000 ; free physical = 18896 ; free virtual = 46478
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1817.664 ; gain = 0.000 ; free physical = 15583 ; free virtual = 44724
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instances
@@ -726,10 +726,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 115 Infos, 114 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1817.656 ; gain = 457.648 ; free physical = 18913 ; free virtual = 46495
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1817.656 ; gain = 0.000 ; free physical = 18911 ; free virtual = 46493
+synth_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1817.664 ; gain = 457.656 ; free physical = 15608 ; free virtual = 44750
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1817.664 ; gain = 0.000 ; free physical = 15608 ; free virtual = 44750
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/xuanghdu/tmp/ECE532/ECE532/group_demo/group_demo.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jan 23 21:47:34 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 24 01:05:03 2024...

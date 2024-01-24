@@ -593,7 +593,8 @@ static err_t tcp_client_recv(void* arg, struct tcp_pcb* tpcb, struct pbuf* p, er
 
     for (i = 0; i < p->tot_len; i = i + 1) {
 		value_recv = value_recv << 8;
-		value_recv = value_recv | packet_data[i];
+		// xil_printf("%d %x\n", i, packet_data[i]);
+		value_recv = value_recv | (packet_data[i] & 0xFF);
 	}
 
 	xil_printf("value_recv: %x\n", value_recv);
