@@ -1,0 +1,29 @@
+name: anime4k_torch
+channels:
+  - nvidia
+  - pytorch
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - pip
+
+  # Development
+  - black
+  - isort
+  - pylint
+
+  # Runtime
+  - jupyter
+  - matplotlib
+  - numpy
+  - opencv
+  - pillow
+  - scipy
+  - tqdm
+
+  # PyTorch
+  - pytorch
+  - pytorch-cuda=12.1
+  - torchaudio
+  - torchvision
