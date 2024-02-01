@@ -1,7 +1,5 @@
 """Functions for visualizing images."""
 
-from typing import Optional
-
 import numpy as np
 import numpy.typing as npt
 from matplotlib import pyplot as plt
