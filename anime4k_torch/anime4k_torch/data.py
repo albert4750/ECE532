@@ -124,6 +124,8 @@ def transform_image_eval(
     if resize is not None:
         image = VF.resize(image, size=resize)
     if center_crop_size is not None:
+        # There is no need to crop because we do not do rotation augmentation, but we
+        # keep it for consistency with training transformation.
         top = (image.size(dim=-2) - center_crop_size) // 2
         left = (image.size(dim=-1) - center_crop_size) // 2
         image = VF.crop(image, top, left, center_crop_size, center_crop_size)
