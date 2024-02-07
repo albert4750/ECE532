@@ -1,6 +1,5 @@
-name: anime4k_torch
+name: ece532
 channels:
-  - nvidia
   - pytorch
   - conda-forge
   - nodefaults
@@ -16,6 +15,7 @@ dependencies:
   # Runtime
   - jupyter
   - matplotlib
+  - numba
   - numpy
   - opencv
   - pillow
@@ -24,6 +24,5 @@ dependencies:
 
   # PyTorch
   - pytorch
-  - pytorch-cuda=12.1
   - torchaudio
   - torchvision
