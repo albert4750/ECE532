@@ -3,6 +3,7 @@
 import os
 import random
 from collections.abc import Callable
+from typing import Optional
 
 import numpy as np
 import torch
@@ -40,16 +41,31 @@ class NpyDataset(torch.utils.data.Dataset):
         return self.transform(image)
 
 
-def transform_image_train(image: Tensor) -> tuple[Tensor, Tensor]:
+def transform_image_train(
+    image: Tensor,
+    resize: Optional[tuple[int, int]] = None,
+    random_crop_size: Optional[int] = None,
+) -> tuple[Tensor, Tensor]:
     """Transforms an image for training.
 
     :param image: An image of shape (C, H, W). Values are in the range [0, 255].
+    :param resize: If not None, the image is resized to this size.
+    :param random_crop_size: If not None, the image is randomly cropped into a square
+        of this size.
     :return: A tuple of two images. The first image is the model input of shape
         (C, H/2, W/2), and the second image is the target of shape (C, H, W). Values are
         in the range [0, 1].
     """
     image = image.type(torch.float32)
     image.div_(255)
+
+    if resize is not None:
+        image = VF.resize(image, size=resize)
+    if random_crop_size is not None:
+        top = random.randint(0, image.size(dim=-2) - random_crop_size)
+        left = random.randint(0, image.size(dim=-1) - random_crop_size)
+        image = VF.crop(image, top, left, random_crop_size, random_crop_size)
+
     image = VF.adjust_hue(image, random.uniform(-0.5, 0.5))
     image = VF.adjust_contrast(image, random.uniform(0.5, 2.0))
     image.clamp_(0, 1)
@@ -87,16 +103,31 @@ def transform_image_train(image: Tensor) -> tuple[Tensor, Tensor]:
     return input_image, target_image
 
 
-def transform_image_eval(image: Tensor) -> tuple[Tensor, Tensor]:
+def transform_image_eval(
+    image: Tensor,
+    resize: Optional[tuple[int, int]] = None,
+    center_crop_size: Optional[int] = None,
+) -> tuple[Tensor, Tensor]:
     """Transforms an image for evaluation.
 
     :param image: An image of shape (C, H, W). Values are in the range [0, 255].
+    :param resize: If not None, the image is resized to this size.
+    :param center_crop_size: If not None, the image is randomly cropped into a square
+        of this size aligned with the image center.
     :return: A tuple of two images. The first image is the model input of shape
         (C, H/2, W/2), and the second image is the target of shape (C, H, W). Values are
         in the range [0, 1].
     """
     image = image.type(torch.float32)
     image.div_(255)
+
+    if resize is not None:
+        image = VF.resize(image, size=resize)
+    if center_crop_size is not None:
+        top = (image.size(dim=-2) - center_crop_size) // 2
+        left = (image.size(dim=-1) - center_crop_size) // 2
+        image = VF.crop(image, top, left, center_crop_size, center_crop_size)
+
     input_image = image.unsqueeze(dim=0)
     input_image = F.interpolate(input_image, scale_factor=0.5, mode="area")
     input_image = input_image.squeeze(dim=0)

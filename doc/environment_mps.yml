@@ -19,6 +19,7 @@ dependencies:
   - numpy
   - opencv
   - pillow
+  - scikit-learn
   - scipy
   - tqdm
 
