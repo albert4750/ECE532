@@ -26,10 +26,10 @@ module rgb_to_grayscale_test ();
     logic [7:0] b;
     logic [7:0] grayscale;
     rgb_to_grayscale converter (
-        .r(r),
-        .g(g),
-        .b(b),
-        .grayscale(grayscale)
+        .r_i(r),
+        .g_i(g),
+        .b_i(b),
+        .grayscale_o(grayscale)
     );
     initial begin
         shortint expected_real, expected_int, real_int_diff;
