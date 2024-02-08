@@ -2,40 +2,64 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: University of Toronto
 // Engineer: Yunhao Qian
-// 
+//
 // Create Date: 02/07/2024 02:57:03 AM
-// Design Name: 
+// Design Name:
 // Module Name: rgb_to_grayscale_test
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
+// Project Name:
+// Target Devices:
+// Tool Versions:
+// Description:
+//
+// Dependencies:
+//
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module rgb_to_grayscale_test();
-    bit [7:0] r;
-    bit [7:0] g;
-    bit [7:0] b;
-    bit [7:0] grayscale;
-    rgb_to_grayscale converter(.r(r), .g(g), .b(b), .grayscale(grayscale));
+module rgb_to_grayscale_test ();
+    logic [7:0] r;
+    logic [7:0] g;
+    logic [7:0] b;
+    logic [7:0] grayscale;
+    rgb_to_grayscale converter (
+        .r(r),
+        .g(g),
+        .b(b),
+        .grayscale(grayscale)
+    );
     initial begin
-        shortint expected_grayscale;
-        for (shortint r_val = 0; r_val < 256; r_val += 5) begin
-            r = r_val;
-            for (shortint g_val = 0; g_val < 256; g_val += 5) begin
-                g = g_val;
-                for (shortint b_val = 0; b_val < 256; b_val += 5) begin
-                    #1 b = b_val;
-                    expected_grayscale = (r_val * 27 + g_val * 92 + b * 9 + 64) >> 7;
-                    #1 assert(grayscale == expected_grayscale);
+        shortint expected_real, expected_int, real_int_diff;
+        for (shortint r_value = 0; r_value < 256; r_value += 1) begin
+            r = r_value[7:0];
+            for (shortint g_value = 0; g_value < 256; g_value += 1) begin
+                g = g_value[7:0];
+                for (shortint b_value = 0; b_value < 256; b_value += 1) begin
+                    b = b_value[7:0];
+
+                    expected_real = shortint'(
+                        0.2126 * r_value + 0.7152 * g_value + 0.0722 * b_value
+                    );
+                    expected_int = (r_value * 27 + g_value * 92 + b * 9 + 64) >> 7;
+                    real_int_diff = expected_real - expected_int;
+                    assert (-1 <= real_int_diff && real_int_diff <= 1)
+                    else
+                        $error(
+                            "real_int_diff out of range: expected %d, got %d",
+                            expected_real,
+                            expected_int
+                        );
+                    #1
+                    assert (grayscale == expected_int[7:0])
+                    else
+                        $error(
+                            "unexpected grayscale value: expected %d, got %d",
+                            expected_int,
+                            grayscale
+                        );
                 end
             end
         end
