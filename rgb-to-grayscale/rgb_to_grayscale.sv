@@ -38,4 +38,4 @@ module rgb_to_grayscale (
         automatic logic [8:0] cum6 = cum5[9:2] + g_plus_1;
         grayscale_o = cum6[8:1];
     end
-endmodule
+endmodule : rgb_to_grayscale

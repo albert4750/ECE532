@@ -46,23 +46,19 @@ module rgb_to_grayscale_test ();
                     expected_int = (r_value * 27 + g_value * 92 + b * 9 + 64) >> 7;
                     real_int_diff = expected_real - expected_int;
                     assert (-1 <= real_int_diff && real_int_diff <= 1)
-                    else
-                        $error(
-                            "real_int_diff out of range: expected %d, got %d",
-                            expected_real,
-                            expected_int
-                        );
+                    else begin
+                        $error("real_int_diff out of range: expected %d, got %d", expected_real,
+                               expected_int);
+                    end
                     #1
                     assert (grayscale == expected_int[7:0])
-                    else
-                        $error(
-                            "unexpected grayscale value: expected %d, got %d",
-                            expected_int,
-                            grayscale
-                        );
+                    else begin
+                        $error("unexpected grayscale value: expected %d, got %d", expected_int,
+                               grayscale);
+                    end
                 end
             end
         end
         $finish;
     end
-endmodule
+endmodule : rgb_to_grayscale_test
