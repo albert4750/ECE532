@@ -37,4 +37,4 @@ def _generate_split(in_files: list[Path], out_file: Path) -> None:
 
 if __name__ == "__main__":
     script_dir = Path(__file__).parent
-    _generate_all(script_dir / "images", script_dir)
+    _generate_all(script_dir / "data/images", script_dir / "data")

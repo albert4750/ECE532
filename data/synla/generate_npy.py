@@ -19,5 +19,6 @@ if __name__ == "__main__":
     script_dir = Path(__file__).parent
     for variant in "1024", "4096":
         _generate(
-            script_dir / f"Dataset_{variant}", script_dir / f"synla_{variant}.npy"
+            script_dir / f"data/Dataset_{variant}",
+            script_dir / f"data/synla_{variant}.npy",
         )
