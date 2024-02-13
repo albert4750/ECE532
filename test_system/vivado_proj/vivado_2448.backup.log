@@ -1,0 +1,208 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Oct  9 20:16:28 2019
+# Process ID: 2448
+# Current directory: C:/git/Nexys-Video-HDMI/proj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27744 C:\git\Nexys-Video-HDMI\proj\Nexys-Video-HDMI.xpr
+# Log file: C:/git/Nexys-Video-HDMI/proj/vivado.log
+# Journal file: C:/git/Nexys-Video-HDMI/proj\vivado.jou
+#-----------------------------------------------------------
+Sourcing tcl script 'C:/Users/rogyorge/AppData/Roaming/Xilinx/Vivado/Vivado_init.tcl'
+INFO: [Common 17-1463] Init.tcl in C:/Users/rogyorge/AppData/Roaming/Xilinx/Vivado/init.tcl is not used. Vivado_init.tcl is already sourced.
+start_gui
+open_project C:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/git/Nexys-Video-HDMI/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:18 . Memory (MB): peak = 976.781 ; gain = 255.980
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+INFO: [BD 41-1662] The design 'hdmi.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : C:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v
+VHDL Output written to : C:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/sim/hdmi.v
+VHDL Output written to : C:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdl/hdmi_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dynclk_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_video .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_7ev_cc_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_cc_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_iocc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_iocc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_pciecc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_pciecc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_som:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_som_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_ev_som_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_som_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_7ev_cc_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_cc_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_iocc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_iocc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_pciecc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_pciecc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_som:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_som_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_ev_som_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_som_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_7ev_cc_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_cc_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_iocc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_iocc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_pciecc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_pciecc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_som:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_som_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_ev_som_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_som_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_7ev_cc_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_cc_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_iocc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_iocc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_pciecc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_pciecc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_som:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_som_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_ev_som_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_som_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_7ev_cc_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_cc_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_iocc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_iocc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_pciecc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_pciecc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_som:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_som_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_ev_som_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_som_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_7ev_cc_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_cc_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_iocc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_iocc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_pciecc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_pciecc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_som:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_som_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_ev_som_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_som_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_vdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dvi2rgb_0 .
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mdm_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_intc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_xlconcat .
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_7ev_cc_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_cc_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_iocc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_iocc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_pciecc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_pciecc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_som:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_som_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_ev_som_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_som_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_7ev_cc_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_cc_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_iocc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_iocc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_pciecc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_pciecc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_som:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_som_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_ev_som_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_som_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_7ev_cc_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_cc_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_iocc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_iocc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_pciecc:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_pciecc_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_eg_som:part0:1.0 available at C:/git/avnet_bdf/ultrazed_3eg_som_es1/1.0/board.xml as part xczu3eg-sfva625-1-i-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part em.avnet.com:ultrazed_ev_som_es2:part0:1.1 available at C:/git/avnet_bdf/ultrazed_7ev_som_es2/1.1/board.xml as part xczu7ev-fbvb900-1-i-es2 specified in board_part file is either invalid or not available
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rgb2dvi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_pxl .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_axi4s_vid_out_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_vid_in_axi4s_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/lmb_bram .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/m00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0/hdmi_auto_ds_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_ds .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_rs_w .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s03_couplers/s03_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s02_couplers/s02_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/s01_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_1/hdmi_auto_us_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_rs_w .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/s00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_0/hdmi_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_rs_w .
+Exporting to file C:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi.hwh
+Generated Block Design Tcl file C:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi_bd.tcl
+Generated Hardware Definition File C:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.hwdef
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_axi_dynclk_0_0, cache-ID = 0aaf342c06d8dd10.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_axi_gpio_video_0, cache-ID = 143b080025ba9db2.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_axi_timer_0_0, cache-ID = 1d4fe929b92f0778.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_axi_uartlite_0_0, cache-ID = 890f71f8024ea92e.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_axi_vdma_0_0, cache-ID = 490bea359a3a8636.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_dvi2rgb_0_0, cache-ID = 7509d5f948ffe136.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_mdm_1_0, cache-ID = d12ed56ce2bc3b8d.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_microblaze_0_0, cache-ID = 295c560d8e46c4f3.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_microblaze_0_axi_intc_0, cache-ID = 24b0b1a34c6a55cd.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_microblaze_0_xlconcat_0, cache-ID = b19b98a4e70f5df5.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_mig_7series_0_0, cache-ID = f7b42ad40e636cf2.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_rgb2dvi_0_0, cache-ID = d4c9f5db8b7f7f2b.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_rst_mig_7series_0_100M_0, cache-ID = c0507778fcf69b9f.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_rst_mig_7series_0_pxl_0, cache-ID = 51278af040bfc2db.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_v_axi4s_vid_out_0_0, cache-ID = 26b5b046a869657a.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_v_tc_0_0, cache-ID = e969f5038ed9d994.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_v_tc_1_0, cache-ID = 898ab041c7c3646f.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_v_vid_in_axi4s_0_0, cache-ID = f4d59d026a4c1901.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_xlconstant_0_0, cache-ID = 975ba0c02462343e.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_dlmb_bram_if_cntlr_0, cache-ID = 39e2639023983dc9.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_dlmb_v10_0, cache-ID = 1872039600c96e67.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_ilmb_bram_if_cntlr_0, cache-ID = 3bd5cc0479c2c1db.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_ilmb_v10_0, cache-ID = 1872039600c96e67.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_lmb_bram_0, cache-ID = 8301d261f621f2c2.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_xbar_1, cache-ID = fba47e58f24cdb0f.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_xbar_0, cache-ID = 8a4a4e8957977337.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_m00_regslice_0, cache-ID = 019f3bdbf5336924.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_auto_ds_0, cache-ID = 39edd0b5a1cfeca4.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_auto_rs_w_0, cache-ID = 7ff143f2653709a6.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_s03_regslice_0, cache-ID = c0cad88cdeceb0a3.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_s02_regslice_0, cache-ID = 71b10ea4f163bcd2.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_s01_regslice_0, cache-ID = 6af3a928199118d4.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_auto_us_1, cache-ID = ed3ca9e7c0620537.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_auto_rs_w_2, cache-ID = 8fd08ea6ba041aec.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_s00_regslice_0, cache-ID = b2da58e39265bf63.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_auto_us_0, cache-ID = 664f2d58f134e566.
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_auto_rs_w_1, cache-ID = c0cad88cdeceb0a3.
+[Wed Oct  9 20:19:53 2019] Launched synth_1...
+Run output will be captured here: C:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.runs/synth_1/runme.log
+[Wed Oct  9 20:19:53 2019] Launched impl_1...
+Run output will be captured here: C:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:01:32 ; elapsed = 00:02:44 . Memory (MB): peak = 1485.250 ; gain = 483.758
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 2881 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2598.609 ; gain = 29.898
+Restored from archive | CPU: 6.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2598.609 ; gain = 29.898
+Generating merged BMM file for the design top 'hdmi_wrapper'...
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: c:/git/Nexys-Video-HDMI/proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_0/data/mb_bootloop_le.elf 
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1013 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 192 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 63 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 32 instances
+  RAM16X1S => RAM32X1S (RAMS32): 512 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 185 instances
+  SRLC16E => SRL16E: 1 instances
+  SRLC32E => SRL16E: 7 instances
+
+open_run: Time (s): cpu = 00:01:02 ; elapsed = 00:00:58 . Memory (MB): peak = 2657.820 ; gain = 1164.871
+open_report: Time (s): cpu = 00:00:24 ; elapsed = 00:00:14 . Memory (MB): peak = 2801.539 ; gain = 115.293
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+archive_project C:/git/Nexys-Video-HDMI/release/vivado_proj.xpr.zip -temp_dir C:/git/Nexys-Video-HDMI/proj/.Xil/Vivado-2448-elodlt-ro -force -include_local_ip_cache
+INFO: [Coretcl 2-137] starting archive...
+INFO: [Coretcl 2-1499] Saving project copy to temporary location 'C:/git/Nexys-Video-HDMI/proj/.Xil/Vivado-2448-elodlt-ro' for archiving project
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/git/Nexys-Video-HDMI/repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
+INFO: [Coretcl 2-1212] Importing remotely added design sources and verilog include files (if any)...
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'constrs_1'
+INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'sources_1'
+INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'

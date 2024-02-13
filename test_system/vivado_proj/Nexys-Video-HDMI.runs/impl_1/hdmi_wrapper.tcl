@@ -65,8 +65,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param tcl.collectionResultDisplayLimit 0
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a200tsbg484-1
   set_property board_part_repo_paths C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.board [current_project]
   set_property board_part digilentinc.com:nexys_video:part0:1.1 [current_project]
@@ -75,8 +73,9 @@ set rc [catch {
   set_property webtalk.parent_dir C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.cache/wt [current_project]
   set_property parent.project_path C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.xpr [current_project]
   set_property ip_repo_paths {
-  c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0
+  C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0
   C:/Users/Albert/Documents/uoft/20241/ECE532/gray_20182
+  C:/Users/Albert/Documents/GitHub/ECE532/custom_ip
 } [current_project]
   set_property ip_output_repo C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
