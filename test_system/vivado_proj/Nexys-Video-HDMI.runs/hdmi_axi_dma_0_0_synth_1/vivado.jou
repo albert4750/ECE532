@@ -2,8 +2,8 @@
 # Vivado v2018.2.2 (64-bit)
 # SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
 # IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
-# Start of session at: Tue Feb 13 00:32:51 2024
-# Process ID: 36224
+# Start of session at: Tue Feb 13 04:41:32 2024
+# Process ID: 36004
 # Current directory: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_axi_dma_0_0_synth_1
 # Command line: vivado.exe -log hdmi_axi_dma_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_axi_dma_0_0.tcl
 # Log file: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_axi_dma_0_0_synth_1/hdmi_axi_dma_0_0.vds

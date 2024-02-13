@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
 // Date        : Tue Feb 13 00:33:36 2024
 // Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_s03_regslice_0/hdmi_s03_regslice_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top hdmi_s03_regslice_0 -prefix
+//               hdmi_s03_regslice_0_ hdmi_s03_regslice_0_stub.v
 // Design      : hdmi_s03_regslice_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a200tsbg484-1

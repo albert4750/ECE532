@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Fri Oct  4 11:42:16 2019
--- Host        : elodlt-ro running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_axi_dynclk_0_0 -prefix
---               hdmi_axi_dynclk_0_0_ hdmi_axi_dynclk_0_0_sim_netlist.vhdl
+-- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+-- Date        : Tue Feb 13 04:00:37 2024
+-- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dynclk_0_0/hdmi_axi_dynclk_0_0_sim_netlist.vhdl
 -- Design      : hdmi_axi_dynclk_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -49,6 +49,8 @@ entity hdmi_axi_dynclk_0_0_axi_dynclk_S00_AXI is
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dynclk_0_0_axi_dynclk_S00_AXI : entity is "axi_dynclk_S00_AXI";
 end hdmi_axi_dynclk_0_0_axi_dynclk_S00_AXI;
 
 architecture STRUCTURE of hdmi_axi_dynclk_0_0_axi_dynclk_S00_AXI is
@@ -4567,6 +4569,8 @@ entity hdmi_axi_dynclk_0_0_mmcme2_drp is
     \slv_reg2_reg[31]\ : in STD_LOGIC;
     SR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dynclk_0_0_mmcme2_drp : entity is "mmcme2_drp";
 end hdmi_axi_dynclk_0_0_mmcme2_drp;
 
 architecture STRUCTURE of hdmi_axi_dynclk_0_0_mmcme2_drp is
@@ -6259,6 +6263,8 @@ entity hdmi_axi_dynclk_0_0_axi_dynclk is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dynclk_0_0_axi_dynclk : entity is "axi_dynclk";
 end hdmi_axi_dynclk_0_0_axi_dynclk;
 
 architecture STRUCTURE of hdmi_axi_dynclk_0_0_axi_dynclk is

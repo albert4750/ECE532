@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Fri Oct  4 11:50:33 2019
--- Host        : elodlt-ro running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_lmb_bram_0 -prefix
---               hdmi_lmb_bram_0_ hdmi_lmb_bram_0_sim_netlist.vhdl
+-- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+-- Date        : Tue Feb 13 04:01:05 2024
+-- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_lmb_bram_0/hdmi_lmb_bram_0_sim_netlist.vhdl
 -- Design      : hdmi_lmb_bram_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -31,6 +31,8 @@ entity hdmi_lmb_bram_0_blk_mem_gen_prim_wrapper is
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     web : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_lmb_bram_0_blk_mem_gen_prim_wrapper : entity is "blk_mem_gen_prim_wrapper";
 end hdmi_lmb_bram_0_blk_mem_gen_prim_wrapper;
 
 architecture STRUCTURE of hdmi_lmb_bram_0_blk_mem_gen_prim_wrapper is
@@ -2181,6 +2183,8 @@ entity hdmi_lmb_bram_0_blk_mem_gen_prim_width is
     wea : in STD_LOGIC_VECTOR ( 0 to 0 );
     web : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_lmb_bram_0_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end hdmi_lmb_bram_0_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of hdmi_lmb_bram_0_blk_mem_gen_prim_width is
@@ -2539,6 +2543,8 @@ entity hdmi_lmb_bram_0_blk_mem_gen_generic_cstr is
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 );
     web : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_lmb_bram_0_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end hdmi_lmb_bram_0_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of hdmi_lmb_bram_0_blk_mem_gen_generic_cstr is
@@ -2701,6 +2707,8 @@ entity hdmi_lmb_bram_0_blk_mem_gen_top is
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 );
     web : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_lmb_bram_0_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end hdmi_lmb_bram_0_blk_mem_gen_top;
 
 architecture STRUCTURE of hdmi_lmb_bram_0_blk_mem_gen_top is
@@ -2744,6 +2752,8 @@ entity hdmi_lmb_bram_0_blk_mem_gen_v8_4_1_synth is
     wea : in STD_LOGIC_VECTOR ( 3 downto 0 );
     web : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_lmb_bram_0_blk_mem_gen_v8_4_1_synth : entity is "blk_mem_gen_v8_4_1_synth";
 end hdmi_lmb_bram_0_blk_mem_gen_v8_4_1_synth;
 
 architecture STRUCTURE of hdmi_lmb_bram_0_blk_mem_gen_v8_4_1_synth is
@@ -2982,6 +2992,8 @@ entity hdmi_lmb_bram_0_blk_mem_gen_v8_4_1 is
   attribute C_WRITE_WIDTH_B of hdmi_lmb_bram_0_blk_mem_gen_v8_4_1 : entity is 32;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of hdmi_lmb_bram_0_blk_mem_gen_v8_4_1 : entity is "artix7";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_lmb_bram_0_blk_mem_gen_v8_4_1 : entity is "blk_mem_gen_v8_4_1";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of hdmi_lmb_bram_0_blk_mem_gen_v8_4_1 : entity is "yes";
 end hdmi_lmb_bram_0_blk_mem_gen_v8_4_1;

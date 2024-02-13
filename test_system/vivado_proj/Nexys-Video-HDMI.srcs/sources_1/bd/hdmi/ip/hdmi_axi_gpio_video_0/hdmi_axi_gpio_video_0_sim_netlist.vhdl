@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Fri Oct  4 11:36:54 2019
--- Host        : elodlt-ro running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_axi_gpio_video_0 -prefix
---               hdmi_axi_gpio_video_0_ hdmi_axi_gpio_video_0_sim_netlist.vhdl
+-- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+-- Date        : Tue Feb 13 04:00:37 2024
+-- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_gpio_video_0/hdmi_axi_gpio_video_0_sim_netlist.vhdl
 -- Design      : hdmi_axi_gpio_video_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -63,6 +63,8 @@ entity hdmi_axi_gpio_video_0_address_decoder is
     gpio_io_t : in STD_LOGIC_VECTOR ( 0 to 0 );
     gpio2_io_o : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_gpio_video_0_address_decoder : entity is "address_decoder";
 end hdmi_axi_gpio_video_0_address_decoder;
 
 architecture STRUCTURE of hdmi_axi_gpio_video_0_address_decoder is
@@ -943,6 +945,8 @@ entity hdmi_axi_gpio_video_0_cdc_sync is
     gpio_io_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_gpio_video_0_cdc_sync : entity is "cdc_sync";
 end hdmi_axi_gpio_video_0_cdc_sync;
 
 architecture STRUCTURE of hdmi_axi_gpio_video_0_cdc_sync is
@@ -1143,6 +1147,8 @@ entity hdmi_axi_gpio_video_0_interrupt_control is
     p_6_in : in STD_LOGIC;
     Bus_RNW_reg : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_gpio_video_0_interrupt_control : entity is "interrupt_control";
 end hdmi_axi_gpio_video_0_interrupt_control;
 
 architecture STRUCTURE of hdmi_axi_gpio_video_0_interrupt_control is
@@ -1363,6 +1369,8 @@ entity hdmi_axi_gpio_video_0_GPIO_Core is
     gpio_io_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     gpio2_io_i : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_gpio_video_0_GPIO_Core : entity is "GPIO_Core";
 end hdmi_axi_gpio_video_0_GPIO_Core;
 
 architecture STRUCTURE of hdmi_axi_gpio_video_0_GPIO_Core is
@@ -1645,6 +1653,8 @@ entity hdmi_axi_gpio_video_0_slave_attachment is
     gpio2_io_o : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ip2bus_data_i_D1_reg[0]_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_gpio_video_0_slave_attachment : entity is "slave_attachment";
 end hdmi_axi_gpio_video_0_slave_attachment;
 
 architecture STRUCTURE of hdmi_axi_gpio_video_0_slave_attachment is
@@ -2393,6 +2403,8 @@ entity hdmi_axi_gpio_video_0_axi_lite_ipif is
     gpio2_io_o : in STD_LOGIC_VECTOR ( 0 to 0 );
     \ip2bus_data_i_D1_reg[0]\ : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_gpio_video_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end hdmi_axi_gpio_video_0_axi_lite_ipif;
 
 architecture STRUCTURE of hdmi_axi_gpio_video_0_axi_lite_ipif is
@@ -2521,6 +2533,8 @@ entity hdmi_axi_gpio_video_0_axi_gpio is
   attribute C_TRI_DEFAULT of hdmi_axi_gpio_video_0_axi_gpio : entity is -1;
   attribute C_TRI_DEFAULT_2 : integer;
   attribute C_TRI_DEFAULT_2 of hdmi_axi_gpio_video_0_axi_gpio : entity is -1;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_gpio_video_0_axi_gpio : entity is "axi_gpio";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of hdmi_axi_gpio_video_0_axi_gpio : entity is "yes";
   attribute ip_group : string;

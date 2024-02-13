@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-//Date        : Tue Feb 13 00:32:14 2024
+//Date        : Tue Feb 13 04:40:55 2024
 //Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
 //Command     : generate_target hdmi.bd
 //Design      : hdmi
@@ -97,7 +97,7 @@ module hdmi
   wire axi_dma_0_M_AXI_MM2S_ARREADY;
   wire [2:0]axi_dma_0_M_AXI_MM2S_ARSIZE;
   wire axi_dma_0_M_AXI_MM2S_ARVALID;
-  wire [31:0]axi_dma_0_M_AXI_MM2S_RDATA;
+  wire [127:0]axi_dma_0_M_AXI_MM2S_RDATA;
   wire axi_dma_0_M_AXI_MM2S_RLAST;
   wire axi_dma_0_M_AXI_MM2S_RREADY;
   wire [1:0]axi_dma_0_M_AXI_MM2S_RRESP;
@@ -113,10 +113,10 @@ module hdmi
   wire axi_dma_0_M_AXI_S2MM_BREADY;
   wire [1:0]axi_dma_0_M_AXI_S2MM_BRESP;
   wire axi_dma_0_M_AXI_S2MM_BVALID;
-  wire [31:0]axi_dma_0_M_AXI_S2MM_WDATA;
+  wire [127:0]axi_dma_0_M_AXI_S2MM_WDATA;
   wire axi_dma_0_M_AXI_S2MM_WLAST;
   wire axi_dma_0_M_AXI_S2MM_WREADY;
-  wire [3:0]axi_dma_0_M_AXI_S2MM_WSTRB;
+  wire [15:0]axi_dma_0_M_AXI_S2MM_WSTRB;
   wire axi_dma_0_M_AXI_S2MM_WVALID;
   wire axi_dynclk_0_PXL_CLK_5X_O;
   wire axi_dynclk_0_PXL_CLK_O;
@@ -1809,7 +1809,7 @@ module hdmi_axi_mem_intercon_0
   output S04_AXI_arready;
   input [2:0]S04_AXI_arsize;
   input S04_AXI_arvalid;
-  output [31:0]S04_AXI_rdata;
+  output [127:0]S04_AXI_rdata;
   output S04_AXI_rlast;
   input S04_AXI_rready;
   output [1:0]S04_AXI_rresp;
@@ -1827,10 +1827,10 @@ module hdmi_axi_mem_intercon_0
   input S05_AXI_bready;
   output [1:0]S05_AXI_bresp;
   output S05_AXI_bvalid;
-  input [31:0]S05_AXI_wdata;
+  input [127:0]S05_AXI_wdata;
   input S05_AXI_wlast;
   output S05_AXI_wready;
-  input [3:0]S05_AXI_wstrb;
+  input [15:0]S05_AXI_wstrb;
   input S05_AXI_wvalid;
 
   wire M00_ACLK_1;
@@ -1934,7 +1934,7 @@ module hdmi_axi_mem_intercon_0
   wire axi_mem_intercon_to_s04_couplers_ARREADY;
   wire [2:0]axi_mem_intercon_to_s04_couplers_ARSIZE;
   wire axi_mem_intercon_to_s04_couplers_ARVALID;
-  wire [31:0]axi_mem_intercon_to_s04_couplers_RDATA;
+  wire [127:0]axi_mem_intercon_to_s04_couplers_RDATA;
   wire axi_mem_intercon_to_s04_couplers_RLAST;
   wire axi_mem_intercon_to_s04_couplers_RREADY;
   wire [1:0]axi_mem_intercon_to_s04_couplers_RRESP;
@@ -1950,10 +1950,10 @@ module hdmi_axi_mem_intercon_0
   wire axi_mem_intercon_to_s05_couplers_BREADY;
   wire [1:0]axi_mem_intercon_to_s05_couplers_BRESP;
   wire axi_mem_intercon_to_s05_couplers_BVALID;
-  wire [31:0]axi_mem_intercon_to_s05_couplers_WDATA;
+  wire [127:0]axi_mem_intercon_to_s05_couplers_WDATA;
   wire axi_mem_intercon_to_s05_couplers_WLAST;
   wire axi_mem_intercon_to_s05_couplers_WREADY;
-  wire [3:0]axi_mem_intercon_to_s05_couplers_WSTRB;
+  wire [15:0]axi_mem_intercon_to_s05_couplers_WSTRB;
   wire axi_mem_intercon_to_s05_couplers_WVALID;
   wire [28:0]m00_couplers_to_axi_mem_intercon_ARADDR;
   wire [1:0]m00_couplers_to_axi_mem_intercon_ARBURST;
@@ -2211,7 +2211,7 @@ module hdmi_axi_mem_intercon_0
   assign S04_ACLK_1 = S04_ACLK;
   assign S04_ARESETN_1 = S04_ARESETN;
   assign S04_AXI_arready = axi_mem_intercon_to_s04_couplers_ARREADY;
-  assign S04_AXI_rdata[31:0] = axi_mem_intercon_to_s04_couplers_RDATA;
+  assign S04_AXI_rdata[127:0] = axi_mem_intercon_to_s04_couplers_RDATA;
   assign S04_AXI_rlast = axi_mem_intercon_to_s04_couplers_RLAST;
   assign S04_AXI_rresp[1:0] = axi_mem_intercon_to_s04_couplers_RRESP;
   assign S04_AXI_rvalid = axi_mem_intercon_to_s04_couplers_RVALID;
@@ -2293,9 +2293,9 @@ module hdmi_axi_mem_intercon_0
   assign axi_mem_intercon_to_s05_couplers_AWSIZE = S05_AXI_awsize[2:0];
   assign axi_mem_intercon_to_s05_couplers_AWVALID = S05_AXI_awvalid;
   assign axi_mem_intercon_to_s05_couplers_BREADY = S05_AXI_bready;
-  assign axi_mem_intercon_to_s05_couplers_WDATA = S05_AXI_wdata[31:0];
+  assign axi_mem_intercon_to_s05_couplers_WDATA = S05_AXI_wdata[127:0];
   assign axi_mem_intercon_to_s05_couplers_WLAST = S05_AXI_wlast;
-  assign axi_mem_intercon_to_s05_couplers_WSTRB = S05_AXI_wstrb[3:0];
+  assign axi_mem_intercon_to_s05_couplers_WSTRB = S05_AXI_wstrb[15:0];
   assign axi_mem_intercon_to_s05_couplers_WVALID = S05_AXI_wvalid;
   assign m00_couplers_to_axi_mem_intercon_ARREADY = M00_AXI_arready;
   assign m00_couplers_to_axi_mem_intercon_AWREADY = M00_AXI_awready;
@@ -7444,7 +7444,7 @@ module s04_couplers_imp_16XN6B0
   output S_AXI_arready;
   input [2:0]S_AXI_arsize;
   input S_AXI_arvalid;
-  output [31:0]S_AXI_rdata;
+  output [127:0]S_AXI_rdata;
   output S_AXI_rlast;
   input S_AXI_rready;
   output [1:0]S_AXI_rresp;
@@ -7475,7 +7475,7 @@ module s04_couplers_imp_16XN6B0
   wire s04_couplers_to_auto_us_ARREADY;
   wire [2:0]s04_couplers_to_auto_us_ARSIZE;
   wire s04_couplers_to_auto_us_ARVALID;
-  wire [31:0]s04_couplers_to_auto_us_RDATA;
+  wire [127:0]s04_couplers_to_auto_us_RDATA;
   wire s04_couplers_to_auto_us_RLAST;
   wire s04_couplers_to_auto_us_RREADY;
   wire [1:0]s04_couplers_to_auto_us_RRESP;
@@ -7494,7 +7494,7 @@ module s04_couplers_imp_16XN6B0
   assign S_ACLK_1 = S_ACLK;
   assign S_ARESETN_1 = S_ARESETN;
   assign S_AXI_arready = s04_couplers_to_auto_us_ARREADY;
-  assign S_AXI_rdata[31:0] = s04_couplers_to_auto_us_RDATA;
+  assign S_AXI_rdata[127:0] = s04_couplers_to_auto_us_RDATA;
   assign S_AXI_rlast = s04_couplers_to_auto_us_RLAST;
   assign S_AXI_rresp[1:0] = s04_couplers_to_auto_us_RRESP;
   assign S_AXI_rvalid = s04_couplers_to_auto_us_RVALID;
@@ -7619,10 +7619,10 @@ module s05_couplers_imp_24WAMY
   input S_AXI_bready;
   output [1:0]S_AXI_bresp;
   output S_AXI_bvalid;
-  input [31:0]S_AXI_wdata;
+  input [127:0]S_AXI_wdata;
   input S_AXI_wlast;
   output S_AXI_wready;
-  input [3:0]S_AXI_wstrb;
+  input [15:0]S_AXI_wstrb;
   input S_AXI_wvalid;
 
   wire S_ACLK_1;
@@ -7656,10 +7656,10 @@ module s05_couplers_imp_24WAMY
   wire s05_couplers_to_auto_us_BREADY;
   wire [1:0]s05_couplers_to_auto_us_BRESP;
   wire s05_couplers_to_auto_us_BVALID;
-  wire [31:0]s05_couplers_to_auto_us_WDATA;
+  wire [127:0]s05_couplers_to_auto_us_WDATA;
   wire s05_couplers_to_auto_us_WLAST;
   wire s05_couplers_to_auto_us_WREADY;
-  wire [3:0]s05_couplers_to_auto_us_WSTRB;
+  wire [15:0]s05_couplers_to_auto_us_WSTRB;
   wire s05_couplers_to_auto_us_WVALID;
 
   assign M_AXI_awaddr[31:0] = auto_us_to_s05_couplers_AWADDR;
@@ -7694,9 +7694,9 @@ module s05_couplers_imp_24WAMY
   assign s05_couplers_to_auto_us_AWSIZE = S_AXI_awsize[2:0];
   assign s05_couplers_to_auto_us_AWVALID = S_AXI_awvalid;
   assign s05_couplers_to_auto_us_BREADY = S_AXI_bready;
-  assign s05_couplers_to_auto_us_WDATA = S_AXI_wdata[31:0];
+  assign s05_couplers_to_auto_us_WDATA = S_AXI_wdata[127:0];
   assign s05_couplers_to_auto_us_WLAST = S_AXI_wlast;
-  assign s05_couplers_to_auto_us_WSTRB = S_AXI_wstrb[3:0];
+  assign s05_couplers_to_auto_us_WSTRB = S_AXI_wstrb[15:0];
   assign s05_couplers_to_auto_us_WVALID = S_AXI_wvalid;
   hdmi_auto_us_3 auto_us
        (.m_axi_awaddr(auto_us_to_s05_couplers_AWADDR),

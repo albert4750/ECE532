@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
--- Date        : Tue Feb 13 00:34:31 2024
+-- Date        : Tue Feb 13 00:34:30 2024
 -- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_1/hdmi_auto_us_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_auto_us_1 -prefix
+--               hdmi_auto_us_1_ hdmi_auto_us_1_sim_netlist.vhdl
 -- Design      : hdmi_auto_us_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -215,8 +215,6 @@ entity hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_w_upsizer is
     \WORD_LANE[1].USE_ALWAYS_PACKER.BYTE_LANE[14].USE_RTL_DATA.wstrb_wrap_buffer_q_reg[30]_0\ : in STD_LOGIC_VECTOR ( 7 downto 0 );
     \WORD_LANE[1].USE_ALWAYS_PACKER.BYTE_LANE[15].USE_RTL_DATA.wstrb_wrap_buffer_q_reg[31]_0\ : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_w_upsizer : entity is "axi_dwidth_converter_v2_1_17_w_upsizer";
 end hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_w_upsizer;
 
 architecture STRUCTURE of hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_w_upsizer is
@@ -6251,8 +6249,6 @@ entity hdmi_auto_us_1_axi_register_slice_v2_1_17_axic_register_slice is
     D : in STD_LOGIC_VECTOR ( 60 downto 0 );
     CO : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_us_1_axi_register_slice_v2_1_17_axic_register_slice : entity is "axi_register_slice_v2_1_17_axic_register_slice";
 end hdmi_auto_us_1_axi_register_slice_v2_1_17_axic_register_slice;
 
 architecture STRUCTURE of hdmi_auto_us_1_axi_register_slice_v2_1_17_axic_register_slice is
@@ -8613,8 +8609,6 @@ entity hdmi_auto_us_1_generic_baseblocks_v2_1_0_command_fifo is
     m_axi_awready : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 37 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_us_1_generic_baseblocks_v2_1_0_command_fifo : entity is "generic_baseblocks_v2_1_0_command_fifo";
 end hdmi_auto_us_1_generic_baseblocks_v2_1_0_command_fifo;
 
 architecture STRUCTURE of hdmi_auto_us_1_generic_baseblocks_v2_1_0_command_fifo is
@@ -14557,8 +14551,6 @@ entity hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_a_upsizer is
     m_axi_awready : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 37 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_a_upsizer : entity is "axi_dwidth_converter_v2_1_17_a_upsizer";
 end hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_a_upsizer;
 
 architecture STRUCTURE of hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_a_upsizer is
@@ -14825,8 +14817,6 @@ entity hdmi_auto_us_1_axi_register_slice_v2_1_17_axi_register_slice is
     D : in STD_LOGIC_VECTOR ( 60 downto 0 );
     CO : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_us_1_axi_register_slice_v2_1_17_axi_register_slice : entity is "axi_register_slice_v2_1_17_axi_register_slice";
 end hdmi_auto_us_1_axi_register_slice_v2_1_17_axi_register_slice;
 
 architecture STRUCTURE of hdmi_auto_us_1_axi_register_slice_v2_1_17_axi_register_slice is
@@ -14882,8 +14872,6 @@ entity hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_axi_upsizer is
     m_axi_wready : in STD_LOGIC;
     m_axi_awready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_axi_upsizer : entity is "axi_dwidth_converter_v2_1_17_axi_upsizer";
 end hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_axi_upsizer;
 
 architecture STRUCTURE of hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_axi_upsizer is
@@ -16366,8 +16354,6 @@ entity hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_top is
   attribute C_S_AXI_ID_WIDTH of hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_top : entity is 1;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_top : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_top : entity is "axi_dwidth_converter_v2_1_17_top";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of hdmi_auto_us_1_axi_dwidth_converter_v2_1_17_top : entity is 1;
   attribute P_AXI4 : integer;

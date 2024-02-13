@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Fri Oct  4 11:44:52 2019
--- Host        : elodlt-ro running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_axi_timer_0_0 -prefix
---               hdmi_axi_timer_0_0_ hdmi_axi_timer_0_0_sim_netlist.vhdl
+-- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+-- Date        : Tue Feb 13 04:00:40 2024
+-- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode funcsim
+--               C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_timer_0_0/hdmi_axi_timer_0_0_sim_netlist.vhdl
 -- Design      : hdmi_axi_timer_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -21,6 +21,8 @@ entity hdmi_axi_timer_0_0_cdc_sync is
     capturetrig0 : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_timer_0_0_cdc_sync : entity is "cdc_sync";
 end hdmi_axi_timer_0_0_cdc_sync;
 
 architecture STRUCTURE of hdmi_axi_timer_0_0_cdc_sync is
@@ -481,6 +483,8 @@ entity hdmi_axi_timer_0_0_counter_f is
     Bus_RNW_reg_reg_0 : in STD_LOGIC;
     Bus_RNW_reg_reg_1 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_timer_0_0_counter_f : entity is "counter_f";
 end hdmi_axi_timer_0_0_counter_f;
 
 architecture STRUCTURE of hdmi_axi_timer_0_0_counter_f is
@@ -3487,6 +3491,8 @@ entity hdmi_axi_timer_0_0_mux_onehot_f is
     \TCSR1_GENERATE[31].TCSR1_FF_I\ : in STD_LOGIC;
     \INFERRED_GEN.icount_out_reg[0]\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_timer_0_0_mux_onehot_f : entity is "mux_onehot_f";
 end hdmi_axi_timer_0_0_mux_onehot_f;
 
 architecture STRUCTURE of hdmi_axi_timer_0_0_mux_onehot_f is
@@ -4175,6 +4181,8 @@ entity hdmi_axi_timer_0_0_pselect_f is
     ce_expnd_i_7 : out STD_LOGIC;
     \bus2ip_addr_i_reg[4]\ : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_timer_0_0_pselect_f : entity is "pselect_f";
 end hdmi_axi_timer_0_0_pselect_f;
 
 architecture STRUCTURE of hdmi_axi_timer_0_0_pselect_f is
@@ -4458,6 +4466,8 @@ entity hdmi_axi_timer_0_0_address_decoder is
     bus2ip_rnw_i : in STD_LOGIC;
     \bus2ip_addr_i_reg[4]\ : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_timer_0_0_address_decoder : entity is "address_decoder";
 end hdmi_axi_timer_0_0_address_decoder;
 
 architecture STRUCTURE of hdmi_axi_timer_0_0_address_decoder is
@@ -5912,6 +5922,8 @@ entity hdmi_axi_timer_0_0_count_module is
     \TCSR0_GENERATE[31].TCSR0_FF_I\ : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_timer_0_0_count_module : entity is "count_module";
 end hdmi_axi_timer_0_0_count_module;
 
 architecture STRUCTURE of hdmi_axi_timer_0_0_count_module is
@@ -7176,6 +7188,8 @@ entity hdmi_axi_timer_0_0_timer_control is
     capturetrig0 : in STD_LOGIC;
     capturetrig1 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_timer_0_0_timer_control : entity is "timer_control";
 end hdmi_axi_timer_0_0_timer_control;
 
 architecture STRUCTURE of hdmi_axi_timer_0_0_timer_control is
@@ -8443,6 +8457,8 @@ entity hdmi_axi_timer_0_0_slave_attachment is
     read_done1 : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_timer_0_0_slave_attachment : entity is "slave_attachment";
 end hdmi_axi_timer_0_0_slave_attachment;
 
 architecture STRUCTURE of hdmi_axi_timer_0_0_slave_attachment is
@@ -9517,6 +9533,8 @@ entity hdmi_axi_timer_0_0_tc_core is
     capturetrig0 : in STD_LOGIC;
     capturetrig1 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_timer_0_0_tc_core : entity is "tc_core";
 end hdmi_axi_timer_0_0_tc_core;
 
 architecture STRUCTURE of hdmi_axi_timer_0_0_tc_core is
@@ -10019,6 +10037,8 @@ entity hdmi_axi_timer_0_0_axi_lite_ipif is
     read_done1 : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 31 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_timer_0_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end hdmi_axi_timer_0_0_axi_lite_ipif;
 
 architecture STRUCTURE of hdmi_axi_timer_0_0_axi_lite_ipif is
@@ -10200,6 +10220,8 @@ entity hdmi_axi_timer_0_0_axi_timer is
   attribute C_TRIG0_ASSERT of hdmi_axi_timer_0_0_axi_timer : entity is "1'b1";
   attribute C_TRIG1_ASSERT : string;
   attribute C_TRIG1_ASSERT of hdmi_axi_timer_0_0_axi_timer : entity is "1'b1";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_timer_0_0_axi_timer : entity is "axi_timer";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of hdmi_axi_timer_0_0_axi_timer : entity is "yes";
 end hdmi_axi_timer_0_0_axi_timer;

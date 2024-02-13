@@ -13,15 +13,15 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/uoft/20241/ECE532/gray_20182'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
-add_files: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 436.172 ; gain = 132.617
+add_files: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 436.500 ; gain = 132.859
 Command: synth_design -top hdmi_wrapper -part xc7a200tsbg484-1 -flatten_hierarchy none -directive RuntimeOptimized -fsm_extraction off
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 26724 
+INFO: Helper process launched with PID 27952 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 550.180 ; gain = 108.082
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 549.676 ; gain = 107.996
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'hdmi_wrapper' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/imports/hdl/hdmi_wrapper.v:12]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
@@ -31,64 +31,64 @@ INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Xilinx/Vivado/2018.2/script
 	Parameter SLEW bound to: SLOW - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (1#1) [C:/Xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
 INFO: [Synth 8-6157] synthesizing module 'hdmi' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:13]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_dma_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_dma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_dma_0_0' (2#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_dma_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_dma_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_dma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_dma_0_0' (2#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_dma_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'axi_dma_0' of module 'hdmi_axi_dma_0_0' requires 64 connections, but only 58 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:547]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_dynclk_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_dynclk_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_dynclk_0_0' (3#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_dynclk_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_dynclk_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_dynclk_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_dynclk_0_0' (3#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_dynclk_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'axi_dynclk_0' of module 'hdmi_axi_dynclk_0_0' requires 25 connections, but only 24 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:606]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_gpio_video_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_gpio_video_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_gpio_video_0' (4#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_gpio_video_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_gpio_video_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_gpio_video_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_gpio_video_0' (4#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_gpio_video_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_mem_intercon_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:1524]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_JC9FNM' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:4238]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_ds_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_ds_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_ds_0' (5#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_ds_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_rs_w_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_rs_w_0' (6#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_m00_regslice_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_m00_regslice_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_m00_regslice_0' (7#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_m00_regslice_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_ds_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_ds_0' (5#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_ds_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_rs_w_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_rs_w_0' (6#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_m00_regslice_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_m00_regslice_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_m00_regslice_0' (7#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_m00_regslice_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'm00_regslice' of module 'hdmi_m00_regslice_0' requires 72 connections, but only 70 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:4777]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_JC9FNM' (8#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:4238]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_10D7LX3' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6140]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_rs_w_1' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_rs_w_1' (9#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_rs_w_1' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_rs_w_1' (9#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_1_stub.v:6]
 WARNING: [Synth 8-350] instance 'auto_rs_w' of module 'hdmi_auto_rs_w_1' requires 34 connections, but only 33 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6299]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_us_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_us_0' (10#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_s00_regslice_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_s00_regslice_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_s00_regslice_0' (11#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_s00_regslice_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_us_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_us_0' (10#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_s00_regslice_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_s00_regslice_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_s00_regslice_0' (11#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_s00_regslice_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_10D7LX3' (12#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6140]
 INFO: [Synth 8-6157] synthesizing module 's01_couplers_imp_8CUCHT' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6551]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_rs_w_2' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_rs_w_2' (13#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_rs_w_2' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_rs_w_2' (13#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_rs_w_2_stub.v:6]
 WARNING: [Synth 8-350] instance 'auto_rs_w' of module 'hdmi_auto_rs_w_2' requires 40 connections, but only 39 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6740]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_us_1' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_us_1' (14#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_s01_regslice_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_s01_regslice_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_s01_regslice_0' (15#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_s01_regslice_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_us_1' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_us_1' (14#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_s01_regslice_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_s01_regslice_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_s01_regslice_0' (15#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_s01_regslice_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 's01_couplers_imp_8CUCHT' (16#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6551]
 INFO: [Synth 8-6157] synthesizing module 's02_couplers_imp_RBV57E' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6864]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_s02_regslice_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_s02_regslice_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_s02_regslice_0' (17#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_s02_regslice_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_s02_regslice_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_s02_regslice_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_s02_regslice_0' (17#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_s02_regslice_0_stub.v:6]
 WARNING: [Synth 8-350] instance 's02_regslice' of module 'hdmi_s02_regslice_0' requires 72 connections, but only 70 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:7143]
 INFO: [Synth 8-6155] done synthesizing module 's02_couplers_imp_RBV57E' (18#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6864]
 INFO: [Synth 8-6157] synthesizing module 's03_couplers_imp_1YVIHYK' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:7216]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_s03_regslice_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_s03_regslice_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_s03_regslice_0' (19#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_s03_regslice_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_s03_regslice_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_s03_regslice_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_s03_regslice_0' (19#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_s03_regslice_0_stub.v:6]
 WARNING: [Synth 8-350] instance 's03_regslice' of module 'hdmi_s03_regslice_0' requires 34 connections, but only 33 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:7351]
 INFO: [Synth 8-6155] done synthesizing module 's03_couplers_imp_1YVIHYK' (20#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:7216]
 INFO: [Synth 8-6157] synthesizing module 's04_couplers_imp_16XN6B0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:7387]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_us_2' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_us_2' (21#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_us_2' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_us_2' (21#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_2_stub.v:6]
 WARNING: [Synth 8-350] instance 'auto_us' of module 'hdmi_auto_us_2' requires 34 connections, but only 33 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:7514]
 INFO: [Synth 8-6155] done synthesizing module 's04_couplers_imp_16XN6B0' (22#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:7387]
 INFO: [Synth 8-6157] synthesizing module 's05_couplers_imp_24WAMY' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:7550]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_us_3' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_3_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_us_3' (23#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_3_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_auto_us_3' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_3_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_auto_us_3' (23#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_auto_us_3_stub.v:6]
 WARNING: [Synth 8-350] instance 'auto_us' of module 'hdmi_auto_us_3' requires 40 connections, but only 39 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:7701]
 INFO: [Synth 8-6155] done synthesizing module 's05_couplers_imp_24WAMY' (24#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:7550]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_xbar_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_xbar_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_xbar_0' (25#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_xbar_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_xbar_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_xbar_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_xbar_0' (25#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_xbar_0_stub.v:6]
 WARNING: [Synth 8-689] width (5) of port connection 's_axi_arready' does not match port width (6) of module 'hdmi_xbar_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:2686]
 WARNING: [Synth 8-689] width (1280) of port connection 's_axi_rdata' does not match port width (1536) of module 'hdmi_xbar_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:2703]
 WARNING: [Synth 8-689] width (5) of port connection 's_axi_rlast' does not match port width (6) of module 'hdmi_xbar_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:2704]
@@ -96,28 +96,28 @@ WARNING: [Synth 8-689] width (10) of port connection 's_axi_rresp' does not matc
 WARNING: [Synth 8-689] width (5) of port connection 's_axi_rvalid' does not match port width (6) of module 'hdmi_xbar_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:2707]
 WARNING: [Synth 8-350] instance 'xbar' of module 'hdmi_xbar_0' requires 78 connections, but only 76 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:2636]
 INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_mem_intercon_0' (26#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:1524]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_timer_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_timer_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_timer_0_0' (27#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_timer_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_timer_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_timer_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_timer_0_0' (27#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_timer_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'axi_timer_0' of module 'hdmi_axi_timer_0_0' requires 26 connections, but only 23 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:810]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_uartlite_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_uartlite_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_uartlite_0_0' (28#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_uartlite_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_uartlite_0_0' (28#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_uartlite_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'axi_uartlite_0' of module 'hdmi_axi_uartlite_0_0' requires 22 connections, but only 21 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:834]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_vdma_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_vdma_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_vdma_0_0' (29#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_axi_vdma_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_axi_vdma_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_vdma_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_axi_vdma_0_0' (29#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_axi_vdma_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'axi_vdma_0' of module 'hdmi_axi_vdma_0_0' requires 67 connections, but only 64 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:856]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_dvi2rgb_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_dvi2rgb_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_dvi2rgb_0_0' (30#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_dvi2rgb_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_dvi2rgb_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_dvi2rgb_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_dvi2rgb_0_0' (30#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_dvi2rgb_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'dvi2rgb_0' of module 'hdmi_dvi2rgb_0_0' requires 20 connections, but only 19 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:921]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_grayscale_0_1' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_grayscale_0_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_grayscale_0_1' (31#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_grayscale_0_1_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_mdm_1_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_mdm_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_mdm_1_0' (32#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_grayscale_0_1' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_grayscale_0_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_grayscale_0_1' (31#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_grayscale_0_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_mdm_1_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_mdm_1_0' (32#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_mdm_1_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'mdm_1' of module 'hdmi_mdm_1_0' requires 10 connections, but only 9 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:952]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_microblaze_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_microblaze_0_0' (33#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_microblaze_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_microblaze_0_0' (33#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'microblaze_0' of module 'hdmi_microblaze_0_0' requires 130 connections, but only 110 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:964]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_microblaze_0_axi_intc_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_axi_intc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_microblaze_0_axi_intc_0' (34#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_microblaze_0_axi_intc_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_axi_intc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_microblaze_0_axi_intc_0' (34#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_axi_intc_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'hdmi_microblaze_0_axi_periph_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:2715]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1HARIPC' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:4106]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1HARIPC' (35#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:4106]
@@ -139,53 +139,53 @@ INFO: [Synth 8-6157] synthesizing module 'm08_couplers_imp_1VIC0G6' [C:/Users/Al
 INFO: [Synth 8-6155] done synthesizing module 'm08_couplers_imp_1VIC0G6' (43#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:5781]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_1UVR5X' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6405]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_1UVR5X' (44#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6405]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_xbar_1' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_xbar_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_xbar_1' (45#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_xbar_1_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_xbar_1' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_xbar_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_xbar_1' (45#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_xbar_1_stub.v:6]
 WARNING: [Synth 8-689] width (15) of port connection 'm_axi_arprot' does not match port width (27) of module 'hdmi_xbar_1' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:4067]
 WARNING: [Synth 8-689] width (15) of port connection 'm_axi_awprot' does not match port width (27) of module 'hdmi_xbar_1' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:4071]
 WARNING: [Synth 8-689] width (32) of port connection 'm_axi_wstrb' does not match port width (36) of module 'hdmi_xbar_1' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:4083]
 INFO: [Synth 8-6155] done synthesizing module 'hdmi_microblaze_0_axi_periph_0' (46#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:2715]
 INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_RJJ05W' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:5906]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_dlmb_bram_if_cntlr_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_dlmb_bram_if_cntlr_0' (47#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_dlmb_v10_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_dlmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_dlmb_v10_0' (48#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_dlmb_bram_if_cntlr_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_dlmb_bram_if_cntlr_0' (47#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_dlmb_v10_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_dlmb_v10_0' (48#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_dlmb_v10_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'dlmb_v10' of module 'hdmi_dlmb_v10_0' requires 25 connections, but only 24 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6052]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_ilmb_bram_if_cntlr_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_ilmb_bram_if_cntlr_0' (49#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_ilmb_v10_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_ilmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_ilmb_v10_0' (50#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_ilmb_bram_if_cntlr_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_ilmb_bram_if_cntlr_0' (49#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_ilmb_v10_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_ilmb_v10_0' (50#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_ilmb_v10_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'ilmb_v10' of module 'hdmi_ilmb_v10_0' requires 25 connections, but only 24 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:6098]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_lmb_bram_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_lmb_bram_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_lmb_bram_0' (51#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_lmb_bram_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_lmb_bram_0' (51#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_lmb_bram_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'microblaze_0_local_memory_imp_RJJ05W' (52#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:5906]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_microblaze_0_xlconcat_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_xlconcat_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_microblaze_0_xlconcat_0' (53#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_xlconcat_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_mig_7series_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_mig_7series_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_mig_7series_0_0' (54#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_mig_7series_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_microblaze_0_xlconcat_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_xlconcat_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_microblaze_0_xlconcat_0' (53#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_microblaze_0_xlconcat_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_mig_7series_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_mig_7series_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_mig_7series_0_0' (54#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_mig_7series_0_0_stub.v:5]
 WARNING: [Synth 8-350] instance 'mig_7series_0' of module 'hdmi_mig_7series_0_0' requires 68 connections, but only 58 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:1326]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_rgb2dvi_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_rgb2dvi_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_rgb2dvi_0_0' (55#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_rgb2dvi_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_rst_mig_7series_0_100M_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_rst_mig_7series_0_100M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_rst_mig_7series_0_100M_0' (56#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_rst_mig_7series_0_100M_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_rgb2dvi_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_rgb2dvi_0_0' (55#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_rgb2dvi_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_rst_mig_7series_0_100M_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_rst_mig_7series_0_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_rst_mig_7series_0_100M_0' (56#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_rst_mig_7series_0_100M_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'rst_mig_7series_0_100M' of module 'hdmi_rst_mig_7series_0_100M_0' requires 10 connections, but only 9 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:1397]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_rst_mig_7series_0_pxl_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_rst_mig_7series_0_pxl_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_rst_mig_7series_0_pxl_0' (57#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_rst_mig_7series_0_pxl_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_rst_mig_7series_0_pxl_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_rst_mig_7series_0_pxl_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_rst_mig_7series_0_pxl_0' (57#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_rst_mig_7series_0_pxl_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'rst_mig_7series_0_pxl' of module 'hdmi_rst_mig_7series_0_pxl_0' requires 10 connections, but only 7 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:1407]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_v_axi4s_vid_out_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_v_axi4s_vid_out_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_v_axi4s_vid_out_0_0' (58#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_v_axi4s_vid_out_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_v_axi4s_vid_out_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_v_axi4s_vid_out_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_v_axi4s_vid_out_0_0' (58#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_v_axi4s_vid_out_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'v_axi4s_vid_out_0' of module 'hdmi_v_axi4s_vid_out_0_0' requires 28 connections, but only 20 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:1415]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_v_tc_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_v_tc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_v_tc_0_0' (59#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_v_tc_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_v_tc_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_v_tc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_v_tc_0_0' (59#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_v_tc_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'v_tc_0' of module 'hdmi_v_tc_0_0' requires 32 connections, but only 31 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:1436]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_v_tc_1_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_v_tc_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_v_tc_1_0' (60#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_v_tc_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_v_tc_1_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_v_tc_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_v_tc_1_0' (60#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_v_tc_1_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'v_tc_1' of module 'hdmi_v_tc_1_0' requires 29 connections, but only 28 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:1468]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_v_vid_in_axi4s_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_v_vid_in_axi4s_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_v_vid_in_axi4s_0_0' (61#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_v_vid_in_axi4s_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_v_vid_in_axi4s_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_v_vid_in_axi4s_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_v_vid_in_axi4s_0_0' (61#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_v_vid_in_axi4s_0_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'v_vid_in_axi4s_0' of module 'hdmi_v_vid_in_axi4s_0_0' requires 28 connections, but only 22 given [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:1497]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_xlconstant_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_xlconstant_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_xlconstant_0_0' (62#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-39600-DESKTOP-Q9UC3EP/realtime/hdmi_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_xlconstant_0_0' [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_xlconstant_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_xlconstant_0_0' (62#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/.Xil/Vivado-48016-DESKTOP-Q9UC3EP/realtime/hdmi_xlconstant_0_0_stub.v:6]
 INFO: [Synth 8-6155] done synthesizing module 'hdmi' (63#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'hdmi_wrapper' (64#1) [C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/imports/hdl/hdmi_wrapper.v:12]
 WARNING: [Synth 8-3331] design s00_couplers_imp_1UVR5X has unconnected port M_ACLK
@@ -247,7 +247,7 @@ WARNING: [Synth 8-3331] design m00_couplers_imp_JC9FNM has unconnected port S_AX
 WARNING: [Synth 8-3331] design m00_couplers_imp_JC9FNM has unconnected port S_AXI_awaddr[30]
 WARNING: [Synth 8-3331] design m00_couplers_imp_JC9FNM has unconnected port S_AXI_awaddr[29]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 611.250 ; gain = 169.152
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 610.344 ; gain = 168.664
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -260,10 +260,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 611.250 ; gain = 169.152
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 610.344 ; gain = 168.664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 611.250 ; gain = 169.152
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 610.344 ; gain = 168.664
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -334,10 +334,10 @@ Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_pro
 Finished Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0/hdmi_auto_ds_0/hdmi_auto_ds_0_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/m00_couplers/auto_ds'
 Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_rs_w_0/hdmi_auto_rs_w_0/hdmi_auto_rs_w_0_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/m00_couplers/auto_rs_w'
 Finished Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_rs_w_0/hdmi_auto_rs_w_0/hdmi_auto_rs_w_0_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/m00_couplers/auto_rs_w'
-Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3/hdmi_auto_us_3_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/s05_couplers/auto_us'
-Finished Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3/hdmi_auto_us_3_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/s05_couplers/auto_us'
-Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2/hdmi_auto_us_2_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/s04_couplers/auto_us'
-Finished Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2/hdmi_auto_us_2_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/s04_couplers/auto_us'
+Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3/hdmi_auto_us_1_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/s05_couplers/auto_us'
+Finished Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3/hdmi_auto_us_1_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/s05_couplers/auto_us'
+Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2/hdmi_auto_us_0_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/s04_couplers/auto_us'
+Finished Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2/hdmi_auto_us_0_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/s04_couplers/auto_us'
 Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_s03_regslice_0/hdmi_s03_regslice_0/hdmi_s03_regslice_0_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/s03_couplers/s03_regslice'
 Finished Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_s03_regslice_0/hdmi_s03_regslice_0/hdmi_s03_regslice_0_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/s03_couplers/s03_regslice'
 Parsing XDC File [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_s02_regslice_0/hdmi_s02_regslice_0/hdmi_s02_regslice_0_in_context.xdc] for cell 'hdmi_i/axi_mem_intercon/s02_couplers/s02_regslice'
@@ -375,7 +375,7 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1011.961 ; gain = 0.070
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1012.285 ; gain = 0.055
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'hdmi_i/axi_vdma_0' at clock pin 'm_axis_mm2s_aclk' is different from the actual clock period '6.060', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'hdmi_i/rst_mig_7series_0_pxl' at clock pin 'slowest_sync_clk' is different from the actual clock period '6.060', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'hdmi_i/v_axi4s_vid_out_0' at clock pin 'aclk' is different from the actual clock period '6.060', this can lead to different synthesis results.
@@ -384,14 +384,14 @@ WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context s
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'hdmi_i/v_vid_in_axi4s_0' at clock pin 'vid_io_in_clk' is different from the actual clock period '6.060', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'hdmi_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:27 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:27 . Memory (MB): peak = 1013.605 ; gain = 571.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:27 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:27 . Memory (MB): peak = 1013.605 ; gain = 571.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -571,10 +571,10 @@ Applied set_property DONT_TOUCH = true for hdmi_i/axi_mem_intercon/s00_couplers/
 Applied set_property DONT_TOUCH = true for hdmi_i/axi_mem_intercon/s00_couplers/auto_us. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for hdmi_i/axi_mem_intercon/s00_couplers/auto_rs_w. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:27 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:27 . Memory (MB): peak = 1013.605 ; gain = 571.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:27 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:27 . Memory (MB): peak = 1013.605 ; gain = 571.926
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -610,7 +610,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:27 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:27 . Memory (MB): peak = 1013.605 ; gain = 571.926
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -635,7 +635,7 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'hdmi_i/microblaze_0_local
 WARNING: [Synth 8-565] redefining clock 'sys_clk_i'
 INFO: [Synth 8-5819] Moved 11 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 1013.605 ; gain = 571.926
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -647,7 +647,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:33 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:33 . Memory (MB): peak = 1013.605 ; gain = 571.926
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -665,7 +665,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Finished IO Insertion : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1013.605 ; gain = 571.926
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -678,7 +678,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1013.605 ; gain = 571.926
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -690,7 +690,7 @@ Report RTL Partitions:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1013.605 ; gain = 571.926
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -797,25 +797,25 @@ Report Instance Areas:
 +------+------------------------------+-------------------------------------+------+
 |      |Instance                      |Module                               |Cells |
 +------+------------------------------+-------------------------------------+------+
-|1     |top                           |                                     | 10772|
-|2     |  hdmi_i                      |hdmi                                 | 10765|
-|3     |    axi_mem_intercon          |hdmi_axi_mem_intercon_0              |  6794|
+|1     |top                           |                                     | 10976|
+|2     |  hdmi_i                      |hdmi                                 | 10969|
+|3     |    axi_mem_intercon          |hdmi_axi_mem_intercon_0              |  6890|
 |4     |      m00_couplers            |m00_couplers_imp_JC9FNM              |  1630|
 |5     |      s00_couplers            |s00_couplers_imp_10D7LX3             |   716|
 |6     |      s01_couplers            |s01_couplers_imp_8CUCHT              |   930|
 |7     |      s02_couplers            |s02_couplers_imp_RBV57E              |   682|
 |8     |      s03_couplers            |s03_couplers_imp_1YVIHYK             |   324|
-|9     |      s04_couplers            |s04_couplers_imp_16XN6B0             |   100|
+|9     |      s04_couplers            |s04_couplers_imp_16XN6B0             |   196|
 |10    |      s05_couplers            |s05_couplers_imp_24WAMY              |   358|
 |11    |    microblaze_0_axi_periph   |hdmi_microblaze_0_axi_periph_0       |  1040|
 |12    |    microblaze_0_local_memory |microblaze_0_local_memory_imp_RJJ05W |   494|
 +------+------------------------------+-------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1013.605 ; gain = 571.926
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1013.469 ; gain = 169.152
-Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1013.469 ; gain = 571.371
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1013.605 ; gain = 168.664
+Synthesis Optimization Complete : Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 1013.605 ; gain = 571.926
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -828,11 +828,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 158 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:36 . Memory (MB): peak = 1013.469 ; gain = 577.297
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:36 . Memory (MB): peak = 1019.262 ; gain = 582.762
 INFO: [Common 17-600] The following parameters have non-default value.
 tcl.collectionResultDisplayLimit
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/hdmi_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file hdmi_wrapper_utilization_synth.rpt -pb hdmi_wrapper_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1013.469 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 13 00:36:15 2024...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1019.551 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 13 04:44:19 2024...

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1707802368">
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1707817289">
   <File Type="PA-TCL" Name="hdmi_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="hdmi_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="hdmi_wrapper_reports.tcl"/>
@@ -73,22 +73,28 @@
       <Option Id="FsmExtraction">0</Option>
     </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_mig_7series_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_s03_regslice_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_m00_regslice_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_ilmb_v10_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_axi_dma_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_auto_rs_w_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_auto_us_3"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_grayscale_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_auto_ds_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_auto_us_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_s00_regslice_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_auto_us_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_auto_rs_w_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_auto_us_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_auto_rs_w_2"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_s02_regslice_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_s01_regslice_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_xbar_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_rgb2dvi_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_dvi2rgb_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_axi_vdma_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_axi_gpio_video_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_axi_timer_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_axi_uartlite_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_mdm_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_axi_dynclk_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_v_tc_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_ilmb_bram_if_cntlr_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_rst_mig_7series_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_lmb_bram_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_microblaze_0_axi_intc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_v_vid_in_axi4s_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_dlmb_bram_if_cntlr_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_rst_mig_7series_0_pxl_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_v_tc_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_microblaze_0_xlconcat_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_v_axi4s_vid_out_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_xlconstant_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_dlmb_v10_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_microblaze_0_0"/>
 </GenRun>

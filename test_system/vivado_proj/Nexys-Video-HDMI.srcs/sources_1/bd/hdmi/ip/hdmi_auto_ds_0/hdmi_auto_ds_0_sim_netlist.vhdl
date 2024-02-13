@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
--- Date        : Tue Feb 13 00:34:35 2024
+-- Date        : Tue Feb 13 00:34:34 2024
 -- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0/hdmi_auto_ds_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_auto_ds_0 -prefix
+--               hdmi_auto_ds_0_ hdmi_auto_ds_0_sim_netlist.vhdl
 -- Design      : hdmi_auto_ds_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -28,8 +28,6 @@ entity hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_b_downsizer is
     empty : in STD_LOGIC;
     m_axi_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_b_downsizer : entity is "axi_dwidth_converter_v2_1_17_b_downsizer";
 end hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_b_downsizer;
 
 architecture STRUCTURE of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_b_downsizer is
@@ -455,8 +453,6 @@ entity hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_r_downsizer is
     empty_fwft_i_reg_0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     empty_fwft_i_reg_1 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_r_downsizer : entity is "axi_dwidth_converter_v2_1_17_r_downsizer";
 end hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_r_downsizer;
 
 architecture STRUCTURE of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_r_downsizer is
@@ -5966,8 +5962,6 @@ entity hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_w_downsizer is
     \goreg_dm.dout_i_reg[31]\ : in STD_LOGIC_VECTOR ( 13 downto 0 );
     D : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_w_downsizer : entity is "axi_dwidth_converter_v2_1_17_w_downsizer";
 end hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_w_downsizer;
 
 architecture STRUCTURE of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_w_downsizer is
@@ -6366,8 +6360,6 @@ entity hdmi_auto_ds_0_xpm_cdc_async_rst is
   attribute INIT_SYNC_FF of hdmi_auto_ds_0_xpm_cdc_async_rst : entity is 0;
   attribute INV_DEF_VAL : string;
   attribute INV_DEF_VAL of hdmi_auto_ds_0_xpm_cdc_async_rst : entity is "1'b1";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_xpm_cdc_async_rst : entity is "xpm_cdc_async_rst";
   attribute RST_ACTIVE_HIGH : integer;
   attribute RST_ACTIVE_HIGH of hdmi_auto_ds_0_xpm_cdc_async_rst : entity is 1;
   attribute VERSION : integer;
@@ -6572,8 +6564,6 @@ entity hdmi_auto_ds_0_dmem is
     count_d10_in : in STD_LOGIC_VECTOR ( 4 downto 0 );
     \gpregsm1.curr_fwft_state_reg[0]\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_dmem : entity is "dmem";
 end hdmi_auto_ds_0_dmem;
 
 architecture STRUCTURE of hdmi_auto_ds_0_dmem is
@@ -7707,8 +7697,6 @@ entity hdmi_auto_ds_0_rd_bin_cntr is
     clk : in STD_LOGIC;
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_rd_bin_cntr : entity is "rd_bin_cntr";
 end hdmi_auto_ds_0_rd_bin_cntr;
 
 architecture STRUCTURE of hdmi_auto_ds_0_rd_bin_cntr is
@@ -8271,8 +8259,6 @@ entity hdmi_auto_ds_0_rd_fwft is
     rd_en : in STD_LOGIC;
     ram_empty_fb_i_reg : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_rd_fwft : entity is "rd_fwft";
 end hdmi_auto_ds_0_rd_fwft;
 
 architecture STRUCTURE of hdmi_auto_ds_0_rd_fwft is
@@ -8969,8 +8955,6 @@ entity hdmi_auto_ds_0_rd_status_flags_ss is
     clk : in STD_LOGIC;
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_rd_status_flags_ss : entity is "rd_status_flags_ss";
 end hdmi_auto_ds_0_rd_status_flags_ss;
 
 architecture STRUCTURE of hdmi_auto_ds_0_rd_status_flags_ss is
@@ -9139,8 +9123,6 @@ entity hdmi_auto_ds_0_wr_bin_cntr is
     clk : in STD_LOGIC;
     AR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_wr_bin_cntr : entity is "wr_bin_cntr";
 end hdmi_auto_ds_0_wr_bin_cntr;
 
 architecture STRUCTURE of hdmi_auto_ds_0_wr_bin_cntr is
@@ -10037,8 +10019,6 @@ entity hdmi_auto_ds_0_wr_status_flags_ss is
     AR : in STD_LOGIC_VECTOR ( 0 to 0 );
     wr_en : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_wr_status_flags_ss : entity is "wr_status_flags_ss";
 end hdmi_auto_ds_0_wr_status_flags_ss;
 
 architecture STRUCTURE of hdmi_auto_ds_0_wr_status_flags_ss is
@@ -10299,8 +10279,6 @@ entity hdmi_auto_ds_0_memory is
     count_d10_in : in STD_LOGIC_VECTOR ( 4 downto 0 );
     \gpregsm1.curr_fwft_state_reg[0]\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_memory : entity is "memory";
 end hdmi_auto_ds_0_memory;
 
 architecture STRUCTURE of hdmi_auto_ds_0_memory is
@@ -11194,8 +11172,6 @@ entity hdmi_auto_ds_0_rd_logic is
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gcc_rst.sckt_wr_rst_cc_reg[1]\ : in STD_LOGIC;
     rd_en : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_rd_logic : entity is "rd_logic";
 end hdmi_auto_ds_0_rd_logic;
 
 architecture STRUCTURE of hdmi_auto_ds_0_rd_logic is
@@ -11354,8 +11330,6 @@ entity hdmi_auto_ds_0_reset_blk_ramfifo is
     rd_en : in STD_LOGIC;
     \gpregsm1.curr_fwft_state_reg[1]\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_reset_blk_ramfifo : entity is "reset_blk_ramfifo";
 end hdmi_auto_ds_0_reset_blk_ramfifo;
 
 architecture STRUCTURE of hdmi_auto_ds_0_reset_blk_ramfifo is
@@ -11638,8 +11612,6 @@ entity hdmi_auto_ds_0_wr_logic is
     \gc0.count_d1_reg[4]\ : in STD_LOGIC_VECTOR ( 4 downto 0 );
     \gc0.count_reg[4]\ : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_wr_logic : entity is "wr_logic";
 end hdmi_auto_ds_0_wr_logic;
 
 architecture STRUCTURE of hdmi_auto_ds_0_wr_logic is
@@ -11797,8 +11769,6 @@ entity hdmi_auto_ds_0_fifo_generator_ramfifo is
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_fifo_generator_ramfifo : entity is "fifo_generator_ramfifo";
 end hdmi_auto_ds_0_fifo_generator_ramfifo;
 
 architecture STRUCTURE of hdmi_auto_ds_0_fifo_generator_ramfifo is
@@ -12049,8 +12019,6 @@ entity hdmi_auto_ds_0_fifo_generator_top is
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_fifo_generator_top : entity is "fifo_generator_top";
 end hdmi_auto_ds_0_fifo_generator_top;
 
 architecture STRUCTURE of hdmi_auto_ds_0_fifo_generator_top is
@@ -12148,8 +12116,6 @@ entity hdmi_auto_ds_0_fifo_generator_v13_2_2_synth is
     rd_en : in STD_LOGIC;
     wr_en : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_fifo_generator_v13_2_2_synth : entity is "fifo_generator_v13_2_2_synth";
 end hdmi_auto_ds_0_fifo_generator_v13_2_2_synth;
 
 architecture STRUCTURE of hdmi_auto_ds_0_fifo_generator_v13_2_2_synth is
@@ -12874,8 +12840,6 @@ entity hdmi_auto_ds_0_fifo_generator_v13_2_2 is
   attribute C_WR_PNTR_WIDTH_WRCH of hdmi_auto_ds_0_fifo_generator_v13_2_2 : entity is 4;
   attribute C_WR_RESPONSE_LATENCY : integer;
   attribute C_WR_RESPONSE_LATENCY of hdmi_auto_ds_0_fifo_generator_v13_2_2 : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_fifo_generator_v13_2_2 : entity is "fifo_generator_v13_2_2";
 end hdmi_auto_ds_0_fifo_generator_v13_2_2;
 
 architecture STRUCTURE of hdmi_auto_ds_0_fifo_generator_v13_2_2 is
@@ -16061,8 +16025,6 @@ entity hdmi_auto_ds_0_axi_data_fifo_v2_1_16_fifo_gen is
     Q : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \num_transactions_q_reg[2]\ : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_axi_data_fifo_v2_1_16_fifo_gen : entity is "axi_data_fifo_v2_1_16_fifo_gen";
 end hdmi_auto_ds_0_axi_data_fifo_v2_1_16_fifo_gen;
 
 architecture STRUCTURE of hdmi_auto_ds_0_axi_data_fifo_v2_1_16_fifo_gen is
@@ -22633,8 +22595,6 @@ entity hdmi_auto_ds_0_axi_data_fifo_v2_1_16_axic_fifo is
     Q : in STD_LOGIC_VECTOR ( 3 downto 0 );
     \num_transactions_q_reg[2]\ : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_axi_data_fifo_v2_1_16_axic_fifo : entity is "axi_data_fifo_v2_1_16_axic_fifo";
 end hdmi_auto_ds_0_axi_data_fifo_v2_1_16_axic_fifo;
 
 architecture STRUCTURE of hdmi_auto_ds_0_axi_data_fifo_v2_1_16_axic_fifo is
@@ -23092,8 +23052,6 @@ entity hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_a_downsizer is
     s_axi_awregion : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awqos : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_a_downsizer : entity is "axi_dwidth_converter_v2_1_17_a_downsizer";
 end hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_a_downsizer;
 
 architecture STRUCTURE of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_a_downsizer is
@@ -31239,8 +31197,6 @@ entity hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_axi_downsizer is
     s_axi_wstrb : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axi_wdata : in STD_LOGIC_VECTOR ( 255 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_axi_downsizer : entity is "axi_dwidth_converter_v2_1_17_axi_downsizer";
 end hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_axi_downsizer;
 
 architecture STRUCTURE of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_axi_downsizer is
@@ -31623,8 +31579,6 @@ entity hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_top is
   attribute C_S_AXI_ID_WIDTH of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_top : entity is 3;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_top : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_top : entity is "axi_dwidth_converter_v2_1_17_top";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of hdmi_auto_ds_0_axi_dwidth_converter_v2_1_17_top : entity is 1;
   attribute P_AXI4 : integer;

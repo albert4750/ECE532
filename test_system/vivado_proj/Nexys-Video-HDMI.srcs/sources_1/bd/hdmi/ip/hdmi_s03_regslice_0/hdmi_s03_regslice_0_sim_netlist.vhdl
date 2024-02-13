@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
 -- Date        : Tue Feb 13 00:33:36 2024
 -- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_s03_regslice_0/hdmi_s03_regslice_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_s03_regslice_0 -prefix
+--               hdmi_s03_regslice_0_ hdmi_s03_regslice_0_sim_netlist.vhdl
 -- Design      : hdmi_s03_regslice_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -8314,8 +8314,6 @@ entity hdmi_s03_regslice_0_axi_register_slice_v2_1_17_axi_register_slice is
   attribute G_AXI_WUSER_INDEX of hdmi_s03_regslice_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 289;
   attribute G_AXI_WUSER_WIDTH : integer;
   attribute G_AXI_WUSER_WIDTH of hdmi_s03_regslice_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_s03_regslice_0_axi_register_slice_v2_1_17_axi_register_slice : entity is "axi_register_slice_v2_1_17_axi_register_slice";
   attribute P_FORWARD : integer;
   attribute P_FORWARD of hdmi_s03_regslice_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
   attribute P_RESPONSE : integer;
