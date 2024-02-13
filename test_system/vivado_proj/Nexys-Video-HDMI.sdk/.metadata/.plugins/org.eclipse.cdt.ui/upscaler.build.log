@@ -1,6 +1,6 @@
-00:46:41 **** Incremental Build of configuration Debug for project upscaler ****
+01:25:58 **** Incremental Build of configuration Debug for project upscaler ****
 make all 
 make: Nothing to be done for `all'.
 
-00:46:41 Build Finished (took 153ms)
+01:25:58 Build Finished (took 162ms)
 

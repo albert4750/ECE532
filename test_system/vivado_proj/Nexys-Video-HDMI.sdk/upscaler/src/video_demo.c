@@ -43,6 +43,10 @@
 /*
  * XPAR redefines
  */
+
+// Albert Start
+#include "xaxidma.h"
+// Albert End
 #define DYNCLK_BASEADDR XPAR_AXI_DYNCLK_0_BASEADDR
 #define VGA_VDMA_ID XPAR_AXIVDMA_0_DEVICE_ID
 #define DISP_VTC_ID XPAR_VTC_0_DEVICE_ID
@@ -65,6 +69,12 @@ XAxiVdma vdma;
 VideoCapture videoCapt;
 INTC intc;
 char fRefresh; //flag used to trigger a refresh of the Menu on video detect
+
+// Albert Start
+// For AxiDMA
+//XAxiDma grayScale;
+//int wOrB;
+// Albert End
 
 /*
  * Framebuffers for video data
@@ -163,6 +173,11 @@ void DemoInitialize()
 		return;
 	}
 
+	// Albert Start
+	// Initialize DMA
+//	wOrB = 0;
+	// Albert End
+
 	/*
 	 * Set the Video Detect callback to trigger the menu to reset, displaying the new detected resolution
 	 */
@@ -260,6 +275,12 @@ void DemoRun()
 			VideoStart(&videoCapt);
 			DisplayChangeFrame(&dispCtrl, nextFrame);
 			break;
+		case '9':
+			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE, 2);
+			break;
+		case 'd':
+			xil_printf("\n\rDMA not implemented yet");
+			break;
 		case 'q':
 			break;
 		case 'r':
@@ -277,6 +298,7 @@ void DemoRun()
 
 void DemoPrintMenu()
 {
+	// Albert Start
 	xil_printf("\x1B[H"); //Set cursor to top left of terminal
 	xil_printf("\x1B[2J"); //Clear terminal
 	xil_printf("**************************************************\n\r");
@@ -289,6 +311,10 @@ void DemoPrintMenu()
 	else xil_printf("*Video Capture Resolution: %17dx%-4d*\n\r", videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo);
 	xil_printf("*Video Frame Index: %29d*\n\r", videoCapt.curFrame);
 	xil_printf("**************************************************\n\r");
+	for(int i = 0; i < 3; i++){
+		xil_printf("pFrames[%d] at %x \n\r", i, pFrames[i]);
+		xil_printf("frameBuf[%d] at %x \n\r", i, frameBuf[i]);
+	}
 	xil_printf("\n\r");
 	xil_printf("1 - Change Display Resolution\n\r");
 	xil_printf("2 - Change Display Framebuffer Index\n\r");
@@ -298,10 +324,13 @@ void DemoPrintMenu()
 	xil_printf("6 - Change Video Framebuffer Index\n\r");
 	xil_printf("7 - Grab Video Frame and invert colors\n\r");
 	xil_printf("8 - Grab Video Frame and scale to Display resolution\n\r");
+	xil_printf("9 - Print black or white in buffer order\n\r");
+	xil_printf("d - DMA go\n\r");
 	xil_printf("q - Quit\n\r");
 	xil_printf("\n\r");
 	xil_printf("\n\r");
 	xil_printf("Enter a selection:");
+	// Albert End
 }
 
 void DemoChangeRes()
@@ -500,6 +529,7 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 	u32 xLeft, xMid, xRight, xInt;
 	u32 yMid, yInt;
 	double xInc, yInc;
+//	u8 color;
 
 
 	switch (pattern)
@@ -635,6 +665,19 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 				wCurrentInt++;
 			}
 		}
+		/*
+		 * Flush the framebuffer memory range to ensure changes are written to the
+		 * actual memory, and therefore accessible by the VDMA.
+		 */
+		Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+		break;
+	case 2:
+//		color = wOrB? 255 : 0;
+
+		for(int i = 0; i < DEMO_MAX_FRAME; i++)
+			frame[i] = 255;
+
+//		wOrB = !wOrB;
 		/*
 		 * Flush the framebuffer memory range to ensure changes are written to the
 		 * actual memory, and therefore accessible by the VDMA.
