@@ -1,43 +1,49 @@
 module dual_port_ram_test #(
-    localparam int ItemCount   = 1024,
-    localparam int ValueBits   = 8,
-    localparam int AddressBits = $clog2(ItemCount)
+    localparam int DataWidth = 8,
+    localparam int ItemCount = 1024,
+    localparam int AddressWidth = $clog2(ItemCount)
 );
     logic clock;
-    dual_port_ram_if #(
-        .ITEM_COUNT(ItemCount),
-        .VALUE_BITS(ValueBits)
-    ) ram_if ();
+    logic write_enable;
+    logic read_enable;
+    logic [AddressWidth-1:0] read_address;
+    logic [AddressWidth-1:0] write_address;
+    logic [DataWidth-1:0] write_data;
+    logic [DataWidth-1:0] read_data;
     dual_port_ram #(
-        .ITEM_COUNT(ItemCount),
-        .VALUE_BITS(ValueBits)
+        .DATA_WITDH(DataWidth),
+        .ITEM_COUNT(ItemCount)
     ) dut (
-        .clock_i (clock),
-        .reader_o(ram_if.reader),
-        .writer_o(ram_if.writer)
+        .clock_i(clock),
+        .write_enable_i(write_enable),
+        .read_enable_i(read_enable),
+        .read_address_i(read_address),
+        .write_address_i(write_address),
+        .write_data_i(write_data),
+        .read_data_o(read_data)
     );
     initial begin
-        for (byte write_enable = 1; write_enable >= 0; --write_enable) begin
-            for (int i = 0; i <= ItemCount; ++i) begin
-                logic [AddressBits-1:0] address = i[AddressBits-1:0];
-                logic [  ValueBits-1:0] data = i[ValueBits-1:0];
+        for (byte i = 1; i >= 0; --i) begin
+            for (int j = 0; j <= ItemCount; ++j) begin
+                logic [AddressWidth-1:0] address = j[AddressWidth-1:0];
+                logic [DataWidth-1:0] data = j[DataWidth-1:0];
                 clock = 0;
                 #1;
-                ram_if.r_address_i = address - 1;
-                ram_if.w_enable_i  = write_enable[0] && (i != ItemCount);
-                ram_if.w_address_i = address;
-                if (ram_if.w_enable_i) begin
-                    ram_if.w_data_i = data;
+                read_address  = address - 1;
+                write_enable  = i[0] && (j != ItemCount);
+                write_address = address;
+                if (write_enable) begin
+                    write_data = data;
                 end else begin
-                    int random_data = $urandom_range(0, (1 << ValueBits) - 1);
-                    ram_if.w_data_i = random_data[ValueBits-1:0];
+                    int random_data = $urandom_range(0, (1 << DataWidth) - 1);
+                    write_data = random_data[DataWidth-1:0];
                 end
                 #1;
                 clock = 1;
                 #1;
                 if (i != 0) begin
-                    logic [ValueBits-1:0] expected_data = data - 1;
-                    logic [ValueBits-1:0] actual_data = ram_if.r_data_o;
+                    logic [DataWidth-1:0] expected_data = data - 1;
+                    logic [DataWidth-1:0] actual_data = read_data;
                     assert (expected_data == actual_data)
                     else begin
                         $error("Error: (address - 1)=0x%0h, expected=0x%0h, actual=0x%0h",
