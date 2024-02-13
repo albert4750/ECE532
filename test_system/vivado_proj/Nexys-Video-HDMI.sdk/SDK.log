@@ -291,3 +291,754 @@ con
 ----------------End of Script----------------
 
 01:26:01 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:28:19 INFO  : Disconnected from the channel tcfchan#3.
+01:28:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:28:20 INFO  : 'fpga -state' command is executed.
+01:28:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:28:20 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:28:20 INFO  : 'jtag frequency' command is executed.
+01:28:20 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:28:20 INFO  : Context for processor 'microblaze_0' is selected.
+01:28:20 INFO  : Processor reset is completed for 'microblaze_0'.
+01:28:20 INFO  : Context for processor 'microblaze_0' is selected.
+01:28:21 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:28:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:28:21 INFO  : Memory regions updated for context PA
+01:28:21 INFO  : Memory regions updated for context PA
+01:28:21 INFO  : Context for processor 'microblaze_0' is selected.
+01:28:21 INFO  : 'con' command is executed.
+01:28:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:28:21 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:29:03 INFO  : Disconnected from the channel tcfchan#4.
+01:29:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:29:04 INFO  : 'fpga -state' command is executed.
+01:29:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:29:05 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:29:05 INFO  : 'jtag frequency' command is executed.
+01:29:05 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:29:05 INFO  : Context for processor 'microblaze_0' is selected.
+01:29:05 INFO  : Processor reset is completed for 'microblaze_0'.
+01:29:05 INFO  : Context for processor 'microblaze_0' is selected.
+01:29:05 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:29:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:29:05 INFO  : Memory regions updated for context PA
+01:29:05 INFO  : Memory regions updated for context PA
+01:29:05 INFO  : Context for processor 'microblaze_0' is selected.
+01:29:05 INFO  : 'con' command is executed.
+01:29:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:29:05 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:31:15 INFO  : Disconnected from the channel tcfchan#5.
+01:31:16 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:31:16 INFO  : 'fpga -state' command is executed.
+01:31:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:31:16 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:31:16 INFO  : 'jtag frequency' command is executed.
+01:31:16 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:31:16 INFO  : Context for processor 'microblaze_0' is selected.
+01:31:16 INFO  : Processor reset is completed for 'microblaze_0'.
+01:31:16 INFO  : Context for processor 'microblaze_0' is selected.
+01:31:16 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:31:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:31:16 INFO  : Memory regions updated for context PA
+01:31:16 INFO  : Memory regions updated for context PA
+01:31:16 INFO  : Context for processor 'microblaze_0' is selected.
+01:31:16 INFO  : 'con' command is executed.
+01:31:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:31:16 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:36:25 INFO  : Disconnected from the channel tcfchan#6.
+01:36:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:36:26 INFO  : 'fpga -state' command is executed.
+01:36:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:36:26 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:36:26 INFO  : 'jtag frequency' command is executed.
+01:36:26 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:36:26 INFO  : Context for processor 'microblaze_0' is selected.
+01:36:26 INFO  : Processor reset is completed for 'microblaze_0'.
+01:36:26 INFO  : Context for processor 'microblaze_0' is selected.
+01:36:27 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:36:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:36:27 INFO  : Memory regions updated for context PA
+01:36:27 INFO  : Memory regions updated for context PA
+01:36:27 INFO  : Context for processor 'microblaze_0' is selected.
+01:36:27 INFO  : 'con' command is executed.
+01:36:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:36:27 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:37:33 INFO  : Disconnected from the channel tcfchan#7.
+01:37:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:37:34 INFO  : 'fpga -state' command is executed.
+01:37:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:37:34 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:37:34 INFO  : 'jtag frequency' command is executed.
+01:37:34 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:37:34 INFO  : Context for processor 'microblaze_0' is selected.
+01:37:34 INFO  : Processor reset is completed for 'microblaze_0'.
+01:37:34 INFO  : Context for processor 'microblaze_0' is selected.
+01:37:35 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:37:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:37:35 INFO  : Memory regions updated for context PA
+01:37:35 INFO  : Memory regions updated for context PA
+01:37:35 INFO  : Context for processor 'microblaze_0' is selected.
+01:37:35 INFO  : 'con' command is executed.
+01:37:35 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:37:35 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:39:44 INFO  : Disconnected from the channel tcfchan#8.
+01:39:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:39:46 INFO  : 'fpga -state' command is executed.
+01:39:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:39:46 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:39:46 INFO  : 'jtag frequency' command is executed.
+01:39:46 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:39:46 INFO  : Context for processor 'microblaze_0' is selected.
+01:39:46 INFO  : Processor reset is completed for 'microblaze_0'.
+01:39:46 INFO  : Context for processor 'microblaze_0' is selected.
+01:39:46 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:39:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:39:46 INFO  : Memory regions updated for context PA
+01:39:46 INFO  : Memory regions updated for context PA
+01:39:46 INFO  : Context for processor 'microblaze_0' is selected.
+01:39:46 INFO  : 'con' command is executed.
+01:39:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:39:46 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:42:07 INFO  : Disconnected from the channel tcfchan#9.
+01:42:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:42:09 INFO  : 'fpga -state' command is executed.
+01:42:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:42:09 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:42:09 INFO  : 'jtag frequency' command is executed.
+01:42:09 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:42:09 INFO  : Context for processor 'microblaze_0' is selected.
+01:42:09 INFO  : Processor reset is completed for 'microblaze_0'.
+01:42:09 INFO  : Context for processor 'microblaze_0' is selected.
+01:42:09 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:42:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:42:09 INFO  : Memory regions updated for context PA
+01:42:09 INFO  : Memory regions updated for context PA
+01:42:09 INFO  : Context for processor 'microblaze_0' is selected.
+01:42:09 INFO  : 'con' command is executed.
+01:42:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:42:09 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:42:37 INFO  : Disconnected from the channel tcfchan#10.
+01:42:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:42:38 INFO  : 'fpga -state' command is executed.
+01:42:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:42:38 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:42:38 INFO  : 'jtag frequency' command is executed.
+01:42:38 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:42:38 INFO  : Context for processor 'microblaze_0' is selected.
+01:42:38 INFO  : Processor reset is completed for 'microblaze_0'.
+01:42:38 INFO  : Context for processor 'microblaze_0' is selected.
+01:42:38 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:42:38 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:42:38 INFO  : Memory regions updated for context PA
+01:42:38 INFO  : Memory regions updated for context PA
+01:42:38 INFO  : Context for processor 'microblaze_0' is selected.
+01:42:38 INFO  : 'con' command is executed.
+01:42:38 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:42:38 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:43:19 INFO  : Disconnected from the channel tcfchan#11.
+01:43:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:43:20 INFO  : 'fpga -state' command is executed.
+01:43:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:43:20 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:43:20 INFO  : 'jtag frequency' command is executed.
+01:43:20 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:43:20 INFO  : Context for processor 'microblaze_0' is selected.
+01:43:20 INFO  : Processor reset is completed for 'microblaze_0'.
+01:43:20 INFO  : Context for processor 'microblaze_0' is selected.
+01:43:20 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:43:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:43:20 INFO  : Memory regions updated for context PA
+01:43:20 INFO  : Memory regions updated for context PA
+01:43:20 INFO  : Context for processor 'microblaze_0' is selected.
+01:43:20 INFO  : 'con' command is executed.
+01:43:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:43:20 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:44:47 INFO  : Disconnected from the channel tcfchan#12.
+01:44:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:44:48 INFO  : 'fpga -state' command is executed.
+01:44:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:44:48 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:44:48 INFO  : 'jtag frequency' command is executed.
+01:44:48 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:44:48 INFO  : Context for processor 'microblaze_0' is selected.
+01:44:48 INFO  : Processor reset is completed for 'microblaze_0'.
+01:44:48 INFO  : Context for processor 'microblaze_0' is selected.
+01:44:48 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:44:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:44:48 INFO  : Memory regions updated for context PA
+01:44:48 INFO  : Memory regions updated for context PA
+01:44:48 INFO  : Context for processor 'microblaze_0' is selected.
+01:44:48 INFO  : 'con' command is executed.
+01:44:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:44:48 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:47:23 INFO  : Disconnected from the channel tcfchan#13.
+01:47:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:47:24 INFO  : 'fpga -state' command is executed.
+01:47:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:47:24 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:47:24 INFO  : 'jtag frequency' command is executed.
+01:47:24 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:47:24 INFO  : Context for processor 'microblaze_0' is selected.
+01:47:24 INFO  : Processor reset is completed for 'microblaze_0'.
+01:47:24 INFO  : Context for processor 'microblaze_0' is selected.
+01:47:24 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:47:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:47:24 INFO  : Memory regions updated for context PA
+01:47:24 INFO  : Memory regions updated for context PA
+01:47:24 INFO  : Context for processor 'microblaze_0' is selected.
+01:47:24 INFO  : 'con' command is executed.
+01:47:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:47:24 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:48:35 INFO  : Disconnected from the channel tcfchan#14.
+01:48:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:48:36 INFO  : 'fpga -state' command is executed.
+01:48:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:48:36 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:48:36 INFO  : 'jtag frequency' command is executed.
+01:48:36 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:48:36 INFO  : Context for processor 'microblaze_0' is selected.
+01:48:36 INFO  : Processor reset is completed for 'microblaze_0'.
+01:48:36 INFO  : Context for processor 'microblaze_0' is selected.
+01:48:36 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:48:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:48:36 INFO  : Memory regions updated for context PA
+01:48:36 INFO  : Memory regions updated for context PA
+01:48:36 INFO  : Context for processor 'microblaze_0' is selected.
+01:48:36 INFO  : 'con' command is executed.
+01:48:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:48:36 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:49:43 INFO  : Disconnected from the channel tcfchan#15.
+01:49:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:49:44 INFO  : 'fpga -state' command is executed.
+01:49:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:49:44 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:49:44 INFO  : 'jtag frequency' command is executed.
+01:49:44 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:49:44 INFO  : Context for processor 'microblaze_0' is selected.
+01:49:44 INFO  : Processor reset is completed for 'microblaze_0'.
+01:49:44 INFO  : Context for processor 'microblaze_0' is selected.
+01:49:44 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:49:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:49:44 INFO  : Memory regions updated for context PA
+01:49:44 INFO  : Memory regions updated for context PA
+01:49:44 INFO  : Context for processor 'microblaze_0' is selected.
+01:49:44 INFO  : 'con' command is executed.
+01:49:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:49:44 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:52:29 INFO  : Disconnected from the channel tcfchan#16.
+01:52:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:52:30 INFO  : 'fpga -state' command is executed.
+01:52:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:52:30 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:52:30 INFO  : 'jtag frequency' command is executed.
+01:52:30 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:52:30 INFO  : Context for processor 'microblaze_0' is selected.
+01:52:30 INFO  : Processor reset is completed for 'microblaze_0'.
+01:52:30 INFO  : Context for processor 'microblaze_0' is selected.
+01:52:30 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:52:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:52:30 INFO  : Memory regions updated for context PA
+01:52:30 INFO  : Memory regions updated for context PA
+01:52:30 INFO  : Context for processor 'microblaze_0' is selected.
+01:52:30 INFO  : 'con' command is executed.
+01:52:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:52:30 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:53:40 INFO  : Disconnected from the channel tcfchan#17.
+01:53:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:53:41 INFO  : 'fpga -state' command is executed.
+01:53:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:53:41 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:53:41 INFO  : 'jtag frequency' command is executed.
+01:53:41 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:53:41 INFO  : Context for processor 'microblaze_0' is selected.
+01:53:41 INFO  : Processor reset is completed for 'microblaze_0'.
+01:53:41 INFO  : Context for processor 'microblaze_0' is selected.
+01:53:41 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:53:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:53:41 INFO  : Memory regions updated for context PA
+01:53:41 INFO  : Memory regions updated for context PA
+01:53:41 INFO  : Context for processor 'microblaze_0' is selected.
+01:53:41 INFO  : 'con' command is executed.
+01:53:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:53:41 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:54:44 INFO  : Disconnected from the channel tcfchan#18.
+01:54:45 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:54:45 INFO  : 'fpga -state' command is executed.
+01:54:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:54:45 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:54:45 INFO  : 'jtag frequency' command is executed.
+01:54:45 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:54:45 INFO  : Context for processor 'microblaze_0' is selected.
+01:54:45 INFO  : Processor reset is completed for 'microblaze_0'.
+01:54:45 INFO  : Context for processor 'microblaze_0' is selected.
+01:54:46 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:54:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:54:46 INFO  : Memory regions updated for context PA
+01:54:46 INFO  : Memory regions updated for context PA
+01:54:46 INFO  : Context for processor 'microblaze_0' is selected.
+01:54:46 INFO  : 'con' command is executed.
+01:54:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:54:46 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:56:01 INFO  : Disconnected from the channel tcfchan#19.
+01:56:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:56:02 INFO  : 'fpga -state' command is executed.
+01:56:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:56:02 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:56:02 INFO  : 'jtag frequency' command is executed.
+01:56:02 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:56:02 INFO  : Context for processor 'microblaze_0' is selected.
+01:56:02 INFO  : Processor reset is completed for 'microblaze_0'.
+01:56:02 INFO  : Context for processor 'microblaze_0' is selected.
+01:56:03 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:56:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:56:03 INFO  : Memory regions updated for context PA
+01:56:03 INFO  : Memory regions updated for context PA
+01:56:03 INFO  : Context for processor 'microblaze_0' is selected.
+01:56:03 INFO  : 'con' command is executed.
+01:56:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:56:03 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:56:54 INFO  : Disconnected from the channel tcfchan#20.
+01:56:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:56:55 INFO  : 'fpga -state' command is executed.
+01:56:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:56:55 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:56:55 INFO  : 'jtag frequency' command is executed.
+01:56:55 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:56:55 INFO  : Context for processor 'microblaze_0' is selected.
+01:56:55 INFO  : Processor reset is completed for 'microblaze_0'.
+01:56:55 INFO  : Context for processor 'microblaze_0' is selected.
+01:56:56 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:56:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:56:56 INFO  : Memory regions updated for context PA
+01:56:56 INFO  : Memory regions updated for context PA
+01:56:56 INFO  : Context for processor 'microblaze_0' is selected.
+01:56:56 INFO  : 'con' command is executed.
+01:56:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:56:56 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:58:13 INFO  : Disconnected from the channel tcfchan#21.
+01:58:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:58:14 INFO  : 'fpga -state' command is executed.
+01:58:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:58:14 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:58:14 INFO  : 'jtag frequency' command is executed.
+01:58:14 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:58:14 INFO  : Context for processor 'microblaze_0' is selected.
+01:58:14 INFO  : Processor reset is completed for 'microblaze_0'.
+01:58:14 INFO  : Context for processor 'microblaze_0' is selected.
+01:58:15 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:58:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:58:15 INFO  : Memory regions updated for context PA
+01:58:15 INFO  : Memory regions updated for context PA
+01:58:15 INFO  : Context for processor 'microblaze_0' is selected.
+01:58:15 INFO  : 'con' command is executed.
+01:58:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:58:15 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+01:59:39 INFO  : Disconnected from the channel tcfchan#22.
+01:59:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+01:59:40 INFO  : 'fpga -state' command is executed.
+01:59:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:59:40 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+01:59:40 INFO  : 'jtag frequency' command is executed.
+01:59:40 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+01:59:40 INFO  : Context for processor 'microblaze_0' is selected.
+01:59:40 INFO  : Processor reset is completed for 'microblaze_0'.
+01:59:40 INFO  : Context for processor 'microblaze_0' is selected.
+01:59:41 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+01:59:41 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+01:59:41 INFO  : Memory regions updated for context PA
+01:59:41 INFO  : Memory regions updated for context PA
+01:59:41 INFO  : Context for processor 'microblaze_0' is selected.
+01:59:41 INFO  : 'con' command is executed.
+01:59:41 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+01:59:41 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+02:03:49 INFO  : Disconnected from the channel tcfchan#23.
+02:03:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+02:03:50 INFO  : 'fpga -state' command is executed.
+02:03:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:03:50 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+02:03:50 INFO  : 'jtag frequency' command is executed.
+02:03:50 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+02:03:50 INFO  : Context for processor 'microblaze_0' is selected.
+02:03:50 INFO  : Processor reset is completed for 'microblaze_0'.
+02:03:50 INFO  : Context for processor 'microblaze_0' is selected.
+02:03:51 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+02:03:51 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+02:03:51 INFO  : Memory regions updated for context PA
+02:03:51 INFO  : Memory regions updated for context PA
+02:03:51 INFO  : Context for processor 'microblaze_0' is selected.
+02:03:51 INFO  : 'con' command is executed.
+02:03:51 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+02:03:51 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+02:05:47 INFO  : Disconnected from the channel tcfchan#24.
+02:05:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+02:05:48 INFO  : 'fpga -state' command is executed.
+02:05:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:05:48 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+02:05:48 INFO  : 'jtag frequency' command is executed.
+02:05:48 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+02:05:48 INFO  : Context for processor 'microblaze_0' is selected.
+02:05:48 INFO  : Processor reset is completed for 'microblaze_0'.
+02:05:48 INFO  : Context for processor 'microblaze_0' is selected.
+02:05:49 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+02:05:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+02:05:49 INFO  : Memory regions updated for context PA
+02:05:49 INFO  : Memory regions updated for context PA
+02:05:49 INFO  : Context for processor 'microblaze_0' is selected.
+02:05:49 INFO  : 'con' command is executed.
+02:05:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+02:05:49 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+02:07:42 INFO  : Disconnected from the channel tcfchan#25.
+02:07:43 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+02:07:43 INFO  : 'fpga -state' command is executed.
+02:07:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:07:43 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+02:07:43 INFO  : 'jtag frequency' command is executed.
+02:07:43 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+02:07:43 INFO  : Context for processor 'microblaze_0' is selected.
+02:07:43 INFO  : Processor reset is completed for 'microblaze_0'.
+02:07:43 INFO  : Context for processor 'microblaze_0' is selected.
+02:07:44 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+02:07:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+02:07:44 INFO  : Memory regions updated for context PA
+02:07:44 INFO  : Memory regions updated for context PA
+02:07:44 INFO  : Context for processor 'microblaze_0' is selected.
+02:07:44 INFO  : 'con' command is executed.
+02:07:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+02:07:44 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+02:10:37 INFO  : Inferring section assignments and sizes from elf file: C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\upscaler\Debug\upscaler.elf
+02:14:26 INFO  : Disconnected from the channel tcfchan#26.
+02:14:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+02:14:27 INFO  : 'fpga -state' command is executed.
+02:14:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:14:27 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+02:14:27 INFO  : 'jtag frequency' command is executed.
+02:14:27 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+02:14:27 INFO  : Context for processor 'microblaze_0' is selected.
+02:14:27 INFO  : Processor reset is completed for 'microblaze_0'.
+02:14:27 INFO  : Context for processor 'microblaze_0' is selected.
+02:14:28 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+02:14:28 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+02:14:28 INFO  : Memory regions updated for context PA
+02:14:28 INFO  : Memory regions updated for context PA
+02:14:28 INFO  : Context for processor 'microblaze_0' is selected.
+02:14:28 INFO  : 'con' command is executed.
+02:14:28 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+02:14:28 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
+02:22:22 INFO  : Disconnected from the channel tcfchan#27.
+02:22:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+02:22:23 INFO  : 'fpga -state' command is executed.
+02:22:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:22:23 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+02:22:23 INFO  : 'jtag frequency' command is executed.
+02:22:23 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+02:22:23 INFO  : Context for processor 'microblaze_0' is selected.
+02:22:23 INFO  : Processor reset is completed for 'microblaze_0'.
+02:22:23 INFO  : Context for processor 'microblaze_0' is selected.
+02:22:24 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+02:22:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+02:22:24 INFO  : Memory regions updated for context PA
+02:22:24 INFO  : Memory regions updated for context PA
+02:22:24 INFO  : Context for processor 'microblaze_0' is selected.
+02:22:24 INFO  : 'con' command is executed.
+02:22:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+02:22:24 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'

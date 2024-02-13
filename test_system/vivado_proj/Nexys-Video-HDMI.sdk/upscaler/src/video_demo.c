@@ -57,6 +57,7 @@
 #define SCU_TIMER_ID XPAR_AXI_TIMER_0_DEVICE_ID
 #define UART_BASEADDR XPAR_UARTLITE_0_BASEADDR
 
+
 /* ------------------------------------------------------------ */
 /*				Global Variables								*/
 /* ------------------------------------------------------------ */
@@ -70,17 +71,13 @@ VideoCapture videoCapt;
 INTC intc;
 char fRefresh; //flag used to trigger a refresh of the Menu on video detect
 
-// Albert Start
-// For AxiDMA
-//XAxiDma grayScale;
-//int wOrB;
-// Albert End
 
 /*
  * Framebuffers for video data
  */
 u8 frameBuf[DISPLAY_NUM_FRAMES][DEMO_MAX_FRAME];
 u8 *pFrames[DISPLAY_NUM_FRAMES]; //array of pointers to the frame buffers
+
 
 /*
  * Interrupt vector table
@@ -89,6 +86,12 @@ const ivt_t ivt[] = {
 	videoGpioIvt(VID_GPIO_IRPT_ID, &videoCapt),
 	videoVtcIvt(VID_VTC_IRPT_ID, &(videoCapt.vtc))
 };
+
+// Albert Start
+// For AxiDMA
+XAxiDma grayScale;
+u8 wOrB;
+// Albert End
 
 /* ------------------------------------------------------------ */
 /*				Procedure Definitions							*/
@@ -111,7 +114,19 @@ void DemoInitialize()
 {
 	int Status;
 	XAxiVdma_Config *vdmaConfig;
+	XAxiDma_Config* grayScaleConfig;
 	int i;
+
+	// Albert Start
+	xil_printf("dispCtrl is at %x\r\n", &dispCtrl);
+	xil_printf("vdma is at %x\r\n", &vdma);
+	xil_printf("videoCapt is at %x\r\n", &videoCapt);
+	xil_printf("intc is at %x\r\n", &intc);
+	xil_printf("fRefresh is at %x\r\n", &fRefresh);
+	xil_printf("grayScale is at %x\r\n", &grayScale);
+	xil_printf("wOrB is at %x\r\n", &wOrB);
+	wOrB = 0;
+	// Albert End
 
 	/*
 	 * Initialize an array of pointers to the 3 frame buffers
@@ -175,7 +190,17 @@ void DemoInitialize()
 
 	// Albert Start
 	// Initialize DMA
-//	wOrB = 0;
+	// Initialize DMA for our custom block
+	grayScaleConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_0_DEVICE_ID);
+	if (!grayScaleConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_0_DEVICE_ID);
+		return;
+	}
+	Status = XAxiDma_CfgInitialize(&grayScale, grayScaleConfig);
+	if (Status != XST_SUCCESS)	{
+		xil_printf("DMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
 	// Albert End
 
 	/*
@@ -184,6 +209,7 @@ void DemoInitialize()
 	VideoSetCallback(&videoCapt, DemoISR, &fRefresh);
 
 	DemoPrintTest(dispCtrl.framePtr[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, dispCtrl.stride, DEMO_PATTERN_1);
+
 
 	return;
 }
@@ -292,6 +318,7 @@ void DemoRun()
 			usleep(50000);
 		}
 	}
+	xil_printf("\n\rSession Terminated\n\n\n\r");
 
 	return;
 }
@@ -529,7 +556,7 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 	u32 xLeft, xMid, xRight, xInt;
 	u32 yMid, yInt;
 	double xInc, yInc;
-//	u8 color;
+	u8 color;
 
 
 	switch (pattern)
@@ -672,12 +699,12 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 		Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
 		break;
 	case 2:
-//		color = wOrB? 255 : 0;
+		color = wOrB? 255 : 0;
 
 		for(int i = 0; i < DEMO_MAX_FRAME; i++)
-			frame[i] = 255;
+			frame[i] = color;
 
-//		wOrB = !wOrB;
+		wOrB = !wOrB;
 		/*
 		 * Flush the framebuffer memory range to ensure changes are written to the
 		 * actual memory, and therefore accessible by the VDMA.
