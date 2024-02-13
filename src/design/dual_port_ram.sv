@@ -1,16 +1,16 @@
 module dual_port_ram #(
     parameter int ITEM_COUNT = 1024,
-    parameter int ITEM_BITS  = 8
+    parameter int VALUE_BITS = 8
 ) (
     input logic clock_i,
-    output read_only_ram_if.reader read_po,
-    output write_only_ram_if.writer write_po
+    output dual_port_ram_if.reader reader_o,
+    output dual_port_ram_if.writer writer_o
 );
-    logic [ITEM_BITS - 1:0] ram[ITEM_COUNT];
+    logic [VALUE_BITS-1:0] ram[ITEM_COUNT];
     always_ff @(posedge clock_i) begin
-        read_po.data_o <= ram[read_po.address_i];
-        if (write_po.enable_i) begin
-            ram[write_po.address_i] <= write_po.data_i;
+        reader_o.r_data_o <= ram[reader_o.r_address_i];
+        if (writer_o.w_enable_i) begin
+            ram[writer_o.w_address_i] <= writer_o.w_data_i;
         end
     end
 endmodule : dual_port_ram
