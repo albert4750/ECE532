@@ -24,6 +24,7 @@
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/Nexys-Video-HDMI.ipdefs/repo_0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../../../uoft/20241/ECE532/gray_20182"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../custom_ip"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Tue Feb 13 05:13:00 2024
+# Process ID: 47352
+# Current directory: C:/Users/Albert/Documents/GitHub/ECE532/custom_ip/passthrough/passthrough.runs/synth_1
+# Command line: vivado.exe -log passthrough.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source passthrough.tcl
+# Log file: C:/Users/Albert/Documents/GitHub/ECE532/custom_ip/passthrough/passthrough.runs/synth_1/passthrough.vds
+# Journal file: C:/Users/Albert/Documents/GitHub/ECE532/custom_ip/passthrough/passthrough.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source passthrough.tcl -notrace
