@@ -1,0 +1,31 @@
+name: ece532
+channels:
+  - nvidia
+  - pytorch
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - pip
+
+  # Development
+  - black
+  - isort
+  - pylint
+
+  # Runtime
+  - jupyter
+  - matplotlib
+  - numba
+  - numpy
+  - opencv
+  - pillow
+  - scikit-learn
+  - scipy
+  - tqdm
+
+  # PyTorch
+  - pytorch
+  - pytorch-cuda=12.1
+  - torchaudio
+  - torchvision
