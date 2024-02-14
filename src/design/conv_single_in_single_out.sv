@@ -14,9 +14,9 @@ module conv_single_in_single_out #(
     localparam int ImageColumnBits = $clog2(IMAGE_WIDTH)
 ) (
     input logic clock_i,
-    input conv_kernel_if.master kernel_master_i,
-    input internal_axi4_stream_if.slave input_slave_i,
-    input internal_axi4_stream_if.master result_master_i
+    conv_kernel_if.master kernel_master_port,
+    internal_axi4_stream_if.slave input_slave_port,
+    internal_axi4_stream_if.master result_master_port
 );
     internal_axi4_stream_if #(
         .ITEM_BITS(ITEM_BITS * KERNEL_SIZE * KERNEL_SIZE),
@@ -31,8 +31,8 @@ module conv_single_in_single_out #(
         .IMAGE_WIDTH(IMAGE_WIDTH)
     ) window (
         .clock_i(clock_i),
-        .input_slave_i(input_slave_i),
-        .sliding_window_master_i(sliding_window_if.master)
+        .input_slave_port(input_slave_port),
+        .sliding_window_master_port(sliding_window_if.master)
     );
 
     conv_multiplier #(
@@ -41,8 +41,8 @@ module conv_single_in_single_out #(
         .IMAGE_WIDTH(IMAGE_WIDTH)
     ) multiplier (
         .clock_i(clock_i),
-        .kernel_master_i(kernel_master_i),
-        .sliding_window_slave_i(sliding_window_if.slave),
-        .result_master_i(result_master_i)
+        .kernel_master_port(kernel_master_port),
+        .sliding_window_slave_port(sliding_window_if.slave),
+        .result_master_port(result_master_port)
     );
 endmodule : conv_single_in_single_out

@@ -51,9 +51,9 @@ module conv_multiplier_test #(
         .IMAGE_WIDTH(ImageWidth)
     ) dut (
         .clock_i(clock),
-        .kernel_master_i(kernel_if.master),
-        .sliding_window_slave_i(sliding_window_if.slave),
-        .result_master_i(result_if.master)
+        .kernel_master_port(kernel_if.master),
+        .sliding_window_slave_port(sliding_window_if.slave),
+        .result_master_port(result_if.master)
     );
 
     logic sliding_window_master_done = 0;
