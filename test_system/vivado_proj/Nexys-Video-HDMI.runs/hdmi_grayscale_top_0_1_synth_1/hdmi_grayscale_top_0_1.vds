@@ -1,0 +1,314 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Wed Feb 14 09:05:21 2024
+# Process ID: 13924
+# Current directory: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_grayscale_top_0_1_synth_1
+# Command line: vivado.exe -log hdmi_grayscale_top_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_grayscale_top_0_1.tcl
+# Log file: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_grayscale_top_0_1_synth_1/hdmi_grayscale_top_0_1.vds
+# Journal file: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_grayscale_top_0_1_synth_1\vivado.jou
+#-----------------------------------------------------------
+source hdmi_grayscale_top_0_1.tcl -notrace
+Command: synth_design -top hdmi_grayscale_top_0_1 -part xc7a200tsbg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 19592 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 465.438 ; gain = 102.004
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'hdmi_grayscale_top_0_1' [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_grayscale_top_0_1/synth/hdmi_grayscale_top_0_1.sv:58]
+INFO: [Synth 8-6157] synthesizing module 'grayscale_top' [c:/Users/Albert/Documents/GitHub/ECE532/Users/Albert/Documents/GitHub/ECE532/custom_ip/grayscale_stream/grayscale_stream.srcs/sources_1/imports/sources_1/new/grayscale_top.sv:23]
+	Parameter WIDTH bound to: 128 - type: integer 
+	Parameter BUFFER_WIDTH bound to: 384 - type: integer 
+	Parameter PIXEL_PER_BUFFER bound to: 16 - type: integer 
+	Parameter MAX_PIX_CNT bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rgb_to_grayscale' [c:/Users/Albert/Documents/GitHub/ECE532/Users/Albert/Documents/GitHub/ECE532/custom_ip/grayscale_stream/grayscale_stream.srcs/sources_1/imports/sources_1/imports/rgb-to-grayscale/rgb_to_grayscale.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'rgb_to_grayscale' (1#1) [c:/Users/Albert/Documents/GitHub/ECE532/Users/Albert/Documents/GitHub/ECE532/custom_ip/grayscale_stream/grayscale_stream.srcs/sources_1/imports/sources_1/imports/rgb-to-grayscale/rgb_to_grayscale.sv:23]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Albert/Documents/GitHub/ECE532/Users/Albert/Documents/GitHub/ECE532/custom_ip/grayscale_stream/grayscale_stream.srcs/sources_1/imports/sources_1/new/grayscale_top.sv:212]
+INFO: [Synth 8-6155] done synthesizing module 'grayscale_top' (2#1) [c:/Users/Albert/Documents/GitHub/ECE532/Users/Albert/Documents/GitHub/ECE532/custom_ip/grayscale_stream/grayscale_stream.srcs/sources_1/imports/sources_1/new/grayscale_top.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_grayscale_top_0_1' (3#1) [c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_grayscale_top_0_1/synth/hdmi_grayscale_top_0_1.sv:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 519.918 ; gain = 156.484
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 519.918 ; gain = 156.484
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 519.918 ; gain = 156.484
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraint will be written out.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 893.434 ; gain = 2.379
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 893.434 ; gain = 530.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tsbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 893.434 ; gain = 530.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 893.434 ; gain = 530.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:24 . Memory (MB): peak = 893.434 ; gain = 530.000
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	              128 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 1     
+	   4 Input    128 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module grayscale_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	              128 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 1     
+	   4 Input    128 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:26 . Memory (MB): peak = 893.434 ; gain = 530.000
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:31 . Memory (MB): peak = 895.914 ; gain = 532.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:31 . Memory (MB): peak = 897.359 ; gain = 533.926
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 922.133 ; gain = 558.699
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 922.133 ; gain = 558.699
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:31 . Memory (MB): peak = 922.133 ; gain = 558.699
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:32 . Memory (MB): peak = 922.133 ; gain = 558.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:32 . Memory (MB): peak = 922.133 ; gain = 558.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:32 . Memory (MB): peak = 922.133 ; gain = 558.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:32 . Memory (MB): peak = 922.133 ; gain = 558.699
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |   537|
+|2     |LUT1   |    49|
+|3     |LUT2   |  1180|
+|4     |LUT3   |   389|
+|5     |LUT4   |   259|
+|6     |LUT5   |   152|
+|7     |FDRE   |   278|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------------+--------------------+------+
+|      |Instance                  |Module              |Cells |
++------+--------------------------+--------------------+------+
+|1     |top                       |                    |  2844|
+|2     |  inst                    |grayscale_top       |  2844|
+|3     |    \data_out_0[0].pixel  |rgb_to_grayscale    |   142|
+|4     |    \data_out_0[1].pixel  |rgb_to_grayscale_0  |   142|
+|5     |    \data_out_0[2].pixel  |rgb_to_grayscale_1  |   142|
+|6     |    \data_out_0[3].pixel  |rgb_to_grayscale_2  |   142|
+|7     |    \data_out_0[4].pixel  |rgb_to_grayscale_3  |   145|
+|8     |    \data_out_1[0].pixel  |rgb_to_grayscale_4  |   151|
+|9     |    \data_out_1[1].pixel  |rgb_to_grayscale_5  |   151|
+|10    |    \data_out_1[2].pixel  |rgb_to_grayscale_6  |   151|
+|11    |    \data_out_1[3].pixel  |rgb_to_grayscale_7  |   151|
+|12    |    \data_out_2[0].pixel  |rgb_to_grayscale_8  |   142|
+|13    |    \data_out_2[1].pixel  |rgb_to_grayscale_9  |   142|
+|14    |    \data_out_2[2].pixel  |rgb_to_grayscale_10 |   142|
+|15    |    \data_out_2[3].pixel  |rgb_to_grayscale_11 |   142|
+|16    |    \data_out_2[4].pixel  |rgb_to_grayscale_12 |   142|
+|17    |    pixel0                |rgb_to_grayscale_13 |   152|
+|18    |    pixel1                |rgb_to_grayscale_14 |   109|
++------+--------------------------+--------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:32 . Memory (MB): peak = 922.133 ; gain = 558.699
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 922.133 ; gain = 185.184
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:32 . Memory (MB): peak = 922.133 ; gain = 558.699
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 537 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+18 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:34 . Memory (MB): peak = 926.984 ; gain = 575.059
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_grayscale_top_0_1_synth_1/hdmi_grayscale_top_0_1.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_grayscale_top_0_1/hdmi_grayscale_top_0_1.xci
+INFO: [Coretcl 2-1174] Renamed 17 cell refs.
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_grayscale_top_0_1_synth_1/hdmi_grayscale_top_0_1.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file hdmi_grayscale_top_0_1_utilization_synth.rpt -pb hdmi_grayscale_top_0_1_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 926.984 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 14 09:06:01 2024...

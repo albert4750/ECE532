@@ -1,0 +1,3 @@
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+$finish called at time : 67 ns : File "C:/Users/Albert/Documents/GitHub/ECE532/custom_ip/grayscale_stream/grayscale_stream.srcs/sim_1/imports/new/axis_tb.sv" Line 89

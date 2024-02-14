@@ -1,8 +1,0 @@
-0.6
-2018.2
-Oct  1 2018
-20:13:33
-c:/users/albert/documents/github/ece532/custom_ip/gray_scale/gray_scale.srcs/sim_2/new/axis_tb.sv,1707903207,systemVerilog,,,,axis_tb,,,,,,,,
-c:/users/albert/documents/github/ece532/custom_ip/gray_scale/gray_scale.srcs/sources_1/new/grayscale_top.sv,1707902944,systemVerilog,,c:/users/albert/documents/github/ece532/custom_ip/src/rgb_to_grayscale.sv,,grayscale_top,,,,,,,,
-c:/users/albert/documents/github/ece532/custom_ip/src/rgb_to_grayscale.sv,1707904567,systemVerilog,,c:/users/albert/documents/github/ece532/custom_ip/gray_scale/gray_scale.srcs/sim_2/new/axis_tb.sv,,rgb_to_grayscale,,,,,,,,
-c:/users/albert/documents/github/ece532/custom_ip/tmp_edit_project.sim/sim_1/behav/xsim/glbl.v,1529022455,verilog,,,,glbl,,,,,,,,

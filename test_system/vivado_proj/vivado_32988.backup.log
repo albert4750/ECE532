@@ -1,0 +1,1587 @@
+#-----------------------------------------------------------
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Wed Feb 14 05:28:53 2024
+# Process ID: 32988
+# Current directory: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15556 C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.xpr
+# Log file: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/vivado.log
+# Journal file: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.xpr
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] IPUserFilesDir: Could not find the directory 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ip_user_files'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/uoft/20241/ECE532/gray_20182'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/custom_ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 1139.801 ; gain = 347.699
+update_compile_order -fileset sources_1
+open_bd_design {C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd}
+Adding cell -- digilentinc.com:ip:axi_dynclk:1.0 - axi_dynclk_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_video
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding cell -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding cell -- xilinx.com:ip:axi_vdma:6.3 - axi_vdma_0
+Adding cell -- digilentinc.com:ip:dvi2rgb:2.0 - dvi2rgb_0
+Adding cell -- xilinx.com:ip:mdm:3.2 - mdm_1
+Adding cell -- xilinx.com:ip:microblaze:10.0 - microblaze_0
+Adding cell -- xilinx.com:ip:axi_intc:4.1 - microblaze_0_axi_intc
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - microblaze_0_xlconcat
+Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0
+Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_100M
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_pxl
+Adding cell -- xilinx.com:ip:v_axi4s_vid_out:4.0 - v_axi4s_vid_out_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_1
+Adding cell -- xilinx.com:ip:v_vid_in_axi4s:4.0 - v_vid_in_axi4s_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+WARNING: [BD 41-1282] Ignoring parameter HAS_BURST
+WARNING: [BD 41-1281] Parameter HAS_BURST is not defined on /axi_dma_0/M_AXIS_MM2S. Setting parameter on /axi_dma_0/M_AXIS_MM2S failed
+Adding cell -- xilinx.com:user:passthrough:1.0 - passthrough_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_1
+WARNING: [BD 41-1282] Ignoring parameter HAS_BURST
+WARNING: [BD 41-1281] Parameter HAS_BURST is not defined on /axi_dma_1/M_AXIS_MM2S. Setting parameter on /axi_dma_1/M_AXIS_MM2S failed
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - lmb_bram
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - m00_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s03_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s02_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s01_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s00_regslice
+Successfully read diagram <hdmi> from BD file <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd>
+open_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1285.766 ; gain = 127.520
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:grayscale_top:1.0 grayscale_top_0
+endgroup
+connect_bd_intf_net [get_bd_intf_pins grayscale_top_0/s_axis] [get_bd_intf_pins axi_dma_1/M_AXIS_MM2S]
+connect_bd_intf_net [get_bd_intf_pins grayscale_top_0/m_axis] [get_bd_intf_pins axi_dma_1/S_AXIS_S2MM]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config {Clk "/mig_7series_0/ui_clk (100 MHz)" }  [get_bd_pins grayscale_top_0/axi_clk]
+validate_bd_design
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+INFO: [xilinx.com:ip:axi_vdma:6.3-15] /axi_vdma_0 
+                    All clocks connected to AXI VDMA are not identical, therefore configuring AXI-VDMA in ASYNC mode.
+WARNING: [xilinx.com:ip:axi_vdma:6.3-155] /axi_vdma_0 
+                    To get the better performance, ensure AXI Memory Map clock frequency is greater than equal to AXI Streaming clock frequency.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting D-cache cacheable area base address C_DCACHE_BASEADDR to 0x80000000 and high address C_DCACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting I-cache cacheable area base address C_ICACHE_BASEADDR to 0x80000000 and high address C_ICACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/REF_CLK_I have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_5X_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/RefClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_dvi2rgb_0_0_PixelClk 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/SerialClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /passthrough_0/axi_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+validate_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1379.102 ; gain = 49.719
+save_bd_design
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ui/bd_8da6e6f8.ui> 
+close_bd_design [get_bd_designs hdmi]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 24
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+INFO: [BD 41-1662] The design 'hdmi.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/sim/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdl/hdmi_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dynclk_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_video .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_vdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dvi2rgb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mdm_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_intc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_xlconcat .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rgb2dvi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_pxl .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_axi4s_vid_out_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_vid_in_axi4s_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/lmb_bram .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block passthrough_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block grayscale_top_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/m00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0_1/hdmi_auto_ds_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_ds .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_rs_w .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s07_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s06_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s03_couplers/s03_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s02_couplers/s02_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/s01_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_1_1/hdmi_auto_us_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_rs_w .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/s00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_0_1/hdmi_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_rs_w .
+Exporting to file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi.hwh
+Generated Block Design Tcl file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi_bd.tcl
+Generated Hardware Definition File C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_mig_7series_0_0, cache-ID = 2c4983e0c948562f; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_m00_regslice_0, cache-ID = 8516c92a8691a91e; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_ds_0, cache-ID = 657b2c84c6bc4509; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_0, cache-ID = d78b4f1a2c638282; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_3, cache-ID = 43240734b2ac2026; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_2, cache-ID = 8fd126cd6945d9f2; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s03_regslice_0, cache-ID = fbb1611999ea8b6f; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s02_regslice_0, cache-ID = f538fc5582c17ce8; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s01_regslice_0, cache-ID = ee7a5bd96a33d8ee; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_1, cache-ID = 43240734b2ac2026; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_2, cache-ID = 0b597c57c9a6dad6; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s00_regslice_0, cache-ID = 89a1e176d54184af; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_0, cache-ID = 8fd126cd6945d9f2; cache size = 156.542 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_1, cache-ID = fbb1611999ea8b6f; cache size = 156.542 MB.
+[Wed Feb 14 05:32:33 2024] Launched hdmi_xbar_1_synth_1, hdmi_axi_dma_1_0_synth_1, hdmi_xbar_0_synth_1, hdmi_grayscale_top_0_0_synth_1, synth_1...
+Run output will be captured here:
+hdmi_xbar_1_synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_xbar_1_synth_1/runme.log
+hdmi_axi_dma_1_0_synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_axi_dma_1_0_synth_1/runme.log
+hdmi_xbar_0_synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_xbar_0_synth_1/runme.log
+hdmi_grayscale_top_0_0_synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_grayscale_top_0_0_synth_1/runme.log
+synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/runme.log
+[Wed Feb 14 05:32:33 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:15 ; elapsed = 00:01:06 . Memory (MB): peak = 1683.398 ; gain = 275.180
+WARNING: [IP_Flow 19-4318] IP-XACT file does not exist: c:/Users/Albert/Documents/GitHub/ECE532/custom_ip/gray_scale/ip/component.xml. It will be created.
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/uoft/20241/ECE532/gray_20182'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/custom_ip'.
+report_ip_status -name ip_status
+open_bd_design {C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd}
+Adding cell -- digilentinc.com:ip:axi_dynclk:1.0 - axi_dynclk_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_video
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding cell -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding cell -- xilinx.com:ip:axi_vdma:6.3 - axi_vdma_0
+Adding cell -- digilentinc.com:ip:dvi2rgb:2.0 - dvi2rgb_0
+Adding cell -- xilinx.com:ip:mdm:3.2 - mdm_1
+Adding cell -- xilinx.com:ip:microblaze:10.0 - microblaze_0
+Adding cell -- xilinx.com:ip:axi_intc:4.1 - microblaze_0_axi_intc
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - microblaze_0_xlconcat
+Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0
+Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_100M
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_pxl
+Adding cell -- xilinx.com:ip:v_axi4s_vid_out:4.0 - v_axi4s_vid_out_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_1
+Adding cell -- xilinx.com:ip:v_vid_in_axi4s:4.0 - v_vid_in_axi4s_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding cell -- xilinx.com:user:passthrough:1.0 - passthrough_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_1
+Adding cell -- xilinx.com:user:grayscale_top:1.0 - grayscale_top_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - lmb_bram
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - m00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_ds
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s03_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s02_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s01_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Successfully read diagram <hdmi> from BD file <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd>
+delete_bd_objs [get_bd_intf_nets grayscale_top_0_m_axis] [get_bd_intf_nets axi_dma_1_M_AXIS_MM2S] [get_bd_cells grayscale_top_0]
+report_ip_status -name ip_status 
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:grayscale_top:1.0 grayscale_top_0
+endgroup
+connect_bd_intf_net [get_bd_intf_pins grayscale_top_0/s_axis] [get_bd_intf_pins axi_dma_1/M_AXIS_MM2S]
+connect_bd_intf_net [get_bd_intf_pins grayscale_top_0/m_axis] [get_bd_intf_pins axi_dma_1/S_AXIS_S2MM]
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config {Clk "/mig_7series_0/ui_clk (100 MHz)" }  [get_bd_pins grayscale_top_0/axi_clk]
+report_ip_status -name ip_status 
+validate_bd_design
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting D-cache cacheable area base address C_DCACHE_BASEADDR to 0x80000000 and high address C_DCACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting I-cache cacheable area base address C_ICACHE_BASEADDR to 0x80000000 and high address C_ICACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:axi_vdma:6.3-15] /axi_vdma_0 
+                    All clocks connected to AXI VDMA are not identical, therefore configuring AXI-VDMA in ASYNC mode.
+WARNING: [xilinx.com:ip:axi_vdma:6.3-155] /axi_vdma_0 
+                    To get the better performance, ensure AXI Memory Map clock frequency is greater than equal to AXI Streaming clock frequency.
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/REF_CLK_I have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_5X_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/RefClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_dvi2rgb_0_0_PixelClk 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/SerialClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /passthrough_0/axi_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+validate_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1742.152 ; gain = 0.367
+save_bd_design
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ui/bd_8da6e6f8.ui> 
+close_bd_design [get_bd_designs hdmi]
+reset_run synth_1
+reset_run hdmi_xbar_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 24
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+INFO: [BD 41-1662] The design 'hdmi.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/sim/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdl/hdmi_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dynclk_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_video .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_vdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dvi2rgb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mdm_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_intc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_xlconcat .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rgb2dvi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_pxl .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_axi4s_vid_out_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_vid_in_axi4s_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/lmb_bram .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block passthrough_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block grayscale_top_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/m00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0_1/hdmi_auto_ds_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_ds .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_rs_w .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s07_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s06_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s03_couplers/s03_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s02_couplers/s02_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/s01_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_1_1/hdmi_auto_us_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_rs_w .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/s00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_0_1/hdmi_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_rs_w .
+Exporting to file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi.hwh
+Generated Block Design Tcl file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi_bd.tcl
+Generated Hardware Definition File C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_mig_7series_0_0, cache-ID = 2c4983e0c948562f; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_xbar_0, cache-ID = 1a39546971ec05c6; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_m00_regslice_0, cache-ID = 8516c92a8691a91e; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_ds_0, cache-ID = 657b2c84c6bc4509; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_0, cache-ID = d78b4f1a2c638282; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_3, cache-ID = 43240734b2ac2026; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_2, cache-ID = 8fd126cd6945d9f2; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s03_regslice_0, cache-ID = fbb1611999ea8b6f; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s02_regslice_0, cache-ID = f538fc5582c17ce8; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s01_regslice_0, cache-ID = ee7a5bd96a33d8ee; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_1, cache-ID = 43240734b2ac2026; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_2, cache-ID = 0b597c57c9a6dad6; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s00_regslice_0, cache-ID = 89a1e176d54184af; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_0, cache-ID = 8fd126cd6945d9f2; cache size = 168.599 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_1, cache-ID = fbb1611999ea8b6f; cache size = 168.599 MB.
+[Wed Feb 14 05:48:09 2024] Launched hdmi_grayscale_top_0_1_synth_1, synth_1...
+Run output will be captured here:
+hdmi_grayscale_top_0_1_synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_grayscale_top_0_1_synth_1/runme.log
+synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/runme.log
+[Wed Feb 14 05:48:09 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:11 ; elapsed = 00:01:02 . Memory (MB): peak = 1822.617 ; gain = 66.922
+report_ip_status -name ip_status 
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 3486 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2.2
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 3227.535 ; gain = 59.473
+Restored from archive | CPU: 5.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 3227.535 ; gain = 59.473
+Generating merged BMM file for the design top 'hdmi_wrapper'...
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_0/data/mb_bootloop_le.elf 
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1033 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 192 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 63 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 32 instances
+  RAM16X1S => RAM32X1S (RAMS32): 512 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 201 instances
+  SRLC16E => SRL16E: 1 instances
+  SRLC32E => SRL16E: 11 instances
+
+open_run: Time (s): cpu = 00:00:33 ; elapsed = 00:00:47 . Memory (MB): peak = 3325.125 ; gain = 1502.508
+open_report: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 3522.051 ; gain = 194.316
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+report_ip_status -name ip_status 
+close_design
+report_ip_status -name ip_status 
+report_ip_status -name ip_status 
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/uoft/20241/ECE532/gray_20182'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/custom_ip'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:grayscale_top:1.0 [get_ips  hdmi_grayscale_top_0_1] -log ip_upgrade.log
+Adding cell -- digilentinc.com:ip:axi_dynclk:1.0 - axi_dynclk_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_video
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding cell -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding cell -- xilinx.com:ip:axi_vdma:6.3 - axi_vdma_0
+Adding cell -- digilentinc.com:ip:dvi2rgb:2.0 - dvi2rgb_0
+Adding cell -- xilinx.com:ip:mdm:3.2 - mdm_1
+Adding cell -- xilinx.com:ip:microblaze:10.0 - microblaze_0
+Adding cell -- xilinx.com:ip:axi_intc:4.1 - microblaze_0_axi_intc
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - microblaze_0_xlconcat
+Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0
+Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_100M
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_pxl
+Adding cell -- xilinx.com:ip:v_axi4s_vid_out:4.0 - v_axi4s_vid_out_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_1
+Adding cell -- xilinx.com:ip:v_vid_in_axi4s:4.0 - v_vid_in_axi4s_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding cell -- xilinx.com:user:passthrough:1.0 - passthrough_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_1
+Adding cell -- xilinx.com:user:grayscale_top:1.0 - grayscale_top_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - lmb_bram
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - m00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_ds
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s03_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s02_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s01_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Successfully read diagram <hdmi> from BD file <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd>
+Upgrading 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd'
+INFO: [IP_Flow 19-3422] Upgraded hdmi_grayscale_top_0_1 (grayscale_top_v1_1 1.0) from revision 2 to revision 4
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips hdmi_grayscale_top_0_1] -no_script -sync -force -quiet
+validate_bd_design
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+INFO: [xilinx.com:ip:axi_vdma:6.3-15] /axi_vdma_0 
+                    All clocks connected to AXI VDMA are not identical, therefore configuring AXI-VDMA in ASYNC mode.
+WARNING: [xilinx.com:ip:axi_vdma:6.3-155] /axi_vdma_0 
+                    To get the better performance, ensure AXI Memory Map clock frequency is greater than equal to AXI Streaming clock frequency.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting D-cache cacheable area base address C_DCACHE_BASEADDR to 0x80000000 and high address C_DCACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting I-cache cacheable area base address C_ICACHE_BASEADDR to 0x80000000 and high address C_ICACHE_HIGHADDR to 0x9FFFFFFF.
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/REF_CLK_I have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_5X_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/RefClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_dvi2rgb_0_0_PixelClk 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/SerialClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /passthrough_0/axi_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+validate_bd_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 3522.051 ; gain = 0.000
+save_bd_design
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+close_bd_design [get_bd_designs hdmi]
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 24
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+INFO: [BD 41-1662] The design 'hdmi.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/sim/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdl/hdmi_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dynclk_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_video .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_vdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dvi2rgb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mdm_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_intc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_xlconcat .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rgb2dvi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_pxl .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_axi4s_vid_out_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_vid_in_axi4s_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/lmb_bram .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block passthrough_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block grayscale_top_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/m00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0_1/hdmi_auto_ds_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_ds .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_rs_w .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s07_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s06_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s03_couplers/s03_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s02_couplers/s02_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/s01_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_1_1/hdmi_auto_us_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_rs_w .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/s00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_0_1/hdmi_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_rs_w .
+Exporting to file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi.hwh
+Generated Block Design Tcl file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi_bd.tcl
+Generated Hardware Definition File C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_mig_7series_0_0, cache-ID = 2c4983e0c948562f; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_xbar_0, cache-ID = 1a39546971ec05c6; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_m00_regslice_0, cache-ID = 8516c92a8691a91e; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_ds_0, cache-ID = 657b2c84c6bc4509; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_0, cache-ID = d78b4f1a2c638282; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_3, cache-ID = 43240734b2ac2026; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_2, cache-ID = 8fd126cd6945d9f2; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s03_regslice_0, cache-ID = fbb1611999ea8b6f; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s02_regslice_0, cache-ID = f538fc5582c17ce8; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s01_regslice_0, cache-ID = ee7a5bd96a33d8ee; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_1, cache-ID = 43240734b2ac2026; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_2, cache-ID = 0b597c57c9a6dad6; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s00_regslice_0, cache-ID = 89a1e176d54184af; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_0, cache-ID = 8fd126cd6945d9f2; cache size = 170.179 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_1, cache-ID = fbb1611999ea8b6f; cache size = 170.179 MB.
+[Wed Feb 14 06:25:29 2024] Launched hdmi_grayscale_top_0_1_synth_1, synth_1...
+Run output will be captured here:
+hdmi_grayscale_top_0_1_synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_grayscale_top_0_1_synth_1/runme.log
+synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/runme.log
+[Wed Feb 14 06:25:29 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:11 ; elapsed = 00:01:02 . Memory (MB): peak = 3522.051 ; gain = 0.000
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 3486 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3537.137 ; gain = 15.086
+Restored from archive | CPU: 4.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3537.137 ; gain = 15.086
+Generating merged BMM file for the design top 'hdmi_wrapper'...
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_0/data/mb_bootloop_le.elf 
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1033 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 192 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 63 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 32 instances
+  RAM16X1S => RAM32X1S (RAMS32): 512 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 201 instances
+  SRLC16E => SRL16E: 1 instances
+  SRLC32E => SRL16E: 11 instances
+
+open_run: Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 3581.066 ; gain = 59.016
+open_report: Time (s): cpu = 00:00:13 ; elapsed = 00:00:05 . Memory (MB): peak = 3741.652 ; gain = 156.273
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+close_design
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/uoft/20241/ECE532/gray_20182'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/custom_ip'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:grayscale_top:1.1 [get_ips  hdmi_grayscale_top_0_1] -log ip_upgrade.log
+Adding cell -- digilentinc.com:ip:axi_dynclk:1.0 - axi_dynclk_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_video
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding cell -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding cell -- xilinx.com:ip:axi_vdma:6.3 - axi_vdma_0
+Adding cell -- digilentinc.com:ip:dvi2rgb:2.0 - dvi2rgb_0
+Adding cell -- xilinx.com:ip:mdm:3.2 - mdm_1
+Adding cell -- xilinx.com:ip:microblaze:10.0 - microblaze_0
+Adding cell -- xilinx.com:ip:axi_intc:4.1 - microblaze_0_axi_intc
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - microblaze_0_xlconcat
+Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0
+Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_100M
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_pxl
+Adding cell -- xilinx.com:ip:v_axi4s_vid_out:4.0 - v_axi4s_vid_out_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_1
+Adding cell -- xilinx.com:ip:v_vid_in_axi4s:4.0 - v_vid_in_axi4s_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding cell -- xilinx.com:user:passthrough:1.0 - passthrough_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_1
+Adding cell -- xilinx.com:user:grayscale_top:1.0 - grayscale_top_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - lmb_bram
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - m00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_ds
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s03_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s02_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s01_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Successfully read diagram <hdmi> from BD file <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd>
+Upgrading 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd'
+INFO: [IP_Flow 19-1972] Upgraded hdmi_grayscale_top_0_1 from grayscale_top_v1_1 1.0 to grayscale_top_v1_1 1.1
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips hdmi_grayscale_top_0_1] -no_script -sync -force -quiet
+generate_target all [get_files  C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd]
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+INFO: [Common 17-365] Interrupt caught but 'generate_target' cannot be canceled. Please wait for command to finish.
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+INFO: [xilinx.com:ip:axi_vdma:6.3-15] /axi_vdma_0 
+                    All clocks connected to AXI VDMA are not identical, therefore configuring AXI-VDMA in ASYNC mode.
+WARNING: [xilinx.com:ip:axi_vdma:6.3-155] /axi_vdma_0 
+                    To get the better performance, ensure AXI Memory Map clock frequency is greater than equal to AXI Streaming clock frequency.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting D-cache cacheable area base address C_DCACHE_BASEADDR to 0x80000000 and high address C_DCACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting I-cache cacheable area base address C_ICACHE_BASEADDR to 0x80000000 and high address C_ICACHE_HIGHADDR to 0x9FFFFFFF.
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/REF_CLK_I have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_5X_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/RefClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_dvi2rgb_0_0_PixelClk 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/SerialClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /passthrough_0/axi_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/sim/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdl/hdmi_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dynclk_0 .
+INFO: [BD 41-1171] User-interrupt detected : Generation halted successfully for IPIntegrator design C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd
+INFO: [Common 17-681] Processing pending cancel.
+catch { config_ip_cache -export [get_ips -all hdmi_axi_dynclk_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_axi_dynclk_0_0, cache-ID = fefff83f907ee8a0; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_axi_dynclk_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_axi_gpio_video_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_axi_gpio_video_0, cache-ID = 913f7b63c555b3c3; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_axi_gpio_video_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_axi_timer_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_axi_timer_0_0, cache-ID = 85f525d14993630a; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_axi_timer_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_axi_uartlite_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_axi_uartlite_0_0, cache-ID = f284569b77e9996b; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_axi_uartlite_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_axi_vdma_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_axi_vdma_0_0, cache-ID = dc9d43c268bc9e93; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_axi_vdma_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_dvi2rgb_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_dvi2rgb_0_0, cache-ID = 2cd00aa2502606e9; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_dvi2rgb_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_mdm_1_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_mdm_1_0, cache-ID = 0f243f5b09d6a9e2; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_mdm_1_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_microblaze_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_microblaze_0_0, cache-ID = 9d758e6d08ce961e; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_microblaze_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_microblaze_0_axi_intc_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_microblaze_0_axi_intc_0, cache-ID = 1aed52c8921545f9; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_microblaze_0_axi_intc_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_microblaze_0_xlconcat_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_microblaze_0_xlconcat_0, cache-ID = 6d0e5a38037c6da9; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_microblaze_0_xlconcat_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_mig_7series_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_mig_7series_0_0, cache-ID = 2c4983e0c948562f; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_rgb2dvi_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_rgb2dvi_0_0, cache-ID = c2e1512f3af69237; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_rgb2dvi_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_rst_mig_7series_0_100M_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_rst_mig_7series_0_100M_0, cache-ID = 20d333bb28c2f1b7; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_rst_mig_7series_0_100M_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_rst_mig_7series_0_pxl_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_rst_mig_7series_0_pxl_0, cache-ID = ee87f050b04f1f25; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_rst_mig_7series_0_pxl_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_v_axi4s_vid_out_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_v_axi4s_vid_out_0_0, cache-ID = 16a8f7d3ef6202bd; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_v_axi4s_vid_out_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_v_tc_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_v_tc_0_0, cache-ID = 095e588f0fa04515; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_v_tc_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_v_tc_1_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_v_tc_1_0, cache-ID = 5ea22aea08c2bb53; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_v_tc_1_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_v_vid_in_axi4s_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_v_vid_in_axi4s_0_0, cache-ID = 3881809c2528643c; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_v_vid_in_axi4s_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_xlconstant_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_xlconstant_0_0, cache-ID = 14c43c52237b12cb; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_xlconstant_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_dlmb_bram_if_cntlr_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_dlmb_bram_if_cntlr_0, cache-ID = c00c30d6ed6ed49f; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_dlmb_bram_if_cntlr_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_dlmb_v10_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_dlmb_v10_0, cache-ID = faf94d8092d58bca; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_dlmb_v10_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_ilmb_bram_if_cntlr_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_ilmb_bram_if_cntlr_0, cache-ID = c23b9f42b734288d; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_ilmb_bram_if_cntlr_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_ilmb_v10_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_ilmb_v10_0, cache-ID = faf94d8092d58bca; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_ilmb_v10_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_lmb_bram_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_lmb_bram_0, cache-ID = 4fb1f58f3d69d723; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_lmb_bram_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_xbar_1] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_xbar_1, cache-ID = e9d4b6a777628c51; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_xbar_1] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_xbar_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_xbar_0, cache-ID = 1a39546971ec05c6; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_axi_dma_0_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_axi_dma_0_0, cache-ID = 843bce31ffa878bf; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_axi_dma_0_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_passthrough_0_0] }
+catch { config_ip_cache -export [get_ips -all hdmi_axi_dma_1_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_axi_dma_1_0, cache-ID = 08d15158b81b40cb; cache size = 171.759 MB.
+catch { [ delete_ip_run [get_ips -all hdmi_axi_dma_1_0] ] }
+catch { config_ip_cache -export [get_ips -all hdmi_grayscale_top_0_1] }
+catch { config_ip_cache -export [get_ips -all hdmi_m00_regslice_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_m00_regslice_0, cache-ID = 8516c92a8691a91e; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_auto_ds_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_ds_0, cache-ID = 657b2c84c6bc4509; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_auto_rs_w_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_0, cache-ID = d78b4f1a2c638282; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_auto_us_3] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_3, cache-ID = 43240734b2ac2026; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_auto_us_2] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_2, cache-ID = 8fd126cd6945d9f2; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_s03_regslice_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s03_regslice_0, cache-ID = fbb1611999ea8b6f; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_s02_regslice_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s02_regslice_0, cache-ID = f538fc5582c17ce8; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_s01_regslice_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s01_regslice_0, cache-ID = ee7a5bd96a33d8ee; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_auto_us_1] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_1, cache-ID = 43240734b2ac2026; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_auto_rs_w_2] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_2, cache-ID = 0b597c57c9a6dad6; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_s00_regslice_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s00_regslice_0, cache-ID = 89a1e176d54184af; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_auto_us_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_0, cache-ID = 8fd126cd6945d9f2; cache size = 171.759 MB.
+catch { config_ip_cache -export [get_ips -all hdmi_auto_rs_w_1] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_1, cache-ID = fbb1611999ea8b6f; cache size = 171.759 MB.
+export_ip_user_files -of_objects [get_files C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd]
+launch_runs -jobs 24 {hdmi_passthrough_0_0_synth_1 hdmi_mig_7series_0_0_synth_1 hdmi_grayscale_top_0_1_synth_1}
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_mig_7series_0_0, cache-ID = 2c4983e0c948562f; cache size = 171.759 MB.
+[Wed Feb 14 07:09:27 2024] Launched hdmi_passthrough_0_0_synth_1, hdmi_mig_7series_0_0_synth_1, hdmi_grayscale_top_0_1_synth_1...
+Run output will be captured here:
+hdmi_passthrough_0_0_synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_passthrough_0_0_synth_1/runme.log
+hdmi_mig_7series_0_0_synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_mig_7series_0_0_synth_1/runme.log
+hdmi_grayscale_top_0_1_synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_grayscale_top_0_1_synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:04 ; elapsed = 00:01:30 . Memory (MB): peak = 3914.516 ; gain = 0.000
+export_simulation -of_objects [get_files C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd] -directory C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ip_user_files -ipstatic_source_dir C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.cache/compile_simlib/modelsim} {questa=C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.cache/compile_simlib/questa} {riviera=C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.cache/compile_simlib/riviera} {activehdl=C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+close_bd_design [get_bd_designs hdmi]
+report_ip_status -name ip_status 
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 24
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+INFO: [BD 41-1662] The design 'hdmi.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/sim/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdl/hdmi_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dynclk_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_video .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_vdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dvi2rgb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mdm_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_intc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_xlconcat .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rgb2dvi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_pxl .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_axi4s_vid_out_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_vid_in_axi4s_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/lmb_bram .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block passthrough_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block grayscale_top_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/m00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0_1/hdmi_auto_ds_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_ds .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_rs_w .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s07_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s06_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s03_couplers/s03_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s02_couplers/s02_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/s01_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_1_1/hdmi_auto_us_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_rs_w .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/s00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_0_1/hdmi_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_rs_w .
+Exporting to file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi.hwh
+Generated Block Design Tcl file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi_bd.tcl
+Generated Hardware Definition File C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_m00_regslice_0, cache-ID = 8516c92a8691a91e; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_ds_0, cache-ID = 657b2c84c6bc4509; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_0, cache-ID = d78b4f1a2c638282; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_3, cache-ID = 43240734b2ac2026; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_2, cache-ID = 8fd126cd6945d9f2; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s03_regslice_0, cache-ID = fbb1611999ea8b6f; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s02_regslice_0, cache-ID = f538fc5582c17ce8; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s01_regslice_0, cache-ID = ee7a5bd96a33d8ee; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_1, cache-ID = 43240734b2ac2026; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_2, cache-ID = 0b597c57c9a6dad6; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s00_regslice_0, cache-ID = 89a1e176d54184af; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_0, cache-ID = 8fd126cd6945d9f2; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_1, cache-ID = fbb1611999ea8b6f; cache size = 173.339 MB.
+[Wed Feb 14 07:11:14 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/runme.log
+[Wed Feb 14 07:11:14 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:07 ; elapsed = 00:00:46 . Memory (MB): peak = 3914.516 ; gain = 0.000
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 3486 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3962.422 ; gain = 35.691
+Restored from archive | CPU: 4.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 3962.422 ; gain = 35.691
+Generating merged BMM file for the design top 'hdmi_wrapper'...
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_0/data/mb_bootloop_le.elf 
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1033 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 192 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 63 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 32 instances
+  RAM16X1S => RAM32X1S (RAMS32): 512 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 201 instances
+  SRLC16E => SRL16E: 1 instances
+  SRLC32E => SRL16E: 11 instances
+
+open_run: Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 3990.852 ; gain = 76.336
+open_report: Time (s): cpu = 00:00:14 ; elapsed = 00:00:05 . Memory (MB): peak = 4134.676 ; gain = 140.254
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+close_design
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/uoft/20241/ECE532/gray_20182'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/custom_ip'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:grayscale_top:1.2 [get_ips  hdmi_grayscale_top_0_1] -log ip_upgrade.log
+Adding cell -- digilentinc.com:ip:axi_dynclk:1.0 - axi_dynclk_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_video
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding cell -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding cell -- xilinx.com:ip:axi_vdma:6.3 - axi_vdma_0
+Adding cell -- digilentinc.com:ip:dvi2rgb:2.0 - dvi2rgb_0
+Adding cell -- xilinx.com:ip:mdm:3.2 - mdm_1
+Adding cell -- xilinx.com:ip:microblaze:10.0 - microblaze_0
+Adding cell -- xilinx.com:ip:axi_intc:4.1 - microblaze_0_axi_intc
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - microblaze_0_xlconcat
+Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0
+Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_100M
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_pxl
+Adding cell -- xilinx.com:ip:v_axi4s_vid_out:4.0 - v_axi4s_vid_out_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_1
+Adding cell -- xilinx.com:ip:v_vid_in_axi4s:4.0 - v_vid_in_axi4s_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding cell -- xilinx.com:user:passthrough:1.0 - passthrough_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_1
+Adding cell -- xilinx.com:user:grayscale_top:1.1 - grayscale_top_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - lmb_bram
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - m00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_ds
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s03_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s02_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s01_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Successfully read diagram <hdmi> from BD file <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd>
+Upgrading 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd'
+INFO: [IP_Flow 19-1972] Upgraded hdmi_grayscale_top_0_1 from grayscale_top_v1_2 1.1 to grayscale_top_v1_2 1.2
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips hdmi_grayscale_top_0_1] -no_script -sync -force -quiet
+validate_bd_design
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+INFO: [xilinx.com:ip:axi_vdma:6.3-15] /axi_vdma_0 
+                    All clocks connected to AXI VDMA are not identical, therefore configuring AXI-VDMA in ASYNC mode.
+WARNING: [xilinx.com:ip:axi_vdma:6.3-155] /axi_vdma_0 
+                    To get the better performance, ensure AXI Memory Map clock frequency is greater than equal to AXI Streaming clock frequency.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting D-cache cacheable area base address C_DCACHE_BASEADDR to 0x80000000 and high address C_DCACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting I-cache cacheable area base address C_ICACHE_BASEADDR to 0x80000000 and high address C_ICACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/REF_CLK_I have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_5X_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/RefClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_dvi2rgb_0_0_PixelClk 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/SerialClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /passthrough_0/axi_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+validate_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 4169.496 ; gain = 0.000
+save_bd_design
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+close_bd_design [get_bd_designs hdmi]
+reset_run hdmi_mig_7series_0_0_synth_1
+reset_run synth_1
+launch_runs impl_1 -jobs 24
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+INFO: [BD 41-1662] The design 'hdmi.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/sim/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdl/hdmi_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dynclk_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_video .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_vdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dvi2rgb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mdm_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_intc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_xlconcat .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rgb2dvi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_pxl .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_axi4s_vid_out_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_vid_in_axi4s_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/lmb_bram .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block passthrough_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block grayscale_top_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/m00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0_1/hdmi_auto_ds_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_ds .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_rs_w .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s07_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s06_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s03_couplers/s03_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s02_couplers/s02_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/s01_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_1_1/hdmi_auto_us_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_rs_w .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/s00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_0_1/hdmi_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_rs_w .
+Exporting to file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi.hwh
+Generated Block Design Tcl file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi_bd.tcl
+Generated Hardware Definition File C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_mig_7series_0_0, cache-ID = 2c4983e0c948562f; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_xbar_0, cache-ID = 1a39546971ec05c6; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_m00_regslice_0, cache-ID = 8516c92a8691a91e; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_ds_0, cache-ID = 657b2c84c6bc4509; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_0, cache-ID = d78b4f1a2c638282; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_3, cache-ID = 43240734b2ac2026; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_2, cache-ID = 8fd126cd6945d9f2; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s03_regslice_0, cache-ID = fbb1611999ea8b6f; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s02_regslice_0, cache-ID = f538fc5582c17ce8; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s01_regslice_0, cache-ID = ee7a5bd96a33d8ee; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_1, cache-ID = 43240734b2ac2026; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_2, cache-ID = 0b597c57c9a6dad6; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s00_regslice_0, cache-ID = 89a1e176d54184af; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_0, cache-ID = 8fd126cd6945d9f2; cache size = 173.339 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_1, cache-ID = fbb1611999ea8b6f; cache size = 173.339 MB.
+[Wed Feb 14 07:52:14 2024] Launched hdmi_grayscale_top_0_1_synth_1, synth_1...
+Run output will be captured here:
+hdmi_grayscale_top_0_1_synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_grayscale_top_0_1_synth_1/runme.log
+synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/runme.log
+[Wed Feb 14 07:52:14 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:10 ; elapsed = 00:01:02 . Memory (MB): peak = 4169.496 ; gain = 0.000
+report_ip_status -name ip_status 
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 3486 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 4224.180 ; gain = 17.090
+Restored from archive | CPU: 4.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 4224.180 ; gain = 17.090
+Generating merged BMM file for the design top 'hdmi_wrapper'...
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_0/data/mb_bootloop_le.elf 
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1033 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 192 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 2 instances
+  IOBUFDS_DIFF_OUT_INTERMDISABLE => IOBUFDS_DIFF_OUT_INTERMDISABLE (IBUFDS_INTERMDISABLE_INT, IBUFDS_INTERMDISABLE_INT, INV, OBUFTDS, OBUFTDS): 2 instances
+  IOBUF_INTERMDISABLE => IOBUF_INTERMDISABLE (IBUF_INTERMDISABLE, OBUFT): 16 instances
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 63 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS, OBUFDS): 1 instances
+  RAM16X1D => RAM32X1D (RAMD32, RAMD32): 32 instances
+  RAM16X1S => RAM32X1S (RAMS32): 512 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 201 instances
+  SRLC16E => SRL16E: 1 instances
+  SRLC32E => SRL16E: 11 instances
+
+open_run: Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 4233.953 ; gain = 64.457
+open_report: Time (s): cpu = 00:00:13 ; elapsed = 00:00:05 . Memory (MB): peak = 4347.172 ; gain = 109.258
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+WARNING: [Timing 38-436] There are set_bus_skew constraint(s) in this design. Please run report_bus_skew to ensure that bus skew requirements are met.
+open_bd_design {C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd}
+Adding cell -- digilentinc.com:ip:axi_dynclk:1.0 - axi_dynclk_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_video
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding cell -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding cell -- xilinx.com:ip:axi_vdma:6.3 - axi_vdma_0
+Adding cell -- digilentinc.com:ip:dvi2rgb:2.0 - dvi2rgb_0
+Adding cell -- xilinx.com:ip:mdm:3.2 - mdm_1
+Adding cell -- xilinx.com:ip:microblaze:10.0 - microblaze_0
+Adding cell -- xilinx.com:ip:axi_intc:4.1 - microblaze_0_axi_intc
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - microblaze_0_xlconcat
+Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0
+Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_100M
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_pxl
+Adding cell -- xilinx.com:ip:v_axi4s_vid_out:4.0 - v_axi4s_vid_out_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_1
+Adding cell -- xilinx.com:ip:v_vid_in_axi4s:4.0 - v_vid_in_axi4s_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding cell -- xilinx.com:user:passthrough:1.0 - passthrough_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_1
+Adding cell -- xilinx.com:user:grayscale_top:1.2 - grayscale_top_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - lmb_bram
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - m00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_ds
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s03_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s02_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s01_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Successfully read diagram <hdmi> from BD file <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd>
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/uoft/20241/ECE532/gray_20182'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/custom_ip'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:grayscale_top:1.2 [get_ips  hdmi_grayscale_top_0_1] -log ip_upgrade.log
+Upgrading 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd'
+INFO: [IP_Flow 19-1972] Upgraded hdmi_grayscale_top_0_1 from grayscale_top_v1_2 1.2 to grayscale_top_v1_2 1.2
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips hdmi_grayscale_top_0_1] -no_script -sync -force -quiet
+report_ip_status -name ip_status 
+validate_bd_design
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+INFO: [xilinx.com:ip:axi_vdma:6.3-15] /axi_vdma_0 
+                    All clocks connected to AXI VDMA are not identical, therefore configuring AXI-VDMA in ASYNC mode.
+WARNING: [xilinx.com:ip:axi_vdma:6.3-155] /axi_vdma_0 
+                    To get the better performance, ensure AXI Memory Map clock frequency is greater than equal to AXI Streaming clock frequency.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting D-cache cacheable area base address C_DCACHE_BASEADDR to 0x80000000 and high address C_DCACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting I-cache cacheable area base address C_ICACHE_BASEADDR to 0x80000000 and high address C_ICACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/REF_CLK_I have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_5X_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/RefClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_dvi2rgb_0_0_PixelClk 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/SerialClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /passthrough_0/axi_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+validate_bd_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 4370.703 ; gain = 0.023
+report_ip_status -name ip_status 
+save_bd_design
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+close_bd_design [get_bd_designs hdmi]
+close_design
+reset_run synth_1
+launch_runs impl_1 -jobs 24
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+INFO: [BD 41-1662] The design 'hdmi.bd' is already validated. Therefore parameter propagation will not be re-run.
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/sim/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdl/hdmi_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dynclk_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_video .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_vdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dvi2rgb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mdm_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_intc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_xlconcat .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rgb2dvi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_pxl .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_axi4s_vid_out_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_vid_in_axi4s_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/lmb_bram .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block passthrough_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block grayscale_top_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/m00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0_1/hdmi_auto_ds_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_ds .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_rs_w .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s07_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s06_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s03_couplers/s03_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s02_couplers/s02_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/s01_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_1_1/hdmi_auto_us_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_rs_w .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/s00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_0_1/hdmi_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_rs_w .
+Exporting to file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi.hwh
+Generated Block Design Tcl file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi_bd.tcl
+Generated Hardware Definition File C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_mig_7series_0_0, cache-ID = 2c4983e0c948562f; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_xbar_0, cache-ID = 1a39546971ec05c6; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_grayscale_top_0_1, cache-ID = fb491961ff5ad06e; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_m00_regslice_0, cache-ID = 8516c92a8691a91e; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_ds_0, cache-ID = 657b2c84c6bc4509; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_0, cache-ID = d78b4f1a2c638282; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_3, cache-ID = 43240734b2ac2026; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_2, cache-ID = 8fd126cd6945d9f2; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s03_regslice_0, cache-ID = fbb1611999ea8b6f; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s02_regslice_0, cache-ID = f538fc5582c17ce8; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s01_regslice_0, cache-ID = ee7a5bd96a33d8ee; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_1, cache-ID = 43240734b2ac2026; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_2, cache-ID = 0b597c57c9a6dad6; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s00_regslice_0, cache-ID = 89a1e176d54184af; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_0, cache-ID = 8fd126cd6945d9f2; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_1, cache-ID = fbb1611999ea8b6f; cache size = 174.919 MB.
+[Wed Feb 14 08:15:13 2024] Launched synth_1...
+Run output will be captured here: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/runme.log
+[Wed Feb 14 08:15:13 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:11 ; elapsed = 00:01:03 . Memory (MB): peak = 4384.453 ; gain = 0.000
+reset_run synth_1
+update_ip_catalog -rebuild -scan_changes
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/uoft/20241/ECE532/gray_20182'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Albert/Documents/GitHub/ECE532/custom_ip'.
+report_ip_status -name ip_status
+upgrade_ip -vlnv xilinx.com:user:grayscale_top:1.3 [get_ips  hdmi_grayscale_top_0_1] -log ip_upgrade.log
+Adding cell -- digilentinc.com:ip:axi_dynclk:1.0 - axi_dynclk_0
+Adding cell -- xilinx.com:ip:axi_gpio:2.0 - axi_gpio_video
+Adding cell -- xilinx.com:ip:axi_timer:2.0 - axi_timer_0
+Adding cell -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding cell -- xilinx.com:ip:axi_vdma:6.3 - axi_vdma_0
+Adding cell -- digilentinc.com:ip:dvi2rgb:2.0 - dvi2rgb_0
+Adding cell -- xilinx.com:ip:mdm:3.2 - mdm_1
+Adding cell -- xilinx.com:ip:microblaze:10.0 - microblaze_0
+Adding cell -- xilinx.com:ip:axi_intc:4.1 - microblaze_0_axi_intc
+Adding cell -- xilinx.com:ip:xlconcat:2.1 - microblaze_0_xlconcat
+Adding cell -- xilinx.com:ip:mig_7series:4.1 - mig_7series_0
+Adding cell -- digilentinc.com:ip:rgb2dvi:1.4 - rgb2dvi_0
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_100M
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_mig_7series_0_pxl
+Adding cell -- xilinx.com:ip:v_axi4s_vid_out:4.0 - v_axi4s_vid_out_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_0
+Adding cell -- xilinx.com:ip:v_tc:6.1 - v_tc_1
+Adding cell -- xilinx.com:ip:v_vid_in_axi4s:4.0 - v_vid_in_axi4s_0
+Adding cell -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding cell -- xilinx.com:user:passthrough:1.0 - passthrough_0
+Adding cell -- xilinx.com:ip:axi_dma:7.1 - axi_dma_1
+Adding cell -- xilinx.com:user:grayscale_top:1.2 - grayscale_top_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding cell -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding cell -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding cell -- xilinx.com:ip:blk_mem_gen:8.4 - lmb_bram
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - m00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_ds
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s03_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s02_regslice
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s01_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - s00_regslice
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_register_slice:2.1 - auto_rs_w
+Successfully read diagram <hdmi> from BD file <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd>
+Upgrading 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd'
+INFO: [IP_Flow 19-1972] Upgraded hdmi_grayscale_top_0_1 from grayscale_top_v1_3 1.2 to grayscale_top_v1_3 1.3
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/ip_upgrade.log'.
+export_ip_user_files -of_objects [get_ips hdmi_grayscale_top_0_1] -no_script -sync -force -quiet
+close_bd_design [get_bd_designs hdmi]
+report_ip_status -name ip_status 
+launch_runs impl_1 -jobs 24
+WARNING: [BD 41-1282] Ignoring parameter HAS_BURST
+WARNING: [BD 41-1281] Parameter HAS_BURST is not defined on /axi_dma_0/M_AXIS_MM2S. Setting parameter on /axi_dma_0/M_AXIS_MM2S failed
+WARNING: [BD 41-1282] Ignoring parameter HAS_BURST
+WARNING: [BD 41-1281] Parameter HAS_BURST is not defined on /axi_dma_1/M_AXIS_MM2S. Setting parameter on /axi_dma_1/M_AXIS_MM2S failed
+WARNING: [BD 41-1731] Type mismatch between connected pins: /mig_7series_0/mmcm_locked(undef) and /dvi2rgb_0/aRst_n(rst)
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter C_M_AXI_S2MM_DATA_WIDTH(128) on '/axi_vdma_0' with propagated value(64). Command ignored
+INFO: [xilinx.com:ip:axi_vdma:6.3-15] /axi_vdma_0 
+                    All clocks connected to AXI VDMA are not identical, therefore configuring AXI-VDMA in ASYNC mode.
+WARNING: [xilinx.com:ip:axi_vdma:6.3-155] /axi_vdma_0 
+                    To get the better performance, ensure AXI Memory Map clock frequency is greater than equal to AXI Streaming clock frequency.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting D-cache cacheable area base address C_DCACHE_BASEADDR to 0x80000000 and high address C_DCACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:microblaze:10.0-16] /microblaze_0: Setting I-cache cacheable area base address C_ICACHE_BASEADDR to 0x80000000 and high address C_ICACHE_HIGHADDR to 0x9FFFFFFF.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks.
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/REF_CLK_I have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/PXL_CLK_5X_O have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /axi_dynclk_0/s00_axi_aclk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/RefClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+WARNING: [BD 41-927] Following properties on pin /dvi2rgb_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_dvi2rgb_0_0_PixelClk 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/PixelClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_O 
+WARNING: [BD 41-927] Following properties on pin /rgb2dvi_0/SerialClk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_axi_dynclk_0_0_PXL_CLK_5X_O 
+WARNING: [BD 41-927] Following properties on pin /passthrough_0/axi_clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=hdmi_mig_7series_0_0_ui_clk 
+Wrote  : <C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdmi.bd> 
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/sim/hdmi.v
+VHDL Output written to : C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hdl/hdmi_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dynclk_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_gpio_video .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_timer_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_uartlite_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_vdma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block dvi2rgb_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mdm_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_intc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_xlconcat .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block mig_7series_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rgb2dvi_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_100M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_mig_7series_0_pxl .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_axi4s_vid_out_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_tc_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block v_vid_in_axi4s_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/dlmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_bram_if_cntlr .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/ilmb_v10 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_local_memory/lmb_bram .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block microblaze_0_axi_periph/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/xbar .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block passthrough_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_dma_1 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block grayscale_top_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/m00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0_1/hdmi_auto_ds_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_ds .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/m00_couplers/auto_rs_w .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s07_couplers/auto_us .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s06_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s03_couplers/s03_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s02_couplers/s02_regslice .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/s01_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_1_1/hdmi_auto_us_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s01_couplers/auto_rs_w .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/s00_regslice .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_0_1/hdmi_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_rs_w .
+Exporting to file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi.hwh
+Generated Block Design Tcl file C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/hw_handoff/hdmi_bd.tcl
+Generated Hardware Definition File C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/synth/hdmi.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_mig_7series_0_0, cache-ID = 2c4983e0c948562f; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_xbar_0, cache-ID = 1a39546971ec05c6; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_m00_regslice_0, cache-ID = 8516c92a8691a91e; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_ds_0, cache-ID = 657b2c84c6bc4509; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_0, cache-ID = d78b4f1a2c638282; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_3, cache-ID = 43240734b2ac2026; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_2, cache-ID = 8fd126cd6945d9f2; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s03_regslice_0, cache-ID = fbb1611999ea8b6f; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s02_regslice_0, cache-ID = f538fc5582c17ce8; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s01_regslice_0, cache-ID = ee7a5bd96a33d8ee; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_1, cache-ID = 43240734b2ac2026; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_2, cache-ID = 0b597c57c9a6dad6; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_s00_regslice_0, cache-ID = 89a1e176d54184af; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_us_0, cache-ID = 8fd126cd6945d9f2; cache size = 174.919 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP hdmi_auto_rs_w_1, cache-ID = fbb1611999ea8b6f; cache size = 174.919 MB.
+[Wed Feb 14 08:18:26 2024] Launched hdmi_grayscale_top_0_1_synth_1, synth_1...
+Run output will be captured here:
+hdmi_grayscale_top_0_1_synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_grayscale_top_0_1_synth_1/runme.log
+synth_1: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1/runme.log
+[Wed Feb 14 08:18:26 2024] Launched impl_1...
+Run output will be captured here: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:18 ; elapsed = 00:01:13 . Memory (MB): peak = 4384.453 ; gain = 0.000
+report_ip_status -name ip_status 
+reset_run impl_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 14 08:25:02 2024...

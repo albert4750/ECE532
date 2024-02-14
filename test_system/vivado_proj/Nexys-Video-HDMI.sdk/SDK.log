@@ -1773,3 +1773,46 @@ con
 
 05:57:05 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
 06:05:28 INFO  : Disconnected from the channel tcfchan#1.
+09:24:21 INFO  : Registering command handlers for SDK TCF services
+09:24:21 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\temp_xsdb_launch_script.tcl
+09:24:23 INFO  : XSCT server has started successfully.
+09:24:25 INFO  : Successfully done setting XSCT server connection channel  
+09:24:25 INFO  : Successfully done setting SDK workspace  
+09:24:25 INFO  : Processing command line option -hwspec C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper.hdf.
+09:24:25 INFO  : Checking for hwspec changes in the project hdmi_wrapper_hw_platform_0.
+09:24:27 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1707920642690,  Project:1707821723462
+09:24:27 INFO  : The hardware specification for project 'hdmi_wrapper_hw_platform_0' is different from C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper.hdf.
+09:24:27 INFO  : Copied contents of C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper.hdf into \hdmi_wrapper_hw_platform_0\system.hdf.
+09:24:27 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+09:24:30 INFO  : 
+09:24:30 INFO  : Updating hardware inferred compiler options for upscaler.
+09:24:31 INFO  : Clearing existing target manager status.
+09:24:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0' command is executed.
+09:24:48 INFO  : 'fpga -state' command is executed.
+09:24:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+09:24:48 INFO  : Jtag cable 'Digilent Nexys Video 210276723721B' is selected.
+09:24:48 INFO  : 'jtag frequency' command is executed.
+09:24:48 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+09:24:48 INFO  : Context for processor 'microblaze_0' is selected.
+09:24:48 INFO  : Processor reset is completed for 'microblaze_0'.
+09:24:49 INFO  : Context for processor 'microblaze_0' is selected.
+09:24:49 INFO  : The application 'C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf' is downloaded to processor 'microblaze_0'.
+09:24:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf
+----------------End of Script----------------
+
+09:24:49 INFO  : Memory regions updated for context PA
+09:24:49 INFO  : Memory regions updated for context PA
+09:24:49 INFO  : Context for processor 'microblaze_0' is selected.
+09:24:49 INFO  : 'con' command is executed.
+09:24:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0
+con
+----------------End of Script----------------
+
+09:24:49 INFO  : Launch script is exported to file 'C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_upscaler.elf_on_local.tcl'
