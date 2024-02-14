@@ -6,19 +6,19 @@
  */
 
 module dual_port_ram #(
-    parameter  int DATA_WITDH   = 8,
-    parameter  int ITEM_COUNT   = 1024,
-    localparam int AddressWidth = $clog2(ITEM_COUNT)
+    parameter  int ITEM_BITS   = 8,
+    parameter  int ITEM_COUNT  = 1024,
+    localparam int AddressBits = $clog2(ITEM_COUNT)
 ) (
     input logic clock_i,
     input logic write_enable_i,
     input logic read_enable_i,
-    input logic [AddressWidth-1:0] read_address_i,
-    input logic [AddressWidth-1:0] write_address_i,
-    input logic [DATA_WITDH-1:0] write_data_i,
-    output logic [DATA_WITDH-1:0] read_data_o
+    input logic [AddressBits-1:0] read_address_i,
+    input logic [AddressBits-1:0] write_address_i,
+    input logic [ITEM_BITS-1:0] write_data_i,
+    output logic [ITEM_BITS-1:0] read_data_o
 );
-    logic [DATA_WITDH-1:0] ram[ITEM_COUNT-1:0];
+    logic [ITEM_BITS-1:0] ram[ITEM_COUNT-1:0];
     always @(posedge clock_i) begin
         if (write_enable_i) begin
             ram[write_address_i] <= write_data_i;
