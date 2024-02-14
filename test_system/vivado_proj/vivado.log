@@ -292,3 +292,7 @@ launch_sdk -workspace C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado
 INFO: [Vivado 12-393] Launching SDK...
 INFO: [Vivado 12-417] Running xsdk -workspace C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk -hwspec C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper.hdf
 INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+save_wave_config {C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+save_wave_config {C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.hw/hw_1/wave/hw_ila_data_2/hw_ila_data_2.wcfg}
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Feb 14 09:44:04 2024...

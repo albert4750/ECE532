@@ -89,7 +89,9 @@ const ivt_t ivt[] = {
 
 // Albert Start
 // For AxiDMA
+XAxiDma passThrough;
 XAxiDma grayScale;
+u8 dmaMode;
 u8 wOrB;
 // Albert End
 
@@ -114,6 +116,7 @@ void DemoInitialize()
 {
 	int Status;
 	XAxiVdma_Config *vdmaConfig;
+	XAxiDma_Config* passThroughConfig;
 	XAxiDma_Config* grayScaleConfig;
 	int i;
 
@@ -123,9 +126,12 @@ void DemoInitialize()
 	xil_printf("videoCapt is at %x\r\n", &videoCapt);
 	xil_printf("intc is at %x\r\n", &intc);
 	xil_printf("fRefresh is at %x\r\n", &fRefresh);
+	xil_printf("passThrough is at %x\r\n", &passThrough);
 	xil_printf("grayScale is at %x\r\n", &grayScale);
+	xil_printf("dmaMode is at %x\r\n", &dmaMode);
 	xil_printf("wOrB is at %x\r\n", &wOrB);
 	wOrB = 0;
+	dmaMode = 0;
 	// Albert End
 
 	/*
@@ -191,14 +197,25 @@ void DemoInitialize()
 	// Albert Start
 	// Initialize DMA
 	// Initialize DMA for our custom block
-	grayScaleConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_0_DEVICE_ID);
-	if (!grayScaleConfig)	{
+	passThroughConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_0_DEVICE_ID);
+	if (!passThroughConfig)	{
 		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_0_DEVICE_ID);
+		return;
+	}
+	Status = XAxiDma_CfgInitialize(&passThrough, passThroughConfig);
+	if (Status != XST_SUCCESS)	{
+		xil_printf("Pass Through DMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
+
+	grayScaleConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_1_DEVICE_ID);
+	if (!grayScaleConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_1_DEVICE_ID);
 		return;
 	}
 	Status = XAxiDma_CfgInitialize(&grayScale, grayScaleConfig);
 	if (Status != XST_SUCCESS)	{
-		xil_printf("DMA Configuration Initialization failed %d\r\n", Status);
+		xil_printf("Gray Scale DMA Configuration Initialization failed %d\r\n", Status);
 		return;
 	}
 	// Albert End
@@ -305,7 +322,12 @@ void DemoRun()
 			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE, 2);
 			break;
 		case 'd':
-			tryGrayScale();
+			doDMA();
+			break;
+		case 's':
+			xil_printf("\n\rSwitching DMA mode\n\r");
+			dmaMode = !dmaMode;
+			xil_printf("DMA mode is now %u\n\r", dmaMode);
 			break;
 		case 'q':
 			break;
@@ -324,13 +346,22 @@ void DemoRun()
 }
 
 // Albert Start
-void tryGrayScale(){
+void doDMA(){
 	u32 ret;
 	u32 length = sizeof(u8) * DEMO_MAX_FRAME;
 	xil_printf("\n\rTrying to initiate DMA DATA Transfer\n\r");
+	XAxiDma* dma;
+
+	if(dmaMode == 0){
+		dma = &passThrough;
+	}
+	else{
+		dma = &grayScale;
+	}
+
 
 	// start reading
-	ret = XAxiDma_SimpleTransfer(&grayScale, (u32)pFrames[0], length, XAXIDMA_DMA_TO_DEVICE);
+	ret = XAxiDma_SimpleTransfer(dma, (u32)pFrames[0], length, XAXIDMA_DMA_TO_DEVICE);
 	if(ret != XST_SUCCESS){
 		xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
 	}
@@ -338,7 +369,7 @@ void tryGrayScale(){
 		xil_printf("DMA to device transfer Successfully registered\n\r");
 	}
 	// start writing
-	ret = XAxiDma_SimpleTransfer(&grayScale, (u32)pFrames[1], length, XAXIDMA_DEVICE_TO_DMA);
+	ret = XAxiDma_SimpleTransfer(dma, (u32)pFrames[1], length, XAXIDMA_DEVICE_TO_DMA);
 	if(ret != XST_SUCCESS){
 		xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
 	}
