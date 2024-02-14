@@ -21,6 +21,7 @@ module sliding_window #(
     typedef logic [InImageColumnBits-1:0] InColumnType;
     typedef logic [OutImageRowBits-1:0] OutRowType;
     typedef logic [OutImageColumnBits-1:0] OutColumnType;
+    typedef logic [$clog2(KERNEL_SIZE-1)-1:0] RAMRowType;
 
     logic [KERNEL_SIZE-2:0] ram_write_enable;
     logic [KERNEL_SIZE-2:0][InImageColumnBits-1:0] ram_write_address;
@@ -64,35 +65,69 @@ module sliding_window #(
     InColumnType southeast_item_column;
     logic [ITEM_BITS-1:0] southeast_item_data;
 
+    initial begin
+        input_slave_port.ready = 1;
+        sliding_window_master_port.valid = 0;
+        for (int i = 0; i < KERNEL_SIZE - 1; ++i) begin
+            ram_read_address[i]  = 0;
+            ram_write_address[i] = 0;
+        end
+    end
+
     always_ff @(posedge clock_i) begin
-        if (!has_pending_output && is_southeast_item_valid) begin
+        $display("has_new_input: %0d, has_pending_output: %0d", has_new_input, has_pending_output);
+        $display("input_slave_port: valid=%0d, ready=%0d, row=%0d, column=%0d, data=%0d",
+                 input_slave_port.valid, input_slave_port.ready, input_slave_port.row,
+                 input_slave_port.column, input_slave_port.data);
+        $display("tmp_buffer: row=%0d, column=%0d, data=%0d", tmp_buffer_row, tmp_buffer_column,
+                 tmp_buffer_data);
+        $display("southeast_item: valid=%0d, row=%0d, column=%0d, data=%0d",
+                 is_southeast_item_valid, southeast_item_row, southeast_item_column,
+                 southeast_item_data);
+        $display("sliding_window_master_port: valid=%0d, ready=%0d, row=%0d, column=%0d, data=%0d",
+                 sliding_window_master_port.valid, sliding_window_master_port.ready,
+                 sliding_window_master_port.row, sliding_window_master_port.column,
+                 sliding_window[0][0]);
+        $display("ram: write_enable=0b%0b", ram_write_enable);
+        $display("sliding_window:");
+        $display("%d %d %d", sliding_window[0][0], sliding_window[0][1], sliding_window[0][2]);
+        $display("%d %d %d", sliding_window[1][0], sliding_window[1][1], sliding_window[1][2]);
+        $display("%d %d %d", sliding_window[2][0], sliding_window[2][1], sliding_window[2][2]);
+        $display("-------------------------------------------------------------------------------");
+        for (int i = 0; i < KERNEL_SIZE - 1; ++i) begin
+            ram_write_enable[i] <= 0;
+        end
+        if (!has_pending_output) begin
             // Southeast item + RAM read -> sliding window.
-            sliding_window_master_port.valid <= (
+            if (!is_southeast_item_valid) begin
+                sliding_window_master_port.valid <= 0;
+            end else begin
+                sliding_window_master_port.valid <= (
                 southeast_item_row >= InRowType'(KERNEL_SIZE - 1) &&
                 southeast_item_column >= InColumnType'(KERNEL_SIZE - 1));
-            sliding_window_master_port.row <= OutRowType'(
+                sliding_window_master_port.row <= OutRowType'(
                 southeast_item_row - InRowType'(KERNEL_SIZE - 1));
-            sliding_window_master_port.column <= OutColumnType'(
+                sliding_window_master_port.column <= OutColumnType'(
                 southeast_item_column - InColumnType'(KERNEL_SIZE - 1));
-            for (InRowType i = 0; i < InRowType'(KERNEL_SIZE); ++i) begin
-                typedef logic [$clog2(KERNEL_SIZE-1)-1:0] RAMRowType;
-                RAMRowType ram_row = RAMRowType'(
-                    (southeast_item_row + i) % InRowType'(KERNEL_SIZE - 1));
-                for (InColumnType j = 0; j < InColumnType'(KERNEL_SIZE - 1); ++j) begin
-                    sliding_window[i][j] <= sliding_window[i][j+1];
+                for (InRowType i = 0; i < InRowType'(KERNEL_SIZE); ++i) begin
+                    RAMRowType ram_row = RAMRowType'(
+                        (southeast_item_row + i) % InRowType'(KERNEL_SIZE - 1));
+                    for (InColumnType j = 0; j < InColumnType'(KERNEL_SIZE - 1); ++j) begin
+                        sliding_window[i][j] <= sliding_window[i][j+1];
+                    end
+                    if (i != InRowType'(KERNEL_SIZE - 1)) begin
+                        sliding_window[i][KERNEL_SIZE-1] <= ram_read_data[ram_row];
+                    end else begin
+                        sliding_window[i][KERNEL_SIZE-1] <= southeast_item_data;
+                        ram_write_enable[ram_row] <= 1;
+                        ram_write_address[ram_row] <= southeast_item_column;
+                        ram_write_data[ram_row] <= southeast_item_data;
+                    end
                 end
-                if (i != InRowType'(KERNEL_SIZE - 1)) begin
-                    sliding_window[i][KERNEL_SIZE-1] <= ram_read_data[ram_row];
-                    ram_write_enable[ram_row] <= 0;
-                end else begin
-                    sliding_window[i][KERNEL_SIZE-1] <= southeast_item_data;
-                    ram_write_enable[ram_row] <= 1;
-                    ram_write_address[ram_row] <= southeast_item_column;
-                    ram_write_data[ram_row] <= southeast_item_data;
-                end
+                is_southeast_item_valid <= 0;
             end
         end
-        if (!is_southeast_item_valid || !has_pending_output) begin
+        if ((!has_new_input && !is_southeast_item_valid) || !has_pending_output) begin
             if (!input_slave_port.ready) begin
                 // Temporary buffer -> southeast item.
                 is_southeast_item_valid <= 1;
@@ -100,12 +135,22 @@ module sliding_window #(
                 southeast_item_column <= tmp_buffer_column;
                 southeast_item_data <= tmp_buffer_data;
                 input_slave_port.ready <= 1;
+                for (InRowType i = 0; i < InRowType'(KERNEL_SIZE - 1); ++i) begin
+                    ram_read_address[
+                        (tmp_buffer_row + i) % InRowType'(KERNEL_SIZE - 1)
+                    ] <= tmp_buffer_column;
+                end
             end else begin
                 // Input -> southeast item.
                 is_southeast_item_valid <= has_new_input;
                 southeast_item_row <= input_slave_port.row;
                 southeast_item_column <= input_slave_port.column;
                 southeast_item_data <= input_slave_port.data;
+                for (InRowType i = 0; i < InRowType'(KERNEL_SIZE - 1); ++i) begin
+                    ram_read_address[
+                        (input_slave_port.row + i) % InRowType'(KERNEL_SIZE - 1)
+                    ] <= input_slave_port.column;
+                end
             end
         end
         if (has_new_input && has_pending_output) begin

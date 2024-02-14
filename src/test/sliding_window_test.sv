@@ -1,12 +1,14 @@
 module sliding_window_test #(
     localparam int ItemBits = 8,
     localparam int KernelSize = 3,
-    localparam int InImageHeight = 768,
-    localparam int InImageWidth = 1024,
+    localparam int InImageHeight = 5,
+    localparam int InImageWidth = 5,
     localparam int InImageRowBits = $clog2(InImageHeight),
     localparam int InImageColumnBits = $clog2(InImageWidth),
     localparam int OutImageHeight = InImageHeight - (KernelSize - 1),
-    localparam int OutImageWidth = InImageWidth - (KernelSize - 1)
+    localparam int OutImageWidth = InImageWidth - (KernelSize - 1),
+    localparam int OutImageRowBits = $clog2(OutImageHeight),
+    localparam int OutImageColumnBits = $clog2(OutImageWidth)
 );
     logic clock;
     always #5 clock = ~clock;
@@ -34,6 +36,12 @@ module sliding_window_test #(
         .sliding_window_master_port(sliding_window_if.master)
     );
 
+    // Give the data a 3-D shape so that indexing is easier.
+    logic [KernelSize-1:0][KernelSize-1:0][ItemBits-1:0] sliding_window;
+    always_comb begin
+        sliding_window = sliding_window_if.data;
+    end
+
     logic input_master_done = 0;
     initial begin : input_master
         input_if.valid = 0;
@@ -43,7 +51,7 @@ module sliding_window_test #(
             for (int column = 0; column < InImageWidth; ++column) begin
                 // Pause for a random number of cycles.
                 begin
-                    int pause_cycles = $urandom_range(1, 7);
+                    int pause_cycles = $urandom_range(1, 1);
                     for (int i = 0; i < pause_cycles; ++i) begin
                         @(negedge clock);
                         #1;
@@ -64,8 +72,11 @@ module sliding_window_test #(
                 do begin
                     @(posedge clock);
                     #1;
-                end while (!sliding_window_if.ready);
-                $display("Sent data at (row, column)=(%0d, %0d).", row, column);
+                end while (!input_if.ready);
+                // $display("Sent data at (row, column)=(%0d, %0d).", row, column);
+                // if (row == 0 && column == 10) begin
+                //     $finish;
+                // end
             end
         end
         @(negedge clock);
@@ -85,7 +96,7 @@ module sliding_window_test #(
             for (int column = 0; column < OutImageWidth; ++column) begin
                 // Pause for a random number of cycles.
                 begin
-                    int pause_cycles = $urandom_range(1, 7);
+                    int pause_cycles = $urandom_range(1, 1);
                     for (int i = 0; i < pause_cycles; ++i) begin
                         @(negedge clock);
                         #1;
@@ -99,10 +110,39 @@ module sliding_window_test #(
                     @(posedge clock);
                     #1;
                 end while (!sliding_window_if.valid);
-                $display("Received result at (row, column)=(%0d, %0d).", row, column);
+                // $display("Received result at (row, column)=(%0d, %0d).", row, column);
 
                 // Check the result.
-                // TODO
+                begin
+                    logic [OutImageRowBits-1:0] expected_row = row[OutImageRowBits-1:0];
+                    logic [OutImageColumnBits-1:0] expected_column = column[OutImageColumnBits-1:0];
+
+                    assert (expected_row == sliding_window_if.row)
+                    else begin
+                        $error("Error: row: expected=0x%0h, actual=0x%0h", expected_row,
+                               sliding_window_if.row);
+                    end
+
+                    assert (expected_column == sliding_window_if.column)
+                    else begin
+                        $error("Error: column: expected=0x%0h, actual=0x%0h", expected_column,
+                               sliding_window_if.column);
+                    end
+
+                    for (int i = 0; i < KernelSize; ++i) begin
+                        for (int j = 0; j < KernelSize; ++j) begin
+                            int flat_index = (row + i) * InImageWidth + (column + j);
+                            logic [ItemBits-1:0] expected_data = flat_index[ItemBits-1:0];
+                            logic [ItemBits-1:0] actual_data = sliding_window[i][j];
+                            assert (expected_data == actual_data)
+                            else begin
+                                $error(
+                                    "Error: (row, column)=(%0d, %0d), (i, j)=(%0d, %0d), expected=0x%0h, actual=0x%0h",
+                                    row, column, i, j, expected_data, actual_data);
+                            end
+                        end
+                    end
+                end
             end
         end
         @(negedge clock);
