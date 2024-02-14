@@ -65,7 +65,7 @@ module conv_multiplier_test #(
             for (int column = 0; column < ImageWidth; ++column) begin
                 // Pause for a random number of cycles.
                 begin
-                    int pause_cycles = $urandom_range(1, 1);
+                    int pause_cycles = $urandom_range(1, 7);
                     for (int i = 0; i < pause_cycles; ++i) begin
                         @(negedge clock);
                         #1;
@@ -91,7 +91,6 @@ module conv_multiplier_test #(
                     @(posedge clock);
                     #1;
                 end while (!sliding_window_if.ready);
-                // $display("%t: Sent data (row=0x%0h, column=0x%0h)", $time(), row, column);
             end
         end
         @(negedge clock);
@@ -111,7 +110,7 @@ module conv_multiplier_test #(
             for (int column = 0; column < ImageWidth; ++column) begin
                 // Pause for a random number of cycles.
                 begin
-                    int pause_cycles = $urandom_range(1, 2);
+                    int pause_cycles = $urandom_range(1, 7);
                     for (int i = 0; i < pause_cycles; ++i) begin
                         @(negedge clock);
                         #1;
@@ -125,8 +124,6 @@ module conv_multiplier_test #(
                     @(posedge clock);
                     #1;
                 end while (!result_if.valid);
-                // $display("%t: Received result (row=0x%0h, column=0x%0h, data=0x%0h)", $time(),
-                //          result_if.row, result_if.column, result_if.data);
 
                 // Check the result.
                 begin
