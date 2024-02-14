@@ -96,7 +96,7 @@ module conv_multiplier_test #(
         @(negedge clock);
         #1;
         sliding_window_if.valid = 0;
-        $display("Done sending data.");
+        $display("Finished sending data.");
         #20;
         sliding_window_master_done = 1;
     end : sliding_window_master
@@ -156,7 +156,7 @@ module conv_multiplier_test #(
         @(negedge clock);
         #1;
         result_if.ready = 0;
-        $display("Done receiving results.");
+        $display("Finished receiving results.");
         #20;
         result_slave_done = 1;
     end : result_slave

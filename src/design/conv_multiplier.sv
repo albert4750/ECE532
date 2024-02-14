@@ -55,7 +55,8 @@ module conv_multiplier #(
                 result_master_port.data <= kernel_master_port.result;
                 is_kernel_result_valid <= 0;
             end
-        end else if (has_new_input && sliding_window_slave_port.ready) begin
+        end
+        if (has_new_input && has_pending_output) begin
             // Kernel result -> temporary buffer.
             sliding_window_slave_port.ready <= !is_kernel_result_valid;
             tmp_buffer_row <= kernel_result_row;
