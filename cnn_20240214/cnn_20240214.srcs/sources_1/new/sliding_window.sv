@@ -10,7 +10,7 @@
 // Target Devices: Nexys Video
 // Tool Versions:
 // Description:
-//     This module receives a row-major stream of elements from 2-D matrices and
+//     This module accepts a row-major stream of elements from 2-D matrices and
 //     produces a stream of sliding windows. No padding is applied.
 //
 //     - Input: Stream of (HEIGHT, WIDTH) elements, each element of (DATA_WIDTH)
@@ -116,17 +116,15 @@ module sliding_window #(
         if (reset_i) begin
             current_row <= 0;
             current_column <= 0;
-            out_stream.tlast <= 0;
         end else if (has_new_input) begin
             current_row <= next_row;
             current_column <= next_column;
-            out_stream.tlast <= in_stream.tlast;
         end
     end
 
     assign in_stream.tready = !reset_i && out_stream.tready;
-    assign out_stream.tvalid = (
-        !reset_i && in_stream.tvalid &&
-        current_row >= (WINDOW_SIZE - 1) && current_column >= (WINDOW_SIZE - 1));
+    assign out_stream.tvalid = !reset_i && in_stream.tvalid &&
+        current_row >= (WINDOW_SIZE - 1) && current_column >= (WINDOW_SIZE - 1);
+    assign out_stream.tlast = in_stream.tlast;
 
 endmodule : sliding_window

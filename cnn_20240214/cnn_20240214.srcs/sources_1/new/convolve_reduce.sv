@@ -10,7 +10,7 @@
 // Target Devices: Nexys Video
 // Tool Versions:
 // Description:
-//     This module receives a stream of sliding windows, applies a constant 2-D
+//     This module accepts a stream of sliding windows, applies a constant 2-D
 //     convolution kernel, and produces a stream of reduced sums.
 //
 //     - Input: (KERNEL_SIZE, KERNEL_SIZE, ACTIVATION_WIDTH).

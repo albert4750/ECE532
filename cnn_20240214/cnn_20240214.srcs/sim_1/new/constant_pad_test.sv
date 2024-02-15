@@ -3,16 +3,16 @@
 // Company:
 // Engineer: Yunhao Qian
 //
-// Create Date: 02/14/2024 10:45:28 PM
+// Create Date: 02/15/2024 10:18:53 AM
 // Design Name:
-// Module Name: sliding_window_test
+// Module Name: constant_pad_test
 // Project Name: ECE532 Course Project - Real-Time Video Processing Pipeline
 // Target Devices: Nexys Video
 // Tool Versions:
 // Description:
-//     Test bench for the sliding_window module.
 //
 // Dependencies:
+//     Test bench for the constant_pad module.
 //
 // Revision:
 // Revision 0.01 - File Created
@@ -21,13 +21,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module sliding_window_test #(
+module constant_pad_test #(
     localparam int DataWidth = 8,
-    localparam int WindowSize = 3,
+    localparam int Padding = 1,
+    localparam logic [DataWidth-1:0] Value = 127,
     localparam int InHeight = 768,
     localparam int InWidth = 1024,
-    localparam int OutHeight = InHeight - WindowSize + 1,
-    localparam int OutWidth = InWidth - WindowSize + 1,
+    localparam int OutHeight = InHeight + 2 * Padding,
+    localparam int OutWidth = InWidth + 2 * Padding,
     localparam int Rounds = 4
 );
 
@@ -40,13 +41,14 @@ module sliding_window_test #(
     logic reset;
 
     axi4_stream_if #(DataWidth) in_stream ();
-    axi4_stream_if #(DataWidth * WindowSize * WindowSize) out_stream ();
+    axi4_stream_if #(DataWidth) out_stream ();
 
-    sliding_window #(
+    constant_pad #(
         .DATA_WIDTH(DataWidth),
-        .WINDOW_SIZE(WindowSize),
-        .HEIGHT(InHeight),
-        .WIDTH(InWidth)
+        .PADDING(Padding),
+        .VALUE(Value),
+        .IN_HEIGHT(InHeight),
+        .IN_WIDTH(InWidth)
     ) dut (
         .clock_i(clock),
         .reset_i(reset),
@@ -54,13 +56,19 @@ module sliding_window_test #(
         .out_stream(out_stream.master)
     );
 
-    logic [WindowSize-1:0][WindowSize-1:0][DataWidth-1:0] out_data;
-    assign out_data = out_stream.tdata;
-
-    function automatic data_t get_element(int row, int column);
+    function automatic data_t get_in_element(int row, int column);
         int flat_index = row * InWidth + column;
         return data_t'(flat_index);
-    endfunction : get_element
+    endfunction : get_in_element
+
+    function automatic data_t get_out_element(int row, int column);
+        if (row < Padding || row >= (InHeight + Padding) ||
+            column < Padding || column >= (InWidth + Padding)) begin
+            return Value;
+        end else begin
+            return get_in_element(row - Padding, column - Padding);
+        end
+    endfunction : get_out_element
 
     logic in_stream_finished = 0;
     initial begin : feed_in_stream
@@ -80,7 +88,7 @@ module sliding_window_test #(
 
                     // Send data to the DUT.
                     in_stream.tvalid = 1;
-                    in_stream.tdata  = get_element(row, column);
+                    in_stream.tdata  = get_in_element(row, column);
                     do begin
                         @(posedge clock);
                     end while (!in_stream.tready);
@@ -125,16 +133,13 @@ module sliding_window_test #(
                     end while (!out_stream.tvalid);
 
                     // Check the data.
-                    for (int i = 0; i < WindowSize; ++i) begin
-                        for (int j = 0; j < WindowSize; ++j) begin
-                            data_t expected = get_element(row + i, column + j);
-                            data_t actual = out_data[i][j];
-                            assert (actual == expected)
-                            else begin
-                                $error(
-                                    "Error: row=%d, column=%d, i=%d, j=%d, expected=%d, actual=%d",
-                                    row, column, i, j, expected, actual);
-                            end
+                    begin
+                        data_t expected = get_out_element(row, column);
+                        data_t actual = out_stream.tdata;
+                        assert (actual == expected)
+                        else begin
+                            $error("Error: row=%d, column=%d, expected=%d, actual=%d", row, column,
+                                   expected, actual);
                         end
                     end
 
@@ -164,4 +169,4 @@ module sliding_window_test #(
         $finish;
     end
 
-endmodule : sliding_window_test
+endmodule : constant_pad_test
