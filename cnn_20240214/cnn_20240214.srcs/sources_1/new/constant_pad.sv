@@ -45,11 +45,12 @@ module constant_pad #(
     localparam int OutWidth = IN_WIDTH + 2 * PADDING;
 
     // The current element in the output stream.
-    int current_row;
-    int current_column;
+    int   current_row;
+    int   current_column;
 
     // Whether the current element is in the padding region.
-    logic is_in_padding = current_row < PADDING || current_row >= (IN_HEIGHT + PADDING) ||
+    logic is_in_padding;
+    assign is_in_padding = current_row < PADDING || current_row >= (IN_HEIGHT + PADDING) ||
         current_column < PADDING || current_column >= (IN_WIDTH + PADDING);
 
     // The next element to process.
@@ -67,12 +68,6 @@ module constant_pad #(
     end
 
     always_ff @(posedge clock_i) begin
-        // $display("input: valid=%d, ready=%d, data=%d, last=%d", in_stream.tvalid, in_stream.tready, in_stream.tdata, in_stream.tlast);
-        // $display("output: valid=%d, ready=%d, data=%d, last=%d", out_stream.tvalid, out_stream.tready, out_stream.tdata, out_stream.tlast);
-        // $display("current: row=%d, column=%d", current_row, current_column);
-        // $display("next: row=%d, column=%d", next_row, next_column);
-        // $display("-----------------------------------------------------");
-
         if (reset_i) begin
             current_row <= 0;
             current_column <= 0;
