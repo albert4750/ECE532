@@ -26,7 +26,7 @@
 
 module dual_port_ram #(
     parameter  int DATA_WIDTH  = 8,
-    parameter  int ITEM_COUNT  = 1024,
+    parameter  int ITEM_COUNT  = 800,
     localparam int AddressBits = $clog2(ITEM_COUNT)
 ) (
     input logic clock_i,

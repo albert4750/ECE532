@@ -32,8 +32,8 @@ module constant_pad #(
     parameter int DATA_WIDTH = 8,
     parameter int PADDING = 1,
     parameter logic [DATA_WIDTH-1:0] VALUE = 0,
-    parameter int IN_HEIGHT = 768,
-    parameter int IN_WIDTH = 1024
+    parameter int IN_HEIGHT = 600,
+    parameter int IN_WIDTH = 800
 ) (
     input logic clock_i,
     input logic reset_i,

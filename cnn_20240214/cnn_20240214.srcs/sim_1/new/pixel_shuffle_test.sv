@@ -3,16 +3,16 @@
 // Company:
 // Engineer: Yunhao Qian
 //
-// Create Date: 02/15/2024 10:18:53 AM
+// Create Date: 02/15/2024 01:38:25 PM
 // Design Name:
-// Module Name: constant_pad_test
+// Module Name: pixel_shuffle_test
 // Project Name: ECE532 Course Project - Real-Time Video Processing Pipeline
 // Target Devices: Nexys Video
 // Tool Versions:
 // Description:
+//     Test bench for the pixel_shuffle module.
 //
 // Dependencies:
-//     Test bench for the constant_pad module.
 //
 // Revision:
 // Revision 0.01 - File Created
@@ -21,14 +21,15 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module constant_pad_test #(
+module pixel_shuffle_test #(
     localparam int DataWidth = 8,
-    localparam int Padding = 1,
-    localparam logic [DataWidth-1:0] Value = 127,
+    localparam int OutChannels = 3,
+    localparam int UpscaleFactor = 2,
     localparam int InHeight = 600,
     localparam int InWidth = 800,
-    localparam int OutHeight = InHeight + 2 * Padding,
-    localparam int OutWidth = InWidth + 2 * Padding,
+    localparam int InChannels = OutChannels * UpscaleFactor * UpscaleFactor,
+    localparam int OutHeight = InHeight * UpscaleFactor,
+    localparam int OutWidth = InWidth * UpscaleFactor,
     localparam int Rounds = 4
 );
 
@@ -40,13 +41,13 @@ module constant_pad_test #(
 
     logic reset;
 
-    axi4_stream_if #(DataWidth) in_stream ();
-    axi4_stream_if #(DataWidth) out_stream ();
+    axi4_stream_if #(DataWidth * InChannels) in_stream ();
+    axi4_stream_if #(DataWidth * OutChannels) out_stream ();
 
-    constant_pad #(
+    pixel_shuffle #(
         .DATA_WIDTH(DataWidth),
-        .PADDING(Padding),
-        .VALUE(Value),
+        .OUT_CHANNELS(OutChannels),
+        .UPSCALE_FACTOR(UpscaleFactor),
         .IN_HEIGHT(InHeight),
         .IN_WIDTH(InWidth)
     ) dut (
@@ -56,18 +57,18 @@ module constant_pad_test #(
         .out_stream(out_stream.master)
     );
 
-    function automatic data_t get_in_element(int row, int column);
-        int flat_index = row * InWidth + column;
-        return data_t'(flat_index);
+    logic [InChannels-1:0][DataWidth-1:0] in_data;
+    assign in_stream.tdata = in_data;
+
+    logic [OutChannels-1:0][DataWidth-1:0] out_data;
+    assign out_data = out_stream.tdata;
+
+    function automatic data_t get_in_element(int row, int column, int channel);
+        // TODO
     endfunction : get_in_element
 
-    function automatic data_t get_out_element(int row, int column);
-        if (row < Padding || row >= (InHeight + Padding) ||
-            column < Padding || column >= (InWidth + Padding)) begin
-            return Value;
-        end else begin
-            return get_in_element(row - Padding, column - Padding);
-        end
+    function automatic data_t get_out_element(int row, int column, int channel);
+        // TODO
     endfunction : get_out_element
 
     logic in_stream_finished = 0;
@@ -88,8 +89,10 @@ module constant_pad_test #(
 
                     // Send data to the DUT.
                     in_stream.tvalid = 1;
-                    in_stream.tdata  = get_in_element(row, column);
-                    in_stream.tlast  = row == (InHeight - 1) && column == (InWidth - 1);
+                    for (int channel = 0; channel < InChannels; ++channel) begin
+                        in_data[channel] = get_in_element(row, column, channel);
+                    end
+                    in_stream.tlast = row == (InHeight - 1) && column == (InWidth - 1);
                     do begin
                         @(posedge clock);
                     end while (!in_stream.tready);
@@ -134,13 +137,14 @@ module constant_pad_test #(
                     end while (!out_stream.tvalid);
 
                     // Check the data.
-                    begin
-                        data_t expected = get_out_element(row, column);
-                        data_t actual = out_stream.tdata;
+                    for (int channel = 0; channel < OutChannels; ++channel) begin
+                        data_t expected = get_out_element(row, column, channel);
+                        data_t actual = out_data[channel];
                         assert (actual == expected)
                         else begin
-                            $error("Error: tdata, row=%d, column=%d, expected=%d, actual=%d", row,
-                                   column, expected, actual);
+                            $error(
+                                "Error: tdata, row=%d, column=%d, channel=%d, expected=%d, actual=%d",
+                                row, column, channel, expected, actual);
                         end
                     end
                     begin
@@ -152,10 +156,8 @@ module constant_pad_test #(
                                    column, expected, actual);
                         end
                     end
-
-                    @(negedge clock);
-                    out_stream.tready = 0;
                 end
+                if (out_stream_finished) break;
             end
             $display("Finished receiving data for round %d", round);
 
@@ -179,4 +181,4 @@ module constant_pad_test #(
         $finish;
     end
 
-endmodule : constant_pad_test
+endmodule : pixel_shuffle_test

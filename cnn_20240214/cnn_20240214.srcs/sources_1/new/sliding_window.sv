@@ -33,8 +33,8 @@
 module sliding_window #(
     parameter int DATA_WIDTH = 8,
     parameter int WINDOW_SIZE = 3,
-    parameter int HEIGHT = 768,
-    parameter int WIDTH = 1024
+    parameter int HEIGHT = 600,
+    parameter int WIDTH = 800
 ) (
     input logic clock_i,
     input logic reset_i,

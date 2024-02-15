@@ -24,8 +24,8 @@
 module sliding_window_test #(
     localparam int DataWidth = 8,
     localparam int WindowSize = 3,
-    localparam int InHeight = 768,
-    localparam int InWidth = 1024,
+    localparam int InHeight = 600,
+    localparam int InWidth = 800,
     localparam int OutHeight = InHeight - WindowSize + 1,
     localparam int OutWidth = InWidth - WindowSize + 1,
     localparam int Rounds = 4
@@ -81,6 +81,7 @@ module sliding_window_test #(
                     // Send data to the DUT.
                     in_stream.tvalid = 1;
                     in_stream.tdata  = get_element(row, column);
+                    in_stream.tlast  = (row == InHeight - 1) && (column == InWidth - 1);
                     do begin
                         @(posedge clock);
                     end while (!in_stream.tready);
@@ -132,9 +133,18 @@ module sliding_window_test #(
                             assert (actual == expected)
                             else begin
                                 $error(
-                                    "Error: row=%d, column=%d, i=%d, j=%d, expected=%d, actual=%d",
+                                    "Error: tdata, row=%d, column=%d, i=%d, j=%d, expected=%d, actual=%d",
                                     row, column, i, j, expected, actual);
                             end
+                        end
+                    end
+                    begin
+                        logic expected = row == (OutHeight - 1) && column == (OutWidth - 1);
+                        logic actual = out_stream.tlast;
+                        assert (actual == expected)
+                        else begin
+                            $error("Error: tlast, row=%d, column=%d, expected=%d, actual=%d", row,
+                                   column, expected, actual);
                         end
                     end
 
