@@ -5,12 +5,12 @@
 //
 // Create Date: 02/14/2024 05:43:06 PM
 // Design Name:
-// Module Name: conv2d_reduce_test
+// Module Name: convolve_reduce_test
 // Project Name: ECE532 Course Project - Real-Time Video Processing Pipeline
 // Target Devices: Nexys Video
 // Tool Versions:
 // Description:
-//     Test bench for the conv2d_reduce module.
+//     Test bench for the convolve_reduce module.
 //
 // Dependencies:
 //
@@ -21,18 +21,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module conv2d_reduce_test #(
-    localparam int ActvWidth  = 8,
-    localparam int WgtWidth   = 8,
+module convolve_reduce_test #(
+    localparam int ActivationWidth = 8,
+    localparam int WeightWidth = 8,
     localparam int KernelSize = 3
 );
 
-    axi4_stream_if #(ActvWidth * KernelSize * KernelSize) in_stream ();
-    axi4_stream_if #(ActvWidth) out_stream ();
+    axi4_stream_if #(ActivationWidth * KernelSize * KernelSize) in_stream ();
+    axi4_stream_if #(ActivationWidth) out_stream ();
 
-    conv2d_reduce #(
-        .ACTV_WIDTH(ActvWidth),
-        .WGT_WIDTH(WgtWidth),
+    convolve_reduce #(
+        .ACTIVATION_WIDTH(ActivationWidth),
+        .WEIGHT_WIDTH(WeightWidth),
         .KERNEL_SIZE(KernelSize),
         .WEIGHT('{'{1, 2, 1}, '{2, 4, 2}, '{1, 2, 1}})
     ) dut (
@@ -40,7 +40,7 @@ module conv2d_reduce_test #(
         .out_stream(out_stream.master)
     );
 
-    logic signed [KernelSize-1:0][KernelSize-1:0][ActvWidth-1:0] in_data;
+    logic signed [KernelSize-1:0][KernelSize-1:0][ActivationWidth-1:0] in_data;
     assign in_stream.tdata = in_data;
 
     initial begin
@@ -56,4 +56,4 @@ module conv2d_reduce_test #(
         $finish;
     end
 
-endmodule
+endmodule : convolve_reduce_test
