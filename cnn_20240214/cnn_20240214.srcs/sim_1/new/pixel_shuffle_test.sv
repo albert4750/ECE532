@@ -45,8 +45,7 @@ module pixel_shuffle_test #(
     axi4_stream_if #(DataWidth * OutChannels) out_stream ();
 
     pixel_shuffle #(
-        .DATA_WIDTH(DataWidth),
-        .OUT_CHANNELS(OutChannels),
+        .DATA_WIDTH(DataWidth * OutChannels),
         .UPSCALE_FACTOR(UpscaleFactor),
         .IN_HEIGHT(InHeight),
         .IN_WIDTH(InWidth)
@@ -70,7 +69,7 @@ module pixel_shuffle_test #(
         int out_row = row * UpscaleFactor + row_in_block;
         int out_column = column * UpscaleFactor + column_in_block;
         int out_channel = channel % OutChannels;
-        return get_in_element(out_row, out_column, out_channel);
+        return get_out_element(out_row, out_column, out_channel);
     endfunction : get_in_element
 
     function automatic data_t get_out_element(int row, int column, int channel);
@@ -163,8 +162,10 @@ module pixel_shuffle_test #(
                                    column, expected, actual);
                         end
                     end
+
+                    @(negedge clock);
+                    out_stream.tready = 0;
                 end
-                if (out_stream_finished) break;
             end
             $display("Finished receiving data for round %d", round);
 
