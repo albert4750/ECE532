@@ -64,11 +64,18 @@ module pixel_shuffle_test #(
     assign out_data = out_stream.tdata;
 
     function automatic data_t get_in_element(int row, int column, int channel);
-        // TODO
+        int index_in_block = channel / OutChannels;
+        int row_in_block = index_in_block / UpscaleFactor;
+        int column_in_block = index_in_block % UpscaleFactor;
+        int out_row = row * UpscaleFactor + row_in_block;
+        int out_column = column * UpscaleFactor + column_in_block;
+        int out_channel = channel % OutChannels;
+        return get_in_element(out_row, out_column, out_channel);
     endfunction : get_in_element
 
     function automatic data_t get_out_element(int row, int column, int channel);
-        // TODO
+        int flat_index = (row * OutWidth + column) * OutChannels + channel;
+        return data_t'(flat_index);
     endfunction : get_out_element
 
     logic in_stream_finished = 0;
