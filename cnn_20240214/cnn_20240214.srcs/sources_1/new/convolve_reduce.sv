@@ -29,7 +29,7 @@ module convolve_reduce #(
     parameter int ACTIVATION_WIDTH = 8,
     parameter int WEIGHT_WIDTH = 8,
     parameter int KERNEL_SIZE = 3,
-    parameter logic signed [WEIGHT_WIDTH-1:0] WEIGHT[KERNEL_SIZE][KERNEL_SIZE] = '{default: 0}
+    parameter logic signed [KERNEL_SIZE-1:0][KERNEL_SIZE-1:0][WEIGHT_WIDTH-1:0] WEIGHT = 0
 ) (
     axi4_stream_if.slave  in_stream,
     axi4_stream_if.master out_stream
@@ -43,11 +43,11 @@ module convolve_reduce #(
     assign in_data = in_stream.tdata;
 
     logic signed [ACTIVATION_WIDTH-1:0] cum_sum[KERNEL_SIZE*KERNEL_SIZE]  /* verilator split_var */;
-    assign cum_sum[0] = in_data[0][0] * WEIGHT[0][0];
-    for (genvar i = 1; i < KERNEL_SIZE * KERNEL_SIZE; ++i) begin : gen_cum_sum
+    for (genvar i = 0; i < KERNEL_SIZE * KERNEL_SIZE; ++i) begin : gen_cum_sum
         localparam int Row = i / KERNEL_SIZE;
         localparam int Column = i % KERNEL_SIZE;
-        assign cum_sum[i] = in_data[Row][Column] * WEIGHT[Row][Column] + cum_sum[i-1];
+        if (i == 0) assign cum_sum[i] = in_data[Row][Column] * WEIGHT[Row][Column];
+        else assign cum_sum[i] = in_data[Row][Column] * WEIGHT[Row][Column] + cum_sum[i-1];
     end : gen_cum_sum
 
     assign out_stream.tdata = cum_sum[KERNEL_SIZE*KERNEL_SIZE-1];
