@@ -43,6 +43,11 @@ module convolve_reduce #(
 
     logic signed [KERNEL_SIZE-1:0][KERNEL_SIZE-1:0][ACTIVATION_WIDTH-1:0] in_data;
     assign in_data = in_stream.tdata;
+    generate
+        if ($bits(in_stream.tdata) != $bits(in_data)) begin : gen_check_tdata_width
+            error_in_stream_tdata_width_mismatch non_existing_module ();
+        end : gen_check_tdata_width
+    endgenerate
 
     logic signed [ACTIVATION_WIDTH-1:0] cum_sum[KERNEL_SIZE*KERNEL_SIZE]  /* verilator split_var */;
     for (genvar i = 0; i < KERNEL_SIZE * KERNEL_SIZE; ++i) begin : gen_cum_sum

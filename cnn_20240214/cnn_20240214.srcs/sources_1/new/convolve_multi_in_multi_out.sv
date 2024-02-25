@@ -54,6 +54,15 @@ module convolve_multi_in_multi_out #(
     logic [OUT_CHANNELS-1:0][ACTIVATION_WIDTH-1:0] out_data;
     assign out_stream.tdata = out_data;
 
+    generate
+        if ($bits(in_stream.tdata) != $bits(in_data)) begin : gen_check_in_tdata_width
+            error_in_stream_tdata_width_mismatch non_existing_module ();
+        end : gen_check_in_tdata_width
+        if ($bits(out_stream.tdata) != $bits(out_data)) begin : gen_check_out_tdata_width
+            error_out_stream_tdata_width_mismatch non_existing_module ();
+        end : gen_check_out_tdata_width
+    endgenerate
+
     for (genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel) begin : gen_out_channel
         logic signed [ACTIVATION_WIDTH-1:0] cum_sum[IN_CHANNELS]  /* verilator split_var */;
 
