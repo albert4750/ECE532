@@ -27,12 +27,30 @@ module convolve_multi_in_multi_out_test #(
     localparam int KernelSize = 3,
     localparam int InChannels = 3,
     localparam int OutChannels = 3,
-    localparam int Height = 600,
-    localparam int Width = 800,
+    localparam int Height = 30,
+    localparam int Width = 40,
     localparam logic [ActivationWidth-1:0] PaddingValue = 0,
-    localparam logic signed [OutChannels-1:0][InChannels-1:0]
-    [KernelSize-1:0][KernelSize-1:0][WeightWidth-1:0] Weight = 0
+    localparam int Rounds = 4
 );
+
+    localparam logic signed [OutChannels-1:0][InChannels-1:0][KernelSize-1:0]
+    [KernelSize-1:0][WeightWidth-1:0] Weight = `include "data/weight.txt";
+
+    localparam logic signed [InChannels-1:0][ActivationWidth-1:0]
+    Inputs [Rounds][Height][Width] = '{
+        `include "data/input0.txt",
+        `include "data/input1.txt",
+        `include "data/input2.txt",
+        `include "data/input3.txt"
+    };
+
+    localparam logic signed [OutChannels-1:0][ActivationWidth-1:0]
+    Outputs [Rounds][Height][Width] = '{
+        `include "data/output0.txt",
+        `include "data/output1.txt",
+        `include "data/output2.txt",
+        `include "data/output3.txt"
+    };
 
     typedef logic [ActivationWidth-1:0] data_t;
 
@@ -67,5 +85,116 @@ module convolve_multi_in_multi_out_test #(
 
     logic [OutChannels-1:0][ActivationWidth-1:0] out_data;
     assign out_data = out_stream.tdata;
+
+    logic in_stream_finished = 0;
+    initial begin : feed_in_stream
+        in_stream.tvalid = 0;
+        #30;
+
+        for (int round = 0; round < Rounds; ++round) begin
+            $display("Started sending data for round %d", round);
+            for (int row = 0; row < Height; ++row) begin
+                for (int column = 0; column < Width; ++column) begin
+                    begin
+                        int pause_cycles = $urandom_range(0, 6);
+                        for (int i = 0; i < pause_cycles; ++i) begin
+                            @(negedge clock);
+                        end
+                    end
+
+                    // Send data to the DUT.
+                    in_stream.tvalid = 1;
+                    for (int channel = 0; channel < InChannels; ++channel) begin
+                        in_data[channel] = Inputs[round][row][column][channel];
+                    end
+                    in_stream.tlast = row == Height - 1 && column == Width - 1;
+                    do begin
+                        @(posedge clock);
+                    end while (!in_stream.tready);
+
+                    @(negedge clock);
+                    in_stream.tvalid = 0;
+                end
+            end
+            $display("Finished sending data for round %d", round);
+
+            begin
+                int pause_cycles = $urandom_range(0, 6);
+                for (int i = 0; i < pause_cycles; ++i) begin
+                    @(negedge clock);
+                end
+            end
+        end
+
+        in_stream_finished = 1;
+    end : feed_in_stream
+
+    logic out_stream_finished = 0;
+    initial begin : check_out_stream
+        out_stream.tready = 0;
+        #30;
+
+        for (int round = 0; round < Rounds; ++round) begin
+            $display("Started checking data for round %d", round);
+            for (int row = 0; row < Height; ++row) begin
+                for (int column = 0; column < Width; ++clock) begin
+                    begin
+                        int pause_cycles = $urandom_range(0, 6);
+                        for (int i = 0; i < pause_cycles; ++i) begin
+                            @(negedge clock);
+                        end
+                    end
+
+                    // Receive data from the DUT.
+                    out_stream.tready = 1;
+                    do begin
+                        @(posedge clock);
+                    end while (!out_stream.tvalid);
+
+                    // Check the data.
+                    for (int channel = 0; channel < OutChannels; ++channel) begin
+                        data_t expected = Outputs[round][row][column][channel];
+                        data_t actual = out_data[channel];
+                        assert (actual == expected)
+                        else begin
+                            $error("Error: tdata, row=%d, column=%d, channel=%d, expected=%d, actual=%d",
+                                row, column, channel, expected, actual);
+                        end
+                    end
+                    begin
+                        logic expected = row == Height - 1 && column == Width - 1;
+                        logic actual = out_stream.tlast;
+                        assert (actual == expected)
+                        else begin
+                            $error("Error: tlast, row=%d, column=%d, expected=%d, actual=%d", row,
+                                column, expected, actual);
+                        end
+                    end
+
+                    @(negedge clock);
+                    out_stream.tready = 0;
+                end
+            end
+            $display("Finished receiving data for round %d", round);
+
+            begin
+                int pause_cycles = $urandom_range(0, 6);
+                for (int i = 0; i < pause_cycles; ++i) begin
+                    @(negedge clock);
+                end
+            end
+        end
+
+        out_stream_finished = 1;
+    end : check_out_stream
+
+    initial begin
+        reset = 1;
+        #20;
+        reset = 0;
+        wait (in_stream_finished && out_stream_finished);
+        $display("Test passed!");
+        $finish;
+    end
 
 endmodule : convolve_multi_in_multi_out_test

@@ -53,7 +53,7 @@ module convolve_multi_in_multi_out #(
     assign out_stream.tdata = out_data;
 
     for (genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel) begin : gen_out_channel
-        logic signed [ACTIVATION_WIDTH-1:0] cum_sum[IN_CHANNELS];
+        logic signed [ACTIVATION_WIDTH-1:0] cum_sum[IN_CHANNELS]  /* verilator split_var */;
 
         for (genvar in_channel = 0; in_channel < IN_CHANNELS; ++in_channel) begin : gen_in_channel
             axi4_stream_if #(ACTIVATION_WIDTH) siso_in_stream ();
