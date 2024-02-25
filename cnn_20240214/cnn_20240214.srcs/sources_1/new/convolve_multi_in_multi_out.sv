@@ -37,8 +37,10 @@ module convolve_multi_in_multi_out #(
     parameter int HEIGHT = 600,
     parameter int WIDTH = 800,
     parameter logic [ACTIVATION_WIDTH-1:0] PADDING_VALUE = 0,
-    parameter logic signed [OUT_CHANNELS-1:0][IN_CHANNELS-1:0]
-    [KERNEL_SIZE-1:0][KERNEL_SIZE-1:0][WEIGHT_WIDTH-1:0] WEIGHT = 0
+    /* verilator lint_off ASCRANGE */
+    parameter logic [0:OUT_CHANNELS-1][0:IN_CHANNELS-1]
+    [0:KERNEL_SIZE-1][0:KERNEL_SIZE-1][WEIGHT_WIDTH-1:0] WEIGHT = 0
+    /* verilator lint_on ASCRANGE */
 ) (
     input logic clock_i,
     input logic reset_i,

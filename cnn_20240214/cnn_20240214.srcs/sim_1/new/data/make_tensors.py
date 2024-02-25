@@ -23,7 +23,7 @@ def main():
     out_channels = 3
     height = 30
     width = 40
-    padding_value = 0
+    padding_value = 7
 
     torch.random.manual_seed(0)
 
@@ -45,7 +45,7 @@ def main():
     def conv2d(input_tensor: Tensor, weight_tensor: Tensor) -> Tensor:
         input_tensor = input_tensor.permute(2, 0, 1)
         input_tensor = torch.unsqueeze(input_tensor, 0)
-        padding = (kernel_size - 1) // 2
+        padding = kernel_size // 2
         padded_input = torch.nn.functional.pad(
             input_tensor, (padding,) * 4, value=padding_value
         )

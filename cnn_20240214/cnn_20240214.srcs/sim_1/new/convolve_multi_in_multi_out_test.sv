@@ -29,23 +29,25 @@ module convolve_multi_in_multi_out_test #(
     localparam int OutChannels = 3,
     localparam int Height = 30,
     localparam int Width = 40,
-    localparam logic [ActivationWidth-1:0] PaddingValue = 0,
+    localparam logic [ActivationWidth-1:0] PaddingValue = 7,
     localparam int Rounds = 4
 );
 
-    localparam logic signed [OutChannels-1:0][InChannels-1:0][KernelSize-1:0]
-    [KernelSize-1:0][WeightWidth-1:0] Weight = `include "data/weight.txt";
+    /* verilator lint_off ASCRANGE */
+    localparam logic signed [0:OutChannels-1][0:InChannels-1][0:KernelSize-1]
+    [0:KernelSize-1][WeightWidth-1:0] Weight = `include "data/weight.txt";
+    /* verilator lint_on ASCRANGE */
 
-    localparam logic signed [InChannels-1:0][ActivationWidth-1:0]
-    Inputs [Rounds][Height][Width] = '{
+    localparam logic signed [ActivationWidth-1:0]
+    Inputs [Rounds][Height][Width][InChannels] = '{
         `include "data/input0.txt",
         `include "data/input1.txt",
         `include "data/input2.txt",
         `include "data/input3.txt"
     };
 
-    localparam logic signed [OutChannels-1:0][ActivationWidth-1:0]
-    Outputs [Rounds][Height][Width] = '{
+    localparam logic signed [ActivationWidth-1:0]
+    Outputs [Rounds][Height][Width][OutChannels] = '{
         `include "data/output0.txt",
         `include "data/output1.txt",
         `include "data/output2.txt",
@@ -135,9 +137,9 @@ module convolve_multi_in_multi_out_test #(
         #30;
 
         for (int round = 0; round < Rounds; ++round) begin
-            $display("Started checking data for round %d", round);
+            $display("Started receiving data for round %d", round);
             for (int row = 0; row < Height; ++row) begin
-                for (int column = 0; column < Width; ++clock) begin
+                for (int column = 0; column < Width; ++column) begin
                     begin
                         int pause_cycles = $urandom_range(0, 6);
                         for (int i = 0; i < pause_cycles; ++i) begin

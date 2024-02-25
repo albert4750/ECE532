@@ -29,7 +29,9 @@ module convolve_reduce #(
     parameter int ACTIVATION_WIDTH = 8,
     parameter int WEIGHT_WIDTH = 8,
     parameter int KERNEL_SIZE = 3,
-    parameter logic signed [KERNEL_SIZE-1:0][KERNEL_SIZE-1:0][WEIGHT_WIDTH-1:0] WEIGHT = 0
+    /* verilator lint_off ASCRANGE */
+    parameter logic signed [0:KERNEL_SIZE-1][0:KERNEL_SIZE-1][WEIGHT_WIDTH-1:0] WEIGHT = 0
+    /* verilator lint_on ASCRANGE */
 ) (
     axi4_stream_if.slave  in_stream,
     axi4_stream_if.master out_stream

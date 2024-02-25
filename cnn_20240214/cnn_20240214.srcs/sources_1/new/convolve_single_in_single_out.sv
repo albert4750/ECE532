@@ -35,7 +35,9 @@ module convolve_single_in_single_out #(
     parameter int HEIGHT = 600,
     parameter int WIDTH = 800,
     parameter logic [ACTIVATION_WIDTH-1:0] PADDING_VALUE = 0,
-    parameter logic signed [KERNEL_SIZE-1:0][KERNEL_SIZE-1:0][WEIGHT_WIDTH-1:0] WEIGHT = 0
+    /* verilator lint_off ASCRANGE */
+    parameter logic signed [0:KERNEL_SIZE-1][0:KERNEL_SIZE-1][WEIGHT_WIDTH-1:0] WEIGHT = 0
+    /* verilator lint_on ASCRANGE */
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -43,7 +45,7 @@ module convolve_single_in_single_out #(
     axi4_stream_if.master out_stream
 );
 
-    localparam int Padding = (KERNEL_SIZE - 1) / 2;
+    localparam int Padding = KERNEL_SIZE / 2;
 
     axi4_stream_if #(ACTIVATION_WIDTH) constant_pad_if ();
     axi4_stream_if #(ACTIVATION_WIDTH * KERNEL_SIZE * KERNEL_SIZE) sliding_window_if ();
