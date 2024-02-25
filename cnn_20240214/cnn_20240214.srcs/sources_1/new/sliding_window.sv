@@ -88,7 +88,7 @@ module sliding_window #(
     end : gen_ram
 
     // The output sliding window.
-    logic [WINDOW_SIZE-1:0][WINDOW_SIZE-1:0][DATA_WIDTH-1:0] out_data  /* verilator split_var */;
+    logic [WINDOW_SIZE-1:0][WINDOW_SIZE-1:0][DATA_WIDTH-1:0] out_data;
     assign out_stream.tdata = out_data;
 
     // Connect the last column of the sliding window. The first (WINDOW_SIZE - 1) elements from RAM,
@@ -101,12 +101,22 @@ module sliding_window #(
     assign out_data[WINDOW_SIZE-1][WINDOW_SIZE-1] = in_stream.tdata;
 
     // The remaining columns of the sliding window gets their values by shifting from their right
-    // neighbors.
+    // neighbors. The (WINDOW_SIZE, WINDOW_SIZE - 1) dimensions are flattened because Vivado does
+    // not like 3-D arrays of registers.
+    logic [DATA_WIDTH-1:0] out_data_registers[WINDOW_SIZE*(WINDOW_SIZE-1)];
     for (genvar i = 0; i < WINDOW_SIZE; ++i) begin : gen_shift_window_row
         for (genvar j = 0; j < WINDOW_SIZE - 1; ++j) begin : gen_shift_window_column
+            localparam int FlatIndex = i * (WINDOW_SIZE - 1) + j;
+
+            assign out_data[i][j] = out_data_registers[FlatIndex];
+
+            logic [DATA_WIDTH-1:0] right_neighbor;
+            if (j == WINDOW_SIZE - 2) assign right_neighbor = out_data[i][WINDOW_SIZE-1];
+            else assign right_neighbor = out_data_registers[FlatIndex+1];
+
             always_ff @(posedge clock_i) begin
                 if (has_new_input) begin
-                    out_data[i][j] <= out_data[i][j+1];
+                    out_data_registers[FlatIndex] <= right_neighbor;
                 end
             end
         end : gen_shift_window_column

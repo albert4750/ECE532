@@ -51,7 +51,9 @@ module anime4k #(
         .IN_CHANNELS(3),
         .OUT_CHANNELS(HighwayDepth),
         .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH)
+        .WIDTH(IN_WIDTH),
+        .PADDING_VALUE(0),
+        .WEIGHT(0)
     ) conv0 (
         .clock_i(clock_i),
         .reset_i(reset_i),
@@ -76,7 +78,9 @@ module anime4k #(
         .IN_CHANNELS(HighwayDepth * 2),
         .OUT_CHANNELS(HighwayDepth),
         .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH)
+        .WIDTH(IN_WIDTH),
+        .PADDING_VALUE(0),
+        .WEIGHT(0)
     ) conv1 (
         .clock_i(clock_i),
         .reset_i(reset_i),
@@ -101,7 +105,9 @@ module anime4k #(
         .IN_CHANNELS(HighwayDepth * 2),
         .OUT_CHANNELS(HighwayDepth),
         .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH)
+        .WIDTH(IN_WIDTH),
+        .PADDING_VALUE(0),
+        .WEIGHT(0)
     ) conv2 (
         .clock_i(clock_i),
         .reset_i(reset_i),
@@ -126,7 +132,9 @@ module anime4k #(
         .IN_CHANNELS(HighwayDepth * 2),
         .OUT_CHANNELS(HighwayDepth),
         .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH)
+        .WIDTH(IN_WIDTH),
+        .PADDING_VALUE(0),
+        .WEIGHT(0)
     ) conv3 (
         .clock_i(clock_i),
         .reset_i(reset_i),
@@ -151,7 +159,9 @@ module anime4k #(
         .IN_CHANNELS(HighwayDepth * 2),
         .OUT_CHANNELS(HighwayDepth),
         .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH)
+        .WIDTH(IN_WIDTH),
+        .PADDING_VALUE(0),
+        .WEIGHT(0)
     ) conv4 (
         .clock_i(clock_i),
         .reset_i(reset_i),
@@ -176,7 +186,9 @@ module anime4k #(
         .IN_CHANNELS(HighwayDepth * 2),
         .OUT_CHANNELS(HighwayDepth),
         .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH)
+        .WIDTH(IN_WIDTH),
+        .PADDING_VALUE(0),
+        .WEIGHT(0)
     ) conv5 (
         .clock_i(clock_i),
         .reset_i(reset_i),
@@ -201,7 +213,9 @@ module anime4k #(
         .IN_CHANNELS(HighwayDepth * 2),
         .OUT_CHANNELS(HighwayDepth),
         .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH)
+        .WIDTH(IN_WIDTH),
+        .PADDING_VALUE(0),
+        .WEIGHT(0)
     ) conv6 (
         .clock_i(clock_i),
         .reset_i(reset_i),
@@ -226,7 +240,9 @@ module anime4k #(
         .IN_CHANNELS(HighwayDepth * 2),
         .OUT_CHANNELS(12),
         .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH)
+        .WIDTH(IN_WIDTH),
+        .PADDING_VALUE(0),
+        .WEIGHT(0)
     ) conv7 (
         .clock_i(clock_i),
         .reset_i(reset_i),
