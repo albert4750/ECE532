@@ -25,17 +25,25 @@ module top_level_placeholder #(
     localparam int InHeight = 600,
     localparam int InWidth  = 800
 ) (
-    input logic clock_i,
-    input logic reset_i,
-    input logic slave_tvalid_i,
+    input  logic clock_i,
+    input  logic reset_i,
+    input  logic slave_tvalid_i,
     output logic slave_tready_o,
-    input logic [8*3-1:0] slave_tdata_i,
-    input logic slave_tlast_i,
+    input  logic slave_tdata_placeholder_i,
+    input  logic slave_tlast_i,
     output logic master_tvalid_o,
-    input logic master_tready_i,
-    output logic [8*3-1:0] master_tdata_o,
+    input  logic master_tready_i,
+    output logic master_tdata_placeholder_o,
     output logic master_tlast_o
 );
+
+    logic [8*3-1:0] slave_tdata_i;
+    for (genvar i = 0; i < 8 * 3; ++i) begin : gen_slave_tdata
+        assign slave_tdata_i[i] = slave_tdata_placeholder_i;
+    end : gen_slave_tdata
+
+    logic [8*3-1:0] master_tdata_o;
+    assign master_tdata_placeholder_o = ^master_tdata_o;
 
     axi4_stream_if #(8 * 3) in_stream ();
     assign in_stream.tvalid = slave_tvalid_i;

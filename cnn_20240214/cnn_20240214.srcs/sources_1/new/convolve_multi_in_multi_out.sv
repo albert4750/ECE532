@@ -54,34 +54,30 @@ module convolve_multi_in_multi_out #(
     logic [OUT_CHANNELS-1:0][ACTIVATION_WIDTH-1:0] out_data;
     assign out_stream.tdata = out_data;
 
-    generate
-        if ($bits(in_stream.tdata) != $bits(in_data)) begin : gen_check_in_tdata_width
-            error_in_stream_tdata_width_mismatch non_existing_module ();
-        end : gen_check_in_tdata_width
-        if ($bits(out_stream.tdata) != $bits(out_data)) begin : gen_check_out_tdata_width
-            error_out_stream_tdata_width_mismatch non_existing_module ();
-        end : gen_check_out_tdata_width
-    endgenerate
+    logic [OUT_CHANNELS-1:0][IN_CHANNELS-1:0] siso_in_tready;
+    logic [OUT_CHANNELS-1:0][IN_CHANNELS-1:0] siso_out_tvalid;
+    logic [OUT_CHANNELS-1:0][IN_CHANNELS-1:0] siso_out_tlast;
+    // Because all convolve_single_in_single_out modules have the same input control signals, their
+    // output control signals should be the same as well. Use & to avoid Vivado warnings.
+    assign in_stream.tready  = &siso_in_tready;
+    assign out_stream.tvalid = &siso_out_tvalid;
+    assign out_stream.tlast  = &siso_out_tlast;
 
     for (genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel) begin : gen_out_channel
-        logic signed [ACTIVATION_WIDTH-1:0] cum_sum[IN_CHANNELS]  /* verilator split_var */;
+        logic signed [ACTIVATION_WIDTH-1:0] siso_out_tdata[IN_CHANNELS];
 
         for (genvar in_channel = 0; in_channel < IN_CHANNELS; ++in_channel) begin : gen_in_channel
             axi4_stream_if #(ACTIVATION_WIDTH) siso_in_stream ();
             assign siso_in_stream.tvalid = in_stream.tvalid;
-            assign siso_in_stream.tdata  = in_data[in_channel];
-            assign siso_in_stream.tlast  = in_stream.tlast;
+            assign siso_in_tready[out_channel][in_channel] = siso_in_stream.tready;
+            assign siso_in_stream.tdata = in_data[in_channel];
+            assign siso_in_stream.tlast = in_stream.tlast;
 
             axi4_stream_if #(ACTIVATION_WIDTH) siso_out_stream ();
+            assign siso_out_tvalid[out_channel][in_channel] = siso_out_stream.tvalid;
             assign siso_out_stream.tready = out_stream.tready;
-
-            // Because all convolve_single_in_single_out modules have the same input control
-            // signals, their output control signals should be the same as well.
-            if (in_channel == 0 && out_channel == 0) begin : gen_ready_valid_last
-                assign in_stream.tready  = siso_in_stream.tready;
-                assign out_stream.tvalid = siso_out_stream.tvalid;
-                assign out_stream.tlast  = siso_out_stream.tlast;
-            end : gen_ready_valid_last
+            assign siso_out_tdata[in_channel] = siso_out_stream.tdata;
+            assign siso_out_tlast[out_channel][in_channel] = siso_out_stream.tlast;
 
             convolve_single_in_single_out #(
                 .ACTIVATION_WIDTH(ACTIVATION_WIDTH),
@@ -97,12 +93,17 @@ module convolve_multi_in_multi_out #(
                 .in_stream(siso_in_stream.slave),
                 .out_stream(siso_out_stream.master)
             );
-
-            if (in_channel == 0) assign cum_sum[in_channel] = siso_out_stream.tdata;
-            else assign cum_sum[in_channel] = siso_out_stream.tdata + cum_sum[in_channel-1];
         end : gen_in_channel
 
-        assign out_data[out_channel] = cum_sum[IN_CHANNELS-1];
+        logic signed [ACTIVATION_WIDTH-1:0] partial_sum;
+        always_comb begin
+            partial_sum = 0;
+            for (int i = 0; i < IN_CHANNELS; ++i) begin
+                partial_sum += siso_out_tdata[i];
+            end
+        end
+
+        assign out_data[out_channel] = partial_sum;
     end : gen_out_channel
 
 endmodule : convolve_multi_in_multi_out

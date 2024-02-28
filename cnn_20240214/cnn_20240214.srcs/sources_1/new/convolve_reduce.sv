@@ -43,20 +43,17 @@ module convolve_reduce #(
 
     logic signed [KERNEL_SIZE-1:0][KERNEL_SIZE-1:0][ACTIVATION_WIDTH-1:0] in_data;
     assign in_data = in_stream.tdata;
-    generate
-        if ($bits(in_stream.tdata) != $bits(in_data)) begin : gen_check_tdata_width
-            error_in_stream_tdata_width_mismatch non_existing_module ();
-        end : gen_check_tdata_width
-    endgenerate
 
-    logic signed [ACTIVATION_WIDTH-1:0] cum_sum[KERNEL_SIZE*KERNEL_SIZE]  /* verilator split_var */;
-    for (genvar i = 0; i < KERNEL_SIZE * KERNEL_SIZE; ++i) begin : gen_cum_sum
-        localparam int Row = i / KERNEL_SIZE;
-        localparam int Column = i % KERNEL_SIZE;
-        if (i == 0) assign cum_sum[i] = in_data[Row][Column] * WEIGHT[Row][Column];
-        else assign cum_sum[i] = in_data[Row][Column] * WEIGHT[Row][Column] + cum_sum[i-1];
-    end : gen_cum_sum
+    logic signed [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] partial_sum;
+    always_comb begin
+        partial_sum = 0;
+        for (int i = 0; i < KERNEL_SIZE; ++i) begin
+            for (int j = 0; j < KERNEL_SIZE; ++j) begin
+                partial_sum += in_data[i][j] * WEIGHT[i][j];
+            end
+        end
+    end
 
-    assign out_stream.tdata = cum_sum[KERNEL_SIZE*KERNEL_SIZE-1];
+    assign out_stream.tdata = partial_sum[ACTIVATION_WIDTH-1:0];
 
 endmodule : convolve_reduce
