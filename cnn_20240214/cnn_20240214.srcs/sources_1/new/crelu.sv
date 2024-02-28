@@ -30,19 +30,26 @@ module crelu #(
     parameter int DATA_WIDTH  = 8,
     parameter int IN_CHANNELS = 4
 ) (
-    axi4_stream_if.slave  in_stream,
-    axi4_stream_if.master out_stream
+    input logic slave_tvalid_i,
+    output logic slave_tready_o,
+    input logic [DATA_WIDTH*IN_CHANNELS-1:0] slave_tdata_i,
+    input logic slave_tlast_i,
+
+    output logic master_tvalid_o,
+    input logic master_tready_i,
+    output logic [DATA_WIDTH*IN_CHANNELS*2-1:0] master_tdata_o,
+    output logic master_tlast_o
 );
 
-    assign in_stream.tready  = out_stream.tready;
-    assign out_stream.tvalid = in_stream.tvalid;
-    assign out_stream.tlast  = in_stream.tlast;
+    assign slave_tready_o  = master_tready_i;
+    assign master_tvalid_o = slave_tvalid_i;
+    assign master_tlast_o  = slave_tlast_i;
 
     logic signed [IN_CHANNELS-1:0][DATA_WIDTH-1:0] in_data;
-    assign in_data = in_stream.tdata;
+    assign in_data = slave_tdata_i;
 
     logic signed [1:0][IN_CHANNELS-1:0][DATA_WIDTH-1:0] out_data;
-    assign out_stream.tdata = out_data;
+    assign master_tdata_o = out_data;
 
     // Do not treat -128 specially as it indicates the model already has a numerical problem.
     for (genvar i = 0; i < IN_CHANNELS; ++i) begin : gen_crelu

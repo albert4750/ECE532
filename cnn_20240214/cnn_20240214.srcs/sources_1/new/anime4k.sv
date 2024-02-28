@@ -33,8 +33,16 @@ module anime4k #(
 ) (
     input logic clock_i,
     input logic reset_i,
-    axi4_stream_if.slave in_stream,
-    axi4_stream_if.master out_stream
+
+    input logic slave_tvalid_i,
+    output logic slave_tready_o,
+    input logic [8*3-1:0] slave_tdata_i,
+    input logic slave_tlast_i,
+
+    output logic master_tvalid_o,
+    input logic master_tready_i,
+    output logic [8*3-1:0] master_tdata_o,
+    output logic master_tlast_o
 );
 
     localparam int ActivationWidth = 8;
@@ -43,7 +51,12 @@ module anime4k #(
     localparam int HighwayDepth = 4;
     localparam int BlockDepth = 7;
 
-    axi4_stream_if #(ActivationWidth * HighwayDepth) conv0_out_stream ();
+    logic conv0_tvalid;
+    logic conv0_tready;
+    logic [8*HighwayDepth-1:0] conv0_tdata;
+    logic conv0_tlast;
+    logic signed [WeightWidth-1:0] weight0[HighwayDepth][3][KernelSize][KernelSize];
+    assign weight0 = '{default: '{default: '{default: '{default: 0}}}};
     convolve_multi_in_multi_out #(
         .ACTIVATION_WIDTH(ActivationWidth),
         .WEIGHT_WIDTH(WeightWidth),
@@ -52,219 +65,69 @@ module anime4k #(
         .OUT_CHANNELS(HighwayDepth),
         .HEIGHT(IN_HEIGHT),
         .WIDTH(IN_WIDTH),
-        .PADDING_VALUE(0),
-        .WEIGHT(0)
+        .PADDING_VALUE(0)
     ) conv0 (
         .clock_i(clock_i),
         .reset_i(reset_i),
-        .in_stream(in_stream),
-        .out_stream(conv0_out_stream.master)
+
+        .slave_tvalid_i(slave_tvalid_i),
+        .slave_tready_o(slave_tready_o),
+        .slave_tdata_i (slave_tdata_i),
+        .slave_tlast_i (slave_tlast_i),
+
+        .master_tvalid_o(conv0_tvalid),
+        .master_tready_i(master_tready_i),
+        .master_tdata_o (conv0_tdata),
+        .master_tlast_o (conv0_tlast),
+
+        .weight_i(weight0)
     );
 
-    axi4_stream_if #(ActivationWidth * HighwayDepth * 2) crelu0_out_stream ();
+    logic crelu0_tvalid;
+    logic crelu0_tready;
+    logic [8*HighwayDepth*2-1:0] crelu0_tdata;
+    logic crelu0_tlast;
     crelu #(
         .DATA_WIDTH (ActivationWidth),
         .IN_CHANNELS(HighwayDepth)
     ) crelu0 (
-        .in_stream (conv0_out_stream.slave),
-        .out_stream(crelu0_out_stream.master)
+        .slave_tvalid_i(conv0_tvalid),
+        .slave_tready_o(conv0_tready),
+        .slave_tdata_i (conv0_tdata),
+        .slave_tlast_i (conv0_tlast),
+
+        .master_tvalid_o(crelu0_tvalid),
+        .master_tready_i(crelu0_tready),
+        .master_tdata_o (crelu0_tdata),
+        .master_tlast_o (crelu0_tlast)
     );
 
-    axi4_stream_if #(ActivationWidth * HighwayDepth) conv1_out_stream ();
+    logic signed [WeightWidth-1:0] weight1[3][HighwayDepth*2][KernelSize][KernelSize];
+    assign weight1 = '{default: '{default: '{default: '{default: 0}}}};
     convolve_multi_in_multi_out #(
         .ACTIVATION_WIDTH(ActivationWidth),
         .WEIGHT_WIDTH(WeightWidth),
         .KERNEL_SIZE(KernelSize),
         .IN_CHANNELS(HighwayDepth * 2),
-        .OUT_CHANNELS(HighwayDepth),
+        .OUT_CHANNELS(3),
         .HEIGHT(IN_HEIGHT),
         .WIDTH(IN_WIDTH),
-        .PADDING_VALUE(0),
-        .WEIGHT(0)
+        .PADDING_VALUE(0)
     ) conv1 (
         .clock_i(clock_i),
         .reset_i(reset_i),
-        .in_stream(crelu0_out_stream.slave),
-        .out_stream(conv1_out_stream.master)
-    );
 
-    axi4_stream_if #(ActivationWidth * HighwayDepth * 2) crelu1_out_stream ();
-    crelu #(
-        .DATA_WIDTH (ActivationWidth),
-        .IN_CHANNELS(HighwayDepth)
-    ) crelu1 (
-        .in_stream (conv1_out_stream.slave),
-        .out_stream(crelu1_out_stream.master)
-    );
+        .slave_tvalid_i(crelu0_tvalid),
+        .slave_tready_o(crelu0_tready),
+        .slave_tdata_i (crelu0_tdata),
+        .slave_tlast_i (crelu0_tlast),
 
-    axi4_stream_if #(ActivationWidth * HighwayDepth) conv2_out_stream ();
-    convolve_multi_in_multi_out #(
-        .ACTIVATION_WIDTH(ActivationWidth),
-        .WEIGHT_WIDTH(WeightWidth),
-        .KERNEL_SIZE(KernelSize),
-        .IN_CHANNELS(HighwayDepth * 2),
-        .OUT_CHANNELS(HighwayDepth),
-        .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH),
-        .PADDING_VALUE(0),
-        .WEIGHT(0)
-    ) conv2 (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-        .in_stream(crelu1_out_stream.slave),
-        .out_stream(conv2_out_stream.master)
-    );
+        .master_tvalid_o(master_tvalid_o),
+        .master_tready_i(master_tready_i),
+        .master_tdata_o (master_tdata_o),
+        .master_tlast_o (master_tlast_o),
 
-    axi4_stream_if #(ActivationWidth * HighwayDepth * 2) crelu2_out_stream ();
-    crelu #(
-        .DATA_WIDTH (ActivationWidth),
-        .IN_CHANNELS(HighwayDepth)
-    ) crelu2 (
-        .in_stream (conv2_out_stream.slave),
-        .out_stream(crelu2_out_stream.master)
+        .weight_i(weight1)
     );
-
-    axi4_stream_if #(ActivationWidth * HighwayDepth) conv3_out_stream ();
-    convolve_multi_in_multi_out #(
-        .ACTIVATION_WIDTH(ActivationWidth),
-        .WEIGHT_WIDTH(WeightWidth),
-        .KERNEL_SIZE(KernelSize),
-        .IN_CHANNELS(HighwayDepth * 2),
-        .OUT_CHANNELS(HighwayDepth),
-        .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH),
-        .PADDING_VALUE(0),
-        .WEIGHT(0)
-    ) conv3 (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-        .in_stream(crelu2_out_stream.slave),
-        .out_stream(conv3_out_stream.master)
-    );
-
-    axi4_stream_if #(ActivationWidth * HighwayDepth * 2) crelu3_out_stream ();
-    crelu #(
-        .DATA_WIDTH (ActivationWidth),
-        .IN_CHANNELS(HighwayDepth)
-    ) crelu3 (
-        .in_stream (conv3_out_stream.slave),
-        .out_stream(crelu3_out_stream.master)
-    );
-
-    axi4_stream_if #(ActivationWidth * HighwayDepth) conv4_out_stream ();
-    convolve_multi_in_multi_out #(
-        .ACTIVATION_WIDTH(ActivationWidth),
-        .WEIGHT_WIDTH(WeightWidth),
-        .KERNEL_SIZE(KernelSize),
-        .IN_CHANNELS(HighwayDepth * 2),
-        .OUT_CHANNELS(HighwayDepth),
-        .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH),
-        .PADDING_VALUE(0),
-        .WEIGHT(0)
-    ) conv4 (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-        .in_stream(crelu3_out_stream.slave),
-        .out_stream(conv4_out_stream.master)
-    );
-
-    axi4_stream_if #(ActivationWidth * HighwayDepth * 2) crelu4_out_stream ();
-    crelu #(
-        .DATA_WIDTH (ActivationWidth),
-        .IN_CHANNELS(HighwayDepth)
-    ) crelu4 (
-        .in_stream (conv4_out_stream.slave),
-        .out_stream(crelu4_out_stream.master)
-    );
-
-    axi4_stream_if #(ActivationWidth * HighwayDepth) conv5_out_stream ();
-    convolve_multi_in_multi_out #(
-        .ACTIVATION_WIDTH(ActivationWidth),
-        .WEIGHT_WIDTH(WeightWidth),
-        .KERNEL_SIZE(KernelSize),
-        .IN_CHANNELS(HighwayDepth * 2),
-        .OUT_CHANNELS(HighwayDepth),
-        .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH),
-        .PADDING_VALUE(0),
-        .WEIGHT(0)
-    ) conv5 (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-        .in_stream(crelu4_out_stream.slave),
-        .out_stream(conv5_out_stream.master)
-    );
-
-    axi4_stream_if #(ActivationWidth * HighwayDepth * 2) crelu5_out_stream ();
-    crelu #(
-        .DATA_WIDTH (ActivationWidth),
-        .IN_CHANNELS(HighwayDepth)
-    ) crelu5 (
-        .in_stream (conv5_out_stream.slave),
-        .out_stream(crelu5_out_stream.master)
-    );
-
-    axi4_stream_if #(ActivationWidth * HighwayDepth) conv6_out_stream ();
-    convolve_multi_in_multi_out #(
-        .ACTIVATION_WIDTH(ActivationWidth),
-        .WEIGHT_WIDTH(WeightWidth),
-        .KERNEL_SIZE(KernelSize),
-        .IN_CHANNELS(HighwayDepth * 2),
-        .OUT_CHANNELS(HighwayDepth),
-        .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH),
-        .PADDING_VALUE(0),
-        .WEIGHT(0)
-    ) conv6 (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-        .in_stream(crelu5_out_stream.slave),
-        .out_stream(conv6_out_stream.master)
-    );
-
-    axi4_stream_if #(ActivationWidth * HighwayDepth * 2) crelu6_out_stream ();
-    crelu #(
-        .DATA_WIDTH (ActivationWidth),
-        .IN_CHANNELS(HighwayDepth)
-    ) crelu6 (
-        .in_stream (conv6_out_stream.slave),
-        .out_stream(crelu6_out_stream.master)
-    );
-
-    axi4_stream_if #(ActivationWidth * 12) conv7_out_stream ();
-    convolve_multi_in_multi_out #(
-        .ACTIVATION_WIDTH(ActivationWidth),
-        .WEIGHT_WIDTH(WeightWidth),
-        .KERNEL_SIZE(KernelSize),
-        .IN_CHANNELS(HighwayDepth * 2),
-        .OUT_CHANNELS(12),
-        .HEIGHT(IN_HEIGHT),
-        .WIDTH(IN_WIDTH),
-        .PADDING_VALUE(0),
-        .WEIGHT(0)
-    ) conv7 (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-        .in_stream(crelu6_out_stream.slave),
-        .out_stream(conv7_out_stream.master)
-    );
-
-    pixel_shuffle #(
-        .DATA_WIDTH(ActivationWidth * 3),
-        .UPSCALE_FACTOR(2),
-        .IN_HEIGHT(IN_HEIGHT),
-        .IN_WIDTH(IN_WIDTH)
-    ) pixel_shuffle_inst (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-        .in_stream(conv7_out_stream.slave),
-        .out_stream(out_stream)
-    );
-
-    // TODO:
-    // 1. Add scaling and shifting between layers.
-    // 2. Add skip connections.
-    // 3. Add the computed offsets to the original inputs.
 
 endmodule : anime4k

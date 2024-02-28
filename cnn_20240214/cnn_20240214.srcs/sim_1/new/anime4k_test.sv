@@ -33,8 +33,15 @@ module anime4k_test #(
 
     logic reset;
 
-    axi4_stream_if #(ActivationWidth * 3) in_stream ();
-    axi4_stream_if #(ActivationWidth * 3) out_stream ();
+    logic in_tvalid;
+    logic in_tready;
+    logic [ActivationWidth*3-1:0] in_tdata;
+    logic in_tlast;
+
+    logic out_tvalid;
+    logic out_tready;
+    logic [ActivationWidth*3-1:0] out_tdata;
+    logic out_tlast;
 
     anime4k #(
         .IN_HEIGHT(InHeight),
@@ -42,8 +49,16 @@ module anime4k_test #(
     ) dut (
         .clock_i(clock),
         .reset_i(1'b0),
-        .in_stream(in_stream.slave),
-        .out_stream(out_stream.master)
+
+        .slave_tvalid_i(in_tvalid),
+        .slave_tready_o(in_tready),
+        .slave_tdata_i (in_tdata),
+        .slave_tlast_i (in_tlast),
+
+        .master_tvalid_o(out_tvalid),
+        .master_tready_i(out_tready),
+        .master_tdata_o (out_tdata),
+        .master_tlast_o (out_tlast)
     );
 
     // TODO: Add test cases.

@@ -25,12 +25,14 @@ module top_level_placeholder #(
     localparam int InHeight = 600,
     localparam int InWidth  = 800
 ) (
-    input  logic clock_i,
-    input  logic reset_i,
+    input logic clock_i,
+    input logic reset_i,
+
     input  logic slave_tvalid_i,
     output logic slave_tready_o,
     input  logic slave_tdata_placeholder_i,
     input  logic slave_tlast_i,
+
     output logic master_tvalid_o,
     input  logic master_tready_i,
     output logic master_tdata_placeholder_o,
@@ -45,26 +47,22 @@ module top_level_placeholder #(
     logic [8*3-1:0] master_tdata_o;
     assign master_tdata_placeholder_o = ^master_tdata_o;
 
-    axi4_stream_if #(8 * 3) in_stream ();
-    assign in_stream.tvalid = slave_tvalid_i;
-    assign slave_tready_o   = in_stream.tready;
-    assign in_stream.tdata  = slave_tdata_i;
-    assign in_stream.tlast  = slave_tlast_i;
-
-    axi4_stream_if #(8 * 3) out_stream ();
-    assign master_tvalid_o = out_stream.tvalid;
-    assign out_stream.tready = master_tready_i;
-    assign master_tdata_o = out_stream.tdata;
-    assign master_tlast_o = out_stream.tlast;
-
     anime4k #(
         .IN_HEIGHT(InHeight),
         .IN_WIDTH (InWidth)
     ) anime4k (
         .clock_i(clock_i),
         .reset_i(reset_i),
-        .in_stream(in_stream),
-        .out_stream(out_stream)
+
+        .slave_tvalid_i(slave_tvalid_i),
+        .slave_tready_o(slave_tready_o),
+        .slave_tdata_i (slave_tdata_i),
+        .slave_tlast_i (slave_tlast_i),
+
+        .master_tvalid_o(master_tvalid_o),
+        .master_tready_i(master_tready_i),
+        .master_tdata_o (master_tdata_o),
+        .master_tlast_o (master_tlast_o)
     );
 
 endmodule : top_level_placeholder

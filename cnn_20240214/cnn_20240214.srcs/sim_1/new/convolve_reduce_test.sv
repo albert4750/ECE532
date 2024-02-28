@@ -27,30 +27,48 @@ module convolve_reduce_test #(
     localparam int KernelSize = 3
 );
 
-    axi4_stream_if #(ActivationWidth * KernelSize * KernelSize) in_stream ();
-    axi4_stream_if #(ActivationWidth) out_stream ();
+    logic in_tvalid;
+    logic in_tready;
+    logic [ActivationWidth*KernelSize*KernelSize-1:0] in_tdata;
+    logic in_tlast;
+
+    logic out_tvalid;
+    logic out_tready;
+    logic [ActivationWidth-1:0] out_tdata;
+    logic out_tlast;
+
+    logic signed [WeightWidth-1:0] weight[KernelSize][KernelSize];
+    assign weight = '{'{1, 2, 1}, '{2, 4, 2}, '{1, 2, 1}};
 
     convolve_reduce #(
         .ACTIVATION_WIDTH(ActivationWidth),
         .WEIGHT_WIDTH(WeightWidth),
-        .KERNEL_SIZE(KernelSize),
-        .WEIGHT('{'{1, 2, 1}, '{2, 4, 2}, '{1, 2, 1}})
+        .KERNEL_SIZE(KernelSize)
     ) dut (
-        .in_stream (in_stream.slave),
-        .out_stream(out_stream.master)
+        .slave_tvalid_i(in_tvalid),
+        .slave_tready_o(in_tready),
+        .slave_tdata_i (in_tdata),
+        .slave_tlast_i (in_tlast),
+
+        .master_tvalid_o(out_tvalid),
+        .master_tready_i(out_tready),
+        .master_tdata_o (out_tdata),
+        .master_tlast_o (out_tlast),
+
+        .weight_i(weight)
     );
 
     logic signed [KernelSize-1:0][KernelSize-1:0][ActivationWidth-1:0] in_data;
-    assign in_stream.tdata = in_data;
+    assign in_tdata = in_data;
 
     initial begin
-        in_stream.tvalid = 1;
-        in_data = '{'{1, 2, 3}, '{4, 5, 6}, '{7, 8, 9}};
-        in_stream.tlast = 1;
+        in_tvalid = 1;
+        in_data   = '{'{1, 2, 3}, '{4, 5, 6}, '{7, 8, 9}};
+        in_tvalid = 1;
         #10;
-        assert (out_stream.tdata == 80)
+        assert (out_tdata == 80)
         else begin
-            $error("Error: out_stream.tdata, expected=%0d, actual=%0d", 80, out_stream.tdata);
+            $error("Error: out_tdata, expected=%0d, actual=%0d", 80, out_tdata);
         end
         $display("Test passed!");
         $finish;

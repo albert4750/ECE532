@@ -33,26 +33,20 @@ module convolve_multi_in_multi_out_test #(
     localparam int Rounds = 4
 );
 
-    /* verilator lint_off ASCRANGE */
-    localparam logic signed [0:OutChannels-1][0:InChannels-1][0:KernelSize-1]
-    [0:KernelSize-1][WeightWidth-1:0] Weight = `include "data/weight.txt";
-    /* verilator lint_on ASCRANGE */
+    logic signed [WeightWidth-1:0] weight[OutChannels][InChannels][KernelSize][KernelSize];
+    assign weight = `include "data/weight.txt";
 
-    localparam logic signed [ActivationWidth-1:0]
-    Inputs [Rounds][Height][Width][InChannels] = '{
-        `include "data/input0.txt",
-        `include "data/input1.txt",
-        `include "data/input2.txt",
-        `include "data/input3.txt"
-    };
+    logic signed [ActivationWidth-1:0] inputs[Rounds][Height][Width][InChannels];
+    assign inputs[0] = `include "data/input0.txt";
+    assign inputs[1] = `include "data/input1.txt";
+    assign inputs[2] = `include "data/input2.txt";
+    assign inputs[3] = `include "data/input3.txt";
 
-    localparam logic signed [ActivationWidth-1:0]
-    Outputs [Rounds][Height][Width][OutChannels] = '{
-        `include "data/output0.txt",
-        `include "data/output1.txt",
-        `include "data/output2.txt",
-        `include "data/output3.txt"
-    };
+    logic signed [ActivationWidth-1:0] outputs[Rounds][Height][Width][OutChannels];
+    assign outputs[0] = `include "data/output0.txt";
+    assign outputs[1] = `include "data/output1.txt";
+    assign outputs[2] = `include "data/output2.txt";
+    assign outputs[3] = `include "data/output3.txt";
 
     typedef logic [ActivationWidth-1:0] data_t;
 
@@ -62,8 +56,15 @@ module convolve_multi_in_multi_out_test #(
 
     logic reset;
 
-    axi4_stream_if #(ActivationWidth * InChannels) in_stream ();
-    axi4_stream_if #(ActivationWidth * OutChannels) out_stream ();
+    logic in_tvalid;
+    logic in_tready;
+    logic [ActivationWidth*InChannels-1:0] in_tdata;
+    logic in_tlast;
+
+    logic out_tvalid;
+    logic out_tready;
+    logic [ActivationWidth*OutChannels-1:0] out_tdata;
+    logic out_tlast;
 
     convolve_multi_in_multi_out #(
         .ACTIVATION_WIDTH(ActivationWidth),
@@ -73,24 +74,33 @@ module convolve_multi_in_multi_out_test #(
         .OUT_CHANNELS(OutChannels),
         .HEIGHT(Height),
         .WIDTH(Width),
-        .PADDING_VALUE(PaddingValue),
-        .WEIGHT(Weight)
+        .PADDING_VALUE(PaddingValue)
     ) dut (
         .clock_i(clock),
         .reset_i(reset),
-        .in_stream(in_stream.slave),
-        .out_stream(out_stream.master)
+
+        .slave_tvalid_i(in_tvalid),
+        .slave_tready_o(in_tready),
+        .slave_tdata_i (in_tdata),
+        .slave_tlast_i (in_tlast),
+
+        .master_tvalid_o(out_tvalid),
+        .master_tready_i(out_tready),
+        .master_tdata_o (out_tdata),
+        .master_tlast_o (out_tlast),
+
+        .weight_i(weight)
     );
 
     logic [InChannels-1:0][ActivationWidth-1:0] in_data;
-    assign in_stream.tdata = in_data;
+    assign in_tdata = in_data;
 
     logic [OutChannels-1:0][ActivationWidth-1:0] out_data;
-    assign out_data = out_stream.tdata;
+    assign out_data = out_tdata;
 
     logic in_stream_finished = 0;
     initial begin : feed_in_stream
-        in_stream.tvalid = 0;
+        in_tvalid = 0;
         #30;
 
         for (int round = 0; round < Rounds; ++round) begin
@@ -105,17 +115,17 @@ module convolve_multi_in_multi_out_test #(
                     end
 
                     // Send data to the DUT.
-                    in_stream.tvalid = 1;
+                    in_tvalid = 1;
                     for (int channel = 0; channel < InChannels; ++channel) begin
-                        in_data[channel] = Inputs[round][row][column][channel];
+                        in_data[channel] = inputs[round][row][column][channel];
                     end
-                    in_stream.tlast = row == Height - 1 && column == Width - 1;
+                    in_tlast = row == Height - 1 && column == Width - 1;
                     do begin
                         @(posedge clock);
-                    end while (!in_stream.tready);
+                    end while (!in_tready);
 
                     @(negedge clock);
-                    in_stream.tvalid = 0;
+                    in_tvalid = 0;
                 end
             end
             $display("Finished sending data for round %d", round);
@@ -133,7 +143,7 @@ module convolve_multi_in_multi_out_test #(
 
     logic out_stream_finished = 0;
     initial begin : check_out_stream
-        out_stream.tready = 0;
+        out_tready = 0;
         #30;
 
         for (int round = 0; round < Rounds; ++round) begin
@@ -148,14 +158,14 @@ module convolve_multi_in_multi_out_test #(
                     end
 
                     // Receive data from the DUT.
-                    out_stream.tready = 1;
+                    out_tready = 1;
                     do begin
                         @(posedge clock);
-                    end while (!out_stream.tvalid);
+                    end while (!out_tvalid);
 
                     // Check the data.
                     for (int channel = 0; channel < OutChannels; ++channel) begin
-                        data_t expected = Outputs[round][row][column][channel];
+                        data_t expected = outputs[round][row][column][channel];
                         data_t actual = out_data[channel];
                         assert (actual == expected)
                         else begin
@@ -165,7 +175,7 @@ module convolve_multi_in_multi_out_test #(
                     end
                     begin
                         logic expected = row == Height - 1 && column == Width - 1;
-                        logic actual = out_stream.tlast;
+                        logic actual = out_tlast;
                         assert (actual == expected)
                         else begin
                             $error("Error: tlast, row=%d, column=%d, expected=%d, actual=%d", row,
@@ -174,7 +184,7 @@ module convolve_multi_in_multi_out_test #(
                     end
 
                     @(negedge clock);
-                    out_stream.tready = 0;
+                    out_tready = 0;
                 end
             end
             $display("Finished receiving data for round %d", round);

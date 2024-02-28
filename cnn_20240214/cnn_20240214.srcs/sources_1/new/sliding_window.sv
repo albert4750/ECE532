@@ -38,14 +38,22 @@ module sliding_window #(
 ) (
     input logic clock_i,
     input logic reset_i,
-    axi4_stream_if.slave in_stream,
-    axi4_stream_if.master out_stream
+
+    input logic slave_tvalid_i,
+    output logic slave_tready_o,
+    input logic [DATA_WIDTH-1:0] slave_tdata_i,
+    input logic slave_tlast_i,
+
+    output logic master_tvalid_o,
+    input logic master_tready_i,
+    output logic [DATA_WIDTH*WINDOW_SIZE*WINDOW_SIZE-1:0] master_tdata_o,
+    output logic master_tlast_o
 );
 
     localparam int ColumnBits = $clog2(WIDTH);
 
     logic has_new_input;
-    assign has_new_input = in_stream.tvalid && in_stream.tready;
+    assign has_new_input = slave_tvalid_i && slave_tready_o;
 
     // The currently processed element.
     int current_row;
@@ -82,14 +90,14 @@ module sliding_window #(
             .read_enable_i(has_new_input),
             .write_address_i(current_column[ColumnBits-1:0]),
             .read_address_i(next_column[ColumnBits-1:0]),
-            .write_data_i(in_stream.tdata),
+            .write_data_i(slave_tdata_i),
             .read_data_o(ram_read_data[i])
         );
     end : gen_ram
 
     // The output sliding window.
     logic [WINDOW_SIZE-1:0][WINDOW_SIZE-1:0][DATA_WIDTH-1:0] out_data;
-    assign out_stream.tdata = out_data;
+    assign master_tdata_o = out_data;
 
     // Connect the last column of the sliding window. The first (WINDOW_SIZE - 1) elements from RAM,
     // and the last element from the input stream.
@@ -98,7 +106,7 @@ module sliding_window #(
         assign ram_row = (current_row + i) % (WINDOW_SIZE - 1);
         assign out_data[i][WINDOW_SIZE-1] = ram_read_data[ram_row];
     end : gen_out_data_last_column
-    assign out_data[WINDOW_SIZE-1][WINDOW_SIZE-1] = in_stream.tdata;
+    assign out_data[WINDOW_SIZE-1][WINDOW_SIZE-1] = slave_tdata_i;
 
     // The remaining columns of the sliding window gets their values by shifting from their right
     // neighbors. The (WINDOW_SIZE, WINDOW_SIZE - 1) dimensions are flattened because Vivado does
@@ -132,9 +140,9 @@ module sliding_window #(
         end
     end
 
-    assign in_stream.tready = !reset_i && out_stream.tready;
-    assign out_stream.tvalid = !reset_i && in_stream.tvalid &&
+    assign slave_tready_o = !reset_i && master_tready_i;
+    assign master_tvalid_o = !reset_i && slave_tvalid_i &&
         current_row >= (WINDOW_SIZE - 1) && current_column >= (WINDOW_SIZE - 1);
-    assign out_stream.tlast = in_stream.tlast;
+    assign master_tlast_o = slave_tlast_i;
 
 endmodule : sliding_window

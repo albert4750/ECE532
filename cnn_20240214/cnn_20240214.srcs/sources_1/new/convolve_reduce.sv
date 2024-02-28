@@ -28,32 +28,38 @@
 module convolve_reduce #(
     parameter int ACTIVATION_WIDTH = 8,
     parameter int WEIGHT_WIDTH = 8,
-    parameter int KERNEL_SIZE = 3,
-    /* verilator lint_off ASCRANGE */
-    parameter logic signed [0:KERNEL_SIZE-1][0:KERNEL_SIZE-1][WEIGHT_WIDTH-1:0] WEIGHT = 0
-    /* verilator lint_on ASCRANGE */
+    parameter int KERNEL_SIZE = 3
 ) (
-    axi4_stream_if.slave  in_stream,
-    axi4_stream_if.master out_stream
+    input logic slave_tvalid_i,
+    output logic slave_tready_o,
+    input logic [ACTIVATION_WIDTH*KERNEL_SIZE*KERNEL_SIZE-1:0] slave_tdata_i,
+    input logic slave_tlast_i,
+
+    output logic master_tvalid_o,
+    input logic master_tready_i,
+    output logic [ACTIVATION_WIDTH-1:0] master_tdata_o,
+    output logic master_tlast_o,
+
+    input logic signed [WEIGHT_WIDTH-1:0] weight_i[KERNEL_SIZE][KERNEL_SIZE]
 );
 
-    assign in_stream.tready  = out_stream.tready;
-    assign out_stream.tvalid = in_stream.tvalid;
-    assign out_stream.tlast  = in_stream.tlast;
+    assign slave_tready_o  = master_tready_i;
+    assign master_tvalid_o = slave_tvalid_i;
+    assign master_tlast_o  = slave_tlast_i;
 
     logic signed [KERNEL_SIZE-1:0][KERNEL_SIZE-1:0][ACTIVATION_WIDTH-1:0] in_data;
-    assign in_data = in_stream.tdata;
+    assign in_data = slave_tdata_i;
 
     logic signed [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] partial_sum;
     always_comb begin
         partial_sum = 0;
         for (int i = 0; i < KERNEL_SIZE; ++i) begin
             for (int j = 0; j < KERNEL_SIZE; ++j) begin
-                partial_sum += in_data[i][j] * WEIGHT[i][j];
+                partial_sum += in_data[i][j] * weight_i[i][j];
             end
         end
     end
 
-    assign out_stream.tdata = partial_sum[ACTIVATION_WIDTH-1:0];
+    assign master_tdata_o = partial_sum[ACTIVATION_WIDTH-1:0];
 
 endmodule : convolve_reduce

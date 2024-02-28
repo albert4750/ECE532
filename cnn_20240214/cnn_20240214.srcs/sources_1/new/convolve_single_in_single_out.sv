@@ -34,21 +34,35 @@ module convolve_single_in_single_out #(
     parameter int KERNEL_SIZE = 3,
     parameter int HEIGHT = 600,
     parameter int WIDTH = 800,
-    parameter logic [ACTIVATION_WIDTH-1:0] PADDING_VALUE = 0,
-    /* verilator lint_off ASCRANGE */
-    parameter logic signed [0:KERNEL_SIZE-1][0:KERNEL_SIZE-1][WEIGHT_WIDTH-1:0] WEIGHT = 0
-    /* verilator lint_on ASCRANGE */
+    parameter logic [ACTIVATION_WIDTH-1:0] PADDING_VALUE = 0
 ) (
     input logic clock_i,
     input logic reset_i,
-    axi4_stream_if.slave in_stream,
-    axi4_stream_if.master out_stream
+
+    input logic slave_tvalid_i,
+    output logic slave_tready_o,
+    input logic [ACTIVATION_WIDTH-1:0] slave_tdata_i,
+    input logic slave_tlast_i,
+
+    output logic master_tvalid_o,
+    input logic master_tready_i,
+    output logic [ACTIVATION_WIDTH-1:0] master_tdata_o,
+    output logic master_tlast_o,
+
+    input logic signed [WEIGHT_WIDTH-1:0] weight_i[KERNEL_SIZE][KERNEL_SIZE]
 );
 
     localparam int Padding = KERNEL_SIZE / 2;
 
-    axi4_stream_if #(ACTIVATION_WIDTH) constant_pad_if ();
-    axi4_stream_if #(ACTIVATION_WIDTH * KERNEL_SIZE * KERNEL_SIZE) sliding_window_if ();
+    logic constant_pad_tvalid;
+    logic constant_pad_tready;
+    logic [ACTIVATION_WIDTH-1:0] constant_pad_tdata;
+    logic constant_pad_tlast;
+
+    logic sliding_window_tvalid;
+    logic sliding_window_tready;
+    logic [ACTIVATION_WIDTH*KERNEL_SIZE*KERNEL_SIZE-1:0] sliding_window_tdata;
+    logic sliding_window_tlast;
 
     constant_pad #(
         .DATA_WIDTH(ACTIVATION_WIDTH),
@@ -59,8 +73,16 @@ module convolve_single_in_single_out #(
     ) constant_pad_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
-        .in_stream(in_stream),
-        .out_stream(constant_pad_if.master)
+
+        .slave_tvalid_i(slave_tvalid_i),
+        .slave_tready_o(slave_tready_o),
+        .slave_tdata_i (slave_tdata_i),
+        .slave_tlast_i (slave_tlast_i),
+
+        .master_tvalid_o(constant_pad_tvalid),
+        .master_tready_i(constant_pad_tready),
+        .master_tdata_o (constant_pad_tdata),
+        .master_tlast_o (constant_pad_tlast)
     );
 
     sliding_window #(
@@ -71,18 +93,34 @@ module convolve_single_in_single_out #(
     ) sliding_window_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
-        .in_stream(constant_pad_if.slave),
-        .out_stream(sliding_window_if.master)
+
+        .slave_tvalid_i(constant_pad_tvalid),
+        .slave_tready_o(constant_pad_tready),
+        .slave_tdata_i (constant_pad_tdata),
+        .slave_tlast_i (constant_pad_tlast),
+
+        .master_tvalid_o(sliding_window_tvalid),
+        .master_tready_i(sliding_window_tready),
+        .master_tdata_o (sliding_window_tdata),
+        .master_tlast_o (sliding_window_tlast)
     );
 
     convolve_reduce #(
         .ACTIVATION_WIDTH(ACTIVATION_WIDTH),
         .WEIGHT_WIDTH(WEIGHT_WIDTH),
-        .KERNEL_SIZE(KERNEL_SIZE),
-        .WEIGHT(WEIGHT)
+        .KERNEL_SIZE(KERNEL_SIZE)
     ) convolve_reduce_inst (
-        .in_stream (sliding_window_if.slave),
-        .out_stream(out_stream)
+        .slave_tvalid_i(sliding_window_tvalid),
+        .slave_tready_o(sliding_window_tready),
+        .slave_tdata_i (sliding_window_tdata),
+        .slave_tlast_i (sliding_window_tlast),
+
+        .master_tvalid_o(master_tvalid_o),
+        .master_tready_i(master_tready_i),
+        .master_tdata_o (master_tdata_o),
+        .master_tlast_o (master_tlast_o),
+
+        .weight_i(weight_i)
     );
 
 endmodule : convolve_single_in_single_out

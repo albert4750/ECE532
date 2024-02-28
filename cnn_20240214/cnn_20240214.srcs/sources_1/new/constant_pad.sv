@@ -37,8 +37,16 @@ module constant_pad #(
 ) (
     input logic clock_i,
     input logic reset_i,
-    axi4_stream_if.slave in_stream,
-    axi4_stream_if.master out_stream
+
+    input logic slave_tvalid_i,
+    output logic slave_tready_o,
+    input logic [DATA_WIDTH-1:0] slave_tdata_i,
+    input logic slave_tlast_i,
+
+    output logic master_tvalid_o,
+    input logic master_tready_i,
+    output logic [DATA_WIDTH-1:0] master_tdata_o,
+    output logic master_tlast_o
 );
 
     localparam int OutHeight = IN_HEIGHT + 2 * PADDING;
@@ -71,15 +79,15 @@ module constant_pad #(
         if (reset_i) begin
             current_row <= 0;
             current_column <= 0;
-        end else if (out_stream.tvalid && out_stream.tready) begin
+        end else if (master_tvalid_o && master_tready_i) begin
             current_row <= next_row;
             current_column <= next_column;
         end
     end
 
-    assign in_stream.tready  = !reset_i && !is_in_padding && out_stream.tready;
-    assign out_stream.tvalid = !reset_i && (is_in_padding || in_stream.tvalid);
-    assign out_stream.tdata  = is_in_padding ? VALUE : in_stream.tdata;
-    assign out_stream.tlast  = current_row == (OutHeight - 1) && current_column == (OutWidth - 1);
+    assign slave_tready_o  = !reset_i && !is_in_padding && master_tready_i;
+    assign master_tvalid_o = !reset_i && (is_in_padding || slave_tvalid_i);
+    assign master_tdata_o  = is_in_padding ? VALUE : slave_tdata_i;
+    assign master_tlast_o  = current_row == (OutHeight - 1) && current_column == (OutWidth - 1);
 
 endmodule : constant_pad

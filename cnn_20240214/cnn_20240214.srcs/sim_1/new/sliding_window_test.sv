@@ -39,8 +39,15 @@ module sliding_window_test #(
 
     logic reset;
 
-    axi4_stream_if #(DataWidth) in_stream ();
-    axi4_stream_if #(DataWidth * WindowSize * WindowSize) out_stream ();
+    logic in_tvalid;
+    logic in_tready;
+    logic [DataWidth-1:0] in_tdata;
+    logic in_tlast;
+
+    logic out_tvalid;
+    logic out_tready;
+    logic [DataWidth*WindowSize*WindowSize-1:0] out_tdata;
+    logic out_tlast;
 
     sliding_window #(
         .DATA_WIDTH(DataWidth),
@@ -50,12 +57,20 @@ module sliding_window_test #(
     ) dut (
         .clock_i(clock),
         .reset_i(reset),
-        .in_stream(in_stream.slave),
-        .out_stream(out_stream.master)
+
+        .slave_tvalid_i(in_tvalid),
+        .slave_tready_o(in_tready),
+        .slave_tdata_i (in_tdata),
+        .slave_tlast_i (in_tlast),
+
+        .master_tvalid_o(out_tvalid),
+        .master_tready_i(out_tready),
+        .master_tdata_o (out_tdata),
+        .master_tlast_o (out_tlast)
     );
 
     logic [WindowSize-1:0][WindowSize-1:0][DataWidth-1:0] out_data;
-    assign out_data = out_stream.tdata;
+    assign out_data = out_tdata;
 
     function automatic data_t get_element(int row, int column);
         int flat_index = row * InWidth + column;
@@ -64,7 +79,7 @@ module sliding_window_test #(
 
     logic in_stream_finished = 0;
     initial begin : feed_in_stream
-        in_stream.tvalid = 0;
+        in_tvalid = 0;
         #30;
 
         for (int round = 0; round < Rounds; ++round) begin
@@ -79,15 +94,15 @@ module sliding_window_test #(
                     end
 
                     // Send data to the DUT.
-                    in_stream.tvalid = 1;
-                    in_stream.tdata  = get_element(row, column);
-                    in_stream.tlast  = (row == InHeight - 1) && (column == InWidth - 1);
+                    in_tvalid = 1;
+                    in_tdata  = get_element(row, column);
+                    in_tlast  = (row == InHeight - 1) && (column == InWidth - 1);
                     do begin
                         @(posedge clock);
-                    end while (!in_stream.tready);
+                    end while (!in_tready);
 
                     @(negedge clock);
-                    in_stream.tvalid = 0;
+                    in_tvalid = 0;
                 end
             end
             $display("Finished sending data for round %d", round);
@@ -105,7 +120,7 @@ module sliding_window_test #(
 
     logic out_stream_finished = 0;
     initial begin : check_out_stream
-        out_stream.tready = 0;
+        out_tready = 0;
         #30;
 
         for (int round = 0; round < Rounds; ++round) begin
@@ -120,10 +135,10 @@ module sliding_window_test #(
                     end
 
                     // Receive data from the DUT.
-                    out_stream.tready = 1;
+                    out_tready = 1;
                     do begin
                         @(posedge clock);
-                    end while (!out_stream.tvalid);
+                    end while (!out_tvalid);
 
                     // Check the data.
                     for (int i = 0; i < WindowSize; ++i) begin
@@ -140,7 +155,7 @@ module sliding_window_test #(
                     end
                     begin
                         logic expected = row == (OutHeight - 1) && column == (OutWidth - 1);
-                        logic actual = out_stream.tlast;
+                        logic actual = out_tlast;
                         assert (actual == expected)
                         else begin
                             $error("Error: tlast, row=%d, column=%d, expected=%d, actual=%d", row,
@@ -149,7 +164,7 @@ module sliding_window_test #(
                     end
 
                     @(negedge clock);
-                    out_stream.tready = 0;
+                    out_tready = 0;
                 end
             end
             $display("Finished receiving data for round %d", round);

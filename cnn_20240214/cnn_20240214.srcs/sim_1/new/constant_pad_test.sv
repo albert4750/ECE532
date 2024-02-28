@@ -40,8 +40,15 @@ module constant_pad_test #(
 
     logic reset;
 
-    axi4_stream_if #(DataWidth) in_stream ();
-    axi4_stream_if #(DataWidth) out_stream ();
+    logic in_tvalid;
+    logic in_tready;
+    logic [DataWidth-1:0] in_tdata;
+    logic in_tlast;
+
+    logic out_tvalid;
+    logic out_tready;
+    logic [DataWidth-1:0] out_tdata;
+    logic out_tlast;
 
     constant_pad #(
         .DATA_WIDTH(DataWidth),
@@ -52,8 +59,16 @@ module constant_pad_test #(
     ) dut (
         .clock_i(clock),
         .reset_i(reset),
-        .in_stream(in_stream.slave),
-        .out_stream(out_stream.master)
+
+        .slave_tvalid_i(in_tvalid),
+        .slave_tready_o(in_tready),
+        .slave_tdata_i (in_tdata),
+        .slave_tlast_i (in_tlast),
+
+        .master_tvalid_o(out_tvalid),
+        .master_tready_i(out_tready),
+        .master_tdata_o (out_tdata),
+        .master_tlast_o (out_tlast)
     );
 
     function automatic data_t get_in_element(int row, int column);
@@ -72,7 +87,7 @@ module constant_pad_test #(
 
     logic in_stream_finished = 0;
     initial begin : feed_in_stream
-        in_stream.tvalid = 0;
+        in_tvalid = 0;
         #30;
 
         for (int round = 0; round < Rounds; ++round) begin
@@ -87,15 +102,15 @@ module constant_pad_test #(
                     end
 
                     // Send data to the DUT.
-                    in_stream.tvalid = 1;
-                    in_stream.tdata  = get_in_element(row, column);
-                    in_stream.tlast  = row == (InHeight - 1) && column == (InWidth - 1);
+                    in_tvalid = 1;
+                    in_tdata  = get_in_element(row, column);
+                    in_tlast  = row == (InHeight - 1) && column == (InWidth - 1);
                     do begin
                         @(posedge clock);
-                    end while (!in_stream.tready);
+                    end while (!in_tready);
 
                     @(negedge clock);
-                    in_stream.tvalid = 0;
+                    in_tvalid = 0;
                 end
             end
             $display("Finished sending data for round %d", round);
@@ -113,7 +128,7 @@ module constant_pad_test #(
 
     logic out_stream_finished = 0;
     initial begin : check_out_stream
-        out_stream.tready = 0;
+        out_tready = 0;
         #30;
 
         for (int round = 0; round < Rounds; ++round) begin
@@ -128,15 +143,15 @@ module constant_pad_test #(
                     end
 
                     // Receive data from the DUT.
-                    out_stream.tready = 1;
+                    out_tready = 1;
                     do begin
                         @(posedge clock);
-                    end while (!out_stream.tvalid);
+                    end while (!out_tvalid);
 
                     // Check the data.
                     begin
                         data_t expected = get_out_element(row, column);
-                        data_t actual = out_stream.tdata;
+                        data_t actual = out_tdata;
                         assert (actual == expected)
                         else begin
                             $error("Error: tdata, row=%d, column=%d, expected=%d, actual=%d", row,
@@ -145,7 +160,7 @@ module constant_pad_test #(
                     end
                     begin
                         logic expected = row == (OutHeight - 1) && column == (OutWidth - 1);
-                        logic actual = out_stream.tlast;
+                        logic actual = out_tlast;
                         assert (actual == expected)
                         else begin
                             $error("Error: tlast, row=%d, column=%d, expected=%d, actual=%d", row,
@@ -154,7 +169,7 @@ module constant_pad_test #(
                     end
 
                     @(negedge clock);
-                    out_stream.tready = 0;
+                    out_tready = 0;
                 end
             end
             $display("Finished receiving data for round %d", round);
