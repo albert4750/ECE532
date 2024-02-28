@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
--- Date        : Tue Feb 13 00:34:55 2024
+-- Date        : Wed Feb 28 04:49:30 2024
 -- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top hdmi_mig_7series_0_0 -prefix
 --               hdmi_mig_7series_0_0_ hdmi_mig_7series_0_0_stub.vhdl
@@ -42,7 +42,7 @@ entity hdmi_mig_7series_0_0 is
     app_sr_active : out STD_LOGIC;
     app_ref_ack : out STD_LOGIC;
     app_zq_ack : out STD_LOGIC;
-    s_axi_awid : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_awid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 28 downto 0 );
     s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axi_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -59,10 +59,10 @@ entity hdmi_mig_7series_0_0 is
     s_axi_wvalid : in STD_LOGIC;
     s_axi_wready : out STD_LOGIC;
     s_axi_bready : in STD_LOGIC;
-    s_axi_bid : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_bid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_bvalid : out STD_LOGIC;
-    s_axi_arid : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_arid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_araddr : in STD_LOGIC_VECTOR ( 28 downto 0 );
     s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axi_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -74,7 +74,7 @@ entity hdmi_mig_7series_0_0 is
     s_axi_arvalid : in STD_LOGIC;
     s_axi_arready : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    s_axi_rid : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_rid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_rdata : out STD_LOGIC_VECTOR ( 127 downto 0 );
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rlast : out STD_LOGIC;
@@ -90,6 +90,6 @@ architecture stub of hdmi_mig_7series_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "ddr3_dq[15:0],ddr3_dqs_n[1:0],ddr3_dqs_p[1:0],ddr3_addr[14:0],ddr3_ba[2:0],ddr3_ras_n,ddr3_cas_n,ddr3_we_n,ddr3_reset_n,ddr3_ck_p[0:0],ddr3_ck_n[0:0],ddr3_cke[0:0],ddr3_dm[1:0],ddr3_odt[0:0],sys_clk_i,clk_ref_i,ui_clk,ui_clk_sync_rst,ui_addn_clk_0,ui_addn_clk_1,ui_addn_clk_2,ui_addn_clk_3,ui_addn_clk_4,mmcm_locked,aresetn,app_sr_active,app_ref_ack,app_zq_ack,s_axi_awid[2:0],s_axi_awaddr[28:0],s_axi_awlen[7:0],s_axi_awsize[2:0],s_axi_awburst[1:0],s_axi_awlock[0:0],s_axi_awcache[3:0],s_axi_awprot[2:0],s_axi_awqos[3:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[127:0],s_axi_wstrb[15:0],s_axi_wlast,s_axi_wvalid,s_axi_wready,s_axi_bready,s_axi_bid[2:0],s_axi_bresp[1:0],s_axi_bvalid,s_axi_arid[2:0],s_axi_araddr[28:0],s_axi_arlen[7:0],s_axi_arsize[2:0],s_axi_arburst[1:0],s_axi_arlock[0:0],s_axi_arcache[3:0],s_axi_arprot[2:0],s_axi_arqos[3:0],s_axi_arvalid,s_axi_arready,s_axi_rready,s_axi_rid[2:0],s_axi_rdata[127:0],s_axi_rresp[1:0],s_axi_rlast,s_axi_rvalid,init_calib_complete,device_temp[11:0],sys_rst";
+attribute black_box_pad_pin of stub : architecture is "ddr3_dq[15:0],ddr3_dqs_n[1:0],ddr3_dqs_p[1:0],ddr3_addr[14:0],ddr3_ba[2:0],ddr3_ras_n,ddr3_cas_n,ddr3_we_n,ddr3_reset_n,ddr3_ck_p[0:0],ddr3_ck_n[0:0],ddr3_cke[0:0],ddr3_dm[1:0],ddr3_odt[0:0],sys_clk_i,clk_ref_i,ui_clk,ui_clk_sync_rst,ui_addn_clk_0,ui_addn_clk_1,ui_addn_clk_2,ui_addn_clk_3,ui_addn_clk_4,mmcm_locked,aresetn,app_sr_active,app_ref_ack,app_zq_ack,s_axi_awid[3:0],s_axi_awaddr[28:0],s_axi_awlen[7:0],s_axi_awsize[2:0],s_axi_awburst[1:0],s_axi_awlock[0:0],s_axi_awcache[3:0],s_axi_awprot[2:0],s_axi_awqos[3:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[127:0],s_axi_wstrb[15:0],s_axi_wlast,s_axi_wvalid,s_axi_wready,s_axi_bready,s_axi_bid[3:0],s_axi_bresp[1:0],s_axi_bvalid,s_axi_arid[3:0],s_axi_araddr[28:0],s_axi_arlen[7:0],s_axi_arsize[2:0],s_axi_arburst[1:0],s_axi_arlock[0:0],s_axi_arcache[3:0],s_axi_arprot[2:0],s_axi_arqos[3:0],s_axi_arvalid,s_axi_arready,s_axi_rready,s_axi_rid[3:0],s_axi_rdata[127:0],s_axi_rresp[1:0],s_axi_rlast,s_axi_rvalid,init_calib_complete,device_temp[11:0],sys_rst";
 begin
 end;

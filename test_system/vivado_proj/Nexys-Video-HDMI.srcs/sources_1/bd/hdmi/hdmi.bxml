@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="hdmi" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1707919511"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1707919511"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1707919511"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1707919511"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1709116479"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1709116479"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1709116479"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1709116479"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\hdmi_axi_dynclk_0_0\hdmi_axi_dynclk_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_dynclk_0"/>
@@ -272,6 +272,38 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
+      <File Name="ip\hdmi_axi_dma_2_0\hdmi_axi_dma_2_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_dma_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\hdmi_stream2rgb_0_0\hdmi_stream2rgb_0_0.xci" Type="IP">
+        <Instance HierarchyPath="stream2rgb_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\hdmi_rgb2stream_0_0\hdmi_rgb2stream_0_0.xci" Type="IP">
+        <Instance HierarchyPath="rgb2stream_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\hdmi_grayscale_0_0\hdmi_grayscale_0_0.xci" Type="IP">
+        <Instance HierarchyPath="grayscale_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
       <File Name="ip\hdmi_m00_regslice_0_1\hdmi_m00_regslice_0.xci" Type="IP">
         <Instance HierarchyPath="axi_mem_intercon/m00_couplers/m00_regslice"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -290,6 +322,22 @@
       </File>
       <File Name="ip\hdmi_auto_rs_w_0_1\hdmi_auto_rs_w_0.xci" Type="IP">
         <Instance HierarchyPath="axi_mem_intercon/m00_couplers/auto_rs_w"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\hdmi_auto_us_5\hdmi_auto_us_5.xci" Type="IP">
+        <Instance HierarchyPath="axi_mem_intercon/s09_couplers/auto_us"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\hdmi_auto_us_4\hdmi_auto_us_4.xci" Type="IP">
+        <Instance HierarchyPath="axi_mem_intercon/s08_couplers/auto_us"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

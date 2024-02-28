@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1707919650">
+<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1709116577">
   <File Type="BITSTR-BMM" Name="hdmi_wrapper_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="hdmi_wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="hdmi_wrapper_timing_summary_init.rpt"/>
@@ -147,4 +147,8 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_passthrough_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_grayscale_top_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_rgb2stream_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_xbar_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_stream2rgb_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_grayscale_0_0"/>
 </GenRun>

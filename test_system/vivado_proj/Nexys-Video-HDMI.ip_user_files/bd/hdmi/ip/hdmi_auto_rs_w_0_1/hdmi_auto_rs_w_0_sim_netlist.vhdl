@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
--- Date        : Tue Feb 13 00:33:36 2024
+-- Date        : Wed Feb 28 04:48:31 2024
 -- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_auto_rs_w_0 -prefix
---               hdmi_auto_rs_w_0_ hdmi_auto_rs_w_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_rs_w_0_1/hdmi_auto_rs_w_0_sim_netlist.vhdl
 -- Design      : hdmi_auto_rs_w_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -8232,7 +8232,7 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
     aclk : in STD_LOGIC;
     aclk2x : in STD_LOGIC;
     aresetn : in STD_LOGIC;
-    s_axi_awid : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_awid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 28 downto 0 );
     s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axi_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -8245,19 +8245,19 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
     s_axi_awuser : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_awvalid : in STD_LOGIC;
     s_axi_awready : out STD_LOGIC;
-    s_axi_wid : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_wid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_wdata : in STD_LOGIC_VECTOR ( 255 downto 0 );
     s_axi_wstrb : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axi_wlast : in STD_LOGIC;
     s_axi_wuser : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_wvalid : in STD_LOGIC;
     s_axi_wready : out STD_LOGIC;
-    s_axi_bid : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_bid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_buser : out STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_bvalid : out STD_LOGIC;
     s_axi_bready : in STD_LOGIC;
-    s_axi_arid : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_arid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_araddr : in STD_LOGIC_VECTOR ( 28 downto 0 );
     s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axi_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -8270,14 +8270,14 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
     s_axi_aruser : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_arvalid : in STD_LOGIC;
     s_axi_arready : out STD_LOGIC;
-    s_axi_rid : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_rid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_rdata : out STD_LOGIC_VECTOR ( 255 downto 0 );
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rlast : out STD_LOGIC;
     s_axi_ruser : out STD_LOGIC_VECTOR ( 0 to 0 );
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    m_axi_awid : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_awid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     m_axi_awaddr : out STD_LOGIC_VECTOR ( 28 downto 0 );
     m_axi_awlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
     m_axi_awsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -8290,19 +8290,19 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
     m_axi_awuser : out STD_LOGIC_VECTOR ( 0 to 0 );
     m_axi_awvalid : out STD_LOGIC;
     m_axi_awready : in STD_LOGIC;
-    m_axi_wid : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_wid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     m_axi_wdata : out STD_LOGIC_VECTOR ( 255 downto 0 );
     m_axi_wstrb : out STD_LOGIC_VECTOR ( 31 downto 0 );
     m_axi_wlast : out STD_LOGIC;
     m_axi_wuser : out STD_LOGIC_VECTOR ( 0 to 0 );
     m_axi_wvalid : out STD_LOGIC;
     m_axi_wready : in STD_LOGIC;
-    m_axi_bid : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_bid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     m_axi_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     m_axi_buser : in STD_LOGIC_VECTOR ( 0 to 0 );
     m_axi_bvalid : in STD_LOGIC;
     m_axi_bready : out STD_LOGIC;
-    m_axi_arid : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_arid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     m_axi_araddr : out STD_LOGIC_VECTOR ( 28 downto 0 );
     m_axi_arlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
     m_axi_arsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -8315,7 +8315,7 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
     m_axi_aruser : out STD_LOGIC_VECTOR ( 0 to 0 );
     m_axi_arvalid : out STD_LOGIC;
     m_axi_arready : in STD_LOGIC;
-    m_axi_rid : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_rid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     m_axi_rdata : in STD_LOGIC_VECTOR ( 255 downto 0 );
     m_axi_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     m_axi_rlast : in STD_LOGIC;
@@ -8334,7 +8334,7 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
   attribute C_AXI_DATA_WIDTH : integer;
   attribute C_AXI_DATA_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 256;
   attribute C_AXI_ID_WIDTH : integer;
-  attribute C_AXI_ID_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 3;
+  attribute C_AXI_ID_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 4;
   attribute C_AXI_PROTOCOL : integer;
   attribute C_AXI_PROTOCOL of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
   attribute C_AXI_RUSER_WIDTH : integer;
@@ -8406,7 +8406,7 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
   attribute G_AXI_ARID_INDEX : integer;
   attribute G_AXI_ARID_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 50;
   attribute G_AXI_ARID_WIDTH : integer;
-  attribute G_AXI_ARID_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 3;
+  attribute G_AXI_ARID_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 4;
   attribute G_AXI_ARLEN_INDEX : integer;
   attribute G_AXI_ARLEN_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 41;
   attribute G_AXI_ARLEN_WIDTH : integer;
@@ -8416,17 +8416,17 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
   attribute G_AXI_ARLOCK_WIDTH : integer;
   attribute G_AXI_ARLOCK_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 1;
   attribute G_AXI_ARPAYLOAD_WIDTH : integer;
-  attribute G_AXI_ARPAYLOAD_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 61;
+  attribute G_AXI_ARPAYLOAD_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 62;
   attribute G_AXI_ARPROT_INDEX : integer;
   attribute G_AXI_ARPROT_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 29;
   attribute G_AXI_ARPROT_WIDTH : integer;
   attribute G_AXI_ARPROT_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 3;
   attribute G_AXI_ARQOS_INDEX : integer;
-  attribute G_AXI_ARQOS_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 53;
+  attribute G_AXI_ARQOS_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 54;
   attribute G_AXI_ARQOS_WIDTH : integer;
   attribute G_AXI_ARQOS_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 4;
   attribute G_AXI_ARREGION_INDEX : integer;
-  attribute G_AXI_ARREGION_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 57;
+  attribute G_AXI_ARREGION_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 58;
   attribute G_AXI_ARREGION_WIDTH : integer;
   attribute G_AXI_ARREGION_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 4;
   attribute G_AXI_ARSIZE_INDEX : integer;
@@ -8434,7 +8434,7 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
   attribute G_AXI_ARSIZE_WIDTH : integer;
   attribute G_AXI_ARSIZE_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 3;
   attribute G_AXI_ARUSER_INDEX : integer;
-  attribute G_AXI_ARUSER_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 61;
+  attribute G_AXI_ARUSER_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 62;
   attribute G_AXI_ARUSER_WIDTH : integer;
   attribute G_AXI_ARUSER_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
   attribute G_AXI_AWADDR_INDEX : integer;
@@ -8452,7 +8452,7 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
   attribute G_AXI_AWID_INDEX : integer;
   attribute G_AXI_AWID_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 50;
   attribute G_AXI_AWID_WIDTH : integer;
-  attribute G_AXI_AWID_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 3;
+  attribute G_AXI_AWID_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 4;
   attribute G_AXI_AWLEN_INDEX : integer;
   attribute G_AXI_AWLEN_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 41;
   attribute G_AXI_AWLEN_WIDTH : integer;
@@ -8462,17 +8462,17 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
   attribute G_AXI_AWLOCK_WIDTH : integer;
   attribute G_AXI_AWLOCK_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 1;
   attribute G_AXI_AWPAYLOAD_WIDTH : integer;
-  attribute G_AXI_AWPAYLOAD_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 61;
+  attribute G_AXI_AWPAYLOAD_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 62;
   attribute G_AXI_AWPROT_INDEX : integer;
   attribute G_AXI_AWPROT_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 29;
   attribute G_AXI_AWPROT_WIDTH : integer;
   attribute G_AXI_AWPROT_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 3;
   attribute G_AXI_AWQOS_INDEX : integer;
-  attribute G_AXI_AWQOS_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 53;
+  attribute G_AXI_AWQOS_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 54;
   attribute G_AXI_AWQOS_WIDTH : integer;
   attribute G_AXI_AWQOS_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 4;
   attribute G_AXI_AWREGION_INDEX : integer;
-  attribute G_AXI_AWREGION_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 57;
+  attribute G_AXI_AWREGION_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 58;
   attribute G_AXI_AWREGION_WIDTH : integer;
   attribute G_AXI_AWREGION_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 4;
   attribute G_AXI_AWSIZE_INDEX : integer;
@@ -8480,21 +8480,21 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
   attribute G_AXI_AWSIZE_WIDTH : integer;
   attribute G_AXI_AWSIZE_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 3;
   attribute G_AXI_AWUSER_INDEX : integer;
-  attribute G_AXI_AWUSER_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 61;
+  attribute G_AXI_AWUSER_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 62;
   attribute G_AXI_AWUSER_WIDTH : integer;
   attribute G_AXI_AWUSER_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
   attribute G_AXI_BID_INDEX : integer;
   attribute G_AXI_BID_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 2;
   attribute G_AXI_BID_WIDTH : integer;
-  attribute G_AXI_BID_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 3;
+  attribute G_AXI_BID_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 4;
   attribute G_AXI_BPAYLOAD_WIDTH : integer;
-  attribute G_AXI_BPAYLOAD_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 5;
+  attribute G_AXI_BPAYLOAD_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 6;
   attribute G_AXI_BRESP_INDEX : integer;
   attribute G_AXI_BRESP_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
   attribute G_AXI_BRESP_WIDTH : integer;
   attribute G_AXI_BRESP_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 2;
   attribute G_AXI_BUSER_INDEX : integer;
-  attribute G_AXI_BUSER_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 5;
+  attribute G_AXI_BUSER_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 6;
   attribute G_AXI_BUSER_WIDTH : integer;
   attribute G_AXI_BUSER_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
   attribute G_AXI_RDATA_INDEX : integer;
@@ -8504,19 +8504,19 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
   attribute G_AXI_RID_INDEX : integer;
   attribute G_AXI_RID_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 259;
   attribute G_AXI_RID_WIDTH : integer;
-  attribute G_AXI_RID_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 3;
+  attribute G_AXI_RID_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 4;
   attribute G_AXI_RLAST_INDEX : integer;
   attribute G_AXI_RLAST_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 258;
   attribute G_AXI_RLAST_WIDTH : integer;
   attribute G_AXI_RLAST_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 1;
   attribute G_AXI_RPAYLOAD_WIDTH : integer;
-  attribute G_AXI_RPAYLOAD_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 262;
+  attribute G_AXI_RPAYLOAD_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 263;
   attribute G_AXI_RRESP_INDEX : integer;
   attribute G_AXI_RRESP_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 256;
   attribute G_AXI_RRESP_WIDTH : integer;
   attribute G_AXI_RRESP_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 2;
   attribute G_AXI_RUSER_INDEX : integer;
-  attribute G_AXI_RUSER_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 262;
+  attribute G_AXI_RUSER_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 263;
   attribute G_AXI_RUSER_WIDTH : integer;
   attribute G_AXI_RUSER_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
   attribute G_AXI_WDATA_INDEX : integer;
@@ -8541,6 +8541,8 @@ entity hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice is
   attribute G_AXI_WUSER_INDEX of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 289;
   attribute G_AXI_WUSER_WIDTH : integer;
   attribute G_AXI_WUSER_WIDTH of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is "axi_register_slice_v2_1_17_axi_register_slice";
   attribute P_FORWARD : integer;
   attribute P_FORWARD of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice : entity is 0;
   attribute P_RESPONSE : integer;
@@ -8551,18 +8553,18 @@ architecture STRUCTURE of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_regist
   signal \<const0>\ : STD_LOGIC;
   signal \^m_axi_arready\ : STD_LOGIC;
   signal \^m_axi_awready\ : STD_LOGIC;
-  signal \^m_axi_bid\ : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal \^m_axi_bid\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \^m_axi_bresp\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^m_axi_bvalid\ : STD_LOGIC;
   signal \^m_axi_rdata\ : STD_LOGIC_VECTOR ( 255 downto 0 );
-  signal \^m_axi_rid\ : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal \^m_axi_rid\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \^m_axi_rlast\ : STD_LOGIC;
   signal \^m_axi_rresp\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^m_axi_rvalid\ : STD_LOGIC;
   signal \^s_axi_araddr\ : STD_LOGIC_VECTOR ( 28 downto 0 );
   signal \^s_axi_arburst\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^s_axi_arcache\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^s_axi_arid\ : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal \^s_axi_arid\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \^s_axi_arlen\ : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal \^s_axi_arlock\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^s_axi_arprot\ : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -8573,7 +8575,7 @@ architecture STRUCTURE of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_regist
   signal \^s_axi_awaddr\ : STD_LOGIC_VECTOR ( 28 downto 0 );
   signal \^s_axi_awburst\ : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal \^s_axi_awcache\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \^s_axi_awid\ : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal \^s_axi_awid\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \^s_axi_awlen\ : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal \^s_axi_awlock\ : STD_LOGIC_VECTOR ( 0 to 0 );
   signal \^s_axi_awprot\ : STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -8586,18 +8588,18 @@ architecture STRUCTURE of hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_regist
 begin
   \^m_axi_arready\ <= m_axi_arready;
   \^m_axi_awready\ <= m_axi_awready;
-  \^m_axi_bid\(2 downto 0) <= m_axi_bid(2 downto 0);
+  \^m_axi_bid\(3 downto 0) <= m_axi_bid(3 downto 0);
   \^m_axi_bresp\(1 downto 0) <= m_axi_bresp(1 downto 0);
   \^m_axi_bvalid\ <= m_axi_bvalid;
   \^m_axi_rdata\(255 downto 0) <= m_axi_rdata(255 downto 0);
-  \^m_axi_rid\(2 downto 0) <= m_axi_rid(2 downto 0);
+  \^m_axi_rid\(3 downto 0) <= m_axi_rid(3 downto 0);
   \^m_axi_rlast\ <= m_axi_rlast;
   \^m_axi_rresp\(1 downto 0) <= m_axi_rresp(1 downto 0);
   \^m_axi_rvalid\ <= m_axi_rvalid;
   \^s_axi_araddr\(28 downto 0) <= s_axi_araddr(28 downto 0);
   \^s_axi_arburst\(1 downto 0) <= s_axi_arburst(1 downto 0);
   \^s_axi_arcache\(3 downto 0) <= s_axi_arcache(3 downto 0);
-  \^s_axi_arid\(2 downto 0) <= s_axi_arid(2 downto 0);
+  \^s_axi_arid\(3 downto 0) <= s_axi_arid(3 downto 0);
   \^s_axi_arlen\(7 downto 0) <= s_axi_arlen(7 downto 0);
   \^s_axi_arlock\(0) <= s_axi_arlock(0);
   \^s_axi_arprot\(2 downto 0) <= s_axi_arprot(2 downto 0);
@@ -8608,7 +8610,7 @@ begin
   \^s_axi_awaddr\(28 downto 0) <= s_axi_awaddr(28 downto 0);
   \^s_axi_awburst\(1 downto 0) <= s_axi_awburst(1 downto 0);
   \^s_axi_awcache\(3 downto 0) <= s_axi_awcache(3 downto 0);
-  \^s_axi_awid\(2 downto 0) <= s_axi_awid(2 downto 0);
+  \^s_axi_awid\(3 downto 0) <= s_axi_awid(3 downto 0);
   \^s_axi_awlen\(7 downto 0) <= s_axi_awlen(7 downto 0);
   \^s_axi_awlock\(0) <= s_axi_awlock(0);
   \^s_axi_awprot\(2 downto 0) <= s_axi_awprot(2 downto 0);
@@ -8621,7 +8623,7 @@ begin
   m_axi_araddr(28 downto 0) <= \^s_axi_araddr\(28 downto 0);
   m_axi_arburst(1 downto 0) <= \^s_axi_arburst\(1 downto 0);
   m_axi_arcache(3 downto 0) <= \^s_axi_arcache\(3 downto 0);
-  m_axi_arid(2 downto 0) <= \^s_axi_arid\(2 downto 0);
+  m_axi_arid(3 downto 0) <= \^s_axi_arid\(3 downto 0);
   m_axi_arlen(7 downto 0) <= \^s_axi_arlen\(7 downto 0);
   m_axi_arlock(0) <= \^s_axi_arlock\(0);
   m_axi_arprot(2 downto 0) <= \^s_axi_arprot\(2 downto 0);
@@ -8633,7 +8635,7 @@ begin
   m_axi_awaddr(28 downto 0) <= \^s_axi_awaddr\(28 downto 0);
   m_axi_awburst(1 downto 0) <= \^s_axi_awburst\(1 downto 0);
   m_axi_awcache(3 downto 0) <= \^s_axi_awcache\(3 downto 0);
-  m_axi_awid(2 downto 0) <= \^s_axi_awid\(2 downto 0);
+  m_axi_awid(3 downto 0) <= \^s_axi_awid\(3 downto 0);
   m_axi_awlen(7 downto 0) <= \^s_axi_awlen\(7 downto 0);
   m_axi_awlock(0) <= \^s_axi_awlock\(0);
   m_axi_awprot(2 downto 0) <= \^s_axi_awprot\(2 downto 0);
@@ -8644,18 +8646,19 @@ begin
   m_axi_awvalid <= \^s_axi_awvalid\;
   m_axi_bready <= \^s_axi_bready\;
   m_axi_rready <= \^s_axi_rready\;
+  m_axi_wid(3) <= \<const0>\;
   m_axi_wid(2) <= \<const0>\;
   m_axi_wid(1) <= \<const0>\;
   m_axi_wid(0) <= \<const0>\;
   m_axi_wuser(0) <= \<const0>\;
   s_axi_arready <= \^m_axi_arready\;
   s_axi_awready <= \^m_axi_awready\;
-  s_axi_bid(2 downto 0) <= \^m_axi_bid\(2 downto 0);
+  s_axi_bid(3 downto 0) <= \^m_axi_bid\(3 downto 0);
   s_axi_bresp(1 downto 0) <= \^m_axi_bresp\(1 downto 0);
   s_axi_buser(0) <= \<const0>\;
   s_axi_bvalid <= \^m_axi_bvalid\;
   s_axi_rdata(255 downto 0) <= \^m_axi_rdata\(255 downto 0);
-  s_axi_rid(2 downto 0) <= \^m_axi_rid\(2 downto 0);
+  s_axi_rid(3 downto 0) <= \^m_axi_rid\(3 downto 0);
   s_axi_rlast <= \^m_axi_rlast\;
   s_axi_rresp(1 downto 0) <= \^m_axi_rresp\(1 downto 0);
   s_axi_ruser(0) <= \<const0>\;
@@ -8688,7 +8691,7 @@ entity hdmi_auto_rs_w_0 is
   port (
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
-    s_axi_awid : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_awid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 28 downto 0 );
     s_axi_awlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axi_awsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -8705,11 +8708,11 @@ entity hdmi_auto_rs_w_0 is
     s_axi_wlast : in STD_LOGIC;
     s_axi_wvalid : in STD_LOGIC;
     s_axi_wready : out STD_LOGIC;
-    s_axi_bid : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_bid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_bresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_bvalid : out STD_LOGIC;
     s_axi_bready : in STD_LOGIC;
-    s_axi_arid : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_arid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_araddr : in STD_LOGIC_VECTOR ( 28 downto 0 );
     s_axi_arlen : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axi_arsize : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -8721,13 +8724,13 @@ entity hdmi_auto_rs_w_0 is
     s_axi_arqos : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_arvalid : in STD_LOGIC;
     s_axi_arready : out STD_LOGIC;
-    s_axi_rid : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    s_axi_rid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axi_rdata : out STD_LOGIC_VECTOR ( 255 downto 0 );
     s_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_rlast : out STD_LOGIC;
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
-    m_axi_awid : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_awid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     m_axi_awaddr : out STD_LOGIC_VECTOR ( 28 downto 0 );
     m_axi_awlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
     m_axi_awsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -8744,11 +8747,11 @@ entity hdmi_auto_rs_w_0 is
     m_axi_wlast : out STD_LOGIC;
     m_axi_wvalid : out STD_LOGIC;
     m_axi_wready : in STD_LOGIC;
-    m_axi_bid : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_bid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     m_axi_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     m_axi_bvalid : in STD_LOGIC;
     m_axi_bready : out STD_LOGIC;
-    m_axi_arid : out STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_arid : out STD_LOGIC_VECTOR ( 3 downto 0 );
     m_axi_araddr : out STD_LOGIC_VECTOR ( 28 downto 0 );
     m_axi_arlen : out STD_LOGIC_VECTOR ( 7 downto 0 );
     m_axi_arsize : out STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -8760,7 +8763,7 @@ entity hdmi_auto_rs_w_0 is
     m_axi_arqos : out STD_LOGIC_VECTOR ( 3 downto 0 );
     m_axi_arvalid : out STD_LOGIC;
     m_axi_arready : in STD_LOGIC;
-    m_axi_rid : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    m_axi_rid : in STD_LOGIC_VECTOR ( 3 downto 0 );
     m_axi_rdata : in STD_LOGIC_VECTOR ( 255 downto 0 );
     m_axi_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     m_axi_rlast : in STD_LOGIC;
@@ -8780,7 +8783,7 @@ end hdmi_auto_rs_w_0;
 architecture STRUCTURE of hdmi_auto_rs_w_0 is
   signal NLW_inst_m_axi_aruser_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_inst_m_axi_awuser_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_inst_m_axi_wid_UNCONNECTED : STD_LOGIC_VECTOR ( 2 downto 0 );
+  signal NLW_inst_m_axi_wid_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_inst_m_axi_wuser_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_inst_s_axi_buser_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_inst_s_axi_ruser_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -8795,7 +8798,7 @@ architecture STRUCTURE of hdmi_auto_rs_w_0 is
   attribute C_AXI_DATA_WIDTH : integer;
   attribute C_AXI_DATA_WIDTH of inst : label is 256;
   attribute C_AXI_ID_WIDTH : integer;
-  attribute C_AXI_ID_WIDTH of inst : label is 3;
+  attribute C_AXI_ID_WIDTH of inst : label is 4;
   attribute C_AXI_PROTOCOL : integer;
   attribute C_AXI_PROTOCOL of inst : label is 0;
   attribute C_AXI_RUSER_WIDTH : integer;
@@ -8866,7 +8869,7 @@ architecture STRUCTURE of hdmi_auto_rs_w_0 is
   attribute G_AXI_ARID_INDEX : integer;
   attribute G_AXI_ARID_INDEX of inst : label is 50;
   attribute G_AXI_ARID_WIDTH : integer;
-  attribute G_AXI_ARID_WIDTH of inst : label is 3;
+  attribute G_AXI_ARID_WIDTH of inst : label is 4;
   attribute G_AXI_ARLEN_INDEX : integer;
   attribute G_AXI_ARLEN_INDEX of inst : label is 41;
   attribute G_AXI_ARLEN_WIDTH : integer;
@@ -8876,17 +8879,17 @@ architecture STRUCTURE of hdmi_auto_rs_w_0 is
   attribute G_AXI_ARLOCK_WIDTH : integer;
   attribute G_AXI_ARLOCK_WIDTH of inst : label is 1;
   attribute G_AXI_ARPAYLOAD_WIDTH : integer;
-  attribute G_AXI_ARPAYLOAD_WIDTH of inst : label is 61;
+  attribute G_AXI_ARPAYLOAD_WIDTH of inst : label is 62;
   attribute G_AXI_ARPROT_INDEX : integer;
   attribute G_AXI_ARPROT_INDEX of inst : label is 29;
   attribute G_AXI_ARPROT_WIDTH : integer;
   attribute G_AXI_ARPROT_WIDTH of inst : label is 3;
   attribute G_AXI_ARQOS_INDEX : integer;
-  attribute G_AXI_ARQOS_INDEX of inst : label is 53;
+  attribute G_AXI_ARQOS_INDEX of inst : label is 54;
   attribute G_AXI_ARQOS_WIDTH : integer;
   attribute G_AXI_ARQOS_WIDTH of inst : label is 4;
   attribute G_AXI_ARREGION_INDEX : integer;
-  attribute G_AXI_ARREGION_INDEX of inst : label is 57;
+  attribute G_AXI_ARREGION_INDEX of inst : label is 58;
   attribute G_AXI_ARREGION_WIDTH : integer;
   attribute G_AXI_ARREGION_WIDTH of inst : label is 4;
   attribute G_AXI_ARSIZE_INDEX : integer;
@@ -8894,7 +8897,7 @@ architecture STRUCTURE of hdmi_auto_rs_w_0 is
   attribute G_AXI_ARSIZE_WIDTH : integer;
   attribute G_AXI_ARSIZE_WIDTH of inst : label is 3;
   attribute G_AXI_ARUSER_INDEX : integer;
-  attribute G_AXI_ARUSER_INDEX of inst : label is 61;
+  attribute G_AXI_ARUSER_INDEX of inst : label is 62;
   attribute G_AXI_ARUSER_WIDTH : integer;
   attribute G_AXI_ARUSER_WIDTH of inst : label is 0;
   attribute G_AXI_AWADDR_INDEX : integer;
@@ -8912,7 +8915,7 @@ architecture STRUCTURE of hdmi_auto_rs_w_0 is
   attribute G_AXI_AWID_INDEX : integer;
   attribute G_AXI_AWID_INDEX of inst : label is 50;
   attribute G_AXI_AWID_WIDTH : integer;
-  attribute G_AXI_AWID_WIDTH of inst : label is 3;
+  attribute G_AXI_AWID_WIDTH of inst : label is 4;
   attribute G_AXI_AWLEN_INDEX : integer;
   attribute G_AXI_AWLEN_INDEX of inst : label is 41;
   attribute G_AXI_AWLEN_WIDTH : integer;
@@ -8922,17 +8925,17 @@ architecture STRUCTURE of hdmi_auto_rs_w_0 is
   attribute G_AXI_AWLOCK_WIDTH : integer;
   attribute G_AXI_AWLOCK_WIDTH of inst : label is 1;
   attribute G_AXI_AWPAYLOAD_WIDTH : integer;
-  attribute G_AXI_AWPAYLOAD_WIDTH of inst : label is 61;
+  attribute G_AXI_AWPAYLOAD_WIDTH of inst : label is 62;
   attribute G_AXI_AWPROT_INDEX : integer;
   attribute G_AXI_AWPROT_INDEX of inst : label is 29;
   attribute G_AXI_AWPROT_WIDTH : integer;
   attribute G_AXI_AWPROT_WIDTH of inst : label is 3;
   attribute G_AXI_AWQOS_INDEX : integer;
-  attribute G_AXI_AWQOS_INDEX of inst : label is 53;
+  attribute G_AXI_AWQOS_INDEX of inst : label is 54;
   attribute G_AXI_AWQOS_WIDTH : integer;
   attribute G_AXI_AWQOS_WIDTH of inst : label is 4;
   attribute G_AXI_AWREGION_INDEX : integer;
-  attribute G_AXI_AWREGION_INDEX of inst : label is 57;
+  attribute G_AXI_AWREGION_INDEX of inst : label is 58;
   attribute G_AXI_AWREGION_WIDTH : integer;
   attribute G_AXI_AWREGION_WIDTH of inst : label is 4;
   attribute G_AXI_AWSIZE_INDEX : integer;
@@ -8940,21 +8943,21 @@ architecture STRUCTURE of hdmi_auto_rs_w_0 is
   attribute G_AXI_AWSIZE_WIDTH : integer;
   attribute G_AXI_AWSIZE_WIDTH of inst : label is 3;
   attribute G_AXI_AWUSER_INDEX : integer;
-  attribute G_AXI_AWUSER_INDEX of inst : label is 61;
+  attribute G_AXI_AWUSER_INDEX of inst : label is 62;
   attribute G_AXI_AWUSER_WIDTH : integer;
   attribute G_AXI_AWUSER_WIDTH of inst : label is 0;
   attribute G_AXI_BID_INDEX : integer;
   attribute G_AXI_BID_INDEX of inst : label is 2;
   attribute G_AXI_BID_WIDTH : integer;
-  attribute G_AXI_BID_WIDTH of inst : label is 3;
+  attribute G_AXI_BID_WIDTH of inst : label is 4;
   attribute G_AXI_BPAYLOAD_WIDTH : integer;
-  attribute G_AXI_BPAYLOAD_WIDTH of inst : label is 5;
+  attribute G_AXI_BPAYLOAD_WIDTH of inst : label is 6;
   attribute G_AXI_BRESP_INDEX : integer;
   attribute G_AXI_BRESP_INDEX of inst : label is 0;
   attribute G_AXI_BRESP_WIDTH : integer;
   attribute G_AXI_BRESP_WIDTH of inst : label is 2;
   attribute G_AXI_BUSER_INDEX : integer;
-  attribute G_AXI_BUSER_INDEX of inst : label is 5;
+  attribute G_AXI_BUSER_INDEX of inst : label is 6;
   attribute G_AXI_BUSER_WIDTH : integer;
   attribute G_AXI_BUSER_WIDTH of inst : label is 0;
   attribute G_AXI_RDATA_INDEX : integer;
@@ -8964,19 +8967,19 @@ architecture STRUCTURE of hdmi_auto_rs_w_0 is
   attribute G_AXI_RID_INDEX : integer;
   attribute G_AXI_RID_INDEX of inst : label is 259;
   attribute G_AXI_RID_WIDTH : integer;
-  attribute G_AXI_RID_WIDTH of inst : label is 3;
+  attribute G_AXI_RID_WIDTH of inst : label is 4;
   attribute G_AXI_RLAST_INDEX : integer;
   attribute G_AXI_RLAST_INDEX of inst : label is 258;
   attribute G_AXI_RLAST_WIDTH : integer;
   attribute G_AXI_RLAST_WIDTH of inst : label is 1;
   attribute G_AXI_RPAYLOAD_WIDTH : integer;
-  attribute G_AXI_RPAYLOAD_WIDTH of inst : label is 262;
+  attribute G_AXI_RPAYLOAD_WIDTH of inst : label is 263;
   attribute G_AXI_RRESP_INDEX : integer;
   attribute G_AXI_RRESP_INDEX of inst : label is 256;
   attribute G_AXI_RRESP_WIDTH : integer;
   attribute G_AXI_RRESP_WIDTH of inst : label is 2;
   attribute G_AXI_RUSER_INDEX : integer;
-  attribute G_AXI_RUSER_INDEX of inst : label is 262;
+  attribute G_AXI_RUSER_INDEX of inst : label is 263;
   attribute G_AXI_RUSER_WIDTH : integer;
   attribute G_AXI_RUSER_WIDTH of inst : label is 0;
   attribute G_AXI_WDATA_INDEX : integer;
@@ -9019,7 +9022,7 @@ architecture STRUCTURE of hdmi_auto_rs_w_0 is
   attribute X_INTERFACE_INFO of m_axi_bvalid : signal is "xilinx.com:interface:aximm:1.0 M_AXI BVALID";
   attribute X_INTERFACE_INFO of m_axi_rlast : signal is "xilinx.com:interface:aximm:1.0 M_AXI RLAST";
   attribute X_INTERFACE_INFO of m_axi_rready : signal is "xilinx.com:interface:aximm:1.0 M_AXI RREADY";
-  attribute X_INTERFACE_PARAMETER of m_axi_rready : signal is "XIL_INTERFACENAME M_AXI, DATA_WIDTH 256, PROTOCOL AXI4, FREQ_HZ 100000000, ID_WIDTH 3, ADDR_WIDTH 29, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 1, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 16, PHASE 0, CLK_DOMAIN hdmi_mig_7series_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0";
+  attribute X_INTERFACE_PARAMETER of m_axi_rready : signal is "XIL_INTERFACENAME M_AXI, DATA_WIDTH 256, PROTOCOL AXI4, FREQ_HZ 100000000, ID_WIDTH 4, ADDR_WIDTH 29, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 1, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 128, PHASE 0, CLK_DOMAIN hdmi_mig_7series_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0";
   attribute X_INTERFACE_INFO of m_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 M_AXI RVALID";
   attribute X_INTERFACE_INFO of m_axi_wlast : signal is "xilinx.com:interface:aximm:1.0 M_AXI WLAST";
   attribute X_INTERFACE_INFO of m_axi_wready : signal is "xilinx.com:interface:aximm:1.0 M_AXI WREADY";
@@ -9032,7 +9035,7 @@ architecture STRUCTURE of hdmi_auto_rs_w_0 is
   attribute X_INTERFACE_INFO of s_axi_bvalid : signal is "xilinx.com:interface:aximm:1.0 S_AXI BVALID";
   attribute X_INTERFACE_INFO of s_axi_rlast : signal is "xilinx.com:interface:aximm:1.0 S_AXI RLAST";
   attribute X_INTERFACE_INFO of s_axi_rready : signal is "xilinx.com:interface:aximm:1.0 S_AXI RREADY";
-  attribute X_INTERFACE_PARAMETER of s_axi_rready : signal is "XIL_INTERFACENAME S_AXI, DATA_WIDTH 256, PROTOCOL AXI4, FREQ_HZ 100000000, ID_WIDTH 3, ADDR_WIDTH 29, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 1, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 16, PHASE 0, CLK_DOMAIN hdmi_mig_7series_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0";
+  attribute X_INTERFACE_PARAMETER of s_axi_rready : signal is "XIL_INTERFACENAME S_AXI, DATA_WIDTH 256, PROTOCOL AXI4, FREQ_HZ 100000000, ID_WIDTH 4, ADDR_WIDTH 29, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 1, HAS_LOCK 1, HAS_PROT 1, HAS_CACHE 1, HAS_QOS 1, HAS_REGION 1, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 8, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 128, PHASE 0, CLK_DOMAIN hdmi_mig_7series_0_0_ui_clk, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0";
   attribute X_INTERFACE_INFO of s_axi_rvalid : signal is "xilinx.com:interface:aximm:1.0 S_AXI RVALID";
   attribute X_INTERFACE_INFO of s_axi_wlast : signal is "xilinx.com:interface:aximm:1.0 S_AXI WLAST";
   attribute X_INTERFACE_INFO of s_axi_wready : signal is "xilinx.com:interface:aximm:1.0 S_AXI WREADY";
@@ -9100,7 +9103,7 @@ inst: entity work.hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice
       m_axi_araddr(28 downto 0) => m_axi_araddr(28 downto 0),
       m_axi_arburst(1 downto 0) => m_axi_arburst(1 downto 0),
       m_axi_arcache(3 downto 0) => m_axi_arcache(3 downto 0),
-      m_axi_arid(2 downto 0) => m_axi_arid(2 downto 0),
+      m_axi_arid(3 downto 0) => m_axi_arid(3 downto 0),
       m_axi_arlen(7 downto 0) => m_axi_arlen(7 downto 0),
       m_axi_arlock(0) => m_axi_arlock(0),
       m_axi_arprot(2 downto 0) => m_axi_arprot(2 downto 0),
@@ -9113,7 +9116,7 @@ inst: entity work.hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice
       m_axi_awaddr(28 downto 0) => m_axi_awaddr(28 downto 0),
       m_axi_awburst(1 downto 0) => m_axi_awburst(1 downto 0),
       m_axi_awcache(3 downto 0) => m_axi_awcache(3 downto 0),
-      m_axi_awid(2 downto 0) => m_axi_awid(2 downto 0),
+      m_axi_awid(3 downto 0) => m_axi_awid(3 downto 0),
       m_axi_awlen(7 downto 0) => m_axi_awlen(7 downto 0),
       m_axi_awlock(0) => m_axi_awlock(0),
       m_axi_awprot(2 downto 0) => m_axi_awprot(2 downto 0),
@@ -9123,20 +9126,20 @@ inst: entity work.hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice
       m_axi_awsize(2 downto 0) => m_axi_awsize(2 downto 0),
       m_axi_awuser(0) => NLW_inst_m_axi_awuser_UNCONNECTED(0),
       m_axi_awvalid => m_axi_awvalid,
-      m_axi_bid(2 downto 0) => m_axi_bid(2 downto 0),
+      m_axi_bid(3 downto 0) => m_axi_bid(3 downto 0),
       m_axi_bready => m_axi_bready,
       m_axi_bresp(1 downto 0) => m_axi_bresp(1 downto 0),
       m_axi_buser(0) => '0',
       m_axi_bvalid => m_axi_bvalid,
       m_axi_rdata(255 downto 0) => m_axi_rdata(255 downto 0),
-      m_axi_rid(2 downto 0) => m_axi_rid(2 downto 0),
+      m_axi_rid(3 downto 0) => m_axi_rid(3 downto 0),
       m_axi_rlast => m_axi_rlast,
       m_axi_rready => m_axi_rready,
       m_axi_rresp(1 downto 0) => m_axi_rresp(1 downto 0),
       m_axi_ruser(0) => '0',
       m_axi_rvalid => m_axi_rvalid,
       m_axi_wdata(255 downto 0) => m_axi_wdata(255 downto 0),
-      m_axi_wid(2 downto 0) => NLW_inst_m_axi_wid_UNCONNECTED(2 downto 0),
+      m_axi_wid(3 downto 0) => NLW_inst_m_axi_wid_UNCONNECTED(3 downto 0),
       m_axi_wlast => m_axi_wlast,
       m_axi_wready => m_axi_wready,
       m_axi_wstrb(31 downto 0) => m_axi_wstrb(31 downto 0),
@@ -9145,7 +9148,7 @@ inst: entity work.hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice
       s_axi_araddr(28 downto 0) => s_axi_araddr(28 downto 0),
       s_axi_arburst(1 downto 0) => s_axi_arburst(1 downto 0),
       s_axi_arcache(3 downto 0) => s_axi_arcache(3 downto 0),
-      s_axi_arid(2 downto 0) => s_axi_arid(2 downto 0),
+      s_axi_arid(3 downto 0) => s_axi_arid(3 downto 0),
       s_axi_arlen(7 downto 0) => s_axi_arlen(7 downto 0),
       s_axi_arlock(0) => s_axi_arlock(0),
       s_axi_arprot(2 downto 0) => s_axi_arprot(2 downto 0),
@@ -9158,7 +9161,7 @@ inst: entity work.hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice
       s_axi_awaddr(28 downto 0) => s_axi_awaddr(28 downto 0),
       s_axi_awburst(1 downto 0) => s_axi_awburst(1 downto 0),
       s_axi_awcache(3 downto 0) => s_axi_awcache(3 downto 0),
-      s_axi_awid(2 downto 0) => s_axi_awid(2 downto 0),
+      s_axi_awid(3 downto 0) => s_axi_awid(3 downto 0),
       s_axi_awlen(7 downto 0) => s_axi_awlen(7 downto 0),
       s_axi_awlock(0) => s_axi_awlock(0),
       s_axi_awprot(2 downto 0) => s_axi_awprot(2 downto 0),
@@ -9168,20 +9171,20 @@ inst: entity work.hdmi_auto_rs_w_0_axi_register_slice_v2_1_17_axi_register_slice
       s_axi_awsize(2 downto 0) => s_axi_awsize(2 downto 0),
       s_axi_awuser(0) => '0',
       s_axi_awvalid => s_axi_awvalid,
-      s_axi_bid(2 downto 0) => s_axi_bid(2 downto 0),
+      s_axi_bid(3 downto 0) => s_axi_bid(3 downto 0),
       s_axi_bready => s_axi_bready,
       s_axi_bresp(1 downto 0) => s_axi_bresp(1 downto 0),
       s_axi_buser(0) => NLW_inst_s_axi_buser_UNCONNECTED(0),
       s_axi_bvalid => s_axi_bvalid,
       s_axi_rdata(255 downto 0) => s_axi_rdata(255 downto 0),
-      s_axi_rid(2 downto 0) => s_axi_rid(2 downto 0),
+      s_axi_rid(3 downto 0) => s_axi_rid(3 downto 0),
       s_axi_rlast => s_axi_rlast,
       s_axi_rready => s_axi_rready,
       s_axi_rresp(1 downto 0) => s_axi_rresp(1 downto 0),
       s_axi_ruser(0) => NLW_inst_s_axi_ruser_UNCONNECTED(0),
       s_axi_rvalid => s_axi_rvalid,
       s_axi_wdata(255 downto 0) => s_axi_wdata(255 downto 0),
-      s_axi_wid(2 downto 0) => B"000",
+      s_axi_wid(3 downto 0) => B"0000",
       s_axi_wlast => s_axi_wlast,
       s_axi_wready => s_axi_wready,
       s_axi_wstrb(31 downto 0) => s_axi_wstrb(31 downto 0),

@@ -104,6 +104,18 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_axi_dma_1_
 # IP: bd/hdmi/ip/hdmi_grayscale_top_0_1/hdmi_grayscale_top_0_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_grayscale_top_0_1 || ORIG_REF_NAME==hdmi_grayscale_top_0_1} -quiet] -quiet
 
+# IP: bd/hdmi/ip/hdmi_axi_dma_2_0/hdmi_axi_dma_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_axi_dma_2_0 || ORIG_REF_NAME==hdmi_axi_dma_2_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_stream2rgb_0_0/hdmi_stream2rgb_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_stream2rgb_0_0 || ORIG_REF_NAME==hdmi_stream2rgb_0_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_rgb2stream_0_0/hdmi_rgb2stream_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_rgb2stream_0_0 || ORIG_REF_NAME==hdmi_rgb2stream_0_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_grayscale_0_0/hdmi_grayscale_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_grayscale_0_0 || ORIG_REF_NAME==hdmi_grayscale_0_0} -quiet] -quiet
+
 # IP: bd/hdmi/ip/hdmi_m00_regslice_0_1/hdmi_m00_regslice_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_m00_regslice_0 || ORIG_REF_NAME==hdmi_m00_regslice_0} -quiet] -quiet
 
@@ -112,6 +124,12 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_ds_0 
 
 # IP: bd/hdmi/ip/hdmi_auto_rs_w_0_1/hdmi_auto_rs_w_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_rs_w_0 || ORIG_REF_NAME==hdmi_auto_rs_w_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_auto_us_5/hdmi_auto_us_5.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_5 || ORIG_REF_NAME==hdmi_auto_us_5} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_auto_us_4/hdmi_auto_us_4.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_4 || ORIG_REF_NAME==hdmi_auto_us_4} -quiet] -quiet
 
 # IP: bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_3 || ORIG_REF_NAME==hdmi_auto_us_3} -quiet] -quiet

@@ -32,7 +32,6 @@ set_property board_part_repo_paths C:/Users/Albert/Documents/GitHub/ECE532/test_
 set_property board_part digilentinc.com:nexys_video:part0:1.1 [current_project]
 set_property ip_repo_paths {
   c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0
-  c:/Users/Albert/Documents/uoft/20241/ECE532/gray_20182
   c:/Users/Albert/Documents/GitHub/ECE532/custom_ip
 } [current_project]
 set_property ip_output_repo c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.cache/ip [current_project]
@@ -100,6 +99,9 @@ set_property used_in_implementation false [get_files -all c:/Users/Albert/Docume
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_1_0/hdmi_axi_dma_1_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_1_0/hdmi_axi_dma_1_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_1_0/hdmi_axi_dma_1_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_2_0/hdmi_axi_dma_2_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_2_0/hdmi_axi_dma_2_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_2_0/hdmi_axi_dma_2_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_m00_regslice_0_1/hdmi_m00_regslice_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_m00_regslice_0_1/hdmi_m00_regslice_0_ooc.xdc]
 set_property used_in_synthesis false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0_1/hdmi_auto_ds_0_clocks.xdc]
@@ -107,6 +109,12 @@ set_property used_in_implementation false [get_files -all c:/Users/Albert/Docume
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0_1/hdmi_auto_ds_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_rs_w_0_1/hdmi_auto_rs_w_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_rs_w_0_1/hdmi_auto_rs_w_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_5/hdmi_auto_us_5_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_5/hdmi_auto_us_5_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_5/hdmi_auto_us_5_ooc.xdc]
+set_property used_in_synthesis false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_4/hdmi_auto_us_4_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_4/hdmi_auto_us_4_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_4/hdmi_auto_us_4_ooc.xdc]
 set_property used_in_synthesis false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_3/hdmi_auto_us_3_ooc.xdc]

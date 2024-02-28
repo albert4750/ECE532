@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-| Date         : Wed Feb 14 09:06:48 2024
+| Date         : Wed Feb 28 05:36:12 2024
 | Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
 | Command      : report_utilization -file hdmi_wrapper_utilization_synth.rpt -pb hdmi_wrapper_utilization_synth.pb
 | Design       : hdmi_wrapper
@@ -168,12 +168,14 @@ Table of Contents
 | hdmi_v_tc_1_0                 |    1 |
 | hdmi_v_tc_0_0                 |    1 |
 | hdmi_v_axi4s_vid_out_0_0      |    1 |
+| hdmi_stream2rgb_0_0           |    1 |
 | hdmi_s03_regslice_0           |    1 |
 | hdmi_s02_regslice_0           |    1 |
 | hdmi_s01_regslice_0           |    1 |
 | hdmi_s00_regslice_0           |    1 |
 | hdmi_rst_mig_7series_0_pxl_0  |    1 |
 | hdmi_rst_mig_7series_0_100M_0 |    1 |
+| hdmi_rgb2stream_0_0           |    1 |
 | hdmi_rgb2dvi_0_0              |    1 |
 | hdmi_passthrough_0_0          |    1 |
 | hdmi_mig_7series_0_0          |    1 |
@@ -186,6 +188,7 @@ Table of Contents
 | hdmi_ilmb_v10_0               |    1 |
 | hdmi_ilmb_bram_if_cntlr_0     |    1 |
 | hdmi_grayscale_top_0_1        |    1 |
+| hdmi_grayscale_0_0            |    1 |
 | hdmi_dvi2rgb_0_0              |    1 |
 | hdmi_dlmb_v10_0               |    1 |
 | hdmi_dlmb_bram_if_cntlr_0     |    1 |
@@ -194,8 +197,11 @@ Table of Contents
 | hdmi_axi_timer_0_0            |    1 |
 | hdmi_axi_gpio_video_0         |    1 |
 | hdmi_axi_dynclk_0_0           |    1 |
+| hdmi_axi_dma_2_0              |    1 |
 | hdmi_axi_dma_1_0              |    1 |
 | hdmi_axi_dma_0_0              |    1 |
+| hdmi_auto_us_5                |    1 |
+| hdmi_auto_us_4                |    1 |
 | hdmi_auto_us_3                |    1 |
 | hdmi_auto_us_2                |    1 |
 | hdmi_auto_us_1                |    1 |

@@ -91,6 +91,7 @@ const ivt_t ivt[] = {
 // For AxiDMA
 XAxiDma passThrough;
 XAxiDma grayScale;
+XAxiDma grayScale_new;
 u8 dmaMode;
 u8 wOrB;
 // Albert End
@@ -118,6 +119,7 @@ void DemoInitialize()
 	XAxiVdma_Config *vdmaConfig;
 	XAxiDma_Config* passThroughConfig;
 	XAxiDma_Config* grayScaleConfig;
+	XAxiDma_Config* grayScaleNewConfig;
 	int i;
 
 	// Albert Start
@@ -216,6 +218,17 @@ void DemoInitialize()
 	Status = XAxiDma_CfgInitialize(&grayScale, grayScaleConfig);
 	if (Status != XST_SUCCESS)	{
 		xil_printf("Gray Scale DMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
+
+	grayScaleNewConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_2_DEVICE_ID);
+	if (!grayScaleNewConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_2_DEVICE_ID);
+		return;
+	}
+	Status = XAxiDma_CfgInitialize(&grayScale_new, grayScaleNewConfig);
+	if (Status != XST_SUCCESS)	{
+		xil_printf("New Gray Scale DMA Configuration Initialization failed %d\r\n", Status);
 		return;
 	}
 	// Albert End
@@ -326,7 +339,7 @@ void DemoRun()
 			break;
 		case 's':
 			xil_printf("\n\rSwitching DMA mode\n\r");
-			dmaMode = !dmaMode;
+			dmaMode = (dmaMode + 1) % 3;
 			xil_printf("DMA mode is now %u\n\r", dmaMode);
 			break;
 		case 'q':
@@ -355,8 +368,11 @@ void doDMA(){
 	if(dmaMode == 0){
 		dma = &passThrough;
 	}
-	else{
+	else if(dmaMode == 1){
 		dma = &grayScale;
+	}
+	else if(dmaMode == 2){
+		dma = &grayScale_new;
 	}
 
 
@@ -409,6 +425,7 @@ void DemoPrintMenu()
 	xil_printf("8 - Grab Video Frame and scale to Display resolution\n\r");
 	xil_printf("9 - Print black or white in buffer order\n\r");
 	xil_printf("d - DMA go\n\r");
+	xil_printf("s - switch DMA mode\n\r");
 	xil_printf("q - Quit\n\r");
 	xil_printf("\n\r");
 	xil_printf("\n\r");
