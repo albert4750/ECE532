@@ -54,7 +54,7 @@ module anime4k_test #(
         .WIDTH (Width)
     ) dut (
         .clock_i(clock),
-        .reset_i(1'b0),
+        .reset_i(reset),
 
         .slave_tvalid_i(in_tvalid),
         .slave_tready_o(in_tready),

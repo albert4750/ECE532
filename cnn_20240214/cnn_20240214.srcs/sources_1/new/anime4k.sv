@@ -126,6 +126,9 @@ module anime4k #(
             .DATA_WIDTH (ActivationWidth),
             .IN_CHANNELS(HighwayDepth)
         ) crelu_inst (
+            .clock_i(clock_i),
+            .reset_i(reset_i),
+
             .slave_tvalid_i(convolve_tvalid[i]),
             .slave_tready_o(convolve_tready[i]),
             .slave_tdata_i (convolve_tdata[i]),

@@ -59,10 +59,20 @@ module convolve_single_in_single_out #(
     logic [ACTIVATION_WIDTH-1:0] constant_pad_tdata;
     logic constant_pad_tlast;
 
+    logic register_buffer0_tvalid;
+    logic register_buffer0_tready;
+    logic [ACTIVATION_WIDTH-1:0] register_buffer0_tdata;
+    logic register_buffer0_tlast;
+
     logic sliding_window_tvalid;
     logic sliding_window_tready;
     logic [ACTIVATION_WIDTH*KERNEL_SIZE*KERNEL_SIZE-1:0] sliding_window_tdata;
     logic sliding_window_tlast;
+
+    logic register_buffer1_tvalid;
+    logic register_buffer1_tready;
+    logic [ACTIVATION_WIDTH*KERNEL_SIZE*KERNEL_SIZE-1:0] register_buffer1_tdata;
+    logic register_buffer1_tlast;
 
     constant_pad #(
         .DATA_WIDTH(ACTIVATION_WIDTH),
@@ -85,6 +95,21 @@ module convolve_single_in_single_out #(
         .master_tlast_o (constant_pad_tlast)
     );
 
+    register_buffer #(ACTIVATION_WIDTH) buffer0 (
+        .clock_i(clock_i),
+        .reset_i(reset_i),
+
+        .slave_tvalid_i(constant_pad_tvalid),
+        .slave_tready_o(constant_pad_tready),
+        .slave_tdata_i (constant_pad_tdata),
+        .slave_tlast_i (constant_pad_tlast),
+
+        .master_tvalid_o(register_buffer0_tvalid),
+        .master_tready_i(register_buffer0_tready),
+        .master_tdata_o (register_buffer0_tdata),
+        .master_tlast_o (register_buffer0_tlast)
+    );
+
     sliding_window #(
         .DATA_WIDTH(ACTIVATION_WIDTH),
         .WINDOW_SIZE(KERNEL_SIZE),
@@ -94,10 +119,10 @@ module convolve_single_in_single_out #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(constant_pad_tvalid),
-        .slave_tready_o(constant_pad_tready),
-        .slave_tdata_i (constant_pad_tdata),
-        .slave_tlast_i (constant_pad_tlast),
+        .slave_tvalid_i(register_buffer0_tvalid),
+        .slave_tready_o(register_buffer0_tready),
+        .slave_tdata_i (register_buffer0_tdata),
+        .slave_tlast_i (register_buffer0_tlast),
 
         .master_tvalid_o(sliding_window_tvalid),
         .master_tready_i(sliding_window_tready),
@@ -105,15 +130,33 @@ module convolve_single_in_single_out #(
         .master_tlast_o (sliding_window_tlast)
     );
 
+    register_buffer #(ACTIVATION_WIDTH * KERNEL_SIZE * KERNEL_SIZE) buffer1 (
+        .clock_i(clock_i),
+        .reset_i(reset_i),
+
+        .slave_tvalid_i(sliding_window_tvalid),
+        .slave_tready_o(sliding_window_tready),
+        .slave_tdata_i (sliding_window_tdata),
+        .slave_tlast_i (sliding_window_tlast),
+
+        .master_tvalid_o(register_buffer1_tvalid),
+        .master_tready_i(register_buffer1_tready),
+        .master_tdata_o (register_buffer1_tdata),
+        .master_tlast_o (register_buffer1_tlast)
+    );
+
     convolve_reduce #(
         .ACTIVATION_WIDTH(ACTIVATION_WIDTH),
         .WEIGHT_WIDTH(WEIGHT_WIDTH),
         .KERNEL_SIZE(KERNEL_SIZE)
     ) convolve_reduce_inst (
-        .slave_tvalid_i(sliding_window_tvalid),
-        .slave_tready_o(sliding_window_tready),
-        .slave_tdata_i (sliding_window_tdata),
-        .slave_tlast_i (sliding_window_tlast),
+        .clock_i(clock_i),
+        .reset_i(reset_i),
+
+        .slave_tvalid_i(register_buffer1_tvalid),
+        .slave_tready_o(register_buffer1_tready),
+        .slave_tdata_i (register_buffer1_tdata),
+        .slave_tlast_i (register_buffer1_tlast),
 
         .master_tvalid_o(master_tvalid_o),
         .master_tready_i(master_tready_i),

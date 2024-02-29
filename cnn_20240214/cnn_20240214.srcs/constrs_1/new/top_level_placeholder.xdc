@@ -1,3 +1,6 @@
+set_property CONFIG_VOLTAGE 3.3 [current_design]
+set_property CFGBVS VCCO [current_design]
+
 set_property -dict {PACKAGE_PIN R4  IOSTANDARD LVCMOS33}  [get_ports clock_i]
 create_clock -name SystemClock -period 10 -waveform {0 5} [get_ports clock_i]
 

@@ -33,6 +33,8 @@ module convolve_multi_in_multi_out_test #(
     localparam int Rounds = 4
 );
 
+    typedef logic [ActivationWidth-1:0] activation_t;
+
     logic signed [WeightWidth-1:0] weight[OutChannels][InChannels][KernelSize][KernelSize];
     assign weight = `include "data/weight.txt";
 
@@ -47,8 +49,6 @@ module convolve_multi_in_multi_out_test #(
     assign outputs[1] = `include "data/output1.txt";
     assign outputs[2] = `include "data/output2.txt";
     assign outputs[3] = `include "data/output3.txt";
-
-    typedef logic [ActivationWidth-1:0] activation_t;
 
     logic clock;
     initial clock = 0;
