@@ -76,7 +76,7 @@ module anime4k_test #(
     logic in_stream_finished = 0;
     initial begin : feed_in_stream
         in_tvalid = 0;
-        #30;
+        #200;
 
         for (int round = 0; round < Rounds; ++round) begin
             $display("Started sending data for round %d", round);
@@ -119,7 +119,7 @@ module anime4k_test #(
     logic out_stream_finished = 0;
     initial begin : check_out_stream
         out_tready = 0;
-        #30;
+        #200;
 
         for (int round = 0; round < Rounds; ++round) begin
             $display("Started receiving data for round %d", round);
@@ -168,7 +168,7 @@ module anime4k_test #(
 
     initial begin
         reset = 1;
-        #20;
+        #180;
         reset = 0;
         wait (in_stream_finished && out_stream_finished);
         $display("Test passed!");

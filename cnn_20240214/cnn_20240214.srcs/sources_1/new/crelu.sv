@@ -55,7 +55,7 @@ module crelu #(
         assign out_data[1][i] = in_data[i] < 0 ? -in_data[i] : 0;
     end : gen_crelu
 
-    register_buffer #(DATA_WIDTH * IN_CHANNELS * 2) buffer (
+    register_buffer_async_ready #(DATA_WIDTH * IN_CHANNELS * 2) buffer (
         .clock_i(clock_i),
         .reset_i(reset_i),
 

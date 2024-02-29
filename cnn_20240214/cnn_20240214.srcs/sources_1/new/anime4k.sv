@@ -36,7 +36,7 @@ module anime4k #(
     localparam int KernelSize = 3,
     localparam int HighwayDepth = 4,
     // localparam int BlockDepth = 7
-    localparam int BlockDepth = 2
+    localparam int BlockDepth = 5
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -89,9 +89,9 @@ module anime4k #(
         case (i)
             0: assign convolve_weight = `include "data/convolve0_weight.txt";
             1: assign convolve_weight = `include "data/convolve1_weight.txt";
-            // 2: assign convolve_weight = `include "data/convolve2_weight.txt";
-            // 3: assign convolve_weight = `include "data/convolve3_weight.txt";
-            // 4: assign convolve_weight = `include "data/convolve4_weight.txt";
+            2: assign convolve_weight = `include "data/convolve2_weight.txt";
+            3: assign convolve_weight = `include "data/convolve3_weight.txt";
+            4: assign convolve_weight = `include "data/convolve4_weight.txt";
             // 5: assign convolve_weight = `include "data/convolve5_weight.txt";
             // 6: assign convolve_weight = `include "data/convolve6_weight.txt";
         endcase

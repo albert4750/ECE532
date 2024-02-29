@@ -64,7 +64,7 @@ module convolve_reduce #(
     logic signed [KERNEL_SIZE-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] sum_per_row_tdata;
     logic sum_per_row_tlast;
 
-    register_buffer #($bits(
+    register_buffer_async_ready #($bits(
         sum_per_row
     )) buffer0 (
         .clock_i(clock_i),
@@ -89,7 +89,7 @@ module convolve_reduce #(
         end
     end
 
-    register_buffer #(ACTIVATION_WIDTH) buffer1 (
+    register_buffer_async_ready #(ACTIVATION_WIDTH) buffer1 (
         .clock_i(clock_i),
         .reset_i(reset_i),
 

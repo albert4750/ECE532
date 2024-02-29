@@ -95,7 +95,7 @@ module convolve_single_in_single_out #(
         .master_tlast_o (constant_pad_tlast)
     );
 
-    register_buffer #(ACTIVATION_WIDTH) buffer0 (
+    register_buffer_async_ready #(ACTIVATION_WIDTH) buffer0 (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
@@ -130,7 +130,7 @@ module convolve_single_in_single_out #(
         .master_tlast_o (sliding_window_tlast)
     );
 
-    register_buffer #(ACTIVATION_WIDTH * KERNEL_SIZE * KERNEL_SIZE) buffer1 (
+    register_buffer_async_ready #(ACTIVATION_WIDTH * KERNEL_SIZE * KERNEL_SIZE) buffer1 (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
