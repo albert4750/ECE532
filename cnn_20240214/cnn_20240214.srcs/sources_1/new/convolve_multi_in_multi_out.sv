@@ -65,9 +65,9 @@ module convolve_multi_in_multi_out #(
     logic [OUT_CHANNELS-1:0][IN_CHANNELS-1:0] siso_out_tlast;
     // Because all convolve_single_in_single_out modules have the same input control signals, their
     // output control signals should be the same as well. Use & to avoid Vivado warnings.
-    assign slave_tready_o  = &siso_in_tready;
-    assign master_tvalid_o = &siso_out_tvalid;
-    assign master_tlast_o  = &siso_out_tlast;
+    assign slave_tready_o  = siso_in_tready[0][0];
+    assign master_tvalid_o = siso_out_tvalid[0][0];
+    assign master_tlast_o  = siso_out_tlast[0][0];
 
     for (genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel) begin : gen_out_channel
         logic signed [ACTIVATION_WIDTH-1:0] siso_out_tdata[IN_CHANNELS];

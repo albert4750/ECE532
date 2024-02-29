@@ -48,7 +48,7 @@ module convolve_multi_in_multi_out_test #(
     assign outputs[2] = `include "data/output2.txt";
     assign outputs[3] = `include "data/output3.txt";
 
-    typedef logic [ActivationWidth-1:0] data_t;
+    typedef logic [ActivationWidth-1:0] activation_t;
 
     logic clock;
     initial clock = 0;
@@ -92,10 +92,10 @@ module convolve_multi_in_multi_out_test #(
         .weight_i(weight)
     );
 
-    logic [InChannels-1:0][ActivationWidth-1:0] in_data;
+    logic signed [InChannels-1:0][ActivationWidth-1:0] in_data;
     assign in_tdata = in_data;
 
-    logic [OutChannels-1:0][ActivationWidth-1:0] out_data;
+    logic signed [OutChannels-1:0][ActivationWidth-1:0] out_data;
     assign out_data = out_tdata;
 
     logic in_stream_finished = 0;
@@ -165,8 +165,8 @@ module convolve_multi_in_multi_out_test #(
 
                     // Check the data.
                     for (int channel = 0; channel < OutChannels; ++channel) begin
-                        data_t expected = outputs[round][row][column][channel];
-                        data_t actual = out_data[channel];
+                        activation_t expected = outputs[round][row][column][channel];
+                        activation_t actual = out_data[channel];
                         assert (actual == expected)
                         else begin
                             $error("Error: tdata, row=%d, column=%d, channel=%d, expected=%d, actual=%d",

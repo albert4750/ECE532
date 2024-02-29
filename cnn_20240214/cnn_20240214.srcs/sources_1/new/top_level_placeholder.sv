@@ -22,8 +22,8 @@
 
 
 module top_level_placeholder #(
-    localparam int InHeight = 600,
-    localparam int InWidth  = 800
+    localparam int Height = 600,
+    localparam int Width  = 800
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -48,9 +48,9 @@ module top_level_placeholder #(
     assign master_tdata_placeholder_o = ^master_tdata_o;
 
     anime4k #(
-        .IN_HEIGHT(InHeight),
-        .IN_WIDTH (InWidth)
-    ) anime4k (
+        .HEIGHT(Height),
+        .WIDTH (Width)
+    ) anime4k_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
