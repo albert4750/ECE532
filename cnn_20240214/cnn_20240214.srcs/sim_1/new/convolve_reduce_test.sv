@@ -84,6 +84,7 @@ module convolve_reduce_test #(
 
         @(negedge clock);
         in_tvalid = 0;
+        $display("Finished sending data");
 
         in_stream_finished = 1;
     end : feed_in_stream
@@ -110,6 +111,7 @@ module convolve_reduce_test #(
 
         @(negedge clock);
         out_tready = 0;
+        $display("Finished receiving data");
 
         out_stream_finished = 1;
     end : check_output_stream
