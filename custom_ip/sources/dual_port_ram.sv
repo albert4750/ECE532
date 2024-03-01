@@ -9,8 +9,9 @@
 // Project Name: ECE532 Course Project - Real-Time Video Processing Pipeline
 // Target Devices: Nexys Video
 // Tool Versions: Vivado 2018.2
-// Description: A simple dual-port RAM driven by a single clock. It is based on on
-//     the following sample code in the official user guide:
+// Description: Simple dual-port RAM driven by a single clock.
+//
+//     It is based on on the following sample code in the official user guide:
 //     https://docs.xilinx.com/r/en-US/ug901-vivado-synthesis/Simple-Dual-Port-Block-RAM-with-Single-Clock-Verilog
 //
 // Dependencies:
@@ -23,14 +24,15 @@
 
 
 module dual_port_ram #(
-    parameter int DATA_WIDTH = 8,
-    parameter int ITEM_COUNT = 800
+    parameter  int DATA_WIDTH  = 8,
+    parameter  int ITEM_COUNT  = 800,
+    localparam int AddressBits = $clog2(ITEM_COUNT)
 ) (
     input logic clock_i,
     input logic write_enable_i,
     input logic read_enable_i,
-    input logic [$clog2(ITEM_COUNT)-1:0] write_address_i,
-    input logic [$clog2(ITEM_COUNT)-1:0] read_address_i,
+    input logic [AddressBits-1:0] write_address_i,
+    input logic [AddressBits-1:0] read_address_i,
     input logic [DATA_WIDTH-1:0] write_data_i,
     output logic [DATA_WIDTH-1:0] read_data_o
 );
