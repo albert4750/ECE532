@@ -9,11 +9,3 @@ __pycache__
 
 # Verilator
 obj_dir
-
-# Vivado
-project.wpc
-*.cache
-*.hw
-*.ip_user_files
-*.runs
-*.sim

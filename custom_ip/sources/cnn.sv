@@ -59,18 +59,19 @@ module cnn #(
     logic [ActivationWidth*HighwayDepth*2-1:0] crelu_tdata[BlockDepth];
     logic crelu_tlast[BlockDepth];
 
-    `include "cnn_weights/convolve0.vh"
-    `include "cnn_weights/convolve1.vh"
-    `include "cnn_weights/convolve2.vh"
-    `include "cnn_weights/convolve3.vh"
-    `include "cnn_weights/output.vh"
+    `include "cnn_weights/convolve0.svh"
+    `include "cnn_weights/convolve1.svh"
+    `include "cnn_weights/convolve2.svh"
+    `include "cnn_weights/convolve3.svh"
+    `include "cnn_weights/output.svh"
 
     for (genvar i = 0; i < BlockDepth; ++i) begin : gen_block
-        localparam int ConvolveInChannels = i == 0 ? 3 : HighwayDepth * 2;
+        // The IP Packager of Vivado has problems with localparams in generate blocks.
+        `define CONVOLVE_IN_CHANNELS (i == 0 ? 3 : HighwayDepth * 2)
 
         logic convolve_slave_tvalid;
         logic convolve_slave_tready;
-        logic [8*ConvolveInChannels-1:0] convolve_slave_tdata;
+        logic [8*CONVOLVE_IN_CHANNELS-1:0] convolve_slave_tdata;
         logic convolve_slave_tlast;
 
         if (i == 0) begin : gen_convolve_slave_first
@@ -87,7 +88,7 @@ module cnn #(
         end : gen_convolve_slave_rest
 
         logic signed [WeightWidth-1:0]
-            convolve_weight[HighwayDepth][ConvolveInChannels][KernelSize][KernelSize];
+            convolve_weight[HighwayDepth][CONVOLVE_IN_CHANNELS][KernelSize][KernelSize];
 
         case (i)
             0: assign convolve_weight = convolve0_weight;
@@ -100,7 +101,7 @@ module cnn #(
             .ACTIVATION_WIDTH(ActivationWidth),
             .WEIGHT_WIDTH(WeightWidth),
             .KERNEL_SIZE(KernelSize),
-            .IN_CHANNELS(ConvolveInChannels),
+            .IN_CHANNELS(CONVOLVE_IN_CHANNELS),
             .OUT_CHANNELS(HighwayDepth),
             .HEIGHT(HEIGHT),
             .WIDTH(WIDTH),
@@ -139,6 +140,8 @@ module cnn #(
             .master_tdata_o (crelu_tdata[i]),
             .master_tlast_o (crelu_tlast[i])
         );
+
+        `undef CONVOLVE_IN_CHANNELS
     end : gen_block
 
     // I originally wanted to use a convolution module with kernel size 1, but the module failed to
