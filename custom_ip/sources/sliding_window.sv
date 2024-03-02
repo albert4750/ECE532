@@ -49,26 +49,29 @@ module sliding_window #(
     output logic master_tlast_o
 );
 
-    localparam int ColumnBits = $clog2(WIDTH);
+    typedef logic [$clog2(HEIGHT)-1:0] row_t;
+    typedef logic [$clog2(HEIGHT+WINDOW_SIZE-1)-1:0] row_extended_t;
+    typedef logic [$clog2(WIDTH)-1:0] column_t;
+    typedef logic [$clog2(WINDOW_SIZE-1)-1:0] ram_row_t;
 
     logic has_new_input;
     assign has_new_input = slave_tvalid_i && slave_tready_o;
 
     // The currently processed element.
-    int current_row;
-    int current_column;
+    row_t current_row;
+    column_t current_column;
 
     // The RAM row that stores data for the current row.
-    int current_ram_row;
-    assign current_ram_row = current_row % (WINDOW_SIZE - 1);
+    ram_row_t current_ram_row;
+    assign current_ram_row = ram_row_t'(current_row % row_t'(WINDOW_SIZE - 1));
 
     // The next element to process.
-    int next_row;
-    int next_column;
+    row_t next_row;
+    column_t next_column;
     always_comb begin
-        if (current_column == WIDTH - 1) begin
+        if (current_column == column_t'(WIDTH - 1)) begin
             next_column = 0;
-            if (current_row == HEIGHT - 1) next_row = 0;
+            if (current_row == row_t'(HEIGHT - 1)) next_row = 0;
             else next_row = current_row + 1;
         end else begin
             next_row = current_row;
@@ -87,8 +90,8 @@ module sliding_window #(
             .clock_i(clock_i),
             .write_enable_i(has_new_input && (i == current_ram_row)),
             .read_enable_i(has_new_input),
-            .write_address_i(current_column[ColumnBits-1:0]),
-            .read_address_i(next_column[ColumnBits-1:0]),
+            .write_address_i(current_column),
+            .read_address_i(next_column),
             .write_data_i(slave_tdata_i),
             .read_data_o(ram_read_data[i])
         );
@@ -101,8 +104,10 @@ module sliding_window #(
     // Connect the last column of the sliding window. The first (WINDOW_SIZE - 1) elements from RAM,
     // and the last element from the input stream.
     for (genvar i = 0; i < WINDOW_SIZE - 1; ++i) begin : gen_out_data_last_column
-        int ram_row;
-        assign ram_row = (current_row + i) % (WINDOW_SIZE - 1);
+        row_extended_t current_row_plus_i;
+        assign current_row_plus_i = current_row + i;
+        ram_row_t ram_row;
+        assign ram_row = ram_row_t'(current_row_plus_i % row_extended_t'(WINDOW_SIZE - 1));
         assign out_data[i][WINDOW_SIZE-1] = ram_read_data[ram_row];
     end : gen_out_data_last_column
     assign out_data[WINDOW_SIZE-1][WINDOW_SIZE-1] = slave_tdata_i;
@@ -141,7 +146,7 @@ module sliding_window #(
 
     assign slave_tready_o = !reset_i && master_tready_i;
     assign master_tvalid_o = !reset_i && slave_tvalid_i &&
-        current_row >= (WINDOW_SIZE - 1) && current_column >= (WINDOW_SIZE - 1);
+        current_row >= row_t'(WINDOW_SIZE - 1) && current_column >= column_t'(WINDOW_SIZE - 1);
     assign master_tlast_o = slave_tlast_i;
 
 endmodule : sliding_window

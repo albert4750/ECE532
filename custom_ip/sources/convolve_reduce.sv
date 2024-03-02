@@ -66,7 +66,7 @@ module convolve_reduce #(
 
     register_buffer #(
         .DATA_WIDTH ($bits(sum_per_row)),
-        .ASYNC_READY(1)
+        .ASYNC_READY(0)
     ) buffer0 (
         .clock_i(clock_i),
         .reset_i(reset_i),
@@ -92,7 +92,7 @@ module convolve_reduce #(
 
     register_buffer #(
         .DATA_WIDTH (ACTIVATION_WIDTH),
-        .ASYNC_READY(1)
+        .ASYNC_READY(0)
     ) buffer1 (
         .clock_i(clock_i),
         .reset_i(reset_i),

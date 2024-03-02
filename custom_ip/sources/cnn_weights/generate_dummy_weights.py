@@ -64,4 +64,4 @@ def generate_dummy_weights(
 
 
 if __name__ == "__main__":
-    generate_dummy_weights(kernel_size=3, highway_depth=4, block_depth=4)
+    generate_dummy_weights(kernel_size=3, highway_depth=4, block_depth=12)
