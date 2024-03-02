@@ -96,7 +96,7 @@ module convolve_single_in_single_out #(
 
     register_buffer #(
         .DATA_WIDTH (ACTIVATION_WIDTH),
-        .ASYNC_READY(1)
+        .ASYNC_READY(0)
     ) buffer0 (
         .clock_i(clock_i),
         .reset_i(reset_i),
@@ -134,7 +134,7 @@ module convolve_single_in_single_out #(
 
     register_buffer #(
         .DATA_WIDTH (ACTIVATION_WIDTH * KERNEL_SIZE * KERNEL_SIZE),
-        .ASYNC_READY(1)
+        .ASYNC_READY(0)
     ) buffer1 (
         .clock_i(clock_i),
         .reset_i(reset_i),

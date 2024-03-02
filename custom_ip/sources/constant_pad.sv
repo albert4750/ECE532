@@ -24,7 +24,7 @@
 // Revision 0.01 - File Created
 // Additional Comments:
 //
-//////////////////////////////////////////////////////////////////////////////////0
+//////////////////////////////////////////////////////////////////////////////////
 
 
 module constant_pad #(
@@ -51,22 +51,26 @@ module constant_pad #(
     localparam int OutHeight = IN_HEIGHT + 2 * PADDING;
     localparam int OutWidth = IN_WIDTH + 2 * PADDING;
 
+    typedef logic [$clog2(OutHeight)-1:0] row_t;
+    typedef logic [$clog2(OutWidth)-1:0] column_t;
+
     // The current element in the output stream.
-    int   current_row;
-    int   current_column;
+    row_t current_row;
+    column_t current_column;
 
     // Whether the current element is in the padding region.
     logic is_in_padding;
-    assign is_in_padding = current_row < PADDING || current_row >= (IN_HEIGHT + PADDING) ||
-        current_column < PADDING || current_column >= (IN_WIDTH + PADDING);
+    assign is_in_padding =
+        current_row < row_t'(PADDING) || current_row >= row_t'(IN_HEIGHT + PADDING) ||
+        current_column < column_t'(PADDING) || current_column >= column_t'(IN_WIDTH + PADDING);
 
     // The next element to process.
-    int next_row;
-    int next_column;
+    row_t next_row;
+    column_t next_column;
     always_comb begin
-        if (current_column == OutWidth - 1) begin
+        if (current_column == column_t'(OutWidth - 1)) begin
             next_column = 0;
-            if (current_row == OutHeight - 1) next_row = 0;
+            if (current_row == row_t'(OutHeight - 1)) next_row = 0;
             else next_row = current_row + 1;
         end else begin
             next_row = current_row;
@@ -84,9 +88,10 @@ module constant_pad #(
         end
     end
 
-    assign slave_tready_o  = !reset_i && !is_in_padding && master_tready_i;
+    assign slave_tready_o = !reset_i && !is_in_padding && master_tready_i;
     assign master_tvalid_o = !reset_i && (is_in_padding || slave_tvalid_i);
-    assign master_tdata_o  = is_in_padding ? VALUE : slave_tdata_i;
-    assign master_tlast_o  = current_row == (OutHeight - 1) && current_column == (OutWidth - 1);
+    assign master_tdata_o = is_in_padding ? VALUE : slave_tdata_i;
+    assign master_tlast_o  = current_row == row_t'(OutHeight - 1) &&
+                             current_column == column_t'(OutWidth - 1);
 
 endmodule : constant_pad

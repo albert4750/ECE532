@@ -11,10 +11,18 @@ add_files -fileset sources_1 -norecurse {       \
     ../sources/constant_pad.sv                  \
     ../sources/cnn.sv                           \
     ../sources/cnn_weights/convolve0.svh        \
-    ../sources/cnn_weights/output.svh           \
-    ../sources/cnn_weights/convolve3.svh        \
-    ../sources/cnn_weights/convolve2.svh        \
     ../sources/cnn_weights/convolve1.svh        \
+    ../sources/cnn_weights/convolve2.svh        \
+    ../sources/cnn_weights/convolve3.svh        \
+    ../sources/cnn_weights/convolve4.svh        \
+    ../sources/cnn_weights/convolve5.svh        \
+    ../sources/cnn_weights/convolve6.svh        \
+    ../sources/cnn_weights/convolve7.svh        \
+    ../sources/cnn_weights/convolve8.svh        \
+    ../sources/cnn_weights/convolve9.svh        \
+    ../sources/cnn_weights/convolve10.svh       \
+    ../sources/cnn_weights/convolve11.svh       \
+    ../sources/cnn_weights/output.svh           \
     ../sources/sliding_window.sv                \
     ../sources/convolve_single_in_single_out.sv \
 }

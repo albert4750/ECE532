@@ -138,7 +138,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>511674ec</spirit:value>
+            <spirit:value>87106b03</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -154,7 +154,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>511674ec</spirit:value>
+            <spirit:value>87106b03</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -373,17 +373,27 @@
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
       <spirit:file>
-        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve3.svh</spirit:name>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve11.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
       <spirit:file>
-        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve2.svh</spirit:name>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve9.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
       <spirit:file>
-        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve0.svh</spirit:name>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve8.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve7.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve6.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
@@ -393,9 +403,39 @@
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
       <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve0.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve2.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve10.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve3.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve4.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve5.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>cnn.srcs/sources_1/imports/sources/cnn.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_a744259a</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_ffbe2cb7</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -438,12 +478,32 @@
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
       <spirit:file>
-        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve3.svh</spirit:name>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve11.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
       <spirit:file>
-        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve2.svh</spirit:name>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve9.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve8.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve7.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve6.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve1.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
@@ -453,7 +513,27 @@
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
       <spirit:file>
-        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve1.svh</spirit:name>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve2.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve10.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve3.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve4.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>cnn.srcs/sources_1/imports/sources/cnn_weights/convolve5.svh</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
         <spirit:isIncludeFile>true</spirit:isIncludeFile>
       </spirit:file>
@@ -504,12 +584,12 @@
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>ECE532 Group 3</xilinx:vendorDisplayName>
       <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-03-01T15:41:31Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-03-02T07:37:39Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="d3517818"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a13124d9"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="513deb40"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="a1a41f99"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="e9906fe5"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="f97a9a64"/>
