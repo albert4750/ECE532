@@ -21,7 +21,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-package constant_pad_test_internal;
+package constant_pad_test_pkg;
 
     parameter int DataWidth = 8;
 
@@ -35,7 +35,7 @@ package constant_pad_test_internal;
     parameter int OutWidth = InWidth + 2 * Padding;
     parameter int Rounds = 4;
 
-    class constant_pad_test_data implements axi4_stream_test_data#(
+    class constant_pad_test_data extends axi4_stream_tester_pkg::test_data_base #(
         .IN_DATA_WIDTH (DataWidth),
         .OUT_DATA_WIDTH(DataWidth)
     );
@@ -75,11 +75,11 @@ package constant_pad_test_internal;
 
     endclass : constant_pad_test_data
 
-endpackage : constant_pad_test_internal
+endpackage : constant_pad_test_pkg
 
 module constant_pad_test;
 
-    import constant_pad_test_internal::*;
+    import constant_pad_test_pkg::*;
 
     logic clock;
     logic reset;

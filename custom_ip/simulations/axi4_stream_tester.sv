@@ -21,29 +21,32 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-interface class axi4_stream_test_data #(
-    int IN_DATA_WIDTH  = 8,
-    int OUT_DATA_WIDTH = 8
-);
+package axi4_stream_tester_pkg;
 
-    typedef logic [IN_DATA_WIDTH-1:0] in_data_t;
-    typedef logic [OUT_DATA_WIDTH-1:0] out_data_t;
+    virtual class test_data_base #(
+        int IN_DATA_WIDTH  = 8,
+        int OUT_DATA_WIDTH = 8
+    );
 
-    pure virtual function void set_in_data(input int round, input int row, input int column,
-                                           output in_data_t tdata, output logic tlast);
+        typedef logic [IN_DATA_WIDTH-1:0] in_data_t;
+        typedef logic [OUT_DATA_WIDTH-1:0] out_data_t;
 
-    pure virtual function void check_out_data(input int round, input int row, input int column,
-                                              input out_data_t tdata, input logic tlast);
+        pure virtual function void set_in_data(input int round, input int row, input int column,
+                                               output in_data_t tdata, output logic tlast);
 
-endclass : axi4_stream_test_data
+        pure virtual function void check_out_data(input int round, input int row, input int column,
+                                                  input out_data_t tdata, input logic tlast);
 
+    endclass : test_data_base
 
-task automatic random_pause(ref logic clock, input int min_cycles, input int max_cycles);
-    int pause_cycles = $urandom_range(min_cycles, max_cycles);
-    for (int i = 0; i < pause_cycles; ++i) begin
-        @(negedge clock);
-    end
-endtask : random_pause
+    task automatic random_pause(ref logic clock, input int min_cycles, input int max_cycles);
+        int pause_cycles = $urandom_range(min_cycles, max_cycles);
+        for (int i = 0; i < pause_cycles; ++i) begin
+            @(negedge clock);
+        end
+    endtask : random_pause
+
+endpackage : axi4_stream_tester_pkg
 
 
 module axi4_stream_tester #(
@@ -68,7 +71,7 @@ module axi4_stream_tester #(
     input logic [OUT_DATA_WIDTH-1:0] slave_tdata_i,
     input logic slave_tlast_i,
 
-    input axi4_stream_test_data#(
+    input axi4_stream_tester_pkg::test_data_base#(
         .IN_DATA_WIDTH (IN_DATA_WIDTH),
         .OUT_DATA_WIDTH(OUT_DATA_WIDTH)
     ) test_data_i
@@ -86,7 +89,7 @@ module axi4_stream_tester #(
             $display("Started sending data for round %d", round);
             for (int row = 0; row < IN_HEIGHT; ++row) begin
                 for (int column = 0; column < IN_WIDTH; ++column) begin
-                    random_pause(clock_o, 0, 6);
+                    axi4_stream_tester_pkg::random_pause(clock_o, 0, 6);
 
                     // Send data to the DUT.
                     master_tvalid_o = 1;
@@ -101,7 +104,7 @@ module axi4_stream_tester #(
             end
             $display("Finished sending data for round %d", round);
 
-            random_pause(clock_o, 0, 6);
+            axi4_stream_tester_pkg::random_pause(clock_o, 0, 6);
         end
 
         in_stream_finished = 1;
@@ -116,7 +119,7 @@ module axi4_stream_tester #(
             $display("Started receiving data for round %d", round);
             for (int row = 0; row < OUT_HEIGHT; ++row) begin
                 for (int column = 0; column < OUT_WIDTH; ++column) begin
-                    random_pause(clock_o, 0, 6);
+                    axi4_stream_tester_pkg::random_pause(clock_o, 0, 6);
 
                     // Receive data from the DUT.
                     slave_tready_o = 1;
@@ -133,7 +136,7 @@ module axi4_stream_tester #(
             end
             $display("Finished receiving data for round %d", round);
 
-            random_pause(clock_o, 0, 6);
+            axi4_stream_tester_pkg::random_pause(clock_o, 0, 6);
         end
 
         out_stream_finished = 1;

@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-package convolve_multi_in_multi_out_test_internal;
+package convolve_multi_in_multi_out_test_pkg;
 
     parameter int ActivationWidth = 8;
     parameter int WeightWidth = 8;
@@ -52,7 +52,7 @@ package convolve_multi_in_multi_out_test_internal;
         `include "convolve_multi_in_multi_out_test_data/output3.txt"
     };
 
-    class convolve_multi_in_multi_out_test_data implements axi4_stream_test_data#(
+    class convolve_multi_in_multi_out_test_data extends axi4_stream_tester_pkg::test_data_base #(
         .IN_DATA_WIDTH (ActivationWidth * InChannels),
         .OUT_DATA_WIDTH(ActivationWidth * OutChannels)
     );
@@ -92,11 +92,11 @@ package convolve_multi_in_multi_out_test_internal;
 
     endclass : convolve_multi_in_multi_out_test_data
 
-endpackage : convolve_multi_in_multi_out_test_internal
+endpackage : convolve_multi_in_multi_out_test_pkg
 
 module convolve_multi_in_multi_out_test;
 
-    import convolve_multi_in_multi_out_test_internal::*;
+    import convolve_multi_in_multi_out_test_pkg::*;
 
     logic clock;
     logic reset;
