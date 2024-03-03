@@ -21,58 +21,65 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-typedef logic [DataWidth-1:0] data_t;
+package constant_pad_test_internal;
 
-parameter int DataWidth = 8;
-parameter int Padding = 1;
-parameter data_t Value = 127;
-parameter int InHeight = 600;
-parameter int InWidth = 800;
-parameter int OutHeight = InHeight + 2 * Padding;
-parameter int OutWidth = InWidth + 2 * Padding;
-parameter int Rounds = 4;
+    parameter int DataWidth = 8;
 
-class constant_pad_test_data implements axi4_stream_test_data#(
-    .IN_DATA_WIDTH (DataWidth),
-    .OUT_DATA_WIDTH(DataWidth)
-);
+    typedef logic [DataWidth-1:0] data_t;
 
-    virtual function void set_in_data(input int round, input int row, input int column,
-                                      output data_t tdata, output logic tlast);
-        int flat_index = row * InWidth + column;
-        tdata = data_t'(flat_index);
-        tlast = row == InHeight - 1 && column == InWidth - 1;
-    endfunction : set_in_data
+    parameter int Padding = 1;
+    parameter data_t Value = 127;
+    parameter int InHeight = 600;
+    parameter int InWidth = 800;
+    parameter int OutHeight = InHeight + 2 * Padding;
+    parameter int OutWidth = InWidth + 2 * Padding;
+    parameter int Rounds = 4;
 
-    virtual function void check_out_data(input int round, input int row, input int column,
-                                         input data_t tdata, input logic tlast);
-        data_t expected_tdata;
-        logic  expected_tlast;
+    class constant_pad_test_data implements axi4_stream_test_data#(
+        .IN_DATA_WIDTH (DataWidth),
+        .OUT_DATA_WIDTH(DataWidth)
+    );
 
-        if (row < Padding || row >= Padding + InHeight ||
+        virtual function void set_in_data(input int round, input int row, input int column,
+                                          output data_t tdata, output logic tlast);
+            int flat_index = row * InWidth + column;
+            tdata = data_t'(flat_index);
+            tlast = row == InHeight - 1 && column == InWidth - 1;
+        endfunction : set_in_data
+
+        virtual function void check_out_data(input int round, input int row, input int column,
+                                             input data_t tdata, input logic tlast);
+            data_t expected_tdata;
+            logic  expected_tlast;
+
+            if (row < Padding || row >= Padding + InHeight ||
             column < Padding || column >= Padding + InWidth) begin
-            expected_tdata = Value;
-        end else begin
-            int flat_index = (row - Padding) * InWidth + (column - Padding);
-            expected_tdata = data_t'(flat_index);
-        end
-        expected_tlast = row == OutHeight - 1 && column == OutWidth - 1;
+                expected_tdata = Value;
+            end else begin
+                int flat_index = (row - Padding) * InWidth + (column - Padding);
+                expected_tdata = data_t'(flat_index);
+            end
+            expected_tlast = row == OutHeight - 1 && column == OutWidth - 1;
 
-        assert (tdata == expected_tdata)
-        else begin
-            $error("Error: tdata, round=%d, row=%d, column=%d, expected=%d, actual=%d", round, row,
-                   column, expected_tdata, tdata);
-        end
-        assert (tlast == expected_tlast)
-        else begin
-            $error("Error: tlast, round=%d, row=%d, column=%d, expected=%d, actual=%d", round, row,
-                   column, expected_tlast, tlast);
-        end
-    endfunction : check_out_data
+            assert (tdata == expected_tdata)
+            else begin
+                $error("Error: tdata, round=%d, row=%d, column=%d, expected=%d, actual=%d", round,
+                       row, column, expected_tdata, tdata);
+            end
+            assert (tlast == expected_tlast)
+            else begin
+                $error("Error: tlast, round=%d, row=%d, column=%d, expected=%d, actual=%d", round,
+                       row, column, expected_tlast, tlast);
+            end
+        endfunction : check_out_data
 
-endclass : constant_pad_test_data
+    endclass : constant_pad_test_data
+
+endpackage : constant_pad_test_internal
 
 module constant_pad_test;
+
+    import constant_pad_test_internal::*;
 
     logic clock;
     logic reset;
