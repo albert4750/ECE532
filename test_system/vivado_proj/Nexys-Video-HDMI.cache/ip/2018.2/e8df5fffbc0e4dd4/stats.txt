@@ -1,0 +1,4 @@
+NumberHits:0
+Timestamp: Fri Mar 01 03:11:54 UTC 2024
+VLNV: xilinx.com:user:brightening:1.0
+SynthRuntime: 101

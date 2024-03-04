@@ -92,6 +92,7 @@ const ivt_t ivt[] = {
 XAxiDma passThrough;
 XAxiDma grayScale;
 XAxiDma grayScale_new;
+XAxiDma brightness;
 u8 dmaMode;
 u8 wOrB;
 // Albert End
@@ -120,6 +121,7 @@ void DemoInitialize()
 	XAxiDma_Config* passThroughConfig;
 	XAxiDma_Config* grayScaleConfig;
 	XAxiDma_Config* grayScaleNewConfig;
+	XAxiDma_Config* brightnessConfig;
 	int i;
 
 	// Albert Start
@@ -130,6 +132,7 @@ void DemoInitialize()
 	xil_printf("fRefresh is at %x\r\n", &fRefresh);
 	xil_printf("passThrough is at %x\r\n", &passThrough);
 	xil_printf("grayScale is at %x\r\n", &grayScale);
+	xil_printf("brightness is at %x\r\n", &brightness);
 	xil_printf("dmaMode is at %x\r\n", &dmaMode);
 	xil_printf("wOrB is at %x\r\n", &wOrB);
 	wOrB = 0;
@@ -231,6 +234,17 @@ void DemoInitialize()
 		xil_printf("New Gray Scale DMA Configuration Initialization failed %d\r\n", Status);
 		return;
 	}
+
+	brightnessConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_3_DEVICE_ID);
+	if (!brightnessConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_3_DEVICE_ID);
+		return;
+	}
+	Status = XAxiDma_CfgInitialize(&brightness, brightnessConfig);
+	if (Status != XST_SUCCESS)	{
+		xil_printf("New Brightness DMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
 	// Albert End
 
 	/*
@@ -256,10 +270,11 @@ void DemoRun()
 	{
 		XUartLite_ReadReg(UART_BASEADDR, XUL_RX_FIFO_OFFSET);
 	}
+	DemoPrintMenu();
 	while (userInput != 'q')
 	{
 		fRefresh = 0;
-		DemoPrintMenu();
+		//DemoPrintMenu();
 
 		/* Wait for data on UART */
 		while (XUartLite_IsReceiveEmpty(UART_BASEADDR) && !fRefresh)
@@ -339,7 +354,7 @@ void DemoRun()
 			break;
 		case 's':
 			xil_printf("\n\rSwitching DMA mode\n\r");
-			dmaMode = (dmaMode + 1) % 3;
+			dmaMode = (dmaMode + 1) % 4;
 			xil_printf("DMA mode is now %u\n\r", dmaMode);
 			break;
 		case 'q':
@@ -373,6 +388,9 @@ void doDMA(){
 	}
 	else if(dmaMode == 2){
 		dma = &grayScale_new;
+	}
+	else if(dmaMode == 3){
+		dma = &brightness;
 	}
 
 

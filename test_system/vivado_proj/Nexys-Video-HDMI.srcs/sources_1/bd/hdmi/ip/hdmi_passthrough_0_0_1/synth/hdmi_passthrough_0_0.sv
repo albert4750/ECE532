@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:passthrough:1.0
-// IP Revision: 2
+// IP Revision: 3
 
-(* X_CORE_INFO = "passthrough,Vivado 2018.2.2" *)
+(* X_CORE_INFO = "passthrough,Vivado 2018.2" *)
 (* CHECK_LICENSE_TYPE = "hdmi_passthrough_0_0,passthrough,{}" *)
-(* CORE_GENERATION_INFO = "hdmi_passthrough_0_0,passthrough,{x_ipProduct=Vivado 2018.2.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=passthrough,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,WIDTH=256}" *)
+(* CORE_GENERATION_INFO = "hdmi_passthrough_0_0,passthrough,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=passthrough,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,WIDTH=256}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module hdmi_passthrough_0_0 (

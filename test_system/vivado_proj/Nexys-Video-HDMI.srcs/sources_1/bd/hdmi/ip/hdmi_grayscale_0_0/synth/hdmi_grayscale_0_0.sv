@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:user:grayscale:1.0
-// IP Revision: 2
+// IP Revision: 3
 
-(* X_CORE_INFO = "grayscale,Vivado 2018.2.2" *)
+(* X_CORE_INFO = "grayscale,Vivado 2018.2" *)
 (* CHECK_LICENSE_TYPE = "hdmi_grayscale_0_0,grayscale,{}" *)
-(* CORE_GENERATION_INFO = "hdmi_grayscale_0_0,grayscale,{x_ipProduct=Vivado 2018.2.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=grayscale,x_ipVersion=1.0,x_ipCoreRevision=2,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
+(* CORE_GENERATION_INFO = "hdmi_grayscale_0_0,grayscale,{x_ipProduct=Vivado 2018.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=grayscale,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED}" *)
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module hdmi_grayscale_0_0 (

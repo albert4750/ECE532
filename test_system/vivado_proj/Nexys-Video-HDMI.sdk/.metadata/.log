@@ -1,18 +1,18 @@
-!SESSION 2024-02-28 05:49:29.236 -----------------------------------------------
+!SESSION 2024-03-03 23:30:12.449 -----------------------------------------------
 eclipse.buildId=2018.2
 java.version=1.8.0_112
 java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_CA
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -data /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk
 
-This is a continuation of log file C:\Users\Albert\Documents\GitHub\ECE532\test_system\vivado_proj\Nexys-Video-HDMI.sdk\.metadata\.bak_0.log
-Created Time: 2024-02-28 05:59:39.195
+This is a continuation of log file /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/.metadata/.bak_0.log
+Created Time: 2024-03-03 23:32:43.685
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.195
-!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.685
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.200
-!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0], Result: [null, {"axi_gpio_video_S_AXI": {"name": "axi_gpio_video",
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.690
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0], Result: [null, {"axi_gpio_video_S_AXI": {"name": "axi_gpio_video",
 "base": "0x40000000",
 "high": "0x4000FFFF",
 "size": "65536",
@@ -89,6 +89,17 @@ Created Time: 2024-02-28 05:59:39.195
 "acctype": "",
 "tz": "",
 },
+"axi_dma_3_S_AXI_LITE": {"name": "axi_dma_3",
+"base": "0x41E30000",
+"high": "0x41E3FFFF",
+"size": "65536",
+"slaveintf": "S_AXI_LITE",
+"type": "REGISTER",
+"flags": "3",
+"segment": "",
+"acctype": "",
+"tz": "",
+},
 "axi_vdma_0_S_AXI_LITE": {"name": "axi_vdma_0",
 "base": "0x44A00000",
 "high": "0x44A0FFFF",
@@ -155,226 +166,232 @@ Created Time: 2024-02-28 05:59:39.195
 "acctype": "",
 "tz": "",
 },
-}]. Thread: Worker-1
+}]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.201
-!MESSAGE XSCT Command: [::hsi::utils::get_cpu_nr -json C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.690
+!MESSAGE XSCT Command: [::hsi::utils::get_cpu_nr -json /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.203
-!MESSAGE XSCT command with result: [::hsi::utils::get_cpu_nr -json C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf], Result: [null, {"microblaze_0": {"bscan": "2",
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.692
+!MESSAGE XSCT command with result: [::hsi::utils::get_cpu_nr -json /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf], Result: [null, {"microblaze_0": {"bscan": "2",
 "index": "0",
 },
-}]. Thread: Worker-1
+}]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.205
-!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.694
+!MESSAGE XSCT Command: [::hsi::utils::get_addr_ranges -json /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.207
-!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Result: [null, {}]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.696
+!MESSAGE XSCT command with result: [::hsi::utils::get_addr_ranges -json /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Result: [null, {}]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.208
-!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.696
+!MESSAGE XSCT Command: [::hsi::utils::get_all_register_data -json /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.209
-!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Result: [null, {"microblaze_0": {},
-}]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.698
+!MESSAGE XSCT command with result: [::hsi::utils::get_all_register_data -json /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Result: [null, {"microblaze_0": {},
+}]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.209
-!MESSAGE XSCT Command: [::hsi::utils::get_connected_periphs C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.698
+!MESSAGE XSCT Command: [::hsi::utils::get_connected_periphs /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.211
-!MESSAGE XSCT command with result: [::hsi::utils::get_connected_periphs C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Result: [null, microblaze_0]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.699
+!MESSAGE XSCT command with result: [::hsi::utils::get_connected_periphs /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf mdm_1], Result: [null, microblaze_0]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.211
-!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_ENABLED], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.699
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_ENABLED], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.213
-!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_ENABLED], Result: [null, 2]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.700
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_ENABLED], Result: [null, 2]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.214
-!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_EVENT_COUNTERS], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.700
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_EVENT_COUNTERS], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.215
-!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_EVENT_COUNTERS], Result: [null, 5]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.700
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_EVENT_COUNTERS], Result: [null, 5]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.215
-!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_COUNTER_WIDTH], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.701
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_COUNTER_WIDTH], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.217
-!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_COUNTER_WIDTH], Result: [null, 32]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.701
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_DEBUG_COUNTER_WIDTH], Result: [null, 32]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.217
-!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_FREQ], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.702
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_param_value /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_FREQ], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.219
-!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_FREQ], Result: [null, 100000000]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.702
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_param_value /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0 C_FREQ], Result: [null, 100000000]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.220
-!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.702
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.223
-!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.703
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.224
-!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.703
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.286
-!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Nexys Video 210276723721B]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.707
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   2  Digilent Nexys Video 210276724109B]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.287
-!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.707
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.290
-!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Nexys Video 210276723721B]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.710
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   2  Digilent Nexys Video 210276724109B]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.291
-!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==1}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.710
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==1}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.301
-!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==1}], Result: [null,      2  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.719
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==1}], Result: [null,      3  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.301
-!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.719
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==0} -index 0], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.314
-!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==0} -index 0], Result: [null, ]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.730
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==0} -index 0], Result: [null, ]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.314
-!MESSAGE XSCT Command: [fpga -state], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.730
+!MESSAGE XSCT Command: [fpga -state], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.332
-!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.748
+!MESSAGE XSCT command with result: [fpga -state], Result: [null, FPGA is configured]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.332
-!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.749
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.333
-!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.750
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#1]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.334
-!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.750
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.345
-!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Nexys Video 210276723721B]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.763
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   2  Digilent Nexys Video 210276724109B]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.346
-!MESSAGE XSCT Command: [version -server], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.766
+!MESSAGE XSCT Command: [version -server], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.348
-!MESSAGE XSCT command with result: [version -server], Result: [null, 2018.2.2]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.768
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2018.2]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.348
-!MESSAGE XSCT Command: [version], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.768
+!MESSAGE XSCT Command: [version], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.349
-!MESSAGE XSCT command with result: [version], Result: [null, 2018.2.2]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.768
+!MESSAGE XSCT command with result: [version], Result: [null, 2018.2]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.350
-!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.769
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.360
-!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Nexys Video 210276723721B]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.772
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   2  Digilent Nexys Video 210276724109B]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.360
-!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==1}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.773
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==1}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.371
-!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==1}], Result: [null,      2  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.781
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==1}], Result: [null,      3  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.372
-!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.781
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.375
-!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Nexys Video 210276723721B]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.785
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   2  Digilent Nexys Video 210276724109B]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.376
-!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==1}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.785
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==1}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.385
-!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==1}], Result: [null,      2  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.793
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==1}], Result: [null,      3  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.385
-!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.794
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.388
-!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Nexys Video 210276723721B]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.797
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   2  Digilent Nexys Video 210276724109B]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.389
-!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==1}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.797
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==1}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.398
-!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==1}], Result: [null,      2  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.806
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==1}], Result: [null,      3  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.398
-!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.806
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.401
-!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1  Digilent Nexys Video 210276723721B]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.809
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   2  Digilent Nexys Video 210276724109B]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.402
-!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==1}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.809
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==1}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.410
-!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276723721B" && level==1}], Result: [null,      2  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.818
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys Video 210276724109B" && level==1}], Result: [null,      3  xc7a200t (idcode 13636093 irlen 6 fpga)]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.411
-!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Nexys Video 210276723721B" && level == 0}], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.818
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Nexys Video 210276724109B" && level == 0}], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.420
-!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Nexys Video 210276723721B" && level == 0}], Result: [null, ]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.828
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Nexys Video 210276724109B" && level == 0}], Result: [null, ]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.420
-!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.828
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.421
-!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.830
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.422
-!MESSAGE XSCT Command: [::hsi::utils::get_clock_info -json C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.831
+!MESSAGE XSCT Command: [::hsi::utils::get_clock_info -json /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.435
-!MESSAGE XSCT command with result: [::hsi::utils::get_clock_info -json C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0], Result: [null, {"Clk": "100000000",
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.833
+!MESSAGE XSCT command with result: [::hsi::utils::get_clock_info -json /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/system.hdf microblaze_0], Result: [null, {"Clk": "100000000",
 "Dbg_Clk": "",
-}]. Thread: Worker-1
+}]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.436
-!MESSAGE XSCT Command: [configparams mdm-detect-bscan-mask 2], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.834
+!MESSAGE XSCT Command: [configparams mdm-detect-bscan-mask 2], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.437
-!MESSAGE XSCT command with result: [configparams mdm-detect-bscan-mask 2], Result: [null, ]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.835
+!MESSAGE XSCT command with result: [configparams mdm-detect-bscan-mask 2], Result: [null, ]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.438
-!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.835
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276724109B"} -index 0], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.453
-!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0], Result: [null, ]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.851
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276724109B"} -index 0], Result: [null, ]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.453
-!MESSAGE XSCT Command: [rst -processor], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.851
+!MESSAGE XSCT Command: [rst -processor], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.497
-!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.857
+!MESSAGE XSCT command with result: [rst -processor], Result: [null, ]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.497
-!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.857
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276724109B"} -index 0], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.513
-!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0], Result: [null, ]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.872
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276724109B"} -index 0], Result: [null, ]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:39.513
-!MESSAGE XSCT Command: [dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:43.872
+!MESSAGE XSCT Command: [dow /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:40.040
-!MESSAGE XSCT command with result: [dow C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf], Result: [null, ]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:44.394
+!MESSAGE XSCT command with result: [dow /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/upscaler/Debug/upscaler.elf], Result: [null, ]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:40.094
-!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:44.430
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276724109B"} -index 0], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:40.116
-!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276723721B"} -index 0], Result: [null, ]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:44.447
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "microblaze*#0" && bscan=="USER2"  && jtag_cable_name =~ "Digilent Nexys Video 210276724109B"} -index 0], Result: [null, ]. Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:40.116
-!MESSAGE XSCT Command: [con], Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:44.447
+!MESSAGE XSCT Command: [con], Thread: Worker-5
 
-!ENTRY com.xilinx.sdk.utils 0 0 2024-02-28 05:59:40.120
-!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-1
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:32:44.452
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-5
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:36:29.007
+!MESSAGE XSCT Command: [disconnect tcfchan#1], Thread: Thread-105
+
+!ENTRY com.xilinx.sdk.utils 0 0 2024-03-03 23:36:29.010
+!MESSAGE XSCT command with result: [disconnect tcfchan#1], Result: [null, ]. Thread: Thread-105

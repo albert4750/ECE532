@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
--- Date        : Wed Feb 14 05:34:10 2024
--- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_axi_dma_1_0 -prefix
---               hdmi_axi_dma_1_0_ hdmi_axi_dma_1_0_sim_netlist.vhdl
+-- Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+-- Date        : Thu Feb 29 17:54:48 2024
+-- Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_1_0/hdmi_axi_dma_1_0_sim_netlist.vhdl
 -- Design      : hdmi_axi_dma_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -37,6 +37,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_fifo is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     \GEN_CMD_BTT_LESS_23.cmnd_data_reg[66]\ : in STD_LOGIC_VECTOR ( 56 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_fifo : entity is "axi_datamover_fifo";
 end hdmi_axi_dma_1_0_axi_datamover_fifo;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_fifo is
@@ -2461,6 +2463,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_ibttcc is
     DI : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_ibttcc : entity is "axi_datamover_ibttcc";
 end hdmi_axi_dma_1_0_axi_datamover_ibttcc;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_ibttcc is
@@ -8498,6 +8502,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_mssai_skid_buf is
     \sig_data_reg_out_reg[127]_0\ : in STD_LOGIC_VECTOR ( 127 downto 0 );
     \sig_strb_reg_out_reg[15]_0\ : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_mssai_skid_buf : entity is "axi_datamover_mssai_skid_buf";
 end hdmi_axi_dma_1_0_axi_datamover_mssai_skid_buf;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_mssai_skid_buf is
@@ -14438,6 +14444,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_pcc is
     FIFO_Full_reg_4 : in STD_LOGIC;
     sig_inhibit_rdy_n_1 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_pcc : entity is "axi_datamover_pcc";
 end hdmi_axi_dma_1_0_axi_datamover_pcc;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_pcc is
@@ -20976,6 +20984,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_rd_status_cntl is
     sig_data2rsc_valid : in STD_LOGIC;
     sig_data2rsc_decerr : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_rd_status_cntl : entity is "axi_datamover_rd_status_cntl";
 end hdmi_axi_dma_1_0_axi_datamover_rd_status_cntl;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_rd_status_cntl is
@@ -21097,6 +21107,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_reset is
     sig_addr_reg_empty : in STD_LOGIC;
     sig_data2rst_stop_cmplt : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_reset : entity is "axi_datamover_reset";
 end hdmi_axi_dma_1_0_axi_datamover_reset;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_reset is
@@ -21305,6 +21317,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_skid2mm_buf is
     D : in STD_LOGIC_VECTOR ( 127 downto 0 );
     \sig_next_strt_strb_reg_reg[15]\ : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_skid2mm_buf : entity is "axi_datamover_skid2mm_buf";
 end hdmi_axi_dma_1_0_axi_datamover_skid2mm_buf;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_skid2mm_buf is
@@ -26138,6 +26152,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_skid_buf is
     s_axis_s2mm_tkeep : in STD_LOGIC_VECTOR ( 15 downto 0 );
     s_axis_s2mm_tdata : in STD_LOGIC_VECTOR ( 127 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_skid_buf : entity is "axi_datamover_skid_buf";
 end hdmi_axi_dma_1_0_axi_datamover_skid_buf;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_skid_buf is
@@ -41279,6 +41295,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_slice is
     sig_stream_rst : in STD_LOGIC;
     \sig_fifo_mssai_reg[3]\ : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_slice : entity is "axi_datamover_slice";
 end hdmi_axi_dma_1_0_axi_datamover_slice;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_slice is
@@ -42427,6 +42445,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_strb_gen2 is
     D : out STD_LOGIC_VECTOR ( 6 downto 0 );
     \out\ : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_strb_gen2 : entity is "axi_datamover_strb_gen2";
 end hdmi_axi_dma_1_0_axi_datamover_strb_gen2;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_strb_gen2 is
@@ -42571,6 +42591,8 @@ entity hdmi_axi_dma_1_0_axi_dma_lite_if is
     s_axi_lite_rready : in STD_LOGIC;
     s_axi_lite_araddr : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_lite_if : entity is "axi_dma_lite_if";
 end hdmi_axi_dma_1_0_axi_dma_lite_if;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_lite_if is
@@ -44896,6 +44918,8 @@ entity hdmi_axi_dma_1_0_axi_dma_mm2s_cmdsts_if is
     dma_slverr_reg_0 : in STD_LOGIC;
     dma_interr_reg_0 : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_mm2s_cmdsts_if : entity is "axi_dma_mm2s_cmdsts_if";
 end hdmi_axi_dma_1_0_axi_dma_mm2s_cmdsts_if;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_mm2s_cmdsts_if is
@@ -45070,6 +45094,8 @@ entity hdmi_axi_dma_1_0_axi_dma_mm2s_sts_mngr is
     mm2s_stop_i : in STD_LOGIC;
     p_9_out : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_mm2s_sts_mngr : entity is "axi_dma_mm2s_sts_mngr";
 end hdmi_axi_dma_1_0_axi_dma_mm2s_sts_mngr;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_mm2s_sts_mngr is
@@ -45189,6 +45215,8 @@ entity hdmi_axi_dma_1_0_axi_dma_register is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     \GEN_SYNC_WRITE.axi2ip_wrce_reg[10]\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_register : entity is "axi_dma_register";
 end hdmi_axi_dma_1_0_axi_dma_register;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_register is
@@ -46480,6 +46508,8 @@ entity hdmi_axi_dma_1_0_axi_dma_register_s2mm is
     \INDETERMINATE_BTT_MODE.s2mm_done_reg\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 22 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_register_s2mm : entity is "axi_dma_register_s2mm";
 end hdmi_axi_dma_1_0_axi_dma_register_s2mm;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_register_s2mm is
@@ -47690,6 +47720,8 @@ entity hdmi_axi_dma_1_0_axi_dma_reset is
     \GEN_RESET_FOR_MM2S.mm2s_soft_reset_done_reg_0\ : in STD_LOGIC;
     sig_rst2all_stop_request : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_reset : entity is "axi_dma_reset";
 end hdmi_axi_dma_1_0_axi_dma_reset;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_reset is
@@ -48488,6 +48520,8 @@ entity hdmi_axi_dma_1_0_axi_dma_s2mm_cmdsts_if is
     dma_slverr_reg_0 : in STD_LOGIC;
     sts_received_i_reg_1 : in STD_LOGIC_VECTOR ( 22 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_s2mm_cmdsts_if : entity is "axi_dma_s2mm_cmdsts_if";
 end hdmi_axi_dma_1_0_axi_dma_s2mm_cmdsts_if;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_s2mm_cmdsts_if is
@@ -49141,6 +49175,8 @@ entity hdmi_axi_dma_1_0_axi_dma_s2mm_sts_mngr is
     s2mm_stop_i : in STD_LOGIC;
     p_12_out : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_s2mm_sts_mngr : entity is "axi_dma_s2mm_sts_mngr";
 end hdmi_axi_dma_1_0_axi_dma_s2mm_sts_mngr;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_s2mm_sts_mngr is
@@ -49227,6 +49263,8 @@ entity hdmi_axi_dma_1_0_axi_dma_smple_sm is
     \dmacr_i_reg[3]\ : in STD_LOGIC;
     \GEN_REG_FOR_SMPL.buffer_length_i_reg[22]\ : in STD_LOGIC_VECTOR ( 22 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_smple_sm : entity is "axi_dma_smple_sm";
 end hdmi_axi_dma_1_0_axi_dma_smple_sm;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_smple_sm is
@@ -50590,6 +50628,8 @@ entity hdmi_axi_dma_1_0_axi_dma_sofeof_gen is
     m_axis_mm2s_tlast : in STD_LOGIC;
     \out\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_sofeof_gen : entity is "axi_dma_sofeof_gen";
 end hdmi_axi_dma_1_0_axi_dma_sofeof_gen;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_sofeof_gen is
@@ -50924,6 +50964,8 @@ entity hdmi_axi_dma_1_0_cdc_sync is
     axi_resetn : in STD_LOGIC;
     s_axi_lite_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_cdc_sync : entity is "cdc_sync";
 end hdmi_axi_dma_1_0_cdc_sync;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_cdc_sync is
@@ -51112,6 +51154,8 @@ entity hdmi_axi_dma_1_0_cntr_incr_decr_addn_f is
     sig_stream_rst : in STD_LOGIC;
     m_axi_s2mm_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_cntr_incr_decr_addn_f : entity is "cntr_incr_decr_addn_f";
 end hdmi_axi_dma_1_0_cntr_incr_decr_addn_f;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_cntr_incr_decr_addn_f is
@@ -52462,6 +52506,8 @@ entity hdmi_axi_dma_1_0_dynshreg_f is
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
     m_axi_s2mm_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_dynshreg_f : entity is "dynshreg_f";
 end hdmi_axi_dma_1_0_dynshreg_f;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_dynshreg_f is
@@ -62388,6 +62434,8 @@ entity hdmi_axi_dma_1_0_xpm_fifo_reg_bit is
     ram_rd_en_pf_q : in STD_LOGIC;
     prog_full : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_xpm_fifo_reg_bit : entity is "xpm_fifo_reg_bit";
 end hdmi_axi_dma_1_0_xpm_fifo_reg_bit;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_xpm_fifo_reg_bit is
@@ -63099,6 +63147,8 @@ entity hdmi_axi_dma_1_0_xpm_fifo_rst is
     read_only_q : in STD_LOGIC;
     wr_clk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_xpm_fifo_rst : entity is "xpm_fifo_rst";
 end hdmi_axi_dma_1_0_xpm_fifo_rst;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_xpm_fifo_rst is
@@ -63829,6 +63879,8 @@ entity hdmi_axi_dma_1_0_xpm_memory_base is
   attribute MESSAGE_CONTROL of hdmi_axi_dma_1_0_xpm_memory_base : entity is 0;
   attribute NUM_CHAR_LOC : integer;
   attribute NUM_CHAR_LOC of hdmi_axi_dma_1_0_xpm_memory_base : entity is 0;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_xpm_memory_base : entity is "xpm_memory_base";
   attribute P_ECC_MODE : string;
   attribute P_ECC_MODE of hdmi_axi_dma_1_0_xpm_memory_base : entity is "no_ecc";
   attribute P_ENABLE_BYTE_WRITE_A : integer;
@@ -67078,6 +67130,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_cmd_status is
     D : in STD_LOGIC_VECTOR ( 56 downto 0 );
     sig_rsc2stat_status : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_cmd_status : entity is "axi_datamover_cmd_status";
 end hdmi_axi_dma_1_0_axi_datamover_cmd_status;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_cmd_status is
@@ -67261,6 +67315,8 @@ entity hdmi_axi_dma_1_0_axi_dma_mm2s_mngr is
     \dmacr_i_reg[3]\ : in STD_LOGIC;
     \GEN_REG_FOR_SMPL.buffer_length_i_reg[22]\ : in STD_LOGIC_VECTOR ( 22 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_mm2s_mngr : entity is "axi_dma_mm2s_mngr";
 end hdmi_axi_dma_1_0_axi_dma_mm2s_mngr;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_mm2s_mngr is
@@ -67439,6 +67495,8 @@ entity hdmi_axi_dma_1_0_axi_dma_reg_module is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 22 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_reg_module : entity is "axi_dma_reg_module";
 end hdmi_axi_dma_1_0_axi_dma_reg_module;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_reg_module is
@@ -67831,6 +67889,8 @@ entity hdmi_axi_dma_1_0_axi_dma_rst_module is
     sig_rst2all_stop_request_1 : in STD_LOGIC;
     axi_resetn : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_rst_module : entity is "axi_dma_rst_module";
 end hdmi_axi_dma_1_0_axi_dma_rst_module;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_rst_module is
@@ -68011,6 +68071,8 @@ entity hdmi_axi_dma_1_0_axi_dma_s2mm_mngr is
     \dmacr_i_reg[3]\ : in STD_LOGIC;
     \GEN_REG_FOR_SMPL.buffer_length_i_reg[22]\ : in STD_LOGIC_VECTOR ( 22 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma_s2mm_mngr : entity is "axi_dma_s2mm_mngr";
 end hdmi_axi_dma_1_0_axi_dma_s2mm_mngr;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_dma_s2mm_mngr is
@@ -68132,6 +68194,8 @@ entity hdmi_axi_dma_1_0_srl_fifo_rbu_f is
     sig_halt_reg : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 38 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_srl_fifo_rbu_f : entity is "srl_fifo_rbu_f";
 end hdmi_axi_dma_1_0_srl_fifo_rbu_f;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_srl_fifo_rbu_f is
@@ -69061,6 +69125,8 @@ entity hdmi_axi_dma_1_0_xpm_fifo_base is
   attribute FULL_RESET_VALUE of hdmi_axi_dma_1_0_xpm_fifo_base : entity is 1;
   attribute FULL_RST_VAL : string;
   attribute FULL_RST_VAL of hdmi_axi_dma_1_0_xpm_fifo_base : entity is "1'b1";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_xpm_fifo_base : entity is "xpm_fifo_base";
   attribute PE_THRESH_ADJ : integer;
   attribute PE_THRESH_ADJ of hdmi_axi_dma_1_0_xpm_fifo_base : entity is 8;
   attribute PE_THRESH_MAX : integer;
@@ -73204,6 +73270,8 @@ entity hdmi_axi_dma_1_0_srl_fifo_f is
     sig_halt_reg : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 38 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_srl_fifo_f : entity is "srl_fifo_f";
 end hdmi_axi_dma_1_0_srl_fifo_f;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_srl_fifo_f is
@@ -73711,6 +73779,8 @@ entity hdmi_axi_dma_1_0_xpm_fifo_sync is
     sig_cmd_stat_rst_user_reg_n_cdc_from_reg : in STD_LOGIC;
     sig_posted_to_axi_2_reg : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_xpm_fifo_sync : entity is "xpm_fifo_sync";
 end hdmi_axi_dma_1_0_xpm_fifo_sync;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_xpm_fifo_sync is
@@ -76636,6 +76706,8 @@ entity hdmi_axi_dma_1_0_sync_fifo_fg is
     sig_cmd_stat_rst_user_reg_n_cdc_from_reg : in STD_LOGIC;
     sig_posted_to_axi_2_reg : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_sync_fifo_fg : entity is "sync_fifo_fg";
 end hdmi_axi_dma_1_0_sync_fifo_fg;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_sync_fifo_fg is
@@ -76940,6 +77012,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_addr_cntl is
     sig_halt_reg_dly3 : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 37 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_addr_cntl : entity is "axi_datamover_addr_cntl";
 end hdmi_axi_dma_1_0_axi_datamover_addr_cntl;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_addr_cntl is
@@ -78127,6 +78201,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_rddata_cntl is
     sig_rst2all_stop_request : in STD_LOGIC;
     sig_posted_to_axi_reg : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_rddata_cntl : entity is "axi_datamover_rddata_cntl";
 end hdmi_axi_dma_1_0_axi_datamover_rddata_cntl;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_rddata_cntl is
@@ -79412,6 +79488,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_sfifo_autord is
     sig_cmd_stat_rst_user_reg_n_cdc_from_reg : in STD_LOGIC;
     sig_posted_to_axi_2_reg : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_sfifo_autord : entity is "axi_datamover_sfifo_autord";
 end hdmi_axi_dma_1_0_axi_datamover_sfifo_autord;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_sfifo_autord is
@@ -79724,6 +79802,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_wr_status_cntl is
     m_axi_s2mm_bresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \in\ : in STD_LOGIC_VECTOR ( 25 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_wr_status_cntl : entity is "axi_datamover_wr_status_cntl";
 end hdmi_axi_dma_1_0_axi_datamover_wr_status_cntl;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_wr_status_cntl is
@@ -80385,6 +80465,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_wrdata_cntl is
     E : in STD_LOGIC_VECTOR ( 1 downto 0 );
     D : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_wrdata_cntl : entity is "axi_datamover_wrdata_cntl";
 end hdmi_axi_dma_1_0_axi_datamover_wrdata_cntl;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_wrdata_cntl is
@@ -82499,6 +82581,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_indet_btt is
     SR : in STD_LOGIC_VECTOR ( 1 downto 0 );
     \sig_byte_cntr_reg[8]_1\ : in STD_LOGIC_VECTOR ( 8 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_indet_btt : entity is "axi_datamover_indet_btt";
 end hdmi_axi_dma_1_0_axi_datamover_indet_btt;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_indet_btt is
@@ -82920,6 +83004,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_rd_sf is
     sig_sstrb_stop_mask : in STD_LOGIC_VECTOR ( 0 to 0 );
     sig_cmd_stat_rst_user_reg_n_cdc_from_reg : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_rd_sf : entity is "axi_datamover_rd_sf";
 end hdmi_axi_dma_1_0_axi_datamover_rd_sf;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_rd_sf is
@@ -83152,6 +83238,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_mm2s_full_wrap is
     m_axi_mm2s_rvalid : in STD_LOGIC;
     m_axi_mm2s_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_mm2s_full_wrap : entity is "axi_datamover_mm2s_full_wrap";
 end hdmi_axi_dma_1_0_axi_datamover_mm2s_full_wrap;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_mm2s_full_wrap is
@@ -83578,6 +83666,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_s2mm_scatter is
     \sig_byte_cntr_reg[7]\ : in STD_LOGIC_VECTOR ( 2 downto 0 );
     \sig_byte_cntr_reg[8]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_s2mm_scatter : entity is "axi_datamover_s2mm_scatter";
 end hdmi_axi_dma_1_0_axi_datamover_s2mm_scatter;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_s2mm_scatter is
@@ -85762,6 +85852,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_s2mm_realign is
     \sig_byte_cntr_reg[7]\ : in STD_LOGIC_VECTOR ( 2 downto 0 );
     \sig_byte_cntr_reg[8]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_s2mm_realign : entity is "axi_datamover_s2mm_realign";
 end hdmi_axi_dma_1_0_axi_datamover_s2mm_realign;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_s2mm_realign is
@@ -85997,6 +86089,8 @@ entity hdmi_axi_dma_1_0_axi_datamover_s2mm_full_wrap is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     \GEN_CMD_BTT_LESS_23.cmnd_data_reg[66]\ : in STD_LOGIC_VECTOR ( 56 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover_s2mm_full_wrap : entity is "axi_datamover_s2mm_full_wrap";
 end hdmi_axi_dma_1_0_axi_datamover_s2mm_full_wrap;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover_s2mm_full_wrap is
@@ -86720,6 +86814,8 @@ entity hdmi_axi_dma_1_0_axi_datamover is
     m_axi_mm2s_rvalid : in STD_LOGIC;
     m_axi_mm2s_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_datamover : entity is "axi_datamover";
 end hdmi_axi_dma_1_0_axi_datamover;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0_axi_datamover is
@@ -86988,6 +87084,8 @@ entity hdmi_axi_dma_1_0_axi_dma is
   attribute C_S_AXI_LITE_ADDR_WIDTH of hdmi_axi_dma_1_0_axi_dma : entity is 10;
   attribute C_S_AXI_LITE_DATA_WIDTH : integer;
   attribute C_S_AXI_LITE_DATA_WIDTH of hdmi_axi_dma_1_0_axi_dma : entity is 32;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of hdmi_axi_dma_1_0_axi_dma : entity is "axi_dma";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of hdmi_axi_dma_1_0_axi_dma : entity is "yes";
 end hdmi_axi_dma_1_0_axi_dma;
@@ -87803,7 +87901,7 @@ entity hdmi_axi_dma_1_0 is
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of hdmi_axi_dma_1_0 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of hdmi_axi_dma_1_0 : entity is "axi_dma,Vivado 2018.2.2";
+  attribute x_core_info of hdmi_axi_dma_1_0 : entity is "axi_dma,Vivado 2018.2";
 end hdmi_axi_dma_1_0;
 
 architecture STRUCTURE of hdmi_axi_dma_1_0 is

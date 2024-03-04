@@ -1,0 +1,327 @@
+
+*** Running vivado
+    with args -log hdmi_brightening_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_brightening_0_0.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source hdmi_brightening_0_0.tcl -notrace
+Command: synth_design -top hdmi_brightening_0_0 -part xc7a200tsbg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 320574 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1322.332 ; gain = 87.945 ; free physical = 4888 ; free virtual = 14112
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'hdmi_brightening_0_0' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_brightening_0_0/synth/hdmi_brightening_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'brightening' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/31b7/brightness.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'brightening' (1#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/31b7/brightness.v:22]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_brightening_0_0' (2#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_brightening_0_0/synth/hdmi_brightening_0_0.v:58]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_r[7]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_r[6]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_r[5]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_r[4]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_r[3]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_r[2]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_r[1]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_r[0]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_b[7]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_b[6]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_b[5]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_b[4]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_b[3]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_b[2]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_b[1]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_b[0]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_g[7]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_g[6]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_g[5]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_g[4]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_g[3]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_g[2]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_g[1]
+WARNING: [Synth 8-3331] design brightening has unconnected port in_g[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1366.957 ; gain = 132.570 ; free physical = 4911 ; free virtual = 14135
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1366.957 ; gain = 132.570 ; free physical = 4914 ; free virtual = 14138
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1366.957 ; gain = 132.570 ; free physical = 4914 ; free virtual = 14138
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraint will be written out.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1746.027 ; gain = 1.000 ; free physical = 4598 ; free virtual = 13841
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:35 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4605 ; free virtual = 13908
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tsbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:35 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4605 ; free virtual = 13908
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:35 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4607 ; free virtual = 13910
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'temp_2_reg[11:0]' into 'temp_1_reg[11:0]' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/31b7/brightness.v:50]
+INFO: [Synth 8-4471] merging register 'temp_3_reg[11:0]' into 'temp_1_reg[11:0]' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/31b7/brightness.v:51]
+WARNING: [Synth 8-6014] Unused sequential element temp_2_reg was removed.  [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/31b7/brightness.v:50]
+WARNING: [Synth 8-6014] Unused sequential element temp_3_reg was removed.  [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/31b7/brightness.v:51]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:35 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4602 ; free virtual = 13906
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module brightening 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_r[7]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_r[6]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_r[5]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_r[4]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_r[3]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_r[2]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_r[1]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_r[0]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_b[7]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_b[6]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_b[5]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_b[4]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_b[3]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_b[2]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_b[1]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_b[0]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_g[7]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_g[6]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_g[5]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_g[4]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_g[3]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_g[2]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_g[1]
+WARNING: [Synth 8-3331] design hdmi_brightening_0_0 has unconnected port in_g[0]
+INFO: [Synth 8-3886] merging instance 'inst/temp_1_reg[0]' (FDRE) to 'inst/temp_1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/temp_1_reg[1]' (FDRE) to 'inst/temp_1_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/temp_1_reg[2]' (FDRE) to 'inst/temp_1_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/temp_1_reg[3]' (FDRE) to 'inst/temp_1_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/temp_1_reg[4]' (FDRE) to 'inst/temp_1_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/temp_1_reg[5]' (FDRE) to 'inst/temp_1_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/temp_1_reg[6]' (FDRE) to 'inst/temp_1_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/temp_1_reg[7]' (FDRE) to 'inst/temp_1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'inst/temp_1_reg[8]' (FDRE) to 'inst/temp_1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'inst/temp_1_reg[9]' (FDRE) to 'inst/temp_1_reg[10]'
+INFO: [Synth 8-3886] merging instance 'inst/temp_1_reg[11]' (FDRE) to 'inst/temp_1_reg[10]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/temp_1_reg[10] )
+INFO: [Synth 8-3332] Sequential element (inst/temp_1_reg[10]) is unused and will be removed from module hdmi_brightening_0_0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:35 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4591 ; free virtual = 13895
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:40 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4505 ; free virtual = 13786
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:40 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4505 ; free virtual = 13786
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:40 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4504 ; free virtual = 13785
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4504 ; free virtual = 13785
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4504 ; free virtual = 13785
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4504 ; free virtual = 13785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4504 ; free virtual = 13785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4504 ; free virtual = 13785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4504 ; free virtual = 13785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT4 |     2|
+|2     |FDRE |     2|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+------------+------+
+|      |Instance |Module      |Cells |
++------+---------+------------+------+
+|1     |top      |            |     4|
+|2     |  inst   |brightening |     4|
++------+---------+------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4504 ; free virtual = 13785
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1746.027 ; gain = 132.570 ; free physical = 4557 ; free virtual = 13838
+Synthesis Optimization Complete : Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1746.027 ; gain = 511.641 ; free physical = 4557 ; free virtual = 13838
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+28 Infos, 51 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1746.027 ; gain = 523.148 ; free physical = 4554 ; free virtual = 13835
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_brightening_0_0_synth_1/hdmi_brightening_0_0.dcp' has been generated.

@@ -116,14 +116,32 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_rgb2stream
 # IP: bd/hdmi/ip/hdmi_grayscale_0_0/hdmi_grayscale_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_grayscale_0_0 || ORIG_REF_NAME==hdmi_grayscale_0_0} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_m00_regslice_0_1/hdmi_m00_regslice_0.xci
+# IP: bd/hdmi/ip/hdmi_brightening_0_0/hdmi_brightening_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_brightening_0_0 || ORIG_REF_NAME==hdmi_brightening_0_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_rgb2stream_1_0/hdmi_rgb2stream_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_rgb2stream_1_0 || ORIG_REF_NAME==hdmi_rgb2stream_1_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_stream2rgb_1_0/hdmi_stream2rgb_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_stream2rgb_1_0 || ORIG_REF_NAME==hdmi_stream2rgb_1_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_axi_dma_2_1/hdmi_axi_dma_2_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_axi_dma_2_1 || ORIG_REF_NAME==hdmi_axi_dma_2_1} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_m00_regslice_0/hdmi_m00_regslice_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_m00_regslice_0 || ORIG_REF_NAME==hdmi_m00_regslice_0} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_auto_ds_0_1/hdmi_auto_ds_0.xci
+# IP: bd/hdmi/ip/hdmi_auto_ds_0/hdmi_auto_ds_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_ds_0 || ORIG_REF_NAME==hdmi_auto_ds_0} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_auto_rs_w_0_1/hdmi_auto_rs_w_0.xci
+# IP: bd/hdmi/ip/hdmi_auto_rs_w_0/hdmi_auto_rs_w_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_rs_w_0 || ORIG_REF_NAME==hdmi_auto_rs_w_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_auto_us_7/hdmi_auto_us_7.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_7 || ORIG_REF_NAME==hdmi_auto_us_7} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_auto_us_6/hdmi_auto_us_6.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_6 || ORIG_REF_NAME==hdmi_auto_us_6} -quiet] -quiet
 
 # IP: bd/hdmi/ip/hdmi_auto_us_5/hdmi_auto_us_5.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_5 || ORIG_REF_NAME==hdmi_auto_us_5} -quiet] -quiet
@@ -137,28 +155,28 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_3 
 # IP: bd/hdmi/ip/hdmi_auto_us_2/hdmi_auto_us_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_2 || ORIG_REF_NAME==hdmi_auto_us_2} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_s03_regslice_0_1/hdmi_s03_regslice_0.xci
+# IP: bd/hdmi/ip/hdmi_s03_regslice_0/hdmi_s03_regslice_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_s03_regslice_0 || ORIG_REF_NAME==hdmi_s03_regslice_0} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_s02_regslice_0_1/hdmi_s02_regslice_0.xci
+# IP: bd/hdmi/ip/hdmi_s02_regslice_0/hdmi_s02_regslice_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_s02_regslice_0 || ORIG_REF_NAME==hdmi_s02_regslice_0} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_s01_regslice_0_1/hdmi_s01_regslice_0.xci
+# IP: bd/hdmi/ip/hdmi_s01_regslice_0/hdmi_s01_regslice_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_s01_regslice_0 || ORIG_REF_NAME==hdmi_s01_regslice_0} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_auto_us_1_1/hdmi_auto_us_1.xci
+# IP: bd/hdmi/ip/hdmi_auto_us_1/hdmi_auto_us_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_1 || ORIG_REF_NAME==hdmi_auto_us_1} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_auto_rs_w_2_1/hdmi_auto_rs_w_2.xci
+# IP: bd/hdmi/ip/hdmi_auto_rs_w_2/hdmi_auto_rs_w_2.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_rs_w_2 || ORIG_REF_NAME==hdmi_auto_rs_w_2} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_s00_regslice_0_1/hdmi_s00_regslice_0.xci
+# IP: bd/hdmi/ip/hdmi_s00_regslice_0/hdmi_s00_regslice_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_s00_regslice_0 || ORIG_REF_NAME==hdmi_s00_regslice_0} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_auto_us_0_1/hdmi_auto_us_0.xci
+# IP: bd/hdmi/ip/hdmi_auto_us_0/hdmi_auto_us_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_0 || ORIG_REF_NAME==hdmi_auto_us_0} -quiet] -quiet
 
-# IP: bd/hdmi/ip/hdmi_auto_rs_w_1_1/hdmi_auto_rs_w_1.xci
+# IP: bd/hdmi/ip/hdmi_auto_rs_w_1/hdmi_auto_rs_w_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_rs_w_1 || ORIG_REF_NAME==hdmi_auto_rs_w_1} -quiet] -quiet
 
 # XDC: bd/hdmi/hdmi_ooc.xdc

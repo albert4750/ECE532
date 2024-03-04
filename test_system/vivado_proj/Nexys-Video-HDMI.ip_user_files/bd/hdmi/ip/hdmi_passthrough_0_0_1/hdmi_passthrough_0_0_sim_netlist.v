@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-// Date        : Wed Feb 14 07:08:51 2024
-// Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+// Date        : Thu Feb 29 17:53:08 2024
+// Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
 // Command     : write_verilog -force -mode funcsim
-//               C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_passthrough_0_0_1/hdmi_passthrough_0_0_sim_netlist.v
+//               /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_passthrough_0_0_1/hdmi_passthrough_0_0_sim_netlist.v
 // Design      : hdmi_passthrough_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -13,7 +13,7 @@
 `timescale 1 ps / 1 ps
 
 (* CHECK_LICENSE_TYPE = "hdmi_passthrough_0_0,passthrough,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* IP_DEFINITION_SOURCE = "package_project" *) 
-(* X_CORE_INFO = "passthrough,Vivado 2018.2.2" *) 
+(* X_CORE_INFO = "passthrough,Vivado 2018.2" *) 
 (* NotValidForBitStream *)
 module hdmi_passthrough_0_0
    (axi_clk,

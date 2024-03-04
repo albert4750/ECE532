@@ -1,0 +1,163 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Sun Mar  3 23:16:25 2024
+| Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_brightening_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of hdmi_brightening_0_0 (xilinx.com:user:brightening:1.0) from (Rev. 7) to (Rev. 8)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Sun Mar  3 23:04:47 2024
+| Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_brightening_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of hdmi_brightening_0_0 (xilinx.com:user:brightening:1.0) from (Rev. 5) to (Rev. 7)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Sat Mar  2 18:05:46 2024
+| Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_brightening_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of hdmi_brightening_0_0 (xilinx.com:user:brightening:1.0) from (Rev. 4) to (Rev. 5)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Thu Feb 29 17:51:47 2024
+| Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_passthrough_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of hdmi_passthrough_0_0 (xilinx.com:user:passthrough:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Thu Feb 29 17:51:47 2024
+| Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_grayscale_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of hdmi_grayscale_0_0 (xilinx.com:user:grayscale:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Thu Feb 29 17:51:47 2024
+| Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_axi_dma_2_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of hdmi_axi_dma_2_0 (xilinx.com:ip:axi_dma:7.1 (Rev. 18)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Thu Feb 29 17:51:47 2024
+| Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_axi_dma_1_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of hdmi_axi_dma_1_0 (xilinx.com:ip:axi_dma:7.1 (Rev. 18)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Thu Feb 29 17:51:47 2024
+| Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_axi_dma_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of hdmi_axi_dma_0_0 (xilinx.com:ip:axi_dma:7.1 (Rev. 18)) to Vivado generation flows.
+
