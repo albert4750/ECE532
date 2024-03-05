@@ -138,7 +138,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b2250069</spirit:value>
+            <spirit:value>6cfd72e6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -154,7 +154,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>b2250069</spirit:value>
+            <spirit:value>6cfd72e6</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -688,12 +688,12 @@
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>ECE532 Group 3</xilinx:vendorDisplayName>
       <xilinx:coreRevision>3</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-03-05T01:04:19Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-03-05T04:41:03Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="d3517818"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a0fb1c12"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="19a1ba30"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="a1a41f99"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="e9906fe5"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="f97a9a64"/>

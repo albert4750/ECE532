@@ -48,8 +48,23 @@ module convolve_rgb #(
     output logic [7:0] master_blue_o,
     output logic master_tlast_o,
 
-    input logic signed [8:0] weight_i[3][3][KERNEL_SIZE][KERNEL_SIZE]
+    input logic [3*3*KERNEL_SIZE*KERNEL_SIZE*9-1:0] weight_i
 );
+
+    logic [2:0][2:0][KERNEL_SIZE-1:0][KERNEL_SIZE-1:0][8:0] weight_packed;
+    assign weight_packed = weight_i;
+
+    logic signed [8:0] weight_unpacked[3][3][KERNEL_SIZE][KERNEL_SIZE];
+    for (genvar out_channel = 0; out_channel < 3; ++out_channel) begin : gen_weight_out_channel
+        for (genvar in_channel = 0; in_channel < 3; ++in_channel) begin : gen_weight_in_channel
+            for (genvar i = 0; i < KERNEL_SIZE; ++i) begin : gen_weight_i
+                for (genvar j = 0; j < KERNEL_SIZE; ++j) begin : gen_weight_j
+                    assign weight_unpacked[out_channel][in_channel][i][j] =
+                        weight_packed[out_channel][in_channel][i][j];
+                end : gen_weight_j
+            end : gen_weight_i
+        end : gen_weight_in_channel
+    end : gen_weight_out_channel
 
     logic signed [2:0][8:0] slave_tdata_i;
     assign slave_tdata_i = {1'b0, slave_blue_i, 1'b0, slave_green_i, 1'b0, slave_red_i};
@@ -82,7 +97,7 @@ module convolve_rgb #(
         .master_tdata_o (master_tdata_o),
         .master_tlast_o (master_tlast_o),
 
-        .weight_i(weight_i)
+        .weight_i(weight_unpacked)
     );
 
 endmodule : convolve_rgb
