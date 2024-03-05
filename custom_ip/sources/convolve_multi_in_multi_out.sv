@@ -36,8 +36,7 @@ module convolve_multi_in_multi_out #(
     parameter int OUT_CHANNELS = 3,
     parameter int HEIGHT = 600,
     parameter int WIDTH = 800,
-    parameter logic signed [ACTIVATION_WIDTH-1:0] PADDING_VALUE = 0,
-    parameter int OUT_SUM_SPLITS = 2
+    parameter logic signed [ACTIVATION_WIDTH-1:0] PADDING_VALUE = 0
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -156,166 +155,54 @@ module convolve_multi_in_multi_out #(
         .master_tlast_o (buffer1_tlast)
     );
 
-    // Flattened array of shape (OUT_CHANNELS, IN_CHANNELS, KERNEL_SIZE).
-    logic signed [OUT_CHANNELS*IN_CHANNELS*KERNEL_SIZE-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0]
-        sum_per_row;
+    logic signed [OUT_CHANNELS*IN_CHANNELS*KERNEL_SIZE*KERNEL_SIZE-1:0]
+        [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] products;
     for (
         genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel
-    ) begin : gen_sum_per_row_out_channel
+    ) begin : gen_products_out_channel
         for (
             genvar in_channel = 0; in_channel < IN_CHANNELS; ++in_channel
-        ) begin : gen_sum_per_row_in_channel
-            for (genvar i = 0; i < KERNEL_SIZE; ++i) begin : gen_sum_per_row_i
-                int flat_index;
-                assign flat_index = (out_channel * IN_CHANNELS + in_channel) * KERNEL_SIZE + i;
-                always_comb begin
-                    sum_per_row[flat_index] = 0;
-                    for (int j = 0; j < KERNEL_SIZE; ++j) begin
-                        sum_per_row[flat_index] += buffer1_tdata[i][j][in_channel] *
-                                                   weight_i[out_channel][in_channel][i][j];
-                    end
-                end
-            end : gen_sum_per_row_i
-        end : gen_sum_per_row_in_channel
-    end : gen_sum_per_row_out_channel
+        ) begin : gen_products_in_channel
+            for (genvar i = 0; i < KERNEL_SIZE; ++i) begin : gen_products_i
+                for (genvar j = 0; j < KERNEL_SIZE; ++j) begin : gen_products_j
+                    localparam int FlatIndex =
+                        ((out_channel * IN_CHANNELS + in_channel) * KERNEL_SIZE + i
+                        ) * KERNEL_SIZE + j;
+                    assign products[FlatIndex] =
+                        buffer1_tdata[i][j][in_channel] * weight_i[out_channel][in_channel][i][j];
+                end : gen_products_j
+            end : gen_products_i
+        end : gen_products_in_channel
+    end : gen_products_out_channel
 
-    logic buffer2_tvalid;
-    logic buffer2_tready;
-    logic signed [OUT_CHANNELS-1:0][IN_CHANNELS-1:0][KERNEL_SIZE-1:0]
-        [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] buffer2_tdata;
-    logic buffer2_tlast;
+    logic signed [OUT_CHANNELS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] adder_tdata;
 
-    register_buffer #(
-        .DATA_WIDTH ((ACTIVATION_WIDTH + WEIGHT_WIDTH) * KERNEL_SIZE * IN_CHANNELS * OUT_CHANNELS),
-        .ASYNC_READY(0)
-    ) buffer2 (
+    adder_tree #(
+        .DATA_WIDTH(ACTIVATION_WIDTH + WEIGHT_WIDTH),
+        .INNER_CHANNELS(IN_CHANNELS * KERNEL_SIZE * KERNEL_SIZE),
+        .OUTER_CHANNELS(OUT_CHANNELS)
+    ) adder (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
         .slave_tvalid_i(buffer1_tvalid),
         .slave_tready_o(buffer1_tready),
-        .slave_tdata_i (sum_per_row),
+        .slave_tdata_i (products),
         .slave_tlast_i (buffer1_tlast),
-
-        .master_tvalid_o(buffer2_tvalid),
-        .master_tready_i(buffer2_tready),
-        .master_tdata_o (buffer2_tdata),
-        .master_tlast_o (buffer2_tlast)
-    );
-
-    // Flattened array of shape (OUT_CHANNELS, IN_CHANNELS).
-    logic signed [OUT_CHANNELS*IN_CHANNELS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] sum_per_kernel;
-    for (
-        genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel
-    ) begin : gen_sum_per_kernel_out_channel
-        for (
-            genvar in_channel = 0; in_channel < IN_CHANNELS; ++in_channel
-        ) begin : gen_sum_per_kernel_in_channel
-            localparam int FlatIndex = out_channel * IN_CHANNELS + in_channel;
-            always_comb begin
-                sum_per_kernel[FlatIndex] = 0;
-                for (int i = 0; i < KERNEL_SIZE; ++i) begin
-                    sum_per_kernel[FlatIndex] += buffer2_tdata[out_channel][in_channel][i];
-                end
-            end
-        end : gen_sum_per_kernel_in_channel
-    end : gen_sum_per_kernel_out_channel
-
-    logic buffer3_tvalid;
-    logic buffer3_tready;
-    logic signed [OUT_CHANNELS-1:0][IN_CHANNELS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0]
-        buffer3_tdata;
-    logic buffer3_tlast;
-
-    register_buffer #(
-        .DATA_WIDTH ((ACTIVATION_WIDTH + WEIGHT_WIDTH) * IN_CHANNELS * OUT_CHANNELS),
-        .ASYNC_READY(0)
-    ) buffer3 (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-
-        .slave_tvalid_i(buffer2_tvalid),
-        .slave_tready_o(buffer2_tready),
-        .slave_tdata_i (sum_per_kernel),
-        .slave_tlast_i (buffer2_tlast),
-
-        .master_tvalid_o(buffer3_tvalid),
-        .master_tready_i(buffer3_tready),
-        .master_tdata_o (buffer3_tdata),
-        .master_tlast_o (buffer3_tlast)
-    );
-
-    // The best configuration is to sum sqrt(IN_CHANNELS) input channels at a time, but
-    // SystemVerilog does not support sqrt.
-    // Flattened array of shape (OUT_CHANNELS, OUT_SUM_SPLITS).
-    logic signed [OUT_CHANNELS*OUT_SUM_SPLITS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] partial_sum;
-    for (
-        genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel
-    ) begin : gen_partial_sum_out_channel
-        for (genvar i = 0; i < OUT_SUM_SPLITS; ++i) begin : gen_partial_sum_i
-            localparam int FlatIndex = out_channel * OUT_SUM_SPLITS + i;
-            always_comb begin
-                partial_sum[FlatIndex] = 0;
-                for (
-                    int in_channel = i; in_channel < IN_CHANNELS; in_channel += OUT_SUM_SPLITS
-                ) begin
-                    partial_sum[FlatIndex] += buffer3_tdata[out_channel][in_channel];
-                end
-            end
-        end : gen_partial_sum_i
-    end
-
-    logic buffer4_tvalid;
-    logic buffer4_tready;
-    logic signed [OUT_CHANNELS-1:0][OUT_SUM_SPLITS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] buffer4_tdata;
-    logic buffer4_tlast;
-
-    register_buffer #(
-        .DATA_WIDTH ((ACTIVATION_WIDTH + WEIGHT_WIDTH) * OUT_SUM_SPLITS * OUT_CHANNELS),
-        .ASYNC_READY(0)
-    ) buffer4 (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-
-        .slave_tvalid_i(buffer3_tvalid),
-        .slave_tready_o(buffer3_tready),
-        .slave_tdata_i (partial_sum),
-        .slave_tlast_i (buffer3_tlast),
-
-        .master_tvalid_o(buffer4_tvalid),
-        .master_tready_i(buffer4_tready),
-        .master_tdata_o (buffer4_tdata),
-        .master_tlast_o (buffer4_tlast)
-    );
-
-    logic signed [OUT_CHANNELS-1:0][ACTIVATION_WIDTH-1:0] out_data;
-    for (genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel) begin : gen_out_data
-        logic signed [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] sum;
-        always_comb begin
-            sum = 0;
-            for (int i = 0; i < OUT_SUM_SPLITS; ++i) begin
-                sum += buffer4_tdata[out_channel][i];
-            end
-        end
-        assign out_data[out_channel] = sum[ACTIVATION_WIDTH-1:0];
-    end : gen_out_data
-
-    register_buffer #(
-        .DATA_WIDTH (ACTIVATION_WIDTH * OUT_CHANNELS),
-        .ASYNC_READY(0)
-    ) buffer5 (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-
-        .slave_tvalid_i(buffer4_tvalid),
-        .slave_tready_o(buffer4_tready),
-        .slave_tdata_i (out_data),
-        .slave_tlast_i (buffer4_tlast),
 
         .master_tvalid_o(master_tvalid_o),
         .master_tready_i(master_tready_i),
-        .master_tdata_o (master_tdata_o),
+        .master_tdata_o (adder_tdata),
         .master_tlast_o (master_tlast_o)
     );
+
+    logic signed [OUT_CHANNELS-1:0][ACTIVATION_WIDTH-1:0] out_data;
+    assign master_tdata_o = out_data;
+
+    for (genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel) begin : gen_out_data
+        logic signed [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] shifted_sum;
+        assign shifted_sum = adder_tdata[out_channel] >> RIGHT_SHIFT;
+        assign out_data[out_channel] = shifted_sum[ACTIVATION_WIDTH-1:0];
+    end : gen_out_data
 
 endmodule : convolve_multi_in_multi_out

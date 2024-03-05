@@ -29,15 +29,13 @@ module srcnn #(
     parameter int HEIGHT = 600,
     parameter int WIDTH  = 800,
 
-    localparam int F1 = 7,
+    localparam int F1 = 9,
     localparam int F2 = 1,
-    localparam int F3 = 4,
-    localparam int N1 = 24,
-    localparam int N1OutSumSplits = 5,
-    localparam int N2 = 12,
-    localparam int N2OutSumSplits = 4,
+    localparam int F3 = 5,
+    localparam int N1 = 20,
+    localparam int N2 = 10,
     localparam int ActivationWidth = 8,
-    localparam int WeightWidth = 8
+    localparam int WeightWidth = 16
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -71,8 +69,7 @@ module srcnn #(
         .OUT_CHANNELS(N1),
         .HEIGHT(HEIGHT),
         .WIDTH(WIDTH),
-        .PADDING_VALUE(0),
-        .OUT_SUM_SPLITS(N1OutSumSplits)
+        .PADDING_VALUE(0)
     ) layer1 (
         .clock_i(clock_i),
         .reset_i(reset_i),
@@ -126,8 +123,7 @@ module srcnn #(
             .IN_CHANNELS(N1),
             .OUT_CHANNELS(N2),
             .HEIGHT(HEIGHT),
-            .WIDTH(WIDTH),
-            .OUT_SUM_SPLITS(N2OutSumSplits)
+            .WIDTH(WIDTH)
         ) layer2 (
             .clock_i(clock_i),
             .reset_i(reset_i),
@@ -206,8 +202,7 @@ module srcnn #(
         .OUT_CHANNELS(3),
         .HEIGHT(HEIGHT),
         .WIDTH(WIDTH),
-        .PADDING_VALUE(0),
-        .OUT_SUM_SPLITS(2)
+        .PADDING_VALUE(0)
     ) layer3 (
         .clock_i(clock_i),
         .reset_i(reset_i),

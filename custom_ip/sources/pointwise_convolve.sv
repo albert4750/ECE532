@@ -35,8 +35,7 @@ module pointwise_convolve #(
     parameter int IN_CHANNELS = 3,
     parameter int OUT_CHANNELS = 3,
     parameter int HEIGHT = 600,
-    parameter int WIDTH = 800,
-    parameter int OUT_SUM_SPLITS = 2
+    parameter int WIDTH = 800
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -58,75 +57,47 @@ module pointwise_convolve #(
     logic signed [IN_CHANNELS-1:0][ACTIVATION_WIDTH-1:0] in_data;
     assign in_data = slave_tdata_i;
 
-    logic signed [OUT_CHANNELS*OUT_SUM_SPLITS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] partial_sum;
+    logic signed [OUT_CHANNELS*IN_CHANNELS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] products;
     for (
         genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel
-    ) begin : gen_partial_sum_out_channel
-        for (genvar i = 0; i < OUT_SUM_SPLITS; ++i) begin : gen_partial_sum_i
-            localparam int FlatIndex = out_channel * OUT_SUM_SPLITS + i;
-            always_comb begin
-                partial_sum[FlatIndex] = 0;
-                for (
-                    int in_channel = i; in_channel < IN_CHANNELS; in_channel += OUT_SUM_SPLITS
-                ) begin
-                    partial_sum[FlatIndex] +=
-                        in_data[in_channel] * weight_i[out_channel][in_channel][0][0];
-                end
-            end
-        end : gen_partial_sum_i
-    end : gen_partial_sum_out_channel
+    ) begin : gen_products_out_channel
+        for (
+            genvar in_channel = 0; in_channel < IN_CHANNELS; ++in_channel
+        ) begin : gen_products_in_channel
+            localparam int FlatIndex = out_channel * IN_CHANNELS + in_channel;
+            assign products[FlatIndex] =
+                in_data[in_channel] * weight_i[out_channel][in_channel][0][0];
+        end : gen_products_in_channel
+    end : gen_products_out_channel
 
-    logic buffer0_tvalid;
-    logic buffer0_tready;
-    logic signed [OUT_CHANNELS-1:0][OUT_SUM_SPLITS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] buffer0_tdata;
-    logic buffer0_tlast;
+    logic signed [OUT_CHANNELS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] adder_tdata;
 
-    register_buffer #(
-        .DATA_WIDTH ((ACTIVATION_WIDTH + WEIGHT_WIDTH) * OUT_SUM_SPLITS * OUT_CHANNELS),
-        .ASYNC_READY(0)
-    ) buffer0 (
+    adder_tree #(
+        .DATA_WIDTH(ACTIVATION_WIDTH + WEIGHT_WIDTH),
+        .INNER_CHANNELS(IN_CHANNELS),
+        .OUTER_CHANNELS(OUT_CHANNELS)
+    ) adder (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
         .slave_tvalid_i(slave_tvalid_i),
         .slave_tready_o(slave_tready_o),
-        .slave_tdata_i (partial_sum),
+        .slave_tdata_i (products),
         .slave_tlast_i (slave_tlast_i),
-
-        .master_tvalid_o(buffer0_tvalid),
-        .master_tready_i(buffer0_tready),
-        .master_tdata_o (buffer0_tdata),
-        .master_tlast_o (buffer0_tlast)
-    );
-
-    logic signed [OUT_CHANNELS-1:0][ACTIVATION_WIDTH-1:0] out_data;
-    for (genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel) begin : gen_out_data
-        logic signed [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] sum;
-        always_comb begin
-            sum = 0;
-            for (int i = 0; i < OUT_SUM_SPLITS; ++i) begin
-                sum += buffer0_tdata[out_channel][i];
-            end
-        end
-        assign out_data[out_channel] = sum[ACTIVATION_WIDTH-1:0];
-    end : gen_out_data
-
-    register_buffer #(
-        .DATA_WIDTH (ACTIVATION_WIDTH * OUT_CHANNELS),
-        .ASYNC_READY(0)
-    ) buffer1 (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-
-        .slave_tvalid_i(buffer0_tvalid),
-        .slave_tready_o(buffer0_tready),
-        .slave_tdata_i (out_data),
-        .slave_tlast_i (buffer0_tlast),
 
         .master_tvalid_o(master_tvalid_o),
         .master_tready_i(master_tready_i),
-        .master_tdata_o (master_tdata_o),
+        .master_tdata_o (adder_tdata),
         .master_tlast_o (master_tlast_o)
     );
+
+    logic signed [OUT_CHANNELS-1:0][ACTIVATION_WIDTH-1:0] out_data;
+    assign master_tdata_o = out_data;
+
+    for (genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel) begin : gen_out_data
+        logic signed [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] shifted_sum;
+        assign shifted_sum = adder_tdata[out_channel] >> RIGHT_SHIFT;
+        assign out_data[out_channel] = shifted_sum[ACTIVATION_WIDTH-1:0];
+    end : gen_out_data
 
 endmodule : pointwise_convolve
