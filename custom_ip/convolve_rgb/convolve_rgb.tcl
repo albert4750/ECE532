@@ -19,9 +19,9 @@ ipx::package_project -root_dir . -vendor ece532.group3.org -library ece532 -taxo
 ipx::remove_bus_interface master_o [ipx::current_core]
 ipx::remove_bus_interface slave_i [ipx::current_core]
 
-set_property core_revision 4 [ipx::current_core]
-set_property version 1.3 [ipx::current_core]
-set_property display_name convolve_rgb_v1_3 [ipx::current_core]
+set_property core_revision 5 [ipx::current_core]
+set_property version 1.4 [ipx::current_core]
+set_property display_name convolve_rgb_v1_4 [ipx::current_core]
 set_property description "Convolution on RGB images" [ipx::current_core]
 set_property vendor_display_name "ECE532 Group 3" [ipx::current_core]
 
