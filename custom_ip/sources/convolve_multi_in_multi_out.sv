@@ -26,6 +26,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 
+
 module convolve_multi_in_multi_out #(
     parameter int ACTIVATION_WIDTH = 8,
     parameter int WEIGHT_WIDTH = 8,
