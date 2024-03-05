@@ -59,7 +59,6 @@ module cnn #(
     logic [ActivationWidth*HighwayDepth*2-1:0] crelu_tdata[BlockDepth];
     logic crelu_tlast[BlockDepth];
 
-    // 3204 parameters in total
     `include "cnn_weights/convolve0.svh"
     `include "cnn_weights/convolve1.svh"
     `include "cnn_weights/convolve2.svh"

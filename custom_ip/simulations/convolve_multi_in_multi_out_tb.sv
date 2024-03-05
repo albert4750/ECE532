@@ -111,7 +111,8 @@ module convolve_multi_in_multi_out_tb;
         .OUT_CHANNELS(OutChannels),
         .HEIGHT(Height),
         .WIDTH(Width),
-        .PADDING_VALUE(PaddingValue)
+        .PADDING_VALUE(PaddingValue),
+        .OUT_SUM_SPLITS(3)
     ) dut (
         .clock_i(clock),
         .reset_i(reset),

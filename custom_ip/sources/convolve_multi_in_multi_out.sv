@@ -36,7 +36,8 @@ module convolve_multi_in_multi_out #(
     parameter int OUT_CHANNELS = 3,
     parameter int HEIGHT = 600,
     parameter int WIDTH = 800,
-    parameter logic signed [ACTIVATION_WIDTH-1:0] PADDING_VALUE = 0
+    parameter logic signed [ACTIVATION_WIDTH-1:0] PADDING_VALUE = 0,
+    parameter int OUT_SUM_SPLITS = 2
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -246,16 +247,18 @@ module convolve_multi_in_multi_out #(
 
     // The best configuration is to sum sqrt(IN_CHANNELS) input channels at a time, but
     // SystemVerilog does not support sqrt.
-    // Flattened array of shape (OUT_CHANNELS, 2).
-    logic signed [OUT_CHANNELS*2-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] partial_sum;
+    // Flattened array of shape (OUT_CHANNELS, OUT_SUM_SPLITS).
+    logic signed [OUT_CHANNELS*OUT_SUM_SPLITS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] partial_sum;
     for (
         genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel
     ) begin : gen_partial_sum_out_channel
-        for (genvar i = 0; i < 2; ++i) begin : gen_partial_sum_i
-            localparam int FlatIndex = out_channel * 2 + i;
+        for (genvar i = 0; i < OUT_SUM_SPLITS; ++i) begin : gen_partial_sum_i
+            localparam int FlatIndex = out_channel * OUT_SUM_SPLITS + i;
             always_comb begin
                 partial_sum[FlatIndex] = 0;
-                for (int in_channel = i; in_channel < IN_CHANNELS; in_channel += 2) begin
+                for (
+                    int in_channel = i; in_channel < IN_CHANNELS; in_channel += OUT_SUM_SPLITS
+                ) begin
                     partial_sum[FlatIndex] += buffer3_tdata[out_channel][in_channel];
                 end
             end
@@ -264,11 +267,11 @@ module convolve_multi_in_multi_out #(
 
     logic buffer4_tvalid;
     logic buffer4_tready;
-    logic signed [OUT_CHANNELS-1:0][1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] buffer4_tdata;
+    logic signed [OUT_CHANNELS-1:0][OUT_SUM_SPLITS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] buffer4_tdata;
     logic buffer4_tlast;
 
     register_buffer #(
-        .DATA_WIDTH ((ACTIVATION_WIDTH + WEIGHT_WIDTH) * 2 * OUT_CHANNELS),
+        .DATA_WIDTH ((ACTIVATION_WIDTH + WEIGHT_WIDTH) * OUT_SUM_SPLITS * OUT_CHANNELS),
         .ASYNC_READY(0)
     ) buffer4 (
         .clock_i(clock_i),
@@ -288,7 +291,12 @@ module convolve_multi_in_multi_out #(
     logic signed [OUT_CHANNELS-1:0][ACTIVATION_WIDTH-1:0] out_data;
     for (genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel) begin : gen_out_data
         logic signed [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] sum;
-        assign sum = (buffer4_tdata[out_channel][0] + buffer4_tdata[out_channel][1]) >> RIGHT_SHIFT;
+        always_comb begin
+            sum = 0;
+            for (int i = 0; i < OUT_SUM_SPLITS; ++i) begin
+                sum += buffer4_tdata[out_channel][i];
+            end
+        end
         assign out_data[out_channel] = sum[ACTIVATION_WIDTH-1:0];
     end : gen_out_data
 

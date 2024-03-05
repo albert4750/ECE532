@@ -1,4 +1,4 @@
-"""Generates dummy weight tensors for the CNN module."""
+"""Generates dummy weight tensors for the SRCNN module."""
 
 from pathlib import Path
 
@@ -37,36 +37,37 @@ def tensor_to_file_content(tensor: Tensor, name: str) -> str:
     return file_content
 
 
-def generate_dummy_weights(
-    kernel_size: int, highway_depth: int, block_depth: int
-) -> None:
-    """Generates dummy weight tensors for the CNN module and save them as .svh
+def generate_dummy_weights(f1: int, f2: int, f3: int, n1: int, n2: int) -> None:
+    """Generates dummy weight tensors for the SRCNN module and save them as .svh
     files."""
 
     torch.random.manual_seed(0)
 
     num_params = 0
 
-    for i in range(block_depth):
-        if i == 0:
-            in_channels = 3
-        else:
-            in_channels = highway_depth * 2
-        shape = (highway_depth, in_channels, kernel_size, kernel_size)
-        weight = torch.randint(-128, 128, shape, dtype=torch.int8)
-        num_params += weight.numel()
-        Path(f"convolve{i}.svh").write_text(
-            tensor_to_file_content(weight, f"convolve{i}_weight"), encoding="utf-8"
-        )
-
-    shape = (3, highway_depth * 2, 3, 3)
+    shape = (n1, 3, f1, f1)
     weight = torch.randint(-128, 128, shape, dtype=torch.int8)
     num_params += weight.numel()
-    Path("output.svh").write_text(
-        tensor_to_file_content(weight, "output_weight"), encoding="utf-8"
+    Path("layer1.svh").write_text(
+        tensor_to_file_content(weight, "layer1_weight"), encoding="utf-8"
     )
+
+    shape = (n2, n1, f2, f2)
+    weight = torch.randint(-128, 128, shape, dtype=torch.int8)
+    num_params += weight.numel()
+    Path("layer2.svh").write_text(
+        tensor_to_file_content(weight, "layer2_weight"), encoding="utf-8"
+    )
+
+    shape = (3, n2, f3, f3)
+    weight = torch.randint(-128, 128, shape, dtype=torch.int8)
+    num_params += weight.numel()
+    Path("layer3.svh").write_text(
+        tensor_to_file_content(weight, "layer3_weight"), encoding="utf-8"
+    )
+
     print(f"Generated {num_params} parameters.")
 
 
 if __name__ == "__main__":
-    generate_dummy_weights(kernel_size=3, highway_depth=4, block_depth=24)
+    generate_dummy_weights(f1=7, f2=1, f3=4, n1=24, n2=12)
