@@ -29,7 +29,8 @@
 module convolve_rgb #(
     parameter int KERNEL_SIZE = 3,
     parameter int HEIGHT = 600,
-    parameter int WIDTH = 800
+    parameter int WIDTH = 800,
+    parameter int RIGHT_SHIFT = 2
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -77,7 +78,7 @@ module convolve_rgb #(
         .ACTIVATION_WIDTH(9),
         .WEIGHT_WIDTH(9),
         .KERNEL_SIZE(KERNEL_SIZE),
-        .RIGHT_SHIFT(2),
+        .RIGHT_SHIFT(RIGHT_SHIFT),
         .IN_CHANNELS(3),
         .OUT_CHANNELS(3),
         .HEIGHT(HEIGHT),
