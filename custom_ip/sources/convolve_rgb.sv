@@ -5,12 +5,12 @@
 //
 // Create Date: 03/04/2024 01:46:45 PM
 // Design Name:
-// Module Name: convolve_wrapper
+// Module Name: convolve_rgb
 // Project Name: ECE532 Course Project - Real-Time Video Processing Pipeline
 // Target Devices: Nexys Video
 // Tool Versions: Vivado 2018.2
 // Description: This module is a wrapper around convolve_multi_in_multi_out to
-//     provide a friendly interface for upper-level designs.
+//     provide a friendly interface for convolving RGB images.
 //
 //     - Input: Multi-channel stream of (HEIGHT, WIDTH) elements, each element of
 //       (3, 8) bits.
@@ -26,7 +26,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module convolve_wrapper #(
+module convolve_rgb #(
     parameter int KERNEL_SIZE = 3,
     parameter int HEIGHT = 600,
     parameter int WIDTH = 800
@@ -85,4 +85,4 @@ module convolve_wrapper #(
         .weight_i(weight_i)
     );
 
-endmodule : convolve_wrapper
+endmodule : convolve_rgb
