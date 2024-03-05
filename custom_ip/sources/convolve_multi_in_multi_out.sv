@@ -30,6 +30,7 @@ module convolve_multi_in_multi_out #(
     parameter int ACTIVATION_WIDTH = 8,
     parameter int WEIGHT_WIDTH = 8,
     parameter int KERNEL_SIZE = 3,
+    parameter int RIGHT_SHIFT = 0,
     parameter int IN_CHANNELS = 3,
     parameter int OUT_CHANNELS = 3,
     parameter int HEIGHT = 600,
@@ -286,7 +287,7 @@ module convolve_multi_in_multi_out #(
     logic signed [OUT_CHANNELS-1:0][ACTIVATION_WIDTH-1:0] out_data;
     for (genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel) begin : gen_out_data
         logic signed [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] sum;
-        assign sum = buffer4_tdata[out_channel][0] + buffer4_tdata[out_channel][1];
+        assign sum = (buffer4_tdata[out_channel][0] + buffer4_tdata[out_channel][1]) >> RIGHT_SHIFT;
         assign out_data[out_channel] = sum[ACTIVATION_WIDTH-1:0];
     end : gen_out_data
 
