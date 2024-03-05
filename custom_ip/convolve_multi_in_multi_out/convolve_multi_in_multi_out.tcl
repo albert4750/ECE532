@@ -6,10 +6,8 @@ add_files -fileset sources_1 -norecurse {       \
     ../sources/register_buffer.sv               \
     ../sources/dual_port_ram.sv                 \
     ../sources/convolve_multi_in_multi_out.sv   \
-    ../sources/convolve_reduce.sv               \
     ../sources/constant_pad.sv                  \
     ../sources/sliding_window.sv                \
-    ../sources/convolve_single_in_single_out.sv \
 }
 
 import_files -fileset sources_1 -norecurse
@@ -25,8 +23,8 @@ set out_interface [ipx::get_bus_interfaces master_o -of_objects [ipx::current_co
 ipx::add_port_map TREADY $out_interface
 set_property physical_name master_tready_i [ipx::get_port_maps TREADY -of_objects $out_interface]
 
-set_property core_revision 2 [ipx::current_core]
-set_property version 1.1 [ipx::current_core]
+set_property core_revision 3 [ipx::current_core]
+set_property version 1.2 [ipx::current_core]
 set_property display_name convolve_multi_in_multi_out_v1_1 [ipx::current_core]
 set_property description "Multi-channel-in multi-channel-out convolution" [ipx::current_core]
 set_property vendor_display_name "ECE532 Group 3" [ipx::current_core]

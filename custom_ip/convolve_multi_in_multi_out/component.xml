@@ -3,7 +3,7 @@
   <spirit:vendor>ece532.group3.org</spirit:vendor>
   <spirit:library>ece532</spirit:library>
   <spirit:name>convolve_multi_in_multi_out</spirit:name>
-  <spirit:version>1.1</spirit:version>
+  <spirit:version>1.2</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
       <spirit:name>master_o</spirit:name>
@@ -138,7 +138,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1d2543aa</spirit:value>
+            <spirit:value>cb670b1f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -154,7 +154,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>1d2543aa</spirit:value>
+            <spirit:value>cb670b1f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -400,7 +400,7 @@
         <spirit:displayName>Width</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.WIDTH">800</spirit:value>
       </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="logic((ACTIVATION_WIDTH - 1) 0)">
+      <spirit:modelParameter spirit:dataType="logic signed((ACTIVATION_WIDTH - 1) 0)">
         <spirit:name>PADDING_VALUE</spirit:name>
         <spirit:displayName>Padding Value</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PADDING_VALUE">0</spirit:value>
@@ -412,14 +412,6 @@
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
         <spirit:name>convolve_multi_in_multi_out.srcs/sources_1/imports/sources/constant_pad.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>convolve_multi_in_multi_out.srcs/sources_1/imports/sources/convolve_reduce.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>convolve_multi_in_multi_out.srcs/sources_1/imports/sources/convolve_single_in_single_out.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -437,21 +429,13 @@
       <spirit:file>
         <spirit:name>convolve_multi_in_multi_out.srcs/sources_1/imports/sources/convolve_multi_in_multi_out.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_2b25cf23</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_83bbe275</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
         <spirit:name>convolve_multi_in_multi_out.srcs/sources_1/imports/sources/constant_pad.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>convolve_multi_in_multi_out.srcs/sources_1/imports/sources/convolve_reduce.sv</spirit:name>
-        <spirit:fileType>systemVerilogSource</spirit:fileType>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>convolve_multi_in_multi_out.srcs/sources_1/imports/sources/convolve_single_in_single_out.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -474,7 +458,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/convolve_multi_in_multi_out_v1_1.tcl</spirit:name>
+        <spirit:name>xgui/convolve_multi_in_multi_out_v1_2.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_a90fbccf</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
@@ -542,15 +526,15 @@
       <xilinx:displayName>convolve_multi_in_multi_out_v1_1</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>ECE532 Group 3</xilinx:vendorDisplayName>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-03-01T15:41:55Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-03-05T01:05:24Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="d3517818"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="86cfbb6a"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="6e0b27ed"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="da78a1d4"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="b376b047"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="4662f8df"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="6e2c4ad3"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>

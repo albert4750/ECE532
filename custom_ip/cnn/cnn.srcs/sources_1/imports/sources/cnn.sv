@@ -33,7 +33,7 @@ module cnn #(
     localparam int WeightWidth = 8,
     localparam int KernelSize = 3,
     localparam int HighwayDepth = 4,
-    localparam int BlockDepth = 4
+    localparam int BlockDepth = 7
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -59,10 +59,31 @@ module cnn #(
     logic [ActivationWidth*HighwayDepth*2-1:0] crelu_tdata[BlockDepth];
     logic crelu_tlast[BlockDepth];
 
+    // 3204 parameters in total
     `include "cnn_weights/convolve0.svh"
     `include "cnn_weights/convolve1.svh"
     `include "cnn_weights/convolve2.svh"
     `include "cnn_weights/convolve3.svh"
+    `include "cnn_weights/convolve4.svh"
+    `include "cnn_weights/convolve5.svh"
+    `include "cnn_weights/convolve6.svh"
+    `include "cnn_weights/convolve7.svh"
+    `include "cnn_weights/convolve8.svh"
+    `include "cnn_weights/convolve9.svh"
+    `include "cnn_weights/convolve10.svh"
+    `include "cnn_weights/convolve11.svh"
+    `include "cnn_weights/convolve12.svh"
+    `include "cnn_weights/convolve13.svh"
+    `include "cnn_weights/convolve14.svh"
+    `include "cnn_weights/convolve15.svh"
+    `include "cnn_weights/convolve16.svh"
+    `include "cnn_weights/convolve17.svh"
+    `include "cnn_weights/convolve18.svh"
+    `include "cnn_weights/convolve19.svh"
+    `include "cnn_weights/convolve20.svh"
+    `include "cnn_weights/convolve21.svh"
+    `include "cnn_weights/convolve22.svh"
+    `include "cnn_weights/convolve23.svh"
     `include "cnn_weights/output.svh"
 
     for (genvar i = 0; i < BlockDepth; ++i) begin : gen_block
@@ -71,7 +92,7 @@ module cnn #(
 
         logic convolve_slave_tvalid;
         logic convolve_slave_tready;
-        logic [8*CONVOLVE_IN_CHANNELS-1:0] convolve_slave_tdata;
+        logic [8*`CONVOLVE_IN_CHANNELS-1:0] convolve_slave_tdata;
         logic convolve_slave_tlast;
 
         if (i == 0) begin : gen_convolve_slave_first
@@ -88,20 +109,40 @@ module cnn #(
         end : gen_convolve_slave_rest
 
         logic signed [WeightWidth-1:0]
-            convolve_weight[HighwayDepth][CONVOLVE_IN_CHANNELS][KernelSize][KernelSize];
+            convolve_weight[HighwayDepth][`CONVOLVE_IN_CHANNELS][KernelSize][KernelSize];
 
         case (i)
-            0: assign convolve_weight = convolve0_weight;
-            1: assign convolve_weight = convolve1_weight;
-            2: assign convolve_weight = convolve2_weight;
-            3: assign convolve_weight = convolve3_weight;
+            0:  assign convolve_weight = convolve0_weight;
+            1:  assign convolve_weight = convolve1_weight;
+            2:  assign convolve_weight = convolve2_weight;
+            3:  assign convolve_weight = convolve3_weight;
+            4:  assign convolve_weight = convolve4_weight;
+            5:  assign convolve_weight = convolve5_weight;
+            6:  assign convolve_weight = convolve6_weight;
+            7:  assign convolve_weight = convolve7_weight;
+            8:  assign convolve_weight = convolve8_weight;
+            9:  assign convolve_weight = convolve9_weight;
+            10: assign convolve_weight = convolve10_weight;
+            11: assign convolve_weight = convolve11_weight;
+            12: assign convolve_weight = convolve12_weight;
+            13: assign convolve_weight = convolve13_weight;
+            14: assign convolve_weight = convolve14_weight;
+            15: assign convolve_weight = convolve15_weight;
+            16: assign convolve_weight = convolve16_weight;
+            17: assign convolve_weight = convolve17_weight;
+            18: assign convolve_weight = convolve18_weight;
+            19: assign convolve_weight = convolve19_weight;
+            20: assign convolve_weight = convolve20_weight;
+            21: assign convolve_weight = convolve21_weight;
+            22: assign convolve_weight = convolve22_weight;
+            23: assign convolve_weight = convolve23_weight;
         endcase
 
         convolve_multi_in_multi_out #(
             .ACTIVATION_WIDTH(ActivationWidth),
             .WEIGHT_WIDTH(WeightWidth),
             .KERNEL_SIZE(KernelSize),
-            .IN_CHANNELS(CONVOLVE_IN_CHANNELS),
+            .IN_CHANNELS(`CONVOLVE_IN_CHANNELS),
             .OUT_CHANNELS(HighwayDepth),
             .HEIGHT(HEIGHT),
             .WIDTH(WIDTH),
