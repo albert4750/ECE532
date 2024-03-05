@@ -153,25 +153,28 @@ module convolve_multi_in_multi_out #(
         .master_tlast_o (buffer1_tlast)
     );
 
-    // Vivado does not support 3-D arrays of registers, so the out_channel and in_channel dimensions
-    // are flattened.
-    logic signed [OUT_CHANNELS*IN_CHANNELS-1:0][KERNEL_SIZE-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0]
+    // Flattened array of shape (OUT_CHANNELS, IN_CHANNELS, KERNEL_SIZE).
+    logic signed [OUT_CHANNELS*IN_CHANNELS*KERNEL_SIZE-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0]
         sum_per_row;
     for (
-        genvar channel = 0; channel < IN_CHANNELS * OUT_CHANNELS; ++channel
-    ) begin : gen_sum_per_row_channel
-        localparam int OutChannel = channel / IN_CHANNELS;
-        localparam int InChannel = channel % IN_CHANNELS;
-        for (genvar i = 0; i < KERNEL_SIZE; ++i) begin : gen_sum_per_row_i
-            always_comb begin
-                sum_per_row[channel][i] = 0;
-                for (int j = 0; j < KERNEL_SIZE; ++j) begin
-                    sum_per_row[channel][i] +=
-                        buffer1_tdata[i][j][InChannel] * weight_i[OutChannel][InChannel][i][j];
+        genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel
+    ) begin : gen_sum_per_row_out_channel
+        for (
+            genvar in_channel = 0; in_channel < IN_CHANNELS; ++in_channel
+        ) begin : gen_sum_per_row_in_channel
+            for (genvar i = 0; i < KERNEL_SIZE; ++i) begin : gen_sum_per_row_i
+                int flat_index;
+                assign flat_index = (out_channel * IN_CHANNELS + in_channel) * KERNEL_SIZE + i;
+                always_comb begin
+                    sum_per_row[flat_index] = 0;
+                    for (int j = 0; j < KERNEL_SIZE; ++j) begin
+                        sum_per_row[flat_index] += buffer1_tdata[i][j][in_channel] *
+                                                   weight_i[out_channel][in_channel][i][j];
+                    end
                 end
-            end
-        end : gen_sum_per_row_i
-    end : gen_sum_per_row_channel
+            end : gen_sum_per_row_i
+        end : gen_sum_per_row_in_channel
+    end : gen_sum_per_row_out_channel
 
     logic buffer2_tvalid;
     logic buffer2_tready;
@@ -197,19 +200,19 @@ module convolve_multi_in_multi_out #(
         .master_tlast_o (buffer2_tlast)
     );
 
-    logic signed [OUT_CHANNELS-1:0][IN_CHANNELS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0]
-        sum_per_kernel;
+    // Flattened array of shape (OUT_CHANNELS, IN_CHANNELS).
+    logic signed [OUT_CHANNELS*IN_CHANNELS-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] sum_per_kernel;
     for (
         genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel
     ) begin : gen_sum_per_kernel_out_channel
         for (
             genvar in_channel = 0; in_channel < IN_CHANNELS; ++in_channel
         ) begin : gen_sum_per_kernel_in_channel
+            localparam int FlatIndex = out_channel * IN_CHANNELS + in_channel;
             always_comb begin
-                sum_per_kernel[out_channel][in_channel] = 0;
+                sum_per_kernel[FlatIndex] = 0;
                 for (int i = 0; i < KERNEL_SIZE; ++i) begin
-                    sum_per_kernel[out_channel][in_channel] +=
-                        buffer2_tdata[out_channel][in_channel][i];
+                    sum_per_kernel[FlatIndex] += buffer2_tdata[out_channel][in_channel][i];
                 end
             end
         end : gen_sum_per_kernel_in_channel
@@ -241,15 +244,17 @@ module convolve_multi_in_multi_out #(
 
     // The best configuration is to sum sqrt(IN_CHANNELS) input channels at a time, but
     // SystemVerilog does not support sqrt.
-    logic signed [OUT_CHANNELS-1:0][1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] partial_sum;
+    // Flattened array of shape (OUT_CHANNELS, 2).
+    logic signed [OUT_CHANNELS*2-1:0][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] partial_sum;
     for (
         genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel
     ) begin : gen_partial_sum_out_channel
         for (genvar i = 0; i < 2; ++i) begin : gen_partial_sum_i
+            localparam int FlatIndex = out_channel * 2 + i;
             always_comb begin
-                partial_sum[out_channel][i] = 0;
+                partial_sum[FlatIndex] = 0;
                 for (int in_channel = i; in_channel < IN_CHANNELS; in_channel += 2) begin
-                    partial_sum[out_channel][i] += buffer3_tdata[out_channel][in_channel];
+                    partial_sum[FlatIndex] += buffer3_tdata[out_channel][in_channel];
                 end
             end
         end : gen_partial_sum_i
@@ -280,11 +285,9 @@ module convolve_multi_in_multi_out #(
 
     logic signed [OUT_CHANNELS-1:0][ACTIVATION_WIDTH-1:0] out_data;
     for (genvar out_channel = 0; out_channel < OUT_CHANNELS; ++out_channel) begin : gen_out_data
-        always_comb begin
-            logic signed [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] sum;
-            assign sum = buffer4_tdata[out_channel][0] + buffer4_tdata[out_channel][1];
-            out_data[out_channel] = sum[ACTIVATION_WIDTH-1:0];
-        end
+        logic signed [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] sum;
+        assign sum = buffer4_tdata[out_channel][0] + buffer4_tdata[out_channel][1];
+        assign out_data[out_channel] = sum[ACTIVATION_WIDTH-1:0];
     end : gen_out_data
 
     register_buffer #(
