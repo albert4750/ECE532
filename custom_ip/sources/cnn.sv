@@ -33,7 +33,7 @@ module cnn #(
     localparam int WeightWidth = 8,
     localparam int KernelSize = 3,
     localparam int HighwayDepth = 4,
-    localparam int BlockDepth = 11
+    localparam int BlockDepth = 7
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -72,6 +72,18 @@ module cnn #(
     `include "cnn_weights/convolve9.svh"
     `include "cnn_weights/convolve10.svh"
     `include "cnn_weights/convolve11.svh"
+    `include "cnn_weights/convolve12.svh"
+    `include "cnn_weights/convolve13.svh"
+    `include "cnn_weights/convolve14.svh"
+    `include "cnn_weights/convolve15.svh"
+    `include "cnn_weights/convolve16.svh"
+    `include "cnn_weights/convolve17.svh"
+    `include "cnn_weights/convolve18.svh"
+    `include "cnn_weights/convolve19.svh"
+    `include "cnn_weights/convolve20.svh"
+    `include "cnn_weights/convolve21.svh"
+    `include "cnn_weights/convolve22.svh"
+    `include "cnn_weights/convolve23.svh"
     `include "cnn_weights/output.svh"
 
     for (genvar i = 0; i < BlockDepth; ++i) begin : gen_block
@@ -112,6 +124,18 @@ module cnn #(
             9:  assign convolve_weight = convolve9_weight;
             10: assign convolve_weight = convolve10_weight;
             11: assign convolve_weight = convolve11_weight;
+            12: assign convolve_weight = convolve12_weight;
+            13: assign convolve_weight = convolve13_weight;
+            14: assign convolve_weight = convolve14_weight;
+            15: assign convolve_weight = convolve15_weight;
+            16: assign convolve_weight = convolve16_weight;
+            17: assign convolve_weight = convolve17_weight;
+            18: assign convolve_weight = convolve18_weight;
+            19: assign convolve_weight = convolve19_weight;
+            20: assign convolve_weight = convolve20_weight;
+            21: assign convolve_weight = convolve21_weight;
+            22: assign convolve_weight = convolve22_weight;
+            23: assign convolve_weight = convolve23_weight;
         endcase
 
         convolve_multi_in_multi_out #(

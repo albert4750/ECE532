@@ -45,6 +45,8 @@ def generate_dummy_weights(
 
     torch.random.manual_seed(0)
 
+    num_params = 0
+
     for i in range(block_depth):
         if i == 0:
             in_channels = 3
@@ -52,16 +54,19 @@ def generate_dummy_weights(
             in_channels = highway_depth * 2
         shape = (highway_depth, in_channels, kernel_size, kernel_size)
         weight = torch.randint(-128, 128, shape, dtype=torch.int8)
+        num_params += weight.numel()
         Path(f"convolve{i}.svh").write_text(
             tensor_to_file_content(weight, f"convolve{i}_weight"), encoding="utf-8"
         )
 
     shape = (3, highway_depth * 2, 3, 3)
     weight = torch.randint(-128, 128, shape, dtype=torch.int8)
+    num_params += weight.numel()
     Path("output.svh").write_text(
         tensor_to_file_content(weight, "output_weight"), encoding="utf-8"
     )
+    print(f"Generated {num_params} parameters.")
 
 
 if __name__ == "__main__":
-    generate_dummy_weights(kernel_size=3, highway_depth=4, block_depth=12)
+    generate_dummy_weights(kernel_size=3, highway_depth=4, block_depth=24)

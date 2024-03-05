@@ -7,9 +7,9 @@ add_files -fileset sources_1 -norecurse {       \
     ../sources/crelu.sv                         \
     ../sources/dual_port_ram.sv                 \
     ../sources/convolve_multi_in_multi_out.sv   \
-    ../sources/convolve_reduce.sv               \
     ../sources/constant_pad.sv                  \
     ../sources/cnn.sv                           \
+    ../sources/sliding_window.sv                \
     ../sources/cnn_weights/convolve0.svh        \
     ../sources/cnn_weights/convolve1.svh        \
     ../sources/cnn_weights/convolve2.svh        \
@@ -22,9 +22,19 @@ add_files -fileset sources_1 -norecurse {       \
     ../sources/cnn_weights/convolve9.svh        \
     ../sources/cnn_weights/convolve10.svh       \
     ../sources/cnn_weights/convolve11.svh       \
+    ../sources/cnn_weights/convolve12.svh       \
+    ../sources/cnn_weights/convolve13.svh       \
+    ../sources/cnn_weights/convolve14.svh       \
+    ../sources/cnn_weights/convolve15.svh       \
+    ../sources/cnn_weights/convolve16.svh       \
+    ../sources/cnn_weights/convolve17.svh       \
+    ../sources/cnn_weights/convolve18.svh       \
+    ../sources/cnn_weights/convolve19.svh       \
+    ../sources/cnn_weights/convolve20.svh       \
+    ../sources/cnn_weights/convolve21.svh       \
+    ../sources/cnn_weights/convolve22.svh       \
+    ../sources/cnn_weights/convolve23.svh       \
     ../sources/cnn_weights/output.svh           \
-    ../sources/sliding_window.sv                \
-    ../sources/convolve_single_in_single_out.sv \
 }
 
 import_files -fileset sources_1 -norecurse
@@ -40,8 +50,8 @@ set out_interface [ipx::get_bus_interfaces master_o -of_objects [ipx::current_co
 ipx::add_port_map TREADY $out_interface
 set_property physical_name master_tready_i [ipx::get_port_maps TREADY -of_objects $out_interface]
 
-set_property core_revision 2 [ipx::current_core]
-set_property version 1.1 [ipx::current_core]
+set_property core_revision 3 [ipx::current_core]
+set_property version 1.2 [ipx::current_core]
 set_property display_name cnn_v1_1 [ipx::current_core]
 set_property description "Convolutional neural network" [ipx::current_core]
 set_property vendor_display_name "ECE532 Group 3" [ipx::current_core]
