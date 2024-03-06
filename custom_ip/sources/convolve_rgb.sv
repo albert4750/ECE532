@@ -30,7 +30,8 @@ module convolve_rgb #(
     parameter int KERNEL_SIZE = 3,
     parameter int HEIGHT = 600,
     parameter int WIDTH = 800,
-    parameter int RIGHT_SHIFT = 2
+    parameter int RIGHT_SHIFT = 2,
+    parameter int ADDER_BRANCHING_FACTOR = 3
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -83,7 +84,8 @@ module convolve_rgb #(
         .OUT_CHANNELS(3),
         .HEIGHT(HEIGHT),
         .WIDTH(WIDTH),
-        .PADDING_VALUE(0)
+        .PADDING_VALUE(0),
+        .ADDER_BRANCHING_FACTOR(ADDER_BRANCHING_FACTOR)
     ) convolve_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),

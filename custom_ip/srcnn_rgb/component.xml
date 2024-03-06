@@ -2,8 +2,8 @@
 <spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <spirit:vendor>ece532.group3.org</spirit:vendor>
   <spirit:library>ece532</spirit:library>
-  <spirit:name>convolve_rgb</spirit:name>
-  <spirit:version>1.5</spirit:version>
+  <spirit:name>srcnn_rgb</spirit:name>
+  <spirit:version>1.0</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
       <spirit:name>reset_i</spirit:name>
@@ -51,14 +51,14 @@
         <spirit:displayName>Synthesis</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
         <spirit:language>SystemVerilog</spirit:language>
-        <spirit:modelName>convolve_rgb</spirit:modelName>
+        <spirit:modelName>srcnn_rgb</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ea10ec2a</spirit:value>
+            <spirit:value>5876f196</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -67,14 +67,14 @@
         <spirit:displayName>Simulation</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
         <spirit:language>SystemVerilog</spirit:language>
-        <spirit:modelName>convolve_rgb</spirit:modelName>
+        <spirit:modelName>srcnn_rgb</spirit:modelName>
         <spirit:fileSetRef>
           <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ea10ec2a</spirit:value>
+            <spirit:value>5876f196</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -88,7 +88,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>fdfb1e36</spirit:value>
+            <spirit:value>ca7632ff</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -303,31 +303,9 @@
           </spirit:wireTypeDefs>
         </spirit:wire>
       </spirit:port>
-      <spirit:port>
-        <spirit:name>weight_i</spirit:name>
-        <spirit:wire>
-          <spirit:direction>in</spirit:direction>
-          <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((((3 * 3) * spirit:decode(id(&apos;MODELPARAM_VALUE.KERNEL_SIZE&apos;))) * spirit:decode(id(&apos;MODELPARAM_VALUE.KERNEL_SIZE&apos;))) * 9) - 1)">728</spirit:left>
-            <spirit:right spirit:format="long">0</spirit:right>
-          </spirit:vector>
-          <spirit:wireTypeDefs>
-            <spirit:wireTypeDef>
-              <spirit:typeName>logic</spirit:typeName>
-              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
-              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
-            </spirit:wireTypeDef>
-          </spirit:wireTypeDefs>
-        </spirit:wire>
-      </spirit:port>
     </spirit:ports>
     <spirit:modelParameters>
       <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="int">
-        <spirit:name>KERNEL_SIZE</spirit:name>
-        <spirit:displayName>Kernel Size</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.KERNEL_SIZE">3</spirit:value>
-      </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="int">
         <spirit:name>HEIGHT</spirit:name>
         <spirit:displayName>Height</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.HEIGHT">600</spirit:value>
@@ -337,91 +315,130 @@
         <spirit:displayName>Width</spirit:displayName>
         <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.WIDTH">800</spirit:value>
       </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="int">
-        <spirit:name>RIGHT_SHIFT</spirit:name>
-        <spirit:displayName>Right Shift</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.RIGHT_SHIFT">2</spirit:value>
-      </spirit:modelParameter>
-      <spirit:modelParameter spirit:dataType="int">
-        <spirit:name>ADDER_BRANCHING_FACTOR</spirit:name>
-        <spirit:displayName>Adder Branching Factor</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.ADDER_BRANCHING_FACTOR">3</spirit:value>
-      </spirit:modelParameter>
     </spirit:modelParameters>
   </spirit:model>
   <spirit:fileSets>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/constant_pad.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/adder_tree.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/convolve_multi_in_multi_out.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/constant_pad.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/dual_port_ram.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/convolve_multi_in_multi_out.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/dual_port_ram.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/sliding_window.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/register_buffer.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/convolve_rgb.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/relu.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_b51667f3</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/sliding_window.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/srcnn_weights/layer3.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/srcnn_weights/layer1.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/srcnn_weights/layer2.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/srcnn.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/srcnn_rgb.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_15460bc2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/constant_pad.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/adder_tree.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/convolve_multi_in_multi_out.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/constant_pad.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/dual_port_ram.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/convolve_multi_in_multi_out.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/dual_port_ram.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/sliding_window.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/register_buffer.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/convolve_rgb.sv</spirit:name>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/relu.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/sliding_window.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/srcnn_weights/layer3.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/srcnn_weights/layer1.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/srcnn_weights/layer2.svh</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+        <spirit:isIncludeFile>true</spirit:isIncludeFile>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/srcnn.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>srcnn_rgb.srcs/sources_1/imports/sources/srcnn_rgb.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/convolve_rgb_v1_5.tcl</spirit:name>
+        <spirit:name>xgui/srcnn_rgb_v1_0.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_fdfb1e36</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_ca7632ff</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
   </spirit:fileSets>
-  <spirit:description>Convolution on RGB images</spirit:description>
+  <spirit:description>SRCNN super-resolution on RGB images</spirit:description>
   <spirit:parameters>
-    <spirit:parameter>
-      <spirit:name>KERNEL_SIZE</spirit:name>
-      <spirit:displayName>Kernel Size</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.KERNEL_SIZE">3</spirit:value>
-    </spirit:parameter>
     <spirit:parameter>
       <spirit:name>HEIGHT</spirit:name>
       <spirit:displayName>Height</spirit:displayName>
@@ -433,18 +450,8 @@
       <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.WIDTH">800</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
-      <spirit:name>RIGHT_SHIFT</spirit:name>
-      <spirit:displayName>Right Shift</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.RIGHT_SHIFT">2</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
-      <spirit:name>ADDER_BRANCHING_FACTOR</spirit:name>
-      <spirit:displayName>Adder Branching Factor</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.ADDER_BRANCHING_FACTOR">3</spirit:value>
-    </spirit:parameter>
-    <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">convolve_rgb_v1_0</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">srcnn_rgb_v1_0</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -458,19 +465,19 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>convolve_rgb_v1_5</xilinx:displayName>
+      <xilinx:displayName>srcnn_rgb_v1_0</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>ECE532 Group 3</xilinx:vendorDisplayName>
-      <xilinx:coreRevision>6</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-03-06T02:25:23Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>1</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-03-06T02:25:34Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="e06ee760"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="0e6e01c5"/>
-      <xilinx:checksum xilinx:scope="ports" xilinx:value="4e55d078"/>
-      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="ab5b56e1"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="febd0fe5"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="80ab4578"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="cc00b34b"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="e9906fe5"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="6180b81f"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>
