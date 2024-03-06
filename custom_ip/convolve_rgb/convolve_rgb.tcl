@@ -3,6 +3,7 @@ create_project convolve_rgb . -part xc7a200tsbg484-1
 set_property board_part digilentinc.com:nexys_video:part0:1.2 [current_project]
 
 add_files -fileset sources_1 -norecurse {       \
+    ../sources/adder_tree.sv                    \
     ../sources/constant_pad.sv                  \
     ../sources/convolve_multi_in_multi_out.sv   \
     ../sources/convolve_rgb.sv                  \

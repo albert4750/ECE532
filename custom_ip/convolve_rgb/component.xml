@@ -58,7 +58,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ea10ec2a</spirit:value>
+            <spirit:value>b76d958b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -74,7 +74,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>ea10ec2a</spirit:value>
+            <spirit:value>b76d958b</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -353,6 +353,10 @@
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
       <spirit:file>
+        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/adder_tree.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/constant_pad.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
       </spirit:file>
@@ -380,6 +384,10 @@
     </spirit:fileSet>
     <spirit:fileSet>
       <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/adder_tree.sv</spirit:name>
+        <spirit:fileType>systemVerilogSource</spirit:fileType>
+      </spirit:file>
       <spirit:file>
         <spirit:name>convolve_rgb.srcs/sources_1/imports/sources/constant_pad.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
@@ -462,12 +470,12 @@
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>ECE532 Group 3</xilinx:vendorDisplayName>
       <xilinx:coreRevision>6</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-03-06T02:23:15Z</xilinx:coreCreationDateTime>
+      <xilinx:coreCreationDateTime>2024-03-06T04:43:32Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="e06ee760"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="0e6e01c5"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="8b584534"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="4e55d078"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="ab5b56e1"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="febd0fe5"/>
