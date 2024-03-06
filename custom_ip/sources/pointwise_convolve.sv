@@ -35,7 +35,8 @@ module pointwise_convolve #(
     parameter int IN_CHANNELS = 3,
     parameter int OUT_CHANNELS = 3,
     parameter int HEIGHT = 600,
-    parameter int WIDTH = 800
+    parameter int WIDTH = 800,
+    parameter int ADDER_BRANCHING_FACTOR = 2
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -75,7 +76,8 @@ module pointwise_convolve #(
     adder_tree #(
         .DATA_WIDTH(ACTIVATION_WIDTH + WEIGHT_WIDTH),
         .INNER_CHANNELS(IN_CHANNELS),
-        .OUTER_CHANNELS(OUT_CHANNELS)
+        .OUTER_CHANNELS(OUT_CHANNELS),
+        .BRANCHING_FACTOR(ADDER_BRANCHING_FACTOR)
     ) adder (
         .clock_i(clock_i),
         .reset_i(reset_i),
