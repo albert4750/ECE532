@@ -3,7 +3,7 @@
   <spirit:vendor>ece532.group3.org</spirit:vendor>
   <spirit:library>ece532</spirit:library>
   <spirit:name>convolve_rgb</spirit:name>
-  <spirit:version>1.4</spirit:version>
+  <spirit:version>1.5</spirit:version>
   <spirit:busInterfaces>
     <spirit:busInterface>
       <spirit:name>reset_i</spirit:name>
@@ -408,7 +408,7 @@
     <spirit:fileSet>
       <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
       <spirit:file>
-        <spirit:name>xgui/convolve_rgb_v1_4.tcl</spirit:name>
+        <spirit:name>xgui/convolve_rgb_v1_5.tcl</spirit:name>
         <spirit:fileType>tclSource</spirit:fileType>
         <spirit:userFileType>CHECKSUM_fdfb1e36</spirit:userFileType>
         <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
@@ -458,11 +458,11 @@
       <xilinx:taxonomies>
         <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
       </xilinx:taxonomies>
-      <xilinx:displayName>convolve_rgb_v1_4</xilinx:displayName>
+      <xilinx:displayName>convolve_rgb_v1_5</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>ECE532 Group 3</xilinx:vendorDisplayName>
-      <xilinx:coreRevision>5</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-03-06T02:15:51Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>6</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-03-06T02:23:15Z</xilinx:coreCreationDateTime>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
