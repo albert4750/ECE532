@@ -55,6 +55,8 @@ module convolve_rgb #(
 
     logic [2:0][2:0][KERNEL_SIZE-1:0][KERNEL_SIZE-1:0][8:0] weight_packed;
     assign weight_packed = weight_i;
+    logic reset_high;
+    assign reset_high = ~reset_i;
 
     logic signed [8:0] weight_unpacked[3][3][KERNEL_SIZE][KERNEL_SIZE];
     for (genvar out_channel = 0; out_channel < 3; ++out_channel) begin : gen_weight_out_channel
@@ -88,7 +90,7 @@ module convolve_rgb #(
         .ADDER_BRANCHING_FACTOR(ADDER_BRANCHING_FACTOR)
     ) convolve_inst (
         .clock_i(clock_i),
-        .reset_i(reset_i),
+        .reset_i(reset_high),
 
         .slave_tvalid_i(slave_tvalid_i),
         .slave_tready_o(slave_tready_o),

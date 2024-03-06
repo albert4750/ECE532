@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# updatemem v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# 
+# Start of session at: Wed Mar  6 02:00:05 2024
+# Process ID: 2003000
+# Current directory: /home/ece532/ECE532/custom_ip/convolve_rgb
+# Command line: updatemem -mode batch -source /opt/Xilinx/SDK/2018.2/scripts/updatemem/main.tcl -notrace -tclargs -meminfo /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/hdmi_wrapper.mmi -data /opt/Xilinx/SDK/2018.2/data/embeddedsw/lib/microblaze/mb_bootloop_le.elf -proc hdmi_i/microblaze_0 -bit /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/hdmi_wrapper.bit -out /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/download.bit -force
+# Log file: /home/ece532/ECE532/custom_ip/convolve_rgb/updatemem.log
+# Journal file: /home/ece532/ECE532/custom_ip/convolve_rgb/updatemem.jou
+#-----------------------------------------------------------
+source /opt/Xilinx/SDK/2018.2/scripts/updatemem/main.tcl -notrace
+ Loading bitfile /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/hdmi_wrapper.bit
+Loading data files...
+Updating memory content...
+Creating bitstream...
+Writing bitstream /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.sdk/hdmi_wrapper_hw_platform_0/download.bit...
+  update_mem: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 919.871 ; gain = 430.254 ; free physical = 1613 ; free virtual = 10772
+INFO: [Common 17-206] Exiting updatemem at Wed Mar  6 02:00:12 2024...

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1709750931">
+  <File Type="VDS-TIMING-PB" Name="convolve_rgb_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="convolve_rgb_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="convolve_rgb.dcp"/>
+  <File Type="PA-TCL" Name="convolve_rgb.tcl"/>
+  <File Type="REPORTS-TCL" Name="convolve_rgb_reports.tcl"/>
+  <File Type="RDS-RDS" Name="convolve_rgb.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="convolve_rgb_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="convolve_rgb_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="convolve_rgb_utilization_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/sources/adder_tree.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sources/adder_tree.sv"/>
+        <Attr Name="ImportTime" Val="1709698592"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources/constant_pad.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sources/constant_pad.sv"/>
+        <Attr Name="ImportTime" Val="1709601242"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources/convolve_multi_in_multi_out.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sources/convolve_multi_in_multi_out.sv"/>
+        <Attr Name="ImportTime" Val="1709698592"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources/dual_port_ram.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sources/dual_port_ram.sv"/>
+        <Attr Name="ImportTime" Val="1709601242"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources/register_buffer.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sources/register_buffer.sv"/>
+        <Attr Name="ImportTime" Val="1709601242"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources/sliding_window.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sources/sliding_window.sv"/>
+        <Attr Name="ImportTime" Val="1709601242"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/sources/convolve_rgb.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../sources/convolve_rgb.sv"/>
+        <Attr Name="ImportTime" Val="1709698592"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="convolve_rgb"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
