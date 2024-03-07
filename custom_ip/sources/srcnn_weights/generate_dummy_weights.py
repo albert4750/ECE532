@@ -85,4 +85,4 @@ def generate_dummy_weights(
 
 
 if __name__ == "__main__":
-    generate_dummy_weights(f1=7, f2=1, f3=3, n1=24, n2=12, dtype=torch.int16)
+    generate_dummy_weights(f1=7, f2=1, f3=3, n1=16, n2=8, dtype=torch.int16)

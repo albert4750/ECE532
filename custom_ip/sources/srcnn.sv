@@ -32,8 +32,8 @@ module srcnn #(
     localparam int F1 = 7,
     localparam int F2 = 1,
     localparam int F3 = 3,
-    localparam int N1 = 24,
-    localparam int N2 = 12,
+    localparam int N1 = 16,
+    localparam int N2 = 8,
     localparam int ActivationWidth = 8,
     localparam int WeightWidth = 16
 ) (
