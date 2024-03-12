@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-// Date        : Sun Mar  3 13:26:25 2024
+// Date        : Thu Feb 29 17:54:38 2024
 // Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_mig_7series_0_0/hdmi_mig_7series_0_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top hdmi_mig_7series_0_0 -prefix
+//               hdmi_mig_7series_0_0_ hdmi_mig_7series_0_0_stub.v
 // Design      : hdmi_mig_7series_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a200tsbg484-1

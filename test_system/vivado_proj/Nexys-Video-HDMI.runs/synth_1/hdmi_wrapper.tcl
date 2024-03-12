@@ -18,8 +18,6 @@ proc create_report { reportName command } {
   }
 }
 set_msg_config -id {HDL-1065} -limit 10000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a200tsbg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -108,6 +106,12 @@ set_property used_in_implementation false [get_files -all /home/ece532/ECE532/te
 set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_2_1/hdmi_axi_dma_2_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_2_1/hdmi_axi_dma_2_1.xdc]
 set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_2_1/hdmi_axi_dma_2_1_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_3_0/hdmi_axi_dma_3_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_3_0/hdmi_axi_dma_3_0.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_3_0/hdmi_axi_dma_3_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_4_0/hdmi_axi_dma_4_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_4_0/hdmi_axi_dma_4_0.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_4_0/hdmi_axi_dma_4_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_m00_regslice_0/hdmi_m00_regslice_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_m00_regslice_0/hdmi_m00_regslice_0_ooc.xdc]
 set_property used_in_synthesis false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0/hdmi_auto_ds_0_clocks.xdc]
@@ -115,6 +119,18 @@ set_property used_in_implementation false [get_files -all /home/ece532/ECE532/te
 set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0/hdmi_auto_ds_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_rs_w_0/hdmi_auto_rs_w_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_rs_w_0/hdmi_auto_rs_w_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_11/hdmi_auto_us_11_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_11/hdmi_auto_us_11_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_11/hdmi_auto_us_11_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_10/hdmi_auto_us_10_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_10/hdmi_auto_us_10_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_10/hdmi_auto_us_10_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_9/hdmi_auto_us_9_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_9/hdmi_auto_us_9_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_9/hdmi_auto_us_9_ooc.xdc]
+set_property used_in_synthesis false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_8/hdmi_auto_us_8_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_8/hdmi_auto_us_8_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_8/hdmi_auto_us_8_ooc.xdc]
 set_property used_in_synthesis false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_7/hdmi_auto_us_7_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_7/hdmi_auto_us_7_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_us_7/hdmi_auto_us_7_ooc.xdc]

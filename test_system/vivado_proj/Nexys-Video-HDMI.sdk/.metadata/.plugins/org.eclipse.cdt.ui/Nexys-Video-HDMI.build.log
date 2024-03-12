@@ -1,4 +1,4 @@
-23:30:24 **** Build of configuration Debug for project Nexys-Video-HDMI ****
+02:30:51 **** Build of configuration Debug for project Nexys-Video-HDMI ****
 make all 
 Building file: ../video_capture/video_capture.c
 Invoking: MicroBlaze gcc compiler
@@ -49,9 +49,9 @@ Finished building target: Nexys-Video-HDMI.elf
 Invoking: MicroBlaze Print Size
 mb-size Nexys-Video-HDMI.elf  |tee "Nexys-Video-HDMI.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 102120	   1952	18674480	18778552	11e89b8	Nexys-Video-HDMI.elf
+ 102120	   2088	18674480	18778688	11e8a40	Nexys-Video-HDMI.elf
 Finished building: Nexys-Video-HDMI.elf.size
  
 
-23:30:25 Build Finished (took 311ms)
+02:30:51 Build Finished (took 310ms)
 

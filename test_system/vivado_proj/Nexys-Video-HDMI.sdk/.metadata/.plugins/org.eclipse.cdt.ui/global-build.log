@@ -2524,3 +2524,466 @@ Finished building: upscaler.elf.size
 23:32:43 **** Incremental Build of configuration Debug for project upscaler ****
 make all 
 make: Nothing to be done for 'all'.
+02:30:40 **** Auto Build of project Nexys-Video-HDMI_bsp ****
+make -k all 
+Running Make include in microblaze_0/libsrc/axidma_v9_7/src
+make -C microblaze_0/libsrc/axidma_v9_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/axivdma_v6_5/src
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/bram_v4_2/src
+make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/cpu_v2_7/src
+make -C microblaze_0/libsrc/cpu_v2_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/gpio_v4_3/src
+make -C microblaze_0/libsrc/gpio_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/intc_v3_7/src
+make -C microblaze_0/libsrc/intc_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/standalone_v6_7/src
+make -C microblaze_0/libsrc/standalone_v6_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/tmrctr_v4_4/src
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/vtc_v7_2/src
+make -C microblaze_0/libsrc/vtc_v7_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make libs in microblaze_0/libsrc/axidma_v9_7/src
+make -C microblaze_0/libsrc/axidma_v9_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling axidma
+Running Make libs in microblaze_0/libsrc/axivdma_v6_5/src
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling axivdma
+Running Make libs in microblaze_0/libsrc/bram_v4_2/src
+make -C microblaze_0/libsrc/bram_v4_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling bram
+Running Make libs in microblaze_0/libsrc/cpu_v2_7/src
+make -C microblaze_0/libsrc/cpu_v2_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling cpu
+Running Make libs in microblaze_0/libsrc/gpio_v4_3/src
+make -C microblaze_0/libsrc/gpio_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling gpio
+Running Make libs in microblaze_0/libsrc/intc_v3_7/src
+make -C microblaze_0/libsrc/intc_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling intc
+Running Make libs in microblaze_0/libsrc/standalone_v6_7/src
+make -C microblaze_0/libsrc/standalone_v6_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling standalone
+microblaze_sleep.c:69:2: warning: #warning "May wait for more than the specified delay" [-Wcpp]
+ #warning "May wait for more than the specified delay"
+  ^~~~~~~
+Running Make libs in microblaze_0/libsrc/tmrctr_v4_4/src
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling tmrctr
+Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling uartlite
+Running Make libs in microblaze_0/libsrc/vtc_v7_2/src
+make -C microblaze_0/libsrc/vtc_v7_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling video timing controller
+Finished building libraries
+02:30:42 **** Auto Build of configuration Debug for project Nexys-Video-HDMI ****
+make all 
+Building file: ../video_capture/video_capture.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"video_capture/video_capture.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"video_capture/video_capture.d" -MT"video_capture/video_capture.o" -o "video_capture/video_capture.o" "../video_capture/video_capture.c"
+Finished building: ../video_capture/video_capture.c
+ 
+Building file: ../intc/intc.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"intc/intc.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"intc/intc.d" -MT"intc/intc.o" -o "intc/intc.o" "../intc/intc.c"
+Finished building: ../intc/intc.c
+ 
+Building file: ../dynclk/dynclk.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"dynclk/dynclk.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"dynclk/dynclk.d" -MT"dynclk/dynclk.o" -o "dynclk/dynclk.o" "../dynclk/dynclk.c"
+Finished building: ../dynclk/dynclk.c
+ 
+Building file: ../display_ctrl/display_ctrl.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"display_ctrl/display_ctrl.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"display_ctrl/display_ctrl.d" -MT"display_ctrl/display_ctrl.o" -o "display_ctrl/display_ctrl.o" "../display_ctrl/display_ctrl.c"
+Finished building: ../display_ctrl/display_ctrl.c
+ 
+Building file: ../video_demo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"video_demo.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"video_demo.d" -MT"video_demo.o" -o "video_demo.o" "../video_demo.c"
+../video_demo.c: In function 'DemoRun':
+../video_demo.c:334:4: warning: implicit declaration of function 'doDMA' [-Wimplicit-function-declaration]
+    doDMA();
+    ^~~~~
+../video_demo.c: At top level:
+../video_demo.c:358:6: warning: conflicting types for 'doDMA'
+ void doDMA(){
+      ^~~~~
+../video_demo.c:334:4: note: previous implicit declaration of 'doDMA' was here
+    doDMA();
+    ^~~~~
+Finished building: ../video_demo.c
+ 
+Building target: Nexys-Video-HDMI.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../Nexys-Video-HDMI_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "Nexys-Video-HDMI.elf" ./video_capture/video_capture.o  ./timer_ps/timer_ps.o  ./intc/intc.o  ./dynclk/dynclk.o  ./display_ctrl/display_ctrl.o  ./video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: Nexys-Video-HDMI.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size Nexys-Video-HDMI.elf  |tee "Nexys-Video-HDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 102120	   1952	18674480	18778552	11e89b8	Nexys-Video-HDMI.elf
+Finished building: Nexys-Video-HDMI.elf.size
+ 
+02:30:44 **** Auto Build of project upscaler_bsp ****
+make -k all 
+Running Make include in microblaze_0/libsrc/axidma_v9_7/src
+make -C microblaze_0/libsrc/axidma_v9_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/axivdma_v6_5/src
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/bram_v4_2/src
+make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/cpu_v2_7/src
+make -C microblaze_0/libsrc/cpu_v2_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/gpio_v4_3/src
+make -C microblaze_0/libsrc/gpio_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/intc_v3_7/src
+make -C microblaze_0/libsrc/intc_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/standalone_v6_7/src
+make -C microblaze_0/libsrc/standalone_v6_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/tmrctr_v4_4/src
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/vtc_v7_2/src
+make -C microblaze_0/libsrc/vtc_v7_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make libs in microblaze_0/libsrc/axidma_v9_7/src
+make -C microblaze_0/libsrc/axidma_v9_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling axidma
+mb-ar: creating ../../../lib/libxil.a
+Running Make libs in microblaze_0/libsrc/axivdma_v6_5/src
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling axivdma
+Running Make libs in microblaze_0/libsrc/bram_v4_2/src
+make -C microblaze_0/libsrc/bram_v4_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling bram
+Running Make libs in microblaze_0/libsrc/cpu_v2_7/src
+make -C microblaze_0/libsrc/cpu_v2_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling cpu
+Running Make libs in microblaze_0/libsrc/gpio_v4_3/src
+make -C microblaze_0/libsrc/gpio_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling gpio
+Running Make libs in microblaze_0/libsrc/intc_v3_7/src
+make -C microblaze_0/libsrc/intc_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling intc
+Running Make libs in microblaze_0/libsrc/standalone_v6_7/src
+make -C microblaze_0/libsrc/standalone_v6_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling standalone
+microblaze_sleep.c:69:2: warning: #warning "May wait for more than the specified delay" [-Wcpp]
+ #warning "May wait for more than the specified delay"
+  ^~~~~~~
+Running Make libs in microblaze_0/libsrc/tmrctr_v4_4/src
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling tmrctr
+Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling uartlite
+Running Make libs in microblaze_0/libsrc/vtc_v7_2/src
+make -C microblaze_0/libsrc/vtc_v7_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling video timing controller
+Finished building libraries
+02:30:48 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+Building file: ../src/video_capture/video_capture.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_capture/video_capture.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_capture/video_capture.d" -MT"src/video_capture/video_capture.o" -o "src/video_capture/video_capture.o" "../src/video_capture/video_capture.c"
+Finished building: ../src/video_capture/video_capture.c
+ 
+Building file: ../src/intc/intc.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/intc/intc.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/intc/intc.d" -MT"src/intc/intc.o" -o "src/intc/intc.o" "../src/intc/intc.c"
+Finished building: ../src/intc/intc.c
+ 
+Building file: ../src/dynclk/dynclk.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dynclk/dynclk.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dynclk/dynclk.d" -MT"src/dynclk/dynclk.o" -o "src/dynclk/dynclk.o" "../src/dynclk/dynclk.c"
+Finished building: ../src/dynclk/dynclk.c
+ 
+Building file: ../src/display_ctrl/display_ctrl.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_ctrl/display_ctrl.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/display_ctrl/display_ctrl.d" -MT"src/display_ctrl/display_ctrl.o" -o "src/display_ctrl/display_ctrl.o" "../src/display_ctrl/display_ctrl.c"
+Finished building: ../src/display_ctrl/display_ctrl.c
+ 
+Building file: ../src/video_demo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+Finished building: ../src/video_demo.c
+ 
+Building target: upscaler.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf" ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: upscaler.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 102376	   2088	18804368	18908832	12086a0	upscaler.elf
+Finished building: upscaler.elf.size
+ 
+02:30:48 **** Clean-only build of project Nexys-Video-HDMI_bsp ****
+make -k clean 
+make -C microblaze_0/libsrc/axidma_v9_7/src -s clean 
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s clean 
+make -C microblaze_0/libsrc/bram_v4_2/src -s clean 
+make -C microblaze_0/libsrc/cpu_v2_7/src -s clean 
+make -C microblaze_0/libsrc/gpio_v4_3/src -s clean 
+make -C microblaze_0/libsrc/intc_v3_7/src -s clean 
+make -C microblaze_0/libsrc/standalone_v6_7/src -s clean 
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s clean 
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s clean 
+make -C microblaze_0/libsrc/vtc_v7_2/src -s clean 
+rm -f microblaze_0/lib/libxil.a
+02:30:48 **** Clean-only build of project upscaler_bsp ****
+make -k clean 
+make -C microblaze_0/libsrc/axidma_v9_7/src -s clean 
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s clean 
+make -C microblaze_0/libsrc/bram_v4_2/src -s clean 
+make -C microblaze_0/libsrc/cpu_v2_7/src -s clean 
+make -C microblaze_0/libsrc/gpio_v4_3/src -s clean 
+make -C microblaze_0/libsrc/intc_v3_7/src -s clean 
+make -C microblaze_0/libsrc/standalone_v6_7/src -s clean 
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s clean 
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s clean 
+make -C microblaze_0/libsrc/vtc_v7_2/src -s clean 
+rm -f microblaze_0/lib/libxil.a
+02:30:48 **** Clean-only build of configuration Debug for project Nexys-Video-HDMI ****
+make clean 
+rm -rf ./video_capture/video_capture.o  ./timer_ps/timer_ps.o  ./intc/intc.o  ./dynclk/dynclk.o  ./display_ctrl/display_ctrl.o  ./video_demo.o ./video_capture/video_capture.d  ./timer_ps/timer_ps.d  ./intc/intc.d  ./dynclk/dynclk.d  ./display_ctrl/display_ctrl.d  ./video_demo.d Nexys-Video-HDMI.elf.size  Nexys-Video-HDMI.elf
+ 
+02:30:49 **** Build of project Nexys-Video-HDMI_bsp ****
+make -k all 
+Running Make include in microblaze_0/libsrc/axidma_v9_7/src
+make -C microblaze_0/libsrc/axidma_v9_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/axivdma_v6_5/src
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/bram_v4_2/src
+make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/cpu_v2_7/src
+make -C microblaze_0/libsrc/cpu_v2_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/gpio_v4_3/src
+make -C microblaze_0/libsrc/gpio_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/intc_v3_7/src
+make -C microblaze_0/libsrc/intc_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/standalone_v6_7/src
+make -C microblaze_0/libsrc/standalone_v6_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/tmrctr_v4_4/src
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/vtc_v7_2/src
+make -C microblaze_0/libsrc/vtc_v7_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make libs in microblaze_0/libsrc/axidma_v9_7/src
+make -C microblaze_0/libsrc/axidma_v9_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling axidma
+mb-ar: creating ../../../lib/libxil.a
+Running Make libs in microblaze_0/libsrc/axivdma_v6_5/src
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling axivdma
+Running Make libs in microblaze_0/libsrc/bram_v4_2/src
+make -C microblaze_0/libsrc/bram_v4_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling bram
+Running Make libs in microblaze_0/libsrc/cpu_v2_7/src
+make -C microblaze_0/libsrc/cpu_v2_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling cpu
+Running Make libs in microblaze_0/libsrc/gpio_v4_3/src
+make -C microblaze_0/libsrc/gpio_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling gpio
+Running Make libs in microblaze_0/libsrc/intc_v3_7/src
+make -C microblaze_0/libsrc/intc_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling intc
+Running Make libs in microblaze_0/libsrc/standalone_v6_7/src
+make -C microblaze_0/libsrc/standalone_v6_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling standalone
+microblaze_sleep.c:69:2: warning: #warning "May wait for more than the specified delay" [-Wcpp]
+ #warning "May wait for more than the specified delay"
+  ^~~~~~~
+Running Make libs in microblaze_0/libsrc/tmrctr_v4_4/src
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling tmrctr
+Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling uartlite
+Running Make libs in microblaze_0/libsrc/vtc_v7_2/src
+make -C microblaze_0/libsrc/vtc_v7_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling video timing controller
+Finished building libraries
+02:30:50 **** Clean-only build of configuration Debug for project upscaler ****
+make clean 
+rm -rf ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o ./src/video_capture/video_capture.d  ./src/timer_ps/timer_ps.d  ./src/intc/intc.d  ./src/dynclk/dynclk.d  ./src/display_ctrl/display_ctrl.d  ./src/video_demo.d upscaler.elf.size  upscaler.elf
+ 
+02:30:51 **** Build of configuration Debug for project Nexys-Video-HDMI ****
+make all 
+Building file: ../video_capture/video_capture.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"video_capture/video_capture.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"video_capture/video_capture.d" -MT"video_capture/video_capture.o" -o "video_capture/video_capture.o" "../video_capture/video_capture.c"
+Finished building: ../video_capture/video_capture.c
+ 
+Building file: ../timer_ps/timer_ps.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"timer_ps/timer_ps.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"timer_ps/timer_ps.d" -MT"timer_ps/timer_ps.o" -o "timer_ps/timer_ps.o" "../timer_ps/timer_ps.c"
+Finished building: ../timer_ps/timer_ps.c
+ 
+Building file: ../intc/intc.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"intc/intc.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"intc/intc.d" -MT"intc/intc.o" -o "intc/intc.o" "../intc/intc.c"
+Finished building: ../intc/intc.c
+ 
+Building file: ../dynclk/dynclk.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"dynclk/dynclk.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"dynclk/dynclk.d" -MT"dynclk/dynclk.o" -o "dynclk/dynclk.o" "../dynclk/dynclk.c"
+Finished building: ../dynclk/dynclk.c
+ 
+Building file: ../display_ctrl/display_ctrl.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"display_ctrl/display_ctrl.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"display_ctrl/display_ctrl.d" -MT"display_ctrl/display_ctrl.o" -o "display_ctrl/display_ctrl.o" "../display_ctrl/display_ctrl.c"
+Finished building: ../display_ctrl/display_ctrl.c
+ 
+Building file: ../video_demo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"video_demo.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"video_demo.d" -MT"video_demo.o" -o "video_demo.o" "../video_demo.c"
+../video_demo.c: In function 'DemoRun':
+../video_demo.c:334:4: warning: implicit declaration of function 'doDMA' [-Wimplicit-function-declaration]
+    doDMA();
+    ^~~~~
+../video_demo.c: At top level:
+../video_demo.c:358:6: warning: conflicting types for 'doDMA'
+ void doDMA(){
+      ^~~~~
+../video_demo.c:334:4: note: previous implicit declaration of 'doDMA' was here
+    doDMA();
+    ^~~~~
+Finished building: ../video_demo.c
+ 
+Building target: Nexys-Video-HDMI.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../Nexys-Video-HDMI_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "Nexys-Video-HDMI.elf" ./video_capture/video_capture.o  ./timer_ps/timer_ps.o  ./intc/intc.o  ./dynclk/dynclk.o  ./display_ctrl/display_ctrl.o  ./video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: Nexys-Video-HDMI.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size Nexys-Video-HDMI.elf  |tee "Nexys-Video-HDMI.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 102120	   2088	18674480	18778688	11e8a40	Nexys-Video-HDMI.elf
+Finished building: Nexys-Video-HDMI.elf.size
+ 
+02:30:51 **** Build of project upscaler_bsp ****
+make -k all 
+Running Make include in microblaze_0/libsrc/axidma_v9_7/src
+make -C microblaze_0/libsrc/axidma_v9_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/axivdma_v6_5/src
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/bram_v4_2/src
+make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/cpu_v2_7/src
+make -C microblaze_0/libsrc/cpu_v2_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/gpio_v4_3/src
+make -C microblaze_0/libsrc/gpio_v4_3/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/intc_v3_7/src
+make -C microblaze_0/libsrc/intc_v3_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/standalone_v6_7/src
+make -C microblaze_0/libsrc/standalone_v6_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/tmrctr_v4_4/src
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make include in microblaze_0/libsrc/vtc_v7_2/src
+make -C microblaze_0/libsrc/vtc_v7_2/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Running Make libs in microblaze_0/libsrc/axidma_v9_7/src
+make -C microblaze_0/libsrc/axidma_v9_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling axidma
+mb-ar: creating ../../../lib/libxil.a
+Running Make libs in microblaze_0/libsrc/axivdma_v6_5/src
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling axivdma
+Running Make libs in microblaze_0/libsrc/bram_v4_2/src
+make -C microblaze_0/libsrc/bram_v4_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling bram
+Running Make libs in microblaze_0/libsrc/cpu_v2_7/src
+make -C microblaze_0/libsrc/cpu_v2_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling cpu
+Running Make libs in microblaze_0/libsrc/gpio_v4_3/src
+make -C microblaze_0/libsrc/gpio_v4_3/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling gpio
+Running Make libs in microblaze_0/libsrc/intc_v3_7/src
+make -C microblaze_0/libsrc/intc_v3_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling intc
+Running Make libs in microblaze_0/libsrc/standalone_v6_7/src
+make -C microblaze_0/libsrc/standalone_v6_7/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling standalone
+microblaze_sleep.c:69:2: warning: #warning "May wait for more than the specified delay" [-Wcpp]
+ #warning "May wait for more than the specified delay"
+  ^~~~~~~
+Running Make libs in microblaze_0/libsrc/tmrctr_v4_4/src
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling tmrctr
+Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling uartlite
+Running Make libs in microblaze_0/libsrc/vtc_v7_2/src
+make -C microblaze_0/libsrc/vtc_v7_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+Compiling video timing controller
+Finished building libraries
+02:30:53 **** Build of configuration Debug for project upscaler ****
+make all 
+Building file: ../src/video_capture/video_capture.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_capture/video_capture.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_capture/video_capture.d" -MT"src/video_capture/video_capture.o" -o "src/video_capture/video_capture.o" "../src/video_capture/video_capture.c"
+Finished building: ../src/video_capture/video_capture.c
+ 
+Building file: ../src/timer_ps/timer_ps.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/timer_ps/timer_ps.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timer_ps/timer_ps.d" -MT"src/timer_ps/timer_ps.o" -o "src/timer_ps/timer_ps.o" "../src/timer_ps/timer_ps.c"
+Finished building: ../src/timer_ps/timer_ps.c
+ 
+Building file: ../src/intc/intc.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/intc/intc.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/intc/intc.d" -MT"src/intc/intc.o" -o "src/intc/intc.o" "../src/intc/intc.c"
+Finished building: ../src/intc/intc.c
+ 
+Building file: ../src/dynclk/dynclk.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dynclk/dynclk.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dynclk/dynclk.d" -MT"src/dynclk/dynclk.o" -o "src/dynclk/dynclk.o" "../src/dynclk/dynclk.c"
+Finished building: ../src/dynclk/dynclk.c
+ 
+Building file: ../src/display_ctrl/display_ctrl.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_ctrl/display_ctrl.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/display_ctrl/display_ctrl.d" -MT"src/display_ctrl/display_ctrl.o" -o "src/display_ctrl/display_ctrl.o" "../src/display_ctrl/display_ctrl.c"
+Finished building: ../src/display_ctrl/display_ctrl.c
+ 
+Building file: ../src/video_demo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+Finished building: ../src/video_demo.c
+ 
+Building target: upscaler.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf" ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: upscaler.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 102376	   2088	18804368	18908832	12086a0	upscaler.elf
+Finished building: upscaler.elf.size
+ 
+02:31:43 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+Building file: ../src/video_demo.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+Finished building: ../src/video_demo.c
+ 
+Building target: upscaler.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf" ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: upscaler.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 102432	   2088	18804368	18908888	12086d8	upscaler.elf
+Finished building: upscaler.elf.size
+ 

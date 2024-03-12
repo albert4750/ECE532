@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1709525827">
+<GenRun Id="synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1710223501">
   <File Type="VDS-TIMING-PB" Name="hdmi_wrapper_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="hdmi_wrapper_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="hdmi_wrapper.dcp"/>
@@ -66,13 +66,18 @@
   <Strategy Version="1" Minor="2">
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design">
+      <Option Id="Directive">0</Option>
       <Option Id="FlattenHierarchy">1</Option>
       <Option Id="FsmExtraction">0</Option>
-      <Option Id="Directive">0</Option>
     </Step>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_brightening_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_mig_7series_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_xlconstant_1_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_convolve_rgb_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_gaussian_blur_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_rgb2stream_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_stream2rgb_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_brightening_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_xlconstant_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_xbar_1"/>
 </GenRun>

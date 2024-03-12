@@ -259,7 +259,7 @@ proc write_mig_file_hdmi_mig_7series_0_0 { str_mig_prj_filepath } {
    puts $mig_prj_file {            <C0_S_AXI_ADDR_WIDTH>29</C0_S_AXI_ADDR_WIDTH>}
    puts $mig_prj_file {            <C0_S_AXI_DATA_WIDTH>128</C0_S_AXI_DATA_WIDTH>}
    puts $mig_prj_file {            <C0_S_AXI_ID_WIDTH>4</C0_S_AXI_ID_WIDTH>}
-   puts $mig_prj_file {            <C0_S_AXI_SUPPORTS_NARROW_BURST>1</C0_S_AXI_SUPPORTS_NARROW_BURST>}
+   puts $mig_prj_file {            <C0_S_AXI_SUPPORTS_NARROW_BURST>0</C0_S_AXI_SUPPORTS_NARROW_BURST>}
    puts $mig_prj_file {        </AXIParameters>}
    puts $mig_prj_file {    </Controller>}
    puts $mig_prj_file {</Project>}
@@ -467,6 +467,28 @@ proc create_root_design { parentCell } {
    CONFIG.c_sg_length_width {23} \
  ] $axi_dma_3
 
+  # Create instance: axi_dma_4, and set properties
+  set axi_dma_4 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_4 ]
+  set_property -dict [ list \
+   CONFIG.c_include_sg {0} \
+   CONFIG.c_m_axi_mm2s_data_width {128} \
+   CONFIG.c_m_axis_mm2s_tdata_width {128} \
+   CONFIG.c_mm2s_burst_size {16} \
+   CONFIG.c_sg_include_stscntrl_strm {0} \
+   CONFIG.c_sg_length_width {23} \
+ ] $axi_dma_4
+
+  # Create instance: axi_dma_5, and set properties
+  set axi_dma_5 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_5 ]
+  set_property -dict [ list \
+   CONFIG.c_include_sg {0} \
+   CONFIG.c_m_axi_mm2s_data_width {128} \
+   CONFIG.c_m_axis_mm2s_tdata_width {128} \
+   CONFIG.c_mm2s_burst_size {16} \
+   CONFIG.c_sg_include_stscntrl_strm {0} \
+   CONFIG.c_sg_length_width {23} \
+ ] $axi_dma_5
+
   # Create instance: axi_dynclk_0, and set properties
   set axi_dynclk_0 [ create_bd_cell -type ip -vlnv digilentinc.com:ip:axi_dynclk:1.0 axi_dynclk_0 ]
   set_property -dict [ list \
@@ -492,7 +514,7 @@ proc create_root_design { parentCell } {
    CONFIG.M00_HAS_DATA_FIFO {0} \
    CONFIG.M00_HAS_REGSLICE {4} \
    CONFIG.NUM_MI {1} \
-   CONFIG.NUM_SI {13} \
+   CONFIG.NUM_SI {16} \
    CONFIG.S00_HAS_DATA_FIFO {0} \
    CONFIG.S00_HAS_REGSLICE {4} \
    CONFIG.S01_HAS_DATA_FIFO {0} \
@@ -543,6 +565,15 @@ proc create_root_design { parentCell } {
    CONFIG.kEdidFileName {dgl_720p_cea.data} \
    CONFIG.kRstActiveHigh {false} \
  ] $dvi2rgb_0
+
+  # Create instance: gaussian_blur, and set properties
+  set gaussian_blur [ create_bd_cell -type ip -vlnv ece532.group3.org:ece532:convolve_rgb:1.5 gaussian_blur ]
+  set_property -dict [ list \
+   CONFIG.HEIGHT {480} \
+   CONFIG.KERNEL_SIZE {7} \
+   CONFIG.RIGHT_SHIFT {8} \
+   CONFIG.WIDTH {640} \
+ ] $gaussian_blur
 
   # Create instance: grayscale_0, and set properties
   set grayscale_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:grayscale:1.0 grayscale_0 ]
@@ -596,7 +627,7 @@ proc create_root_design { parentCell } {
   # Create instance: microblaze_0_axi_periph, and set properties
   set microblaze_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 microblaze_0_axi_periph ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {12} \
+   CONFIG.NUM_MI {14} \
    CONFIG.SYNCHRONIZATION_STAGES {2} \
  ] $microblaze_0_axi_periph
 
@@ -645,6 +676,12 @@ proc create_root_design { parentCell } {
   # Create instance: rgb2stream_1, and set properties
   set rgb2stream_1 [ create_bd_cell -type ip -vlnv xilinx.com:user:rgb2stream:1.0 rgb2stream_1 ]
 
+  # Create instance: rgb2stream_2, and set properties
+  set rgb2stream_2 [ create_bd_cell -type ip -vlnv xilinx.com:user:rgb2stream:1.0 rgb2stream_2 ]
+
+  # Create instance: rgb2stream_3, and set properties
+  set rgb2stream_3 [ create_bd_cell -type ip -vlnv xilinx.com:user:rgb2stream:1.0 rgb2stream_3 ]
+
   # Create instance: rst_mig_7series_0_100M, and set properties
   set rst_mig_7series_0_100M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_mig_7series_0_100M ]
 
@@ -655,11 +692,26 @@ proc create_root_design { parentCell } {
    CONFIG.USE_BOARD_FLOW {true} \
  ] $rst_mig_7series_0_pxl
 
+  # Create instance: sharpening, and set properties
+  set sharpening [ create_bd_cell -type ip -vlnv ece532.group3.org:ece532:convolve_rgb:1.5 sharpening ]
+  set_property -dict [ list \
+   CONFIG.HEIGHT {480} \
+   CONFIG.KERNEL_SIZE {7} \
+   CONFIG.RIGHT_SHIFT {8} \
+   CONFIG.WIDTH {640} \
+ ] $sharpening
+
   # Create instance: stream2rgb_0, and set properties
   set stream2rgb_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:stream2rgb:1.0 stream2rgb_0 ]
 
   # Create instance: stream2rgb_1, and set properties
   set stream2rgb_1 [ create_bd_cell -type ip -vlnv xilinx.com:user:stream2rgb:1.0 stream2rgb_1 ]
+
+  # Create instance: stream2rgb_2, and set properties
+  set stream2rgb_2 [ create_bd_cell -type ip -vlnv xilinx.com:user:stream2rgb:1.0 stream2rgb_2 ]
+
+  # Create instance: stream2rgb_3, and set properties
+  set stream2rgb_3 [ create_bd_cell -type ip -vlnv xilinx.com:user:stream2rgb:1.0 stream2rgb_3 ]
 
   # Create instance: v_axi4s_vid_out_0, and set properties
   set v_axi4s_vid_out_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_axi4s_vid_out:4.0 v_axi4s_vid_out_0 ]
@@ -696,6 +748,20 @@ proc create_root_design { parentCell } {
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
 
+  # Create instance: xlconstant_1, and set properties
+  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {12083027192394580369676539153824738902565052899131909986823156714753829808477711289008793077606449199740384471846154277995531650352763244852490915379699595239373067846902644717170311406959521844554441335537242082533994831308778604786389378839985428097550619584139046190758576825069661896744453326517189382520900828504482599249332474395087947966922526933005150876965784950034796354589942939585048204163495435011886635801191755431381979432382424016241884460445274552659063973098788927287117537849505299914398989533210108717310304344442040405039861328860747418372707323258972306842306806030816641547642323092002304073505761643890623896734966376449504043716390972234257529018513068871044470478893020159081735055346611023653105906970994941035467383387194989875907649531214999856554886676173009958808151805736240189477294215621326895906704222674612541998389028612358602559284190592682109664850874698803219068981183996955611802341045399090562115367775040090409900180397638434007350281679196547367076900418658006650659793508958259997074481474329198247964588969323060023034790432090177980852756869942953637200339487348647056321165526511305742212932470781427193445501652937031130976870257383425336969217} \
+   CONFIG.CONST_WIDTH {3969} \
+ ] $xlconstant_1
+
+  # Create instance: xlconstant_2, and set properties
+  set xlconstant_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {23416008396451767694234424174042294531775867623104313777731371258318286225658879591539960041603746101226924585782363101218899463759313110282127457121086571663253696289639878580877322565535655954583010555259069019847414827139747527611208214968177749570145912872676483921953843759525464594019311011922980493051944667308074082641843647958006718993980196789309913064846575391456921559951600818088268995450748656457071973071886563155795110173356099743797619060924777577818151173983974611887240201245376954525599828548658937938838612013886319757922878086462613607574586276090434716809656031452483306110191941908183276564743515686876922049343102117455926481297275154714126890072093594493106584649733735102422557473711064022751578768904714334315667960253856249240818206772677046881698603215639200595398064444653817923211546103616907741387253605558682424937297287388143505259599394676132540015829592616896563654280882366899408490009561098988904514443570718264993779600859611909632655306978016965194972172373910445924033494141171636890136121495828004751035754743684896224575981626317148428404465629161455967003133592314607543575101185786754211079140753299339792889978694052082413327463074727366230016} \
+   CONFIG.CONST_WIDTH {3969} \
+ ] $xlconstant_2
+
   # Create interface connections
   connect_bd_intf_net -intf_net TMDS_IN_1 [get_bd_intf_ports TMDS_IN] [get_bd_intf_pins dvi2rgb_0/TMDS]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S] [get_bd_intf_pins passthrough_0/s_axis]
@@ -710,6 +776,12 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_dma_3_M_AXIS_MM2S [get_bd_intf_pins axi_dma_3/M_AXIS_MM2S] [get_bd_intf_pins stream2rgb_1/s_axis]
   connect_bd_intf_net -intf_net axi_dma_3_M_AXI_MM2S [get_bd_intf_pins axi_dma_3/M_AXI_MM2S] [get_bd_intf_pins axi_mem_intercon/S10_AXI]
   connect_bd_intf_net -intf_net axi_dma_3_M_AXI_S2MM [get_bd_intf_pins axi_dma_3/M_AXI_S2MM] [get_bd_intf_pins axi_mem_intercon/S11_AXI]
+  connect_bd_intf_net -intf_net axi_dma_4_M_AXIS_MM2S [get_bd_intf_pins axi_dma_4/M_AXIS_MM2S] [get_bd_intf_pins stream2rgb_2/s_axis]
+  connect_bd_intf_net -intf_net axi_dma_4_M_AXI_MM2S [get_bd_intf_pins axi_dma_4/M_AXI_MM2S] [get_bd_intf_pins axi_mem_intercon/S12_AXI]
+  connect_bd_intf_net -intf_net axi_dma_4_M_AXI_S2MM [get_bd_intf_pins axi_dma_4/M_AXI_S2MM] [get_bd_intf_pins axi_mem_intercon/S13_AXI]
+  connect_bd_intf_net -intf_net axi_dma_5_M_AXIS_MM2S [get_bd_intf_pins axi_dma_5/M_AXIS_MM2S] [get_bd_intf_pins stream2rgb_3/s_axis]
+  connect_bd_intf_net -intf_net axi_dma_5_M_AXI_MM2S [get_bd_intf_pins axi_dma_5/M_AXI_MM2S] [get_bd_intf_pins axi_mem_intercon/S14_AXI]
+  connect_bd_intf_net -intf_net axi_dma_5_M_AXI_S2MM [get_bd_intf_pins axi_dma_5/M_AXI_S2MM] [get_bd_intf_pins axi_mem_intercon/S15_AXI]
   connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins axi_mem_intercon/M00_AXI] [get_bd_intf_pins mig_7series_0/S_AXI]
   connect_bd_intf_net -intf_net axi_uartlite_0_UART [get_bd_intf_ports usb_uart] [get_bd_intf_pins axi_uartlite_0/UART]
   connect_bd_intf_net -intf_net axi_vdma_0_M_AXIS_MM2S [get_bd_intf_pins axi_vdma_0/M_AXIS_MM2S] [get_bd_intf_pins v_axi4s_vid_out_0/video_in]
@@ -732,6 +804,8 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M09_AXI [get_bd_intf_pins axi_dma_1/S_AXI_LITE] [get_bd_intf_pins microblaze_0_axi_periph/M09_AXI]
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M10_AXI [get_bd_intf_pins axi_dma_2/S_AXI_LITE] [get_bd_intf_pins microblaze_0_axi_periph/M10_AXI]
   connect_bd_intf_net -intf_net microblaze_0_axi_periph_M11_AXI [get_bd_intf_pins axi_dma_3/S_AXI_LITE] [get_bd_intf_pins microblaze_0_axi_periph/M11_AXI]
+  connect_bd_intf_net -intf_net microblaze_0_axi_periph_M12_AXI [get_bd_intf_pins axi_dma_4/S_AXI_LITE] [get_bd_intf_pins microblaze_0_axi_periph/M12_AXI]
+  connect_bd_intf_net -intf_net microblaze_0_axi_periph_M13_AXI [get_bd_intf_pins axi_dma_5/S_AXI_LITE] [get_bd_intf_pins microblaze_0_axi_periph/M13_AXI]
   connect_bd_intf_net -intf_net microblaze_0_debug [get_bd_intf_pins mdm_1/MBDEBUG_0] [get_bd_intf_pins microblaze_0/DEBUG]
   connect_bd_intf_net -intf_net microblaze_0_dlmb_1 [get_bd_intf_pins microblaze_0/DLMB] [get_bd_intf_pins microblaze_0_local_memory/DLMB]
   connect_bd_intf_net -intf_net microblaze_0_ilmb_1 [get_bd_intf_pins microblaze_0/ILMB] [get_bd_intf_pins microblaze_0_local_memory/ILMB]
@@ -742,6 +816,8 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net rgb2dvi_0_TMDS [get_bd_intf_ports TMDS_OUT] [get_bd_intf_pins rgb2dvi_0/TMDS]
   connect_bd_intf_net -intf_net rgb2stream_0_m_axis [get_bd_intf_pins axi_dma_2/S_AXIS_S2MM] [get_bd_intf_pins rgb2stream_0/m_axis]
   connect_bd_intf_net -intf_net rgb2stream_1_m_axis [get_bd_intf_pins axi_dma_3/S_AXIS_S2MM] [get_bd_intf_pins rgb2stream_1/m_axis]
+  connect_bd_intf_net -intf_net rgb2stream_2_m_axis [get_bd_intf_pins axi_dma_4/S_AXIS_S2MM] [get_bd_intf_pins rgb2stream_2/m_axis]
+  connect_bd_intf_net -intf_net rgb2stream_3_m_axis [get_bd_intf_pins axi_dma_5/S_AXIS_S2MM] [get_bd_intf_pins rgb2stream_3/m_axis]
   connect_bd_intf_net -intf_net v_axi4s_vid_out_0_vid_io_out [get_bd_intf_pins rgb2dvi_0/RGB] [get_bd_intf_pins v_axi4s_vid_out_0/vid_io_out]
   connect_bd_intf_net -intf_net v_tc_0_vtiming_out [get_bd_intf_pins v_axi4s_vid_out_0/vtiming_in] [get_bd_intf_pins v_tc_0/vtiming_out]
   connect_bd_intf_net -intf_net v_vid_in_axi4s_0_video_out [get_bd_intf_pins axi_vdma_0/S_AXIS_S2MM] [get_bd_intf_pins v_vid_in_axi4s_0/video_out]
@@ -762,6 +838,12 @@ proc create_root_design { parentCell } {
   connect_bd_net -net brightening_0_out_r [get_bd_pins brightening_0/out_r] [get_bd_pins rgb2stream_1/r]
   connect_bd_net -net brightening_0_out_rgb_last [get_bd_pins brightening_0/out_rgb_last] [get_bd_pins rgb2stream_1/rgb_last]
   connect_bd_net -net brightening_0_out_rgb_valid [get_bd_pins brightening_0/out_rgb_valid] [get_bd_pins rgb2stream_1/rgb_valid]
+  connect_bd_net -net convolve_rgb_0_master_blue_o [get_bd_pins gaussian_blur/master_blue_o] [get_bd_pins rgb2stream_2/b]
+  connect_bd_net -net convolve_rgb_0_master_green_o [get_bd_pins gaussian_blur/master_green_o] [get_bd_pins rgb2stream_2/g]
+  connect_bd_net -net convolve_rgb_0_master_red_o [get_bd_pins gaussian_blur/master_red_o] [get_bd_pins rgb2stream_2/r]
+  connect_bd_net -net convolve_rgb_0_master_tlast_o [get_bd_pins gaussian_blur/master_tlast_o] [get_bd_pins rgb2stream_2/rgb_last]
+  connect_bd_net -net convolve_rgb_0_master_tvalid_o [get_bd_pins gaussian_blur/master_tvalid_o] [get_bd_pins rgb2stream_2/rgb_valid]
+  connect_bd_net -net convolve_rgb_0_slave_tready_o [get_bd_pins gaussian_blur/slave_tready_o] [get_bd_pins stream2rgb_2/rgb_ready]
   connect_bd_net -net dvi2rgb_0_PixelClk [get_bd_pins dvi2rgb_0/PixelClk] [get_bd_pins rst_mig_7series_0_pxl/slowest_sync_clk] [get_bd_pins v_tc_1/clk] [get_bd_pins v_vid_in_axi4s_0/vid_io_in_clk]
   connect_bd_net -net dvi2rgb_0_aPixelClkLckd [get_bd_pins axi_gpio_video/gpio2_io_i] [get_bd_pins dvi2rgb_0/pLocked] [get_bd_pins rst_mig_7series_0_pxl/dcm_locked]
   connect_bd_net -net grayscale_0_in_rgb_ready [get_bd_pins grayscale_0/in_rgb_ready] [get_bd_pins stream2rgb_0/rgb_ready]
@@ -774,16 +856,24 @@ proc create_root_design { parentCell } {
   connect_bd_net -net mig_7series_0_mmcm_locked [get_bd_pins dvi2rgb_0/aRst_n] [get_bd_pins mig_7series_0/mmcm_locked] [get_bd_pins rst_mig_7series_0_100M/dcm_locked]
   connect_bd_net -net mig_7series_0_ui_addn_clk_0 [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk] [get_bd_pins mig_7series_0/ui_addn_clk_0] [get_bd_pins v_vid_in_axi4s_0/aclk]
   connect_bd_net -net mig_7series_0_ui_addn_clk_2 [get_bd_pins dvi2rgb_0/RefClk] [get_bd_pins mig_7series_0/clk_ref_i] [get_bd_pins mig_7series_0/ui_addn_clk_1]
-  connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_dma_1/m_axi_mm2s_aclk] [get_bd_pins axi_dma_1/m_axi_s2mm_aclk] [get_bd_pins axi_dma_1/s_axi_lite_aclk] [get_bd_pins axi_dma_2/m_axi_mm2s_aclk] [get_bd_pins axi_dma_2/m_axi_s2mm_aclk] [get_bd_pins axi_dma_2/s_axi_lite_aclk] [get_bd_pins axi_dma_3/m_axi_mm2s_aclk] [get_bd_pins axi_dma_3/m_axi_s2mm_aclk] [get_bd_pins axi_dma_3/s_axi_lite_aclk] [get_bd_pins axi_dynclk_0/REF_CLK_I] [get_bd_pins axi_dynclk_0/s00_axi_aclk] [get_bd_pins axi_gpio_video/s_axi_aclk] [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins axi_mem_intercon/S01_ACLK] [get_bd_pins axi_mem_intercon/S02_ACLK] [get_bd_pins axi_mem_intercon/S03_ACLK] [get_bd_pins axi_mem_intercon/S04_ACLK] [get_bd_pins axi_mem_intercon/S05_ACLK] [get_bd_pins axi_mem_intercon/S06_ACLK] [get_bd_pins axi_mem_intercon/S07_ACLK] [get_bd_pins axi_mem_intercon/S08_ACLK] [get_bd_pins axi_mem_intercon/S09_ACLK] [get_bd_pins axi_mem_intercon/S10_ACLK] [get_bd_pins axi_mem_intercon/S11_ACLK] [get_bd_pins axi_mem_intercon/S12_ACLK] [get_bd_pins axi_timer_0/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk] [get_bd_pins brightening_0/clk] [get_bd_pins grayscale_0/clk] [get_bd_pins grayscale_top_0/axi_clk] [get_bd_pins microblaze_0/Clk] [get_bd_pins microblaze_0_axi_intc/processor_clk] [get_bd_pins microblaze_0_axi_intc/s_axi_aclk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/M02_ACLK] [get_bd_pins microblaze_0_axi_periph/M03_ACLK] [get_bd_pins microblaze_0_axi_periph/M04_ACLK] [get_bd_pins microblaze_0_axi_periph/M05_ACLK] [get_bd_pins microblaze_0_axi_periph/M06_ACLK] [get_bd_pins microblaze_0_axi_periph/M07_ACLK] [get_bd_pins microblaze_0_axi_periph/M08_ACLK] [get_bd_pins microblaze_0_axi_periph/M09_ACLK] [get_bd_pins microblaze_0_axi_periph/M10_ACLK] [get_bd_pins microblaze_0_axi_periph/M11_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_local_memory/LMB_Clk] [get_bd_pins mig_7series_0/ui_clk] [get_bd_pins passthrough_0/axi_clk] [get_bd_pins rgb2stream_0/axi_clk] [get_bd_pins rgb2stream_1/axi_clk] [get_bd_pins rst_mig_7series_0_100M/slowest_sync_clk] [get_bd_pins stream2rgb_0/axi_clk] [get_bd_pins stream2rgb_1/axi_clk] [get_bd_pins v_tc_0/s_axi_aclk] [get_bd_pins v_tc_1/s_axi_aclk]
+  connect_bd_net -net mig_7series_0_ui_clk [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_dma_1/m_axi_mm2s_aclk] [get_bd_pins axi_dma_1/m_axi_s2mm_aclk] [get_bd_pins axi_dma_1/s_axi_lite_aclk] [get_bd_pins axi_dma_2/m_axi_mm2s_aclk] [get_bd_pins axi_dma_2/m_axi_s2mm_aclk] [get_bd_pins axi_dma_2/s_axi_lite_aclk] [get_bd_pins axi_dma_3/m_axi_mm2s_aclk] [get_bd_pins axi_dma_3/m_axi_s2mm_aclk] [get_bd_pins axi_dma_3/s_axi_lite_aclk] [get_bd_pins axi_dma_4/m_axi_mm2s_aclk] [get_bd_pins axi_dma_4/m_axi_s2mm_aclk] [get_bd_pins axi_dma_4/s_axi_lite_aclk] [get_bd_pins axi_dma_5/m_axi_mm2s_aclk] [get_bd_pins axi_dma_5/m_axi_s2mm_aclk] [get_bd_pins axi_dma_5/s_axi_lite_aclk] [get_bd_pins axi_dynclk_0/REF_CLK_I] [get_bd_pins axi_dynclk_0/s00_axi_aclk] [get_bd_pins axi_gpio_video/s_axi_aclk] [get_bd_pins axi_mem_intercon/ACLK] [get_bd_pins axi_mem_intercon/M00_ACLK] [get_bd_pins axi_mem_intercon/S00_ACLK] [get_bd_pins axi_mem_intercon/S01_ACLK] [get_bd_pins axi_mem_intercon/S02_ACLK] [get_bd_pins axi_mem_intercon/S03_ACLK] [get_bd_pins axi_mem_intercon/S04_ACLK] [get_bd_pins axi_mem_intercon/S05_ACLK] [get_bd_pins axi_mem_intercon/S06_ACLK] [get_bd_pins axi_mem_intercon/S07_ACLK] [get_bd_pins axi_mem_intercon/S08_ACLK] [get_bd_pins axi_mem_intercon/S09_ACLK] [get_bd_pins axi_mem_intercon/S10_ACLK] [get_bd_pins axi_mem_intercon/S11_ACLK] [get_bd_pins axi_mem_intercon/S12_ACLK] [get_bd_pins axi_mem_intercon/S13_ACLK] [get_bd_pins axi_mem_intercon/S14_ACLK] [get_bd_pins axi_mem_intercon/S15_ACLK] [get_bd_pins axi_timer_0/s_axi_aclk] [get_bd_pins axi_uartlite_0/s_axi_aclk] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk] [get_bd_pins brightening_0/clk] [get_bd_pins gaussian_blur/clock_i] [get_bd_pins grayscale_0/clk] [get_bd_pins grayscale_top_0/axi_clk] [get_bd_pins microblaze_0/Clk] [get_bd_pins microblaze_0_axi_intc/processor_clk] [get_bd_pins microblaze_0_axi_intc/s_axi_aclk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/M02_ACLK] [get_bd_pins microblaze_0_axi_periph/M03_ACLK] [get_bd_pins microblaze_0_axi_periph/M04_ACLK] [get_bd_pins microblaze_0_axi_periph/M05_ACLK] [get_bd_pins microblaze_0_axi_periph/M06_ACLK] [get_bd_pins microblaze_0_axi_periph/M07_ACLK] [get_bd_pins microblaze_0_axi_periph/M08_ACLK] [get_bd_pins microblaze_0_axi_periph/M09_ACLK] [get_bd_pins microblaze_0_axi_periph/M10_ACLK] [get_bd_pins microblaze_0_axi_periph/M11_ACLK] [get_bd_pins microblaze_0_axi_periph/M12_ACLK] [get_bd_pins microblaze_0_axi_periph/M13_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_local_memory/LMB_Clk] [get_bd_pins mig_7series_0/ui_clk] [get_bd_pins passthrough_0/axi_clk] [get_bd_pins rgb2stream_0/axi_clk] [get_bd_pins rgb2stream_1/axi_clk] [get_bd_pins rgb2stream_2/axi_clk] [get_bd_pins rgb2stream_3/axi_clk] [get_bd_pins rst_mig_7series_0_100M/slowest_sync_clk] [get_bd_pins sharpening/clock_i] [get_bd_pins stream2rgb_0/axi_clk] [get_bd_pins stream2rgb_1/axi_clk] [get_bd_pins stream2rgb_2/axi_clk] [get_bd_pins stream2rgb_3/axi_clk] [get_bd_pins v_tc_0/s_axi_aclk] [get_bd_pins v_tc_1/s_axi_aclk]
   connect_bd_net -net mig_7series_0_ui_clk_sync_rst [get_bd_pins mig_7series_0/ui_clk_sync_rst] [get_bd_pins rst_mig_7series_0_100M/ext_reset_in]
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins rst_mig_7series_0_pxl/ext_reset_in]
   connect_bd_net -net rgb2stream_0_rgb_ready [get_bd_pins grayscale_0/out_rgb_ready] [get_bd_pins rgb2stream_0/rgb_ready]
   connect_bd_net -net rgb2stream_1_rgb_ready [get_bd_pins brightening_0/out_rgb_ready] [get_bd_pins rgb2stream_1/rgb_ready]
+  connect_bd_net -net rgb2stream_2_rgb_ready [get_bd_pins gaussian_blur/master_tready_i] [get_bd_pins rgb2stream_2/rgb_ready]
+  connect_bd_net -net rgb2stream_3_rgb_ready [get_bd_pins rgb2stream_3/rgb_ready] [get_bd_pins sharpening/master_tready_i]
   connect_bd_net -net rst_mig_7series_0_100M_interconnect_aresetn [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins microblaze_0_axi_periph/ARESETN] [get_bd_pins rst_mig_7series_0_100M/interconnect_aresetn]
   connect_bd_net -net rst_mig_7series_0_100M_mb_reset [get_bd_pins microblaze_0/Reset] [get_bd_pins microblaze_0_axi_intc/processor_rst] [get_bd_pins rst_mig_7series_0_100M/mb_reset]
-  connect_bd_net -net rst_mig_7series_0_100M_peripheral_aresetn [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_dma_1/axi_resetn] [get_bd_pins axi_dma_2/axi_resetn] [get_bd_pins axi_dma_3/axi_resetn] [get_bd_pins axi_dynclk_0/s00_axi_aresetn] [get_bd_pins axi_gpio_video/s_axi_aresetn] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins axi_mem_intercon/S01_ARESETN] [get_bd_pins axi_mem_intercon/S02_ARESETN] [get_bd_pins axi_mem_intercon/S03_ARESETN] [get_bd_pins axi_mem_intercon/S04_ARESETN] [get_bd_pins axi_mem_intercon/S05_ARESETN] [get_bd_pins axi_mem_intercon/S06_ARESETN] [get_bd_pins axi_mem_intercon/S07_ARESETN] [get_bd_pins axi_mem_intercon/S08_ARESETN] [get_bd_pins axi_mem_intercon/S09_ARESETN] [get_bd_pins axi_mem_intercon/S10_ARESETN] [get_bd_pins axi_mem_intercon/S11_ARESETN] [get_bd_pins axi_mem_intercon/S12_ARESETN] [get_bd_pins axi_timer_0/s_axi_aresetn] [get_bd_pins axi_uartlite_0/s_axi_aresetn] [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins brightening_0/reset_n] [get_bd_pins grayscale_0/reset_n] [get_bd_pins grayscale_top_0/reset_n] [get_bd_pins microblaze_0_axi_intc/s_axi_aresetn] [get_bd_pins microblaze_0_axi_periph/M00_ARESETN] [get_bd_pins microblaze_0_axi_periph/M01_ARESETN] [get_bd_pins microblaze_0_axi_periph/M02_ARESETN] [get_bd_pins microblaze_0_axi_periph/M03_ARESETN] [get_bd_pins microblaze_0_axi_periph/M04_ARESETN] [get_bd_pins microblaze_0_axi_periph/M05_ARESETN] [get_bd_pins microblaze_0_axi_periph/M06_ARESETN] [get_bd_pins microblaze_0_axi_periph/M07_ARESETN] [get_bd_pins microblaze_0_axi_periph/M08_ARESETN] [get_bd_pins microblaze_0_axi_periph/M09_ARESETN] [get_bd_pins microblaze_0_axi_periph/M10_ARESETN] [get_bd_pins microblaze_0_axi_periph/M11_ARESETN] [get_bd_pins microblaze_0_axi_periph/S00_ARESETN] [get_bd_pins mig_7series_0/aresetn] [get_bd_pins passthrough_0/reset] [get_bd_pins rgb2stream_0/reset_n] [get_bd_pins rgb2stream_1/reset_n] [get_bd_pins rst_mig_7series_0_100M/peripheral_aresetn] [get_bd_pins stream2rgb_0/reset_n] [get_bd_pins stream2rgb_1/reset_n] [get_bd_pins v_tc_0/s_axi_aresetn] [get_bd_pins v_tc_1/s_axi_aresetn]
+  connect_bd_net -net rst_mig_7series_0_100M_peripheral_aresetn [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_dma_1/axi_resetn] [get_bd_pins axi_dma_2/axi_resetn] [get_bd_pins axi_dma_3/axi_resetn] [get_bd_pins axi_dma_4/axi_resetn] [get_bd_pins axi_dma_5/axi_resetn] [get_bd_pins axi_dynclk_0/s00_axi_aresetn] [get_bd_pins axi_gpio_video/s_axi_aresetn] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins axi_mem_intercon/S01_ARESETN] [get_bd_pins axi_mem_intercon/S02_ARESETN] [get_bd_pins axi_mem_intercon/S03_ARESETN] [get_bd_pins axi_mem_intercon/S04_ARESETN] [get_bd_pins axi_mem_intercon/S05_ARESETN] [get_bd_pins axi_mem_intercon/S06_ARESETN] [get_bd_pins axi_mem_intercon/S07_ARESETN] [get_bd_pins axi_mem_intercon/S08_ARESETN] [get_bd_pins axi_mem_intercon/S09_ARESETN] [get_bd_pins axi_mem_intercon/S10_ARESETN] [get_bd_pins axi_mem_intercon/S11_ARESETN] [get_bd_pins axi_mem_intercon/S12_ARESETN] [get_bd_pins axi_mem_intercon/S13_ARESETN] [get_bd_pins axi_mem_intercon/S14_ARESETN] [get_bd_pins axi_mem_intercon/S15_ARESETN] [get_bd_pins axi_timer_0/s_axi_aresetn] [get_bd_pins axi_uartlite_0/s_axi_aresetn] [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins brightening_0/reset_n] [get_bd_pins gaussian_blur/reset_i] [get_bd_pins grayscale_0/reset_n] [get_bd_pins grayscale_top_0/reset_n] [get_bd_pins microblaze_0_axi_intc/s_axi_aresetn] [get_bd_pins microblaze_0_axi_periph/M00_ARESETN] [get_bd_pins microblaze_0_axi_periph/M01_ARESETN] [get_bd_pins microblaze_0_axi_periph/M02_ARESETN] [get_bd_pins microblaze_0_axi_periph/M03_ARESETN] [get_bd_pins microblaze_0_axi_periph/M04_ARESETN] [get_bd_pins microblaze_0_axi_periph/M05_ARESETN] [get_bd_pins microblaze_0_axi_periph/M06_ARESETN] [get_bd_pins microblaze_0_axi_periph/M07_ARESETN] [get_bd_pins microblaze_0_axi_periph/M08_ARESETN] [get_bd_pins microblaze_0_axi_periph/M09_ARESETN] [get_bd_pins microblaze_0_axi_periph/M10_ARESETN] [get_bd_pins microblaze_0_axi_periph/M11_ARESETN] [get_bd_pins microblaze_0_axi_periph/M12_ARESETN] [get_bd_pins microblaze_0_axi_periph/M13_ARESETN] [get_bd_pins microblaze_0_axi_periph/S00_ARESETN] [get_bd_pins mig_7series_0/aresetn] [get_bd_pins passthrough_0/reset] [get_bd_pins rgb2stream_0/reset_n] [get_bd_pins rgb2stream_1/reset_n] [get_bd_pins rgb2stream_2/reset_n] [get_bd_pins rgb2stream_3/reset_n] [get_bd_pins rst_mig_7series_0_100M/peripheral_aresetn] [get_bd_pins sharpening/reset_i] [get_bd_pins stream2rgb_0/reset_n] [get_bd_pins stream2rgb_1/reset_n] [get_bd_pins stream2rgb_2/reset_n] [get_bd_pins stream2rgb_3/reset_n] [get_bd_pins v_tc_0/s_axi_aresetn] [get_bd_pins v_tc_1/s_axi_aresetn]
   connect_bd_net -net rst_mig_7series_0_pxl_peripheral_aresetn [get_bd_pins rst_mig_7series_0_pxl/peripheral_aresetn] [get_bd_pins v_tc_1/resetn]
   connect_bd_net -net rst_mig_7series_0_pxl_peripheral_reset [get_bd_pins rst_mig_7series_0_pxl/peripheral_reset] [get_bd_pins v_vid_in_axi4s_0/vid_io_in_reset]
+  connect_bd_net -net sharpening_master_blue_o [get_bd_pins rgb2stream_3/b] [get_bd_pins sharpening/master_blue_o]
+  connect_bd_net -net sharpening_master_green_o [get_bd_pins rgb2stream_3/g] [get_bd_pins sharpening/master_green_o]
+  connect_bd_net -net sharpening_master_red_o [get_bd_pins rgb2stream_3/r] [get_bd_pins sharpening/master_red_o]
+  connect_bd_net -net sharpening_master_tlast_o [get_bd_pins rgb2stream_3/rgb_last] [get_bd_pins sharpening/master_tlast_o]
+  connect_bd_net -net sharpening_master_tvalid_o [get_bd_pins rgb2stream_3/rgb_valid] [get_bd_pins sharpening/master_tvalid_o]
+  connect_bd_net -net sharpening_slave_tready_o [get_bd_pins sharpening/slave_tready_o] [get_bd_pins stream2rgb_3/rgb_ready]
   connect_bd_net -net stream2rgb_0_b [get_bd_pins grayscale_0/in_b] [get_bd_pins stream2rgb_0/b]
   connect_bd_net -net stream2rgb_0_g [get_bd_pins grayscale_0/in_g] [get_bd_pins stream2rgb_0/g]
   connect_bd_net -net stream2rgb_0_r [get_bd_pins grayscale_0/in_r] [get_bd_pins stream2rgb_0/r]
@@ -794,10 +884,22 @@ proc create_root_design { parentCell } {
   connect_bd_net -net stream2rgb_1_r [get_bd_pins brightening_0/in_r] [get_bd_pins stream2rgb_1/r]
   connect_bd_net -net stream2rgb_1_rgb_last [get_bd_pins brightening_0/in_rgb_last] [get_bd_pins stream2rgb_1/rgb_last]
   connect_bd_net -net stream2rgb_1_rgb_valid [get_bd_pins brightening_0/in_rgb_valid] [get_bd_pins stream2rgb_1/rgb_valid]
+  connect_bd_net -net stream2rgb_2_b [get_bd_pins gaussian_blur/slave_blue_i] [get_bd_pins stream2rgb_2/b]
+  connect_bd_net -net stream2rgb_2_g [get_bd_pins gaussian_blur/slave_green_i] [get_bd_pins stream2rgb_2/g]
+  connect_bd_net -net stream2rgb_2_r [get_bd_pins gaussian_blur/slave_red_i] [get_bd_pins stream2rgb_2/r]
+  connect_bd_net -net stream2rgb_2_rgb_last [get_bd_pins gaussian_blur/slave_tlast_i] [get_bd_pins stream2rgb_2/rgb_last]
+  connect_bd_net -net stream2rgb_2_rgb_valid [get_bd_pins gaussian_blur/slave_tvalid_i] [get_bd_pins stream2rgb_2/rgb_valid]
+  connect_bd_net -net stream2rgb_3_b [get_bd_pins sharpening/slave_blue_i] [get_bd_pins stream2rgb_3/b]
+  connect_bd_net -net stream2rgb_3_g [get_bd_pins sharpening/slave_green_i] [get_bd_pins stream2rgb_3/g]
+  connect_bd_net -net stream2rgb_3_r [get_bd_pins sharpening/slave_red_i] [get_bd_pins stream2rgb_3/r]
+  connect_bd_net -net stream2rgb_3_rgb_last [get_bd_pins sharpening/slave_tlast_i] [get_bd_pins stream2rgb_3/rgb_last]
+  connect_bd_net -net stream2rgb_3_rgb_valid [get_bd_pins sharpening/slave_tvalid_i] [get_bd_pins stream2rgb_3/rgb_valid]
   connect_bd_net -net sys_clk_i_1 [get_bd_ports sys_clk_i] [get_bd_pins mig_7series_0/sys_clk_i]
   connect_bd_net -net v_tc_0_irq [get_bd_pins microblaze_0_xlconcat/In2] [get_bd_pins v_tc_0/irq]
   connect_bd_net -net v_tc_1_irq [get_bd_pins microblaze_0_xlconcat/In3] [get_bd_pins v_tc_1/irq]
   connect_bd_net -net xlconstant_0_dout [get_bd_ports hdmi_rx_txen] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_pins gaussian_blur/weight_i] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlconstant_2_dout [get_bd_pins sharpening/weight_i] [get_bd_pins xlconstant_2/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces axi_dma_0/Data_MM2S] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
@@ -808,12 +910,18 @@ proc create_root_design { parentCell } {
   create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces axi_dma_2/Data_S2MM] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
   create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces axi_dma_3/Data_MM2S] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
   create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces axi_dma_3/Data_S2MM] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
+  create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces axi_dma_4/Data_MM2S] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
+  create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces axi_dma_4/Data_S2MM] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
+  create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces axi_dma_5/Data_MM2S] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
+  create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces axi_dma_5/Data_S2MM] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
   create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces axi_vdma_0/Data_MM2S] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
   create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces axi_vdma_0/Data_S2MM] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr
   create_bd_addr_seg -range 0x00010000 -offset 0x41E00000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_dma_0/S_AXI_LITE/Reg] SEG_axi_dma_0_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41E10000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_dma_1/S_AXI_LITE/Reg] SEG_axi_dma_1_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41E20000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_dma_2/S_AXI_LITE/Reg] SEG_axi_dma_2_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41E30000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_dma_3/S_AXI_LITE/Reg] SEG_axi_dma_3_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41E40000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_dma_4/S_AXI_LITE/Reg] SEG_axi_dma_4_Reg
+  create_bd_addr_seg -range 0x00010000 -offset 0x41E50000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_dma_5/S_AXI_LITE/Reg] SEG_axi_dma_5_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x44A20000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_dynclk_0/s00_axi/reg0] SEG_axi_dynclk_0_reg0
   create_bd_addr_seg -range 0x00010000 -offset 0x40000000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_gpio_video/S_AXI/Reg] SEG_axi_gpio_video_Reg
   create_bd_addr_seg -range 0x00010000 -offset 0x41C00000 [get_bd_addr_spaces microblaze_0/Data] [get_bd_addr_segs axi_timer_0/S_AXI/Reg] SEG_axi_timer_0_Reg

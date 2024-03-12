@@ -1,4 +1,4 @@
-23:30:25 **** Build of project upscaler_bsp ****
+02:30:51 **** Build of project upscaler_bsp ****
 make -k all 
 Running Make include in microblaze_0/libsrc/axidma_v9_7/src
 make -C microblaze_0/libsrc/axidma_v9_7/src -s include  "SHELL=/bin/sh" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
@@ -56,5 +56,5 @@ make -C microblaze_0/libsrc/vtc_v7_2/src -s libs  "SHELL=/bin/sh" "COMPILER=mb-g
 Compiling video timing controller
 Finished building libraries
 
-23:30:26 Build Finished (took 1s.763ms)
+02:30:53 Build Finished (took 1s.663ms)
 

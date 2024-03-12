@@ -90,7 +90,7 @@ const ivt_t ivt[] = {
 // Albert Start
 // For AxiDMA
 XAxiDma passThrough;
-XAxiDma grayScale;
+XAxiDma gaussianBlur;
 XAxiDma grayScale_new;
 XAxiDma brightness;
 u8 dmaMode;
@@ -119,9 +119,9 @@ void DemoInitialize()
 	int Status;
 	XAxiVdma_Config *vdmaConfig;
 	XAxiDma_Config* passThroughConfig;
-	XAxiDma_Config* grayScaleConfig;
 	XAxiDma_Config* grayScaleNewConfig;
 	XAxiDma_Config* brightnessConfig;
+	XAxiDma_Config* gaussianBlurConfig;
 	int i;
 
 	// Albert Start
@@ -131,8 +131,9 @@ void DemoInitialize()
 	xil_printf("intc is at %x\r\n", &intc);
 	xil_printf("fRefresh is at %x\r\n", &fRefresh);
 	xil_printf("passThrough is at %x\r\n", &passThrough);
-	xil_printf("grayScale is at %x\r\n", &grayScale);
+	xil_printf("grayScale is at %x\r\n", &grayScale_new);
 	xil_printf("brightness is at %x\r\n", &brightness);
+	xil_printf("gaussianBlur is at %x\r\n", &gaussianBlur);
 	xil_printf("dmaMode is at %x\r\n", &dmaMode);
 	xil_printf("wOrB is at %x\r\n", &wOrB);
 	wOrB = 0;
@@ -213,14 +214,14 @@ void DemoInitialize()
 		return;
 	}
 
-	grayScaleConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_1_DEVICE_ID);
-	if (!grayScaleConfig)	{
-		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_1_DEVICE_ID);
+	gaussianBlurConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_4_DEVICE_ID);
+	if (!gaussianBlurConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_4_DEVICE_ID);
 		return;
 	}
-	Status = XAxiDma_CfgInitialize(&grayScale, grayScaleConfig);
+	Status = XAxiDma_CfgInitialize(&gaussianBlur, gaussianBlurConfig);
 	if (Status != XST_SUCCESS)	{
-		xil_printf("Gray Scale DMA Configuration Initialization failed %d\r\n", Status);
+		xil_printf("gaussianBlur DMA Configuration Initialization failed %d\r\n", Status);
 		return;
 	}
 
@@ -384,13 +385,13 @@ void doDMA(){
 		dma = &passThrough;
 	}
 	else if(dmaMode == 1){
-		dma = &grayScale;
+		dma = &brightness;
 	}
 	else if(dmaMode == 2){
 		dma = &grayScale_new;
 	}
 	else if(dmaMode == 3){
-		dma = &brightness;
+		dma = &gaussianBlur;
 	}
 
 
@@ -812,5 +813,3 @@ void DemoISR(void *callBackRef, void *pVideo)
 	char *data = (char *) callBackRef;
 	*data = 1; //set fRefresh to 1
 }
-
-

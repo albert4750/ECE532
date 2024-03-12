@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Mar 12 02:08:47 2024
+# Process ID: 8388
+# Current directory: /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_convolve_rgb_0_0_synth_1
+# Command line: vivado -log hdmi_convolve_rgb_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_convolve_rgb_0_0.tcl
+# Log file: /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_convolve_rgb_0_0_synth_1/hdmi_convolve_rgb_0_0.vds
+# Journal file: /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_convolve_rgb_0_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source hdmi_convolve_rgb_0_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP hdmi_convolve_rgb_0_0, cache-ID = 871c036688c6569d.
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 12 02:08:53 2024...

@@ -128,6 +128,36 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_stream2rgb
 # IP: bd/hdmi/ip/hdmi_axi_dma_2_1/hdmi_axi_dma_2_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_axi_dma_2_1 || ORIG_REF_NAME==hdmi_axi_dma_2_1} -quiet] -quiet
 
+# IP: bd/hdmi/ip/hdmi_rgb2stream_1_1/hdmi_rgb2stream_1_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_rgb2stream_1_1 || ORIG_REF_NAME==hdmi_rgb2stream_1_1} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_axi_dma_3_0/hdmi_axi_dma_3_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_axi_dma_3_0 || ORIG_REF_NAME==hdmi_axi_dma_3_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_stream2rgb_1_1/hdmi_stream2rgb_1_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_stream2rgb_1_1 || ORIG_REF_NAME==hdmi_stream2rgb_1_1} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_xlconstant_1_0/hdmi_xlconstant_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_xlconstant_1_0 || ORIG_REF_NAME==hdmi_xlconstant_1_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_convolve_rgb_0_0/hdmi_convolve_rgb_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_convolve_rgb_0_0 || ORIG_REF_NAME==hdmi_convolve_rgb_0_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_axi_dma_4_0/hdmi_axi_dma_4_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_axi_dma_4_0 || ORIG_REF_NAME==hdmi_axi_dma_4_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_gaussian_blur_0/hdmi_gaussian_blur_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_gaussian_blur_0 || ORIG_REF_NAME==hdmi_gaussian_blur_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_rgb2stream_2_0/hdmi_rgb2stream_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_rgb2stream_2_0 || ORIG_REF_NAME==hdmi_rgb2stream_2_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_stream2rgb_2_0/hdmi_stream2rgb_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_stream2rgb_2_0 || ORIG_REF_NAME==hdmi_stream2rgb_2_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_xlconstant_1_1/hdmi_xlconstant_1_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_xlconstant_1_1 || ORIG_REF_NAME==hdmi_xlconstant_1_1} -quiet] -quiet
+
 # IP: bd/hdmi/ip/hdmi_m00_regslice_0/hdmi_m00_regslice_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_m00_regslice_0 || ORIG_REF_NAME==hdmi_m00_regslice_0} -quiet] -quiet
 
@@ -136,6 +166,18 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_ds_0 
 
 # IP: bd/hdmi/ip/hdmi_auto_rs_w_0/hdmi_auto_rs_w_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_rs_w_0 || ORIG_REF_NAME==hdmi_auto_rs_w_0} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_auto_us_11/hdmi_auto_us_11.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_11 || ORIG_REF_NAME==hdmi_auto_us_11} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_auto_us_10/hdmi_auto_us_10.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_10 || ORIG_REF_NAME==hdmi_auto_us_10} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_auto_us_9/hdmi_auto_us_9.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_9 || ORIG_REF_NAME==hdmi_auto_us_9} -quiet] -quiet
+
+# IP: bd/hdmi/ip/hdmi_auto_us_8/hdmi_auto_us_8.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_8 || ORIG_REF_NAME==hdmi_auto_us_8} -quiet] -quiet
 
 # IP: bd/hdmi/ip/hdmi_auto_us_7/hdmi_auto_us_7.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==hdmi_auto_us_7 || ORIG_REF_NAME==hdmi_auto_us_7} -quiet] -quiet

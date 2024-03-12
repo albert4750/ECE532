@@ -485,8 +485,8 @@
       <xilinx:displayName>convolve_rgb_v1_5</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
       <xilinx:vendorDisplayName>ECE532 Group 3</xilinx:vendorDisplayName>
-      <xilinx:coreRevision>8</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-03-06T18:49:54Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>9</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-03-12T05:43:13Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ece532.group3.org:ece532:convolve_rgb:1.0_ARCHIVE_LOCATION">/home/ece532/ECE532/custom_ip/convolve_rgb</xilinx:tag>
         <xilinx:tag xilinx:name="ece532.group3.org:ece532:convolve_rgb:1.5_ARCHIVE_LOCATION">/home/ece532/ECE532/custom_ip/convolve_rgb</xilinx:tag>
