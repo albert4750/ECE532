@@ -1,4 +1,4 @@
-10:21:51 **** Build of configuration Debug for project Nexys-Video-HDMI ****
+11:16:43 **** Build of configuration Debug for project Nexys-Video-HDMI ****
 make all 
 Building file: ../video_capture/video_capture.c
 Invoking: MicroBlaze gcc compiler
@@ -53,5 +53,5 @@ mb-size Nexys-Video-HDMI.elf  |tee "Nexys-Video-HDMI.elf.size"
 Finished building: Nexys-Video-HDMI.elf.size
  
 
-10:21:51 Build Finished (took 313ms)
+11:16:43 Build Finished (took 364ms)
 

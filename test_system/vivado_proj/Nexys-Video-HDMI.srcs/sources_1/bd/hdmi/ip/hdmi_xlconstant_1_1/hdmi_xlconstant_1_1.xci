@@ -9,9 +9,9 @@
       <spirit:instanceName>hdmi_xlconstant_1_1</spirit:instanceName>
       <spirit:componentRef spirit:vendor="xilinx.com" spirit:library="ip" spirit:name="xlconstant" spirit:version="1.1"/>
       <spirit:configurableElementValues>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.CONST_VAL">0x000FF803FE05FF803FE00000000000000000000000000000000000000000000000000000000000000000FF803FE05FF803FE00000000000000000000000000000000000000000000000000000000000000000FF803FE05FF803FE00</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.CONST_VAL">0x1FFFFFFFFE09FFFFFFFFF0000000000000000000000000000000000000000000000000000000000001FFFFFFFFE09FFFFFFFFF0000000000000000000000000000000000000000000000000000000000001FFFFFFFFE09FFFFFFFFF</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.CONST_WIDTH">729</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.CONST_VAL">5504900504705834058720376654204738444804179385031847535817306311426876386534125658334904870585671609218734483052703538194744604827965588883786558666222847090350702098375598816080030934782229474962302416332821415329280</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.CONST_VAL">2824013958667925318259879105179379054419142579144839358154531478937954137978444779605960698450265719597569605072734573348071673414090061840790273673658922976182761141622356971890931340026080590073370059136986105268666367</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.CONST_WIDTH">729</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.Component_Name">hdmi_xlconstant_1_1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="PROJECT_PARAM.ARCHITECTURE">artix7</spirit:configurableElementValue>
