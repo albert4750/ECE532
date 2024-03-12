@@ -93,6 +93,7 @@ XAxiDma passThrough;
 XAxiDma gaussianBlur;
 XAxiDma grayScale_new;
 XAxiDma brightness;
+XAxiDma sharper;
 u8 dmaMode;
 u8 wOrB;
 // Albert End
@@ -122,6 +123,7 @@ void DemoInitialize()
 	XAxiDma_Config* grayScaleNewConfig;
 	XAxiDma_Config* brightnessConfig;
 	XAxiDma_Config* gaussianBlurConfig;
+	XAxiDma_Config* sharperConfig;
 	int i;
 
 	// Albert Start
@@ -134,6 +136,7 @@ void DemoInitialize()
 	xil_printf("grayScale is at %x\r\n", &grayScale_new);
 	xil_printf("brightness is at %x\r\n", &brightness);
 	xil_printf("gaussianBlur is at %x\r\n", &gaussianBlur);
+	xil_printf("sharper is at %x\r\n", &sharper);
 	xil_printf("dmaMode is at %x\r\n", &dmaMode);
 	xil_printf("wOrB is at %x\r\n", &wOrB);
 	wOrB = 0;
@@ -224,6 +227,18 @@ void DemoInitialize()
 		xil_printf("gaussianBlur DMA Configuration Initialization failed %d\r\n", Status);
 		return;
 	}
+
+	sharperConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_5_DEVICE_ID);
+	if (!sharperConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_5_DEVICE_ID);
+		return;
+	}
+	Status = XAxiDma_CfgInitialize(&sharper, sharperConfig);
+	if (Status != XST_SUCCESS)	{
+		xil_printf("sharper DMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
+
 
 	grayScaleNewConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_2_DEVICE_ID);
 	if (!grayScaleNewConfig)	{
@@ -355,7 +370,7 @@ void DemoRun()
 			break;
 		case 's':
 			xil_printf("\n\rSwitching DMA mode\n\r");
-			dmaMode = (dmaMode + 1) % 4;
+			dmaMode = (dmaMode + 1) % 5;
 			xil_printf("DMA mode is now %u\n\r", dmaMode);
 			break;
 		case 'q':
@@ -392,6 +407,9 @@ void doDMA(){
 	}
 	else if(dmaMode == 3){
 		dma = &gaussianBlur;
+	}
+	else if (dmaMode == 4){
+		dma = &sharper;
 	}
 
 

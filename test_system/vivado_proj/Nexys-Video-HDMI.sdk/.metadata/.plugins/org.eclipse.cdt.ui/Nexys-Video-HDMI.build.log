@@ -1,9 +1,14 @@
-09:51:51 **** Auto Build of configuration Debug for project Nexys-Video-HDMI ****
+10:21:51 **** Build of configuration Debug for project Nexys-Video-HDMI ****
 make all 
 Building file: ../video_capture/video_capture.c
 Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"video_capture/video_capture.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"video_capture/video_capture.d" -MT"video_capture/video_capture.o" -o "video_capture/video_capture.o" "../video_capture/video_capture.c"
 Finished building: ../video_capture/video_capture.c
+ 
+Building file: ../timer_ps/timer_ps.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"timer_ps/timer_ps.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"timer_ps/timer_ps.d" -MT"timer_ps/timer_ps.o" -o "timer_ps/timer_ps.o" "../timer_ps/timer_ps.c"
+Finished building: ../timer_ps/timer_ps.c
  
 Building file: ../intc/intc.c
 Invoking: MicroBlaze gcc compiler
@@ -48,5 +53,5 @@ mb-size Nexys-Video-HDMI.elf  |tee "Nexys-Video-HDMI.elf.size"
 Finished building: Nexys-Video-HDMI.elf.size
  
 
-09:51:51 Build Finished (took 366ms)
+10:21:51 Build Finished (took 313ms)
 
