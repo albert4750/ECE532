@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-//Date        : Tue Mar 12 02:04:25 2024
+//Date        : Tue Mar 12 09:35:51 2024
 //Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
 //Command     : generate_target hdmi.bd
 //Design      : hdmi
@@ -825,8 +825,8 @@ module hdmi
   wire v_vid_in_axi4s_0_vtiming_out_HSYNC;
   wire v_vid_in_axi4s_0_vtiming_out_VSYNC;
   wire [0:0]xlconstant_0_dout;
-  wire [3968:0]xlconstant_1_dout;
-  wire [3968:0]xlconstant_2_dout;
+  wire [728:0]xlconstant_1_dout;
+  wire [728:0]xlconstant_2_dout;
 
   assign DDC_scl_o = dvi2rgb_0_DDC_SCL_O;
   assign DDC_scl_t = dvi2rgb_0_DDC_SCL_T;

@@ -1,6 +1,48 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Tue Mar 12 08:40:19 2024
+| Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_gaussian_blur_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of hdmi_gaussian_blur_0 (ece532.group3.org:ece532:convolve_rgb:1.5) from (Rev. 9) to (Rev. 10)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Tue Mar 12 08:40:19 2024
+| Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_convolve_rgb_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of hdmi_convolve_rgb_0_0 (ece532.group3.org:ece532:convolve_rgb:1.5) from (Rev. 9) to (Rev. 10)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
 | Date         : Sun Mar  3 23:16:25 2024
 | Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
 | Command      : upgrade_ip

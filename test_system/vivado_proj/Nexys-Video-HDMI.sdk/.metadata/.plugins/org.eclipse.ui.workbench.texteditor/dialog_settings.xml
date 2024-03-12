@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="gaussian" key="selection"/>
+		<item value="MAX" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="max"/>
 			<item value="gaussian"/>
 			<item value="gaussian_blur"/>
 			<item value="xil_pr"/>
@@ -15,7 +16,6 @@
 			<item value="brightness"/>
 			<item value="DemoPrintMenu"/>
 			<item value="menu"/>
-			<item value="XST_FAILURE"/>
 		</list>
 		<list key="replacehistory">
 		</list>

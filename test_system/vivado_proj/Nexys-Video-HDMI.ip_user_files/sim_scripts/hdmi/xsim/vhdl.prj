@@ -41,5 +41,7 @@ vhdl xil_defaultlib  \
 "../../../bd/hdmi/ip/hdmi_axi_dma_1_0/sim/hdmi_axi_dma_1_0.vhd" \
 "../../../bd/hdmi/ip/hdmi_axi_dma_2_0/sim/hdmi_axi_dma_2_0.vhd" \
 "../../../bd/hdmi/ip/hdmi_axi_dma_2_1/sim/hdmi_axi_dma_2_1.vhd" \
+"../../../bd/hdmi/ip/hdmi_axi_dma_3_0/sim/hdmi_axi_dma_3_0.vhd" \
+"../../../bd/hdmi/ip/hdmi_axi_dma_4_0/sim/hdmi_axi_dma_4_0.vhd" \
 
 nosort

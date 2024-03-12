@@ -48,7 +48,7 @@
 
 
 // IP VLNV: ece532.group3.org:ece532:convolve_rgb:1.5
-// IP Revision: 9
+// IP Revision: 10
 
 (* X_CORE_INFO = "convolve_rgb,Vivado 2018.2" *)
 (* CHECK_LICENSE_TYPE = "hdmi_convolve_rgb_0_0,convolve_rgb,{}" *)
@@ -90,12 +90,12 @@ output wire [7 : 0] master_red_o;
 output wire [7 : 0] master_green_o;
 output wire [7 : 0] master_blue_o;
 output wire master_tlast_o;
-input wire [3968 : 0] weight_i;
+input wire [728 : 0] weight_i;
 
   convolve_rgb #(
-    .KERNEL_SIZE(7),
-    .HEIGHT(480),
-    .WIDTH(640),
+    .KERNEL_SIZE(3),
+    .HEIGHT(1080),
+    .WIDTH(1920),
     .RIGHT_SHIFT(8),
     .ADDER_BRANCHING_FACTOR(3)
   ) inst (

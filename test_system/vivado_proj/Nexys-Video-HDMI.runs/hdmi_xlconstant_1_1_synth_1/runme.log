@@ -14,18 +14,18 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7887 
+INFO: Helper process launched with PID 258067 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1323.336 ; gain = 88.945 ; free physical = 6993 ; free virtual = 12964
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1323.328 ; gain = 88.945 ; free physical = 1329 ; free virtual = 10125
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'hdmi_xlconstant_1_1' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_xlconstant_1_1/synth/hdmi_xlconstant_1_1.v:59]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_xlconstant_1_1' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_xlconstant_1_1/synth/hdmi_xlconstant_1_1.v:57]
 INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_5_xlconstant' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/f1c3/hdl/xlconstant_v1_1_vl_rfs.v:23]
-	Parameter CONST_VAL bound to: 3972'b000000000000000000000111111111111111111111111111000000000000000000000000000111111111111111101111111101111111101111111111000000000111111111111111101000000000000000111000000000111111101111111111111111111111111101000000111000011000000000111111111101111111111111111111111111101000000000000000111000000000111111101111111111000000000111111111111111101111111101111111101111111111000000000000000000000000000111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111111111111111111000000000000000000000000000111111111111111101111111101111111101111111111000000000111111111111111101000000000000000111000000000111111101111111111111111111111111101000000111000011000000000111111111101111111111111111111111111101000000000000000111000000000111111101111111111000000000111111111111111101111111101111111101111111111000000000000000000000000000111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111111111111111111000000000000000000000000000111111111111111101111111101111111101111111111000000000111111111111111101000000000000000111000000000111111101111111111111111111111111101000000111000011000000000111111111101111111111111111111111111101000000000000000111000000000111111101111111111000000000111111111111111101111111101111111101111111111000000000000000000000000000111111111111111111111111111000000000000000000 
-	Parameter CONST_WIDTH bound to: 3969 - type: integer 
+	Parameter CONST_VAL bound to: 732'b000000000000111111111000000000111111111000000101111111111000000000111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111000000000111111111000000101111111111000000000111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111000000000111111111000000101111111111000000000111111111000000000 
+	Parameter CONST_WIDTH bound to: 729 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_5_xlconstant' (1#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/f1c3/hdl/xlconstant_v1_1_vl_rfs.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_xlconstant_1_1' (2#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_xlconstant_1_1/synth/hdmi_xlconstant_1_1.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_xlconstant_1_1' (2#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_xlconstant_1_1/synth/hdmi_xlconstant_1_1.v:57]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1367.961 ; gain = 133.570 ; free physical = 6935 ; free virtual = 12922
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1367.953 ; gain = 133.570 ; free physical = 1312 ; free virtual = 10108
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -38,10 +38,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1367.961 ; gain = 133.570 ; free physical = 6934 ; free virtual = 12922
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1367.953 ; gain = 133.570 ; free physical = 1310 ; free virtual = 10106
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1367.961 ; gain = 133.570 ; free physical = 6934 ; free virtual = 12922
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1367.953 ; gain = 133.570 ; free physical = 1311 ; free virtual = 10107
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a200tsbg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -54,25 +54,25 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraint will be written out.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1674.016 ; gain = 2.000 ; free physical = 6076 ; free virtual = 12102
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1670.008 ; gain = 1.000 ; free physical = 493 ; free virtual = 9311
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:36 . Memory (MB): peak = 1674.016 ; gain = 439.625 ; free physical = 6217 ; free virtual = 12244
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:38 . Memory (MB): peak = 1670.008 ; gain = 435.625 ; free physical = 651 ; free virtual = 9456
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:36 . Memory (MB): peak = 1674.016 ; gain = 439.625 ; free physical = 6216 ; free virtual = 12242
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:38 . Memory (MB): peak = 1670.008 ; gain = 435.625 ; free physical = 651 ; free virtual = 9456
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:36 . Memory (MB): peak = 1674.016 ; gain = 439.625 ; free physical = 6218 ; free virtual = 12244
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:38 . Memory (MB): peak = 1670.008 ; gain = 435.625 ; free physical = 654 ; free virtual = 9458
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:36 . Memory (MB): peak = 1674.016 ; gain = 439.625 ; free physical = 6215 ; free virtual = 12243
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:38 . Memory (MB): peak = 1670.008 ; gain = 435.625 ; free physical = 652 ; free virtual = 9457
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -108,109 +108,109 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3330] design hdmi_xlconstant_1_1 has an empty top module
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3968] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3967] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3966] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3965] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3964] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3963] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3962] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3961] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3960] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3959] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3958] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3957] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3956] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3955] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3954] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3953] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3952] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3951] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3950] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3949] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3948] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3947] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3946] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3945] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3944] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3943] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3942] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3941] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3940] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3939] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3938] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3937] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3936] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3935] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3934] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3933] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3932] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3931] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3930] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3929] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3928] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3927] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3926] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3925] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3924] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3923] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3922] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3921] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3920] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3919] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3918] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3917] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3916] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3915] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3914] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3913] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3912] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3911] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3910] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3909] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3908] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3907] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3906] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3905] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3904] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3903] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3902] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3901] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3900] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3899] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3898] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3897] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3896] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3895] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3894] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3893] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3892] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3891] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3890] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3889] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3888] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3887] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3886] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3885] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3884] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3883] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3882] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3881] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3880] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3879] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3878] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3877] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3876] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3875] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3874] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3873] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3872] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3871] driven by constant 0
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3870] driven by constant 1
-INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[3869] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[728] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[727] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[726] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[725] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[724] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[723] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[722] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[721] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[720] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[719] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[718] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[717] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[716] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[715] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[714] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[713] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[712] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[711] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[710] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[709] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[708] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[707] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[706] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[705] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[704] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[703] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[702] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[701] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[700] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[699] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[698] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[697] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[696] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[695] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[694] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[693] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[692] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[691] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[690] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[689] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[688] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[687] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[686] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[685] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[684] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[683] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[682] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[681] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[680] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[679] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[678] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[677] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[676] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[675] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[674] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[673] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[672] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[671] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[670] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[669] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[668] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[667] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[666] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[665] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[664] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[663] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[662] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[661] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[660] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[659] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[658] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[657] driven by constant 1
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[656] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[655] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[654] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[653] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[652] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[651] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[650] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[649] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[648] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[647] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[646] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[645] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[644] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[643] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[642] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[641] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[640] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[639] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[638] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[637] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[636] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[635] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[634] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[633] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[632] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[631] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[630] driven by constant 0
+INFO: [Synth 8-3917] design hdmi_xlconstant_1_1 has port dout[629] driven by constant 0
 INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:36 . Memory (MB): peak = 1674.016 ; gain = 439.625 ; free physical = 6206 ; free virtual = 12236
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:38 . Memory (MB): peak = 1670.008 ; gain = 435.625 ; free physical = 661 ; free virtual = 9469
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -222,13 +222,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:42 . Memory (MB): peak = 1684.000 ; gain = 449.609 ; free physical = 5665 ; free virtual = 11717
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:44 . Memory (MB): peak = 1682.992 ; gain = 448.609 ; free physical = 379 ; free virtual = 9171
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:42 . Memory (MB): peak = 1684.000 ; gain = 449.609 ; free physical = 5664 ; free virtual = 11717
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:44 . Memory (MB): peak = 1682.992 ; gain = 448.609 ; free physical = 379 ; free virtual = 9171
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -240,7 +240,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:42 . Memory (MB): peak = 1684.000 ; gain = 449.609 ; free physical = 5663 ; free virtual = 11715
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:44 . Memory (MB): peak = 1682.992 ; gain = 448.609 ; free physical = 378 ; free virtual = 9170
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -264,7 +264,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1685.000 ; gain = 450.609 ; free physical = 5652 ; free virtual = 11704
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:44 . Memory (MB): peak = 1682.992 ; gain = 448.609 ; free physical = 355 ; free virtual = 9142
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -277,7 +277,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1685.000 ; gain = 450.609 ; free physical = 5652 ; free virtual = 11704
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:44 . Memory (MB): peak = 1682.992 ; gain = 448.609 ; free physical = 355 ; free virtual = 9142
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -289,25 +289,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1685.000 ; gain = 450.609 ; free physical = 5652 ; free virtual = 11704
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:44 . Memory (MB): peak = 1682.992 ; gain = 448.609 ; free physical = 355 ; free virtual = 9142
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1685.000 ; gain = 450.609 ; free physical = 5652 ; free virtual = 11704
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:44 . Memory (MB): peak = 1682.992 ; gain = 448.609 ; free physical = 355 ; free virtual = 9142
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1685.000 ; gain = 450.609 ; free physical = 5652 ; free virtual = 11704
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:44 . Memory (MB): peak = 1682.992 ; gain = 448.609 ; free physical = 355 ; free virtual = 9142
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1685.000 ; gain = 450.609 ; free physical = 5652 ; free virtual = 11704
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:44 . Memory (MB): peak = 1682.992 ; gain = 448.609 ; free physical = 355 ; free virtual = 9142
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -332,11 +332,11 @@ Report Instance Areas:
 |1     |top      |       |     0|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1685.000 ; gain = 450.609 ; free physical = 5652 ; free virtual = 11704
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:44 . Memory (MB): peak = 1682.992 ; gain = 448.609 ; free physical = 355 ; free virtual = 9142
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1685.000 ; gain = 144.555 ; free physical = 5733 ; free virtual = 11785
-Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1685.008 ; gain = 450.609 ; free physical = 5733 ; free virtual = 11785
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1682.992 ; gain = 146.555 ; free physical = 410 ; free virtual = 9197
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:44 . Memory (MB): peak = 1683.000 ; gain = 448.609 ; free physical = 410 ; free virtual = 9197
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -346,12 +346,12 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 114 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:43 . Memory (MB): peak = 1707.000 ; gain = 484.117 ; free physical = 5669 ; free virtual = 11722
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:45 . Memory (MB): peak = 1704.992 ; gain = 482.117 ; free physical = 391 ; free virtual = 9172
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_xlconstant_1_1_synth_1/hdmi_xlconstant_1_1.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_xlconstant_1_1/hdmi_xlconstant_1_1.xci
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint '/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_xlconstant_1_1_synth_1/hdmi_xlconstant_1_1.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file hdmi_xlconstant_1_1_utilization_synth.rpt -pb hdmi_xlconstant_1_1_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1707.000 ; gain = 0.000 ; free physical = 5711 ; free virtual = 11765
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 12 02:05:52 2024...
+report_utilization: Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1704.992 ; gain = 0.000 ; free physical = 440 ; free virtual = 9223
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 12 09:14:57 2024...

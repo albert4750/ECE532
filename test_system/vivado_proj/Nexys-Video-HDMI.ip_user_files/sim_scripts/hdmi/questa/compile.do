@@ -423,7 +423,38 @@ vlog -work xil_defaultlib -64 -sv "+incdir+../../../../Nexys-Video-HDMI.srcs/sou
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/hdmi/ip/hdmi_axi_dma_2_1/sim/hdmi_axi_dma_2_1.vhd" \
 
+vlog -work xil_defaultlib -64 -sv "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" \
+"../../../bd/hdmi/ip/hdmi_rgb2stream_1_1/sim/hdmi_rgb2stream_1_1.sv" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/hdmi/ip/hdmi_axi_dma_3_0/sim/hdmi_axi_dma_3_0.vhd" \
+
+vlog -work xil_defaultlib -64 -sv "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" \
+"../../../bd/hdmi/ip/hdmi_stream2rgb_1_1/sim/hdmi_stream2rgb_1_1.sv" \
+
 vlog -work xil_defaultlib -64 "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" \
+"../../../bd/hdmi/ip/hdmi_xlconstant_1_0/sim/hdmi_xlconstant_1_0.v" \
+
+vlog -work xil_defaultlib -64 -sv "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" \
+"../../../bd/hdmi/ipshared/c855/convolve_rgb.srcs/sources_1/imports/sources/adder_tree.sv" \
+"../../../bd/hdmi/ipshared/c855/convolve_rgb.srcs/sources_1/imports/sources/constant_pad.sv" \
+"../../../bd/hdmi/ipshared/c855/convolve_rgb.srcs/sources_1/imports/sources/convolve_multi_in_multi_out.sv" \
+"../../../bd/hdmi/ipshared/c855/convolve_rgb.srcs/sources_1/imports/sources/dual_port_ram.sv" \
+"../../../bd/hdmi/ipshared/c855/convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv" \
+"../../../bd/hdmi/ipshared/c855/convolve_rgb.srcs/sources_1/imports/sources/sliding_window.sv" \
+"../../../bd/hdmi/ipshared/c855/convolve_rgb.srcs/sources_1/imports/sources/convolve_rgb.sv" \
+"../../../bd/hdmi/ip/hdmi_convolve_rgb_0_0/sim/hdmi_convolve_rgb_0_0.sv" \
+
+vcom -work xil_defaultlib -64 -93 \
+"../../../bd/hdmi/ip/hdmi_axi_dma_4_0/sim/hdmi_axi_dma_4_0.vhd" \
+
+vlog -work xil_defaultlib -64 -sv "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" \
+"../../../bd/hdmi/ip/hdmi_gaussian_blur_0/sim/hdmi_gaussian_blur_0.sv" \
+"../../../bd/hdmi/ip/hdmi_rgb2stream_2_0/sim/hdmi_rgb2stream_2_0.sv" \
+"../../../bd/hdmi/ip/hdmi_stream2rgb_2_0/sim/hdmi_stream2rgb_2_0.sv" \
+
+vlog -work xil_defaultlib -64 "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" \
+"../../../bd/hdmi/ip/hdmi_xlconstant_1_1/sim/hdmi_xlconstant_1_1.v" \
 "../../../bd/hdmi/ip/hdmi_m00_regslice_0/sim/hdmi_m00_regslice_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_17 -64 "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" \
@@ -438,6 +469,10 @@ vlog -work axi_dwidth_converter_v2_1_17 -64 "+incdir+../../../../Nexys-Video-HDM
 vlog -work xil_defaultlib -64 "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/b37e/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/ec67/hdl" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_refclk/hdl/verilog" "+incdir+../../../../Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_dvi2rgb_0_0/src/ila_pixclk/hdl/verilog" \
 "../../../bd/hdmi/ip/hdmi_auto_ds_0/sim/hdmi_auto_ds_0.v" \
 "../../../bd/hdmi/ip/hdmi_auto_rs_w_0/sim/hdmi_auto_rs_w_0.v" \
+"../../../bd/hdmi/ip/hdmi_auto_us_11/sim/hdmi_auto_us_11.v" \
+"../../../bd/hdmi/ip/hdmi_auto_us_10/sim/hdmi_auto_us_10.v" \
+"../../../bd/hdmi/ip/hdmi_auto_us_9/sim/hdmi_auto_us_9.v" \
+"../../../bd/hdmi/ip/hdmi_auto_us_8/sim/hdmi_auto_us_8.v" \
 "../../../bd/hdmi/ip/hdmi_auto_us_7/sim/hdmi_auto_us_7.v" \
 "../../../bd/hdmi/ip/hdmi_auto_us_6/sim/hdmi_auto_us_6.v" \
 "../../../bd/hdmi/ip/hdmi_auto_us_5/sim/hdmi_auto_us_5.v" \

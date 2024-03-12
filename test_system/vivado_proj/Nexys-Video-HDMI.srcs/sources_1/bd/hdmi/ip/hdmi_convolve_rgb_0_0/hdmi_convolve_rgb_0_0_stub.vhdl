@@ -1,11 +1,11 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
--- Date        : Tue Mar 12 02:07:04 2024
+-- Date        : Tue Mar 12 09:37:30 2024
 -- Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
--- Command     : write_vhdl -force -mode synth_stub -rename_top hdmi_convolve_rgb_0_0 -prefix
---               hdmi_convolve_rgb_0_0_ hdmi_gaussian_blur_0_stub.vhdl
--- Design      : hdmi_gaussian_blur_0
+-- Command     : write_vhdl -force -mode synth_stub
+--               /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_convolve_rgb_0_0/hdmi_convolve_rgb_0_0_stub.vhdl
+-- Design      : hdmi_convolve_rgb_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a200tsbg484-1
 -- --------------------------------------------------------------------------------
@@ -28,7 +28,7 @@ entity hdmi_convolve_rgb_0_0 is
     master_green_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     master_blue_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     master_tlast_o : out STD_LOGIC;
-    weight_i : in STD_LOGIC_VECTOR ( 3968 downto 0 )
+    weight_i : in STD_LOGIC_VECTOR ( 728 downto 0 )
   );
 
 end hdmi_convolve_rgb_0_0;
@@ -37,7 +37,7 @@ architecture stub of hdmi_convolve_rgb_0_0 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clock_i,reset_i,slave_tvalid_i,slave_tready_o,slave_red_i[7:0],slave_green_i[7:0],slave_blue_i[7:0],slave_tlast_i,master_tvalid_o,master_tready_i,master_red_o[7:0],master_green_o[7:0],master_blue_o[7:0],master_tlast_o,weight_i[3968:0]";
+attribute black_box_pad_pin of stub : architecture is "clock_i,reset_i,slave_tvalid_i,slave_tready_o,slave_red_i[7:0],slave_green_i[7:0],slave_blue_i[7:0],slave_tlast_i,master_tvalid_o,master_tready_i,master_red_o[7:0],master_green_o[7:0],master_blue_o[7:0],master_tlast_o,weight_i[728:0]";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "convolve_rgb,Vivado 2018.2";
 begin
