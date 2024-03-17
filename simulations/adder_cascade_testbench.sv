@@ -7,11 +7,11 @@ module adder_cascade_testbench;
     localparam int OutWidth = 18;
     localparam int NumAdders = 4;
     localparam int NumStates = 4;
-    localparam signed [WeightWidth-1:0] WEIGHTS[NumAdders][NumStates] = '{
-        '{0, 1, 2, 3},
-        '{4, 5, 6, 7},
-        '{8, 9, 10, 11},
-        '{12, 13, 14, 15}
+    localparam signed [WeightWidth-1:0] Weight[NumStates][NumAdders] = '{
+        '{0, 4, 8, 12},
+        '{1, 5, 9, 13},
+        '{2, 6, 10, 14},
+        '{3, 7, 11, 15}
     };
 
     logic clock;
@@ -55,8 +55,7 @@ module adder_cascade_testbench;
 
     adder_cascade #(
         .NUM_ADDERS(NumAdders),
-        .NUM_STATES(NumStates),
-        .WEIGHTS(WEIGHTS)
+        .NUM_STATES(NumStates)
     ) adder_cascade_inst (
         .clock_i(clock),
         .reset_i(reset),
@@ -67,7 +66,9 @@ module adder_cascade_testbench;
 
         .master_valid_o(out_valid),
         .master_ready_i(out_ready),
-        .master_data_o (out_data)
+        .master_data_o (out_data),
+
+        .weight_i(Weight)
     );
 
     logic send_in_data_done = 0;

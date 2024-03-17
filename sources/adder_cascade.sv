@@ -5,10 +5,7 @@ module adder_cascade #(
     localparam int WeightWidth = 9,
     localparam int OutWidth = 18,
     parameter int NUM_ADDERS = 60,
-    parameter int NUM_STATES = 6,
-    parameter signed [WeightWidth-1:0] WEIGHTS[NUM_ADDERS][NUM_STATES] = '{
-        default: '{default: {WeightWidth{1'b1}}}
-    }
+    parameter int NUM_STATES = 6
 ) (
     input logic clock_i,
     input logic reset_i,
@@ -19,7 +16,9 @@ module adder_cascade #(
 
     output logic master_valid_o,
     input logic master_ready_i,
-    output logic signed [OutWidth-1:0] master_data_o
+    output logic signed [OutWidth-1:0] master_data_o,
+
+    input signed [WeightWidth-1:0] weight_i[NUM_STATES][NUM_ADDERS]
 );
 
     localparam int AWidth = 25;
@@ -77,9 +76,11 @@ module adder_cascade #(
         end : g_cascade_b
 
         logic signed [AWidth-1:0] a;
-        assign a = {WEIGHTS[i][state], (AWidth - WeightWidth)'(0)};
+        assign a[AWidth-1:AWidth-WeightWidth] = weight_i[state][i];
+        assign a[AWidth-WeightWidth-1:0] = 0;
         logic signed [BWidth-1:0] b;
-        assign b = {cascade_b[i], (BWidth - ActivationWidth)'(0)};
+        assign b[BWidth-1:BWidth-ActivationWidth] = cascade_b[i];
+        assign b[BWidth-ActivationWidth-1:0] = 0;
         logic signed [PWidth-1:0] p;
 
         xbip_dsp48_macro_0 dsp48_inst (

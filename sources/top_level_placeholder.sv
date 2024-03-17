@@ -16,23 +16,45 @@ module top_level_placeholder (
     localparam int ActivationWidth = 9;
     localparam int WeightWidth = 9;
     localparam int OutWidth = 18;
-    localparam int NumAdders = 60;
-    localparam int NumStates = 6;
-    localparam signed [WeightWidth-1:0] Weights[NumAdders][NumStates] = '{
-        default: '{default: {WeightWidth{1'b1}}}
+    localparam int InChannels = 3;
+    localparam int OutChannels = 16;
+    localparam int KernelSize = 7;
+    localparam int NumStates = 5;
+    localparam signed [WeightWidth-1:0] Weight[OutChannels][InChannels][KernelSize][KernelSize] = '{
+        default: '{
+            default: '{
+                '{0, 1, 2, 3, 2, 1, 0},
+                '{1, 2, 3, 4, 3, 2, 1},
+                '{2, 3, 4, 5, 4, 3, 2},
+                '{3, 4, 5, 6, 5, 4, 3},
+                '{2, 3, 4, 5, 4, 3, 2},
+                '{1, 2, 3, 4, 3, 2, 1},
+                '{0, 1, 2, 3, 2, 1, 0}
+            }
+        }
     };
 
-    logic signed [ActivationWidth-1:0] slave_data[NumAdders];
-    assign slave_data = '{default: {ActivationWidth{slave_data_placeholder_i}}};
+    logic signed [ActivationWidth-1:0] slave_data[KernelSize][KernelSize][InChannels];
+    assign slave_data = '{
+            default: '{default: '{default: {ActivationWidth{slave_data_placeholder_i}}}}
+        };
 
-    logic signed [OutWidth-1:0] master_data;
-    assign master_data_placeholder_o = ^master_data;
+    logic signed [OutWidth-1:0] master_data[OutChannels];
+    logic signed [OutWidth-1:0] master_data_xor;
+    always_comb begin
+        master_data_xor = 0;
+        for (int i = 0; i < OutChannels; ++i) begin
+            master_data_xor ^= master_data[i];
+        end
+    end
+    assign master_data_placeholder_o = ^master_data_xor;
 
-    adder_cascade #(
-        .NUM_ADDERS(NumAdders),
-        .NUM_STATES(NumStates),
-        .WEIGHTS(Weights)
-    ) adder_cascade_inst (
+    convolve_reduce #(
+        .IN_CHANNELS (InChannels),
+        .OUT_CHANNELS(OutChannels),
+        .KERNEL_SIZE (KernelSize),
+        .NUM_STATES  (NumStates)
+    ) convolve_reduce_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
@@ -42,7 +64,9 @@ module top_level_placeholder (
 
         .master_valid_o(master_valid_o),
         .master_ready_i(master_ready_i),
-        .master_data_o (master_data)
+        .master_data_o (master_data),
+
+        .weight_i(Weight)
     );
 
 endmodule : top_level_placeholder
