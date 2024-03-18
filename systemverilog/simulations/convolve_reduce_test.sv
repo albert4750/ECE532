@@ -31,6 +31,7 @@ module convolve_reduce_test;
         .IN_CHANNELS(InChannels),
         .OUT_CHANNELS(OutChannels),
         .CASCADES(Cascades),
+        .CASCADE_SECOND_COLUMN_ADDERS(0),
         .ACTIVATION_WIDTH(ActivationWidth),
         .WEIGHT_WIDTH(WeightWidth),
         .WEIGHT(Weight)

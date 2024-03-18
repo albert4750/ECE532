@@ -21,9 +21,9 @@ module top_level_placeholder (
 
     import constants::*;
 
-    localparam int InChannels = 80;
+    localparam int InChannels = 147;
     localparam int OutChannels = 16;
-    localparam int Cascades = 3;
+    localparam int Cascades = 4;
     localparam int ActivationWidth = 8;
     localparam int WeightWidth = 8;
     localparam bit signed [0:OutChannels-1][0:InChannels-1][WeightWidth-1:0] Weight =
@@ -39,6 +39,7 @@ module top_level_placeholder (
         .IN_CHANNELS(InChannels),
         .OUT_CHANNELS(OutChannels),
         .CASCADES(Cascades),
+        .CASCADE_SECOND_COLUMN_ADDERS(InChannels - 100),
         .ACTIVATION_WIDTH(ActivationWidth),
         .WEIGHT_WIDTH(WeightWidth),
         .WEIGHT(Weight)

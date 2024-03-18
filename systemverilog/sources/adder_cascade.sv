@@ -91,7 +91,11 @@ module adder_cascade #(
 
         if (i == 0) begin : g_dsp_first
             bit [DSP_OUT_WIDTH-1:0] c;
-            assign c = {slave_carry_i, (APadding + BPadding)'(0)};
+            assign c = {
+                (DSP_OUT_WIDTH - OutWidth - APadding - BPadding)'(0),
+                slave_carry_i,
+                (APadding + BPadding)'(0)
+            };
 
             dsp_multiply_add_c dsp_inst (
                 .CLK(clock_i),

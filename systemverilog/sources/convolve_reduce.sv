@@ -4,6 +4,7 @@ module convolve_reduce #(
     parameter int IN_CHANNELS = 3,
     parameter int OUT_CHANNELS = 3,
     parameter int CASCADES = 2,
+    parameter int CASCADE_SECOND_COLUMN_ADDERS = 0,
     parameter int ACTIVATION_WIDTH = 8,
     parameter int WEIGHT_WIDTH = 8,
     parameter bit signed [0:OUT_CHANNELS-1][0:IN_CHANNELS-1][WEIGHT_WIDTH-1:0] WEIGHT = 0
@@ -52,24 +53,47 @@ module convolve_reduce #(
     bit [CascadeOutWidth-1:0] cascade_data[CASCADES];
 
     for (genvar i = 0; i < CASCADES; ++i) begin : g_cascade
-        adder_cascade #(
-            .STREAMS(StreamsPerCascade),
-            .ADDERS(IN_CHANNELS),
-            .ACTIVATION_WIDTH(ACTIVATION_WIDTH),
-            .WEIGHT_WIDTH(WEIGHT_WIDTH),
-            .WEIGHT(ReshapedWeight[i])
-        ) cascade_inst (
-            .clock_i (clock_i),
-            .reset_i (reset_i),
-            .enable_i(master_ready_i),
+        if (CASCADE_SECOND_COLUMN_ADDERS == 0) begin : g_cascade_one_column
+            adder_cascade #(
+                .STREAMS(StreamsPerCascade),
+                .ADDERS(IN_CHANNELS),
+                .ACTIVATION_WIDTH(ACTIVATION_WIDTH),
+                .WEIGHT_WIDTH(WEIGHT_WIDTH),
+                .WEIGHT(ReshapedWeight[i])
+            ) cascade_inst (
+                .clock_i (clock_i),
+                .reset_i (reset_i),
+                .enable_i(master_ready_i),
 
-            .slave_valid_i(slave_valid_i),
-            .slave_data_i (slave_data_i),
-            .slave_carry_i(CascadeOutWidth'(0)),
+                .slave_valid_i(slave_valid_i),
+                .slave_data_i (slave_data_i),
+                .slave_carry_i(CascadeOutWidth'(0)),
 
-            .master_valid_o(cascade_valid[i]),
-            .master_data_o (cascade_data[i])
-        );
+                .master_valid_o(cascade_valid[i]),
+                .master_data_o (cascade_data[i])
+            );
+        end : g_cascade_one_column
+        else begin : g_cascade_two_column
+            adder_cascade_two_column #(
+                .STREAMS(StreamsPerCascade),
+                .TOTAL_ADDERS(IN_CHANNELS),
+                .SECOND_COLUMN_ADDERS(CASCADE_SECOND_COLUMN_ADDERS),
+                .ACTIVATION_WIDTH(ACTIVATION_WIDTH),
+                .WEIGHT_WIDTH(WEIGHT_WIDTH),
+                .WEIGHT(ReshapedWeight[i])
+            ) cascade_inst (
+                .clock_i (clock_i),
+                .reset_i (reset_i),
+                .enable_i(master_ready_i),
+
+                .slave_valid_i(slave_valid_i),
+                .slave_data_i (slave_data_i),
+                .slave_carry_i(CascadeOutWidth'(0)),
+
+                .master_valid_o(cascade_valid[i]),
+                .master_data_o (cascade_data[i])
+            );
+        end : g_cascade_two_column
     end : g_cascade
 
     typedef bit [$clog2(StreamsPerCascade)-1:0] state_t;
