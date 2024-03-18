@@ -82,6 +82,7 @@ module adder_cascade #(
             end
         end : g_cascade_b
 
+        // Push operands to the most significant bits.
         bit [DSP_A_WIDTH-1:0] a;
         assign a = {WEIGHT[i][pipeline_state[i]], APadding'(0)};
         bit [DSP_B_WIDTH-1:0] b;

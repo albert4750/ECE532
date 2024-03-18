@@ -21,35 +21,37 @@ module top_level_placeholder (
 
     import constants::*;
 
-    localparam int Streams = 5;
-    localparam int Adders = 60;
+    localparam int InChannels = 80;
+    localparam int OutChannels = 16;
+    localparam int Cascades = 3;
     localparam int ActivationWidth = 8;
     localparam int WeightWidth = 8;
-    localparam int OutWidth = ActivationWidth + WeightWidth;
-    localparam bit signed [0:Adders-1][0:Streams-1][WeightWidth-1:0] Weight =
-        {Adders{{Streams{WeightWidth'(1)}}}};
+    localparam bit signed [0:OutChannels-1][0:InChannels-1][WeightWidth-1:0] Weight =
+        {OutChannels{{InChannels{WeightWidth'(1)}}}};
 
-    assign slave_ready_o = 1;
+    bit [InChannels*ActivationWidth-1:0] slave_data;
+    assign slave_data = {InChannels{{ActivationWidth'(slave_data_placeholder_i)}}};
 
-    bit [OutWidth-1:0] master_data;
+    bit [OutChannels*ActivationWidth-1:0] master_data;
     assign master_data_placeholder_o = ^master_data;
 
-    adder_cascade #(
-        .STREAMS(Streams),
-        .ADDERS(Adders),
+    convolve_reduce #(
+        .IN_CHANNELS(InChannels),
+        .OUT_CHANNELS(OutChannels),
+        .CASCADES(Cascades),
         .ACTIVATION_WIDTH(ActivationWidth),
         .WEIGHT_WIDTH(WeightWidth),
         .WEIGHT(Weight)
-    ) adder_cascade_inst (
-        .clock_i (clock_i),
-        .reset_i (reset_i),
-        .enable_i(1),
+    ) convolve_reduce_inst (
+        .clock_i(clock_i),
+        .reset_i(reset_i),
 
         .slave_valid_i(slave_valid_i),
-        .slave_data_i ({(Adders * ActivationWidth) {slave_data_placeholder_i}}),
-        .slave_carry_i({OutWidth{slave_data_placeholder_i}}),
+        .slave_ready_o(slave_ready_o),
+        .slave_data_i (slave_data),
 
         .master_valid_o(master_valid_o),
+        .master_ready_i(master_ready_i),
         .master_data_o (master_data)
     );
 
