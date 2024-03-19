@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="hdmi_xlconstant_1_0_synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1710249243">
-  <File Type="VDS-TIMING-PB" Name="hdmi_xlconstant_1_0_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="hdmi_xlconstant_1_0_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="hdmi_xlconstant_1_0.dcp"/>
   <File Type="RDS-UTIL-PB" Name="hdmi_xlconstant_1_0_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="hdmi_xlconstant_1_0_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="hdmi_xlconstant_1_0_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="hdmi_xlconstant_1_0.vds"/>
   <File Type="REPORTS-TCL" Name="hdmi_xlconstant_1_0_reports.tcl"/>
+  <File Type="RDS-RDS" Name="hdmi_xlconstant_1_0.vds"/>
   <File Type="PA-TCL" Name="hdmi_xlconstant_1_0.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_xlconstant_1_0">
     <File Path="$PSRCDIR/sources_1/bd/hdmi/ip/hdmi_xlconstant_1_0/hdmi_xlconstant_1_0.xci">

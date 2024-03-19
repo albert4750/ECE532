@@ -62,8 +62,8 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_xbar_1"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_stream2rgb_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_xbar_1"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_passthrough_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_grayscale_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_rgb2stream_0_0"/>

@@ -61,7 +61,7 @@ void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u3
 void DemoISR(void *callBackRef, void *pVideo);
 
 // Albert Start
-void doDMA();
+void doDMA(u8 debug);
 // Albert End
 
 /* ------------------------------------------------------------ */

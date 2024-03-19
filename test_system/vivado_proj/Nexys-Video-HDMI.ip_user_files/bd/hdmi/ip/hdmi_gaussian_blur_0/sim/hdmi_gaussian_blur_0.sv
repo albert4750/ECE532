@@ -90,12 +90,12 @@ output wire [7 : 0] master_red_o;
 output wire [7 : 0] master_green_o;
 output wire [7 : 0] master_blue_o;
 output wire master_tlast_o;
-input wire [3968 : 0] weight_i;
+input wire [728 : 0] weight_i;
 
   convolve_rgb #(
-    .KERNEL_SIZE(7),
-    .HEIGHT(480),
-    .WIDTH(640),
+    .KERNEL_SIZE(3),
+    .HEIGHT(1080),
+    .WIDTH(1920),
     .RIGHT_SHIFT(8),
     .ADDER_BRANCHING_FACTOR(3)
   ) inst (

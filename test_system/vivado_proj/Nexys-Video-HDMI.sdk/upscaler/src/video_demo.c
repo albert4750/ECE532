@@ -290,11 +290,13 @@ void DemoRun()
 	while (userInput != 'q')
 	{
 		fRefresh = 0;
-		//DemoPrintMenu();
+		DemoPrintMenu();
 
 		/* Wait for data on UART */
-		while (XUartLite_IsReceiveEmpty(UART_BASEADDR) && !fRefresh)
-		{}
+		while (XUartLite_IsReceiveEmpty(UART_BASEADDR) && !fRefresh){
+			doDMA(0);
+			usleep(25000);
+		}
 
 		/* Store the first character in the UART receive FIFO and echo it */
 		if (!XUartLite_IsReceiveEmpty(UART_BASEADDR))
@@ -366,7 +368,7 @@ void DemoRun()
 			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE, 2);
 			break;
 		case 'd':
-			doDMA();
+			doDMA(1);
 			break;
 		case 's':
 			xil_printf("\n\rSwitching DMA mode\n\r");
@@ -390,10 +392,10 @@ void DemoRun()
 }
 
 // Albert Start
-void doDMA(){
+void doDMA(u8 debug){
 	u32 ret;
 	u32 length = sizeof(u8) * DEMO_MAX_FRAME;
-	xil_printf("\n\rTrying to initiate DMA DATA Transfer\n\r");
+	if(debug) xil_printf("\n\rTrying to initiate DMA DATA Transfer\n\r");
 	XAxiDma* dma;
 
 	if(dmaMode == 0){
@@ -415,20 +417,26 @@ void doDMA(){
 
 	// start reading
 	ret = XAxiDma_SimpleTransfer(dma, (u32)pFrames[0], length, XAXIDMA_DMA_TO_DEVICE);
-	if(ret != XST_SUCCESS){
-		xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+	if(debug) {
+		if(ret != XST_SUCCESS){
+			xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+		}
+		else{
+			xil_printf("DMA to device transfer Successfully registered\n\r");
+		}
 	}
-	else{
-		xil_printf("DMA to device transfer Successfully registered\n\r");
-	}
+
 	// start writing
 	ret = XAxiDma_SimpleTransfer(dma, (u32)pFrames[1], length, XAXIDMA_DEVICE_TO_DMA);
-	if(ret != XST_SUCCESS){
-		xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+	if(debug){
+		if(ret != XST_SUCCESS){
+			xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+		}
+		else{
+			xil_printf("device to DMA transfer Successfully registered\n\r");
+		}
 	}
-	else{
-		xil_printf("device to DMA transfer Successfully registered\n\r");
-	}
+
 }
 // Albert End
 
