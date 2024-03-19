@@ -65,9 +65,8 @@ module sliding_window #(
     for (genvar I = 0; I < WindowHeight - 1; ++I) begin : g_ram
         dual_port_ram #(
             .ItemCount(InWidth),
-            .DataWidth(DataWidth),
-            .RAMStyle ("auto")
-        ) ram_inst (
+            .DataWidth(DataWidth)
+        ) dual_port_ram_inst (
             .clock_i(clock_i),
 
             .read_enable_i(has_new_input),
@@ -80,7 +79,9 @@ module sliding_window #(
         );
     end : g_ram
 
+    /* verilator lint_off ASCRANGE */
     bit [0:WindowHeight-1][0:WindowWidth-1][DataWidth-1:0] out_data;
+    /* verilator lint_on ASCRANGE */
     assign master_data_o = out_data;
 
     // The row of RAM that stores data for the current row of the sliding window.

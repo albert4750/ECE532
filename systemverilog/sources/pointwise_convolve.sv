@@ -10,9 +10,8 @@ module pointwise_convolve #(
     parameter int ActivationWidth = 8,
     parameter int WeightWidth = 8,
     /* verilator lint_off ASCRANGE */
-    parameter bit [0:OutChannels-1][0:InChannels-1][WeightWidth-1:0] Weight = {
-        OutChannels{{InChannels{WeightWidth'(0)}}}
-    },
+    parameter bit [0:OutChannels-1][0:InChannels-1][WeightWidth-1:0] Weight =
+        {OutChannels{{InChannels{WeightWidth'(0)}}}},
     /* verilator lint_on ASCRANGE */
     parameter int DSPCascades = 1,
     parameter int DSPsInColumn[DSPCascades][MaxDSPColumns] = '{
@@ -134,11 +133,13 @@ module pointwise_convolve #(
             end
             latency += LatenciesBetweenColumns[cascade_index][column];
         end
+        $error("pointwise_convolve: DSP index out of range");
+        return -1;
     endfunction : get_dsp_input_latency
 
     /* verilator lint_off ASCRANGE */
     function automatic bit [0:Cycles-1][WeightWidth-1:0] get_dsp_weight(int cascade_index,
-                                                                               int dsp_index);
+                                                                        int dsp_index);
         // Returns the weight for a DSP.
         bit [0:Cycles-1][WeightWidth-1:0] weight;
         for (int cycle = 0; cycle < Cycles; ++cycle) begin
@@ -162,6 +163,7 @@ module pointwise_convolve #(
                 return column;
             end
         end
+        $error("pointwise_convolve: DSP index out of range");
         return -1;
     endfunction : get_dsp_column
 
@@ -190,10 +192,10 @@ module pointwise_convolve #(
     endfunction : is_last_dsp_in_column
 
     if (!is_dsps_in_column_valid()) begin : g_invalid_dsps_in_column
-        $fatal("pointwise_convolve: DSPsInColumn is invalid");
+        $error("pointwise_convolve: DSPsInColumn is invalid");
     end : g_invalid_dsps_in_column
     else if (!is_latencies_between_columns_valid()) begin : g_invalid_latencies_between_columns
-        $fatal("pointwise_convolve: LatenciesBetweenColumns is invalid");
+        $error("pointwise_convolve: LatenciesBetweenColumns is invalid");
     end : g_invalid_latencies_between_columns
 
     state_t input_state;
@@ -334,7 +336,7 @@ module pointwise_convolve #(
 
             if (is_first_dsp_in_column(CascadeIndex, DSPIndex)) begin : g_dsp_first
 `ifdef ECE532_USE_CUSTOM_MULTIPLY_ADD
-                multiply_add_c dsp_inst (
+                multiply_add_c multiply_add_c_inst (
                     .clock_i(clock_i),
                     .enable_i(master_ready_i),
                     .a_i(a),
@@ -344,7 +346,7 @@ module pointwise_convolve #(
                     .p_o(p)
                 );
 `else
-                dsp_multiply_add_c dsp_inst (
+                xbip_dsp48_macro_0 dsp_multiply_add_c_inst (
                     .CLK(clock_i),
                     .CE(master_ready_i),
                     .A(a),
@@ -357,7 +359,7 @@ module pointwise_convolve #(
             end : g_dsp_first
             else begin : g_dsp_rest
 `ifdef ECE532_USE_CUSTOM_MULTIPLY_ADD
-                multiply_add_pcin dsp_inst (
+                multiply_add_pcin multiply_add_pcin_inst (
                     .clock_i(clock_i),
                     .enable_i(master_ready_i),
                     .p_cascade_i(cascade_path[DSPIndex-1]),
@@ -367,7 +369,7 @@ module pointwise_convolve #(
                     .p_o(p)
                 );
 `else
-                dsp_multiply_add_pcin dsp_inst (
+                xbip_dsp48_macro_1 dsp_multiply_add_pcin_inst (
                     .CLK(clock_i),
                     .CE(master_ready_i),
                     .PCIN(cascade_path[DSPIndex-1]),

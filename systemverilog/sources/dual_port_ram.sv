@@ -7,7 +7,6 @@
 module dual_port_ram #(
     parameter int ItemCount = 800,
     parameter int DataWidth = 8,
-    parameter string RAMStyle = "auto",
     localparam int AddressWidth = $clog2(ItemCount)
 ) (
     input bit clock_i,
@@ -21,7 +20,7 @@ module dual_port_ram #(
     input bit [DataWidth-1:0] write_data_i
 );
 
-    (* ram_style = RAMStyle *) bit [DataWidth-1:0] memory[ItemCount];
+    (* ram_style = "auto" *) bit [DataWidth-1:0] memory[ItemCount];
 
     always_ff @(posedge clock_i) begin
         if (read_enable_i) begin

@@ -17,28 +17,12 @@ module top_level_placeholder (
     output bit master_data_placeholder_o
 );
 
-    localparam int InChannels = 147;
-    localparam int OutChannels = 16;
+    localparam int InChannels = 3;
+    localparam int OutChannels = 3;
+    localparam int Height = 600;
+    localparam int Width = 800;
     localparam int ActivationWidth = 8;
     localparam int WeightWidth = 8;
-    /* verilator lint_off ASCRANGE */
-    localparam bit signed [0:OutChannels-1][0:InChannels-1][WeightWidth-1:0] Weight = {
-        OutChannels{{InChannels{WeightWidth'(1)}}}
-    };
-    /* verilator lint_on ASCRANGE */
-    localparam int DSPCascades = 4;
-    localparam int DSPsInColumn[DSPCascades][MaxDSPColumns] = '{
-        '{100, 47, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{53, 94, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{6, 100, 41, 0, 0, 0, 0, 0, 0, 0},
-        '{59, 88, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
-    localparam int LatenciesBetweenColumns[DSPCascades][MaxDSPColumns-1] = '{
-        '{4, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{4, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{2, 2, 0, 0, 0, 0, 0, 0, 0},
-        '{4, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
 
     bit [InChannels*ActivationWidth-1:0] slave_data;
     assign slave_data = {InChannels{{ActivationWidth'(slave_data_placeholder_i)}}};
@@ -46,16 +30,10 @@ module top_level_placeholder (
     bit [OutChannels*ActivationWidth-1:0] master_data;
     assign master_data_placeholder_o = ^master_data;
 
-    pointwise_convolve #(
-        .InChannels(InChannels),
-        .OutChannels(OutChannels),
-        .ActivationWidth(ActivationWidth),
-        .WeightWidth(WeightWidth),
-        .Weight(Weight),
-        .DSPCascades(DSPCascades),
-        .DSPsInColumn(DSPsInColumn),
-        .LatenciesBetweenColumns(LatenciesBetweenColumns)
-    ) convolve_inst (
+    srcnn_small #(
+        .Height(Height),
+        .Width (Width)
+    ) srcnn_small_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 

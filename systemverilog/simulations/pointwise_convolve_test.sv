@@ -75,7 +75,7 @@ module pointwise_convolve_test;
         .DSPCascades(DSPCascades),
         .DSPsInColumn(DSPsInColumn),
         .LatenciesBetweenColumns(LatenciesBetweenColumns)
-    ) convolve_inst (
+    ) pointwise_convolve_inst (
         .clock_i(clock),
         .reset_i(reset),
 
