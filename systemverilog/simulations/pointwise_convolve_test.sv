@@ -50,7 +50,7 @@ module pointwise_convolve_test;
 
     bit clock;
     initial clock = 0;
-    always #5 clock = ~clock;
+    always #5 clock = !clock;
 
     bit reset;
 
