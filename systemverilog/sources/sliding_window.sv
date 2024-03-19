@@ -5,31 +5,31 @@
 // This module accepts a row-major stream of elements from 2-D matrices and produces a stream of
 // sliding windows. No padding is applied.
 //
-// - Input: Stream of (IN_HEIGHT, IN_WIDTH) elements, each element of (DATA_WIDTH) bits.
-// - Output: Stream of (IN_HEIGHT - WINDOW_HEIGHT + 1, IN_WIDTH - WINDOW_WIDTH + 1) elements, each
-//   element of (WINDOW_HEIGHT, WINDOW_WIDTH, DATA_WIDTH) bits.
+// - Input: Stream of (InHeight, InWidth) elements, each element of (DataWidth) bits.
+// - Output: Stream of (InHeight - WindowHeight + 1, InWidth - WindowWidth + 1) elements, each
+//   element of (WindowHeight, WindowWidth, DataWidth) bits.
 
 module sliding_window #(
-    parameter int IN_HEIGHT = 600,
-    parameter int IN_WIDTH = 800,
-    parameter int WINDOW_HEIGHT = 3,
-    parameter int WINDOW_WIDTH = 3,
-    parameter int DATA_WIDTH = 8
+    parameter int InHeight = 600,
+    parameter int InWidth = 800,
+    parameter int WindowHeight = 3,
+    parameter int WindowWidth = 3,
+    parameter int DataWidth = 8
 ) (
     input bit clock_i,
     input bit reset_i,
 
     input bit slave_valid_i,
     output bit slave_ready_o,
-    input bit [DATA_WIDTH-1:0] slave_data_i,
+    input bit [DataWidth-1:0] slave_data_i,
 
     output bit master_valid_o,
     input bit master_ready_i,
-    output bit [WINDOW_HEIGHT*WINDOW_WIDTH*DATA_WIDTH-1:0] master_data_o
+    output bit [WindowHeight*WindowWidth*DataWidth-1:0] master_data_o
 );
 
-    typedef bit [$clog2(IN_HEIGHT)-1:0] row_t;
-    typedef bit [$clog2(IN_WIDTH)-1:0] column_t;
+    typedef bit [$clog2(InHeight)-1:0] row_t;
+    typedef bit [$clog2(InWidth)-1:0] column_t;
 
     bit has_new_input;
     assign has_new_input = slave_valid_i && slave_ready_o;
@@ -37,9 +37,9 @@ module sliding_window #(
     row_t row, next_row;
     column_t column, next_column;
     always_comb begin
-        if (column == column_t'(IN_WIDTH - 1)) begin
+        if (column == column_t'(InWidth - 1)) begin
             next_column = 0;
-            if (row == row_t'(IN_HEIGHT - 1)) begin
+            if (row == row_t'(InHeight - 1)) begin
                 next_row = 0;
             end else begin
                 next_row = row + 1;
@@ -60,61 +60,61 @@ module sliding_window #(
     end
 
     // RAM stores the previous rows.
-    // Element (row, column) is at address [column] of row [row % (WINDOW_HEIGHT - 1)].
-    bit [DATA_WIDTH-1:0] ram_read_data[WINDOW_HEIGHT-1];
-    for (genvar i = 0; i < WINDOW_HEIGHT - 1; ++i) begin : g_ram
+    // Element (row, column) is at address [column] of row [row % (WindowHeight - 1)].
+    bit [DataWidth-1:0] ram_read_data[WindowHeight-1];
+    for (genvar I = 0; I < WindowHeight - 1; ++I) begin : g_ram
         dual_port_ram #(
-            .ITEM_COUNT(IN_WIDTH),
-            .DATA_WIDTH(DATA_WIDTH),
-            .RAM_STYLE ("auto")
+            .ItemCount(InWidth),
+            .DataWidth(DataWidth),
+            .RAMStyle ("auto")
         ) ram_inst (
             .clock_i(clock_i),
 
             .read_enable_i(has_new_input),
             .read_address_i(next_column),
-            .read_data_o(ram_read_data[i]),
+            .read_data_o(ram_read_data[I]),
 
-            .write_enable_i(has_new_input && row % row_t'(WINDOW_HEIGHT - 1) == row_t'(i)),
+            .write_enable_i(has_new_input && row % row_t'(WindowHeight - 1) == row_t'(I)),
             .write_address_i(column),
             .write_data_i(slave_data_i)
         );
     end : g_ram
 
-    bit [0:WINDOW_HEIGHT-1][0:WINDOW_WIDTH-1][DATA_WIDTH-1:0] out_data;
+    bit [0:WindowHeight-1][0:WindowWidth-1][DataWidth-1:0] out_data;
     assign master_data_o = out_data;
 
     // The row of RAM that stores data for the current row of the sliding window.
-    typedef bit [$clog2(WINDOW_HEIGHT-1)-1:0] ram_row_t;
+    typedef bit [$clog2(WindowHeight-1)-1:0] ram_row_t;
     ram_row_t ram_row;
-    assign ram_row = ram_row_t'(row % row_t'(WINDOW_HEIGHT - 1));
+    assign ram_row = ram_row_t'(row % row_t'(WindowHeight - 1));
 
-    // For the last column of the sliding window, the first (WINDOW_HEIGHT - 1) elements are from
+    // For the last column of the sliding window, the first (WindowHeight - 1) elements are from
     // the RAM, and the last element is from the input.
-    for (genvar i = 0; i < WINDOW_HEIGHT - 1; ++i) begin : g_out_data_last_column
-        localparam ram_row_t IReverse = ram_row_t'(WINDOW_HEIGHT - 1 - i);
+    for (genvar I = 0; I < WindowHeight - 1; ++I) begin : g_out_data_last_column
+        localparam ram_row_t IReverse = ram_row_t'(WindowHeight - 1 - I);
 
-        ram_row_t previous_ram_row;  // (ram_row + i) % (WINDOW_HEIGHT - 1)
-        if (i == 0) begin : g_previous_ram_row_first
+        ram_row_t previous_ram_row;  // (ram_row + I) % (WindowHeight - 1)
+        if (I == 0) begin : g_previous_ram_row_first
             assign previous_ram_row = ram_row;
         end : g_previous_ram_row_first
         else begin : g_previous_ram_row_rest
-            assign previous_ram_row = ram_row < IReverse ? ram_row + i : ram_row - IReverse;
+            assign previous_ram_row = ram_row < IReverse ? ram_row + I : ram_row - IReverse;
         end : g_previous_ram_row_rest
 
-        assign out_data[i][WINDOW_WIDTH-1] = ram_read_data[previous_ram_row];
+        assign out_data[I][WindowWidth-1] = ram_read_data[previous_ram_row];
     end : g_out_data_last_column
 
     // The remaining columns of the sliding window gets their values by shifting from their right
     // neighbors.
-    (* ram_style = "auto" *) bit [DATA_WIDTH-1:0] out_data_shifted[WINDOW_HEIGHT*(WINDOW_WIDTH-1)];
-    for (genvar i = 0; i < WINDOW_HEIGHT; ++i) begin : g_out_data_shifted_i
-        for (genvar j = 0; j < WINDOW_WIDTH - 1; ++j) begin : g_out_data_shifted_j
-            localparam int FlatIndex = i * (WINDOW_WIDTH - 1) + j;
-            assign out_data[i][j] = out_data_shifted[FlatIndex];
+    (* ram_style = "auto" *) bit [DataWidth-1:0] out_data_shifted[WindowHeight*(WindowWidth-1)];
+    for (genvar I = 0; I < WindowHeight; ++I) begin : g_out_data_shifted_row
+        for (genvar J = 0; J < WindowWidth - 1; ++J) begin : g_out_data_shifted_column
+            localparam int FlatIndex = I * (WindowWidth - 1) + J;
+            assign out_data[I][J] = out_data_shifted[FlatIndex];
 
-            bit [DATA_WIDTH-1:0] right_neighbor;
-            if (j == WINDOW_WIDTH - 2) begin : g_right_neighbor_last
-                assign right_neighbor = out_data[i][WINDOW_WIDTH-1];
+            bit [DataWidth-1:0] right_neighbor;
+            if (J == WindowWidth - 2) begin : g_right_neighbor_last
+                assign right_neighbor = out_data[I][WindowWidth-1];
             end : g_right_neighbor_last
             else begin : g_right_neighbor_rest
                 assign right_neighbor = out_data_shifted[FlatIndex+1];
@@ -125,12 +125,12 @@ module sliding_window #(
                     out_data_shifted[FlatIndex] <= right_neighbor;
                 end
             end
-        end : g_out_data_shifted_j
-    end : g_out_data_shifted_i
+        end : g_out_data_shifted_column
+    end : g_out_data_shifted_row
 
     assign slave_ready_o = reset_i && master_ready_i;
     assign master_valid_o =
         reset_i && slave_valid_i &&
-        row >= row_t'(WINDOW_HEIGHT - 1) && column >= column_t'(WINDOW_WIDTH - 1);
+        row >= row_t'(WindowHeight - 1) && column >= column_t'(WindowWidth - 1);
 
 endmodule : sliding_window
