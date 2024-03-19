@@ -45,6 +45,7 @@ def transform_image_train(
     image: Tensor,
     resize: Optional[tuple[int, int]] = None,
     random_crop_size: Optional[int] = None,
+    scale_factor: Optional[float] = 0.5,
 ) -> tuple[Tensor, Tensor]:
     """Transforms an image for training.
 
@@ -53,7 +54,7 @@ def transform_image_train(
     :param random_crop_size: If not None, the image is randomly cropped into a square
         of this size.
     :return: A tuple of two images. The first image is the model input of shape
-        (C, H/2, W/2), and the second image is the target of shape (C, H, W). Values are
+        (C, H*scale_factor, W*scale_factor), and the second image is the target of shape (C, H, W). Values are
         in the range [0, 1].
     """
     image = image.type(torch.float32)
@@ -86,7 +87,7 @@ def transform_image_train(
     # interpolate() expects batched inputs.
     input_image = input_image.unsqueeze(dim=0)
     interpolation_mode = random.choice(["area", "bicubic"])
-    input_image = F.interpolate(input_image, scale_factor=0.5, mode=interpolation_mode)
+    input_image = F.interpolate(input_image, scale_factor=scale_factor, mode=interpolation_mode)
     input_image = input_image.squeeze(dim=0)
 
     if random.random() < 0.8:
@@ -107,6 +108,7 @@ def transform_image_eval(
     image: Tensor,
     resize: Optional[tuple[int, int]] = None,
     center_crop_size: Optional[int] = None,
+    scale_factor: Optional[float] = 0.5,
 ) -> tuple[Tensor, Tensor]:
     """Transforms an image for evaluation.
 
@@ -115,7 +117,7 @@ def transform_image_eval(
     :param center_crop_size: If not None, the image is randomly cropped into a square
         of this size aligned with the image center.
     :return: A tuple of two images. The first image is the model input of shape
-        (C, H/2, W/2), and the second image is the target of shape (C, H, W). Values are
+        (C, H*scale_factor, W*scale_factor), and the second image is the target of shape (C, H, W). Values are
         in the range [0, 1].
     """
     image = image.type(torch.float32)
@@ -131,7 +133,7 @@ def transform_image_eval(
         image = VF.crop(image, top, left, center_crop_size, center_crop_size)
 
     input_image = image.unsqueeze(dim=0)
-    input_image = F.interpolate(input_image, scale_factor=0.5, mode="area")
+    input_image = F.interpolate(input_image, scale_factor=scale_factor, mode="area")
     input_image = input_image.squeeze(dim=0)
     target_image = image
     return input_image, target_image
