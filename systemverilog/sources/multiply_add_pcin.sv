@@ -7,11 +7,11 @@ import constants::*;
 module multiply_add_pcin (
     input bit clock_i,
     input bit enable_i,
-    input bit signed [DSPOutWidth-1:0] p_cascade_i,
-    input bit signed [DSPInAWidth-1:0] a_i,
-    input bit signed [DSPInBWidth-1:0] b_i,
-    output bit signed [DSPOutWidth-1:0] p_cascade_o,
-    output bit signed [DSPOutWidth-1:0] p_o
+    input bit [DSPOutWidth-1:0] p_cascade_i,
+    input bit [DSPInAWidth-1:0] a_i,
+    input bit [DSPInBWidth-1:0] b_i,
+    output bit [DSPOutWidth-1:0] p_cascade_o,
+    output bit [DSPOutWidth-1:0] p_o
 );
 
     bit signed [DSPInAWidth-1:0] a3, a4;

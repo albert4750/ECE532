@@ -17,7 +17,7 @@ module top_level_placeholder (
     output bit master_data_placeholder_o
 );
 
-    localparam int InChannels = 675;
+    localparam int InChannels = 147;
     localparam int OutChannels = 16;
     localparam int ActivationWidth = 8;
     localparam int WeightWidth = 8;
@@ -26,12 +26,18 @@ module top_level_placeholder (
         OutChannels{{InChannels{WeightWidth'(1)}}}
     };
     /* verilator lint_on ASCRANGE */
-    localparam int DSPCascades = 1;
+    localparam int DSPCascades = 4;
     localparam int DSPsInColumn[DSPCascades][MaxDSPColumns] = '{
-        '{100, 100, 100, 100, 100, 100, 75, 0, 0, 0}
+        '{100, 47, 0, 0, 0, 0, 0, 0, 0, 0},
+        '{53, 94, 0, 0, 0, 0, 0, 0, 0, 0},
+        '{6, 100, 41, 0, 0, 0, 0, 0, 0, 0},
+        '{59, 88, 0, 0, 0, 0, 0, 0, 0, 0}
     };
     localparam int LatenciesBetweenColumns[DSPCascades][MaxDSPColumns-1] = '{
-        '{3, 3, 3, 3, 3, 3, 0, 0, 0}
+        '{4, 0, 0, 0, 0, 0, 0, 0, 0},
+        '{4, 0, 0, 0, 0, 0, 0, 0, 0},
+        '{2, 2, 0, 0, 0, 0, 0, 0, 0},
+        '{4, 0, 0, 0, 0, 0, 0, 0, 0}
     };
 
     bit [InChannels*ActivationWidth-1:0] slave_data;

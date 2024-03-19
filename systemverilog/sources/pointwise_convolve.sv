@@ -10,7 +10,7 @@ module pointwise_convolve #(
     parameter int ActivationWidth = 8,
     parameter int WeightWidth = 8,
     /* verilator lint_off ASCRANGE */
-    parameter bit signed [0:OutChannels-1][0:InChannels-1][WeightWidth-1:0] Weight = {
+    parameter bit [0:OutChannels-1][0:InChannels-1][WeightWidth-1:0] Weight = {
         OutChannels{{InChannels{WeightWidth'(0)}}}
     },
     /* verilator lint_on ASCRANGE */
@@ -26,13 +26,13 @@ module pointwise_convolve #(
     input bit slave_valid_i,
     output bit slave_ready_o,
     /* verilator lint_off ASCRANGE */
-    input bit signed [0:InChannels-1][ActivationWidth-1:0] slave_data_i,
+    input bit [0:InChannels-1][ActivationWidth-1:0] slave_data_i,
     /* verilator lint_on ASCRANGE */
 
     output bit master_valid_o,
     input bit master_ready_i,
     /* verilator lint_off ASCRANGE */
-    output bit signed [0:OutChannels-1][ActivationWidth-1:0] master_data_o
+    output bit [0:OutChannels-1][ActivationWidth-1:0] master_data_o
     /* verilator lint_on ASCRANGE */
 );
 
@@ -137,10 +137,10 @@ module pointwise_convolve #(
     endfunction : get_dsp_input_latency
 
     /* verilator lint_off ASCRANGE */
-    function automatic bit signed [0:Cycles-1][WeightWidth-1:0] get_dsp_weight(int cascade_index,
+    function automatic bit [0:Cycles-1][WeightWidth-1:0] get_dsp_weight(int cascade_index,
                                                                                int dsp_index);
         // Returns the weight for a DSP.
-        bit signed [0:Cycles-1][WeightWidth-1:0] weight;
+        bit [0:Cycles-1][WeightWidth-1:0] weight;
         for (int cycle = 0; cycle < Cycles; ++cycle) begin
             int out_channel = cascade_index * Cycles + cycle;
             if (out_channel < OutChannels) begin
@@ -232,7 +232,7 @@ module pointwise_convolve #(
     assign master_valid_o =
         reset_i && output_valid[OutputLatency] && output_state == state_t'(Cycles - 1);
 
-    bit signed [ProductWidth-1:0] cascade_out[DSPCascades];
+    bit [ProductWidth-1:0] cascade_out[DSPCascades];
 
     for (genvar OutChannel = 0; OutChannel < OutChannels; ++OutChannel) begin : g_out_data
         localparam int CascadeIndex = OutChannel / Cycles;
@@ -241,7 +241,7 @@ module pointwise_convolve #(
             assign master_data_o[OutChannel] = cascade_out[CascadeIndex][ActivationWidth-1:0];
         end : g_out_data_last
         else begin : g_out_data_rest
-            bit signed [ActivationWidth-1:0] out_buffer;
+            bit [ActivationWidth-1:0] out_buffer;
             always_ff @(posedge clock_i) begin
                 if (master_ready_i && output_valid[OutputLatency] &&
                     output_state == state_t'(Cycle)) begin
@@ -264,15 +264,15 @@ module pointwise_convolve #(
         end
 
         localparam int ColumnCount = get_column_count(CascadeIndex);
-        bit signed [DSPOutWidth-1:0] column_in[ColumnCount];
+        bit [DSPOutWidth-1:0] column_in[ColumnCount];
         assign column_in[0] = 0;
-        bit signed [DSPOutWidth-1:0] column_out[ColumnCount];
+        bit [DSPOutWidth-1:0] column_out[ColumnCount];
         assign cascade_out[CascadeIndex] =
             column_out[ColumnCount-1][ProductWidth+ProductPaddingWidth-1:ProductPaddingWidth];
 
         for (genvar Column = 0; Column < ColumnCount - 1; ++Column) begin : g_column_in_out
             localparam int Registers = get_c_registers_between_columns(CascadeIndex, Column);
-            bit signed [ProductWidth-1:0] c_pipeline[Registers+1];
+            bit [ProductWidth-1:0] c_pipeline[Registers+1];
             assign c_pipeline[0] =
                 column_out[Column][ProductWidth+ProductPaddingWidth-1:ProductPaddingWidth];
             if (Registers >= 1) begin : g_c_pipeline
@@ -289,7 +289,7 @@ module pointwise_convolve #(
             };
         end : g_column_in_out
 
-        bit signed [DSPOutWidth-1:0] cascade_path[InChannels];
+        bit [DSPOutWidth-1:0] cascade_path[InChannels];
 
         for (genvar DSPIndex = 0; DSPIndex < InChannels; ++DSPIndex) begin : g_dsp
             localparam int Latency = get_dsp_input_latency(CascadeIndex, DSPIndex);
@@ -304,17 +304,17 @@ module pointwise_convolve #(
             end
 
             /* verilator lint_off ASCRANGE */
-            localparam bit signed [0:Cycles-1][WeightWidth-1:0] DSPWeight = get_dsp_weight(
+            localparam bit [0:Cycles-1][WeightWidth-1:0] DSPWeight = get_dsp_weight(
                 CascadeIndex, DSPIndex
             );
             /* verilator lint_on ASCRANGE */
-            bit signed [DSPInAWidth-1:0] a;
+            bit [DSPInAWidth-1:0] a;
             /* verilator lint_off WIDTHEXPAND */
             assign a[DSPInAWidth-1:APaddingWidth] = DSPWeight[state];
             /* verilator lint_on WIDTHEXPAND */
             assign a[APaddingWidth-1:0] = 0;
 
-            bit signed [ActivationWidth-1:0] b_pipeline[Latency+1];
+            bit [ActivationWidth-1:0] b_pipeline[Latency+1];
             assign b_pipeline[0] = slave_data_i[DSPIndex];
             if (DSPIndex > 0) begin : g_b_pipeline
                 always_ff @(posedge clock_i) begin
@@ -324,11 +324,11 @@ module pointwise_convolve #(
                 end
             end : g_b_pipeline
 
-            bit signed [DSPInBWidth-1:0] b;
+            bit [DSPInBWidth-1:0] b;
             assign b[DSPInBWidth-1:BPaddingWidth] = b_pipeline[Latency];
             assign b[BPaddingWidth-1:0] = 0;
 
-            bit signed [DSPOutWidth-1:0] p;
+            bit [DSPOutWidth-1:0] p;
 
             localparam int DSPColumn = get_dsp_column(CascadeIndex, DSPIndex);
 

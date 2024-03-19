@@ -57,13 +57,13 @@ module pointwise_convolve_test;
     bit in_valid;
     bit in_ready;
     /* verilator lint_off ASCRANGE */
-    bit signed [0:InChannels-1][ActivationWidth-1:0] in_data;
+    bit [0:InChannels-1][ActivationWidth-1:0] in_data;
     /* verilator lint_on ASCRANGE */
 
     bit out_valid;
     bit out_ready;
     /* verilator lint_off ASCRANGE */
-    bit signed [0:OutChannels-1][ActivationWidth-1:0] out_data;
+    bit [0:OutChannels-1][ActivationWidth-1:0] out_data;
     /* verilator lint_on ASCRANGE */
 
     pointwise_convolve #(
@@ -115,23 +115,23 @@ module pointwise_convolve_test;
         $display("Started to send input data");
 
         `SET_IN_DATA(Input0);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `SET_IN_DATA(Input1);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `SET_IN_DATA(Input2);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `SET_IN_DATA(Input3);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `SET_IN_DATA(Input4);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `SET_IN_DATA(Input5);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `SET_IN_DATA(Input6);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `SET_IN_DATA(Input7);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `SET_IN_DATA(Input8);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `SET_IN_DATA(Input9);
 
         $display("Finished sending input data");
@@ -164,23 +164,23 @@ module pointwise_convolve_test;
         $display("Started to receive output data");
 
         `CHECK_OUT_DATA("Output0", Output0);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `CHECK_OUT_DATA("Output1", Output1);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `CHECK_OUT_DATA("Output2", Output2);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `CHECK_OUT_DATA("Output3", Output3);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `CHECK_OUT_DATA("Output4", Output4);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `CHECK_OUT_DATA("Output5", Output5);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `CHECK_OUT_DATA("Output6", Output6);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `CHECK_OUT_DATA("Output7", Output7);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `CHECK_OUT_DATA("Output8", Output8);
-        // `RANDOM_PAUSE(0, 10);
+        `RANDOM_PAUSE(0, 10);
         `CHECK_OUT_DATA("Output9", Output9);
 
         $display("Finished receiving output data");
