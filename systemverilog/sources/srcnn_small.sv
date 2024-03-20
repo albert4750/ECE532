@@ -11,8 +11,8 @@ import constants::*;
 module srcnn_small #(
     parameter int Height = 600,
     parameter int Width = 800,
-    localparam int ActivationWidth = 8,
-    localparam int WeightWidth = 8
+    localparam int ActivationWidth = 10,
+    localparam int WeightWidth = 20
 ) (
     input bit clock_i,
     input bit reset_i,
@@ -31,39 +31,12 @@ module srcnn_small #(
 
     /* verilator lint_off ASCRANGE */
     localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][WeightWidth-1:0] Convolve1Weight =
-        {N1{{3{8'd1, 8'd2, 8'd1, 8'd2, 8'd4, 8'd2, 8'd1, 8'd2, 8'd1}}}};
+        {N1{{3{20'd1, 20'd2, 20'd1, 20'd2, 20'd4, 20'd2, 20'd1, 20'd2, 20'd1}}}};
     localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][WeightWidth-1:0] Convolve2Weight =
-        {N2{{N1{8'd1, 8'd2, 8'd1, 8'd2, 8'd4, 8'd2, 8'd1, 8'd2, 8'd1}}}};
+        {N2{{N1{20'd1, 20'd2, 20'd1, 20'd2, 20'd4, 20'd2, 20'd1, 20'd2, 20'd1}}}};
     localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][WeightWidth-1:0] Convolve3Weight =
-        {3{{N2{8'd1, 8'd2, 8'd1, 8'd2, 8'd4, 8'd2, 8'd1, 8'd2, 8'd1}}}};
+        {3{{N2{20'd1, 20'd2, 20'd1, 20'd2, 20'd4, 20'd2, 20'd1, 20'd2, 20'd1}}}};
     /* verilator lint_on ASCRANGE */
-
-    bit fifo1_valid;
-    bit fifo1_ready;
-    bit [3*ActivationWidth-1:0] fifo1_data;
-
-`ifndef ECE532_USE_FIFO
-    assign fifo1_valid = slave_valid_i;
-    assign slave_ready_o = fifo1_ready;
-    assign fifo1_data = slave_data_i;
-`else
-    axis_data_fifo_0 axis_data_fifo1_inst (
-        .s_axis_aresetn(reset_i),
-        .s_axis_aclk   (clock_i),
-
-        .s_axis_tvalid(slave_valid_i),
-        .s_axis_tready(slave_ready_o),
-        .s_axis_tdata (slave_data_i),
-
-        .m_axis_tvalid(fifo1_valid),
-        .m_axis_tready(fifo1_ready),
-        .m_axis_tdata (fifo1_data),
-
-        .axis_data_count   (),
-        .axis_wr_data_count(),
-        .axis_rd_data_count()
-    );
-`endif  // ECE532_USE_FIFO
 
     bit convolve1_valid;
     bit convolve1_ready;
@@ -101,41 +74,14 @@ module srcnn_small #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(fifo1_valid),
-        .slave_ready_o(fifo1_ready),
-        .slave_data_i (fifo1_data),
+        .slave_valid_i(slave_valid_i),
+        .slave_ready_o(slave_ready_o),
+        .slave_data_i (slave_data_i),
 
         .master_valid_o(convolve1_valid),
         .master_ready_i(convolve1_ready),
         .master_data_o (convolve1_data)
     );
-
-    bit fifo2_valid;
-    bit fifo2_ready;
-    bit [N1*ActivationWidth-1:0] fifo2_data;
-
-`ifndef ECE532_USE_FIFO
-    assign fifo2_valid = convolve1_valid;
-    assign convolve1_ready = fifo2_ready;
-    assign fifo2_data = convolve1_data;
-`else
-    axis_data_fifo_1 axis_data_fifo2_inst (
-        .s_axis_aresetn(reset_i),
-        .s_axis_aclk   (clock_i),
-
-        .s_axis_tvalid(convolve1_valid),
-        .s_axis_tready(convolve1_ready),
-        .s_axis_tdata (convolve1_data),
-
-        .m_axis_tvalid(fifo2_valid),
-        .m_axis_tready(fifo2_ready),
-        .m_axis_tdata (fifo2_data),
-
-        .axis_data_count   (),
-        .axis_wr_data_count(),
-        .axis_rd_data_count()
-    );
-`endif  // ECE532_USE_FIFO
 
     bit convolve2_valid;
     bit convolve2_ready;
@@ -173,45 +119,14 @@ module srcnn_small #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(fifo2_valid),
-        .slave_ready_o(fifo2_ready),
-        .slave_data_i (fifo2_data),
+        .slave_valid_i(convolve1_valid),
+        .slave_ready_o(convolve1_ready),
+        .slave_data_i (convolve1_data),
 
         .master_valid_o(convolve2_valid),
         .master_ready_i(convolve2_ready),
         .master_data_o (convolve2_data)
     );
-
-    bit fifo3_valid;
-    bit fifo3_ready;
-    bit [N2*ActivationWidth-1:0] fifo3_data;
-
-`ifndef ECE532_USE_FIFO
-    assign fifo3_valid = convolve2_valid;
-    assign convolve2_ready = fifo3_ready;
-    assign fifo3_data = convolve2_data;
-`else
-    axis_data_fifo_1 axis_data_fifo3_inst (
-        .s_axis_aresetn(reset_i),
-        .s_axis_aclk   (clock_i),
-
-        .s_axis_tvalid(convolve2_valid),
-        .s_axis_tready(convolve2_ready),
-        .s_axis_tdata (convolve2_data),
-
-        .m_axis_tvalid(fifo3_valid),
-        .m_axis_tready(fifo3_ready),
-        .m_axis_tdata (fifo3_data),
-
-        .axis_data_count   (),
-        .axis_wr_data_count(),
-        .axis_rd_data_count()
-    );
-`endif  // ECE532_USE_FIFO
-
-    bit convolve3_valid;
-    bit convolve3_ready;
-    bit [3*ActivationWidth-1:0] convolve3_data;
 
     localparam int Convolve3Cascades = 1;
     localparam int Convolve3DSPsInColumn[Convolve3Cascades][MaxDSPColumns] = '{
@@ -243,36 +158,13 @@ module srcnn_small #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(fifo3_valid),
-        .slave_ready_o(fifo3_ready),
-        .slave_data_i (fifo3_data),
+        .slave_valid_i(convolve2_valid),
+        .slave_ready_o(convolve2_ready),
+        .slave_data_i (convolve2_data),
 
-        .master_valid_o(convolve3_valid),
-        .master_ready_i(convolve3_ready),
-        .master_data_o (convolve3_data)
+        .master_valid_o(master_valid_o),
+        .master_ready_i(master_ready_i),
+        .master_data_o (master_data_o)
     );
-
-`ifndef ECE532_USE_FIFO
-    assign master_valid_o  = convolve3_valid;
-    assign convolve3_ready = master_ready_i;
-    assign master_data_o   = convolve3_data;
-`else
-    axis_data_fifo_0 axis_data_fifo4_inst (
-        .s_axis_aresetn(reset_i),
-        .s_axis_aclk   (clock_i),
-
-        .s_axis_tvalid(convolve3_valid),
-        .s_axis_tready(convolve3_ready),
-        .s_axis_tdata (convolve3_data),
-
-        .m_axis_tvalid(master_valid_o),
-        .m_axis_tready(master_ready_i),
-        .m_axis_tdata (master_data_o),
-
-        .axis_data_count   (),
-        .axis_wr_data_count(),
-        .axis_rd_data_count()
-    );
-`endif  // ECE532_USE_FIFO
 
 endmodule : srcnn_small

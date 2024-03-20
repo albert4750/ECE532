@@ -27,16 +27,16 @@ module superresolution #(
 );
 
     /* verilator lint_off ASCRANGE */
-    bit signed [0:2][7:0] in_data;
-    bit signed [0:2][7:0] out_data;
+    bit signed [0:2][9:0] in_data;
+    bit signed [0:2][9:0] out_data;
     /* verilator lint_on ASCRANGE */
 
-    assign in_data[0] = slave_red_i - 128;
-    assign in_data[1] = slave_green_i - 128;
-    assign in_data[2] = slave_blue_i - 128;
-    assign master_red_o = out_data[0] + 128;
-    assign master_green_o = out_data[1] + 128;
-    assign master_blue_o = out_data[2] + 128;
+    assign in_data[0] = {slave_red_i - 8'd128, 2'b0};
+    assign in_data[1] = {slave_green_i - 8'd128, 2'b0};
+    assign in_data[2] = {slave_blue_i - 8'd128, 2'b0};
+    assign master_red_o = 8'((out_data[0] + 10'd512) >> 2);
+    assign master_green_o = 8'((out_data[1] + 10'd512) >> 2);
+    assign master_blue_o = 8'((out_data[2] + 10'd512) >> 2);
 
     srcnn_small #(
         .Height(Height),
