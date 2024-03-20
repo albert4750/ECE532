@@ -196,4 +196,8 @@ module pointwise_convolve_test;
         $finish;
     end
 
+    `undef RANDOM_PAUSE
+    `undef SET_IN_DATA
+    `undef CHECK_OUT_DATA
+
 endmodule : pointwise_convolve_test

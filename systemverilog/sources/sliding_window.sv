@@ -59,6 +59,11 @@ module sliding_window #(
         end
     end
 
+    // The row of RAM that stores data for the current row of the sliding window.
+    typedef bit [$clog2(WindowHeight-1)-1:0] ram_row_t;
+    ram_row_t ram_row;
+    assign ram_row = ram_row_t'(row % row_t'(WindowHeight - 1));
+
     // RAM stores the previous rows.
     // Element (row, column) is at address [column] of row [row % (WindowHeight - 1)].
     bit [DataWidth-1:0] ram_read_data[WindowHeight-1];
@@ -73,7 +78,7 @@ module sliding_window #(
             .read_address_i(next_column),
             .read_data_o(ram_read_data[I]),
 
-            .write_enable_i(has_new_input && row % row_t'(WindowHeight - 1) == row_t'(I)),
+            .write_enable_i(has_new_input && ram_row == ram_row_t'(I)),
             .write_address_i(column),
             .write_data_i(slave_data_i)
         );
@@ -83,11 +88,6 @@ module sliding_window #(
     bit [0:WindowHeight-1][0:WindowWidth-1][DataWidth-1:0] out_data;
     /* verilator lint_on ASCRANGE */
     assign master_data_o = out_data;
-
-    // The row of RAM that stores data for the current row of the sliding window.
-    typedef bit [$clog2(WindowHeight-1)-1:0] ram_row_t;
-    ram_row_t ram_row;
-    assign ram_row = ram_row_t'(row % row_t'(WindowHeight - 1));
 
     // For the last column of the sliding window, the first (WindowHeight - 1) elements are from
     // the RAM, and the last element is from the input.
@@ -104,6 +104,7 @@ module sliding_window #(
 
         assign out_data[I][WindowWidth-1] = ram_read_data[previous_ram_row];
     end : g_out_data_last_column
+    assign out_data[WindowHeight-1][WindowWidth-1] = slave_data_i;
 
     // The remaining columns of the sliding window gets their values by shifting from their right
     // neighbors.

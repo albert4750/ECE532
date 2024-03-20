@@ -67,6 +67,26 @@ module convolve #(
         .master_data_o (padded_data)
     );
 
+    bit buffer1_valid;
+    bit buffer1_ready;
+    bit [InChannels*ActivationWidth-1:0] buffer1_data;
+
+    register_buffer #(
+        .DataWidth (InChannels * ActivationWidth),
+        .AsyncReady(1)
+    ) buffer1_inst (
+        .clock_i(clock_i),
+        .reset_i(reset_i),
+
+        .slave_tvalid_i(padded_valid),
+        .slave_tready_o(padded_ready),
+        .slave_tdata_i (padded_data),
+
+        .master_tvalid_o(buffer1_valid),
+        .master_tready_i(buffer1_ready),
+        .master_tdata_o (buffer1_data)
+    );
+
     bit window_valid;
     bit window_ready;
     bit [KernelHeight*KernelWidth*InChannels*ActivationWidth-1:0] window_data;
@@ -81,13 +101,33 @@ module convolve #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(padded_valid),
-        .slave_ready_o(padded_ready),
-        .slave_data_i (padded_data),
+        .slave_valid_i(buffer1_valid),
+        .slave_ready_o(buffer1_ready),
+        .slave_data_i (buffer1_data),
 
         .master_valid_o(window_valid),
         .master_ready_i(window_ready),
         .master_data_o (window_data)
+    );
+
+    bit buffer2_valid;
+    bit buffer2_ready;
+    bit [KernelHeight*KernelWidth*InChannels*ActivationWidth-1:0] buffer2_data;
+
+    register_buffer #(
+        .DataWidth (KernelHeight * KernelWidth * InChannels * ActivationWidth),
+        .AsyncReady(1)
+    ) buffer2_inst (
+        .clock_i(clock_i),
+        .reset_i(reset_i),
+
+        .slave_tvalid_i(window_valid),
+        .slave_tready_o(window_ready),
+        .slave_tdata_i (window_data),
+
+        .master_tvalid_o(buffer2_valid),
+        .master_tready_i(buffer2_ready),
+        .master_tdata_o (buffer2_data)
     );
 
     /* verilator lint_off ASCRANGE */
@@ -128,9 +168,9 @@ module convolve #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(window_valid),
-        .slave_ready_o(window_ready),
-        .slave_data_i (window_data),
+        .slave_valid_i(buffer2_valid),
+        .slave_ready_o(buffer2_ready),
+        .slave_data_i (buffer2_data),
 
         .master_valid_o(master_valid_o),
         .master_ready_i(master_ready_i),
