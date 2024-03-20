@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../constant_pad.sv" \
+"../../../../convolve_multi_in_multi_out.sv" \
+"../../../../convolve_rgb.sv" \
+"../../../../dual_port_ram.sv" \
+"../../../../ppm_reader.sv" \
+"../../../../ppm_writer.sv" \
+"../../../../register_buffer.sv" \
+"../../../../sliding_window.sv" \
+"../../../../process_ppm_image.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
