@@ -1,5 +1,10 @@
 `timescale 1ns / 1ps
 
+// superresolution
+//
+// This module is the top-level module that wraps superresolution models and is used by the IP
+// packager in Vivado.
+
 module superresolution #(
     parameter int Height = 600,
     parameter int Width  = 800

@@ -1,5 +1,9 @@
 `timescale 1ns / 1ps
 
+// ppm_reader
+//
+// This module reads a PPM file and outputs the pixel data in an AXI4-Stream interface.
+
 module ppm_reader #(
     parameter int Height = 600,
     parameter int Width  = 800

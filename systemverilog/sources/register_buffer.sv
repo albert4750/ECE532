@@ -1,5 +1,9 @@
 `timescale 1ns / 1ps
 
+// register_buffer
+//
+// This module inserts a single-cycle buffer between a pair of AXI4-Stream interfaces.
+
 module register_buffer #(
     parameter int DataWidth  = 8,
     parameter bit AsyncReady = 0

@@ -1,5 +1,9 @@
 `timescale 1ns / 1ps
 
+// top_level_placeholder
+//
+// Placeholder top-level module used for testing implementation in Vivado.
+
 `include "constants.svh"
 
 import constants::*;

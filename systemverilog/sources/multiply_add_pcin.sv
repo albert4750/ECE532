@@ -1,5 +1,10 @@
 `timescale 1ns / 1ps
 
+// multiply_add_pcin
+//
+// This module is a replacement for the DSP macro IP in Vivado. It computes A * B + PCIN and stores
+// the result in P.
+
 `include "constants.svh"
 
 import constants::*;

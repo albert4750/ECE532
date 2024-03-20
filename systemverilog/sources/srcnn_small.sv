@@ -1,5 +1,9 @@
 `timescale 1ns / 1ps
 
+// srcnn_small
+//
+// This module is a small-scale implementation of the SRCNN algorithm.
+
 `include "constants.svh"
 
 import constants::*;
@@ -38,7 +42,7 @@ module srcnn_small #(
     bit fifo1_ready;
     bit [3*ActivationWidth-1:0] fifo1_data;
 
-`ifdef ECE532_SKIP_FIFO
+`ifndef ECE532_USE_FIFO
     assign fifo1_valid = slave_valid_i;
     assign slave_ready_o = fifo1_ready;
     assign fifo1_data = slave_data_i;
@@ -59,7 +63,7 @@ module srcnn_small #(
         .axis_wr_data_count(),
         .axis_rd_data_count()
     );
-`endif  // ECE532_SKIP_FIFO
+`endif  // ECE532_USE_FIFO
 
     bit convolve1_valid;
     bit convolve1_ready;
@@ -110,7 +114,7 @@ module srcnn_small #(
     bit fifo2_ready;
     bit [N1*ActivationWidth-1:0] fifo2_data;
 
-`ifdef ECE532_SKIP_FIFO
+`ifndef ECE532_USE_FIFO
     assign fifo2_valid = convolve1_valid;
     assign convolve1_ready = fifo2_ready;
     assign fifo2_data = convolve1_data;
@@ -131,7 +135,7 @@ module srcnn_small #(
         .axis_wr_data_count(),
         .axis_rd_data_count()
     );
-`endif
+`endif  // ECE532_USE_FIFO
 
     bit convolve2_valid;
     bit convolve2_ready;
@@ -182,7 +186,7 @@ module srcnn_small #(
     bit fifo3_ready;
     bit [N2*ActivationWidth-1:0] fifo3_data;
 
-`ifdef ECE532_SKIP_FIFO
+`ifndef ECE532_USE_FIFO
     assign fifo3_valid = convolve2_valid;
     assign convolve2_ready = fifo3_ready;
     assign fifo3_data = convolve2_data;
@@ -203,7 +207,7 @@ module srcnn_small #(
         .axis_wr_data_count(),
         .axis_rd_data_count()
     );
-`endif  // ECE532_SKIP_FIFO
+`endif  // ECE532_USE_FIFO
 
     bit convolve3_valid;
     bit convolve3_ready;
@@ -248,7 +252,7 @@ module srcnn_small #(
         .master_data_o (convolve3_data)
     );
 
-`ifdef ECE532_SKIP_FIFO
+`ifndef ECE532_USE_FIFO
     assign master_valid_o  = convolve3_valid;
     assign convolve3_ready = master_ready_i;
     assign master_data_o   = convolve3_data;
@@ -269,6 +273,6 @@ module srcnn_small #(
         .axis_wr_data_count(),
         .axis_rd_data_count()
     );
-`endif  // ECE532_SKIP_FIFO
+`endif  // ECE532_USE_FIFO
 
 endmodule : srcnn_small

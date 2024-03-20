@@ -1,5 +1,9 @@
 `timescale 1ns / 1ps
 
+// ppm_writer
+//
+// This module reads pixel data from an AXI4-Stream interface and writes it to a PPM file.
+
 module ppm_writer #(
     parameter int Height = 600,
     parameter int Width  = 800

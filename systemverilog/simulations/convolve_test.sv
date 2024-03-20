@@ -1,5 +1,10 @@
 `timescale 1ns / 1ps
 
+// convolve_test
+//
+// A smoke test for the convolve module to verify that the right number of elements are sent and
+// received.
+
 `include "constants.svh"
 
 import constants::*;

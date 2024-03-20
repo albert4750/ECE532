@@ -1,5 +1,13 @@
 `timescale 1ns / 1ps
 
+// pointwise_convolve
+//
+// This module accepts a multi-channel stream of elements, applies a matrix transformation to each
+// element, and produces a stream of transformed elements.
+//
+// - Input: Stream of elements, each element of (InChannels, ActivationWidth) bits.
+// - Output: Stream of elements, each element of (OutChannels, ActivationWidth) bits.
+
 `include "constants.svh"
 
 import constants::*;

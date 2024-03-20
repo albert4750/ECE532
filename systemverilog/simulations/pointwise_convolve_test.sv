@@ -1,5 +1,9 @@
 `timescale 1ns / 1ps
 
+// pointwise_convolve_test
+//
+// This test checks the output of the pointwise_convolve module against PyTorch reference outputs.
+
 `include "constants.svh"
 
 import constants::*;

@@ -1,9 +1,14 @@
 `timescale 1ns / 1ps
 
-module process_ppm_image #(
-    parameter int Height = 600,
-    parameter int Width  = 800
-);
+// process_ppm_image
+//
+// This module reads input.ppm, processes the image using the superresolution module, and writes the
+// result to output.ppm.
+
+module process_ppm_image;
+
+    localparam int Height = 1080;
+    localparam int Width = 1920;
 
     bit clock;
     initial clock = 0;
