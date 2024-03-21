@@ -2,7 +2,7 @@
 
 // srcnn_large
 //
-// This module is a larger-scale implementation of the SRCNN algorithm.
+// This module is a large-scale implementation of the SRCNN algorithm.
 
 `include "constants.svh"
 `include "utilities.svh"
