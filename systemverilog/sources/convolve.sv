@@ -12,8 +12,10 @@
 //   (OutChannels, ActivationWidth) bits.
 
 `include "constants.svh"
+`include "utilities.svh"
 
 import constants::*;
+import utilities::*;
 
 module convolve #(
     parameter int InChannels = 3,
@@ -28,7 +30,9 @@ module convolve #(
     parameter int PaddingRight = 1,
     parameter int ActivationWidth = 8,
     parameter int WeightWidth = 8,
-    localparam int ProductWidth = ActivationWidth + WeightWidth,
+    localparam int ProductWidth = compute_signed_product_width(
+        ActivationWidth, WeightWidth, KernelHeight * KernelWidth * InChannels
+    ),
     /* verilator lint_off ASCRANGE */
     parameter bit signed [0:OutChannels-1][0:InChannels-1][0:KernelHeight-1][0:KernelWidth-1]
         [WeightWidth-1:0] Weight =

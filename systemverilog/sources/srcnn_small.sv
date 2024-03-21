@@ -5,15 +5,16 @@
 // This module is a small-scale implementation of the SRCNN algorithm.
 
 `include "constants.svh"
+`include "utilities.svh"
 
 import constants::*;
+import utilities::*;
 
 module srcnn_small #(
     parameter int Height = 600,
     parameter int Width = 800,
     localparam int ActivationWidth = 10,
-    localparam int WeightWidth = 20,
-    localparam int ProductWidth = ActivationWidth + WeightWidth
+    localparam int WeightWidth = 20
 ) (
     input bit clock_i,
     input bit reset_i,
@@ -33,16 +34,24 @@ module srcnn_small #(
     /* verilator lint_off ASCRANGE */
     localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][WeightWidth-1:0] Convolve1Weight =
         {N1{{3{20'd1, 20'd2, 20'd1, 20'd2, 20'd4, 20'd2, 20'd1, 20'd2, 20'd1}}}};
-    localparam bit signed [0:N1-1][ProductWidth-1:0] Convolve1Bias = '{default: 0};
+    localparam int Convolve1ProductWidth = compute_signed_product_width(
+        ActivationWidth, WeightWidth, F1 * F1 * 3
+    );
+    localparam bit signed [0:N1-1][Convolve1ProductWidth-1:0] Convolve1Bias = '{default: 0};
 
     localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][WeightWidth-1:0] Convolve2Weight =
         {N2{{N1{20'd1, 20'd2, 20'd1, 20'd2, 20'd4, 20'd2, 20'd1, 20'd2, 20'd1}}}};
-    localparam bit signed [0:N2-1][ProductWidth-1:0] Convolve2Bias = '{default: 0};
+    localparam int Convolve2ProductWidth = compute_signed_product_width(
+        ActivationWidth, WeightWidth, F2 * F2 * N1
+    );
+    localparam bit signed [0:N2-1][Convolve2ProductWidth-1:0] Convolve2Bias = '{default: 0};
 
     localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][WeightWidth-1:0] Convolve3Weight =
         {3{{N2{20'd1, 20'd2, 20'd1, 20'd2, 20'd4, 20'd2, 20'd1, 20'd2, 20'd1}}}};
-    localparam bit signed [0:2][ProductWidth-1:0] Convolve3Bias = '{default: 0};
-
+    localparam int Convolve3ProductWidth = compute_signed_product_width(
+        ActivationWidth, WeightWidth, F3 * F3 * N2
+    );
+    localparam bit signed [0:2][Convolve3ProductWidth-1:0] Convolve3Bias = '{default: 0};
     /* verilator lint_on ASCRANGE */
 
     bit convolve1_valid;

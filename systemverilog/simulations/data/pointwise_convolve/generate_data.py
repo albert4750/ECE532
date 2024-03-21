@@ -47,8 +47,8 @@ def generate_data(in_channels: int, out_channels: int, cases: int) -> None:
     )
     bias = torch.randint(iinfo.min, int(iinfo.max) + 1, (out_channels,), dtype=dtype)
     Path("bias.svh").write_text(
-        f"localparam bit signed [0:{out_channels-1}][31:0] Bias = "
-        + tensor_to_string_flat(bias, "32'd")
+        f"localparam bit signed [0:{out_channels-1}][36:0] Bias = "
+        + tensor_to_string_flat(bias, "37'd")
         + ";\n",
         encoding="utf-8",
     )

@@ -1,5 +1,9 @@
 `timescale 1ns / 1ps
 
+`include "utilities.svh"
+
+import utilities::*;
+
 // pointwise_convolve
 //
 // This module accepts a multi-channel stream of elements, applies a matrix transformation to each
@@ -17,7 +21,9 @@ module pointwise_convolve #(
     parameter int OutChannels = 3,
     parameter int ActivationWidth = 8,
     parameter int WeightWidth = 8,
-    localparam int ProductWidth = ActivationWidth + WeightWidth,
+    localparam int ProductWidth = compute_signed_product_width(
+        ActivationWidth, WeightWidth, InChannels
+    ),
     /* verilator lint_off ASCRANGE */
     parameter bit signed [0:OutChannels-1][0:InChannels-1][WeightWidth-1:0] Weight =
         {OutChannels{{InChannels{WeightWidth'(0)}}}},
@@ -44,10 +50,6 @@ module pointwise_convolve #(
     output bit [0:OutChannels-1][ActivationWidth-1:0] master_data_o
     /* verilator lint_on ASCRANGE */
 );
-
-    localparam int APaddingWidth = DSPInAWidth - WeightWidth;
-    localparam int BPaddingWidth = DSPInBWidth - ActivationWidth;
-    localparam int ProductPaddingWidth = APaddingWidth + BPaddingWidth;
 
     localparam int Cycles = (OutChannels - 1) / DSPCascades + 1;
     localparam int StateWidth = Cycles > 1 ? $clog2(Cycles) : 1;
@@ -291,14 +293,12 @@ module pointwise_convolve #(
         localparam int ColumnCount = get_column_count(CascadeIndex);
         bit [DSPOutWidth-1:0] column_in [ColumnCount];
         bit [DSPOutWidth-1:0] column_out[ColumnCount];
-        assign cascade_out[CascadeIndex] =
-            column_out[ColumnCount-1][ProductWidth+ProductPaddingWidth-1:ProductPaddingWidth];
+        assign cascade_out[CascadeIndex] = column_out[ColumnCount-1][ProductWidth-1:0];
 
         for (genvar Column = 0; Column < ColumnCount - 1; ++Column) begin : g_column_in_out
             localparam int Registers = get_c_registers_between_columns(CascadeIndex, Column);
             bit [ProductWidth-1:0] c_pipeline[Registers+1];
-            assign c_pipeline[0] =
-                column_out[Column][ProductWidth+ProductPaddingWidth-1:ProductPaddingWidth];
+            assign c_pipeline[0] = column_out[Column][ProductWidth-1:0];
             if (Registers >= 1) begin : g_c_pipeline
                 always_ff @(posedge clock_i) begin
                     if (master_ready_i) begin
@@ -306,11 +306,7 @@ module pointwise_convolve #(
                     end
                 end
             end : g_c_pipeline
-            assign column_in[Column+1] = {
-                (DSPOutWidth - ProductWidth - ProductPaddingWidth)'(0),
-                c_pipeline[Registers],
-                ProductPaddingWidth'(0)
-            };
+            assign column_in[Column+1] = {(DSPOutWidth - ProductWidth)'(0), c_pipeline[Registers]};
         end : g_column_in_out
 
         bit [DSPOutWidth-1:0] cascade_path[InChannels];
@@ -334,17 +330,12 @@ module pointwise_convolve #(
                 );
                 /* verilator lint_on ASCRANGE */
                 // Introduce 2 cycles of latency because the C inputs have 2 fewer register stages.
-                bit [DSPOutWidth-1:0] bias_buffer;
+                bit [ProductWidth-1:0] bias_buffer;
                 always_ff @(posedge clock_i) begin
                     if (master_ready_i) begin
                         /* verilator lint_off WIDTHEXPAND */
-                        bias_buffer <= {
-                            (DSPOutWidth - ProductWidth - ProductPaddingWidth)'(0),
-                            CascadeBias[state],
-                            ProductPaddingWidth'(0)
-                        };
-                        /* verilator lint_on WIDTHEXPAND */
-                        column_in[0] <= bias_buffer;
+                        bias_buffer  <= CascadeBias[state];
+                        column_in[0] <= {(DSPOutWidth - ProductWidth)'(0), bias_buffer};
                     end
                 end
             end : g_first_column_in_pipeline
@@ -356,9 +347,9 @@ module pointwise_convolve #(
             /* verilator lint_on ASCRANGE */
             bit [DSPInAWidth-1:0] a;
             /* verilator lint_off WIDTHEXPAND */
-            assign a[DSPInAWidth-1:APaddingWidth] = DSPWeight[state];
+            assign a[WeightWidth-1:0] = DSPWeight[state];
             /* verilator lint_on WIDTHEXPAND */
-            assign a[APaddingWidth-1:0] = 0;
+            assign a[DSPInAWidth-1:WeightWidth] = 0;
 
             bit [ActivationWidth-1:0] b_pipeline[Latency+1];
             assign b_pipeline[0] = slave_data_i[DSPIndex];
@@ -371,8 +362,8 @@ module pointwise_convolve #(
             end : g_b_pipeline
 
             bit [DSPInBWidth-1:0] b;
-            assign b[DSPInBWidth-1:BPaddingWidth] = b_pipeline[Latency];
-            assign b[BPaddingWidth-1:0] = 0;
+            assign b[ActivationWidth-1:0] = b_pipeline[Latency];
+            assign b[DSPInBWidth-1:ActivationWidth] = 0;
 
             bit [DSPOutWidth-1:0] p;
 
