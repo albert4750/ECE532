@@ -78,6 +78,7 @@ module pointwise_convolve_test;
         .WeightWidth(WeightWidth),
         .Weight(Weight),
         .Bias(Bias),
+        .RightShift(0),
         .DSPCascades(DSPCascades),
         .DSPsInColumn(DSPsInColumn),
         .LatenciesBetweenColumns(LatenciesBetweenColumns)

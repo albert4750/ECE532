@@ -31,12 +31,25 @@ module superresolution #(
     bit signed [0:2][9:0] out_data;
     /* verilator lint_on ASCRANGE */
 
-    assign in_data[0] = {slave_red_i - 8'd128, 2'b0};
-    assign in_data[1] = {slave_green_i - 8'd128, 2'b0};
-    assign in_data[2] = {slave_blue_i - 8'd128, 2'b0};
-    assign master_red_o = 8'((out_data[0] + 10'd512) >> 2);
-    assign master_green_o = 8'((out_data[1] + 10'd512) >> 2);
-    assign master_blue_o = 8'((out_data[2] + 10'd512) >> 2);
+    typedef bit signed [9:0] int10_t;
+
+    function automatic bit [7:0] shift_and_clip_to_uint8(int10_t value);
+        int10_t shifted_value = value >>> 2;
+        if (shifted_value >= int10_t'(127)) begin
+            return 8'd255;
+        end else if (shifted_value <= int10_t'(-128)) begin
+            return 8'd0;
+        end else begin
+            return 8'(shifted_value + int10_t'(128));
+        end
+    endfunction : shift_and_clip_to_uint8
+
+    assign in_data[0] = (int10_t'(slave_red_i) - int10_t'(128)) <<< 2;
+    assign in_data[1] = (int10_t'(slave_green_i) - int10_t'(128)) <<< 2;
+    assign in_data[2] = (int10_t'(slave_blue_i) - int10_t'(128)) <<< 2;
+    assign master_red_o = shift_and_clip_to_uint8(out_data[0]);
+    assign master_green_o = shift_and_clip_to_uint8(out_data[1]);
+    assign master_blue_o = shift_and_clip_to_uint8(out_data[2]);
 
     srcnn_small #(
         .Height(Height),

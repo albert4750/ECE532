@@ -39,6 +39,7 @@ module convolve #(
         {OutChannels{{InChannels{{KernelHeight{{KernelHeight{WeightWidth'(0)}}}}}}}},
     parameter bit signed [0:OutChannels-1][ProductWidth-1:0] Bias = '{default: 0},
     /* verilator lint_on ASCRANGE */
+    parameter int RightShift = 0,
     parameter bit signed [ActivationWidth-1:0] PaddingValue = 0,
     parameter int DSPCascades = 1,
     parameter int DSPsInColumn[DSPCascades][MaxDSPColumns] = '{
@@ -161,6 +162,7 @@ module convolve #(
         .WeightWidth(WeightWidth),
         .Weight(PermutedWeight),
         .Bias(Bias),
+        .RightShift(RightShift),
         .DSPCascades(DSPCascades),
         .DSPsInColumn(DSPsInColumn),
         .LatenciesBetweenColumns(LatenciesBetweenColumns)

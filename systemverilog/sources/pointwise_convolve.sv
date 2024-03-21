@@ -29,6 +29,7 @@ module pointwise_convolve #(
         {OutChannels{{InChannels{WeightWidth'(0)}}}},
     parameter bit signed [0:OutChannels-1][ProductWidth-1:0] Bias = '{default: 0},
     /* verilator lint_on ASCRANGE */
+    parameter int RightShift = 0,
     parameter int DSPCascades = 1,
     parameter int DSPsInColumn[DSPCascades][MaxDSPColumns] = '{
         '{InChannels, 0, 0, 0, 0, 0, 0, 0, 0, 0}
@@ -265,14 +266,16 @@ module pointwise_convolve #(
         localparam int CascadeIndex = OutChannel / Cycles;
         localparam int Cycle = OutChannel % Cycles;
         if (Cycle == Cycles - 1) begin : g_out_data_last
-            assign master_data_o[OutChannel] = cascade_out[CascadeIndex][ActivationWidth-1:0];
+            assign master_data_o[OutChannel] =
+                cascade_out[CascadeIndex][ActivationWidth+RightShift-1:RightShift];
         end : g_out_data_last
         else begin : g_out_data_rest
             bit [ActivationWidth-1:0] out_buffer;
             always_ff @(posedge clock_i) begin
                 if (master_ready_i && output_valid[OutputLatency] &&
                     output_state == state_t'(Cycle)) begin
-                    out_buffer <= cascade_out[CascadeIndex][ActivationWidth-1:0];
+                    out_buffer <=
+                        cascade_out[CascadeIndex][ActivationWidth+RightShift-1:RightShift];
                 end
             end
             assign master_data_o[OutChannel] = out_buffer;
@@ -295,6 +298,9 @@ module pointwise_convolve #(
         bit [DSPOutWidth-1:0] column_out[ColumnCount];
         assign cascade_out[CascadeIndex] = column_out[ColumnCount-1][ProductWidth-1:0];
 
+        typedef bit signed [ProductWidth-1:0] product_t;
+        typedef bit signed [DSPOutWidth-1:0] dsp_out_t;
+
         for (genvar Column = 0; Column < ColumnCount - 1; ++Column) begin : g_column_in_out
             localparam int Registers = get_c_registers_between_columns(CascadeIndex, Column);
             bit [ProductWidth-1:0] c_pipeline[Registers+1];
@@ -306,7 +312,7 @@ module pointwise_convolve #(
                     end
                 end
             end : g_c_pipeline
-            assign column_in[Column+1] = {(DSPOutWidth - ProductWidth)'(0), c_pipeline[Registers]};
+            assign column_in[Column+1] = dsp_out_t'(product_t'(c_pipeline[Registers]));
         end : g_column_in_out
 
         bit [DSPOutWidth-1:0] cascade_path[InChannels];
@@ -335,23 +341,26 @@ module pointwise_convolve #(
                     if (master_ready_i) begin
                         /* verilator lint_off WIDTHEXPAND */
                         bias_buffer  <= CascadeBias[state];
-                        column_in[0] <= {(DSPOutWidth - ProductWidth)'(0), bias_buffer};
+                        column_in[0] <= dsp_out_t'(product_t'(bias_buffer));
                     end
                 end
             end : g_first_column_in_pipeline
 
+            typedef bit signed [WeightWidth-1:0] weight_t;
+            typedef bit signed [DSPInAWidth-1:0] input_a_t;
             /* verilator lint_off ASCRANGE */
             localparam bit [0:Cycles-1][WeightWidth-1:0] DSPWeight = get_dsp_weight(
                 CascadeIndex, DSPIndex
             );
             /* verilator lint_on ASCRANGE */
-            bit [DSPInAWidth-1:0] a;
+            input_a_t a;
             /* verilator lint_off WIDTHEXPAND */
-            assign a[WeightWidth-1:0] = DSPWeight[state];
+            assign a = input_a_t'(weight_t'(DSPWeight[state]));
             /* verilator lint_on WIDTHEXPAND */
-            assign a[DSPInAWidth-1:WeightWidth] = 0;
 
-            bit [ActivationWidth-1:0] b_pipeline[Latency+1];
+            typedef bit signed [ActivationWidth-1:0] activation_t;
+            typedef bit signed [DSPInBWidth-1:0] input_b_t;
+            activation_t b_pipeline[Latency+1];
             assign b_pipeline[0] = slave_data_i[DSPIndex];
             if (DSPIndex > 0) begin : g_b_pipeline
                 always_ff @(posedge clock_i) begin
@@ -360,10 +369,8 @@ module pointwise_convolve #(
                     end
                 end
             end : g_b_pipeline
-
-            bit [DSPInBWidth-1:0] b;
-            assign b[ActivationWidth-1:0] = b_pipeline[Latency];
-            assign b[DSPInBWidth-1:ActivationWidth] = 0;
+            input_b_t b;
+            assign b = input_b_t'(activation_t'(b_pipeline[Latency]));
 
             bit [DSPOutWidth-1:0] p;
 

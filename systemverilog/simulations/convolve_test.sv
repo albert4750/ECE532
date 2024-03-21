@@ -64,7 +64,8 @@ module convolve_test;
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
         .Weight(Weight),
-        .Bias('{default: 0}),  // TODO: test with non-zero bias
+        .Bias('{default: 0}),
+        .RightShift(0),
         .PaddingValue(PaddingValue),
         .DSPCascades(DSPCascades),
         .DSPsInColumn(DSPsInColumn),
