@@ -108,16 +108,16 @@ module convolve #(
         .master_data_o (window_data)
     );
 
-    bit buffer_valid;
-    bit buffer_ready;
-    bit [KernelHeight*KernelWidth*InChannels*ActivationWidth-1:0] buffer_data;
+    bit queue_valid;
+    bit queue_ready;
+    bit [KernelHeight*KernelWidth*InChannels*ActivationWidth-1:0] queue_data;
 
     // This buffer is mandatory because sliding_window stalls unless the master is ready, while
     // pointwise_convolve stalls unless the slave is valid for a few cycles.
-    register_buffer #(
-        .DataWidth (KernelHeight * KernelWidth * InChannels * ActivationWidth),
-        .AsyncReady(1)
-    ) register_buffer_inst (
+    fifo_queue #(
+        .Capacity (4),
+        .DataWidth(KernelHeight * KernelWidth * InChannels * ActivationWidth)
+    ) fifo_queue_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
@@ -125,9 +125,9 @@ module convolve #(
         .slave_tready_o(window_ready),
         .slave_tdata_i (window_data),
 
-        .master_tvalid_o(buffer_valid),
-        .master_tready_i(buffer_ready),
-        .master_tdata_o (buffer_data)
+        .master_tvalid_o(queue_valid),
+        .master_tready_i(queue_ready),
+        .master_tdata_o (queue_data)
     );
 
     /* verilator lint_off ASCRANGE */
@@ -170,9 +170,9 @@ module convolve #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(buffer_valid),
-        .slave_ready_o(buffer_ready),
-        .slave_data_i (buffer_data),
+        .slave_valid_i(queue_valid),
+        .slave_ready_o(queue_ready),
+        .slave_data_i (queue_data),
 
         .master_valid_o(master_valid_o),
         .master_ready_i(master_ready_i),
