@@ -30,6 +30,7 @@ module pointwise_convolve #(
     parameter bit signed [0:OutChannels-1][ProductWidth-1:0] Bias = '{default: 0},
     /* verilator lint_on ASCRANGE */
     parameter int RightShift = 0,
+    parameter bit ReLU = 0,
     parameter int DSPCascades = 1,
     parameter int DSPsInColumn[DSPCascades][MaxDSPColumns] = '{
         '{InChannels, 0, 0, 0, 0, 0, 0, 0, 0, 0}
@@ -51,6 +52,11 @@ module pointwise_convolve #(
     output bit [0:OutChannels-1][ActivationWidth-1:0] master_data_o
     /* verilator lint_on ASCRANGE */
 );
+
+    typedef bit signed [ActivationWidth-1:0] activation_t;
+    typedef bit signed [WeightWidth-1:0] weight_t;
+    typedef bit signed [ProductWidth-1:0] product_t;
+    typedef bit signed [DSPOutWidth-1:0] dsp_out_t;
 
     localparam int Cycles = (OutChannels - 1) / DSPCascades + 1;
     localparam int StateWidth = Cycles > 1 ? $clog2(Cycles) : 1;
@@ -113,6 +119,13 @@ module pointwise_convolve #(
         end
         return state + 1;
     endfunction : get_next_state
+
+    function automatic activation_t activation(activation_t value);
+        if (ReLU && value < 0) begin
+            return 0;
+        end
+        return value;
+    endfunction
 
     function automatic int get_column_count(int cascade_index);
         // Counts the number of columns in a cascade.
@@ -266,16 +279,17 @@ module pointwise_convolve #(
         localparam int CascadeIndex = OutChannel / Cycles;
         localparam int Cycle = OutChannel % Cycles;
         if (Cycle == Cycles - 1) begin : g_out_data_last
-            assign master_data_o[OutChannel] =
-                cascade_out[CascadeIndex][ActivationWidth+RightShift-1:RightShift];
+            assign master_data_o[OutChannel] = activation(
+                cascade_out[CascadeIndex][ActivationWidth+RightShift-1:RightShift]
+            );
         end : g_out_data_last
         else begin : g_out_data_rest
             bit [ActivationWidth-1:0] out_buffer;
             always_ff @(posedge clock_i) begin
                 if (master_ready_i && output_valid[OutputLatency] &&
                     output_state == state_t'(Cycle)) begin
-                    out_buffer <=
-                        cascade_out[CascadeIndex][ActivationWidth+RightShift-1:RightShift];
+                    out_buffer <= activation(
+                        cascade_out[CascadeIndex][ActivationWidth+RightShift-1:RightShift]);
                 end
             end
             assign master_data_o[OutChannel] = out_buffer;
@@ -297,9 +311,6 @@ module pointwise_convolve #(
         bit [DSPOutWidth-1:0] column_in [ColumnCount];
         bit [DSPOutWidth-1:0] column_out[ColumnCount];
         assign cascade_out[CascadeIndex] = column_out[ColumnCount-1][ProductWidth-1:0];
-
-        typedef bit signed [ProductWidth-1:0] product_t;
-        typedef bit signed [DSPOutWidth-1:0] dsp_out_t;
 
         for (genvar Column = 0; Column < ColumnCount - 1; ++Column) begin : g_column_in_out
             localparam int Registers = get_c_registers_between_columns(CascadeIndex, Column);
@@ -346,7 +357,6 @@ module pointwise_convolve #(
                 end
             end : g_first_column_in_pipeline
 
-            typedef bit signed [WeightWidth-1:0] weight_t;
             typedef bit signed [DSPInAWidth-1:0] input_a_t;
             /* verilator lint_off ASCRANGE */
             localparam bit [0:Cycles-1][WeightWidth-1:0] DSPWeight = get_dsp_weight(
@@ -358,7 +368,6 @@ module pointwise_convolve #(
             assign a = input_a_t'(weight_t'(DSPWeight[state]));
             /* verilator lint_on WIDTHEXPAND */
 
-            typedef bit signed [ActivationWidth-1:0] activation_t;
             typedef bit signed [DSPInBWidth-1:0] input_b_t;
             activation_t b_pipeline[Latency+1];
             assign b_pipeline[0] = slave_data_i[DSPIndex];

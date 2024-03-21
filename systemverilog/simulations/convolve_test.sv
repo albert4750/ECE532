@@ -65,6 +65,7 @@ module convolve_test;
         .WeightWidth(WeightWidth),
         .Weight(Weight),
         .Bias('{default: 0}),
+        .ReLU(0),
         .RightShift(0),
         .PaddingValue(PaddingValue),
         .DSPCascades(DSPCascades),
