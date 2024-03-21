@@ -232,12 +232,12 @@ module convolve_multi_in_multi_out #(
         logic signed [ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0] foo;
         assign foo = adder_tdata_expanded[out_channel][ACTIVATION_WIDTH+WEIGHT_WIDTH-1:0];
         always_comb begin
-            if ((foo >> RIGHT_SHIFT) < 0) begin
+            if ((foo >>> RIGHT_SHIFT) < 0) begin
                 adder_tdata[out_channel] = 'd0;
-            end else if ((foo >> RIGHT_SHIFT) > 255) begin
+            end else if ((foo >>> RIGHT_SHIFT) > 255) begin
                 adder_tdata[out_channel] = 'd255;
             end else begin
-                adder_tdata[out_channel] = foo >> RIGHT_SHIFT;
+                adder_tdata[out_channel] = foo >>> RIGHT_SHIFT;
             end
         end
     end : gen_adder_tdata
