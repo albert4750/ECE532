@@ -116,7 +116,7 @@ module convolve #(
     // This buffer is mandatory because sliding_window stalls unless the master is ready, while
     // pointwise_convolve stalls unless the slave is valid for a few cycles.
     fifo_queue #(
-        .Capacity (4),
+        .Capacity (1),
         .DataWidth(KernelHeight * KernelWidth * InChannels * ActivationWidth)
     ) fifo_queue_inst (
         .clock_i(clock_i),

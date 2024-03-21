@@ -24,7 +24,8 @@ module fifo_queue #(
 );
 
     typedef bit [$clog2(Capacity+1)-1:0] size_t;
-    typedef bit [$clog2(Capacity)-1:0] index_t;
+    localparam int IndexWidth = Capacity > 1 ? $clog2(Capacity) : 1;
+    typedef bit [IndexWidth-1:0] index_t;
 
     function automatic index_t get_next_index(index_t index);
         if (index == index_t'(Capacity - 1)) begin

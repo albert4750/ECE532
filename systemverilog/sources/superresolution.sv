@@ -51,10 +51,10 @@ module superresolution #(
     assign master_green_o = shift_and_clip_to_uint8(out_data[1]);
     assign master_blue_o = shift_and_clip_to_uint8(out_data[2]);
 
-    srcnn_small #(
+    srcnn_large #(
         .Height(Height),
         .Width (Width)
-    ) srcnn_small_inst (
+    ) srcnn_large_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
