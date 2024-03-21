@@ -21,33 +21,39 @@ module top_level_placeholder (
     output bit master_data_placeholder_o
 );
 
-    localparam int InChannels = 3;
-    localparam int OutChannels = 3;
     localparam int Height = 600;
     localparam int Width = 800;
-    localparam int ActivationWidth = 8;
-    localparam int WeightWidth = 8;
 
-    bit [InChannels*ActivationWidth-1:0] slave_data;
-    assign slave_data = {InChannels{{ActivationWidth'(slave_data_placeholder_i)}}};
+    bit [7:0] slave_red, slave_green, slave_blue;
+    bit slave_last;
+    assign slave_red   = {8{slave_data_placeholder_i}};
+    assign slave_green = {8{!slave_data_placeholder_i}};
+    assign slave_blue  = {8{slave_data_placeholder_i}};
+    assign slave_last  = slave_data_placeholder_i;
 
-    bit [OutChannels*ActivationWidth-1:0] master_data;
-    assign master_data_placeholder_o = ^master_data;
+    bit [7:0] master_red, master_green, master_blue;
+    bit master_last;
+    assign master_data_placeholder_o = ^{master_red, master_green, master_blue, master_last};
 
-    srcnn_small #(
+    superresolution #(
         .Height(Height),
         .Width (Width)
-    ) srcnn_small_inst (
+    ) superresolution_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
         .slave_valid_i(slave_valid_i),
         .slave_ready_o(slave_ready_o),
-        .slave_data_i (slave_data),
+        .slave_red_i  (slave_red),
+        .slave_green_i(slave_green),
+        .slave_blue_i (slave_blue),
 
         .master_valid_o(master_valid_o),
         .master_ready_i(master_ready_i),
-        .master_data_o (master_data)
+        .master_red_o  (master_red),
+        .master_green_o(master_green),
+        .master_blue_o (master_blue),
+        .master_last_o (master_last)
     );
 
 endmodule : top_level_placeholder

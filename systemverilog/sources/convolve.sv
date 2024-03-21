@@ -28,10 +28,12 @@ module convolve #(
     parameter int PaddingRight = 1,
     parameter int ActivationWidth = 8,
     parameter int WeightWidth = 8,
+    localparam int ProductWidth = ActivationWidth + WeightWidth,
     /* verilator lint_off ASCRANGE */
-    parameter bit [0:OutChannels-1][0:InChannels-1][0:KernelHeight-1][0:KernelWidth-1]
+    parameter bit signed [0:OutChannels-1][0:InChannels-1][0:KernelHeight-1][0:KernelWidth-1]
         [WeightWidth-1:0] Weight =
         {OutChannels{{InChannels{{KernelHeight{{KernelHeight{WeightWidth'(0)}}}}}}}},
+    parameter bit signed [0:OutChannels-1][ProductWidth-1:0] Bias = '{default: 0},
     /* verilator lint_on ASCRANGE */
     parameter bit signed [ActivationWidth-1:0] PaddingValue = 0,
     parameter int DSPCascades = 1,
@@ -154,6 +156,7 @@ module convolve #(
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
         .Weight(PermutedWeight),
+        .Bias(Bias),
         .DSPCascades(DSPCascades),
         .DSPsInColumn(DSPsInColumn),
         .LatenciesBetweenColumns(LatenciesBetweenColumns)

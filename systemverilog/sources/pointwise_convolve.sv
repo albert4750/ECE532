@@ -17,9 +17,11 @@ module pointwise_convolve #(
     parameter int OutChannels = 3,
     parameter int ActivationWidth = 8,
     parameter int WeightWidth = 8,
+    localparam int ProductWidth = ActivationWidth + WeightWidth,
     /* verilator lint_off ASCRANGE */
-    parameter bit [0:OutChannels-1][0:InChannels-1][WeightWidth-1:0] Weight =
+    parameter bit signed [0:OutChannels-1][0:InChannels-1][WeightWidth-1:0] Weight =
         {OutChannels{{InChannels{WeightWidth'(0)}}}},
+    parameter bit signed [0:OutChannels-1][ProductWidth-1:0] Bias = '{default: 0},
     /* verilator lint_on ASCRANGE */
     parameter int DSPCascades = 1,
     parameter int DSPsInColumn[DSPCascades][MaxDSPColumns] = '{
@@ -43,7 +45,6 @@ module pointwise_convolve #(
     /* verilator lint_on ASCRANGE */
 );
 
-    localparam int ProductWidth = ActivationWidth + WeightWidth;
     localparam int APaddingWidth = DSPInAWidth - WeightWidth;
     localparam int BPaddingWidth = DSPInBWidth - ActivationWidth;
     localparam int ProductPaddingWidth = APaddingWidth + BPaddingWidth;
@@ -146,6 +147,20 @@ module pointwise_convolve #(
     endfunction : get_dsp_input_latency
 
     /* verilator lint_off ASCRANGE */
+    function automatic bit [0:Cycles-1][ProductWidth-1:0] get_cascade_bias(int cascade_index);
+        // Returns the bias for a cascade of DSPs.
+        bit [0:Cycles-1][ProductWidth-1:0] bias;
+        for (int cycle = 0; cycle < Cycles; ++cycle) begin
+            int out_channel = cascade_index * Cycles + cycle;
+            if (out_channel < OutChannels) begin
+                bias[cycle] = Bias[out_channel];
+            end else begin
+                bias[cycle] = 0;
+            end
+        end
+        return bias;
+    endfunction : get_cascade_bias
+
     function automatic bit [0:Cycles-1][WeightWidth-1:0] get_dsp_weight(int cascade_index,
                                                                         int dsp_index);
         // Returns the weight for a DSP.
@@ -274,8 +289,7 @@ module pointwise_convolve #(
         end
 
         localparam int ColumnCount = get_column_count(CascadeIndex);
-        bit [DSPOutWidth-1:0] column_in[ColumnCount];
-        assign column_in[0] = 0;
+        bit [DSPOutWidth-1:0] column_in [ColumnCount];
         bit [DSPOutWidth-1:0] column_out[ColumnCount];
         assign cascade_out[CascadeIndex] =
             column_out[ColumnCount-1][ProductWidth+ProductPaddingWidth-1:ProductPaddingWidth];
@@ -312,6 +326,28 @@ module pointwise_convolve #(
                     state <= get_next_state(state);
                 end
             end
+
+            if (DSPIndex == 0) begin : g_first_column_in_pipeline
+                /* verilator lint_off ASCRANGE */
+                localparam bit [0:Cycles-1][ProductWidth-1:0] CascadeBias = get_cascade_bias(
+                    CascadeIndex
+                );
+                /* verilator lint_on ASCRANGE */
+                // Introduce 2 cycles of latency because the C inputs have 2 fewer register stages.
+                bit [DSPOutWidth-1:0] bias_buffer;
+                always_ff @(posedge clock_i) begin
+                    if (master_ready_i) begin
+                        /* verilator lint_off WIDTHEXPAND */
+                        bias_buffer <= {
+                            (DSPOutWidth - ProductWidth - ProductPaddingWidth)'(0),
+                            CascadeBias[state],
+                            ProductPaddingWidth'(0)
+                        };
+                        /* verilator lint_on WIDTHEXPAND */
+                        column_in[0] <= bias_buffer;
+                    end
+                end
+            end : g_first_column_in_pipeline
 
             /* verilator lint_off ASCRANGE */
             localparam bit [0:Cycles-1][WeightWidth-1:0] DSPWeight = get_dsp_weight(

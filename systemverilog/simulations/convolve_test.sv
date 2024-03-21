@@ -24,7 +24,7 @@ module convolve_test;
     localparam int ActivationWidth = 8;
     localparam int WeightWidth = 8;
     /* verilator lint_off ASCRANGE */
-    localparam bit [0:OutChannels-1][0:InChannels-1][0:KernelHeight-1][0:KernelWidth-1]
+    localparam bit signed [0:OutChannels-1][0:InChannels-1][0:KernelHeight-1][0:KernelWidth-1]
         [WeightWidth-1:0] Weight = '{
         default: '{default: '{'{1, 2, 1}, '{2, 4, 2}, '{1, 2, 1}}}
     };
@@ -64,6 +64,7 @@ module convolve_test;
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
         .Weight(Weight),
+        .Bias('{default: 0}),  // TODO: test with non-zero bias
         .PaddingValue(PaddingValue),
         .DSPCascades(DSPCascades),
         .DSPsInColumn(DSPsInColumn),

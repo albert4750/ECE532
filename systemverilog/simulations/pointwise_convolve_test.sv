@@ -10,16 +10,16 @@ import constants::*;
 
 module pointwise_convolve_test;
 
-    localparam int InChannels = 147;
-    localparam int OutChannels = 16;
-    localparam int ActivationWidth = 8;
-    localparam int WeightWidth = 8;
+    localparam int InChannels = 47;
+    localparam int OutChannels = 11;
+    localparam int ActivationWidth = 16;
+    localparam int WeightWidth = 16;
     localparam int DSPCascades = 4;
     localparam int DSPsInColumn[DSPCascades][MaxDSPColumns] = '{
-        '{14, 16, 18, 5, 9, 6, 3, 25, 48, 3},
-        '{100, 47, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{2, 2, 2, 2, 53, 86, 0, 0, 0, 0},
-        '{14, 28, 56, 49, 0, 0, 0, 0, 0, 0}
+        '{4, 3, 5, 4, 6, 5, 2, 3, 1, 14},
+        '{20, 27, 0, 0, 0, 0, 0, 0, 0, 0},
+        '{2, 2, 2, 2, 26, 13, 0, 0, 0, 0},
+        '{4, 8, 16, 19, 0, 0, 0, 0, 0, 0}
     };
     localparam int LatenciesBetweenColumns[DSPCascades][MaxDSPColumns-1] = '{
         '{1, 1, 1, 1, 1, 1, 1, 1, 1},
@@ -30,6 +30,7 @@ module pointwise_convolve_test;
 
     /* verilator lint_off ASCRANGE */
     `include "data/pointwise_convolve/weight.svh"
+    `include "data/pointwise_convolve/bias.svh"
     `include "data/pointwise_convolve/input0.svh"
     `include "data/pointwise_convolve/input1.svh"
     `include "data/pointwise_convolve/input2.svh"
@@ -76,6 +77,7 @@ module pointwise_convolve_test;
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
         .Weight(Weight),
+        .Bias(Bias),
         .DSPCascades(DSPCascades),
         .DSPsInColumn(DSPsInColumn),
         .LatenciesBetweenColumns(LatenciesBetweenColumns)

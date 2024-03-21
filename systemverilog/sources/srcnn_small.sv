@@ -12,7 +12,8 @@ module srcnn_small #(
     parameter int Height = 600,
     parameter int Width = 800,
     localparam int ActivationWidth = 10,
-    localparam int WeightWidth = 20
+    localparam int WeightWidth = 20,
+    localparam int ProductWidth = ActivationWidth + WeightWidth
 ) (
     input bit clock_i,
     input bit reset_i,
@@ -32,10 +33,16 @@ module srcnn_small #(
     /* verilator lint_off ASCRANGE */
     localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][WeightWidth-1:0] Convolve1Weight =
         {N1{{3{20'd1, 20'd2, 20'd1, 20'd2, 20'd4, 20'd2, 20'd1, 20'd2, 20'd1}}}};
+    localparam bit signed [0:N1-1][ProductWidth-1:0] Convolve1Bias = '{default: 0};
+
     localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][WeightWidth-1:0] Convolve2Weight =
         {N2{{N1{20'd1, 20'd2, 20'd1, 20'd2, 20'd4, 20'd2, 20'd1, 20'd2, 20'd1}}}};
+    localparam bit signed [0:N2-1][ProductWidth-1:0] Convolve2Bias = '{default: 0};
+
     localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][WeightWidth-1:0] Convolve3Weight =
         {3{{N2{20'd1, 20'd2, 20'd1, 20'd2, 20'd4, 20'd2, 20'd1, 20'd2, 20'd1}}}};
+    localparam bit signed [0:2][ProductWidth-1:0] Convolve3Bias = '{default: 0};
+
     /* verilator lint_on ASCRANGE */
 
     bit convolve1_valid;
@@ -66,6 +73,7 @@ module srcnn_small #(
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
         .Weight(Convolve1Weight),
+        .Bias(Convolve1Bias),
         .PaddingValue(0),
         .DSPCascades(Convolve1Cascades),
         .DSPsInColumn(Convolve1DSPsInColumn),
@@ -111,6 +119,7 @@ module srcnn_small #(
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
         .Weight(Convolve2Weight),
+        .Bias(Convolve2Bias),
         .PaddingValue(0),
         .DSPCascades(Convolve2Cascades),
         .DSPsInColumn(Convolve2DSPsInColumn),
@@ -150,6 +159,7 @@ module srcnn_small #(
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
         .Weight(Convolve3Weight),
+        .Bias(Convolve3Bias),
         .PaddingValue(0),
         .DSPCascades(Convolve3Cascades),
         .DSPsInColumn(Convolve3DSPsInColumn),
