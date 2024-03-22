@@ -1,3 +1,7 @@
+// constants
+//
+// This file defines the global constants used in the project.
+
 `ifndef ECE532_CONSTANTS_SVH
 `define ECE532_CONSTANTS_SVH
 
