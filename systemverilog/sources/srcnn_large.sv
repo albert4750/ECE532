@@ -72,7 +72,7 @@ module srcnn_large #(
     bit [3*ActivationWidth-1:0] queue1_data;
 
     fifo_queue #(
-        .Capacity (2),
+        .Capacity (1),
         .DataWidth(3 * ActivationWidth)
     ) queue1_inst (
         .clock_i(clock_i),
@@ -137,14 +137,14 @@ module srcnn_large #(
         .master_data_o (convolve1_data)
     );
 
-    bit queue2_valid;
-    bit queue2_ready;
-    bit [N1*ActivationWidth-1:0] queue2_data;
+    bit queue2_0_valid;
+    bit queue2_0_ready;
+    bit [N1*ActivationWidth-1:0] queue2_0_data;
 
     fifo_queue #(
-        .Capacity (2),
+        .Capacity (1),
         .DataWidth(N1 * ActivationWidth)
-    ) queue2_inst (
+    ) queue2_0_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
@@ -152,9 +152,29 @@ module srcnn_large #(
         .slave_tready_o(convolve1_ready),
         .slave_tdata_i (convolve1_data),
 
-        .master_tvalid_o(queue2_valid),
-        .master_tready_i(queue2_ready),
-        .master_tdata_o (queue2_data)
+        .master_tvalid_o(queue2_0_valid),
+        .master_tready_i(queue2_0_ready),
+        .master_tdata_o (queue2_0_data)
+    );
+
+    bit queue2_1_valid;
+    bit queue2_1_ready;
+    bit [N1*ActivationWidth-1:0] queue2_1_data;
+
+    fifo_queue #(
+        .Capacity (1),
+        .DataWidth(N1 * ActivationWidth)
+    ) queue2_1_inst (
+        .clock_i(clock_i),
+        .reset_i(reset_i),
+
+        .slave_tvalid_i(queue2_0_valid),
+        .slave_tready_o(queue2_0_ready),
+        .slave_tdata_i (queue2_0_data),
+
+        .master_tvalid_o(queue2_1_valid),
+        .master_tready_i(queue2_1_ready),
+        .master_tdata_o (queue2_1_data)
     );
 
     bit convolve2_valid;
@@ -191,23 +211,23 @@ module srcnn_large #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(queue2_valid),
-        .slave_ready_o(queue2_ready),
-        .slave_data_i (queue2_data),
+        .slave_valid_i(queue2_1_valid),
+        .slave_ready_o(queue2_1_ready),
+        .slave_data_i (queue2_1_data),
 
         .master_valid_o(convolve2_valid),
         .master_ready_i(convolve2_ready),
         .master_data_o (convolve2_data)
     );
 
-    bit queue3_valid;
-    bit queue3_ready;
-    bit [N2*ActivationWidth-1:0] queue3_data;
+    bit queue3_0_valid;
+    bit queue3_0_ready;
+    bit [N2*ActivationWidth-1:0] queue3_0_data;
 
     fifo_queue #(
-        .Capacity (2),
+        .Capacity (1),
         .DataWidth(N2 * ActivationWidth)
-    ) queue3_inst (
+    ) queue3_0_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
@@ -215,9 +235,29 @@ module srcnn_large #(
         .slave_tready_o(convolve2_ready),
         .slave_tdata_i (convolve2_data),
 
-        .master_tvalid_o(queue3_valid),
-        .master_tready_i(queue3_ready),
-        .master_tdata_o (queue3_data)
+        .master_tvalid_o(queue3_0_valid),
+        .master_tready_i(queue3_0_ready),
+        .master_tdata_o (queue3_0_data)
+    );
+
+    bit queue3_1_valid;
+    bit queue3_1_ready;
+    bit [N2*ActivationWidth-1:0] queue3_1_data;
+
+    fifo_queue #(
+        .Capacity (1),
+        .DataWidth(N2 * ActivationWidth)
+    ) queue3_1_inst (
+        .clock_i(clock_i),
+        .reset_i(reset_i),
+
+        .slave_tvalid_i(queue3_0_valid),
+        .slave_tready_o(queue3_0_ready),
+        .slave_tdata_i (queue3_0_data),
+
+        .master_tvalid_o(queue3_1_valid),
+        .master_tready_i(queue3_1_ready),
+        .master_tdata_o (queue3_1_data)
     );
 
     bit convolve3_valid;
@@ -257,9 +297,9 @@ module srcnn_large #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(queue3_valid),
-        .slave_ready_o(queue3_ready),
-        .slave_data_i (queue3_data),
+        .slave_valid_i(queue3_1_valid),
+        .slave_ready_o(queue3_1_ready),
+        .slave_data_i (queue3_1_data),
 
         .master_valid_o(convolve3_valid),
         .master_ready_i(convolve3_ready),
@@ -267,7 +307,7 @@ module srcnn_large #(
     );
 
     fifo_queue #(
-        .Capacity (2),
+        .Capacity (1),
         .DataWidth(3 * ActivationWidth)
     ) queue4_inst (
         .clock_i(clock_i),

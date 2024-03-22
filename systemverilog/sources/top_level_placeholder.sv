@@ -37,7 +37,8 @@ module top_level_placeholder (
 
     superresolution #(
         .Height(Height),
-        .Width (Width)
+        .Width (Width),
+        .Variant("large")
     ) superresolution_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),

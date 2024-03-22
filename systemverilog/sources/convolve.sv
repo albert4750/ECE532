@@ -109,16 +109,16 @@ module convolve #(
         .master_data_o (window_data)
     );
 
-    bit queue_valid;
-    bit queue_ready;
-    bit [KernelHeight*KernelWidth*InChannels*ActivationWidth-1:0] queue_data;
+    bit queue1_valid;
+    bit queue1_ready;
+    bit [KernelHeight*KernelWidth*InChannels*ActivationWidth-1:0] queue1_data;
 
     // This buffer is mandatory because sliding_window stalls unless the master is ready, while
     // pointwise_convolve stalls unless the slave is valid for a few cycles.
     fifo_queue #(
         .Capacity (1),
         .DataWidth(KernelHeight * KernelWidth * InChannels * ActivationWidth)
-    ) fifo_queue_inst (
+    ) queue1_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
@@ -126,9 +126,29 @@ module convolve #(
         .slave_tready_o(window_ready),
         .slave_tdata_i (window_data),
 
-        .master_tvalid_o(queue_valid),
-        .master_tready_i(queue_ready),
-        .master_tdata_o (queue_data)
+        .master_tvalid_o(queue1_valid),
+        .master_tready_i(queue1_ready),
+        .master_tdata_o (queue1_data)
+    );
+
+    bit queue2_valid;
+    bit queue2_ready;
+    bit [KernelHeight*KernelWidth*InChannels*ActivationWidth-1:0] queue2_data;
+
+    fifo_queue #(
+        .Capacity (1),
+        .DataWidth(KernelHeight * KernelWidth * InChannels * ActivationWidth)
+    ) queue2_inst (
+        .clock_i(clock_i),
+        .reset_i(reset_i),
+
+        .slave_tvalid_i(queue1_valid),
+        .slave_tready_o(queue1_ready),
+        .slave_tdata_i (queue1_data),
+
+        .master_tvalid_o(queue2_valid),
+        .master_tready_i(queue2_ready),
+        .master_tdata_o (queue2_data)
     );
 
     /* verilator lint_off ASCRANGE */
@@ -172,9 +192,9 @@ module convolve #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(queue_valid),
-        .slave_ready_o(queue_ready),
-        .slave_data_i (queue_data),
+        .slave_valid_i(queue2_valid),
+        .slave_ready_o(queue2_ready),
+        .slave_data_i (queue2_data),
 
         .master_valid_o(master_valid_o),
         .master_ready_i(master_ready_i),

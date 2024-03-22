@@ -108,7 +108,8 @@ module sliding_window #(
 
     // The remaining columns of the sliding window gets their values by shifting from their right
     // neighbors.
-    (* ram_style = "auto" *) bit [DataWidth-1:0] out_data_shifted[WindowHeight*(WindowWidth-1)];
+    (* ram_style = "distributed" *)
+    bit [DataWidth-1:0] out_data_shifted[WindowHeight*(WindowWidth-1)];
     for (genvar I = 0; I < WindowHeight; ++I) begin : g_out_data_shifted_row
         for (genvar J = 0; J < WindowWidth - 1; ++J) begin : g_out_data_shifted_column
             localparam int FlatIndex = I * (WindowWidth - 1) + J;
