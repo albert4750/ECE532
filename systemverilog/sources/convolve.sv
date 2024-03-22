@@ -30,8 +30,8 @@ module convolve #(
     parameter int PaddingRight = 1,
     parameter int ActivationWidth = 8,
     parameter int WeightWidth = 8,
-    localparam int ProductWidth = compute_signed_product_width(
-        ActivationWidth, WeightWidth, KernelHeight * KernelWidth * InChannels
+    localparam int ProductWidth = get_convolution_product_width(
+        ActivationWidth, WeightWidth, KernelHeight * KernelWidth * InChannels, 1
     ),
     /* verilator lint_off ASCRANGE */
     parameter bit signed [0:OutChannels-1][0:InChannels-1][0:KernelHeight-1][0:KernelWidth-1]

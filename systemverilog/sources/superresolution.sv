@@ -7,7 +7,8 @@
 
 module superresolution #(
     parameter int Height = 600,
-    parameter int Width  = 800
+    parameter int Width = 800,
+    parameter Variant = "small"  // Vivado does not support explicit string parameters
 ) (
     input bit clock_i,
     input bit reset_i,
@@ -51,21 +52,43 @@ module superresolution #(
     assign master_green_o = shift_and_clip_to_uint8(out_data[1]);
     assign master_blue_o = shift_and_clip_to_uint8(out_data[2]);
 
-    srcnn_large #(
-        .Height(Height),
-        .Width (Width)
-    ) srcnn_large_inst (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
+    if (Variant == "small") begin : g_srcnn_small
+        srcnn_small #(
+            .Height(Height),
+            .Width (Width)
+        ) srcnn_small_inst (
+            .clock_i(clock_i),
+            .reset_i(reset_i),
 
-        .slave_valid_i(slave_valid_i),
-        .slave_ready_o(slave_ready_o),
-        .slave_data_i (in_data),
+            .slave_valid_i(slave_valid_i),
+            .slave_ready_o(slave_ready_o),
+            .slave_data_i (in_data),
 
-        .master_valid_o(master_valid_o),
-        .master_ready_i(master_ready_i),
-        .master_data_o (out_data)
-    );
+            .master_valid_o(master_valid_o),
+            .master_ready_i(master_ready_i),
+            .master_data_o (out_data)
+        );
+    end : g_srcnn_small
+    else if (Variant == "large") begin : g_srcnn_large
+        srcnn_large #(
+            .Height(Height),
+            .Width (Width)
+        ) srcnn_large_inst (
+            .clock_i(clock_i),
+            .reset_i(reset_i),
+
+            .slave_valid_i(slave_valid_i),
+            .slave_ready_o(slave_ready_o),
+            .slave_data_i (in_data),
+
+            .master_valid_o(master_valid_o),
+            .master_ready_i(master_ready_i),
+            .master_data_o (out_data)
+        );
+    end : g_srcnn_large
+    else begin : g_invalid_variant
+        $error("Invalid variant: %s", Variant);
+    end : g_invalid_variant
 
     typedef bit [$clog2(Height)-1:0] row_t;
     typedef bit [$clog2(Width)-1:0] column_t;

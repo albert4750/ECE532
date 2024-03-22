@@ -43,15 +43,15 @@ module srcnn_large #(
             20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
             20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1
         }}}};
-    localparam int Convolve1ProductWidth = compute_signed_product_width(
-        ActivationWidth, WeightWidth, F1 * F1 * 3
+    localparam int Convolve1ProductWidth = get_convolution_product_width(
+        ActivationWidth, WeightWidth, F1 * F1 * 3, 1
     );
     localparam bit signed [0:N1-1][Convolve1ProductWidth-1:0] Convolve1Bias = '{default: 0};
 
     localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][WeightWidth-1:0] Convolve2Weight =
         {N2{20'd4, 20'd4, 20'd4, 20'd4, 20'd0, 20'd4, 20'd4, 20'd4, 20'd4}};
-    localparam int Convolve2ProductWidth = compute_signed_product_width(
-        ActivationWidth, WeightWidth, F2 * F2 * N1
+    localparam int Convolve2ProductWidth = get_convolution_product_width(
+        ActivationWidth, WeightWidth, F2 * F2 * N1, 1
     );
     localparam bit signed [0:N2-1][Convolve2ProductWidth-1:0] Convolve2Bias = '{default: 0};
 
@@ -61,8 +61,8 @@ module srcnn_large #(
             20'd4, 20'd0, 20'd4,
             20'd4, 20'd4, 20'd4
         }}}};
-    localparam int Convolve3ProductWidth = compute_signed_product_width(
-        ActivationWidth, WeightWidth, F3 * F3 * N2
+    localparam int Convolve3ProductWidth = get_convolution_product_width(
+        ActivationWidth, WeightWidth, F3 * F3 * N2, 1
     );
     localparam bit signed [0:2][Convolve3ProductWidth-1:0] Convolve3Bias = '{default: 0};
     /* verilator lint_on ASCRANGE */

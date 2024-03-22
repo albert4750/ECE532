@@ -1,9 +1,5 @@
 `timescale 1ns / 1ps
 
-`include "utilities.svh"
-
-import utilities::*;
-
 // pointwise_convolve
 //
 // This module accepts a multi-channel stream of elements, applies a matrix transformation to each
@@ -13,16 +9,18 @@ import utilities::*;
 // - Output: Stream of elements, each element of (OutChannels, ActivationWidth) bits.
 
 `include "constants.svh"
+`include "utilities.svh"
 
 import constants::*;
+import utilities::*;
 
 module pointwise_convolve #(
     parameter int InChannels = 3,
     parameter int OutChannels = 3,
     parameter int ActivationWidth = 8,
     parameter int WeightWidth = 8,
-    localparam int ProductWidth = compute_signed_product_width(
-        ActivationWidth, WeightWidth, InChannels
+    localparam int ProductWidth = get_convolution_product_width(
+        ActivationWidth, WeightWidth, InChannels, 1
     ),
     /* verilator lint_off ASCRANGE */
     parameter bit signed [0:OutChannels-1][0:InChannels-1][WeightWidth-1:0] Weight =
