@@ -61,7 +61,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>bea5ceba</spirit:value>
+            <spirit:value>97423fe5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -80,7 +80,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>bea5ceba</spirit:value>
+            <spirit:value>97423fe5</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -314,7 +314,7 @@
   </spirit:model>
   <spirit:choices>
     <spirit:choice>
-      <spirit:name>choice_list_cb45443a</spirit:name>
+      <spirit:name>choice_list_08ebfc74</spirit:name>
       <spirit:enumeration>small</spirit:enumeration>
       <spirit:enumeration>large</spirit:enumeration>
     </spirit:choice>
@@ -375,7 +375,7 @@
       <spirit:file>
         <spirit:name>imports/sources/superresolution.sv</spirit:name>
         <spirit:fileType>systemVerilogSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_1baa0d8e</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_d1b93e75</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -480,7 +480,7 @@
     <spirit:parameter>
       <spirit:name>Variant</spirit:name>
       <spirit:displayName>Variant</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Variant" spirit:choiceRef="choice_list_cb45443a">small</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Variant" spirit:choiceRef="choice_list_08ebfc74">small</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -500,8 +500,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>superresolution_v1_1</xilinx:displayName>
       <xilinx:definitionSource>package_project</xilinx:definitionSource>
-      <xilinx:coreRevision>2</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2024-03-22T00:48:04Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>3</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2024-03-22T00:54:20Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="user.org:user:superresolution:1.0_ARCHIVE_LOCATION">/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1</xilinx:tag>
         <xilinx:tag xilinx:name="ece532.group3.org:user:superresolution:1.0_ARCHIVE_LOCATION">/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1</xilinx:tag>
@@ -512,10 +512,10 @@
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2018.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="e06ee760"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="55f1904c"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="340e63cc"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="8fc57675"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="97ecab74"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="b5a35480"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="4f009d19"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

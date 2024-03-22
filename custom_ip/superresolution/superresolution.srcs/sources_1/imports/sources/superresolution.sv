@@ -8,7 +8,7 @@
 module superresolution #(
     parameter int Height = 600,
     parameter int Width = 800,
-    parameter string Variant = "small"
+    parameter Variant = "small"
 ) (
     input bit clock_i,
     input bit reset_i,
