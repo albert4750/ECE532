@@ -65,13 +65,13 @@ module srcnn_small #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(slave_valid_i),
-        .slave_tready_o(slave_ready_o),
-        .slave_tdata_i (slave_data_i),
+        .slave_valid_i(slave_valid_i),
+        .slave_ready_o(slave_ready_o),
+        .slave_data_i (slave_data_i),
 
-        .master_tvalid_o(queue1_valid),
-        .master_tready_i(queue1_ready),
-        .master_tdata_o (queue1_data)
+        .master_valid_o(queue1_valid),
+        .master_ready_i(queue1_ready),
+        .master_data_o (queue1_data)
     );
 
     bit convolve1_valid;
@@ -137,13 +137,13 @@ module srcnn_small #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(convolve1_valid),
-        .slave_tready_o(convolve1_ready),
-        .slave_tdata_i (convolve1_data),
+        .slave_valid_i(convolve1_valid),
+        .slave_ready_o(convolve1_ready),
+        .slave_data_i (convolve1_data),
 
-        .master_tvalid_o(queue2_valid),
-        .master_tready_i(queue2_ready),
-        .master_tdata_o (queue2_data)
+        .master_valid_o(queue2_valid),
+        .master_ready_i(queue2_ready),
+        .master_data_o (queue2_data)
     );
 
     bit convolve2_valid;
@@ -209,13 +209,13 @@ module srcnn_small #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(convolve2_valid),
-        .slave_tready_o(convolve2_ready),
-        .slave_tdata_i (convolve2_data),
+        .slave_valid_i(convolve2_valid),
+        .slave_ready_o(convolve2_ready),
+        .slave_data_i (convolve2_data),
 
-        .master_tvalid_o(queue3_valid),
-        .master_tready_i(queue3_ready),
-        .master_tdata_o (queue3_data)
+        .master_valid_o(queue3_valid),
+        .master_ready_i(queue3_ready),
+        .master_data_o (queue3_data)
     );
 
     bit convolve3_valid;
@@ -273,13 +273,13 @@ module srcnn_small #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(convolve3_valid),
-        .slave_tready_o(convolve3_ready),
-        .slave_tdata_i (convolve3_data),
+        .slave_valid_i(convolve3_valid),
+        .slave_ready_o(convolve3_ready),
+        .slave_data_i (convolve3_data),
 
-        .master_tvalid_o(master_valid_o),
-        .master_tready_i(master_ready_i),
-        .master_tdata_o (master_data_o)
+        .master_valid_o(master_valid_o),
+        .master_ready_i(master_ready_i),
+        .master_data_o (master_data_o)
     );
 
 endmodule : srcnn_small

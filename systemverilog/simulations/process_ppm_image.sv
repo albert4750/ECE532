@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 100ps
 
 // process_ppm_image
 //
@@ -10,11 +10,13 @@ module process_ppm_image;
     localparam int Height = 1080;
     localparam int Width = 1920;
 
-    bit clock;
-    initial clock = 0;
-    always #5 clock = !clock;
+    bit clock_slow, clock_fast;
+    initial clock_slow = 0;
+    initial clock_fast = 0;
+    always #5.0 clock_slow = !clock_slow;
+    always #3.5 clock_fast = !clock_fast;
 
-    bit reset;
+    bit reset_slow, reset_fast;
 
     bit in_valid;
     bit in_ready;
@@ -31,11 +33,14 @@ module process_ppm_image;
     bit out_last;
 
     superresolution #(
-        .Height(Height),
-        .Width (Width)
+        .Height (Height),
+        .Width  (Width),
+        .Variant("small")
     ) superresolution_inst (
-        .clock_i(clock),
-        .reset_i(reset),
+        .clock_slow_i(clock_slow),
+        .clock_fast_i(clock_fast),
+        .reset_slow_i(reset_slow),
+        .reset_fast_i(reset_fast),
 
         .slave_valid_i(in_valid),
         .slave_ready_o(in_ready),
@@ -56,7 +61,7 @@ module process_ppm_image;
         .Height(Height),
         .Width (Width)
     ) ppm_reader_inst (
-        .clock_i(clock),
+        .clock_i(clock_slow),
 
         .master_valid_o(in_valid),
         .master_ready_i(in_ready),
@@ -73,7 +78,7 @@ module process_ppm_image;
         .Height(Height),
         .Width (Width)
     ) ppm_writer_inst (
-        .clock_i(clock),
+        .clock_i(clock_slow),
 
         .slave_valid_i(out_valid),
         .slave_ready_o(out_ready),
@@ -86,9 +91,11 @@ module process_ppm_image;
     );
 
     initial begin
-        reset = 0;
+        reset_slow = 0;
+        reset_fast = 0;
         #20;
-        reset = 1;
+        reset_slow = 1;
+        reset_fast = 1;
         wait (reader_finished && writer_finished);
         $display("Image processing finished");
         $finish;

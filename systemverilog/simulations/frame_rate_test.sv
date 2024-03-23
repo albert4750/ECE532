@@ -10,11 +10,13 @@ module frame_rate_test;
     localparam int Width = 1920;
     localparam int Frames = 5;
 
-    bit clock;
-    initial clock = 0;
-    always #5 clock = !clock;
+    bit clock_slow, clock_fast;
+    initial clock_slow = 0;
+    initial clock_fast = 0;
+    always #5.0 clock_slow = !clock_slow;
+    always #3.5 clock_fast = !clock_fast;
 
-    bit reset;
+    bit reset_slow, reset_fast;
 
     bit in_valid;
     bit in_ready;
@@ -31,11 +33,14 @@ module frame_rate_test;
     bit out_last;
 
     superresolution #(
-        .Height(Height),
-        .Width (Width)
+        .Height (Height),
+        .Width  (Width),
+        .Variant("small")
     ) superresolution_inst (
-        .clock_i(clock),
-        .reset_i(reset),
+        .clock_slow_i(clock_slow),
+        .clock_fast_i(clock_fast),
+        .reset_slow_i(reset_slow),
+        .reset_fast_i(reset_fast),
 
         .slave_valid_i(in_valid),
         .slave_ready_o(in_ready),
@@ -56,7 +61,7 @@ module frame_rate_test;
         in_valid = 0;
         #30;
 
-        @(negedge clock);
+        @(negedge clock_slow);
         in_valid = 1;
         for (int frame = 0; frame < Frames; ++frame) begin
             $display("time=%t: Started to send frame %d", $time(), frame);
@@ -67,9 +72,9 @@ module frame_rate_test;
                     in_blue  = 0;
                     in_last  = row == Height - 1 && column == Width - 1;
                     do begin
-                        @(posedge clock);
+                        @(posedge clock_slow);
                     end while (!in_ready);
-                    @(negedge clock);
+                    @(negedge clock_slow);
                 end
             end
             $display("time=%t: Finished sending frame %d", $time(), frame);
@@ -85,16 +90,16 @@ module frame_rate_test;
         out_ready = 0;
         #30;
 
-        @(negedge clock);
+        @(negedge clock_slow);
         out_ready = 1;
         for (int frame = 0; frame < Frames; ++frame) begin
             $display("time=%t: Started to receive frame %d", $time(), frame);
             for (int row = 0; row < Height; ++row) begin
                 for (int column = 0; column < Width; ++column) begin
                     do begin
-                        @(posedge clock);
+                        @(posedge clock_slow);
                     end while (!out_valid);
-                    @(negedge clock);
+                    @(negedge clock_slow);
                 end
             end
             if (frame == 0) begin
@@ -118,9 +123,11 @@ module frame_rate_test;
     end
 
     initial begin
-        reset = 0;
+        reset_slow = 0;
+        reset_fast = 0;
         #20;
-        reset = 1;
+        reset_slow = 1;
+        reset_fast = 1;
         wait (sender_finished && receiver_finished);
         $display("Test finished");
         $finish;

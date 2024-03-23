@@ -1,8 +1,14 @@
-set_property PACKAGE_PIN R4 [get_ports clock_i]
-set_property IOSTANDARD LVCMOS33 [get_ports clock_i]
+set_property PACKAGE_PIN R4 [get_ports clock_slow_i]
+set_property IOSTANDARD LVCMOS33 [get_ports clock_slow_i]
 
-set_property PACKAGE_PIN F15 [get_ports reset_i]
-set_property IOSTANDARD LVCMOS33 [get_ports reset_i]
+# set_property PACKAGE_PIN T1 [get_ports clock_fast_i]
+set_property IOSTANDARD LVCMOS33 [get_ports clock_fast_i]
+
+set_property PACKAGE_PIN F15 [get_ports reset_slow_i]
+set_property IOSTANDARD LVCMOS33 [get_ports reset_slow_i]
+
+set_property PACKAGE_PIN B22 [get_ports reset_fast_i]
+set_property IOSTANDARD LVCMOS33 [get_ports reset_fast_i]
 
 set_property PACKAGE_PIN D14 [get_ports slave_valid_i]
 set_property IOSTANDARD LVCMOS33 [get_ports slave_valid_i]

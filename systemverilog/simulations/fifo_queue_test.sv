@@ -31,13 +31,13 @@ module fifo_queue_test;
         .clock_i(clock),
         .reset_i(reset),
 
-        .slave_tvalid_i(in_valid),
-        .slave_tready_o(in_ready),
-        .slave_tdata_i (in_data),
+        .slave_valid_i(in_valid),
+        .slave_ready_o(in_ready),
+        .slave_data_i (in_data),
 
-        .master_tvalid_o(out_valid),
-        .master_tready_i(out_ready),
-        .master_tdata_o (out_data)
+        .master_valid_o(out_valid),
+        .master_ready_i(out_ready),
+        .master_data_o (out_data)
     );
 
     `define RANDOM_PAUSE(min_cycles, max_cycles)                                 \

@@ -78,13 +78,33 @@ module srcnn_large #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(slave_valid_i),
-        .slave_tready_o(slave_ready_o),
-        .slave_tdata_i (slave_data_i),
+        .slave_valid_i(slave_valid_i),
+        .slave_ready_o(slave_ready_o),
+        .slave_data_i (slave_data_i),
 
-        .master_tvalid_o(queue1_valid),
-        .master_tready_i(queue1_ready),
-        .master_tdata_o (queue1_data)
+        .master_valid_o(queue1_valid),
+        .master_ready_i(queue1_ready),
+        .master_data_o (queue1_data)
+    );
+
+    bit buffer1_valid;
+    bit buffer1_ready;
+    bit [3*ActivationWidth-1:0] buffer1_data;
+
+    delay_buffer #(
+        .Size(4),
+        .DataWidth(3 * ActivationWidth)
+    ) buffer1_inst (
+        .clock_i(clock_i),
+        .reset_i(reset_i),
+
+        .slave_valid_i(queue1_valid),
+        .slave_ready_o(queue1_ready),
+        .slave_data_i (queue1_data),
+
+        .master_valid_o(buffer1_valid),
+        .master_ready_i(buffer1_ready),
+        .master_data_o (buffer1_data)
     );
 
     bit convolve1_valid;
@@ -93,14 +113,14 @@ module srcnn_large #(
 
     localparam int Convolve1Cascades = 3;
     localparam int Convolve1DSPsInColumn[Convolve1Cascades][MaxDSPColumns] = '{
-        '{100, 92, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{8, 100, 60, 24, 0, 0, 0, 0, 0, 0},
-        '{36, 60, 60, 36, 0, 0, 0, 0, 0, 0}
+        '{30, 30, 30, 10, 30, 30, 30, 2, 0, 0},
+        '{8, 30, 30, 30, 10, 30, 30, 24, 0, 0},
+        '{30, 6, 30, 30, 30, 30, 30, 6, 0, 0}
     };
     localparam int Convolve1LatenciesBetweenColumns[Convolve1Cascades][MaxDSPColumns-1] = '{
-        '{9, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{3, 3, 3, 0, 0, 0, 0, 0, 0},
-        '{3, 3, 3, 0, 0, 0, 0, 0, 0}
+        '{3, 3, 3, 3, 3, 3, 3, 0, 0},
+        '{3, 3, 3, 3, 3, 3, 3, 0, 0},
+        '{3, 3, 3, 3, 3, 3, 3, 0, 0}
     };
 
     convolve #(
@@ -128,53 +148,53 @@ module srcnn_large #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(queue1_valid),
-        .slave_ready_o(queue1_ready),
-        .slave_data_i (queue1_data),
+        .slave_valid_i(buffer1_valid),
+        .slave_ready_o(buffer1_ready),
+        .slave_data_i (buffer1_data),
 
         .master_valid_o(convolve1_valid),
         .master_ready_i(convolve1_ready),
         .master_data_o (convolve1_data)
     );
 
-    bit queue2_0_valid;
-    bit queue2_0_ready;
-    bit [N1*ActivationWidth-1:0] queue2_0_data;
+    bit queue2_valid;
+    bit queue2_ready;
+    bit [N1*ActivationWidth-1:0] queue2_data;
 
     fifo_queue #(
         .Capacity (1),
         .DataWidth(N1 * ActivationWidth)
-    ) queue2_0_inst (
+    ) queue2_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(convolve1_valid),
-        .slave_tready_o(convolve1_ready),
-        .slave_tdata_i (convolve1_data),
+        .slave_valid_i(convolve1_valid),
+        .slave_ready_o(convolve1_ready),
+        .slave_data_i (convolve1_data),
 
-        .master_tvalid_o(queue2_0_valid),
-        .master_tready_i(queue2_0_ready),
-        .master_tdata_o (queue2_0_data)
+        .master_valid_o(queue2_valid),
+        .master_ready_i(queue2_ready),
+        .master_data_o (queue2_data)
     );
 
-    bit queue2_1_valid;
-    bit queue2_1_ready;
-    bit [N1*ActivationWidth-1:0] queue2_1_data;
+    bit buffer2_valid;
+    bit buffer2_ready;
+    bit [N1*ActivationWidth-1:0] buffer2_data;
 
-    fifo_queue #(
-        .Capacity (1),
+    delay_buffer #(
+        .Size(4),
         .DataWidth(N1 * ActivationWidth)
-    ) queue2_1_inst (
+    ) buffer2_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(queue2_0_valid),
-        .slave_tready_o(queue2_0_ready),
-        .slave_tdata_i (queue2_0_data),
+        .slave_valid_i(queue2_valid),
+        .slave_ready_o(queue2_ready),
+        .slave_data_i (queue2_data),
 
-        .master_tvalid_o(queue2_1_valid),
-        .master_tready_i(queue2_1_ready),
-        .master_tdata_o (queue2_1_data)
+        .master_valid_o(buffer2_valid),
+        .master_ready_i(buffer2_ready),
+        .master_data_o (buffer2_data)
     );
 
     bit convolve2_valid;
@@ -211,53 +231,53 @@ module srcnn_large #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(queue2_1_valid),
-        .slave_ready_o(queue2_1_ready),
-        .slave_data_i (queue2_1_data),
+        .slave_valid_i(buffer2_valid),
+        .slave_ready_o(buffer2_ready),
+        .slave_data_i (buffer2_data),
 
         .master_valid_o(convolve2_valid),
         .master_ready_i(convolve2_ready),
         .master_data_o (convolve2_data)
     );
 
-    bit queue3_0_valid;
-    bit queue3_0_ready;
-    bit [N2*ActivationWidth-1:0] queue3_0_data;
+    bit queue3_valid;
+    bit queue3_ready;
+    bit [N2*ActivationWidth-1:0] queue3_data;
 
     fifo_queue #(
         .Capacity (1),
         .DataWidth(N2 * ActivationWidth)
-    ) queue3_0_inst (
+    ) queue3_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(convolve2_valid),
-        .slave_tready_o(convolve2_ready),
-        .slave_tdata_i (convolve2_data),
+        .slave_valid_i(convolve2_valid),
+        .slave_ready_o(convolve2_ready),
+        .slave_data_i (convolve2_data),
 
-        .master_tvalid_o(queue3_0_valid),
-        .master_tready_i(queue3_0_ready),
-        .master_tdata_o (queue3_0_data)
+        .master_valid_o(queue3_valid),
+        .master_ready_i(queue3_ready),
+        .master_data_o (queue3_data)
     );
 
-    bit queue3_1_valid;
-    bit queue3_1_ready;
-    bit [N2*ActivationWidth-1:0] queue3_1_data;
+    bit buffer3_valid;
+    bit buffer3_ready;
+    bit [N2*ActivationWidth-1:0] buffer3_data;
 
-    fifo_queue #(
-        .Capacity (1),
+    delay_buffer #(
+        .Size(4),
         .DataWidth(N2 * ActivationWidth)
-    ) queue3_1_inst (
+    ) buffer3_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(queue3_0_valid),
-        .slave_tready_o(queue3_0_ready),
-        .slave_tdata_i (queue3_0_data),
+        .slave_valid_i(queue3_valid),
+        .slave_ready_o(queue3_ready),
+        .slave_data_i (queue3_data),
 
-        .master_tvalid_o(queue3_1_valid),
-        .master_tready_i(queue3_1_ready),
-        .master_tdata_o (queue3_1_data)
+        .master_valid_o(buffer3_valid),
+        .master_ready_i(buffer3_ready),
+        .master_data_o (buffer3_data)
     );
 
     bit convolve3_valid;
@@ -266,10 +286,10 @@ module srcnn_large #(
 
     localparam int Convolve3Cascades = 1;
     localparam int Convolve3DSPsInColumn[Convolve3Cascades][MaxDSPColumns] = '{
-        '{8, 100, 0, 0, 0, 0, 0, 0, 0, 0}
+        '{8, 30, 30, 30, 10, 0, 0, 0, 0, 0}
     };
     localparam int Convolve3LatenciesBetweenColumns[Convolve3Cascades][MaxDSPColumns-1] = '{
-        '{3, 0, 0, 0, 0, 0, 0, 0, 0}
+        '{3, 3, 3, 3, 0, 0, 0, 0, 0}
     };
 
     convolve #(
@@ -297,14 +317,18 @@ module srcnn_large #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(queue3_1_valid),
-        .slave_ready_o(queue3_1_ready),
-        .slave_data_i (queue3_1_data),
+        .slave_valid_i(buffer3_valid),
+        .slave_ready_o(buffer3_ready),
+        .slave_data_i (buffer3_data),
 
         .master_valid_o(convolve3_valid),
         .master_ready_i(convolve3_ready),
         .master_data_o (convolve3_data)
     );
+
+    bit queue4_valid;
+    bit queue4_ready;
+    bit [3*ActivationWidth-1:0] queue4_data;
 
     fifo_queue #(
         .Capacity (1),
@@ -313,13 +337,29 @@ module srcnn_large #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(convolve3_valid),
-        .slave_tready_o(convolve3_ready),
-        .slave_tdata_i (convolve3_data),
+        .slave_valid_i(convolve3_valid),
+        .slave_ready_o(convolve3_ready),
+        .slave_data_i (convolve3_data),
 
-        .master_tvalid_o(master_valid_o),
-        .master_tready_i(master_ready_i),
-        .master_tdata_o (master_data_o)
+        .master_valid_o(queue4_valid),
+        .master_ready_i(queue4_ready),
+        .master_data_o (queue4_data)
+    );
+
+    delay_buffer #(
+        .Size(4),
+        .DataWidth(3 * ActivationWidth)
+    ) buffer4_inst (
+        .clock_i(clock_i),
+        .reset_i(reset_i),
+
+        .slave_valid_i(queue4_valid),
+        .slave_ready_o(queue4_ready),
+        .slave_data_i (queue4_data),
+
+        .master_valid_o(master_valid_o),
+        .master_ready_i(master_ready_i),
+        .master_data_o (master_data_o)
     );
 
 endmodule : srcnn_large

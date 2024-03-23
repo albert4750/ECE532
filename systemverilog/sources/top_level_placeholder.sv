@@ -9,8 +9,10 @@
 import constants::*;
 
 module top_level_placeholder (
-    input bit clock_i,
-    input bit reset_i,
+    input bit clock_slow_i,
+    input bit clock_fast_i,
+    input bit reset_slow_i,
+    input bit reset_fast_i,
 
     input  bit slave_valid_i,
     output bit slave_ready_o,
@@ -36,12 +38,14 @@ module top_level_placeholder (
     assign master_data_placeholder_o = ^{master_red, master_green, master_blue, master_last};
 
     superresolution #(
-        .Height(Height),
-        .Width (Width),
+        .Height (Height),
+        .Width  (Width),
         .Variant("large")
     ) superresolution_inst (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
+        .clock_slow_i(clock_slow_i),
+        .clock_fast_i(clock_fast_i),
+        .reset_slow_i(reset_slow_i),
+        .reset_fast_i(reset_fast_i),
 
         .slave_valid_i(slave_valid_i),
         .slave_ready_o(slave_ready_o),
