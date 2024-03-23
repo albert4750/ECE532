@@ -20,7 +20,7 @@ module dual_port_ram #(
     input bit [DataWidth-1:0] write_data_i
 );
 
-    (* ram_style = "auto" *) bit [DataWidth-1:0] memory[ItemCount];
+    /* (* ram_style = "block" *) */ bit [DataWidth-1:0] memory[ItemCount];
 
     always_ff @(posedge clock_i) begin
         if (read_enable_i) begin

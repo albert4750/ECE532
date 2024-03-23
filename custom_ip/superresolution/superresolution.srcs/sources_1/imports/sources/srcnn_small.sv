@@ -34,22 +34,22 @@ module srcnn_small #(
     /* verilator lint_off ASCRANGE */
     localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][WeightWidth-1:0] Convolve1Weight =
         {N1{{3{20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1, 20'd4}}}};
-    localparam int Convolve1ProductWidth = compute_signed_product_width(
-        ActivationWidth, WeightWidth, F1 * F1 * 3
+    localparam int Convolve1ProductWidth = get_convolution_product_width(
+        ActivationWidth, WeightWidth, F1 * F1 * 3, 1
     );
     localparam bit signed [0:N1-1][Convolve1ProductWidth-1:0] Convolve1Bias = '{default: 0};
 
     localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][WeightWidth-1:0] Convolve2Weight =
         {N2{{N1{20'd4, 20'd4, 20'd4, 20'd4, 20'd0, 20'd4, 20'd4, 20'd4, 20'd4}}}};
-    localparam int Convolve2ProductWidth = compute_signed_product_width(
-        ActivationWidth, WeightWidth, F2 * F2 * N1
+    localparam int Convolve2ProductWidth = get_convolution_product_width(
+        ActivationWidth, WeightWidth, F2 * F2 * N1, 1
     );
     localparam bit signed [0:N2-1][Convolve2ProductWidth-1:0] Convolve2Bias = '{default: 0};
 
     localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][WeightWidth-1:0] Convolve3Weight =
         {3{{N2{20'd4, 20'd4, 20'd4, 20'd4, 20'd0, 20'd4, 20'd4, 20'd4, 20'd4}}}};
-    localparam int Convolve3ProductWidth = compute_signed_product_width(
-        ActivationWidth, WeightWidth, F3 * F3 * N2
+    localparam int Convolve3ProductWidth = get_convolution_product_width(
+        ActivationWidth, WeightWidth, F3 * F3 * N2, 1
     );
     localparam bit signed [0:2][Convolve3ProductWidth-1:0] Convolve3Bias = '{default: 0};
     /* verilator lint_on ASCRANGE */
@@ -65,13 +65,13 @@ module srcnn_small #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(slave_valid_i),
-        .slave_tready_o(slave_ready_o),
-        .slave_tdata_i (slave_data_i),
+        .slave_valid_i(slave_valid_i),
+        .slave_ready_o(slave_ready_o),
+        .slave_data_i (slave_data_i),
 
-        .master_tvalid_o(queue1_valid),
-        .master_tready_i(queue1_ready),
-        .master_tdata_o (queue1_data)
+        .master_valid_o(queue1_valid),
+        .master_ready_i(queue1_ready),
+        .master_data_o (queue1_data)
     );
 
     bit convolve1_valid;
@@ -137,13 +137,13 @@ module srcnn_small #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(convolve1_valid),
-        .slave_tready_o(convolve1_ready),
-        .slave_tdata_i (convolve1_data),
+        .slave_valid_i(convolve1_valid),
+        .slave_ready_o(convolve1_ready),
+        .slave_data_i (convolve1_data),
 
-        .master_tvalid_o(queue2_valid),
-        .master_tready_i(queue2_ready),
-        .master_tdata_o (queue2_data)
+        .master_valid_o(queue2_valid),
+        .master_ready_i(queue2_ready),
+        .master_data_o (queue2_data)
     );
 
     bit convolve2_valid;
@@ -209,13 +209,13 @@ module srcnn_small #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(convolve2_valid),
-        .slave_tready_o(convolve2_ready),
-        .slave_tdata_i (convolve2_data),
+        .slave_valid_i(convolve2_valid),
+        .slave_ready_o(convolve2_ready),
+        .slave_data_i (convolve2_data),
 
-        .master_tvalid_o(queue3_valid),
-        .master_tready_i(queue3_ready),
-        .master_tdata_o (queue3_data)
+        .master_valid_o(queue3_valid),
+        .master_ready_i(queue3_ready),
+        .master_data_o (queue3_data)
     );
 
     bit convolve3_valid;
@@ -273,13 +273,13 @@ module srcnn_small #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(convolve3_valid),
-        .slave_tready_o(convolve3_ready),
-        .slave_tdata_i (convolve3_data),
+        .slave_valid_i(convolve3_valid),
+        .slave_ready_o(convolve3_ready),
+        .slave_data_i (convolve3_data),
 
-        .master_tvalid_o(master_valid_o),
-        .master_tready_i(master_ready_i),
-        .master_tdata_o (master_data_o)
+        .master_valid_o(master_valid_o),
+        .master_ready_i(master_ready_i),
+        .master_data_o (master_data_o)
     );
 
 endmodule : srcnn_small

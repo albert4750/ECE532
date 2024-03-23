@@ -30,8 +30,8 @@ module convolve #(
     parameter int PaddingRight = 1,
     parameter int ActivationWidth = 8,
     parameter int WeightWidth = 8,
-    localparam int ProductWidth = compute_signed_product_width(
-        ActivationWidth, WeightWidth, KernelHeight * KernelWidth * InChannels
+    localparam int ProductWidth = get_convolution_product_width(
+        ActivationWidth, WeightWidth, KernelHeight * KernelWidth * InChannels, 1
     ),
     /* verilator lint_off ASCRANGE */
     parameter bit signed [0:OutChannels-1][0:InChannels-1][0:KernelHeight-1][0:KernelWidth-1]
@@ -86,6 +86,26 @@ module convolve #(
         .master_data_o (padded_data)
     );
 
+    bit buffer_valid;
+    bit buffer_ready;
+    bit [InChannels*ActivationWidth-1:0] buffer_data;
+
+    delay_buffer #(
+        .Size(4),
+        .DataWidth(InChannels * ActivationWidth)
+    ) delay_buffer_inst (
+        .clock_i(clock_i),
+        .reset_i(reset_i),
+
+        .slave_valid_i(padded_valid),
+        .slave_ready_o(padded_ready),
+        .slave_data_i (padded_data),
+
+        .master_valid_o(buffer_valid),
+        .master_ready_i(buffer_ready),
+        .master_data_o (buffer_data)
+    );
+
     bit window_valid;
     bit window_ready;
     bit [KernelHeight*KernelWidth*InChannels*ActivationWidth-1:0] window_data;
@@ -100,9 +120,9 @@ module convolve #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(padded_valid),
-        .slave_ready_o(padded_ready),
-        .slave_data_i (padded_data),
+        .slave_valid_i(buffer_valid),
+        .slave_ready_o(buffer_ready),
+        .slave_data_i (buffer_data),
 
         .master_valid_o(window_valid),
         .master_ready_i(window_ready),
@@ -122,13 +142,13 @@ module convolve #(
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_tvalid_i(window_valid),
-        .slave_tready_o(window_ready),
-        .slave_tdata_i (window_data),
+        .slave_valid_i(window_valid),
+        .slave_ready_o(window_ready),
+        .slave_data_i (window_data),
 
-        .master_tvalid_o(queue_valid),
-        .master_tready_i(queue_ready),
-        .master_tdata_o (queue_data)
+        .master_valid_o(queue_valid),
+        .master_ready_i(queue_ready),
+        .master_data_o (queue_data)
     );
 
     /* verilator lint_off ASCRANGE */
