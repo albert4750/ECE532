@@ -1,8 +1,8 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
--- Date        : Tue Feb 13 00:33:36 2024
--- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+-- Date        : Thu Feb 29 17:54:23 2024
+-- Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
 -- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_auto_rs_w_1 -prefix
 --               hdmi_auto_rs_w_1_ hdmi_s03_regslice_0_sim_netlist.vhdl
 -- Design      : hdmi_s03_regslice_0
@@ -8496,7 +8496,7 @@ entity hdmi_auto_rs_w_1 is
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of hdmi_auto_rs_w_1 : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of hdmi_auto_rs_w_1 : entity is "axi_register_slice_v2_1_17_axi_register_slice,Vivado 2018.2.2";
+  attribute X_CORE_INFO of hdmi_auto_rs_w_1 : entity is "axi_register_slice_v2_1_17_axi_register_slice,Vivado 2018.2";
 end hdmi_auto_rs_w_1;
 
 architecture STRUCTURE of hdmi_auto_rs_w_1 is

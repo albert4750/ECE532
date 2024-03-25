@@ -1,33 +1,34 @@
-00:01:14 **** Build of configuration Debug for project Nexys-Video-HDMI ****
+18:26:55 **** Auto Build of configuration Debug for project Nexys-Video-HDMI ****
 make all 
-'Building file: ../video_capture/video_capture.c'
-'Invoking: MicroBlaze gcc compiler'
+Building file: ../video_capture/video_capture.c
+Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"video_capture/video_capture.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"video_capture/video_capture.d" -MT"video_capture/video_capture.o" -o "video_capture/video_capture.o" "../video_capture/video_capture.c"
-'Finished building: ../video_capture/video_capture.c'
-' '
-'Building file: ../timer_ps/timer_ps.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"timer_ps/timer_ps.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"timer_ps/timer_ps.d" -MT"timer_ps/timer_ps.o" -o "timer_ps/timer_ps.o" "../timer_ps/timer_ps.c"
-'Finished building: ../timer_ps/timer_ps.c'
-' '
-'Building file: ../intc/intc.c'
-'Invoking: MicroBlaze gcc compiler'
+Finished building: ../video_capture/video_capture.c
+ 
+Building file: ../intc/intc.c
+Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"intc/intc.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"intc/intc.d" -MT"intc/intc.o" -o "intc/intc.o" "../intc/intc.c"
-'Finished building: ../intc/intc.c'
-' '
-'Building file: ../dynclk/dynclk.c'
-'Invoking: MicroBlaze gcc compiler'
+Finished building: ../intc/intc.c
+ 
+Building file: ../dynclk/dynclk.c
+Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"dynclk/dynclk.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"dynclk/dynclk.d" -MT"dynclk/dynclk.o" -o "dynclk/dynclk.o" "../dynclk/dynclk.c"
-'Finished building: ../dynclk/dynclk.c'
-' '
-'Building file: ../display_ctrl/display_ctrl.c'
-'Invoking: MicroBlaze gcc compiler'
+Finished building: ../dynclk/dynclk.c
+ 
+Building file: ../display_ctrl/display_ctrl.c
+Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"display_ctrl/display_ctrl.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"display_ctrl/display_ctrl.d" -MT"display_ctrl/display_ctrl.o" -o "display_ctrl/display_ctrl.o" "../display_ctrl/display_ctrl.c"
-'Finished building: ../display_ctrl/display_ctrl.c'
-' '
-'Building file: ../video_demo.c'
-'Invoking: MicroBlaze gcc compiler'
+Finished building: ../display_ctrl/display_ctrl.c
+ 
+Building file: ../video_demo.c
+Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"video_demo.o" -I../../Nexys-Video-HDMI_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"video_demo.d" -MT"video_demo.o" -o "video_demo.o" "../video_demo.c"
+../video_demo.c: In function 'DemoInitialize':
+../video_demo.c:209:41: error: 'XPAR_AXI_DMA_1_DEVICE_ID' undeclared (first use in this function); did you mean 'XPAR_AXI_DMA_4_DEVICE_ID'?
+  grayScaleConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_1_DEVICE_ID);
+                                         ^~~~~~~~~~~~~~~~~~~~~~~~
+                                         XPAR_AXI_DMA_4_DEVICE_ID
+../video_demo.c:209:41: note: each undeclared identifier is reported only once for each function it appears in
 ../video_demo.c: In function 'DemoRun':
 ../video_demo.c:334:4: warning: implicit declaration of function 'doDMA' [-Wimplicit-function-declaration]
     doDMA();
@@ -39,19 +40,7 @@ mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"video_demo.o" -I../../Nexys-Video
 ../video_demo.c:334:4: note: previous implicit declaration of 'doDMA' was here
     doDMA();
     ^~~~~
-'Finished building: ../video_demo.c'
-' '
-'Building target: Nexys-Video-HDMI.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../Nexys-Video-HDMI_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "Nexys-Video-HDMI.elf"  ./video_capture/video_capture.o  ./timer_ps/timer_ps.o  ./intc/intc.o  ./dynclk/dynclk.o  ./display_ctrl/display_ctrl.o  ./video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: Nexys-Video-HDMI.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size Nexys-Video-HDMI.elf  |tee "Nexys-Video-HDMI.elf.size"
-   text	   data	    bss	    dec	    hex	filename
- 102120	   2088	18674480	18778688	11e8a40	Nexys-Video-HDMI.elf
-'Finished building: Nexys-Video-HDMI.elf.size'
-' '
+make: *** [subdir.mk:23: video_demo.o] Error 1
 
-00:01:16 Build Finished (took 1s.415ms)
+18:26:55 Build Finished (took 368ms)
 

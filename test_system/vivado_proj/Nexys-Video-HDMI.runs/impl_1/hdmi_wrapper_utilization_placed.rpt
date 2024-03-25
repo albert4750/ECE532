@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-| Date         : Tue Mar 19 02:07:38 2024
-| Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+| Date         : Mon Mar 25 18:20:03 2024
+| Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_utilization -file hdmi_wrapper_utilization_placed.rpt -pb hdmi_wrapper_utilization_placed.pb
 | Design       : hdmi_wrapper
 | Device       : 7a200tsbg484-1
@@ -31,13 +31,13 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs                 | 54164 |     0 |    133800 | 40.48 |
-|   LUT as Logic             | 50866 |     0 |    133800 | 38.02 |
-|   LUT as Memory            |  3298 |     0 |     46200 |  7.14 |
+| Slice LUTs                 | 53102 |     0 |    133800 | 39.69 |
+|   LUT as Logic             | 49767 |     0 |    133800 | 37.20 |
+|   LUT as Memory            |  3335 |     0 |     46200 |  7.22 |
 |     LUT as Distributed RAM |  1416 |     0 |           |       |
-|     LUT as Shift Register  |  1882 |     0 |           |       |
-| Slice Registers            | 63343 |     2 |    267600 | 23.67 |
-|   Register as Flip Flop    | 63328 |     2 |    267600 | 23.67 |
+|     LUT as Shift Register  |  1919 |     0 |           |       |
+| Slice Registers            | 63292 |     2 |    267600 | 23.65 |
+|   Register as Flip Flop    | 63277 |     2 |    267600 | 23.65 |
 |   Register as Latch        |     0 |     0 |    267600 |  0.00 |
 |   Register as AND/OR       |    15 |     0 |    267600 | <0.01 |
 | F7 Muxes                   |  1028 |     0 |     66900 |  1.54 |
@@ -60,7 +60,7 @@ Table of Contents
 | 156   |          Yes |           - |          Set |
 | 637   |          Yes |           - |        Reset |
 | 1475  |          Yes |         Set |            - |
-| 61060 |          Yes |       Reset |            - |
+| 61009 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -70,27 +70,27 @@ Table of Contents
 +-------------------------------------------+-------+-------+-----------+-------+
 |                 Site Type                 |  Used | Fixed | Available | Util% |
 +-------------------------------------------+-------+-------+-----------+-------+
-| Slice                                     | 22705 |     0 |     33450 | 67.88 |
-|   SLICEL                                  | 14599 |     0 |           |       |
-|   SLICEM                                  |  8106 |     0 |           |       |
-| LUT as Logic                              | 50866 |     0 |    133800 | 38.02 |
-|   using O5 output only                    |     6 |       |           |       |
-|   using O6 output only                    | 39525 |       |           |       |
-|   using O5 and O6                         | 11335 |       |           |       |
-| LUT as Memory                             |  3298 |     0 |     46200 |  7.14 |
+| Slice                                     | 20995 |     0 |     33450 | 62.77 |
+|   SLICEL                                  | 13505 |     0 |           |       |
+|   SLICEM                                  |  7490 |     0 |           |       |
+| LUT as Logic                              | 49767 |     0 |    133800 | 37.20 |
+|   using O5 output only                    |    21 |       |           |       |
+|   using O6 output only                    | 39798 |       |           |       |
+|   using O5 and O6                         |  9948 |       |           |       |
+| LUT as Memory                             |  3335 |     0 |     46200 |  7.22 |
 |   LUT as Distributed RAM                  |  1416 |     0 |           |       |
 |     using O5 output only                  |     0 |       |           |       |
 |     using O6 output only                  |   512 |       |           |       |
 |     using O5 and O6                       |   904 |       |           |       |
-|   LUT as Shift Register                   |  1882 |     0 |           |       |
-|     using O5 output only                  |    51 |       |           |       |
-|     using O6 output only                  |   743 |       |           |       |
-|     using O5 and O6                       |  1088 |       |           |       |
-| LUT Flip Flop Pairs                       | 26381 |     0 |    133800 | 19.72 |
-|   fully used LUT-FF pairs                 |  4645 |       |           |       |
-|   LUT-FF pairs with one unused LUT output | 19256 |       |           |       |
-|   LUT-FF pairs with one unused Flip Flop  | 20117 |       |           |       |
-| Unique Control Sets                       |  2258 |       |           |       |
+|   LUT as Shift Register                   |  1919 |     0 |           |       |
+|     using O5 output only                  |    55 |       |           |       |
+|     using O6 output only                  |   750 |       |           |       |
+|     using O5 and O6                       |  1114 |       |           |       |
+| LUT Flip Flop Pairs                       | 26669 |     0 |    133800 | 19.93 |
+|   fully used LUT-FF pairs                 |  4764 |       |           |       |
+|   LUT-FF pairs with one unused LUT output | 20269 |       |           |       |
+|   LUT-FF pairs with one unused Flip Flop  | 20280 |       |           |       |
+| Unique Control Sets                       |  2255 |       |           |       |
 +-------------------------------------------+-------+-------+-----------+-------+
 * Note: Review the Control Sets Report for more information regarding control sets.
 
@@ -197,18 +197,18 @@ Table of Contents
 +--------------------------+-------+---------------------+
 |         Ref Name         |  Used | Functional Category |
 +--------------------------+-------+---------------------+
-| FDRE                     | 61060 |        Flop & Latch |
-| LUT3                     | 19345 |                 LUT |
-| LUT6                     | 14648 |                 LUT |
-| LUT5                     |  9787 |                 LUT |
-| LUT4                     |  9341 |                 LUT |
-| LUT2                     |  8112 |                 LUT |
-| CARRY4                   |  3422 |          CarryLogic |
-| SRL16E                   |  2228 |  Distributed Memory |
+| FDRE                     | 61009 |        Flop & Latch |
+| LUT3                     | 17582 |                 LUT |
+| LUT6                     | 14777 |                 LUT |
+| LUT5                     |  9847 |                 LUT |
+| LUT2                     |  8591 |                 LUT |
+| LUT4                     |  7880 |                 LUT |
+| SRL16E                   |  2291 |  Distributed Memory |
+| CARRY4                   |  1712 |          CarryLogic |
 | FDSE                     |  1475 |        Flop & Latch |
 | RAMD32                   |  1372 |  Distributed Memory |
+| LUT1                     |  1038 |                 LUT |
 | MUXF7                    |  1028 |               MuxFx |
-| LUT1                     |   968 |                 LUT |
 | RAMS32                   |   948 |  Distributed Memory |
 | SRLC32E                  |   731 |  Distributed Memory |
 | FDCE                     |   637 |        Flop & Latch |
@@ -300,11 +300,11 @@ Table of Contents
 | hdmi_ilmb_v10_0               |    1 |
 | hdmi_ilmb_bram_if_cntlr_0     |    1 |
 | hdmi_grayscale_0_0            |    1 |
-| hdmi_gaussian_blur_0          |    1 |
 | hdmi_dvi2rgb_0_0              |    1 |
 | hdmi_dlmb_v10_0               |    1 |
 | hdmi_dlmb_bram_if_cntlr_0     |    1 |
-| hdmi_convolve_rgb_0_0         |    1 |
+| hdmi_convolution_0_1          |    1 |
+| hdmi_convolution_0_0          |    1 |
 | hdmi_brightening_0_0          |    1 |
 | hdmi_axi_vdma_0_0             |    1 |
 | hdmi_axi_uartlite_0_0         |    1 |

@@ -1,0 +1,602 @@
+
+*** Running vivado
+    with args -log hdmi_convolution_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_convolution_0_1.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source hdmi_convolution_0_1.tcl -notrace
+Command: synth_design -top hdmi_convolution_0_1 -part xc7a200tsbg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 1478766 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1325.340 ; gain = 88.945 ; free physical = 1394 ; free virtual = 11927
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'hdmi_convolution_0_1' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_convolution_0_1/synth/hdmi_convolution_0_1.sv:57]
+INFO: [Synth 8-6157] synthesizing module 'convolution' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/convolution.sv:8]
+	Parameter Height bound to: 32'sb00000000000000000000010000111000 
+	Parameter Width bound to: 32'sb00000000000000000000011110000000 
+	Parameter KernelSize bound to: 32'sb00000000000000000000000000000011 
+	Parameter Weight11 bound to: 9'sb111111111 
+	Parameter Weight12 bound to: 9'sb111111111 
+	Parameter Weight13 bound to: 9'sb111111111 
+	Parameter Weight14 bound to: 9'sb000000000 
+	Parameter Weight15 bound to: 9'sb000000000 
+	Parameter Weight21 bound to: 9'sb111111111 
+	Parameter Weight22 bound to: 9'sb000001001 
+	Parameter Weight23 bound to: 9'sb111111111 
+	Parameter Weight24 bound to: 9'sb000000000 
+	Parameter Weight25 bound to: 9'sb000000000 
+	Parameter Weight31 bound to: 9'sb111111111 
+	Parameter Weight32 bound to: 9'sb111111111 
+	Parameter Weight33 bound to: 9'sb111111111 
+	Parameter Weight34 bound to: 9'sb000000000 
+	Parameter Weight35 bound to: 9'sb000000000 
+	Parameter Weight41 bound to: 9'sb000000000 
+	Parameter Weight42 bound to: 9'sb000000000 
+	Parameter Weight43 bound to: 9'sb000000000 
+	Parameter Weight44 bound to: 9'sb000000000 
+	Parameter Weight45 bound to: 9'sb000000000 
+	Parameter Weight51 bound to: 9'sb000000000 
+	Parameter Weight52 bound to: 9'sb000000000 
+	Parameter Weight53 bound to: 9'sb000000000 
+	Parameter Weight54 bound to: 9'sb000000000 
+	Parameter Weight55 bound to: 9'sb000000000 
+	Parameter RightShift bound to: 32'sb00000000000000000000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'channelwise_convolve' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/channelwise_convolve.sv:20]
+	Parameter Channels bound to: 32'sb00000000000000000000000000000011 
+	Parameter KernelHeight bound to: 32'sb00000000000000000000000000000011 
+	Parameter KernelWidth bound to: 32'sb00000000000000000000000000000011 
+	Parameter InHeight bound to: 32'sb00000000000000000000010000111000 
+	Parameter InWidth bound to: 32'sb00000000000000000000011110000000 
+	Parameter PaddingTop bound to: 32'sb00000000000000000000000000000001 
+	Parameter PaddingBottom bound to: 32'sb00000000000000000000000000000001 
+	Parameter PaddingLeft bound to: 32'sb00000000000000000000000000000001 
+	Parameter PaddingRight bound to: 32'sb00000000000000000000000000000001 
+	Parameter ActivationWidth bound to: 32'sb00000000000000000000000000001001 
+	Parameter WeightWidth bound to: 32'sb00000000000000000000000000001001 
+	Parameter ProductWidth bound to: 32'sb00000000000000000000000000010101 
+	Parameter Weight bound to: 81'b111111111111111111111111111111111111000001001111111111111111111111111111111111111 
+	Parameter RightShift bound to: 32'sb00000000000000000000000000000000 
+	Parameter PaddingValue bound to: 9'sb000000000 
+INFO: [Synth 8-6157] synthesizing module 'constant_pad' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/constant_pad.sv:12]
+	Parameter InHeight bound to: 32'sb00000000000000000000010000111000 
+	Parameter InWidth bound to: 32'sb00000000000000000000011110000000 
+	Parameter Top bound to: 32'sb00000000000000000000000000000001 
+	Parameter Bottom bound to: 32'sb00000000000000000000000000000001 
+	Parameter Left bound to: 32'sb00000000000000000000000000000001 
+	Parameter Right bound to: 32'sb00000000000000000000000000000001 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000011011 
+	Parameter Value bound to: 27'b000000000000000000000000000 
+	Parameter OutHeight bound to: 32'sb00000000000000000000010000111010 
+	Parameter OutWidth bound to: 32'sb00000000000000000000011110000010 
+INFO: [Synth 8-6155] done synthesizing module 'constant_pad' (1#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/constant_pad.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'sliding_window' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/sliding_window.sv:12]
+	Parameter InHeight bound to: 32'sb00000000000000000000010000111010 
+	Parameter InWidth bound to: 32'sb00000000000000000000011110000010 
+	Parameter WindowHeight bound to: 32'sb00000000000000000000000000000011 
+	Parameter WindowWidth bound to: 32'sb00000000000000000000000000000011 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000011011 
+INFO: [Synth 8-6157] synthesizing module 'dual_port_ram' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/dual_port_ram.sv:7]
+	Parameter ItemCount bound to: 32'sb00000000000000000000011110000010 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000011011 
+	Parameter AddressWidth bound to: 32'sb00000000000000000000000000001011 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "auto" *) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/dual_port_ram.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'dual_port_ram' (2#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/dual_port_ram.sv:7]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "auto" *) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/sliding_window.sv:111]
+INFO: [Synth 8-6155] done synthesizing module 'sliding_window' (3#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/sliding_window.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'adder_tree' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/adder_tree.sv:12]
+	Parameter InnerChannels bound to: 32'sb00000000000000000000000000000011 
+	Parameter OuterChannels bound to: 32'sb00000000000000000000000000001001 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000010101 
+	Parameter TreeDepth bound to: 32'sb00000000000000000000000000000100 
+	Parameter TreeNodes bound to: 32'sb00000000000000000000000000011111 
+WARNING: [Synth 8-5856] 3D RAM tree_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-6155] done synthesizing module 'adder_tree' (4#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/adder_tree.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'channelwise_convolve' (5#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/channelwise_convolve.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'convolution' (6#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/8f9f/convolution.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_convolution_0_1' (7#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_convolution_0_1/synth/hdmi_convolution_0_1.sv:57]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1368.965 ; gain = 132.570 ; free physical = 1401 ; free virtual = 11937
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1368.965 ; gain = 132.570 ; free physical = 1404 ; free virtual = 11939
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1368.965 ; gain = 132.570 ; free physical = 1404 ; free virtual = 11939
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraint will be written out.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1766.020 ; gain = 2.000 ; free physical = 1088 ; free virtual = 11653
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:35 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1162 ; free virtual = 11726
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tsbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:35 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1162 ; free virtual = 11726
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:35 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1164 ; free virtual = 11728
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "next_row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "row" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:35 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1155 ; free virtual = 11720
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     21 Bit       Adders := 24    
+	   2 Input     11 Bit       Adders := 6     
+	   2 Input      9 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 3     
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	               27 Bit    Registers := 8     
+	               21 Bit    Registers := 60    
+	               11 Bit    Registers := 6     
+	                1 Bit    Registers := 5     
++---Multipliers : 
+	                  5x9  Multipliers := 3     
+	                  1x9  Multipliers := 24    
++---RAMs : 
+	              50K Bit         RAMs := 2     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 3     
+	   2 Input     11 Bit        Muxes := 4     
+	   2 Input      9 Bit        Muxes := 6     
+	   2 Input      8 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module constant_pad 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               11 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module dual_port_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               27 Bit    Registers := 1     
++---RAMs : 
+	              50K Bit         RAMs := 1     
+Module sliding_window 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	               27 Bit    Registers := 6     
+	               11 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module adder_tree 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     21 Bit       Adders := 24    
++---Registers : 
+	               21 Bit    Registers := 60    
+	                1 Bit    Registers := 5     
+Module channelwise_convolve 
+Detailed RTL Component Info : 
++---Multipliers : 
+	                  5x9  Multipliers := 3     
+	                  1x9  Multipliers := 24    
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 6     
+Module convolution 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 3     
++---Registers : 
+	               11 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "next_row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sliding_window_inst/next_row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst/row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4652] Swapped enable and write-enable on 2 RAM instances of RAM sliding_window_inst/g_ram[0].dual_port_ram_inst/memory_reg to conserve power
+INFO: [Synth 8-4652] Swapped enable and write-enable on 2 RAM instances of RAM sliding_window_inst/g_ram[1].dual_port_ram_inst/memory_reg to conserve power
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[1].out_data_shifted_reg[5][0]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[1].out_data_shifted_reg[5][9]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[0].out_data_shifted_reg[4][9]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[0].out_data_shifted_reg[4][0]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[1].out_data_shifted_reg[5][9]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[1].out_data_shifted_reg[5][18]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[0].out_data_shifted_reg[4][18]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[0].out_data_shifted_reg[4][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/g_kernel_size_3.channelwise_convolve_inst /\sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[1].out_data_shifted_reg[5][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][0] )
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][9]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][10]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][10]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][11]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][11]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][12]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][12]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][13]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][13]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][14]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][14]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][15]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][15]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][16]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][16]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][17]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][17]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][18]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][18]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][19]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][19]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[8].tree_reg[2][23][20]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][9]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][10]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][9]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][10]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][10]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][11]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][10]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][11]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][11]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][12]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][11]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][12]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][12]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][13]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][12]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][13]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][13]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][14]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][13]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][14]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][14]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][15]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][14]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][15]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][15]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][16]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][15]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][16]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][16]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][17]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][16]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][17]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][17]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][18]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][17]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][18]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][18]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][19]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][18]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][19]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][19]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[0].tree_reg[2][15][20]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][19]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[1].tree_reg[2][16][20]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][9]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][10]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][9]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][10]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][10]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][11]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][10]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][11]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][11]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][12]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][11]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][12]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][12]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][13]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][12]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][13]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][13]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][14]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][13]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][14]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][14]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][15]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][14]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][15]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][15]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][16]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][15]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][16]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][16]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][17]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][16]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][17]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][17]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][18]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][17]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][18]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][18]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][19]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][18]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][19]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][19]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[2].tree_reg[2][17][20]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][19]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[3].tree_reg[2][18][20]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][9]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][10]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][10]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][11]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][11]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][12]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][12]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][13]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][12]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][13]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][13]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][14]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][13]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][14]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][14]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][15]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][14]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][15]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][15]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][16]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][15]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][16]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][16]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][17]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][16]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][17]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][17]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][18]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][17]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][18]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][18]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][19]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][18]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][19]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][19]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[4].tree_reg[2][19][20]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][19]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[5].tree_reg[2][20][20]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][9]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][10]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][9]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][10]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][10]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][11]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][10]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][11]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][11]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][12]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][11]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][12]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][12]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][13]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][12]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][13]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][13]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][14]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][13]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][14]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][14]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][15]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][14]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][15]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][15]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][16]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][15]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][16]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][16]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][17]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][16]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][17]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][17]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][18]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][17]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][18]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][18]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][19]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][18]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][19]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][19]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[6].tree_reg[2][21][20]'
+INFO: [Synth 8-3886] merging instance 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][19]' (FDE) to 'inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_leaves[7].tree_reg[2][22][20]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[1].g_leaves[8].tree_reg[1][23][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[0].g_leaves[8].tree_reg[0][23][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/g_kernel_size_3.channelwise_convolve_inst /\sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[0].out_data_shifted_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][0] )
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][0]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[0].out_data_shifted_reg[4][0]) is unused and will be removed from module channelwise_convolve.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[0].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[0][10][0] )
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[0][10][0]) is unused and will be removed from module adder_tree.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:36 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1140 ; free virtual = 11704
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name    | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|dual_port_ram: | memory_reg | 2 K x 27(READ_FIRST)   | W |   | 2 K x 27(WRITE_FIRST)  |   | R | Port A and B     | 1      | 1      | 
+|dual_port_ram: | memory_reg | 2 K x 27(READ_FIRST)   | W |   | 2 K x 27(WRITE_FIRST)  |   | R | Port A and B     | 1      | 1      | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance inst/g_kernel_size_3.channelwise_convolve_inst/i_0/sliding_window_inst/g_ram[0].dual_port_ram_inst/memory_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/g_kernel_size_3.channelwise_convolve_inst/i_0/sliding_window_inst/g_ram[0].dual_port_ram_inst/memory_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/g_kernel_size_3.channelwise_convolve_inst/i_1/sliding_window_inst/g_ram[1].dual_port_ram_inst/memory_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/g_kernel_size_3.channelwise_convolve_inst/i_1/sliding_window_inst/g_ram[1].dual_port_ram_inst/memory_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:41 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1008 ; free virtual = 11579
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:41 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1006 ; free virtual = 11578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name    | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|dual_port_ram: | memory_reg | 2 K x 27(READ_FIRST)   | W |   | 2 K x 27(WRITE_FIRST)  |   | R | Port A and B     | 1      | 1      | 
+|dual_port_ram: | memory_reg | 2 K x 27(READ_FIRST)   | W |   | 2 K x 27(WRITE_FIRST)  |   | R | Port A and B     | 1      | 1      | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_ram[0].dual_port_ram_inst/memory_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_ram[0].dual_port_ram_inst/memory_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_ram[1].dual_port_ram_inst/memory_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/g_kernel_size_3.channelwise_convolve_inst/sliding_window_inst/g_ram[1].dual_port_ram_inst/memory_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:12 ; elapsed = 00:00:41 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1003 ; free virtual = 11575
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1003 ; free virtual = 11574
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:41 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1003 ; free virtual = 11574
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1003 ; free virtual = 11574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1003 ; free virtual = 11574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1003 ; free virtual = 11574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1003 ; free virtual = 11574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++---------------------+----------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name          | RTL Name                                                                                                                               | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++---------------------+----------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|hdmi_convolution_0_1 | inst/g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][20] | 4      | 27    | NO           | NO                 | YES               | 27     | 0       | 
++---------------------+----------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |   159|
+|2     |LUT1     |    11|
+|3     |LUT2     |   695|
+|4     |LUT3     |   137|
+|5     |LUT4     |    63|
+|6     |LUT5     |    65|
+|7     |LUT6     |   144|
+|8     |RAMB18E1 |     2|
+|9     |RAMB36E1 |     2|
+|10    |SRL16E   |    27|
+|11    |FDRE     |   998|
++------+---------+------+
+
+Report Instance Areas: 
++------+------------------------------------------------+---------------------+------+
+|      |Instance                                        |Module               |Cells |
++------+------------------------------------------------+---------------------+------+
+|1     |top                                             |                     |  2303|
+|2     |  inst                                          |convolution          |  2303|
+|3     |    \g_kernel_size_3.channelwise_convolve_inst  |channelwise_convolve |  2244|
+|4     |      constant_pad_inst                         |constant_pad         |   116|
+|5     |      adder_tree_inst                           |adder_tree           |  1579|
+|6     |      sliding_window_inst                       |sliding_window       |   519|
+|7     |        \g_ram[0].dual_port_ram_inst            |dual_port_ram        |    74|
+|8     |        \g_ram[1].dual_port_ram_inst            |dual_port_ram_0      |    90|
++------+------------------------------------------------+---------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1003 ; free virtual = 11574
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1766.020 ; gain = 132.570 ; free physical = 1058 ; free virtual = 11629
+Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:42 . Memory (MB): peak = 1766.020 ; gain = 529.625 ; free physical = 1058 ; free virtual = 11629
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 163 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+152 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:42 . Memory (MB): peak = 1767.020 ; gain = 542.133 ; free physical = 1043 ; free virtual = 11615
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_convolution_0_1_synth_1/hdmi_convolution_0_1.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_convolution_0_1/hdmi_convolution_0_1.xci
+INFO: [Coretcl 2-1174] Renamed 7 cell refs.
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_convolution_0_1_synth_1/hdmi_convolution_0_1.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file hdmi_convolution_0_1_utilization_synth.rpt -pb hdmi_convolution_0_1_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.08 . Memory (MB): peak = 1791.031 ; gain = 0.000 ; free physical = 1042 ; free virtual = 11616
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 25 18:13:33 2024...

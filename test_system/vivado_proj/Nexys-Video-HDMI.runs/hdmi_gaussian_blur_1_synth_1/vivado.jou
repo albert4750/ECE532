@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Mar 25 13:27:50 2024
+# Process ID: 1267205
+# Current directory: /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_gaussian_blur_1_synth_1
+# Command line: vivado -log hdmi_gaussian_blur_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_gaussian_blur_1.tcl
+# Log file: /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_gaussian_blur_1_synth_1/hdmi_gaussian_blur_1.vds
+# Journal file: /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_gaussian_blur_1_synth_1/vivado.jou
+#-----------------------------------------------------------
+source hdmi_gaussian_blur_1.tcl -notrace

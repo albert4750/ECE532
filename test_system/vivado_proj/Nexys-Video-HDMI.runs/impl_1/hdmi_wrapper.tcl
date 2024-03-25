@@ -65,15 +65,12 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param tcl.collectionResultDisplayLimit 0
-  set_param board.repoPaths C:/Xilinx/Vivado/2018.2/data/boards/board_files
-  set_param xicom.use_bs_reader 1
   open_checkpoint hdmi_wrapper_routed.dcp
-  set_property webtalk.parent_dir C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.cache/wt [current_project]
+  set_property webtalk.parent_dir /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.cache/wt [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_0/data/mb_bootloop_le.elf
-  set_property SCOPED_TO_REF hdmi [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_0/data/mb_bootloop_le.elf]
-  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_0/data/mb_bootloop_le.elf]
+  add_files /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_0/data/mb_bootloop_le.elf
+  set_property SCOPED_TO_REF hdmi [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_0/data/mb_bootloop_le.elf]
+  set_property SCOPED_TO_CELLS microblaze_0 [get_files -all /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_0/data/mb_bootloop_le.elf]
   catch { write_mem_info -force hdmi_wrapper.mmi }
   catch { write_bmm -force hdmi_wrapper_bd.bmm }
   write_bitstream -force hdmi_wrapper.bit 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_2" LaunchPart="xc7a200tsbg484-1" LaunchTime="1709246454">
-  <File Type="RDS-DCP" Name="hdmi_wrapper.dcp"/>
   <File Type="PA-TCL" Name="hdmi_wrapper.tcl"/>
+  <File Type="RDS-DCP" Name="hdmi_wrapper.dcp"/>
   <File Type="RDS-RDS" Name="hdmi_wrapper.vds"/>
   <File Type="REPORTS-TCL" Name="hdmi_wrapper_reports.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
@@ -62,10 +62,10 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_grayscale_top_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_rgb2stream_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_grayscale_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_passthrough_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_stream2rgb_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_xbar_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_passthrough_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_grayscale_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_rgb2stream_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_grayscale_top_0_1"/>
 </GenRun>

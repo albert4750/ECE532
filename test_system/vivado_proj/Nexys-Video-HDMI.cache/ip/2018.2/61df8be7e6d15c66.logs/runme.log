@@ -1,0 +1,587 @@
+
+*** Running vivado
+    with args -log hdmi_gaussian_blur_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_gaussian_blur_0.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source hdmi_gaussian_blur_0.tcl -notrace
+Command: synth_design -top hdmi_gaussian_blur_0 -part xc7a200tsbg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 476802 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1324.336 ; gain = 89.945 ; free physical = 4420 ; free virtual = 13030
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'hdmi_gaussian_blur_0' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_gaussian_blur_0/synth/hdmi_gaussian_blur_0.sv:57]
+INFO: [Synth 8-6157] synthesizing module 'convolve_rgb' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/convolve_rgb.sv:29]
+	Parameter KERNEL_SIZE bound to: 32'sb00000000000000000000000000000011 
+	Parameter HEIGHT bound to: 32'sb00000000000000000000010000111000 
+	Parameter WIDTH bound to: 32'sb00000000000000000000011110000000 
+	Parameter RIGHT_SHIFT bound to: 32'sb00000000000000000000000000000001 
+	Parameter ADDER_BRANCHING_FACTOR bound to: 32'sb00000000000000000000000000000011 
+INFO: [Synth 8-6157] synthesizing module 'convolve_multi_in_multi_out' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/convolve_multi_in_multi_out.sv:30]
+	Parameter ACTIVATION_WIDTH bound to: 32'sb00000000000000000000000000001001 
+	Parameter WEIGHT_WIDTH bound to: 32'sb00000000000000000000000000001001 
+	Parameter KERNEL_SIZE bound to: 32'sb00000000000000000000000000000011 
+	Parameter RIGHT_SHIFT bound to: 32'sb00000000000000000000000000000001 
+	Parameter IN_CHANNELS bound to: 32'sb00000000000000000000000000000011 
+	Parameter OUT_CHANNELS bound to: 32'sb00000000000000000000000000000011 
+	Parameter HEIGHT bound to: 32'sb00000000000000000000010000111000 
+	Parameter WIDTH bound to: 32'sb00000000000000000000011110000000 
+	Parameter PADDING_VALUE bound to: 9'sb000000000 
+	Parameter ADDER_BRANCHING_FACTOR bound to: 32'sb00000000000000000000000000000011 
+	Parameter Padding bound to: 32'sb00000000000000000000000000000001 
+INFO: [Synth 8-6157] synthesizing module 'constant_pad' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/constant_pad.sv:30]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000011011 
+	Parameter PADDING bound to: 32'sb00000000000000000000000000000001 
+	Parameter VALUE bound to: 27'b000000000000000000000000000 
+	Parameter IN_HEIGHT bound to: 32'sb00000000000000000000010000111000 
+	Parameter IN_WIDTH bound to: 32'sb00000000000000000000011110000000 
+	Parameter OutHeight bound to: 32'sb00000000000000000000010000111010 
+	Parameter OutWidth bound to: 32'sb00000000000000000000011110000010 
+INFO: [Synth 8-6155] done synthesizing module 'constant_pad' (1#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/constant_pad.sv:30]
+INFO: [Synth 8-6157] synthesizing module 'register_buffer' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv:29]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000011011 
+	Parameter ASYNC_READY bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'register_buffer' (2#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'sliding_window' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/sliding_window.sv:32]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000011011 
+	Parameter WINDOW_SIZE bound to: 32'sb00000000000000000000000000000011 
+	Parameter HEIGHT bound to: 32'sb00000000000000000000010000111010 
+	Parameter WIDTH bound to: 32'sb00000000000000000000011110000010 
+INFO: [Synth 8-6157] synthesizing module 'dual_port_ram' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/dual_port_ram.sv:26]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000011011 
+	Parameter ITEM_COUNT bound to: 32'sb00000000000000000000011110000010 
+	Parameter AddressBits bound to: 32'sb00000000000000000000000000001011 
+INFO: [Synth 8-6155] done synthesizing module 'dual_port_ram' (3#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/dual_port_ram.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'sliding_window' (4#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/sliding_window.sv:32]
+INFO: [Synth 8-6157] synthesizing module 'register_buffer__parameterized0' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv:29]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000011110011 
+	Parameter ASYNC_READY bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'register_buffer__parameterized0' (4#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'adder_tree' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/adder_tree.sv:30]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000010010 
+	Parameter INNER_CHANNELS bound to: 32'sb00000000000000000000000000011011 
+	Parameter OUTER_CHANNELS bound to: 32'sb00000000000000000000000000000011 
+	Parameter BRANCHING_FACTOR bound to: 32'sb00000000000000000000000000000011 
+	Parameter TreeDepth bound to: 32'sb00000000000000000000000000000011 
+INFO: [Synth 8-6157] synthesizing module 'register_buffer__parameterized1' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv:29]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000111100110 
+	Parameter ASYNC_READY bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'register_buffer__parameterized1' (4#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'register_buffer__parameterized2' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv:29]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000010100010 
+	Parameter ASYNC_READY bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'register_buffer__parameterized2' (4#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'register_buffer__parameterized3' [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv:29]
+	Parameter DATA_WIDTH bound to: 32'sb00000000000000000000000000110110 
+	Parameter ASYNC_READY bound to: 1'b0 
+INFO: [Synth 8-6155] done synthesizing module 'register_buffer__parameterized3' (4#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/register_buffer.sv:29]
+INFO: [Synth 8-6155] done synthesizing module 'adder_tree' (5#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/adder_tree.sv:30]
+INFO: [Synth 8-6155] done synthesizing module 'convolve_multi_in_multi_out' (6#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/convolve_multi_in_multi_out.sv:30]
+INFO: [Synth 8-6155] done synthesizing module 'convolve_rgb' (7#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ipshared/02f4/convolve_rgb.srcs/sources_1/imports/sources/convolve_rgb.sv:29]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_gaussian_blur_0' (8#1) [/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_gaussian_blur_0/synth/hdmi_gaussian_blur_0.sv:57]
+WARNING: [Synth 8-3331] design constant_pad has unconnected port slave_tlast_i
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1367.961 ; gain = 133.570 ; free physical = 4430 ; free virtual = 13040
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1367.961 ; gain = 133.570 ; free physical = 4430 ; free virtual = 13041
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1367.961 ; gain = 133.570 ; free physical = 4430 ; free virtual = 13041
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Constraints 18-5210] No constraint will be written out.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1770.008 ; gain = 3.000 ; free physical = 3997 ; free virtual = 12553
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:35 . Memory (MB): peak = 1770.008 ; gain = 535.617 ; free physical = 4074 ; free virtual = 12633
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tsbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:35 . Memory (MB): peak = 1770.008 ; gain = 535.617 ; free physical = 4074 ; free virtual = 12633
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:35 . Memory (MB): peak = 1770.008 ; gain = 535.617 ; free physical = 4076 ; free virtual = 12634
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "next_row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "next_row" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:35 . Memory (MB): peak = 1770.008 ; gain = 535.617 ; free physical = 4063 ; free virtual = 12622
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     18 Bit       Adders := 39    
+	   2 Input     11 Bit       Adders := 4     
++---Registers : 
+	              486 Bit    Registers := 1     
+	              243 Bit    Registers := 1     
+	              162 Bit    Registers := 1     
+	               54 Bit    Registers := 1     
+	               27 Bit    Registers := 9     
+	               11 Bit    Registers := 4     
+	                1 Bit    Registers := 10    
++---RAMs : 
+	              50K Bit         RAMs := 2     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 3     
+	   2 Input     11 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module constant_pad 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               11 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module register_buffer 
+Detailed RTL Component Info : 
++---Registers : 
+	               27 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module dual_port_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               27 Bit    Registers := 1     
++---RAMs : 
+	              50K Bit         RAMs := 1     
+Module sliding_window 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               27 Bit    Registers := 6     
+	               11 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module register_buffer__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	              243 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module register_buffer__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	              486 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module register_buffer__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	              162 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module register_buffer__parameterized3 
+Detailed RTL Component Info : 
++---Registers : 
+	               54 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module adder_tree 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     18 Bit       Adders := 39    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "next_row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst/convolve_inst/constant_pad_inst/next_row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst/convolve_inst/sliding_window_inst/next_row" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design hdmi_gaussian_blur_0 has unconnected port slave_tlast_i
+INFO: [Synth 8-4652] Swapped enable and write-enable on 2 RAM instances of RAM inst/convolve_inst/sliding_window_inst/gen_ram[0].ram/ram_reg to conserve power
+INFO: [Synth 8-4652] Swapped enable and write-enable on 2 RAM instances of RAM inst/convolve_inst/sliding_window_inst/gen_ram[1].ram/ram_reg to conserve power
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/buffer0/gen_sync_ready.master_tdata_o_reg[8]' (FDE) to 'inst/convolve_inst/buffer0/gen_sync_ready.master_tdata_o_reg[26]'
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/buffer0/gen_sync_ready.master_tdata_o_reg[26]' (FDE) to 'inst/convolve_inst/buffer0/gen_sync_ready.master_tdata_o_reg[17]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/convolve_inst/buffer0/gen_sync_ready.master_tdata_o_reg[17] )
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[1].out_data_registers_reg[5][8]' (FDE) to 'inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[1].out_data_registers_reg[5][17]'
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[1].out_data_registers_reg[5][26]' (FDE) to 'inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[1].out_data_registers_reg[5][17]'
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[224]' (FDE) to 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[242]'
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[242]' (FDE) to 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[233]'
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[197]' (FDE) to 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[215]'
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[215]' (FDE) to 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[206]'
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[0].out_data_registers_reg[4][8]' (FDE) to 'inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[0].out_data_registers_reg[4][17]'
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[0].out_data_registers_reg[4][26]' (FDE) to 'inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[0].out_data_registers_reg[4][17]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[1].out_data_registers_reg[5][17] )
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[170]' (FDE) to 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[188]'
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[188]' (FDE) to 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[179]'
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[233]' (FDE) to 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[206]'
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[1].out_data_registers_reg[5][17]' (FDE) to 'inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[0].out_data_registers_reg[4][17]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/convolve_inst/sliding_window_inst/gen_shift_window_row[2].gen_shift_window_column[0].out_data_registers_reg[4][17] )
+INFO: [Synth 8-3886] merging instance 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[179]' (FDE) to 'inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[206]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/convolve_inst/buffer1/gen_sync_ready.master_tdata_o_reg[206] )
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[485]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[484]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[483]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[482]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[481]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[480]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[479]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[478]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[477]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[467]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[466]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[465]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[464]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[463]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[462]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[461]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[460]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[459]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[449]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[448]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[447]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[446]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[445]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[444]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[443]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[442]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[441]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[431]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[430]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[429]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[428]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[427]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[426]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[425]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[424]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[423]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[413]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[412]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[411]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[410]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[409]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[408]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[407]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[406]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[405]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[395]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[394]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[393]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[392]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[391]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[390]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[389]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[388]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[387]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[377]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[376]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[375]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[374]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[373]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[372]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[371]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[370]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[369]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[359]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[358]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[357]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[356]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[355]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[354]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[353]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[352]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[351]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[341]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[340]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[339]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[338]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[337]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[336]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[335]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[334]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[333]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[323]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[322]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[321]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[320]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[319]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[318]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[317]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[316]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[315]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[305]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[304]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[303]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[302]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[301]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[300]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[299]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[298]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[297]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (gen_layer[1].buffer/gen_sync_ready.master_tdata_o_reg[287]) is unused and will be removed from module adder_tree.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:40 . Memory (MB): peak = 1770.008 ; gain = 535.617 ; free physical = 3919 ; free virtual = 12482
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name    | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|dual_port_ram: | ram_reg    | 2 K x 27(READ_FIRST)   | W |   | 2 K x 27(WRITE_FIRST)  |   | R | Port A and B     | 1      | 1      | 
+|dual_port_ram: | ram_reg    | 2 K x 27(READ_FIRST)   | W |   | 2 K x 27(WRITE_FIRST)  |   | R | Port A and B     | 1      | 1      | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance insti_0/inst/convolve_inst/sliding_window_inst/gen_ram[0].ram/ram_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance insti_0/inst/convolve_inst/sliding_window_inst/gen_ram[0].ram/ram_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance insti_1/inst/convolve_inst/sliding_window_inst/gen_ram[1].ram/ram_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance insti_1/inst/convolve_inst/sliding_window_inst/gen_ram[1].ram/ram_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:45 . Memory (MB): peak = 1770.008 ; gain = 535.617 ; free physical = 4495 ; free virtual = 13056
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:45 . Memory (MB): peak = 1770.008 ; gain = 535.617 ; free physical = 4489 ; free virtual = 13051
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name    | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|dual_port_ram: | ram_reg    | 2 K x 27(READ_FIRST)   | W |   | 2 K x 27(WRITE_FIRST)  |   | R | Port A and B     | 1      | 1      | 
+|dual_port_ram: | ram_reg    | 2 K x 27(READ_FIRST)   | W |   | 2 K x 27(WRITE_FIRST)  |   | R | Port A and B     | 1      | 1      | 
++---------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance inst/convolve_inst/sliding_window_inst/gen_ram[0].ram/ram_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/convolve_inst/sliding_window_inst/gen_ram[0].ram/ram_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/convolve_inst/sliding_window_inst/gen_ram[1].ram/ram_reg_0 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/convolve_inst/sliding_window_inst/gen_ram[1].ram/ram_reg_1 (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:46 . Memory (MB): peak = 1773.047 ; gain = 538.656 ; free physical = 4455 ; free virtual = 13041
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:47 . Memory (MB): peak = 1773.047 ; gain = 538.656 ; free physical = 4449 ; free virtual = 13035
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:47 . Memory (MB): peak = 1773.047 ; gain = 538.656 ; free physical = 4449 ; free virtual = 13035
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:47 . Memory (MB): peak = 1773.047 ; gain = 538.656 ; free physical = 4449 ; free virtual = 13035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:47 . Memory (MB): peak = 1773.047 ; gain = 538.656 ; free physical = 4449 ; free virtual = 13035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:47 . Memory (MB): peak = 1773.047 ; gain = 538.656 ; free physical = 4449 ; free virtual = 13035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:47 . Memory (MB): peak = 1773.047 ; gain = 538.656 ; free physical = 4449 ; free virtual = 13035
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |   765|
+|2     |LUT1     |     5|
+|3     |LUT2     |  1225|
+|4     |LUT3     |   597|
+|5     |LUT4     |   864|
+|6     |LUT5     |   404|
+|7     |LUT6     |  1601|
+|8     |RAMB18E1 |     2|
+|9     |RAMB36E1 |     2|
+|10    |FDRE     |   816|
++------+---------+------+
+
+Report Instance Areas: 
++------+------------------------------+--------------------------------+------+
+|      |Instance                      |Module                          |Cells |
++------+------------------------------+--------------------------------+------+
+|1     |top                           |                                |  6281|
+|2     |  inst                        |convolve_rgb                    |  6281|
+|3     |    convolve_inst             |convolve_multi_in_multi_out     |  6281|
+|4     |      adder                   |adder_tree                      |  1910|
+|5     |        \gen_layer[1].buffer  |register_buffer__parameterized1 |  1056|
+|6     |        \gen_layer[2].buffer  |register_buffer__parameterized2 |    85|
+|7     |        \gen_layer[3].buffer  |register_buffer__parameterized3 |    28|
+|8     |      buffer0                 |register_buffer                 |    32|
+|9     |      buffer1                 |register_buffer__parameterized0 |  3342|
+|10    |      constant_pad_inst       |constant_pad                    |    70|
+|11    |      sliding_window_inst     |sliding_window                  |   275|
+|12    |        \gen_ram[0].ram       |dual_port_ram                   |    29|
+|13    |        \gen_ram[1].ram       |dual_port_ram_0                 |    45|
++------+------------------------------+--------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:47 . Memory (MB): peak = 1773.047 ; gain = 538.656 ; free physical = 4449 ; free virtual = 13035
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 355 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1773.047 ; gain = 136.609 ; free physical = 4499 ; free virtual = 13085
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:47 . Memory (MB): peak = 1773.055 ; gain = 538.656 ; free physical = 4499 ; free virtual = 13085
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 769 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+70 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:48 . Memory (MB): peak = 1805.062 ; gain = 582.180 ; free physical = 4501 ; free virtual = 13081
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_gaussian_blur_0_synth_1/hdmi_gaussian_blur_0.dcp' has been generated.

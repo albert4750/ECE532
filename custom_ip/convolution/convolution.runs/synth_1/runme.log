@@ -1,0 +1,626 @@
+
+*** Running vivado
+    with args -log convolution.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source convolution.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source convolution.tcl -notrace
+Command: synth_design -top convolution -part xc7a200tsbg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 1374958 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1274.734 ; gain = 86.945 ; free physical = 3335 ; free virtual = 14285
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'convolution' [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/convolution.sv:8]
+	Parameter Height bound to: 32'sb00000000000000000000001001011000 
+	Parameter Width bound to: 32'sb00000000000000000000001100100000 
+	Parameter KernelSize bound to: 32'sb00000000000000000000000000000011 
+	Parameter Weight11 bound to: 9'sb000000000 
+	Parameter Weight12 bound to: 9'sb000000000 
+	Parameter Weight13 bound to: 9'sb000000000 
+	Parameter Weight14 bound to: 9'sb000000000 
+	Parameter Weight15 bound to: 9'sb000000000 
+	Parameter Weight21 bound to: 9'sb000000000 
+	Parameter Weight22 bound to: 9'sb000000000 
+	Parameter Weight23 bound to: 9'sb000000000 
+	Parameter Weight24 bound to: 9'sb000000000 
+	Parameter Weight25 bound to: 9'sb000000000 
+	Parameter Weight31 bound to: 9'sb000000000 
+	Parameter Weight32 bound to: 9'sb000000000 
+	Parameter Weight33 bound to: 9'sb000000000 
+	Parameter Weight34 bound to: 9'sb000000000 
+	Parameter Weight35 bound to: 9'sb000000000 
+	Parameter Weight41 bound to: 9'sb000000000 
+	Parameter Weight42 bound to: 9'sb000000000 
+	Parameter Weight43 bound to: 9'sb000000000 
+	Parameter Weight44 bound to: 9'sb000000000 
+	Parameter Weight45 bound to: 9'sb000000000 
+	Parameter Weight51 bound to: 9'sb000000000 
+	Parameter Weight52 bound to: 9'sb000000000 
+	Parameter Weight53 bound to: 9'sb000000000 
+	Parameter Weight54 bound to: 9'sb000000000 
+	Parameter Weight55 bound to: 9'sb000000000 
+	Parameter RightShift bound to: 32'sb00000000000000000000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'channelwise_convolve' [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/channelwise_convolve.sv:20]
+	Parameter Channels bound to: 32'sb00000000000000000000000000000011 
+	Parameter KernelHeight bound to: 32'sb00000000000000000000000000000011 
+	Parameter KernelWidth bound to: 32'sb00000000000000000000000000000011 
+	Parameter InHeight bound to: 32'sb00000000000000000000001001011000 
+	Parameter InWidth bound to: 32'sb00000000000000000000001100100000 
+	Parameter PaddingTop bound to: 32'sb00000000000000000000000000000001 
+	Parameter PaddingBottom bound to: 32'sb00000000000000000000000000000001 
+	Parameter PaddingLeft bound to: 32'sb00000000000000000000000000000001 
+	Parameter PaddingRight bound to: 32'sb00000000000000000000000000000001 
+	Parameter ActivationWidth bound to: 32'sb00000000000000000000000000001001 
+	Parameter WeightWidth bound to: 32'sb00000000000000000000000000001001 
+	Parameter ProductWidth bound to: 32'sb00000000000000000000000000010101 
+	Parameter Weight bound to: 81'b000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter RightShift bound to: 32'sb00000000000000000000000000000000 
+	Parameter PaddingValue bound to: 9'sb000000000 
+INFO: [Synth 8-6157] synthesizing module 'constant_pad' [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/constant_pad.sv:12]
+	Parameter InHeight bound to: 32'sb00000000000000000000001001011000 
+	Parameter InWidth bound to: 32'sb00000000000000000000001100100000 
+	Parameter Top bound to: 32'sb00000000000000000000000000000001 
+	Parameter Bottom bound to: 32'sb00000000000000000000000000000001 
+	Parameter Left bound to: 32'sb00000000000000000000000000000001 
+	Parameter Right bound to: 32'sb00000000000000000000000000000001 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000011011 
+	Parameter Value bound to: 27'b000000000000000000000000000 
+	Parameter OutHeight bound to: 32'sb00000000000000000000001001011010 
+	Parameter OutWidth bound to: 32'sb00000000000000000000001100100010 
+INFO: [Synth 8-6155] done synthesizing module 'constant_pad' (1#1) [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/constant_pad.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'sliding_window' [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/sliding_window.sv:12]
+	Parameter InHeight bound to: 32'sb00000000000000000000001001011010 
+	Parameter InWidth bound to: 32'sb00000000000000000000001100100010 
+	Parameter WindowHeight bound to: 32'sb00000000000000000000000000000011 
+	Parameter WindowWidth bound to: 32'sb00000000000000000000000000000011 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000011011 
+INFO: [Synth 8-6157] synthesizing module 'dual_port_ram' [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/dual_port_ram.sv:7]
+	Parameter ItemCount bound to: 32'sb00000000000000000000001100100010 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000011011 
+	Parameter AddressWidth bound to: 32'sb00000000000000000000000000001010 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "auto" *) [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/dual_port_ram.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'dual_port_ram' (2#1) [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/dual_port_ram.sv:7]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "auto" *) [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/sliding_window.sv:111]
+INFO: [Synth 8-6155] done synthesizing module 'sliding_window' (3#1) [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/sliding_window.sv:12]
+INFO: [Synth 8-6157] synthesizing module 'adder_tree' [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/adder_tree.sv:12]
+	Parameter InnerChannels bound to: 32'sb00000000000000000000000000000011 
+	Parameter OuterChannels bound to: 32'sb00000000000000000000000000001001 
+	Parameter DataWidth bound to: 32'sb00000000000000000000000000010101 
+	Parameter TreeDepth bound to: 32'sb00000000000000000000000000000100 
+	Parameter TreeNodes bound to: 32'sb00000000000000000000000000011111 
+WARNING: [Synth 8-5856] 3D RAM tree_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-6155] done synthesizing module 'adder_tree' (4#1) [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/adder_tree.sv:12]
+INFO: [Synth 8-6155] done synthesizing module 'channelwise_convolve' (5#1) [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/channelwise_convolve.sv:20]
+INFO: [Synth 8-6155] done synthesizing module 'convolution' (6#1) [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/convolution.sv:8]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1319.359 ; gain = 131.570 ; free physical = 3341 ; free virtual = 14291
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1319.359 ; gain = 131.570 ; free physical = 3343 ; free virtual = 14293
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a200tsbg484-1
+INFO: [Device 21-403] Loading part xc7a200tsbg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1327.363 ; gain = 139.574 ; free physical = 3343 ; free virtual = 14293
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "next_row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "row" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1343.379 ; gain = 155.590 ; free physical = 3333 ; free virtual = 14283
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     21 Bit       Adders := 24    
+	   2 Input     10 Bit       Adders := 6     
+	   2 Input      9 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 3     
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	               27 Bit    Registers := 8     
+	               21 Bit    Registers := 60    
+	               10 Bit    Registers := 6     
+	                1 Bit    Registers := 5     
++---RAMs : 
+	              21K Bit         RAMs := 2     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 3     
+	   2 Input      9 Bit        Muxes := 6     
+	   2 Input      8 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module convolution 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 3     
+	   2 Input      8 Bit       Adders := 3     
++---Registers : 
+	               10 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 1     
+Module constant_pad 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               10 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+Module dual_port_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	               27 Bit    Registers := 1     
++---RAMs : 
+	              21K Bit         RAMs := 1     
+Module sliding_window 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 2     
++---Registers : 
+	               27 Bit    Registers := 6     
+	               10 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+Module adder_tree 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     21 Bit       Adders := 24    
++---Registers : 
+	               21 Bit    Registers := 60    
+	                1 Bit    Registers := 5     
+Module channelwise_convolve 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 740 (col length:100)
+BRAMs: 730 (col length: RAMB18 100 RAMB36 50)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "next_row" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[1].out_data_shifted_reg[5] was removed.  [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/sliding_window.sv:115]
+WARNING: [Synth 8-6014] Unused sequential element sliding_window_inst/g_out_data_shifted_row[2].g_out_data_shifted_column[0].out_data_shifted_reg[4] was removed.  [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/sliding_window.sv:115]
+WARNING: [Synth 8-6014] Unused sequential element sliding_window_inst/g_out_data_shifted_row[1].g_out_data_shifted_column[1].out_data_shifted_reg[3] was removed.  [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/sliding_window.sv:115]
+WARNING: [Synth 8-6014] Unused sequential element sliding_window_inst/g_out_data_shifted_row[1].g_out_data_shifted_column[0].out_data_shifted_reg[2] was removed.  [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/sliding_window.sv:115]
+WARNING: [Synth 8-6014] Unused sequential element sliding_window_inst/g_out_data_shifted_row[0].g_out_data_shifted_column[1].out_data_shifted_reg[1] was removed.  [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/sliding_window.sv:115]
+WARNING: [Synth 8-6014] Unused sequential element sliding_window_inst/g_out_data_shifted_row[0].g_out_data_shifted_column[0].out_data_shifted_reg[0] was removed.  [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/sliding_window.sv:115]
+INFO: [Synth 8-5546] ROM "sliding_window_inst/next_row" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "row" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element sliding_window_inst/g_ram[0].dual_port_ram_inst/read_data_o_reg was removed.  [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/dual_port_ram.sv:27]
+WARNING: [Synth 8-6014] Unused sequential element sliding_window_inst/g_ram[0].dual_port_ram_inst/memory_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element sliding_window_inst/g_ram[1].dual_port_ram_inst/read_data_o_reg was removed.  [/home/ece532/ECE532/custom_ip/convolution/convolution.srcs/sources_1/imports/sources/dual_port_ram.sv:27]
+WARNING: [Synth 8-6014] Unused sequential element sliding_window_inst/g_ram[1].dual_port_ram_inst/memory_reg was removed. 
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[8].tree_reg[2][23][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[0].tree_reg[2][15][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[1].tree_reg[2][16][20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[2].tree_reg[2][17][18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\g_kernel_size_3.channelwise_convolve_inst /adder_tree_inst/\g_tree[2].g_leaves[3].tree_reg[2][18][18] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][20]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][19]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][18]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][17]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][16]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][15]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][14]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][13]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][12]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][11]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][10]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][9]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][8]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][7]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][6]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][5]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][4]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][3]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][2]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][1]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[8].tree_reg[0][23][0]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][20]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][19]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][18]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][17]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][16]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][15]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][14]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][13]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][12]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][11]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][10]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][9]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][8]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][7]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][6]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][5]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][4]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][3]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][2]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][1]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[3].g_nodes[4].g_node_single_child.tree_reg[0][11][0]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][20]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][19]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][18]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][17]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][16]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][15]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][14]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][13]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][12]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][11]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][10]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][9]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][8]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][7]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][6]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][5]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][4]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][3]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][2]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][1]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[2].g_nodes[2].g_node_single_child.tree_reg[0][5][0]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][20]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][19]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][18]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][17]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][16]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][15]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][14]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][13]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][12]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][11]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][10]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][9]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][8]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][7]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][6]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][5]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][4]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][3]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][2]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][1]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_layers[1].g_nodes[1].g_node_single_child.tree_reg[0][2][0]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][20]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][19]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][18]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][17]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][16]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][15]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][14]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][13]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][12]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][11]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][10]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][9]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][8]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][7]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][6]) is unused and will be removed from module adder_tree.
+WARNING: [Synth 8-3332] Sequential element (g_tree[0].g_leaves[7].tree_reg[0][22][5]) is unused and will be removed from module adder_tree.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[3].g_nodes[0].g_node_two_children.tree_reg[2][7][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[2][10][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[3].g_nodes[1].g_node_two_children.tree_reg[2][8][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[2][10][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[3].g_nodes[2].g_node_two_children.tree_reg[2][9][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[2][10][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[2][10][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[3].g_nodes[0].g_node_two_children.tree_reg[1][7][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[3].g_nodes[0].g_node_two_children.tree_reg[1][7][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[1][10][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[3].g_nodes[1].g_node_two_children.tree_reg[1][8][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[1][10][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[3].g_nodes[2].g_node_two_children.tree_reg[1][9][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[1][10][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[1][10][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[3].g_nodes[0].g_node_two_children.tree_reg[0][7][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[3].g_nodes[0].g_node_two_children.tree_reg[0][7][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[0][10][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[3].g_nodes[1].g_node_two_children.tree_reg[0][8][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[0][10][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[3].g_nodes[2].g_node_two_children.tree_reg[0][9][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[0][10][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[2].g_nodes[0].g_node_two_children.tree_reg[2][3][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[2][4][1]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[2][4][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[1][4][1]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[2].g_nodes[0].g_node_two_children.tree_reg[1][3][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[1][4][1]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[1][4][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[0][4][1]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[2].g_nodes[0].g_node_two_children.tree_reg[0][3][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[0][4][1]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[1].g_nodes[0].g_node_two_children.tree_reg[2][1][2]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[1].g_nodes[0].g_node_two_children.tree_reg[1][1][2]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[1].g_nodes[0].g_node_two_children.tree_reg[1][1][2]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[1].g_nodes[0].g_node_two_children.tree_reg[0][1][2]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[0].g_nodes[0].g_node_two_children.tree_reg[2][0][2]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[0].g_nodes[0].g_node_two_children.tree_reg[0][0][2]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[0].g_nodes[0].g_node_two_children.tree_reg[1][0][2]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[0].g_nodes[0].g_node_two_children.tree_reg[0][0][2]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[3].g_nodes[3].g_node_two_children.tree_reg[0][10][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[2][4][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[2].g_nodes[0].g_node_two_children.tree_reg[2][3][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[2][4][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[2][4][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[1][4][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[2].g_nodes[0].g_node_two_children.tree_reg[1][3][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[1][4][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[1][4][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[0][4][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[2].g_nodes[0].g_node_two_children.tree_reg[0][3][0]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[0][4][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[0][4][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[1].g_nodes[0].g_node_two_children.tree_reg[2][1][1]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[1].g_nodes[0].g_node_two_children.tree_reg[2][1][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[1].g_nodes[0].g_node_two_children.tree_reg[1][1][1]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[1].g_nodes[0].g_node_two_children.tree_reg[1][1][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[1].g_nodes[0].g_node_two_children.tree_reg[0][1][1]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[1].g_nodes[0].g_node_two_children.tree_reg[0][1][2]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[0].g_nodes[0].g_node_two_children.tree_reg[0][0][1]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[2].g_layers[0].g_nodes[0].g_node_two_children.tree_reg[2][0][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[0].g_nodes[0].g_node_two_children.tree_reg[0][0][1]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[1].g_layers[0].g_nodes[0].g_node_two_children.tree_reg[1][0][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[0].g_nodes[0].g_node_two_children.tree_reg[0][0][1]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[1].g_nodes[0].g_node_two_children.tree_reg[0][1][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[0][4][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[0].g_nodes[0].g_node_two_children.tree_reg[0][0][1]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[0][4][0]'
+INFO: [Synth 8-3886] merging instance 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[0].g_nodes[0].g_node_two_children.tree_reg[0][0][2]' (FDE) to 'g_kernel_size_3.channelwise_convolve_inst/adder_tree_inst/g_tree[0].g_layers[2].g_nodes[1].g_node_two_children.tree_reg[0][4][0]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1502.996 ; gain = 315.207 ; free physical = 3167 ; free virtual = 14092
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1502.996 ; gain = 315.207 ; free physical = 3167 ; free virtual = 14092
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1502.996 ; gain = 315.207 ; free physical = 3165 ; free virtual = 14090
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1502.996 ; gain = 315.207 ; free physical = 3159 ; free virtual = 14085
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1502.996 ; gain = 315.207 ; free physical = 3159 ; free virtual = 14085
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1502.996 ; gain = 315.207 ; free physical = 3159 ; free virtual = 14085
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1502.996 ; gain = 315.207 ; free physical = 3159 ; free virtual = 14085
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1502.996 ; gain = 315.207 ; free physical = 3159 ; free virtual = 14085
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1502.996 ; gain = 315.207 ; free physical = 3159 ; free virtual = 14085
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     5|
+|3     |LUT2 |    13|
+|4     |LUT3 |    15|
+|5     |LUT4 |    17|
+|6     |LUT5 |    23|
+|7     |LUT6 |    38|
+|8     |FDRE |    65|
+|9     |IBUF |     4|
+|10    |OBUF |    27|
++------+-----+------+
+
+Report Instance Areas: 
++------+----------------------------------------------+---------------------+------+
+|      |Instance                                      |Module               |Cells |
++------+----------------------------------------------+---------------------+------+
+|1     |top                                           |                     |   208|
+|2     |  \g_kernel_size_3.channelwise_convolve_inst  |channelwise_convolve |   130|
+|3     |    constant_pad_inst                         |constant_pad         |    64|
+|4     |    adder_tree_inst                           |adder_tree           |     7|
+|5     |    sliding_window_inst                       |sliding_window       |    59|
++------+----------------------------------------------+---------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1502.996 ; gain = 315.207 ; free physical = 3159 ; free virtual = 14085
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1236 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1502.996 ; gain = 315.207 ; free physical = 3161 ; free virtual = 14086
+Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 1503.004 ; gain = 315.207 ; free physical = 3161 ; free virtual = 14086
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+165 Infos, 111 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:34 . Memory (MB): peak = 1637.047 ; gain = 461.766 ; free physical = 3131 ; free virtual = 14056
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint '/home/ece532/ECE532/custom_ip/convolution/convolution.runs/synth_1/convolution.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file convolution_utilization_synth.rpt -pb convolution_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1661.059 ; gain = 0.000 ; free physical = 3135 ; free virtual = 14061
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 25 17:37:45 2024...

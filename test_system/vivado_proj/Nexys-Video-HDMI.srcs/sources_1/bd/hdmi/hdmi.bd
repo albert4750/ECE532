@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x738E88B6AD7B7576" bd:device="xc7a200tsbg484-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2.2" bd:top="hdmi" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x738E88B6AD7B7576" bd:device="xc7a200tsbg484-1" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2018.2" bd:top="hdmi" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -604,15 +604,6 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>xlconstant_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">hdmi_xlconstant_1_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="CONST_WIDTH">729</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="CONST_VAL">88595502444949218309732245033646953025326735623930190657036286140879625003178502538213956400653427257928877913235215118596083732047394855754721769601986385900530898677208774053820012298241161903689690001393977154093072</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
         <spirit:instanceName>rgb2stream_3</spirit:instanceName>
         <spirit:componentRef spirit:library="user" spirit:name="rgb2stream" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
@@ -627,34 +618,20 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>xlconstant_2</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
+        <spirit:instanceName>axi_gpio_0</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="axi_gpio" spirit:vendor="xilinx.com" spirit:version="2.0"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">hdmi_xlconstant_1_1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="CONST_WIDTH">729</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="CONST_VAL">2824013958667925318259879105179379054419142579144839358154531478937954137978444779605960698450265719597569605072734573348071673414090061840790273673658922976182761141622356971890931340026080590073370059136986105268666367</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">hdmi_axi_gpio_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="USE_BOARD_FLOW">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="GPIO_BOARD_INTERFACE">led_8bits</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="GPIO2_BOARD_INTERFACE">dip_switches_8bits</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>gaussian_blur</spirit:instanceName>
-        <spirit:componentRef spirit:library="ece532" spirit:name="convolve_rgb" spirit:vendor="ece532.group3.org" spirit:version="1.5"/>
+        <spirit:instanceName>axi_timer_1</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="axi_timer" spirit:vendor="xilinx.com" spirit:version="2.0"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">hdmi_convolve_rgb_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="KERNEL_SIZE">3</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="HEIGHT">1080</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="WIDTH">1920</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="RIGHT_SHIFT">8</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>sharpening</spirit:instanceName>
-        <spirit:componentRef spirit:library="ece532" spirit:name="convolve_rgb" spirit:vendor="ece532.group3.org" spirit:version="1.5"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">hdmi_gaussian_blur_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="KERNEL_SIZE">3</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="HEIGHT">1080</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="WIDTH">1920</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="RIGHT_SHIFT">8</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">hdmi_axi_timer_1_1</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -727,20 +704,41 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>axi_gpio_0</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="axi_gpio" spirit:vendor="xilinx.com" spirit:version="2.0"/>
+        <spirit:instanceName>gaussian_blur</spirit:instanceName>
+        <spirit:componentRef spirit:library="ece532" spirit:name="convolution" spirit:vendor="ece532.group3.org" spirit:version="1.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">hdmi_axi_gpio_0_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="USE_BOARD_FLOW">true</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="GPIO_BOARD_INTERFACE">led_8bits</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="GPIO2_BOARD_INTERFACE">dip_switches_8bits</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">hdmi_convolution_0_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Height">1080</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Width">1920</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight11">14</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight12">14</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight13">14</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight21">14</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight22">16</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight23">14</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight31">14</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight32">14</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight33">14</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="RightShift">7</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>axi_timer_1</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="axi_timer" spirit:vendor="xilinx.com" spirit:version="2.0"/>
+        <spirit:instanceName>sharpening</spirit:instanceName>
+        <spirit:componentRef spirit:library="ece532" spirit:name="convolution" spirit:vendor="ece532.group3.org" spirit:version="1.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">hdmi_axi_timer_1_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">hdmi_convolution_0_1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Height">1080</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Width">1920</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight11">-1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight12">-1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight13">-1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight21">-1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight22">9</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight23">-1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight31">-1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight32">-1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Weight33">-1</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="RightShift">0</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
@@ -1109,8 +1107,8 @@
         <spirit:internalPortReference spirit:componentRef="stream2rgb_2" spirit:portRef="axi_clk"/>
         <spirit:internalPortReference spirit:componentRef="rgb2stream_3" spirit:portRef="axi_clk"/>
         <spirit:internalPortReference spirit:componentRef="stream2rgb_3" spirit:portRef="axi_clk"/>
-        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="clock_i"/>
-        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="clock_i"/>
+        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aclk"/>
+        <spirit:internalPortReference spirit:componentRef="axi_timer_1" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S00_ACLK"/>
@@ -1146,6 +1144,7 @@
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M13_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S14_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S15_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M14_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="s_axi_lite_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="m_axi_mm2s_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="m_axi_s2mm_aclk"/>
@@ -1161,9 +1160,8 @@
         <spirit:internalPortReference spirit:componentRef="axi_dma_5" spirit:portRef="s_axi_lite_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_5" spirit:portRef="m_axi_mm2s_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_5" spirit:portRef="m_axi_s2mm_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="axi_timer_1" spirit:portRef="s_axi_aclk"/>
-        <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M14_ACLK"/>
+        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="clock_i"/>
+        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="clock_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>mig_7series_0_ui_clk_sync_rst</spirit:name>
@@ -1211,8 +1209,8 @@
         <spirit:internalPortReference spirit:componentRef="stream2rgb_2" spirit:portRef="reset_n"/>
         <spirit:internalPortReference spirit:componentRef="rgb2stream_3" spirit:portRef="reset_n"/>
         <spirit:internalPortReference spirit:componentRef="stream2rgb_3" spirit:portRef="reset_n"/>
-        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="reset_i"/>
-        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="reset_i"/>
+        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aresetn"/>
+        <spirit:internalPortReference spirit:componentRef="axi_timer_1" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S01_ARESETN"/>
@@ -1245,14 +1243,14 @@
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M13_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S14_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S15_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M14_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_0" spirit:portRef="axi_resetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_2" spirit:portRef="axi_resetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_3" spirit:portRef="axi_resetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_4" spirit:portRef="axi_resetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_5" spirit:portRef="axi_resetn"/>
-        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="axi_timer_1" spirit:portRef="s_axi_aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M14_ARESETN"/>
+        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="reset_i"/>
+        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="reset_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_mig_7series_0_pxl_peripheral_aresetn</spirit:name>
@@ -1405,44 +1403,39 @@
         <spirit:internalPortReference spirit:componentRef="brightening_0" spirit:portRef="out_rgb_ready"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>convolve_rgb_0_master_tvalid_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="master_tvalid_o"/>
+        <spirit:name>axi_timer_1_interrupt</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="axi_timer_1" spirit:portRef="interrupt"/>
+        <spirit:internalPortReference spirit:componentRef="microblaze_0_xlconcat" spirit:portRef="In6"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>convolution_0_master_valid_o</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="master_valid_o"/>
         <spirit:internalPortReference spirit:componentRef="rgb2stream_2" spirit:portRef="rgb_valid"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>convolve_rgb_0_master_red_o</spirit:name>
+        <spirit:name>convolution_0_master_red_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="master_red_o"/>
         <spirit:internalPortReference spirit:componentRef="rgb2stream_2" spirit:portRef="r"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>convolve_rgb_0_master_green_o</spirit:name>
+        <spirit:name>convolution_0_master_green_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="master_green_o"/>
         <spirit:internalPortReference spirit:componentRef="rgb2stream_2" spirit:portRef="g"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>convolve_rgb_0_master_blue_o</spirit:name>
+        <spirit:name>convolution_0_master_blue_o</spirit:name>
         <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="master_blue_o"/>
         <spirit:internalPortReference spirit:componentRef="rgb2stream_2" spirit:portRef="b"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>convolve_rgb_0_master_tlast_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="master_tlast_o"/>
+        <spirit:name>convolution_0_master_last_o</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="master_last_o"/>
         <spirit:internalPortReference spirit:componentRef="rgb2stream_2" spirit:portRef="rgb_last"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rgb2stream_2_rgb_ready</spirit:name>
         <spirit:internalPortReference spirit:componentRef="rgb2stream_2" spirit:portRef="rgb_ready"/>
-        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="master_tready_i"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>stream2rgb_2_rgb_valid</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="stream2rgb_2" spirit:portRef="rgb_valid"/>
-        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="slave_tvalid_i"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>stream2rgb_2_r</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="stream2rgb_2" spirit:portRef="r"/>
-        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="slave_red_i"/>
+        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="master_ready_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>stream2rgb_2_b</spirit:name>
@@ -1455,24 +1448,24 @@
         <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="slave_green_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>stream2rgb_2_rgb_last</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="stream2rgb_2" spirit:portRef="rgb_last"/>
-        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="slave_tlast_i"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>convolve_rgb_0_slave_tready_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="slave_tready_o"/>
+        <spirit:name>convolution_0_slave_ready_o</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="slave_ready_o"/>
         <spirit:internalPortReference spirit:componentRef="stream2rgb_2" spirit:portRef="rgb_ready"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>xlconstant_1_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlconstant_1" spirit:portRef="dout"/>
-        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="weight_i"/>
+        <spirit:name>stream2rgb_2_rgb_valid</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="stream2rgb_2" spirit:portRef="rgb_valid"/>
+        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="slave_valid_i"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>stream2rgb_2_r</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="stream2rgb_2" spirit:portRef="r"/>
+        <spirit:internalPortReference spirit:componentRef="gaussian_blur" spirit:portRef="slave_red_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>stream2rgb_3_rgb_valid</spirit:name>
         <spirit:internalPortReference spirit:componentRef="stream2rgb_3" spirit:portRef="rgb_valid"/>
-        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="slave_tvalid_i"/>
+        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="slave_valid_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>stream2rgb_3_r</spirit:name>
@@ -1490,23 +1483,13 @@
         <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="slave_green_i"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>stream2rgb_3_rgb_last</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="stream2rgb_3" spirit:portRef="rgb_last"/>
-        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="slave_tlast_i"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>sharpening_slave_tready_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="slave_tready_o"/>
+        <spirit:name>sharpening_slave_ready_o</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="slave_ready_o"/>
         <spirit:internalPortReference spirit:componentRef="stream2rgb_3" spirit:portRef="rgb_ready"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>rgb2stream_3_rgb_ready</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="rgb2stream_3" spirit:portRef="rgb_ready"/>
-        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="master_tready_i"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>sharpening_master_tvalid_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="master_tvalid_o"/>
+        <spirit:name>sharpening_master_valid_o</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="master_valid_o"/>
         <spirit:internalPortReference spirit:componentRef="rgb2stream_3" spirit:portRef="rgb_valid"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
@@ -1525,19 +1508,14 @@
         <spirit:internalPortReference spirit:componentRef="rgb2stream_3" spirit:portRef="b"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>sharpening_master_tlast_o</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="master_tlast_o"/>
+        <spirit:name>sharpening_master_last_o</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="master_last_o"/>
         <spirit:internalPortReference spirit:componentRef="rgb2stream_3" spirit:portRef="rgb_last"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
-        <spirit:name>xlconstant_2_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="xlconstant_2" spirit:portRef="dout"/>
-        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="weight_i"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>axi_timer_1_interrupt</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="axi_timer_1" spirit:portRef="interrupt"/>
-        <spirit:internalPortReference spirit:componentRef="microblaze_0_xlconcat" spirit:portRef="In6"/>
+        <spirit:name>rgb2stream_3_rgb_ready</spirit:name>
+        <spirit:internalPortReference spirit:componentRef="rgb2stream_3" spirit:portRef="rgb_ready"/>
+        <spirit:internalPortReference spirit:componentRef="sharpening" spirit:portRef="master_ready_i"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

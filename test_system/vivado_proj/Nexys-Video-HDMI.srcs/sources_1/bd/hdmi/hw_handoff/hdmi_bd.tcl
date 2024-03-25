@@ -573,12 +573,20 @@ proc create_root_design { parentCell } {
  ] $dvi2rgb_0
 
   # Create instance: gaussian_blur, and set properties
-  set gaussian_blur [ create_bd_cell -type ip -vlnv ece532.group3.org:ece532:convolve_rgb:1.5 gaussian_blur ]
+  set gaussian_blur [ create_bd_cell -type ip -vlnv ece532.group3.org:ece532:convolution:1.1 gaussian_blur ]
   set_property -dict [ list \
-   CONFIG.HEIGHT {1080} \
-   CONFIG.KERNEL_SIZE {3} \
-   CONFIG.RIGHT_SHIFT {8} \
-   CONFIG.WIDTH {1920} \
+   CONFIG.Height {1080} \
+   CONFIG.RightShift {7} \
+   CONFIG.Weight11 {14} \
+   CONFIG.Weight12 {14} \
+   CONFIG.Weight13 {14} \
+   CONFIG.Weight21 {14} \
+   CONFIG.Weight22 {16} \
+   CONFIG.Weight23 {14} \
+   CONFIG.Weight31 {14} \
+   CONFIG.Weight32 {14} \
+   CONFIG.Weight33 {14} \
+   CONFIG.Width {1920} \
  ] $gaussian_blur
 
   # Create instance: grayscale_0, and set properties
@@ -696,12 +704,20 @@ proc create_root_design { parentCell } {
  ] $rst_mig_7series_0_pxl
 
   # Create instance: sharpening, and set properties
-  set sharpening [ create_bd_cell -type ip -vlnv ece532.group3.org:ece532:convolve_rgb:1.5 sharpening ]
+  set sharpening [ create_bd_cell -type ip -vlnv ece532.group3.org:ece532:convolution:1.1 sharpening ]
   set_property -dict [ list \
-   CONFIG.HEIGHT {1080} \
-   CONFIG.KERNEL_SIZE {3} \
-   CONFIG.RIGHT_SHIFT {8} \
-   CONFIG.WIDTH {1920} \
+   CONFIG.Height {1080} \
+   CONFIG.RightShift {0} \
+   CONFIG.Weight11 {-1} \
+   CONFIG.Weight12 {-1} \
+   CONFIG.Weight13 {-1} \
+   CONFIG.Weight21 {-1} \
+   CONFIG.Weight22 {9} \
+   CONFIG.Weight23 {-1} \
+   CONFIG.Weight31 {-1} \
+   CONFIG.Weight32 {-1} \
+   CONFIG.Weight33 {-1} \
+   CONFIG.Width {1920} \
  ] $sharpening
 
   # Create instance: stream2rgb_0, and set properties
@@ -750,20 +766,6 @@ proc create_root_design { parentCell } {
 
   # Create instance: xlconstant_0, and set properties
   set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
-
-  # Create instance: xlconstant_1, and set properties
-  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
-  set_property -dict [ list \
-   CONFIG.CONST_VAL {88595502444949218309732245033646953025326735623930190657036286140879625003178502538213956400653427257928877913235215118596083732047394855754721769601986385900530898677208774053820012298241161903689690001393977154093072} \
-   CONFIG.CONST_WIDTH {729} \
- ] $xlconstant_1
-
-  # Create instance: xlconstant_2, and set properties
-  set xlconstant_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2 ]
-  set_property -dict [ list \
-   CONFIG.CONST_VAL {2824013958667925318259879105179379054419142579144839358154531478937954137978444779605960698450265719597569605072734573348071673414090061840790273673658922976182761141622356971890931340026080590073370059136986105268666367} \
-   CONFIG.CONST_WIDTH {729} \
- ] $xlconstant_2
 
   # Create interface connections
   connect_bd_intf_net -intf_net TMDS_IN_1 [get_bd_intf_ports TMDS_IN] [get_bd_intf_pins dvi2rgb_0/TMDS]
@@ -841,12 +843,12 @@ proc create_root_design { parentCell } {
   connect_bd_net -net brightening_0_out_r [get_bd_pins brightening_0/out_r] [get_bd_pins rgb2stream_1/r]
   connect_bd_net -net brightening_0_out_rgb_last [get_bd_pins brightening_0/out_rgb_last] [get_bd_pins rgb2stream_1/rgb_last]
   connect_bd_net -net brightening_0_out_rgb_valid [get_bd_pins brightening_0/out_rgb_valid] [get_bd_pins rgb2stream_1/rgb_valid]
-  connect_bd_net -net convolve_rgb_0_master_blue_o [get_bd_pins gaussian_blur/master_blue_o] [get_bd_pins rgb2stream_2/b]
-  connect_bd_net -net convolve_rgb_0_master_green_o [get_bd_pins gaussian_blur/master_green_o] [get_bd_pins rgb2stream_2/g]
-  connect_bd_net -net convolve_rgb_0_master_red_o [get_bd_pins gaussian_blur/master_red_o] [get_bd_pins rgb2stream_2/r]
-  connect_bd_net -net convolve_rgb_0_master_tlast_o [get_bd_pins gaussian_blur/master_tlast_o] [get_bd_pins rgb2stream_2/rgb_last]
-  connect_bd_net -net convolve_rgb_0_master_tvalid_o [get_bd_pins gaussian_blur/master_tvalid_o] [get_bd_pins rgb2stream_2/rgb_valid]
-  connect_bd_net -net convolve_rgb_0_slave_tready_o [get_bd_pins gaussian_blur/slave_tready_o] [get_bd_pins stream2rgb_2/rgb_ready]
+  connect_bd_net -net convolution_0_master_blue_o [get_bd_pins gaussian_blur/master_blue_o] [get_bd_pins rgb2stream_2/b]
+  connect_bd_net -net convolution_0_master_green_o [get_bd_pins gaussian_blur/master_green_o] [get_bd_pins rgb2stream_2/g]
+  connect_bd_net -net convolution_0_master_last_o [get_bd_pins gaussian_blur/master_last_o] [get_bd_pins rgb2stream_2/rgb_last]
+  connect_bd_net -net convolution_0_master_red_o [get_bd_pins gaussian_blur/master_red_o] [get_bd_pins rgb2stream_2/r]
+  connect_bd_net -net convolution_0_master_valid_o [get_bd_pins gaussian_blur/master_valid_o] [get_bd_pins rgb2stream_2/rgb_valid]
+  connect_bd_net -net convolution_0_slave_ready_o [get_bd_pins gaussian_blur/slave_ready_o] [get_bd_pins stream2rgb_2/rgb_ready]
   connect_bd_net -net dvi2rgb_0_PixelClk [get_bd_pins dvi2rgb_0/PixelClk] [get_bd_pins rst_mig_7series_0_pxl/slowest_sync_clk] [get_bd_pins v_tc_1/clk] [get_bd_pins v_vid_in_axi4s_0/vid_io_in_clk]
   connect_bd_net -net dvi2rgb_0_aPixelClkLckd [get_bd_pins axi_gpio_video/gpio2_io_i] [get_bd_pins dvi2rgb_0/pLocked] [get_bd_pins rst_mig_7series_0_pxl/dcm_locked]
   connect_bd_net -net grayscale_0_in_rgb_ready [get_bd_pins grayscale_0/in_rgb_ready] [get_bd_pins stream2rgb_0/rgb_ready]
@@ -864,8 +866,8 @@ proc create_root_design { parentCell } {
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins mig_7series_0/sys_rst] [get_bd_pins rst_mig_7series_0_pxl/ext_reset_in]
   connect_bd_net -net rgb2stream_0_rgb_ready [get_bd_pins grayscale_0/out_rgb_ready] [get_bd_pins rgb2stream_0/rgb_ready]
   connect_bd_net -net rgb2stream_1_rgb_ready [get_bd_pins brightening_0/out_rgb_ready] [get_bd_pins rgb2stream_1/rgb_ready]
-  connect_bd_net -net rgb2stream_2_rgb_ready [get_bd_pins gaussian_blur/master_tready_i] [get_bd_pins rgb2stream_2/rgb_ready]
-  connect_bd_net -net rgb2stream_3_rgb_ready [get_bd_pins rgb2stream_3/rgb_ready] [get_bd_pins sharpening/master_tready_i]
+  connect_bd_net -net rgb2stream_2_rgb_ready [get_bd_pins gaussian_blur/master_ready_i] [get_bd_pins rgb2stream_2/rgb_ready]
+  connect_bd_net -net rgb2stream_3_rgb_ready [get_bd_pins rgb2stream_3/rgb_ready] [get_bd_pins sharpening/master_ready_i]
   connect_bd_net -net rst_mig_7series_0_100M_interconnect_aresetn [get_bd_pins axi_mem_intercon/ARESETN] [get_bd_pins microblaze_0_axi_periph/ARESETN] [get_bd_pins rst_mig_7series_0_100M/interconnect_aresetn]
   connect_bd_net -net rst_mig_7series_0_100M_mb_reset [get_bd_pins microblaze_0/Reset] [get_bd_pins microblaze_0_axi_intc/processor_rst] [get_bd_pins rst_mig_7series_0_100M/mb_reset]
   connect_bd_net -net rst_mig_7series_0_100M_peripheral_aresetn [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_dma_2/axi_resetn] [get_bd_pins axi_dma_3/axi_resetn] [get_bd_pins axi_dma_4/axi_resetn] [get_bd_pins axi_dma_5/axi_resetn] [get_bd_pins axi_dynclk_0/s00_axi_aresetn] [get_bd_pins axi_gpio_0/s_axi_aresetn] [get_bd_pins axi_gpio_video/s_axi_aresetn] [get_bd_pins axi_mem_intercon/M00_ARESETN] [get_bd_pins axi_mem_intercon/S00_ARESETN] [get_bd_pins axi_mem_intercon/S01_ARESETN] [get_bd_pins axi_mem_intercon/S02_ARESETN] [get_bd_pins axi_mem_intercon/S03_ARESETN] [get_bd_pins axi_mem_intercon/S04_ARESETN] [get_bd_pins axi_mem_intercon/S05_ARESETN] [get_bd_pins axi_mem_intercon/S06_ARESETN] [get_bd_pins axi_mem_intercon/S07_ARESETN] [get_bd_pins axi_mem_intercon/S08_ARESETN] [get_bd_pins axi_mem_intercon/S09_ARESETN] [get_bd_pins axi_mem_intercon/S10_ARESETN] [get_bd_pins axi_mem_intercon/S11_ARESETN] [get_bd_pins axi_mem_intercon/S12_ARESETN] [get_bd_pins axi_mem_intercon/S13_ARESETN] [get_bd_pins axi_mem_intercon/S14_ARESETN] [get_bd_pins axi_mem_intercon/S15_ARESETN] [get_bd_pins axi_timer_0/s_axi_aresetn] [get_bd_pins axi_timer_1/s_axi_aresetn] [get_bd_pins axi_uartlite_0/s_axi_aresetn] [get_bd_pins axi_vdma_0/axi_resetn] [get_bd_pins brightening_0/reset_n] [get_bd_pins gaussian_blur/reset_i] [get_bd_pins grayscale_0/reset_n] [get_bd_pins microblaze_0_axi_intc/s_axi_aresetn] [get_bd_pins microblaze_0_axi_periph/M00_ARESETN] [get_bd_pins microblaze_0_axi_periph/M01_ARESETN] [get_bd_pins microblaze_0_axi_periph/M02_ARESETN] [get_bd_pins microblaze_0_axi_periph/M03_ARESETN] [get_bd_pins microblaze_0_axi_periph/M04_ARESETN] [get_bd_pins microblaze_0_axi_periph/M05_ARESETN] [get_bd_pins microblaze_0_axi_periph/M06_ARESETN] [get_bd_pins microblaze_0_axi_periph/M07_ARESETN] [get_bd_pins microblaze_0_axi_periph/M08_ARESETN] [get_bd_pins microblaze_0_axi_periph/M09_ARESETN] [get_bd_pins microblaze_0_axi_periph/M10_ARESETN] [get_bd_pins microblaze_0_axi_periph/M11_ARESETN] [get_bd_pins microblaze_0_axi_periph/M12_ARESETN] [get_bd_pins microblaze_0_axi_periph/M13_ARESETN] [get_bd_pins microblaze_0_axi_periph/M14_ARESETN] [get_bd_pins microblaze_0_axi_periph/S00_ARESETN] [get_bd_pins mig_7series_0/aresetn] [get_bd_pins passthrough_0/reset] [get_bd_pins rgb2stream_0/reset_n] [get_bd_pins rgb2stream_1/reset_n] [get_bd_pins rgb2stream_2/reset_n] [get_bd_pins rgb2stream_3/reset_n] [get_bd_pins rst_mig_7series_0_100M/peripheral_aresetn] [get_bd_pins sharpening/reset_i] [get_bd_pins stream2rgb_0/reset_n] [get_bd_pins stream2rgb_1/reset_n] [get_bd_pins stream2rgb_2/reset_n] [get_bd_pins stream2rgb_3/reset_n] [get_bd_pins v_tc_0/s_axi_aresetn] [get_bd_pins v_tc_1/s_axi_aresetn]
@@ -873,10 +875,10 @@ proc create_root_design { parentCell } {
   connect_bd_net -net rst_mig_7series_0_pxl_peripheral_reset [get_bd_pins rst_mig_7series_0_pxl/peripheral_reset] [get_bd_pins v_vid_in_axi4s_0/vid_io_in_reset]
   connect_bd_net -net sharpening_master_blue_o [get_bd_pins rgb2stream_3/b] [get_bd_pins sharpening/master_blue_o]
   connect_bd_net -net sharpening_master_green_o [get_bd_pins rgb2stream_3/g] [get_bd_pins sharpening/master_green_o]
+  connect_bd_net -net sharpening_master_last_o [get_bd_pins rgb2stream_3/rgb_last] [get_bd_pins sharpening/master_last_o]
   connect_bd_net -net sharpening_master_red_o [get_bd_pins rgb2stream_3/r] [get_bd_pins sharpening/master_red_o]
-  connect_bd_net -net sharpening_master_tlast_o [get_bd_pins rgb2stream_3/rgb_last] [get_bd_pins sharpening/master_tlast_o]
-  connect_bd_net -net sharpening_master_tvalid_o [get_bd_pins rgb2stream_3/rgb_valid] [get_bd_pins sharpening/master_tvalid_o]
-  connect_bd_net -net sharpening_slave_tready_o [get_bd_pins sharpening/slave_tready_o] [get_bd_pins stream2rgb_3/rgb_ready]
+  connect_bd_net -net sharpening_master_valid_o [get_bd_pins rgb2stream_3/rgb_valid] [get_bd_pins sharpening/master_valid_o]
+  connect_bd_net -net sharpening_slave_ready_o [get_bd_pins sharpening/slave_ready_o] [get_bd_pins stream2rgb_3/rgb_ready]
   connect_bd_net -net stream2rgb_0_b [get_bd_pins grayscale_0/in_b] [get_bd_pins stream2rgb_0/b]
   connect_bd_net -net stream2rgb_0_g [get_bd_pins grayscale_0/in_g] [get_bd_pins stream2rgb_0/g]
   connect_bd_net -net stream2rgb_0_r [get_bd_pins grayscale_0/in_r] [get_bd_pins stream2rgb_0/r]
@@ -890,19 +892,15 @@ proc create_root_design { parentCell } {
   connect_bd_net -net stream2rgb_2_b [get_bd_pins gaussian_blur/slave_blue_i] [get_bd_pins stream2rgb_2/b]
   connect_bd_net -net stream2rgb_2_g [get_bd_pins gaussian_blur/slave_green_i] [get_bd_pins stream2rgb_2/g]
   connect_bd_net -net stream2rgb_2_r [get_bd_pins gaussian_blur/slave_red_i] [get_bd_pins stream2rgb_2/r]
-  connect_bd_net -net stream2rgb_2_rgb_last [get_bd_pins gaussian_blur/slave_tlast_i] [get_bd_pins stream2rgb_2/rgb_last]
-  connect_bd_net -net stream2rgb_2_rgb_valid [get_bd_pins gaussian_blur/slave_tvalid_i] [get_bd_pins stream2rgb_2/rgb_valid]
+  connect_bd_net -net stream2rgb_2_rgb_valid [get_bd_pins gaussian_blur/slave_valid_i] [get_bd_pins stream2rgb_2/rgb_valid]
   connect_bd_net -net stream2rgb_3_b [get_bd_pins sharpening/slave_blue_i] [get_bd_pins stream2rgb_3/b]
   connect_bd_net -net stream2rgb_3_g [get_bd_pins sharpening/slave_green_i] [get_bd_pins stream2rgb_3/g]
   connect_bd_net -net stream2rgb_3_r [get_bd_pins sharpening/slave_red_i] [get_bd_pins stream2rgb_3/r]
-  connect_bd_net -net stream2rgb_3_rgb_last [get_bd_pins sharpening/slave_tlast_i] [get_bd_pins stream2rgb_3/rgb_last]
-  connect_bd_net -net stream2rgb_3_rgb_valid [get_bd_pins sharpening/slave_tvalid_i] [get_bd_pins stream2rgb_3/rgb_valid]
+  connect_bd_net -net stream2rgb_3_rgb_valid [get_bd_pins sharpening/slave_valid_i] [get_bd_pins stream2rgb_3/rgb_valid]
   connect_bd_net -net sys_clk_i_1 [get_bd_ports sys_clk_i] [get_bd_pins mig_7series_0/sys_clk_i]
   connect_bd_net -net v_tc_0_irq [get_bd_pins microblaze_0_xlconcat/In2] [get_bd_pins v_tc_0/irq]
   connect_bd_net -net v_tc_1_irq [get_bd_pins microblaze_0_xlconcat/In3] [get_bd_pins v_tc_1/irq]
   connect_bd_net -net xlconstant_0_dout [get_bd_ports hdmi_rx_txen] [get_bd_pins xlconstant_0/dout]
-  connect_bd_net -net xlconstant_1_dout [get_bd_pins gaussian_blur/weight_i] [get_bd_pins xlconstant_1/dout]
-  connect_bd_net -net xlconstant_2_dout [get_bd_pins sharpening/weight_i] [get_bd_pins xlconstant_2/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x20000000 -offset 0x80000000 [get_bd_addr_spaces axi_dma_0/Data_MM2S] [get_bd_addr_segs mig_7series_0/memmap/memaddr] SEG_mig_7series_0_memaddr

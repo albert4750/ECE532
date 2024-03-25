@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="hdmi_gaussian_blur_0_synth_1" LaunchDir="/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_gaussian_blur_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="hdmi_gaussian_blur_0_synth_1"/>
+	</Run>
+</Runs>
+

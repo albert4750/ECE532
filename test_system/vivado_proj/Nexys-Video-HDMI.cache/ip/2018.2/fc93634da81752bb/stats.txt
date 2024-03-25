@@ -1,0 +1,4 @@
+NumberHits:0
+Timestamp: Wed Mar 20 02:40:52 UTC 2024
+VLNV: xilinx.com:user:grayscale_top:1.0
+SynthRuntime: 49

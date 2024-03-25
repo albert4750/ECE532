@@ -1,4 +1,4 @@
-NumberHits:14
-Timestamp: Tue Mar 12 14:48:50 UTC 2024
+NumberHits:16
+Timestamp: Mon Mar 25 22:12:42 UTC 2024
 VLNV: xilinx.com:ip:axi_register_slice:2.1
 SynthRuntime: 30

@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-// Date        : Tue Mar 19 01:58:59 2024
-// Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_xbar_0/hdmi_xbar_0_stub.v
+// Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+// Date        : Mon Mar 25 17:49:23 2024
+// Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+// Command     : write_verilog -force -mode synth_stub -rename_top hdmi_xbar_0 -prefix
+//               hdmi_xbar_0_ hdmi_xbar_0_stub.v
 // Design      : hdmi_xbar_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a200tsbg484-1

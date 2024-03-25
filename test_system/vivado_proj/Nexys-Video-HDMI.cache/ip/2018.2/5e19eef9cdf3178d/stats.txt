@@ -1,0 +1,4 @@
+NumberHits:0
+Timestamp: Mon Mar 25 21:48:55 UTC 2024
+VLNV: ece532.group3.org:ece532:convolution:1.1
+SynthRuntime: 48

@@ -1,5 +1,5 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/constrs_1/imports/constraints/vdma_timing_workaround.xdc rfile:../../../Nexys-Video-HDMI.srcs/constrs_1/imports/constraints/vdma_timing_workaround.xdc id:1} [current_design]
-set_property SRC_FILE_INFO {cfile:C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/constrs_1/imports/constraints/NexysVideo_Master.xdc rfile:../../../Nexys-Video-HDMI.srcs/constrs_1/imports/constraints/NexysVideo_Master.xdc id:2} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/constrs_1/imports/constraints/vdma_timing_workaround.xdc rfile:../../../Nexys-Video-HDMI.srcs/constrs_1/imports/constraints/vdma_timing_workaround.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/constrs_1/imports/constraints/NexysVideo_Master.xdc rfile:../../../Nexys-Video-HDMI.srcs/constrs_1/imports/constraints/NexysVideo_Master.xdc id:2} [current_design]
 set_property src_info {type:XDC file:1 line:3 export:INPUT save:INPUT read:READ} [current_design]
 set_false_path -from [get_cells -hierarchical  -filter "NAME =~*axi_vdma_0*MM2S*LB_BUILT_IN*/*rstbt*/*rst_reg[*]"]
 set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]

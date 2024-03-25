@@ -1,11 +1,11 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-// Date        : Tue Mar 19 01:59:49 2024
-// Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+// Date        : Tue Mar 19 22:42:04 2024
+// Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
 // Command     : write_verilog -force -mode funcsim -rename_top hdmi_axi_dma_4_0 -prefix
-//               hdmi_axi_dma_4_0_ hdmi_axi_dma_2_1_sim_netlist.v
-// Design      : hdmi_axi_dma_2_1
+//               hdmi_axi_dma_4_0_ hdmi_axi_dma_2_0_sim_netlist.v
+// Design      : hdmi_axi_dma_2_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7a200tsbg484-1
@@ -54510,7 +54510,7 @@ module hdmi_axi_dma_4_0_dynshreg_f__parameterized5
         .O(sig_single_dbeat_reg));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "hdmi_axi_dma_2_1,axi_dma,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_dma,Vivado 2018.2.2" *) 
+(* CHECK_LICENSE_TYPE = "hdmi_axi_dma_2_0,axi_dma,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "axi_dma,Vivado 2018.2" *) 
 (* NotValidForBitStream *)
 module hdmi_axi_dma_4_0
    (s_axi_lite_aclk,

@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-// Date        : Tue Feb 13 04:01:23 2024
+// Date        : Tue Mar 19 01:58:25 2024
 // Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim -rename_top hdmi_microblaze_0_xlconcat_0 -prefix
-//               hdmi_microblaze_0_xlconcat_0_ hdmi_microblaze_0_xlconcat_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_xlconcat_0/hdmi_microblaze_0_xlconcat_0_sim_netlist.v
 // Design      : hdmi_microblaze_0_xlconcat_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "hdmi_microblaze_0_xlconcat_0,xlconcat_v2_1_1_xlconcat,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "xlconcat_v2_1_1_xlconcat,Vivado 2018.2" *) 
+(* CHECK_LICENSE_TYPE = "hdmi_microblaze_0_xlconcat_0,xlconcat_v2_1_1_xlconcat,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "xlconcat_v2_1_1_xlconcat,Vivado 2018.2.2" *) 
 (* NotValidForBitStream *)
 module hdmi_microblaze_0_xlconcat_0
    (In0,
@@ -21,6 +21,7 @@ module hdmi_microblaze_0_xlconcat_0
     In3,
     In4,
     In5,
+    In6,
     dout);
   input [0:0]In0;
   input [0:0]In1;
@@ -28,7 +29,8 @@ module hdmi_microblaze_0_xlconcat_0
   input [0:0]In3;
   input [0:0]In4;
   input [0:0]In5;
-  output [5:0]dout;
+  input [0:0]In6;
+  output [6:0]dout;
 
   wire [0:0]In0;
   wire [0:0]In1;
@@ -36,7 +38,9 @@ module hdmi_microblaze_0_xlconcat_0
   wire [0:0]In3;
   wire [0:0]In4;
   wire [0:0]In5;
+  wire [0:0]In6;
 
+  assign dout[6] = In6;
   assign dout[5] = In5;
   assign dout[4] = In4;
   assign dout[3] = In3;

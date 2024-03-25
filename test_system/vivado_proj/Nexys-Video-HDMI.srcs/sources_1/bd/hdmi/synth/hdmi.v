@@ -1,15 +1,15 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-//Date        : Tue Mar 19 01:56:58 2024
-//Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+//Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+//Date        : Mon Mar 25 18:12:36 2024
+//Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
 //Command     : generate_target hdmi.bd
 //Design      : hdmi
 //Purpose     : IP block netlist
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "hdmi,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=hdmi,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=103,numReposBlks=67,numNonXlnxBlks=5,numHierBlks=36,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=29,da_clkrst_cnt=22,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "hdmi.hwdef" *) 
+(* CORE_GENERATION_INFO = "hdmi,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=hdmi,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=101,numReposBlks=65,numNonXlnxBlks=5,numHierBlks=36,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=29,da_clkrst_cnt=24,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "hdmi.hwdef" *) 
 module hdmi
    (DDC_scl_i,
     DDC_scl_o,
@@ -345,12 +345,12 @@ module hdmi
   wire [7:0]brightening_0_out_r;
   wire brightening_0_out_rgb_last;
   wire brightening_0_out_rgb_valid;
-  wire [7:0]convolve_rgb_0_master_blue_o;
-  wire [7:0]convolve_rgb_0_master_green_o;
-  wire [7:0]convolve_rgb_0_master_red_o;
-  wire convolve_rgb_0_master_tlast_o;
-  wire convolve_rgb_0_master_tvalid_o;
-  wire convolve_rgb_0_slave_tready_o;
+  wire [7:0]convolution_0_master_blue_o;
+  wire [7:0]convolution_0_master_green_o;
+  wire convolution_0_master_last_o;
+  wire [7:0]convolution_0_master_red_o;
+  wire convolution_0_master_valid_o;
+  wire convolution_0_slave_ready_o;
   wire dvi2rgb_0_DDC_SCL_I;
   wire dvi2rgb_0_DDC_SCL_O;
   wire dvi2rgb_0_DDC_SCL_T;
@@ -774,10 +774,10 @@ module hdmi
   wire [0:0]rst_mig_7series_0_pxl_peripheral_reset;
   wire [7:0]sharpening_master_blue_o;
   wire [7:0]sharpening_master_green_o;
+  wire sharpening_master_last_o;
   wire [7:0]sharpening_master_red_o;
-  wire sharpening_master_tlast_o;
-  wire sharpening_master_tvalid_o;
-  wire sharpening_slave_tready_o;
+  wire sharpening_master_valid_o;
+  wire sharpening_slave_ready_o;
   wire [7:0]stream2rgb_0_b;
   wire [7:0]stream2rgb_0_g;
   wire [7:0]stream2rgb_0_r;
@@ -791,12 +791,10 @@ module hdmi
   wire [7:0]stream2rgb_2_b;
   wire [7:0]stream2rgb_2_g;
   wire [7:0]stream2rgb_2_r;
-  wire stream2rgb_2_rgb_last;
   wire stream2rgb_2_rgb_valid;
   wire [7:0]stream2rgb_3_b;
   wire [7:0]stream2rgb_3_g;
   wire [7:0]stream2rgb_3_r;
-  wire stream2rgb_3_rgb_last;
   wire stream2rgb_3_rgb_valid;
   wire sys_clk_i_1;
   wire v_axi4s_vid_out_0_vid_io_out_ACTIVE_VIDEO;
@@ -819,8 +817,6 @@ module hdmi
   wire v_vid_in_axi4s_0_vtiming_out_HSYNC;
   wire v_vid_in_axi4s_0_vtiming_out_VSYNC;
   wire [0:0]xlconstant_0_dout;
-  wire [728:0]xlconstant_1_dout;
-  wire [728:0]xlconstant_2_dout;
 
   assign DDC_scl_o = dvi2rgb_0_DDC_SCL_O;
   assign DDC_scl_t = dvi2rgb_0_DDC_SCL_T;
@@ -1738,22 +1734,20 @@ module hdmi
         .vid_pHSync(dvi2rgb_0_RGB_HSYNC),
         .vid_pVDE(dvi2rgb_0_RGB_ACTIVE_VIDEO),
         .vid_pVSync(dvi2rgb_0_RGB_VSYNC));
-  hdmi_convolve_rgb_0_0 gaussian_blur
+  hdmi_convolution_0_0 gaussian_blur
        (.clock_i(mig_7series_0_ui_clk),
-        .master_blue_o(convolve_rgb_0_master_blue_o),
-        .master_green_o(convolve_rgb_0_master_green_o),
-        .master_red_o(convolve_rgb_0_master_red_o),
-        .master_tlast_o(convolve_rgb_0_master_tlast_o),
-        .master_tready_i(rgb2stream_2_rgb_ready),
-        .master_tvalid_o(convolve_rgb_0_master_tvalid_o),
+        .master_blue_o(convolution_0_master_blue_o),
+        .master_green_o(convolution_0_master_green_o),
+        .master_last_o(convolution_0_master_last_o),
+        .master_ready_i(rgb2stream_2_rgb_ready),
+        .master_red_o(convolution_0_master_red_o),
+        .master_valid_o(convolution_0_master_valid_o),
         .reset_i(rst_mig_7series_0_100M_peripheral_aresetn),
         .slave_blue_i(stream2rgb_2_b),
         .slave_green_i(stream2rgb_2_g),
+        .slave_ready_o(convolution_0_slave_ready_o),
         .slave_red_i(stream2rgb_2_r),
-        .slave_tlast_i(stream2rgb_2_rgb_last),
-        .slave_tready_o(convolve_rgb_0_slave_tready_o),
-        .slave_tvalid_i(stream2rgb_2_rgb_valid),
-        .weight_i(xlconstant_1_dout));
+        .slave_valid_i(stream2rgb_2_rgb_valid));
   hdmi_grayscale_0_0 grayscale_0
        (.clk(mig_7series_0_ui_clk),
         .in_b(stream2rgb_0_b),
@@ -2364,17 +2358,17 @@ module hdmi
         .rgb_valid(brightening_0_out_rgb_valid));
   hdmi_rgb2stream_1_1 rgb2stream_2
        (.axi_clk(mig_7series_0_ui_clk),
-        .b(convolve_rgb_0_master_blue_o),
-        .g(convolve_rgb_0_master_green_o),
+        .b(convolution_0_master_blue_o),
+        .g(convolution_0_master_green_o),
         .m_axis_data(rgb2stream_2_m_axis_TDATA),
         .m_axis_last(rgb2stream_2_m_axis_TLAST),
         .m_axis_ready(rgb2stream_2_m_axis_TREADY),
         .m_axis_valid(rgb2stream_2_m_axis_TVALID),
-        .r(convolve_rgb_0_master_red_o),
+        .r(convolution_0_master_red_o),
         .reset_n(rst_mig_7series_0_100M_peripheral_aresetn),
-        .rgb_last(convolve_rgb_0_master_tlast_o),
+        .rgb_last(convolution_0_master_last_o),
         .rgb_ready(rgb2stream_2_rgb_ready),
-        .rgb_valid(convolve_rgb_0_master_tvalid_o));
+        .rgb_valid(convolution_0_master_valid_o));
   hdmi_rgb2stream_2_0 rgb2stream_3
        (.axi_clk(mig_7series_0_ui_clk),
         .b(sharpening_master_blue_o),
@@ -2385,9 +2379,9 @@ module hdmi
         .m_axis_valid(rgb2stream_3_m_axis_TVALID),
         .r(sharpening_master_red_o),
         .reset_n(rst_mig_7series_0_100M_peripheral_aresetn),
-        .rgb_last(sharpening_master_tlast_o),
+        .rgb_last(sharpening_master_last_o),
         .rgb_ready(rgb2stream_3_rgb_ready),
-        .rgb_valid(sharpening_master_tvalid_o));
+        .rgb_valid(sharpening_master_valid_o));
   hdmi_rst_mig_7series_0_100M_0 rst_mig_7series_0_100M
        (.aux_reset_in(1'b1),
         .bus_struct_reset(SYS_Rst_1),
@@ -2406,22 +2400,20 @@ module hdmi
         .peripheral_aresetn(rst_mig_7series_0_pxl_peripheral_aresetn),
         .peripheral_reset(rst_mig_7series_0_pxl_peripheral_reset),
         .slowest_sync_clk(dvi2rgb_0_PixelClk));
-  hdmi_gaussian_blur_0 sharpening
+  hdmi_convolution_0_1 sharpening
        (.clock_i(mig_7series_0_ui_clk),
         .master_blue_o(sharpening_master_blue_o),
         .master_green_o(sharpening_master_green_o),
+        .master_last_o(sharpening_master_last_o),
+        .master_ready_i(rgb2stream_3_rgb_ready),
         .master_red_o(sharpening_master_red_o),
-        .master_tlast_o(sharpening_master_tlast_o),
-        .master_tready_i(rgb2stream_3_rgb_ready),
-        .master_tvalid_o(sharpening_master_tvalid_o),
+        .master_valid_o(sharpening_master_valid_o),
         .reset_i(rst_mig_7series_0_100M_peripheral_aresetn),
         .slave_blue_i(stream2rgb_3_b),
         .slave_green_i(stream2rgb_3_g),
+        .slave_ready_o(sharpening_slave_ready_o),
         .slave_red_i(stream2rgb_3_r),
-        .slave_tlast_i(stream2rgb_3_rgb_last),
-        .slave_tready_o(sharpening_slave_tready_o),
-        .slave_tvalid_i(stream2rgb_3_rgb_valid),
-        .weight_i(xlconstant_2_dout));
+        .slave_valid_i(stream2rgb_3_rgb_valid));
   hdmi_stream2rgb_0_0 stream2rgb_0
        (.axi_clk(mig_7series_0_ui_clk),
         .b(stream2rgb_0_b),
@@ -2454,8 +2446,7 @@ module hdmi
         .g(stream2rgb_2_g),
         .r(stream2rgb_2_r),
         .reset_n(rst_mig_7series_0_100M_peripheral_aresetn),
-        .rgb_last(stream2rgb_2_rgb_last),
-        .rgb_ready(convolve_rgb_0_slave_tready_o),
+        .rgb_ready(convolution_0_slave_ready_o),
         .rgb_valid(stream2rgb_2_rgb_valid),
         .s_axis_data(axi_dma_4_M_AXIS_MM2S_TDATA),
         .s_axis_last(axi_dma_4_M_AXIS_MM2S_TLAST),
@@ -2467,8 +2458,7 @@ module hdmi
         .g(stream2rgb_3_g),
         .r(stream2rgb_3_r),
         .reset_n(rst_mig_7series_0_100M_peripheral_aresetn),
-        .rgb_last(stream2rgb_3_rgb_last),
-        .rgb_ready(sharpening_slave_tready_o),
+        .rgb_ready(sharpening_slave_ready_o),
         .rgb_valid(stream2rgb_3_rgb_valid),
         .s_axis_data(axi_dma_5_M_AXIS_MM2S_TDATA),
         .s_axis_last(axi_dma_5_M_AXIS_MM2S_TLAST),
@@ -2581,10 +2571,6 @@ module hdmi
         .vtd_vsync(v_vid_in_axi4s_0_vtiming_out_VSYNC));
   hdmi_xlconstant_0_0 xlconstant_0
        (.dout(xlconstant_0_dout));
-  hdmi_xlconstant_1_0 xlconstant_1
-       (.dout(xlconstant_1_dout));
-  hdmi_xlconstant_1_1 xlconstant_2
-       (.dout(xlconstant_2_dout));
 endmodule
 
 module hdmi_axi_mem_intercon_0

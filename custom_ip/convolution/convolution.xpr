@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="38" Path="/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/convolution/convolution.xpr">
+<Project Version="7" Minor="38" Path="/home/ece532/ECE532/custom_ip/convolution/convolution.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="98d1cab06e0b4b7d8f432b79ddcb07fc"/>
@@ -17,7 +17,7 @@
     <Option Name="CompiledLibDirVCS" Val="$PCACHEDIR/compile_simlib/vcs"/>
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
-    <Option Name="BoardPart" Val="digilentinc.com:nexys_video:part0:1.2"/>
+    <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
@@ -63,7 +63,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/imports/sources/adder_tree.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/adder_tree.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../systemverilog/sources/adder_tree.sv"/>
           <Attr Name="ImportTime" Val="1711121108"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -72,7 +72,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources/utilities.svh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/utilities.svh"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../systemverilog/sources/utilities.svh"/>
           <Attr Name="ImportTime" Val="1711119987"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -80,7 +80,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources/channelwise_convolve.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/channelwise_convolve.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../systemverilog/sources/channelwise_convolve.sv"/>
           <Attr Name="ImportTime" Val="1711121572"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -89,7 +89,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources/constant_pad.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/constant_pad.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../systemverilog/sources/constant_pad.sv"/>
           <Attr Name="ImportTime" Val="1710894029"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -98,7 +98,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources/dual_port_ram.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/dual_port_ram.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../systemverilog/sources/dual_port_ram.sv"/>
           <Attr Name="ImportTime" Val="1710860891"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -107,7 +107,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources/sliding_window.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/sliding_window.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../systemverilog/sources/sliding_window.sv"/>
           <Attr Name="ImportTime" Val="1710894138"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -116,7 +116,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources/convolution.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/convolution.sv"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../systemverilog/sources/convolution.sv"/>
           <Attr Name="ImportTime" Val="1711122454"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -142,17 +142,12 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PSRCDIR/constrs_1/new/convolution.xdc">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
+      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="convolution"/>
@@ -191,20 +186,16 @@
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a200tsbg484-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -215,12 +206,9 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
   </Runs>
-  <Board>
-    <Jumpers/>
-  </Board>
+  <Board/>
 </Project>
