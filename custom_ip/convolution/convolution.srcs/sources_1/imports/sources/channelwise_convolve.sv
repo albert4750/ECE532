@@ -141,8 +141,19 @@ module channelwise_convolve #(
         .master_data_o (sums)
     );
 
+    function automatic activation_t right_shift_and_clip(product_t value);
+        product_t shifted_value = value >>> RightShift;
+        if (shifted_value >= product_t'(1 << (ActivationWidth - 1))) begin
+            return (1 << (ActivationWidth - 1)) - 1;
+        end else if (shifted_value < product_t'(-1 << (ActivationWidth - 1))) begin
+            return -1 << (ActivationWidth - 1);
+        end else begin
+            return activation_t'(shifted_value);
+        end
+    endfunction : right_shift_and_clip
+
     for (genvar Channel = 0; Channel < Channels; ++Channel) begin : g_out_data
-        assign master_data_o[Channel] = sums[Channel][ActivationWidth+RightShift-1:RightShift];
+        assign master_data_o[Channel] = right_shift_and_clip(sums[Channel]);
     end : g_out_data
 
 endmodule : channelwise_convolve
