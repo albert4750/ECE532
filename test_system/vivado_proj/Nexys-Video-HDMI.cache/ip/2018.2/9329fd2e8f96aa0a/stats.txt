@@ -1,4 +1,4 @@
-NumberHits:16
-Timestamp: Mon Mar 25 22:12:40 UTC 2024
+NumberHits:20
+Timestamp: Tue Mar 26 00:15:23 UTC 2024
 VLNV: xilinx.com:ip:axi_dwidth_converter:2.1
 SynthRuntime: 88

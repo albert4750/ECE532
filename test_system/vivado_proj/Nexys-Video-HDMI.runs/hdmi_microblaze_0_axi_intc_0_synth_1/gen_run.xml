@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="hdmi_microblaze_0_axi_intc_0_synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1710827863">
-  <File Type="RDS-DCP" Name="hdmi_microblaze_0_axi_intc_0.dcp"/>
   <File Type="PA-TCL" Name="hdmi_microblaze_0_axi_intc_0.tcl"/>
+  <File Type="RDS-DCP" Name="hdmi_microblaze_0_axi_intc_0.dcp"/>
   <File Type="REPORTS-TCL" Name="hdmi_microblaze_0_axi_intc_0_reports.tcl"/>
   <File Type="RDS-RDS" Name="hdmi_microblaze_0_axi_intc_0.vds"/>
   <File Type="RDS-UTIL" Name="hdmi_microblaze_0_axi_intc_0_utilization_synth.rpt"/>

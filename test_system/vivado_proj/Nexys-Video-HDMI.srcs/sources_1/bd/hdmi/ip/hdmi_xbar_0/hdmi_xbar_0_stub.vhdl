@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
--- Date        : Mon Mar 25 17:49:23 2024
+-- Date        : Tue Mar 12 02:06:27 2024
 -- Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
 -- Command     : write_vhdl -force -mode synth_stub -rename_top hdmi_xbar_0 -prefix
 --               hdmi_xbar_0_ hdmi_xbar_0_stub.vhdl
@@ -102,6 +102,6 @@ attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
 attribute black_box_pad_pin of stub : architecture is "aclk,aresetn,s_axi_awid[63:0],s_axi_awaddr[511:0],s_axi_awlen[127:0],s_axi_awsize[47:0],s_axi_awburst[31:0],s_axi_awlock[15:0],s_axi_awcache[63:0],s_axi_awprot[47:0],s_axi_awqos[63:0],s_axi_awvalid[15:0],s_axi_awready[15:0],s_axi_wdata[4095:0],s_axi_wstrb[511:0],s_axi_wlast[15:0],s_axi_wvalid[15:0],s_axi_wready[15:0],s_axi_bid[63:0],s_axi_bresp[31:0],s_axi_bvalid[15:0],s_axi_bready[15:0],s_axi_arid[63:0],s_axi_araddr[511:0],s_axi_arlen[127:0],s_axi_arsize[47:0],s_axi_arburst[31:0],s_axi_arlock[15:0],s_axi_arcache[63:0],s_axi_arprot[47:0],s_axi_arqos[63:0],s_axi_arvalid[15:0],s_axi_arready[15:0],s_axi_rid[63:0],s_axi_rdata[4095:0],s_axi_rresp[31:0],s_axi_rlast[15:0],s_axi_rvalid[15:0],s_axi_rready[15:0],m_axi_awid[3:0],m_axi_awaddr[31:0],m_axi_awlen[7:0],m_axi_awsize[2:0],m_axi_awburst[1:0],m_axi_awlock[0:0],m_axi_awcache[3:0],m_axi_awprot[2:0],m_axi_awregion[3:0],m_axi_awqos[3:0],m_axi_awvalid[0:0],m_axi_awready[0:0],m_axi_wdata[255:0],m_axi_wstrb[31:0],m_axi_wlast[0:0],m_axi_wvalid[0:0],m_axi_wready[0:0],m_axi_bid[3:0],m_axi_bresp[1:0],m_axi_bvalid[0:0],m_axi_bready[0:0],m_axi_arid[3:0],m_axi_araddr[31:0],m_axi_arlen[7:0],m_axi_arsize[2:0],m_axi_arburst[1:0],m_axi_arlock[0:0],m_axi_arcache[3:0],m_axi_arprot[2:0],m_axi_arregion[3:0],m_axi_arqos[3:0],m_axi_arvalid[0:0],m_axi_arready[0:0],m_axi_rid[3:0],m_axi_rdata[255:0],m_axi_rresp[1:0],m_axi_rlast[0:0],m_axi_rvalid[0:0],m_axi_rready[0:0]";
 attribute X_CORE_INFO : string;
-attribute X_CORE_INFO of stub : architecture is "axi_crossbar_v2_1_18_axi_crossbar,Vivado 2018.2.2";
+attribute X_CORE_INFO of stub : architecture is "axi_crossbar_v2_1_18_axi_crossbar,Vivado 2018.2";
 begin
 end;

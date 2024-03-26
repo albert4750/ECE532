@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1711404877">
+<GenRun Id="impl_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1711412314">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="BG-DRC" Name="hdmi_wrapper.drc"/>
   <File Type="BG-BGN" Name="hdmi_wrapper.bgn"/>
@@ -143,13 +143,15 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_convolution_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_convolution_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_microblaze_0_axi_intc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_microblaze_0_xlconcat_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_rst_mig_7series_0_pxl_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_xbar_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_brightening_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_rgb2stream_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hdmi_microblaze_0_xlconcat_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hdmi_brightening_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hdmi_stream2rgb_1_0"/>
 </GenRun>

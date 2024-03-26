@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-// Date        : Tue Mar 19 01:58:35 2024
-// Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+// Date        : Mon Mar 25 18:55:02 2024
+// Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
 // Command     : write_verilog -force -mode synth_stub
-//               C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_xbar_1/hdmi_xbar_1_stub.v
+//               /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_xbar_1/hdmi_xbar_1_stub.v
 // Design      : hdmi_xbar_1
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a200tsbg484-1
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* X_CORE_INFO = "axi_crossbar_v2_1_18_axi_crossbar,Vivado 2018.2.2" *)
+(* X_CORE_INFO = "axi_crossbar_v2_1_18_axi_crossbar,Vivado 2018.2" *)
 module hdmi_xbar_1(aclk, aresetn, s_axi_awaddr, s_axi_awprot, 
   s_axi_awvalid, s_axi_awready, s_axi_wdata, s_axi_wstrb, s_axi_wvalid, s_axi_wready, 
   s_axi_bresp, s_axi_bvalid, s_axi_bready, s_axi_araddr, s_axi_arprot, s_axi_arvalid, 
@@ -21,7 +21,7 @@ module hdmi_xbar_1(aclk, aresetn, s_axi_awaddr, s_axi_awprot,
   m_axi_awprot, m_axi_awvalid, m_axi_awready, m_axi_wdata, m_axi_wstrb, m_axi_wvalid, 
   m_axi_wready, m_axi_bresp, m_axi_bvalid, m_axi_bready, m_axi_araddr, m_axi_arprot, 
   m_axi_arvalid, m_axi_arready, m_axi_rdata, m_axi_rresp, m_axi_rvalid, m_axi_rready)
-/* synthesis syn_black_box black_box_pad_pin="aclk,aresetn,s_axi_awaddr[31:0],s_axi_awprot[2:0],s_axi_awvalid[0:0],s_axi_awready[0:0],s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid[0:0],s_axi_wready[0:0],s_axi_bresp[1:0],s_axi_bvalid[0:0],s_axi_bready[0:0],s_axi_araddr[31:0],s_axi_arprot[2:0],s_axi_arvalid[0:0],s_axi_arready[0:0],s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid[0:0],s_axi_rready[0:0],m_axi_awaddr[479:0],m_axi_awprot[44:0],m_axi_awvalid[14:0],m_axi_awready[14:0],m_axi_wdata[479:0],m_axi_wstrb[59:0],m_axi_wvalid[14:0],m_axi_wready[14:0],m_axi_bresp[29:0],m_axi_bvalid[14:0],m_axi_bready[14:0],m_axi_araddr[479:0],m_axi_arprot[44:0],m_axi_arvalid[14:0],m_axi_arready[14:0],m_axi_rdata[479:0],m_axi_rresp[29:0],m_axi_rvalid[14:0],m_axi_rready[14:0]" */;
+/* synthesis syn_black_box black_box_pad_pin="aclk,aresetn,s_axi_awaddr[31:0],s_axi_awprot[2:0],s_axi_awvalid[0:0],s_axi_awready[0:0],s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid[0:0],s_axi_wready[0:0],s_axi_bresp[1:0],s_axi_bvalid[0:0],s_axi_bready[0:0],s_axi_araddr[31:0],s_axi_arprot[2:0],s_axi_arvalid[0:0],s_axi_arready[0:0],s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid[0:0],s_axi_rready[0:0],m_axi_awaddr[511:0],m_axi_awprot[47:0],m_axi_awvalid[15:0],m_axi_awready[15:0],m_axi_wdata[511:0],m_axi_wstrb[63:0],m_axi_wvalid[15:0],m_axi_wready[15:0],m_axi_bresp[31:0],m_axi_bvalid[15:0],m_axi_bready[15:0],m_axi_araddr[511:0],m_axi_arprot[47:0],m_axi_arvalid[15:0],m_axi_arready[15:0],m_axi_rdata[511:0],m_axi_rresp[31:0],m_axi_rvalid[15:0],m_axi_rready[15:0]" */;
   input aclk;
   input aresetn;
   input [31:0]s_axi_awaddr;
@@ -43,23 +43,23 @@ module hdmi_xbar_1(aclk, aresetn, s_axi_awaddr, s_axi_awprot,
   output [1:0]s_axi_rresp;
   output [0:0]s_axi_rvalid;
   input [0:0]s_axi_rready;
-  output [479:0]m_axi_awaddr;
-  output [44:0]m_axi_awprot;
-  output [14:0]m_axi_awvalid;
-  input [14:0]m_axi_awready;
-  output [479:0]m_axi_wdata;
-  output [59:0]m_axi_wstrb;
-  output [14:0]m_axi_wvalid;
-  input [14:0]m_axi_wready;
-  input [29:0]m_axi_bresp;
-  input [14:0]m_axi_bvalid;
-  output [14:0]m_axi_bready;
-  output [479:0]m_axi_araddr;
-  output [44:0]m_axi_arprot;
-  output [14:0]m_axi_arvalid;
-  input [14:0]m_axi_arready;
-  input [479:0]m_axi_rdata;
-  input [29:0]m_axi_rresp;
-  input [14:0]m_axi_rvalid;
-  output [14:0]m_axi_rready;
+  output [511:0]m_axi_awaddr;
+  output [47:0]m_axi_awprot;
+  output [15:0]m_axi_awvalid;
+  input [15:0]m_axi_awready;
+  output [511:0]m_axi_wdata;
+  output [63:0]m_axi_wstrb;
+  output [15:0]m_axi_wvalid;
+  input [15:0]m_axi_wready;
+  input [31:0]m_axi_bresp;
+  input [15:0]m_axi_bvalid;
+  output [15:0]m_axi_bready;
+  output [511:0]m_axi_araddr;
+  output [47:0]m_axi_arprot;
+  output [15:0]m_axi_arvalid;
+  input [15:0]m_axi_arready;
+  input [511:0]m_axi_rdata;
+  input [31:0]m_axi_rresp;
+  input [15:0]m_axi_rvalid;
+  output [15:0]m_axi_rready;
 endmodule

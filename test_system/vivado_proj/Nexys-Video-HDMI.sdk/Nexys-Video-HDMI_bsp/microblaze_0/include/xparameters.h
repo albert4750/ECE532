@@ -475,7 +475,7 @@
  
 /******************************************************************/
 /* Definitions for driver AXIDMA */
-#define XPAR_XAXIDMA_NUM_INSTANCES 5
+#define XPAR_XAXIDMA_NUM_INSTANCES 6
 
 /* Definitions for peripheral AXI_DMA_0 */
 #define XPAR_AXI_DMA_0_DEVICE_ID 0
@@ -587,6 +587,28 @@
 #define XPAR_AXI_DMA_5_SG_LENGTH_WIDTH 23
 
 
+/* Definitions for peripheral AXI_DMA_6 */
+#define XPAR_AXI_DMA_6_DEVICE_ID 5
+#define XPAR_AXI_DMA_6_BASEADDR 0x41E10000
+#define XPAR_AXI_DMA_6_HIGHADDR 0x41E1FFFF
+#define XPAR_AXI_DMA_6_SG_INCLUDE_STSCNTRL_STRM 0
+#define XPAR_AXI_DMA_6_INCLUDE_MM2S_DRE 0
+#define XPAR_AXI_DMA_6_INCLUDE_S2MM_DRE 0
+#define XPAR_AXI_DMA_6_INCLUDE_MM2S 1
+#define XPAR_AXI_DMA_6_INCLUDE_S2MM 1
+#define XPAR_AXI_DMA_6_M_AXI_MM2S_DATA_WIDTH 128
+#define XPAR_AXI_DMA_6_M_AXI_S2MM_DATA_WIDTH 128
+#define XPAR_AXI_DMA_6_INCLUDE_SG 0
+#define XPAR_AXI_DMA_6_ENABLE_MULTI_CHANNEL 0
+#define XPAR_AXI_DMA_6_NUM_MM2S_CHANNELS 1
+#define XPAR_AXI_DMA_6_NUM_S2MM_CHANNELS 1
+#define XPAR_AXI_DMA_6_MM2S_BURST_SIZE 4
+#define XPAR_AXI_DMA_6_S2MM_BURST_SIZE 4
+#define XPAR_AXI_DMA_6_MICRO_DMA 0
+#define XPAR_AXI_DMA_6_ADDR_WIDTH 32
+#define XPAR_AXI_DMA_6_SG_LENGTH_WIDTH 23
+
+
 /******************************************************************/
 
 /* Canonical definitions for peripheral AXI_DMA_0 */
@@ -688,6 +710,26 @@
 #define XPAR_AXIDMA_4_MICRO_DMA 0
 #define XPAR_AXIDMA_4_c_addr_width 32
 #define XPAR_AXIDMA_4_c_sg_length_width 23
+
+/* Canonical definitions for peripheral AXI_DMA_6 */
+#define XPAR_AXIDMA_5_DEVICE_ID XPAR_AXI_DMA_6_DEVICE_ID
+#define XPAR_AXIDMA_5_BASEADDR 0x41E10000
+#define XPAR_AXIDMA_5_SG_INCLUDE_STSCNTRL_STRM 0
+#define XPAR_AXIDMA_5_INCLUDE_MM2S 1
+#define XPAR_AXIDMA_5_INCLUDE_MM2S_DRE 0
+#define XPAR_AXIDMA_5_M_AXI_MM2S_DATA_WIDTH 128
+#define XPAR_AXIDMA_5_INCLUDE_S2MM 1
+#define XPAR_AXIDMA_5_INCLUDE_S2MM_DRE 0
+#define XPAR_AXIDMA_5_M_AXI_S2MM_DATA_WIDTH 128
+#define XPAR_AXIDMA_5_INCLUDE_SG 0
+#define XPAR_AXIDMA_5_ENABLE_MULTI_CHANNEL 0
+#define XPAR_AXIDMA_5_NUM_MM2S_CHANNELS 1
+#define XPAR_AXIDMA_5_NUM_S2MM_CHANNELS 1
+#define XPAR_AXIDMA_5_MM2S_BURST_SIZE 4
+#define XPAR_AXIDMA_5_S2MM_BURST_SIZE 4
+#define XPAR_AXIDMA_5_MICRO_DMA 0
+#define XPAR_AXIDMA_5_c_addr_width 32
+#define XPAR_AXIDMA_5_c_sg_length_width 23
 
 
 /******************************************************************/

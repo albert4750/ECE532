@@ -1,4 +1,4 @@
-18:26:55 **** Auto Build of configuration Debug for project Nexys-Video-HDMI ****
+20:58:53 **** Auto Build of configuration Debug for project Nexys-Video-HDMI ****
 make all 
 Building file: ../video_capture/video_capture.c
 Invoking: MicroBlaze gcc compiler
@@ -42,5 +42,5 @@ mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"video_demo.o" -I../../Nexys-Video
     ^~~~~
 make: *** [subdir.mk:23: video_demo.o] Error 1
 
-18:26:55 Build Finished (took 368ms)
+20:58:53 Build Finished (took 264ms)
 

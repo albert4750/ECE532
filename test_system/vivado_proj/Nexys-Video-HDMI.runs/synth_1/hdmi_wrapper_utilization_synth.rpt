@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Mon Mar 25 18:14:27 2024
+| Date         : Mon Mar 25 20:17:08 2024
 | Host         : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
 | Command      : report_utilization -file hdmi_wrapper_utilization_synth.rpt -pb hdmi_wrapper_utilization_synth.pb
 | Design       : hdmi_wrapper
@@ -168,6 +168,8 @@ Table of Contents
 | hdmi_v_tc_1_0                 |    1 |
 | hdmi_v_tc_0_0                 |    1 |
 | hdmi_v_axi4s_vid_out_0_0      |    1 |
+| hdmi_superresolution_0_0      |    1 |
+| hdmi_stream2rgb_2_1           |    1 |
 | hdmi_stream2rgb_2_0           |    1 |
 | hdmi_stream2rgb_1_1           |    1 |
 | hdmi_stream2rgb_1_0           |    1 |
@@ -178,6 +180,7 @@ Table of Contents
 | hdmi_s00_regslice_0           |    1 |
 | hdmi_rst_mig_7series_0_pxl_0  |    1 |
 | hdmi_rst_mig_7series_0_100M_0 |    1 |
+| hdmi_rgb2stream_2_1           |    1 |
 | hdmi_rgb2stream_2_0           |    1 |
 | hdmi_rgb2stream_1_1           |    1 |
 | hdmi_rgb2stream_1_0           |    1 |
@@ -199,6 +202,7 @@ Table of Contents
 | hdmi_dlmb_bram_if_cntlr_0     |    1 |
 | hdmi_convolution_0_1          |    1 |
 | hdmi_convolution_0_0          |    1 |
+| hdmi_clk_wiz_0_0              |    1 |
 | hdmi_brightening_0_0          |    1 |
 | hdmi_axi_vdma_0_0             |    1 |
 | hdmi_axi_uartlite_0_0         |    1 |
@@ -207,6 +211,7 @@ Table of Contents
 | hdmi_axi_gpio_video_0         |    1 |
 | hdmi_axi_gpio_0_0             |    1 |
 | hdmi_axi_dynclk_0_0           |    1 |
+| hdmi_axi_dma_4_1              |    1 |
 | hdmi_axi_dma_4_0              |    1 |
 | hdmi_axi_dma_3_0              |    1 |
 | hdmi_axi_dma_2_1              |    1 |
@@ -220,6 +225,8 @@ Table of Contents
 | hdmi_auto_us_4                |    1 |
 | hdmi_auto_us_3                |    1 |
 | hdmi_auto_us_2                |    1 |
+| hdmi_auto_us_11               |    1 |
+| hdmi_auto_us_10               |    1 |
 | hdmi_auto_us_1                |    1 |
 | hdmi_auto_us_0                |    1 |
 | hdmi_auto_rs_w_2              |    1 |

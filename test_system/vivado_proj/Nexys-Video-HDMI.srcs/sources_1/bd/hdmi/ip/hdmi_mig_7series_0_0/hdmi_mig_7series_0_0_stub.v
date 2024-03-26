@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-// Date        : Sun Mar  3 13:26:21 2024
+// Date        : Thu Feb 29 17:54:38 2024
 // Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
 // Command     : write_verilog -force -mode synth_stub -rename_top hdmi_mig_7series_0_0 -prefix
 //               hdmi_mig_7series_0_0_ hdmi_mig_7series_0_0_stub.v

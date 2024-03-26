@@ -304,11 +304,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 09 17:19:08 UTC 2019</spirit:value>
+            <spirit:value>Mon Mar 25 23:11:18 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:73cc44e8</spirit:value>
+            <spirit:value>8:7303baed</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -322,11 +322,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 09 17:19:08 UTC 2019</spirit:value>
+            <spirit:value>Mon Mar 25 23:11:18 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:73cc44e8</spirit:value>
+            <spirit:value>8:7303baed</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -342,11 +342,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 09 17:19:08 UTC 2019</spirit:value>
+            <spirit:value>Mon Mar 25 23:11:18 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:73cc44e8</spirit:value>
+            <spirit:value>8:7303baed</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -365,11 +365,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 09 17:19:08 UTC 2019</spirit:value>
+            <spirit:value>Tue Mar 05 16:29:13 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:79710e51</spirit:value>
+            <spirit:value>8:f536d215</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -385,11 +385,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 09 17:19:08 UTC 2019</spirit:value>
+            <spirit:value>Mon Mar 25 23:11:18 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:79710e51</spirit:value>
+            <spirit:value>8:f536d215</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -403,11 +403,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 09 17:19:08 UTC 2019</spirit:value>
+            <spirit:value>Mon Mar 25 23:11:18 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:73cc44e8</spirit:value>
+            <spirit:value>8:7303baed</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -421,11 +421,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Feb 14 12:07:35 UTC 2024</spirit:value>
+            <spirit:value>Mon Mar 25 23:12:16 UTC 2024</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>8:73cc44e8</spirit:value>
+            <spirit:value>8:7303baed</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -755,6 +755,18 @@
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
       <spirit:file>
+        <spirit:name>hdmi_rst_mig_7series_0_pxl_0_stub.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdmi_rst_mig_7series_0_pxl_0_stub.vhdl</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
+        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
+      </spirit:file>
+      <spirit:file>
         <spirit:name>hdmi_rst_mig_7series_0_pxl_0_sim_netlist.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
@@ -766,18 +778,6 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
         <spirit:userFileType>USED_IN_single_language</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdmi_rst_mig_7series_0_pxl_0_stub.v</spirit:name>
-        <spirit:fileType>verilogSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
-        <spirit:logicalName>xil_defaultlib</spirit:logicalName>
-      </spirit:file>
-      <spirit:file>
-        <spirit:name>hdmi_rst_mig_7series_0_pxl_0_stub.vhdl</spirit:name>
-        <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>USED_IN_synth_blackbox_stub</spirit:userFileType>
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
@@ -835,7 +835,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>RESET_BOARD_INTERFACE</spirit:name>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.RESET_BOARD_INTERFACE" spirit:choiceRef="choice_list_ce26ebdb" spirit:order="3">Custom</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.RESET_BOARD_INTERFACE" spirit:choiceRef="choice_list_ce26ebdb" spirit:order="3">reset</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
