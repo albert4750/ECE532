@@ -23,10 +23,10 @@ module vertical_sliding_window_test;
     bit [WindowHeight-1:0][DataWidth-1:0] out_data;
 
     vertical_sliding_window #(
-        .InHeight(InHeight),
-        .InWidth(InWidth),
         .WindowHeight(WindowHeight),
-        .DataWidth(DataWidth)
+        .DataWidth(DataWidth),
+        .InHeight(InHeight),
+        .InWidth(InWidth)
     ) vertical_sliding_window_inst (
         .clock_i(clock),
         .reset_i(reset),

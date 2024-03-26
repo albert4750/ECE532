@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 
 module vertical_sliding_window #(
-    parameter int InHeight = 480,
-    parameter int InWidth = 640,
     parameter int WindowHeight = 3,
-    parameter int DataWidth = 8
+    parameter int DataWidth = 8,
+    parameter int InHeight = 480,
+    parameter int InWidth = 640
 ) (
     input bit clock_i,
     input bit reset_i,
