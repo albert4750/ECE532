@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-// multiply_add_c
+// multiply_add_c.sv
 //
 // This module is a replacement for the DSP macro IP in Vivado. It computes A * B + C and stores the
 // result in P.
@@ -12,18 +12,22 @@ import constants::*;
 module multiply_add_c (
     input bit clock_i,
     input bit enable_i,
-    input bit [DSPInAWidth-1:0] a_i,
-    input bit [DSPInBWidth-1:0] b_i,
-    input bit [DSPOutWidth-1:0] c_i,
-    output bit [DSPOutWidth-1:0] p_cascade_o,
-    output bit [DSPOutWidth-1:0] p_o
+    input bit [DSPInputAWidth-1:0] a_i,
+    input bit [DSPInputBWidth-1:0] b_i,
+    input bit [DSPOutputWidth-1:0] c_i,
+    output bit [DSPOutputWidth-1:0] p_cascade_o,
+    output bit [DSPOutputWidth-1:0] p_o
 );
 
-    bit signed [DSPInAWidth-1:0] a3, a4;
-    bit signed [DSPInBWidth-1:0] b3, b4;
-    bit signed [DSPOutWidth-1:0] c5;
-    bit signed [DSPInAWidth+DSPInBWidth-1:0] m5;
-    bit signed [DSPOutWidth-1:0] p6;
+    typedef bit signed [DSPInputAWidth-1:0] dsp_input_a_t;
+    typedef bit signed [DSPInputBWidth-1:0] dsp_input_b_t;
+    typedef bit signed [DSPOutputWidth-1:0] dsp_output_t;
+
+    dsp_input_a_t a3, a4;
+    dsp_input_b_t b3, b4;
+    dsp_output_t c5;
+    dsp_output_t m5;
+    dsp_output_t p6;
 
     always_ff @(posedge clock_i) begin
         if (enable_i) begin
@@ -31,9 +35,9 @@ module multiply_add_c (
             b3 <= b_i;
             a4 <= a3;
             b4 <= b3;
-            m5 <= a4 * b4;
+            m5 <= dsp_output_t'(a4 * b4);
             c5 <= c_i;
-            p6 <= DSPOutWidth'(m5) + c5;
+            p6 <= m5 + c5;
         end
     end
 

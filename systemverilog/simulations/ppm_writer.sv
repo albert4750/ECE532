@@ -1,12 +1,13 @@
 `timescale 1ns / 1ps
 
-// ppm_writer
+// ppm_writer.sv
 //
 // This module reads pixel data from an AXI4-Stream interface and writes it to a PPM file.
 
 module ppm_writer #(
     parameter int Height = 480,
-    parameter int Width  = 640
+    parameter int Width = 640,
+    parameter OutputFile = "output.ppm"
 ) (
     input bit clock_i,
 
@@ -26,13 +27,13 @@ module ppm_writer #(
         finished_o = 0;
         #30;
 
-        file = $fopen("output.ppm", "w");
+        file = $fopen(OutputFile, "w");
         if (file == 0) begin
-            $display("Error: Failed to open output.ppm");
+            $display("Error: Failed to open %s", OutputFile);
             $finish;
         end
 
-        $display("Info: Started to write output.ppm");
+        $display("Info: Started to write %s", OutputFile);
         $fwrite(file, "P3\n%d %d\n255\n", Width, Height);
 
         @(negedge clock_i);
@@ -51,7 +52,7 @@ module ppm_writer #(
             end
         end
 
-        $display("Info: Finished writing output.ppm");
+        $display("Info: Finished writing %s", OutputFile);
         $fclose(file);
         finished_o = 1;
     end

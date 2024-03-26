@@ -1,5 +1,13 @@
 `timescale 1ns / 1ps
 
+// register_slice.sv
+//
+// This module inserts two registers in a stream to isolate the timing path between the master and
+// slave interfaces.
+//
+// - Input: Stream of elements, each element of (DataWidth) bits.
+// - Output: Stream of elements, each element of (DataWidth) bits.
+
 module register_slice #(
     parameter int DataWidth = 8
 ) (
@@ -15,27 +23,27 @@ module register_slice #(
     output logic [DataWidth-1:0] master_data_o
 );
 
-    logic is_buffer_valid;
-    logic [DataWidth-1:0] buffer_data;
-
     logic has_new_input;
     assign has_new_input = slave_valid_i && slave_ready_o;
 
-    assign slave_ready_o = !is_buffer_valid;
+    logic buffer_valid;
+    logic [DataWidth-1:0] buffer_data;
+
+    assign slave_ready_o = !buffer_valid;
 
     always_ff @(posedge clock_i) begin
         if (!reset_i) begin
-            master_valid_o  <= 0;
-            is_buffer_valid <= 0;
+            master_valid_o <= 0;
+            buffer_valid   <= 0;
         end else if (master_valid_o && !master_ready_i) begin
             if (has_new_input) begin
-                is_buffer_valid <= 1;
-                buffer_data <= slave_data_i;
+                buffer_valid <= 1;
+                buffer_data  <= slave_data_i;
             end
-        end else if (is_buffer_valid) begin
-            master_valid_o  <= 1;
-            master_data_o   <= buffer_data;
-            is_buffer_valid <= 0;
+        end else if (buffer_valid) begin
+            master_valid_o <= 1;
+            master_data_o  <= buffer_data;
+            buffer_valid   <= 0;
         end else if (has_new_input) begin
             master_valid_o <= 1;
             master_data_o  <= slave_data_i;

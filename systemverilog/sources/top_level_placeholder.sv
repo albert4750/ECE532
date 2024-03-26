@@ -1,12 +1,8 @@
 `timescale 1ns / 1ps
 
-// top_level_placeholder
+// top_level_placeholder.sv
 //
-// Placeholder top-level module used for testing implementation in Vivado.
-
-`include "constants.svh"
-
-import constants::*;
+// A placeholder top-level module used for testing implementation in Vivado.
 
 module top_level_placeholder (
     input bit clock_i,
@@ -21,15 +17,13 @@ module top_level_placeholder (
     output bit master_data_placeholder_o
 );
 
-    localparam int Height = 600;
-    localparam int Width = 800;
+    localparam int Height = 1080;
+    localparam int Width = 1920;
 
     bit [7:0] slave_red, slave_green, slave_blue;
-    bit slave_last;
     assign slave_red   = {8{slave_data_placeholder_i}};
     assign slave_green = {8{!slave_data_placeholder_i}};
     assign slave_blue  = {8{slave_data_placeholder_i}};
-    assign slave_last  = slave_data_placeholder_i;
 
     bit [7:0] master_red, master_green, master_blue;
     bit master_last;

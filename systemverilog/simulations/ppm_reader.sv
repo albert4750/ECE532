@@ -1,12 +1,13 @@
 `timescale 1ns / 1ps
 
-// ppm_reader
+// ppm_reader.sv
 //
-// This module reads a PPM file and outputs the pixel data in an AXI4-Stream interface.
+// This module reads a PPM file and outputs the pixel data to an AXI4-Stream interface.
 
 module ppm_reader #(
     parameter int Height = 480,
-    parameter int Width  = 640
+    parameter int Width = 640,
+    parameter InputFile = "input.ppm"
 ) (
     input bit clock_i,
 
@@ -26,20 +27,19 @@ module ppm_reader #(
         finished_o = 0;
         #30;
 
-        file = $fopen("input.ppm", "r");
+        file = $fopen(InputFile, "r");
         if (file == 0) begin
-            $display("Error: Failed to open input.ppm");
+            $display("Error: Failed to open %s", InputFile);
             $finish;
         end
 
-        $display("Info: Started to read input.ppm");
+        $display("Info: Started to read %s", InputFile);
         for (int i = 0; i < 3; ++i) begin
             return_value = $fgets(line, file);
             if (return_value == 0) begin
-                $display("Error: Failed to read input.ppm");
+                $display("Error: Failed to read %s", InputFile);
                 $finish;
             end
-            $display("Info: Skipping line: %s", line);
         end
 
         @(negedge clock_i);
@@ -49,7 +49,7 @@ module ppm_reader #(
                 return_value =
                     $fscanf(file, "%d %d %d\n", master_red_o, master_green_o, master_blue_o);
                 if (return_value != 3) begin
-                    $display("Info: Failed to read input.ppm");
+                    $display("Error: Failed to read %s", InputFile);
                     $finish;
                 end
                 master_last_o = row == Height - 1 && column == Width - 1;
@@ -61,7 +61,7 @@ module ppm_reader #(
         end
         master_valid_o = 0;
 
-        $display("Info: Finished reading input.ppm");
+        $display("Info: Finished reading %s", InputFile);
         $fclose(file);
         finished_o = 1;
     end

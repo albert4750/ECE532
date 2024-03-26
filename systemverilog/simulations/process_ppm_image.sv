@@ -1,14 +1,16 @@
 `timescale 1ns / 100ps
 
-// process_ppm_image
+// process_ppm_image.sv
 //
-// This module reads input.ppm, processes the image using the superresolution module, and writes the
-// result to output.ppm.
+// This module reads an input PPM file, processes the image using the superresolution module, and
+// writes the processed image to an output PPM file.
 
 module process_ppm_image;
 
-    localparam int Height = 1080;
-    localparam int Width = 1920;
+    localparam int Height = 768;
+    localparam int Width = 1024;
+    localparam InputFile = "input.ppm";
+    localparam OutputFile = "output.ppm";
 
     bit clock;
     initial clock = 0;
@@ -55,7 +57,8 @@ module process_ppm_image;
     bit reader_finished;
     ppm_reader #(
         .Height(Height),
-        .Width (Width)
+        .Width(Width),
+        .InputFile(InputFile)
     ) ppm_reader_inst (
         .clock_i(clock),
 
@@ -72,7 +75,8 @@ module process_ppm_image;
     bit writer_finished;
     ppm_writer #(
         .Height(Height),
-        .Width (Width)
+        .Width(Width),
+        .OutputFile(OutputFile)
     ) ppm_writer_inst (
         .clock_i(clock),
 
