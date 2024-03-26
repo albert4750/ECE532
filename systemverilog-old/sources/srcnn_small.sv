@@ -32,26 +32,12 @@ module srcnn_small #(
     localparam int F1 = 3, F2 = 3, F3 = 3;
 
     /* verilator lint_off ASCRANGE */
-    localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][WeightWidth-1:0] Convolve1Weight =
-        {N1{{3{20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1, 20'd4}}}};
-    localparam int Convolve1ProductWidth = get_convolution_product_width(
-        ActivationWidth, WeightWidth, F1 * F1 * 3, 1
-    );
-    localparam bit signed [0:N1-1][Convolve1ProductWidth-1:0] Convolve1Bias = '{default: 0};
-
-    localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][WeightWidth-1:0] Convolve2Weight =
-        {N2{{N1{20'd4, 20'd4, 20'd4, 20'd4, 20'd0, 20'd4, 20'd4, 20'd4, 20'd4}}}};
-    localparam int Convolve2ProductWidth = get_convolution_product_width(
-        ActivationWidth, WeightWidth, F2 * F2 * N1, 1
-    );
-    localparam bit signed [0:N2-1][Convolve2ProductWidth-1:0] Convolve2Bias = '{default: 0};
-
-    localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][WeightWidth-1:0] Convolve3Weight =
-        {3{{N2{20'd4, 20'd4, 20'd4, 20'd4, 20'd0, 20'd4, 20'd4, 20'd4, 20'd4}}}};
-    localparam int Convolve3ProductWidth = get_convolution_product_width(
-        ActivationWidth, WeightWidth, F3 * F3 * N2, 1
-    );
-    localparam bit signed [0:2][Convolve3ProductWidth-1:0] Convolve3Bias = '{default: 0};
+    `include "srcnn_small/weight1.svh"
+    `include "srcnn_small/weight2.svh"
+    `include "srcnn_small/weight3.svh"
+    `include "srcnn_small/bias1.svh"
+    `include "srcnn_small/bias2.svh"
+    `include "srcnn_small/bias3.svh"
     /* verilator lint_on ASCRANGE */
 
     bit queue1_valid;
@@ -105,9 +91,9 @@ module srcnn_small #(
         .PaddingRight(F1 / 2),
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
-        .Weight(Convolve1Weight),
-        .Bias(Convolve1Bias),
-        .RightShift(6),
+        .Weight(Weight1),
+        .Bias(Bias1),
+        .RightShift(20),
         .ReLU(1),
         .PaddingValue(0),
         .DSPCascades(Convolve1Cascades),
@@ -177,9 +163,9 @@ module srcnn_small #(
         .PaddingRight(F2 / 2),
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
-        .Weight(Convolve2Weight),
-        .Bias(Convolve2Bias),
-        .RightShift(8),
+        .Weight(Weight2),
+        .Bias(Bias2),
+        .RightShift(20),
         .ReLU(1),
         .PaddingValue(0),
         .DSPCascades(Convolve2Cascades),
@@ -245,9 +231,9 @@ module srcnn_small #(
         .PaddingRight(F3 / 2),
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
-        .Weight(Convolve3Weight),
-        .Bias(Convolve3Bias),
-        .RightShift(8),
+        .Weight(Weight3),
+        .Bias(Bias3),
+        .RightShift(20),
         .ReLU(0),
         .PaddingValue(0),
         .DSPCascades(Convolve3Cascades),

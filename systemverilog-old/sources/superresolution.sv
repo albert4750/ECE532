@@ -45,24 +45,28 @@ module superresolution #(
     bit [0:2][7:0] in_data_fast, out_data_fast;
     /* verilator lint_on ASCRANGE */
 
-    axis_data_fifo_0 input_fifo_inst (
-        .s_axis_aresetn(reset_slow_i),
-        .m_axis_aresetn(reset_fast_i),
+    assign in_valid_fast = slave_valid_i;
+    assign slave_ready_o = in_ready_fast;
+    assign in_data_fast  = in_data_slow;
 
-        .s_axis_aclk  (clock_slow_i),
-        .s_axis_tvalid(slave_valid_i),
-        .s_axis_tready(slave_ready_o),
-        .s_axis_tdata (in_data_slow),
+    // axis_data_fifo_0 input_fifo_inst (
+    //     .s_axis_aresetn(reset_slow_i),
+    //     .m_axis_aresetn(reset_fast_i),
 
-        .m_axis_aclk  (clock_fast_i),
-        .m_axis_tvalid(in_valid_fast),
-        .m_axis_tready(in_ready_fast),
-        .m_axis_tdata (in_data_fast),
+    //     .s_axis_aclk  (clock_slow_i),
+    //     .s_axis_tvalid(slave_valid_i),
+    //     .s_axis_tready(slave_ready_o),
+    //     .s_axis_tdata (in_data_slow),
 
-        .axis_data_count   (),
-        .axis_wr_data_count(),
-        .axis_rd_data_count()
-    );
+    //     .m_axis_aclk  (clock_fast_i),
+    //     .m_axis_tvalid(in_valid_fast),
+    //     .m_axis_tready(in_ready_fast),
+    //     .m_axis_tdata (in_data_fast),
+
+    //     .axis_data_count   (),
+    //     .axis_wr_data_count(),
+    //     .axis_rd_data_count()
+    // );
 
     typedef bit signed [9:0] int10_t;
 
@@ -93,8 +97,8 @@ module superresolution #(
             .Height(Height),
             .Width (Width)
         ) srcnn_small_inst (
-            .clock_i(clock_fast_i),
-            .reset_i(reset_fast_i),
+            .clock_i(clock_slow_i),
+            .reset_i(reset_slow_i),
 
             .slave_valid_i(in_valid_fast),
             .slave_ready_o(in_ready_fast),
@@ -110,8 +114,8 @@ module superresolution #(
             .Height(Height),
             .Width (Width)
         ) srcnn_large_inst (
-            .clock_i(clock_fast_i),
-            .reset_i(reset_fast_i),
+            .clock_i(clock_slow_i),
+            .reset_i(reset_slow_i),
 
             .slave_valid_i(in_valid_fast),
             .slave_ready_o(in_ready_fast),
@@ -126,24 +130,28 @@ module superresolution #(
         $error("Invalid variant: %s", Variant);
     end : g_invalid_variant
 
-    axis_data_fifo_0 output_fifo_inst (
-        .s_axis_aresetn(reset_fast_i),
-        .m_axis_aresetn(reset_slow_i),
+    assign master_valid_o = out_valid_fast;
+    assign out_ready_fast = master_ready_i;
+    assign out_data_slow  = out_data_fast;
 
-        .s_axis_aclk  (clock_fast_i),
-        .s_axis_tvalid(out_valid_fast),
-        .s_axis_tready(out_ready_fast),
-        .s_axis_tdata (out_data_fast),
+    // axis_data_fifo_0 output_fifo_inst (
+    //     .s_axis_aresetn(reset_fast_i),
+    //     .m_axis_aresetn(reset_slow_i),
 
-        .m_axis_aclk  (clock_slow_i),
-        .m_axis_tvalid(master_valid_o),
-        .m_axis_tready(master_ready_i),
-        .m_axis_tdata (out_data_slow),
+    //     .s_axis_aclk  (clock_fast_i),
+    //     .s_axis_tvalid(out_valid_fast),
+    //     .s_axis_tready(out_ready_fast),
+    //     .s_axis_tdata (out_data_fast),
 
-        .axis_data_count   (),
-        .axis_wr_data_count(),
-        .axis_rd_data_count()
-    );
+    //     .m_axis_aclk  (clock_slow_i),
+    //     .m_axis_tvalid(master_valid_o),
+    //     .m_axis_tready(master_ready_i),
+    //     .m_axis_tdata (out_data_slow),
+
+    //     .axis_data_count   (),
+    //     .axis_wr_data_count(),
+    //     .axis_rd_data_count()
+    // );
 
     typedef bit [$clog2(Height)-1:0] row_t;
     typedef bit [$clog2(Width)-1:0] column_t;
