@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 
-// srcnn_small.sv
+// srcnn_large
 //
-// This module is a small-scale implementation of the SRCNN algorithm.
+// This module is a large-scale implementation of the SRCNN algorithm.
 
-module srcnn_small #(
+module srcnn_large #(
     parameter int Height = 480,
     parameter int Width = 640,
     localparam int ActivationWidth = 10,
@@ -22,19 +22,37 @@ module srcnn_small #(
     output bit [2:0][ActivationWidth-1:0] master_data_o
 );
 
-    localparam int N1 = 8, N2 = 8;
-    localparam int F1 = 3, F2 = 3, F3 = 3;
+    localparam int N1 = 9, N2 = 12;
+    localparam int F1 = 8, F2 = 1, F3 = 3;
 
     localparam int SumWidth = 37;
-    localparam int WeightSharing = 2;
+    localparam int WeightSharing = 3;
 
     /* verilator lint_off ASCRANGE */
-    `include "./srcnn_small/weight1.svh"
-    `include "./srcnn_small/bias1.svh"
-    `include "./srcnn_small/weight2.svh"
-    `include "./srcnn_small/bias2.svh"
-    `include "./srcnn_small/weight3.svh"
-    `include "./srcnn_small/bias3.svh"
+    localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][WeightWidth-1:0] Weight1 =
+        {N1{{3{
+            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
+            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
+            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
+            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
+            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
+            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
+            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
+            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1
+        }}}};
+    localparam bit signed [0:N1-1][SumWidth-1:0] Bias1 = '{default: 0};
+
+    localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][WeightWidth-1:0] Weight2 =
+        {N2{20'd4, 20'd4, 20'd4, 20'd4, 20'd0, 20'd4, 20'd4, 20'd4, 20'd4}};
+    localparam bit signed [0:N2-1][SumWidth-1:0] Bias2 = '{default: 0};
+
+    localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][WeightWidth-1:0] Weight3 =
+        {3{{N2{
+            20'd4, 20'd4, 20'd4,
+            20'd4, 20'd0, 20'd4,
+            20'd4, 20'd4, 20'd4
+        }}}};
+    localparam bit signed [0:2][SumWidth-1:0] Bias3 = '{default: 0};
     /* verilator lint_on ASCRANGE */
 
     bit slice1_valid;
@@ -60,10 +78,10 @@ module srcnn_small #(
     bit conv1_ready;
     bit [N1-1:0][ActivationWidth-1:0] conv1_data;
 
-    localparam int Conv1MaxDSPColumnsInCascade = 1;
-    localparam int Conv1DSPsInColumn[N1][Conv1MaxDSPColumnsInCascade] = '{default: '{15}};
+    localparam int Conv1MaxDSPColumnsInCascade = 3;
+    localparam int Conv1DSPsInColumn[N1][Conv1MaxDSPColumnsInCascade] = '{default: '{30, 30, 4}};
     localparam int Conv1LatenciesBetweenDSPColumns[N1][Conv1MaxDSPColumnsInCascade+1] = '{
-        default: '{0, 0}
+        default: '{0, 4, 4, 0}
     };
 
     full_convolution #(
@@ -71,10 +89,10 @@ module srcnn_small #(
         .OutChannels(N1),
         .KernelHeight(F1),
         .KernelWidth(F1),
-        .PaddingTop(F1 / 2),
-        .PaddingBottom(F1 / 2),
-        .PaddingLeft(F1 / 2),
-        .PaddingRight(F1 / 2),
+        .PaddingTop(3),
+        .PaddingBottom(4),
+        .PaddingLeft(3),
+        .PaddingRight(4),
         .PaddingValue(0),
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
@@ -83,7 +101,7 @@ module srcnn_small #(
         .InWidth(Width),
         .Weight(Weight1),
         .Bias(Bias1),
-        .RightShift(20),
+        .RightShift(6),
         .ReLU(1),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv1MaxDSPColumnsInCascade),
@@ -125,30 +143,23 @@ module srcnn_small #(
     bit conv2_ready;
     bit [N2-1:0][ActivationWidth-1:0] conv2_data;
 
-    localparam int Conv2MaxDSPColumnsInCascade = 2;
-    localparam int Conv2DSPsInColumn[N2][Conv2MaxDSPColumnsInCascade] = '{default: '{30, 6}};
+    localparam int Conv2MaxDSPColumnsInCascade = 1;
+    localparam int Conv2DSPsInColumn[N2][Conv2MaxDSPColumnsInCascade] = '{default: '{3}};
     localparam int Conv2LatenciesBetweenDSPColumns[N2][Conv2MaxDSPColumnsInCascade+1] = '{
-        default: '{0, 4, 0}
+        default: '{0, 0}
     };
 
-    full_convolution #(
+    horizontal_convolution #(
         .InChannels(N1),
         .OutChannels(N2),
-        .KernelHeight(F2),
-        .KernelWidth(F2),
-        .PaddingTop(F2 / 2),
-        .PaddingBottom(F2 / 2),
-        .PaddingLeft(F2 / 2),
-        .PaddingRight(F2 / 2),
-        .PaddingValue(0),
+        .KernelWidth(1),
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
         .SumWidth(SumWidth),
-        .InHeight(Height),
         .InWidth(Width),
         .Weight(Weight2),
         .Bias(Bias2),
-        .RightShift(20),
+        .RightShift(8),
         .ReLU(1),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv2MaxDSPColumnsInCascade),
@@ -213,7 +224,7 @@ module srcnn_small #(
         .InWidth(Width),
         .Weight(Weight3),
         .Bias(Bias3),
-        .RightShift(20),
+        .RightShift(8),
         .ReLU(0),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv3MaxDSPColumnsInCascade),
@@ -247,4 +258,4 @@ module srcnn_small #(
         .master_data_o (master_data_o)
     );
 
-endmodule : srcnn_small
+endmodule : srcnn_large

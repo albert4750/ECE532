@@ -68,6 +68,23 @@ module superresolution #(
             .master_data_o (scaled_output)
         );
     end : gen_srcnn_small
+    else if (Variant == "large") begin : gen_srcnn_large
+        srcnn_large #(
+            .Height(Height),
+            .Width (Width)
+        ) srcnn_large_inst (
+            .clock_i(clock_i),
+            .reset_i(reset_i),
+
+            .slave_valid_i(slave_valid_i),
+            .slave_ready_o(slave_ready_o),
+            .slave_data_i (scaled_input),
+
+            .master_valid_o(master_valid_o),
+            .master_ready_i(master_ready_i),
+            .master_data_o (scaled_output)
+        );
+    end : gen_srcnn_large
     else begin : gen_invalid_variant
         $error("Invalid variant: %s", Variant);
     end : gen_invalid_variant
