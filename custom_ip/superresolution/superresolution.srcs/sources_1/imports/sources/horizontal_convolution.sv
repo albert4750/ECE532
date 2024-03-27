@@ -265,7 +265,7 @@ module horizontal_convolution #(
         activation_t interleaved_activation;
         assign interleaved_activation = activation[delayed_input_state[0]];
 
-        activation_t delayed_activation[MaxInputLatency+1];
+        (* ram_style = "distributed" *) activation_t delayed_activation[MaxInputLatency+1];
         assign delayed_activation[0] = interleaved_activation;
         if (MaxInputLatency > 0) begin : gen_delayed_activation
             always_ff @(posedge clock_i) begin
