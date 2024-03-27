@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?scdStore version="2"?><scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
-<instance id="xilinx.gnu.mb.exe.debug.1218945034;xilinx.gnu.mb.exe.debug.1218945034.">
+<instance id="xilinx.gnu.mb.exe.debug.1365866219;xilinx.gnu.mb.exe.debug.1365866219.">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="c:\xilinx\sdk\2018.2\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/7.2.0/include"/>
 <includePath path="c:\xilinx\sdk\2018.2\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/7.2.0/include-fixed"/>
 <includePath path="c:\xilinx\sdk\2018.2\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/7.2.0/../../../../microblaze-xilinx-elf/include"/>
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../lib/gcc/microblaze-xilinx-elf/7.2.0/include"/>
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../lib/gcc/microblaze-xilinx-elf/7.2.0/include-fixed"/>
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../lib/gcc/microblaze-xilinx-elf/7.2.0/../../../../microblaze-xilinx-elf/include"/>
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../microblaze-xilinx-elf/sysroot/usr/include"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_VERSION__=201112L"/>
 <definedSymbol symbol="__STDC_UTF_16__=1"/>
@@ -289,12 +285,11 @@
 <definedSymbol symbol="__MICROBLAZEEB__=1"/>
 </collector>
 </instance>
-<instance id="xilinx.gnu.mb.exe.release.391848311;xilinx.gnu.mb.exe.release.391848311.">
+<instance id="xilinx.gnu.mb.exe.release.1438298035;xilinx.gnu.mb.exe.release.1438298035.">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../lib/gcc/microblaze-xilinx-elf/7.2.0/include"/>
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../lib/gcc/microblaze-xilinx-elf/7.2.0/include-fixed"/>
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../lib/gcc/microblaze-xilinx-elf/7.2.0/../../../../microblaze-xilinx-elf/include"/>
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../microblaze-xilinx-elf/sysroot/usr/include"/>
+<includePath path="c:\xilinx\sdk\2018.2\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/7.2.0/include"/>
+<includePath path="c:\xilinx\sdk\2018.2\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/7.2.0/include-fixed"/>
+<includePath path="c:\xilinx\sdk\2018.2\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/7.2.0/../../../../microblaze-xilinx-elf/include"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_VERSION__=201112L"/>
 <definedSymbol symbol="__STDC_UTF_16__=1"/>
@@ -575,15 +570,11 @@
 <definedSymbol symbol="__MICROBLAZEEB__=1"/>
 </collector>
 </instance>
-<instance id="xilinx.gnu.mb.exe.debug.1218945034;xilinx.gnu.mb.exe.debug.1218945034.;xilinx.gnu.mb.c.toolchain.compiler.debug.1136233297;xilinx.gnu.compiler.input.1411380676">
+<instance id="xilinx.gnu.mb.exe.debug.1365866219;xilinx.gnu.mb.exe.debug.1365866219.;xilinx.gnu.mb.c.toolchain.compiler.debug.497471088;xilinx.gnu.compiler.input.498486261">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
 <includePath path="c:\xilinx\sdk\2018.2\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/7.2.0/include"/>
 <includePath path="c:\xilinx\sdk\2018.2\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/7.2.0/include-fixed"/>
 <includePath path="c:\xilinx\sdk\2018.2\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/7.2.0/../../../../microblaze-xilinx-elf/include"/>
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../lib/gcc/microblaze-xilinx-elf/7.2.0/include"/>
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../lib/gcc/microblaze-xilinx-elf/7.2.0/include-fixed"/>
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../lib/gcc/microblaze-xilinx-elf/7.2.0/../../../../microblaze-xilinx-elf/include"/>
-<includePath path="/opt/Xilinx/SDK/2018.2/gnu/microblaze/lin/bin/../microblaze-xilinx-elf/sysroot/usr/include"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__STDC_VERSION__=201112L"/>
 <definedSymbol symbol="__STDC_UTF_16__=1"/>

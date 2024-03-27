@@ -1,11 +1,11 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
--- Date        : Thu Feb 29 17:54:40 2024
--- Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+-- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+-- Date        : Tue Feb 13 00:34:30 2024
+-- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top hdmi_auto_us_3 -prefix
---               hdmi_auto_us_3_ hdmi_auto_us_5_stub.vhdl
--- Design      : hdmi_auto_us_5
+--               hdmi_auto_us_3_ hdmi_auto_us_1_stub.vhdl
+-- Design      : hdmi_auto_us_1
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a200tsbg484-1
 -- --------------------------------------------------------------------------------
@@ -64,6 +64,6 @@ attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
 attribute black_box_pad_pin of stub : architecture is "s_axi_aclk,s_axi_aresetn,s_axi_awaddr[31:0],s_axi_awlen[7:0],s_axi_awsize[2:0],s_axi_awburst[1:0],s_axi_awlock[0:0],s_axi_awcache[3:0],s_axi_awprot[2:0],s_axi_awregion[3:0],s_axi_awqos[3:0],s_axi_awvalid,s_axi_awready,s_axi_wdata[127:0],s_axi_wstrb[15:0],s_axi_wlast,s_axi_wvalid,s_axi_wready,s_axi_bresp[1:0],s_axi_bvalid,s_axi_bready,m_axi_awaddr[31:0],m_axi_awlen[7:0],m_axi_awsize[2:0],m_axi_awburst[1:0],m_axi_awlock[0:0],m_axi_awcache[3:0],m_axi_awprot[2:0],m_axi_awregion[3:0],m_axi_awqos[3:0],m_axi_awvalid,m_axi_awready,m_axi_wdata[255:0],m_axi_wstrb[31:0],m_axi_wlast,m_axi_wvalid,m_axi_wready,m_axi_bresp[1:0],m_axi_bvalid,m_axi_bready";
 attribute X_CORE_INFO : string;
-attribute X_CORE_INFO of stub : architecture is "axi_dwidth_converter_v2_1_17_top,Vivado 2018.2";
+attribute X_CORE_INFO of stub : architecture is "axi_dwidth_converter_v2_1_17_top,Vivado 2018.2.2";
 begin
 end;

@@ -53,7 +53,7 @@
 #define VID_VTC_ID XPAR_VTC_1_DEVICE_ID
 #define VID_GPIO_ID XPAR_AXI_GPIO_VIDEO_DEVICE_ID
 #define VID_VTC_IRPT_ID XPAR_INTC_0_VTC_1_VEC_ID
-#define VID_GPIO_IRPT_ID XPAR_INTC_0_GPIO_0_VEC_ID
+#define VID_GPIO_IRPT_ID XPAR_INTC_0_GPIO_1_VEC_ID
 #define SCU_TIMER_ID XPAR_AXI_TIMER_0_DEVICE_ID
 #define UART_BASEADDR XPAR_UARTLITE_0_BASEADDR
 
@@ -293,6 +293,8 @@ void DemoRun()
 	char userInput = 0;
 	u32 locked;
 	XGpio *GpioPtr = &videoCapt.gpio;
+	volatile u32* led = XPAR_AXI_GPIO_0_BASEADDR;
+	volatile u32* swt = XPAR_AXI_GPIO_0_BASEADDR + 8;
 
 	/* Flush UART FIFO */
 	while (!XUartLite_IsReceiveEmpty(UART_BASEADDR))
@@ -385,6 +387,7 @@ void DemoRun()
 			break;
 		case 's':
 			xil_printf("\n\rSwitching DMA mode\n\r");
+			*led = *swt;
 			dmaMode = (dmaMode + 1) % 6;
 			xil_printf("DMA mode is now %u\n\r", dmaMode);
 			break;

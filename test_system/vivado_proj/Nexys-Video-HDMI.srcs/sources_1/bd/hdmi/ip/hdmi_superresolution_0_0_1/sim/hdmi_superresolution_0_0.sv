@@ -47,7 +47,7 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: ece532.group3.org:ece532:superresolution:1.1
+// IP VLNV: ece532.group3.org:ece532:superresolution:1.6
 // IP Revision: 2
 
 `timescale 1ns/1ps
@@ -55,10 +55,8 @@
 (* IP_DEFINITION_SOURCE = "package_project" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module hdmi_superresolution_0_0 (
-  clock_slow_i,
-  clock_fast_i,
-  reset_slow_i,
-  reset_fast_i,
+  clock_i,
+  reset_i,
   slave_valid_i,
   slave_ready_o,
   slave_red_i,
@@ -72,18 +70,12 @@ module hdmi_superresolution_0_0 (
   master_last_o
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clock_slow_i, FREQ_HZ 100000000, PHASE 0, CLK_DOMAIN hdmi_mig_7series_0_0_ui_clk" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clock_slow_i CLK" *)
-input wire clock_slow_i;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clock_fast_i, FREQ_HZ 100000000, PHASE 0.0, CLK_DOMAIN /clk_wiz_0_clk_out1" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clock_fast_i CLK" *)
-input wire clock_fast_i;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_slow_i, POLARITY ACTIVE_LOW" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_slow_i RST" *)
-input wire reset_slow_i;
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_fast_i, POLARITY ACTIVE_LOW" *)
-(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_fast_i RST" *)
-input wire reset_fast_i;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clock_i, ASSOCIATED_RESET reset_i, FREQ_HZ 100000000, PHASE 0, CLK_DOMAIN hdmi_mig_7series_0_0_ui_clk" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clock_i CLK" *)
+input wire clock_i;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME reset_i, POLARITY ACTIVE_LOW" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 reset_i RST" *)
+input wire reset_i;
 input wire slave_valid_i;
 output wire slave_ready_o;
 input wire [7 : 0] slave_red_i;
@@ -101,10 +93,8 @@ output wire master_last_o;
     .Width(1920),
     .Variant("small")
   ) inst (
-    .clock_slow_i(clock_slow_i),
-    .clock_fast_i(clock_fast_i),
-    .reset_slow_i(reset_slow_i),
-    .reset_fast_i(reset_fast_i),
+    .clock_i(clock_i),
+    .reset_i(reset_i),
     .slave_valid_i(slave_valid_i),
     .slave_ready_o(slave_ready_o),
     .slave_red_i(slave_red_i),

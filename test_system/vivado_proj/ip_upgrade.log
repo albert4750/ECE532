@@ -1,4 +1,191 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+| Date         : Tue Mar 26 23:43:07 2024
+| Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_superresolution_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of hdmi_superresolution_0_0 from ece532.group3.org:ece532:superresolution:1.1 (Rev. 2) to ece532.group3.org:ece532:superresolution:1.6 (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'hdmi_superresolution_0_0'.
+
+
+-Upgrade has removed interface 'clock_fast_i'
+
+-Upgrade has removed interface 'clock_slow_i'
+
+-Upgrade has removed interface 'reset_fast_i'
+
+-Upgrade has removed interface 'reset_slow_i'
+
+-Upgrade has added interface 'clock_i' (xilinx.com:signal:clock:1.0)
+
+-Upgrade has added interface 'reset_i' (xilinx.com:signal:reset:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'hdmi_superresolution_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'clock_fast_i'
+
+-Upgrade has removed port 'clock_slow_i'
+
+-Upgrade has removed port 'reset_fast_i'
+
+-Upgrade has removed port 'reset_slow_i'
+
+-Upgrade has added port 'clock_i'
+
+-Upgrade has added port 'reset_i'
+
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+| Date         : Tue Mar 26 23:43:07 2024
+| Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_axi_dma_4_1'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of hdmi_axi_dma_4_1 (xilinx.com:ip:axi_dma:7.1 (Rev. 18)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+| Date         : Tue Mar 26 23:43:07 2024
+| Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_axi_dma_4_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of hdmi_axi_dma_4_0 (xilinx.com:ip:axi_dma:7.1 (Rev. 18)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+| Date         : Tue Mar 26 23:43:07 2024
+| Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_axi_dma_3_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of hdmi_axi_dma_3_0 (xilinx.com:ip:axi_dma:7.1 (Rev. 18)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+| Date         : Tue Mar 26 23:43:07 2024
+| Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_axi_dma_2_1'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of hdmi_axi_dma_2_1 (xilinx.com:ip:axi_dma:7.1 (Rev. 18)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+| Date         : Tue Mar 26 23:43:07 2024
+| Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_axi_dma_2_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of hdmi_axi_dma_2_0 (xilinx.com:ip:axi_dma:7.1 (Rev. 18)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+| Date         : Tue Mar 26 23:43:07 2024
+| Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_axi_dma_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of hdmi_axi_dma_0_0 (xilinx.com:ip:axi_dma:7.1 (Rev. 18)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
 | Date         : Mon Mar 25 17:38:33 2024

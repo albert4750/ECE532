@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Mar 25 20:14:58 2024" VIVADOVERSION="2018.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar 26 23:44:24 2024" VIVADOVERSION="2018.2.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys_video:part0:1.1" DEVICE="7a200t" NAME="hdmi" PACKAGE="sbg484" SPEEDGRADE="-1"/>
 
@@ -157,7 +157,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -317,7 +317,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -577,7 +577,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -737,7 +737,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -1534,7 +1534,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -1694,7 +1694,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -1954,7 +1954,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -2114,7 +2114,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -2911,7 +2911,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -3071,7 +3071,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -3331,7 +3331,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -3491,7 +3491,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -4288,7 +4288,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -4448,7 +4448,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -4708,7 +4708,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -4868,7 +4868,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -5665,7 +5665,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -5825,7 +5825,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -6085,7 +6085,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -6245,7 +6245,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -7042,7 +7042,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -7202,7 +7202,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. Refer to the Scatter Gather Descriptor section for more information.This indicates to the SG Engine that the descriptor is a stale descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected. DMA Engine halts.  Note: This bit is not used and is fixed at 0 when AXI DMA is configured for Direct Register Mode.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -7462,7 +7462,7 @@
               <PROPERTY NAME="RESET_VALUE" VALUE="0x10002"/>
               <FIELDS>
                 <FIELD NAME="RS">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop  DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run  Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Run / Stop control for controlling running and stopping of the DMA channel.&#xA;  0 - Stop – DMA stops when current (if any) DMA operations are complete. For Scatter / Gather Mode pending commands/transfers are flushed or completed. &#xA;  AXI4-Stream outs are potentially terminated early. Descriptors in the update queue are allowed to finish updating to remote memory before engine halt.&#xA;  For Direct Register mode pending commands/transfers are flushed or completed. AXI4-Stream outs are potentially terminated. Data integrity on S2MM AXI4 cannot be guaranteed.&#xA;  The halted bit in the DMA Status register asserts to 1 when the DMA engine is halted. This bit is cleared by AXI DMA hardware when an error occurs. The CPU can also choose to clear this bit to stop DMA operations.&#xA;  1 - Run – Start DMA operations. The halted bit in the DMA Status register deasserts to 0 when the DMA engine begins operations.&#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-write"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -7622,7 +7622,7 @@
                   <PROPERTY NAME="BIT_WIDTH" VALUE="1"/>
                 </FIELD>
                 <FIELD NAME="SGIntErr">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the Complete bit already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Scatter Gather Internal Error. This error occurs if a descriptor with the “Complete bit” already set is fetched. This indicates to the SG Engine that the descriptor is a tail descriptor. This error condition causes the AXI DMA to halt gracefully. The DMACR.RS bit is set to 0, and when the engine has completely shut down, the DMASR.Halted bit is set to 1.      0 - No SG Internal Errors.      1 - SG Internal Error detected.  Note: Applicable only when Scatter Gather is enabled. &#xA;"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="8"/>
                   <PROPERTY NAME="ACCESS" VALUE="read-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -11258,20 +11258,74 @@
             <CONNECTION INSTANCE="axi_dma_5" PORT="m_axi_s2mm_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S07_AXI_awid" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="31" NAME="S06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_araddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_araddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="S06_AXI_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arburst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arburst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="3" NAME="S06_AXI_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arcache">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arcache"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="S06_AXI_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arlen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arlen"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S06_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arprot">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arprot"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S06_AXI_arready" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="2" NAME="S06_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arsize">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arsize"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S06_AXI_arvalid" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="127" NAME="S06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_rdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S06_AXI_rlast" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_rlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_rlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="S06_AXI_rready" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_rready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="S06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_rresp">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_rresp"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="S06_AXI_rvalid" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_rvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_rvalid"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="31" NAME="S07_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_awaddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="7" NAME="S07_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_awlen">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_awlen"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S07_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_awsize">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_awsize"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="1" NAME="S07_AXI_awburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_awburst">
@@ -11279,10 +11333,14 @@
             <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_awburst"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S07_AXI_awlock" SIGIS="undef"/>
         <PORT DIR="I" LEFT="3" NAME="S07_AXI_awcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_awcache">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_awcache"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="S07_AXI_awlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_awlen">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_awlen"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="2" NAME="S07_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_awprot">
@@ -11290,43 +11348,26 @@
             <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_awprot"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S07_AXI_awqos" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S07_AXI_awvalid" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" NAME="S07_AXI_awready" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="127" NAME="S07_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_wdata">
+        <PORT DIR="I" LEFT="2" NAME="S07_AXI_awsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_awsize">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_wdata"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_awsize"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="15" NAME="S07_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_wstrb">
+        <PORT DIR="I" NAME="S07_AXI_awvalid" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_wstrb"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S07_AXI_wlast" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_wlast">
+        <PORT DIR="I" NAME="S07_AXI_bready" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_wlast"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S07_AXI_wvalid" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="S07_AXI_wready" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_wready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="S07_AXI_bid" SIGIS="undef"/>
         <PORT DIR="O" LEFT="1" NAME="S07_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_bresp">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_bresp"/>
@@ -11337,115 +11378,29 @@
             <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S07_AXI_bready" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_bready">
+        <PORT DIR="I" LEFT="127" NAME="S07_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_bready"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_wdata"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="S07_AXI_arid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S07_AXI_araddr" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S07_AXI_arlen" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S07_AXI_arsize" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S07_AXI_arburst" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S07_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S07_AXI_arcache" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S07_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S07_AXI_arqos" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S07_AXI_arvalid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S07_AXI_arready" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S07_AXI_rid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S07_AXI_rdata" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S07_AXI_rresp" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S07_AXI_rlast" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S07_AXI_rvalid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S07_AXI_rready" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_awid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_awaddr" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_awlen" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_awsize" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_awburst" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_awlock" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_awcache" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_awqos" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_awvalid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S06_AXI_awready" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_wdata" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_wstrb" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_wlast" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_wvalid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S06_AXI_wready" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S06_AXI_bid" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S06_AXI_bresp" SIGIS="undef"/>
-        <PORT DIR="O" NAME="S06_AXI_bvalid" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_bready" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_arid" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="31" NAME="S06_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_araddr">
+        <PORT DIR="I" NAME="S07_AXI_wlast" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_wlast">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_araddr"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_wlast"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="S06_AXI_arlen" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arlen">
+        <PORT DIR="O" NAME="S07_AXI_wready" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arlen"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_wready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S06_AXI_arsize" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arsize">
+        <PORT DIR="I" LEFT="15" NAME="S07_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_wstrb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arsize"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_wstrb"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="1" NAME="S06_AXI_arburst" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arburst">
+        <PORT DIR="I" NAME="S07_AXI_wvalid" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_s2mm_wvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arburst"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S06_AXI_arlock" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="S06_AXI_arcache" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arcache">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arcache"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" LEFT="2" NAME="S06_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arprot">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arprot"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S06_AXI_arqos" SIGIS="undef"/>
-        <PORT DIR="I" NAME="S06_AXI_arvalid" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="S06_AXI_arready" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_arready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="S06_AXI_rid" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="127" NAME="S06_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_rdata">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_rdata"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="1" NAME="S06_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_rresp">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_rresp"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="S06_AXI_rlast" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_rlast">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_rlast"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="S06_AXI_rvalid" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_rvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_rvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="S06_AXI_rready" SIGIS="undef" SIGNAME="axi_dma_6_m_axi_mm2s_rready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_rready"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_wvalid"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -11649,84 +11604,39 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axi_dma_6_M_AXI_MM2S" DATAWIDTH="128" NAME="S06_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
-            <PORTMAP LOGICAL="AWID" PHYSICAL="S06_AXI_awid"/>
-            <PORTMAP LOGICAL="AWADDR" PHYSICAL="S06_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="S06_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="S06_AXI_awsize"/>
-            <PORTMAP LOGICAL="AWBURST" PHYSICAL="S06_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="S06_AXI_awlock"/>
-            <PORTMAP LOGICAL="AWCACHE" PHYSICAL="S06_AXI_awcache"/>
-            <PORTMAP LOGICAL="AWPROT" PHYSICAL="S06_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWQOS" PHYSICAL="S06_AXI_awqos"/>
-            <PORTMAP LOGICAL="AWVALID" PHYSICAL="S06_AXI_awvalid"/>
-            <PORTMAP LOGICAL="AWREADY" PHYSICAL="S06_AXI_awready"/>
-            <PORTMAP LOGICAL="WDATA" PHYSICAL="S06_AXI_wdata"/>
-            <PORTMAP LOGICAL="WSTRB" PHYSICAL="S06_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="S06_AXI_wlast"/>
-            <PORTMAP LOGICAL="WVALID" PHYSICAL="S06_AXI_wvalid"/>
-            <PORTMAP LOGICAL="WREADY" PHYSICAL="S06_AXI_wready"/>
-            <PORTMAP LOGICAL="BID" PHYSICAL="S06_AXI_bid"/>
-            <PORTMAP LOGICAL="BRESP" PHYSICAL="S06_AXI_bresp"/>
-            <PORTMAP LOGICAL="BVALID" PHYSICAL="S06_AXI_bvalid"/>
-            <PORTMAP LOGICAL="BREADY" PHYSICAL="S06_AXI_bready"/>
-            <PORTMAP LOGICAL="ARID" PHYSICAL="S06_AXI_arid"/>
             <PORTMAP LOGICAL="ARADDR" PHYSICAL="S06_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="S06_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="S06_AXI_arsize"/>
             <PORTMAP LOGICAL="ARBURST" PHYSICAL="S06_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="S06_AXI_arlock"/>
             <PORTMAP LOGICAL="ARCACHE" PHYSICAL="S06_AXI_arcache"/>
+            <PORTMAP LOGICAL="ARLEN" PHYSICAL="S06_AXI_arlen"/>
             <PORTMAP LOGICAL="ARPROT" PHYSICAL="S06_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARQOS" PHYSICAL="S06_AXI_arqos"/>
-            <PORTMAP LOGICAL="ARVALID" PHYSICAL="S06_AXI_arvalid"/>
             <PORTMAP LOGICAL="ARREADY" PHYSICAL="S06_AXI_arready"/>
-            <PORTMAP LOGICAL="RID" PHYSICAL="S06_AXI_rid"/>
+            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="S06_AXI_arsize"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="S06_AXI_arvalid"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="S06_AXI_rdata"/>
-            <PORTMAP LOGICAL="RRESP" PHYSICAL="S06_AXI_rresp"/>
             <PORTMAP LOGICAL="RLAST" PHYSICAL="S06_AXI_rlast"/>
-            <PORTMAP LOGICAL="RVALID" PHYSICAL="S06_AXI_rvalid"/>
             <PORTMAP LOGICAL="RREADY" PHYSICAL="S06_AXI_rready"/>
+            <PORTMAP LOGICAL="RRESP" PHYSICAL="S06_AXI_rresp"/>
+            <PORTMAP LOGICAL="RVALID" PHYSICAL="S06_AXI_rvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axi_dma_6_M_AXI_S2MM" DATAWIDTH="128" NAME="S07_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
-            <PORTMAP LOGICAL="AWID" PHYSICAL="S07_AXI_awid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="S07_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWLEN" PHYSICAL="S07_AXI_awlen"/>
-            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="S07_AXI_awsize"/>
             <PORTMAP LOGICAL="AWBURST" PHYSICAL="S07_AXI_awburst"/>
-            <PORTMAP LOGICAL="AWLOCK" PHYSICAL="S07_AXI_awlock"/>
             <PORTMAP LOGICAL="AWCACHE" PHYSICAL="S07_AXI_awcache"/>
+            <PORTMAP LOGICAL="AWLEN" PHYSICAL="S07_AXI_awlen"/>
             <PORTMAP LOGICAL="AWPROT" PHYSICAL="S07_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWQOS" PHYSICAL="S07_AXI_awqos"/>
-            <PORTMAP LOGICAL="AWVALID" PHYSICAL="S07_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="S07_AXI_awready"/>
-            <PORTMAP LOGICAL="WDATA" PHYSICAL="S07_AXI_wdata"/>
-            <PORTMAP LOGICAL="WSTRB" PHYSICAL="S07_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WLAST" PHYSICAL="S07_AXI_wlast"/>
-            <PORTMAP LOGICAL="WVALID" PHYSICAL="S07_AXI_wvalid"/>
-            <PORTMAP LOGICAL="WREADY" PHYSICAL="S07_AXI_wready"/>
-            <PORTMAP LOGICAL="BID" PHYSICAL="S07_AXI_bid"/>
+            <PORTMAP LOGICAL="AWSIZE" PHYSICAL="S07_AXI_awsize"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="S07_AXI_awvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="S07_AXI_bready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="S07_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="S07_AXI_bvalid"/>
-            <PORTMAP LOGICAL="BREADY" PHYSICAL="S07_AXI_bready"/>
-            <PORTMAP LOGICAL="ARID" PHYSICAL="S07_AXI_arid"/>
-            <PORTMAP LOGICAL="ARADDR" PHYSICAL="S07_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARLEN" PHYSICAL="S07_AXI_arlen"/>
-            <PORTMAP LOGICAL="ARSIZE" PHYSICAL="S07_AXI_arsize"/>
-            <PORTMAP LOGICAL="ARBURST" PHYSICAL="S07_AXI_arburst"/>
-            <PORTMAP LOGICAL="ARLOCK" PHYSICAL="S07_AXI_arlock"/>
-            <PORTMAP LOGICAL="ARCACHE" PHYSICAL="S07_AXI_arcache"/>
-            <PORTMAP LOGICAL="ARPROT" PHYSICAL="S07_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARQOS" PHYSICAL="S07_AXI_arqos"/>
-            <PORTMAP LOGICAL="ARVALID" PHYSICAL="S07_AXI_arvalid"/>
-            <PORTMAP LOGICAL="ARREADY" PHYSICAL="S07_AXI_arready"/>
-            <PORTMAP LOGICAL="RID" PHYSICAL="S07_AXI_rid"/>
-            <PORTMAP LOGICAL="RDATA" PHYSICAL="S07_AXI_rdata"/>
-            <PORTMAP LOGICAL="RRESP" PHYSICAL="S07_AXI_rresp"/>
-            <PORTMAP LOGICAL="RLAST" PHYSICAL="S07_AXI_rlast"/>
-            <PORTMAP LOGICAL="RVALID" PHYSICAL="S07_AXI_rvalid"/>
-            <PORTMAP LOGICAL="RREADY" PHYSICAL="S07_AXI_rready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="S07_AXI_wdata"/>
+            <PORTMAP LOGICAL="WLAST" PHYSICAL="S07_AXI_wlast"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="S07_AXI_wready"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="S07_AXI_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="S07_AXI_wvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="axi_dma_2_M_AXI_MM2S" DATAWIDTH="128" NAME="S08_AXI" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
@@ -16094,17 +16004,13 @@
             <CONNECTION INSTANCE="mig_7series_0" PORT="ui_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="superresolution_0" PORT="clock_fast_i"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clk_out1" SIGIS="clk"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
     <MODULE FULLNAME="/dvi2rgb_0" HWVERSION="2.0" INSTANCE="dvi2rgb_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="dvi2rgb" VLNV="digilentinc.com:ip:dvi2rgb:2.0">
       <DOCUMENTS>
-        <DOCUMENT SOURCE="/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0/vivado-library/ip/dvi2rgb/docs/dvi2rgb.pdf"/>
+        <DOCUMENT SOURCE="c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0/vivado-library/ip/dvi2rgb/docs/dvi2rgb.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="kEmulateDDC" VALUE="true"/>
@@ -19243,6 +19149,16 @@
             <CONNECTION INSTANCE="rst_mig_7series_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="M15_ACLK" SIGIS="clk" SIGNAME="mig_7series_0_ui_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="mig_7series_0" PORT="ui_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M15_ARESETN" SIGIS="rst" SIGNAME="rst_mig_7series_0_100M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_mig_7series_0_100M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="31" NAME="S00_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="microblaze_0_M_AXI_DP_ARADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="microblaze_0" PORT="M_AXI_DP_ARADDR"/>
@@ -20593,14 +20509,19 @@
             <CONNECTION INSTANCE="axi_timer_1" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M15_ACLK" SIGIS="clk" SIGNAME="mig_7series_0_ui_clk">
+        <PORT DIR="O" LEFT="31" NAME="M15_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="mig_7series_0" PORT="ui_clk"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M15_ARESETN" SIGIS="rst" SIGNAME="rst_mig_7series_0_100M_peripheral_aresetn">
+        <PORT DIR="I" NAME="M15_AXI_arready" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_mig_7series_0_100M" PORT="peripheral_aresetn"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M15_AXI_arvalid" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_arvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M15_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_awaddr">
@@ -20608,31 +20529,19 @@
             <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M15_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M15_AXI_awvalid" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="M15_AXI_awready" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M15_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_wdata">
+        <PORT DIR="O" NAME="M15_AXI_awvalid" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_wdata"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M15_AXI_wstrb" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M15_AXI_wvalid" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_wvalid">
+        <PORT DIR="O" NAME="M15_AXI_bready" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M15_AXI_wready" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_wready"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_bready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="1" NAME="M15_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_bresp">
@@ -20645,30 +20554,14 @@
             <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M15_AXI_bready" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M15_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M15_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M15_AXI_arvalid" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M15_AXI_arready" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_arready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="31" NAME="M15_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M15_AXI_rready" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="1" NAME="M15_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_rresp">
@@ -20681,9 +20574,19 @@
             <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M15_AXI_rready" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_rready">
+        <PORT DIR="O" LEFT="31" NAME="M15_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_rready"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M15_AXI_wready" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M15_AXI_wvalid" SIGIS="undef" SIGNAME="axi_dma_6_s_axi_lite_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_wvalid"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -21024,25 +20927,22 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="microblaze_0_axi_periph_M15_AXI" DATAWIDTH="32" NAME="M15_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="M15_AXI_araddr"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="M15_AXI_arready"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="M15_AXI_arvalid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M15_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWPROT" PHYSICAL="M15_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWVALID" PHYSICAL="M15_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M15_AXI_awready"/>
-            <PORTMAP LOGICAL="WDATA" PHYSICAL="M15_AXI_wdata"/>
-            <PORTMAP LOGICAL="WSTRB" PHYSICAL="M15_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WVALID" PHYSICAL="M15_AXI_wvalid"/>
-            <PORTMAP LOGICAL="WREADY" PHYSICAL="M15_AXI_wready"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="M15_AXI_awvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="M15_AXI_bready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M15_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M15_AXI_bvalid"/>
-            <PORTMAP LOGICAL="BREADY" PHYSICAL="M15_AXI_bready"/>
-            <PORTMAP LOGICAL="ARADDR" PHYSICAL="M15_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARPROT" PHYSICAL="M15_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARVALID" PHYSICAL="M15_AXI_arvalid"/>
-            <PORTMAP LOGICAL="ARREADY" PHYSICAL="M15_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M15_AXI_rdata"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="M15_AXI_rready"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M15_AXI_rresp"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M15_AXI_rvalid"/>
-            <PORTMAP LOGICAL="RREADY" PHYSICAL="M15_AXI_rready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="M15_AXI_wdata"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="M15_AXI_wready"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="M15_AXI_wvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -23299,6 +23199,11 @@
             <CONNECTION INSTANCE="stream2rgb_3" PORT="axi_clk"/>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="axi_timer_1" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="gaussian_blur" PORT="clock_i"/>
+            <CONNECTION INSTANCE="sharpening" PORT="clock_i"/>
+            <CONNECTION INSTANCE="rgb2stream_4" PORT="axi_clk"/>
+            <CONNECTION INSTANCE="stream2rgb_4" PORT="axi_clk"/>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="m_axi_mm2s_aclk"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="m_axi_s2mm_aclk"/>
@@ -23314,8 +23219,10 @@
             <CONNECTION INSTANCE="axi_dma_5" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="axi_dma_5" PORT="m_axi_mm2s_aclk"/>
             <CONNECTION INSTANCE="axi_dma_5" PORT="m_axi_s2mm_aclk"/>
-            <CONNECTION INSTANCE="gaussian_blur" PORT="clock_i"/>
-            <CONNECTION INSTANCE="sharpening" PORT="clock_i"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_aclk"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_aclk"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_aclk"/>
+            <CONNECTION INSTANCE="superresolution_0" PORT="clock_i"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ACLK"/>
@@ -23355,14 +23262,7 @@
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S14_ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S15_ACLK"/>
             <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="M14_ACLK"/>
-            <CONNECTION INSTANCE="rgb2stream_4" PORT="axi_clk"/>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_aclk"/>
-            <CONNECTION INSTANCE="stream2rgb_4" PORT="axi_clk"/>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_aclk"/>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="M15_ACLK"/>
-            <CONNECTION INSTANCE="superresolution_0" PORT="clock_slow_i"/>
-            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="160000000" DIR="O" NAME="ui_addn_clk_0" SIGIS="clk" SIGNAME="mig_7series_0_ui_addn_clk_0">
@@ -23790,7 +23690,7 @@
     </MODULE>
     <MODULE FULLNAME="/rgb2dvi_0" HWVERSION="1.4" INSTANCE="rgb2dvi_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="rgb2dvi" VLNV="digilentinc.com:ip:rgb2dvi:1.4">
       <DOCUMENTS>
-        <DOCUMENT SOURCE="/home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0/vivado-library/ip/rgb2dvi/docs/rgb2dvi.pdf"/>
+        <DOCUMENT SOURCE="c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.ipdefs/repo_0/vivado-library/ip/rgb2dvi/docs/rgb2dvi.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
         <PARAMETER NAME="kGenerateSerialClk" VALUE="false"/>
@@ -24418,13 +24318,18 @@
             <CONNECTION INSTANCE="stream2rgb_3" PORT="reset_n"/>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_timer_1" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="gaussian_blur" PORT="reset_i"/>
+            <CONNECTION INSTANCE="sharpening" PORT="reset_i"/>
+            <CONNECTION INSTANCE="rgb2stream_4" PORT="reset_n"/>
+            <CONNECTION INSTANCE="stream2rgb_4" PORT="reset_n"/>
+            <CONNECTION INSTANCE="clk_wiz_0" PORT="resetn"/>
             <CONNECTION INSTANCE="axi_dma_0" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="axi_dma_2" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="axi_dma_3" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="axi_dma_4" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="axi_dma_5" PORT="axi_resetn"/>
-            <CONNECTION INSTANCE="gaussian_blur" PORT="reset_i"/>
-            <CONNECTION INSTANCE="sharpening" PORT="reset_i"/>
+            <CONNECTION INSTANCE="axi_dma_6" PORT="axi_resetn"/>
+            <CONNECTION INSTANCE="superresolution_0" PORT="reset_i"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S01_ARESETN"/>
@@ -24458,13 +24363,7 @@
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S14_ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S15_ARESETN"/>
             <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="M14_ARESETN"/>
-            <CONNECTION INSTANCE="rgb2stream_4" PORT="reset_n"/>
-            <CONNECTION INSTANCE="stream2rgb_4" PORT="reset_n"/>
-            <CONNECTION INSTANCE="axi_dma_6" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="microblaze_0_axi_periph" PORT="M15_ARESETN"/>
-            <CONNECTION INSTANCE="clk_wiz_0" PORT="resetn"/>
-            <CONNECTION INSTANCE="superresolution_0" PORT="reset_slow_i"/>
-            <CONNECTION INSTANCE="superresolution_0" PORT="reset_fast_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -25090,7 +24989,7 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/superresolution_0" HWVERSION="1.1" INSTANCE="superresolution_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="superresolution" VLNV="ece532.group3.org:ece532:superresolution:1.1">
+    <MODULE FULLNAME="/superresolution_0" HWVERSION="1.6" INSTANCE="superresolution_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="superresolution" VLNV="ece532.group3.org:ece532:superresolution:1.6">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Height" VALUE="1080"/>
@@ -25100,22 +24999,12 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clock_slow_i" SIGIS="clk" SIGNAME="mig_7series_0_ui_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clock_i" SIGIS="clk" SIGNAME="mig_7series_0_ui_clk">
           <CONNECTIONS>
             <CONNECTION INSTANCE="mig_7series_0" PORT="ui_clk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clock_fast_i" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="reset_slow_i" SIGIS="rst" SIGNAME="rst_mig_7series_0_100M_peripheral_aresetn">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_mig_7series_0_100M" PORT="peripheral_aresetn"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="reset_fast_i" SIGIS="rst" SIGNAME="rst_mig_7series_0_100M_peripheral_aresetn">
+        <PORT DIR="I" NAME="reset_i" SIGIS="rst" SIGNAME="rst_mig_7series_0_100M_peripheral_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="rst_mig_7series_0_100M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>

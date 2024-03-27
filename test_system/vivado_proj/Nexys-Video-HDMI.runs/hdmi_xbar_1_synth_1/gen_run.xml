@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="hdmi_xbar_1_synth_1" LaunchPart="xc7a200tsbg484-1" LaunchTime="1711407236">
-  <File Type="VDS-TIMING-PB" Name="hdmi_xbar_1_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="hdmi_xbar_1_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="hdmi_xbar_1.dcp"/>
   <File Type="RDS-UTIL-PB" Name="hdmi_xbar_1_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="hdmi_xbar_1_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="hdmi_xbar_1_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="hdmi_xbar_1.vds"/>
   <File Type="REPORTS-TCL" Name="hdmi_xbar_1_reports.tcl"/>
+  <File Type="RDS-RDS" Name="hdmi_xbar_1.vds"/>
   <File Type="PA-TCL" Name="hdmi_xbar_1.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_xbar_1">
     <File Path="$PSRCDIR/sources_1/bd/hdmi/ip/hdmi_xbar_1/hdmi_xbar_1.xci">

@@ -1,11 +1,11 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
--- Date        : Tue Mar 19 22:42:04 2024
--- Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+-- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+-- Date        : Tue Mar 19 01:59:50 2024
+-- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_axi_dma_2_1 -prefix
---               hdmi_axi_dma_2_1_ hdmi_axi_dma_2_0_sim_netlist.vhdl
--- Design      : hdmi_axi_dma_2_0
+--               hdmi_axi_dma_2_1_ hdmi_axi_dma_2_1_sim_netlist.vhdl
+-- Design      : hdmi_axi_dma_2_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7a200tsbg484-1
@@ -86977,11 +86977,11 @@ entity hdmi_axi_dma_2_1 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of hdmi_axi_dma_2_1 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of hdmi_axi_dma_2_1 : entity is "hdmi_axi_dma_2_0,axi_dma,{}";
+  attribute CHECK_LICENSE_TYPE of hdmi_axi_dma_2_1 : entity is "hdmi_axi_dma_2_1,axi_dma,{}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of hdmi_axi_dma_2_1 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of hdmi_axi_dma_2_1 : entity is "axi_dma,Vivado 2018.2";
+  attribute x_core_info of hdmi_axi_dma_2_1 : entity is "axi_dma,Vivado 2018.2.2";
 end hdmi_axi_dma_2_1;
 
 architecture STRUCTURE of hdmi_axi_dma_2_1 is

@@ -1,8 +1,8 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
-//Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-//Date        : Mon Mar 25 20:14:26 2024
-//Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+//Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+//Date        : Tue Mar 26 23:43:54 2024
+//Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
 //Command     : generate_target hdmi.bd
 //Design      : hdmi
 //Purpose     : IP block netlist
@@ -2613,16 +2613,14 @@ module hdmi
         .s_axis_ready(axi_dma_6_M_AXIS_MM2S_TREADY),
         .s_axis_valid(axi_dma_6_M_AXIS_MM2S_TVALID));
   hdmi_superresolution_0_0 superresolution_0
-       (.clock_fast_i(clk_wiz_0_clk_out1),
-        .clock_slow_i(mig_7series_0_ui_clk),
+       (.clock_i(mig_7series_0_ui_clk),
         .master_blue_o(superresolution_0_master_blue_o),
         .master_green_o(superresolution_0_master_green_o),
         .master_last_o(superresolution_0_master_last_o),
         .master_ready_i(rgb2stream_4_rgb_ready),
         .master_red_o(superresolution_0_master_red_o),
         .master_valid_o(superresolution_0_master_valid_o),
-        .reset_fast_i(rst_mig_7series_0_100M_peripheral_aresetn),
-        .reset_slow_i(rst_mig_7series_0_100M_peripheral_aresetn),
+        .reset_i(rst_mig_7series_0_100M_peripheral_aresetn),
         .slave_blue_i(stream2rgb_4_b),
         .slave_green_i(stream2rgb_4_g),
         .slave_ready_o(superresolution_0_slave_ready_o),
