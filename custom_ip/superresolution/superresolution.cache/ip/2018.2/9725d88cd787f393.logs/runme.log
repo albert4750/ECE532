@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log xbip_dsp48_macro_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source xbip_dsp48_macro_1.tcl
+    with args -log xbip_dsp48_macro_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source xbip_dsp48_macro_0.tcl
 
 
 ****** Vivado v2018.2 (64-bit)
@@ -8,17 +8,17 @@
   **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
-source xbip_dsp48_macro_1.tcl -notrace
-Command: synth_design -top xbip_dsp48_macro_1 -part xc7a200tsbg484-1 -mode out_of_context
+source xbip_dsp48_macro_0.tcl -notrace
+Command: synth_design -top xbip_dsp48_macro_0 -part xc7a200tsbg484-1 -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5853 
+INFO: Helper process launched with PID 7576 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:00.87 ; elapsed = 00:00:01 . Memory (MB): peak = 1241.020 ; gain = 80.922 ; free physical = 27115 ; free virtual = 78799
+Starting RTL Elaboration : Time (s): cpu = 00:00:00.83 ; elapsed = 00:00:01 . Memory (MB): peak = 1242.023 ; gain = 81.922 ; free physical = 25679 ; free virtual = 78236
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'xbip_dsp48_macro_1' [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_1/synth/xbip_dsp48_macro_1.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'xbip_dsp48_macro_0' [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_0/synth/xbip_dsp48_macro_0.vhd:71]
 	Parameter C_VERBOSITY bound to: 0 - type: integer 
 	Parameter C_MODEL_TYPE bound to: 0 - type: integer 
 	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
@@ -46,12 +46,12 @@ INFO: [Synth 8-638] synthesizing module 'xbip_dsp48_macro_1' [/home/yunhao/Docum
 	Parameter C_HAS_CARRYIN bound to: 0 - type: integer 
 	Parameter C_HAS_ACIN bound to: 0 - type: integer 
 	Parameter C_HAS_BCIN bound to: 0 - type: integer 
-	Parameter C_HAS_PCIN bound to: 1 - type: integer 
+	Parameter C_HAS_PCIN bound to: 0 - type: integer 
 	Parameter C_HAS_A bound to: 1 - type: integer 
 	Parameter C_HAS_B bound to: 1 - type: integer 
 	Parameter C_HAS_D bound to: 0 - type: integer 
 	Parameter C_HAS_CONCAT bound to: 0 - type: integer 
-	Parameter C_HAS_C bound to: 0 - type: integer 
+	Parameter C_HAS_C bound to: 1 - type: integer 
 	Parameter C_A_WIDTH bound to: 25 - type: integer 
 	Parameter C_B_WIDTH bound to: 18 - type: integer 
 	Parameter C_C_WIDTH bound to: 48 - type: integer 
@@ -66,17 +66,29 @@ INFO: [Synth 8-638] synthesizing module 'xbip_dsp48_macro_1' [/home/yunhao/Docum
 	Parameter C_HAS_CARRYOUT bound to: 0 - type: integer 
 	Parameter C_HAS_PCOUT bound to: 1 - type: integer 
 	Parameter C_CONSTANT_1 bound to: 1 - type: integer 
-	Parameter C_LATENCY bound to: -1 - type: integer 
-	Parameter C_OPMODES bound to: 000000000001010100000000 - type: string 
-	Parameter C_REG_CONFIG bound to: 00000000000011000011000001000100 - type: string 
+	Parameter C_LATENCY bound to: 128 - type: integer 
+	Parameter C_OPMODES bound to: 000000000011010100000000 - type: string 
+	Parameter C_REG_CONFIG bound to: 00000000000011000011000011000100 - type: string 
 	Parameter C_TEST_CORE bound to: 0 - type: integer 
-INFO: [Synth 8-3491] module 'xbip_dsp48_macro_v3_0_16' declared at '/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_1/hdl/xbip_dsp48_macro_v3_0_vh_rfs.vhd:5013' bound to instance 'U0' of component 'xbip_dsp48_macro_v3_0_16' [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_1/synth/xbip_dsp48_macro_1.vhd:216]
-INFO: [Synth 8-256] done synthesizing module 'xbip_dsp48_macro_1' (6#1) [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_1/synth/xbip_dsp48_macro_1.vhd:71]
+INFO: [Synth 8-3491] module 'xbip_dsp48_macro_v3_0_16' declared at '/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_0/hdl/xbip_dsp48_macro_v3_0_vh_rfs.vhd:5013' bound to instance 'U0' of component 'xbip_dsp48_macro_v3_0_16' [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_0/synth/xbip_dsp48_macro_0.vhd:216]
+INFO: [Synth 8-256] done synthesizing module 'xbip_dsp48_macro_0' (6#1) [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_0/synth/xbip_dsp48_macro_0.vhd:71]
 WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CE
 WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLR
 WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEAD
 WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CED
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CECARRYIN
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CECTRL
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEALUMODE
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port CEINMODE
 WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRD
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRCTRL
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRALUMODE
+WARNING: [Synth 8-3331] design xbip_dsp48e1_wrapper_v3_0 has unconnected port SCLRINMODE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized1 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized1 has unconnected port CE
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized1 has unconnected port SCLR
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized1 has unconnected port SSET
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized1 has unconnected port SINIT
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized0 has unconnected port CLK
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized0 has unconnected port CE
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized0 has unconnected port SCLR
@@ -87,14 +99,8 @@ WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv has unconnected port CE
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv has unconnected port SCLR
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv has unconnected port SSET
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv has unconnected port SINIT
-WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized5 has unconnected port SCLR
-WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized5 has unconnected port SSET
-WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized5 has unconnected port SINIT
-WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized4 has unconnected port CLK
-WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized4 has unconnected port CE
-WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized4 has unconnected port SCLR
-WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized4 has unconnected port SSET
-WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized4 has unconnected port SINIT
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized3 has unconnected port CLK
+WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized3 has unconnected port CE
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized3 has unconnected port SCLR
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized3 has unconnected port SSET
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized3 has unconnected port SINIT
@@ -103,59 +109,8 @@ WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized2 has unconnec
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized2 has unconnected port SCLR
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized2 has unconnected port SSET
 WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized2 has unconnected port SINIT
-WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized1 has unconnected port SCLR
-WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized1 has unconnected port SSET
-WARNING: [Synth 8-3331] design xbip_pipe_v3_0_5_viv__parameterized1 has unconnected port SINIT
 WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port SCLR
 WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port SEL[0]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[47]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[46]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[45]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[44]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[43]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[42]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[41]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[40]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[39]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[38]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[37]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[36]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[35]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[34]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[33]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[32]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[31]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[30]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[29]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[28]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[27]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[26]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[25]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[24]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[23]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[22]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[21]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[20]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[19]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[18]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[17]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[16]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[15]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[14]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[13]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[12]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[11]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[10]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[9]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[8]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[7]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[6]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[5]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[4]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[3]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[2]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[1]
-WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port C[0]
 WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port D[17]
 WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port D[16]
 WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port D[15]
@@ -172,9 +127,54 @@ WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port D[5]
 WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port D[4]
 WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port D[3]
 WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port D[2]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port D[1]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port D[0]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[47]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[46]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[45]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[44]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[43]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[42]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[41]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[40]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[39]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[38]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[37]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[36]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[35]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[34]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[33]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[32]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[31]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[30]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[29]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[28]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[27]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[26]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[25]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[24]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[23]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[22]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[21]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[20]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[19]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[18]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[17]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[16]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[15]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[14]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[13]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[12]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[11]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[10]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[9]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[8]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[7]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[6]
+WARNING: [Synth 8-3331] design xbip_dsp48_macro_synth has unconnected port CONCAT[5]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1297.645 ; gain = 137.547 ; free physical = 27109 ; free virtual = 78790
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1297.648 ; gain = 137.547 ; free physical = 25685 ; free virtual = 78232
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -187,10 +187,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1297.645 ; gain = 137.547 ; free physical = 27111 ; free virtual = 78791
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1297.648 ; gain = 137.547 ; free physical = 25687 ; free virtual = 78234
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1297.645 ; gain = 137.547 ; free physical = 27111 ; free virtual = 78791
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1297.648 ; gain = 137.547 ; free physical = 25687 ; free virtual = 78234
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -199,39 +199,44 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_1/xbip_dsp48_macro_1_ooc.xdc] for cell 'U0'
-Finished Parsing XDC File [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_1/xbip_dsp48_macro_1_ooc.xdc] for cell 'U0'
-Parsing XDC File [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.runs/xbip_dsp48_macro_1_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.runs/xbip_dsp48_macro_1_synth_1/dont_touch.xdc]
+Parsing XDC File [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_0/xbip_dsp48_macro_0_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.srcs/sources_1/ip/xbip_dsp48_macro_0/xbip_dsp48_macro_0_ooc.xdc] for cell 'U0'
+Parsing XDC File [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.runs/xbip_dsp48_macro_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.runs/xbip_dsp48_macro_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1606.684 ; gain = 0.000 ; free physical = 26760 ; free virtual = 78441
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1606.688 ; gain = 0.000 ; free physical = 25437 ; free virtual = 77960
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1606.684 ; gain = 446.586 ; free physical = 26837 ; free virtual = 78519
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1606.688 ; gain = 446.586 ; free physical = 25512 ; free virtual = 78033
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a200tsbg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1606.684 ; gain = 446.586 ; free physical = 26837 ; free virtual = 78519
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1606.688 ; gain = 446.586 ; free physical = 25512 ; free virtual = 78033
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.runs/xbip_dsp48_macro_1_synth_1/dont_touch.xdc, line 9).
+Applied set_property DONT_TOUCH = true for U0. (constraint file  /home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.runs/xbip_dsp48_macro_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1606.684 ; gain = 446.586 ; free physical = 26839 ; free virtual = 78521
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1606.688 ; gain = 446.586 ; free physical = 25514 ; free virtual = 78035
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1606.684 ; gain = 446.586 ; free physical = 26837 ; free virtual = 78515
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1606.688 ; gain = 446.586 ; free physical = 25509 ; free virtual = 78030
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-223] decloning instance 'U0/i_synth/i_synth_option.i_synth_model/i_a2' (xbip_pipe_v3_0_5_viv) to 'U0/i_synth/i_synth_option.i_synth_model/i_has_a.i_a1'
+INFO: [Synth 8-223] decloning instance 'U0/i_synth/i_synth_option.i_synth_model/i_has_c.i_c1' (xbip_pipe_v3_0_5_viv__parameterized1) to 'U0/i_synth/i_synth_option.i_synth_model/i_has_c.i_c2'
+INFO: [Synth 8-223] decloning instance 'U0/i_synth/i_synth_option.i_synth_model/i_has_c.i_c1' (xbip_pipe_v3_0_5_viv__parameterized1) to 'U0/i_synth/i_synth_option.i_synth_model/i_has_c.i_c3'
 INFO: [Synth 8-223] decloning instance 'U0/i_synth/i_synth_option.i_synth_model/i_op1' (xbip_pipe_v3_0_5_viv__parameterized2) to 'U0/i_synth/i_synth_option.i_synth_model/i_op2'
-INFO: [Synth 8-223] decloning instance 'U0/i_synth/i_synth_option.i_synth_model/i_carryin1' (xbip_pipe_v3_0_5_viv__parameterized4) to 'U0/i_synth/i_synth_option.i_synth_model/i_carryin2'
+INFO: [Synth 8-223] decloning instance 'U0/i_synth/i_synth_option.i_synth_model/i_op1' (xbip_pipe_v3_0_5_viv__parameterized2) to 'U0/i_synth/i_synth_option.i_synth_model/i_op3'
+INFO: [Synth 8-223] decloning instance 'U0/i_synth/i_synth_option.i_synth_model/i_op1' (xbip_pipe_v3_0_5_viv__parameterized2) to 'U0/i_synth/i_synth_option.i_synth_model/i_op4'
+INFO: [Synth 8-223] decloning instance 'U0/i_synth/i_synth_option.i_synth_model/i_carryin1' (xbip_pipe_v3_0_5_viv__parameterized3) to 'U0/i_synth/i_synth_option.i_synth_model/i_carryin2'
+INFO: [Synth 8-223] decloning instance 'U0/i_synth/i_synth_option.i_synth_model/i_carryin1' (xbip_pipe_v3_0_5_viv__parameterized3) to 'U0/i_synth/i_synth_option.i_synth_model/i_carryin3'
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -264,7 +269,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1606.684 ; gain = 446.586 ; free physical = 26824 ; free virtual = 78505
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 1606.688 ; gain = 446.586 ; free physical = 25507 ; free virtual = 78029
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -276,13 +281,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 1650.676 ; gain = 490.578 ; free physical = 26640 ; free virtual = 78330
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1640.672 ; gain = 480.570 ; free physical = 25342 ; free virtual = 77874
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 1651.676 ; gain = 491.578 ; free physical = 26639 ; free virtual = 78330
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1640.672 ; gain = 480.570 ; free physical = 25342 ; free virtual = 77873
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -294,7 +299,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 1661.691 ; gain = 501.594 ; free physical = 26637 ; free virtual = 78328
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1641.672 ; gain = 481.570 ; free physical = 25341 ; free virtual = 77873
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -318,7 +323,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1661.691 ; gain = 501.594 ; free physical = 26638 ; free virtual = 78328
+Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1641.672 ; gain = 481.570 ; free physical = 25340 ; free virtual = 77871
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -331,7 +336,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1661.691 ; gain = 501.594 ; free physical = 26638 ; free virtual = 78328
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1641.672 ; gain = 481.570 ; free physical = 25340 ; free virtual = 77871
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -343,25 +348,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1661.691 ; gain = 501.594 ; free physical = 26638 ; free virtual = 78329
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1641.672 ; gain = 481.570 ; free physical = 25340 ; free virtual = 77871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1661.691 ; gain = 501.594 ; free physical = 26638 ; free virtual = 78329
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1641.672 ; gain = 481.570 ; free physical = 25340 ; free virtual = 77871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1661.691 ; gain = 501.594 ; free physical = 26638 ; free virtual = 78329
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1641.672 ; gain = 481.570 ; free physical = 25340 ; free virtual = 77871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1661.691 ; gain = 501.594 ; free physical = 26638 ; free virtual = 78329
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1641.672 ; gain = 481.570 ; free physical = 25340 ; free virtual = 77871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -378,16 +383,13 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |DSP48E1 |     1|
-|2     |LUT2    |     1|
-|3     |LUT3    |     1|
-|4     |FDRE    |    98|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1661.691 ; gain = 501.594 ; free physical = 26638 ; free virtual = 78329
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1641.672 ; gain = 481.570 ; free physical = 25340 ; free virtual = 77871
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 156 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1661.691 ; gain = 192.555 ; free physical = 26704 ; free virtual = 78395
-Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1661.699 ; gain = 501.594 ; free physical = 26704 ; free virtual = 78395
+Synthesis finished with 0 errors, 0 critical warnings and 108 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1641.672 ; gain = 172.531 ; free physical = 25404 ; free virtual = 77936
+Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1641.680 ; gain = 481.570 ; free physical = 25404 ; free virtual = 77936
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -397,8 +399,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-20 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
+25 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1661.699 ; gain = 505.430 ; free physical = 26714 ; free virtual = 78392
+synth_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1649.672 ; gain = 493.398 ; free physical = 25400 ; free virtual = 77932
 WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint '/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.runs/xbip_dsp48_macro_1_synth_1/xbip_dsp48_macro_1.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.runs/xbip_dsp48_macro_0_synth_1/xbip_dsp48_macro_0.dcp' has been generated.
