@@ -22,7 +22,7 @@ module full_convolution #(
     parameter int PaddingLeft = 1,
     parameter int PaddingRight = 1,
     parameter bit signed [ActivationWidth-1:0] PaddingValue = 0,
-    parameter int ActivationWidth = 10,
+    parameter int ActivationWidth = 16,
     parameter int WeightWidth = 20,
     parameter int SumWidth = 37,
     parameter int InHeight = 480,

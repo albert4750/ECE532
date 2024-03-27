@@ -7,8 +7,8 @@
 
 module process_ppm_image;
 
-    localparam int Height = 768;
-    localparam int Width = 1024;
+    localparam int Height = 1080;
+    localparam int Width = 1920;
     localparam InputFile = "input.ppm";
     localparam OutputFile = "output.ppm";
 

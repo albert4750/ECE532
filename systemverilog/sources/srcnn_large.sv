@@ -7,7 +7,7 @@
 module srcnn_large #(
     parameter int Height = 480,
     parameter int Width = 640,
-    localparam int ActivationWidth = 10,
+    localparam int ActivationWidth = 16,
     localparam int WeightWidth = 20
 ) (
     input bit clock_i,

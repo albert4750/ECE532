@@ -58,37 +58,44 @@ def write_tensor_to_svh(file_path: Path, width: int, name: str, tensor: Tensor) 
 def main():
     """Converts a pickled weight file to SystemVerilog header files."""
     parser = ArgumentParser()
-    parser.add_argument("in_file")
+    parser.add_argument("weights_file")
+    parser.add_argument("biases_file")
     parser.add_argument("out_dir")
     args = parser.parse_args()
-    in_file = Path(args.in_file)
+    weights_file = Path(args.weights_file)
+    biases_file = Path(args.biases_file)
     out_dir = Path(args.out_dir)
 
-    with in_file.open("rb") as fp:
+    with weights_file.open("rb") as fp:
         weights = pickle.load(fp)
+    with biases_file.open("rb") as fp:
+        biases = pickle.load(fp)
 
     weight_min = -(2 ** (WEIGHT_WIDTH - 1))
     weight_max = 2 ** (WEIGHT_WIDTH - 1) - 1
 
-    weight1 = torch.clamp(weights[0].round().to(torch.int32), weight_min, weight_max)
+    weight1 = weights[0].round().to(torch.int32)
     assert weight1.shape == (N1, 3, F1, F1)
+    assert weight1.min() >= weight_min and weight1.max() <= weight_max
     write_tensor_to_svh(out_dir / "weight1.svh", WEIGHT_WIDTH, "Weight1", weight1)
 
-    bias1 = torch.zeros(N1, dtype=torch.int32)
+    bias1 = biases[0].round().to(torch.int64)
     write_tensor_to_svh(out_dir / "bias1.svh", SUM_WIDTH, "Bias1", bias1)
 
-    weight2 = torch.clamp(weights[1].round().to(torch.int32), weight_min, weight_max)
+    weight2 = weights[1].round().to(torch.int32)
     assert weight2.shape == (N2, N1, F2, F2)
+    assert weight2.min() >= weight_min and weight2.max() <= weight_max
     write_tensor_to_svh(out_dir / "weight2.svh", WEIGHT_WIDTH, "Weight2", weight2)
 
-    bias2 = torch.zeros(N2, dtype=torch.int32)
+    bias2 = biases[1].round().to(torch.int64)
     write_tensor_to_svh(out_dir / "bias2.svh", SUM_WIDTH, "Bias2", bias2)
 
-    weight3 = torch.clamp(weights[2].round().to(torch.int32), weight_min, weight_max)
+    weight3 = weights[2].round().to(torch.int32)
     assert weight3.shape == (3, N2, F3, F3)
+    assert weight3.min() >= weight_min and weight3.max() <= weight_max
     write_tensor_to_svh(out_dir / "weight3.svh", WEIGHT_WIDTH, "Weight3", weight3)
 
-    bias3 = torch.zeros(3, dtype=torch.int32)
+    bias3 = biases[2].round().to(torch.int64)
     write_tensor_to_svh(out_dir / "bias3.svh", SUM_WIDTH, "Bias3", bias3)
 
 

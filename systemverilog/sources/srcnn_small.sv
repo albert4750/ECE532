@@ -7,7 +7,7 @@
 module srcnn_small #(
     parameter int Height = 480,
     parameter int Width = 640,
-    localparam int ActivationWidth = 10,
+    localparam int ActivationWidth = 16,
     localparam int WeightWidth = 20
 ) (
     input bit clock_i,
@@ -83,7 +83,7 @@ module srcnn_small #(
         .InWidth(Width),
         .Weight(Weight1),
         .Bias(Bias1),
-        .RightShift(20),
+        .RightShift(16),
         .ReLU(1),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv1MaxDSPColumnsInCascade),
@@ -148,7 +148,7 @@ module srcnn_small #(
         .InWidth(Width),
         .Weight(Weight2),
         .Bias(Bias2),
-        .RightShift(20),
+        .RightShift(16),
         .ReLU(1),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv2MaxDSPColumnsInCascade),
@@ -213,7 +213,7 @@ module srcnn_small #(
         .InWidth(Width),
         .Weight(Weight3),
         .Bias(Bias3),
-        .RightShift(20),
+        .RightShift(16),
         .ReLU(0),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv3MaxDSPColumnsInCascade),
