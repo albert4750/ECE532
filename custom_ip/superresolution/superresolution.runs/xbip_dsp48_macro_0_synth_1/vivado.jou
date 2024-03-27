@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Tue Mar 26 20:04:31 2024
+# Process ID: 963993
+# Current directory: /home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.runs/xbip_dsp48_macro_0_synth_1
+# Command line: vivado -log xbip_dsp48_macro_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source xbip_dsp48_macro_0.tcl
+# Log file: /home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.runs/xbip_dsp48_macro_0_synth_1/xbip_dsp48_macro_0.vds
+# Journal file: /home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.runs/xbip_dsp48_macro_0_synth_1/vivado.jou
+#-----------------------------------------------------------
+source xbip_dsp48_macro_0.tcl -notrace
