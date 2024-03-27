@@ -402,17 +402,17 @@ proc create_root_design { parentCell } {
   set DDR3 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:ddrx_rtl:1.0 DDR3 ]
   set TMDS_IN [ create_bd_intf_port -mode Slave -vlnv digilentinc.com:interface:tmds_rtl:1.0 TMDS_IN ]
   set TMDS_OUT [ create_bd_intf_port -mode Master -vlnv digilentinc.com:interface:tmds_rtl:1.0 TMDS_OUT ]
-  set dip_switches_8bits [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 dip_switches_8bits ]
-  set led_8bits [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 led_8bits ]
   set usb_uart [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:uart_rtl:1.0 usb_uart ]
 
   # Create ports
   set hdmi_hpd [ create_bd_port -dir O -from 0 -to 0 hdmi_hpd ]
   set hdmi_rx_txen [ create_bd_port -dir O -from 0 -to 0 hdmi_rx_txen ]
+  set led [ create_bd_port -dir O -from 7 -to 0 led ]
   set reset [ create_bd_port -dir I -type rst reset ]
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_LOW} \
  ] $reset
+  set swt [ create_bd_port -dir I -from 7 -to 0 swt ]
   set sys_clk_i [ create_bd_port -dir I -type clk sys_clk_i ]
   set_property -dict [ list \
    CONFIG.CLK_DOMAIN {/clk_wiz_0_clk_out1} \
@@ -505,9 +505,11 @@ proc create_root_design { parentCell } {
   # Create instance: axi_gpio_0, and set properties
   set axi_gpio_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0 ]
   set_property -dict [ list \
-   CONFIG.GPIO2_BOARD_INTERFACE {dip_switches_8bits} \
-   CONFIG.GPIO_BOARD_INTERFACE {led_8bits} \
-   CONFIG.USE_BOARD_FLOW {true} \
+   CONFIG.C_ALL_INPUTS {1} \
+   CONFIG.C_ALL_OUTPUTS_2 {1} \
+   CONFIG.C_GPIO2_WIDTH {8} \
+   CONFIG.C_GPIO_WIDTH {8} \
+   CONFIG.C_IS_DUAL {1} \
  ] $axi_gpio_0
 
   # Create instance: axi_gpio_video, and set properties
@@ -829,8 +831,6 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net axi_dma_6_M_AXIS_MM2S [get_bd_intf_pins axi_dma_6/M_AXIS_MM2S] [get_bd_intf_pins stream2rgb_4/s_axis]
   connect_bd_intf_net -intf_net axi_dma_6_M_AXI_MM2S [get_bd_intf_pins axi_dma_6/M_AXI_MM2S] [get_bd_intf_pins axi_mem_intercon/S06_AXI]
   connect_bd_intf_net -intf_net axi_dma_6_M_AXI_S2MM [get_bd_intf_pins axi_dma_6/M_AXI_S2MM] [get_bd_intf_pins axi_mem_intercon/S07_AXI]
-  connect_bd_intf_net -intf_net axi_gpio_0_GPIO [get_bd_intf_ports led_8bits] [get_bd_intf_pins axi_gpio_0/GPIO]
-  connect_bd_intf_net -intf_net axi_gpio_0_GPIO2 [get_bd_intf_ports dip_switches_8bits] [get_bd_intf_pins axi_gpio_0/GPIO2]
   connect_bd_intf_net -intf_net axi_mem_intercon_M00_AXI [get_bd_intf_pins axi_mem_intercon/M00_AXI] [get_bd_intf_pins mig_7series_0/S_AXI]
   connect_bd_intf_net -intf_net axi_uartlite_0_UART [get_bd_intf_ports usb_uart] [get_bd_intf_pins axi_uartlite_0/UART]
   connect_bd_intf_net -intf_net axi_vdma_0_M_AXIS_MM2S [get_bd_intf_pins axi_vdma_0/M_AXIS_MM2S] [get_bd_intf_pins v_axi4s_vid_out_0/video_in]
@@ -878,6 +878,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net SYS_Rst_1 [get_bd_pins microblaze_0_local_memory/SYS_Rst] [get_bd_pins rst_mig_7series_0_100M/bus_struct_reset]
   connect_bd_net -net axi_dynclk_0_PXL_CLK_5X_O [get_bd_pins axi_dynclk_0/PXL_CLK_5X_O] [get_bd_pins rgb2dvi_0/SerialClk]
   connect_bd_net -net axi_dynclk_0_PXL_CLK_O [get_bd_pins axi_dynclk_0/PXL_CLK_O] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins rgb2dvi_0/PixelClk] [get_bd_pins v_axi4s_vid_out_0/aclk] [get_bd_pins v_tc_0/clk]
+  connect_bd_net -net axi_gpio_0_gpio2_io_o [get_bd_ports led] [get_bd_pins axi_gpio_0/gpio2_io_o]
   connect_bd_net -net axi_gpio_video_gpio_io_o [get_bd_ports hdmi_hpd] [get_bd_pins axi_gpio_video/gpio_io_o]
   connect_bd_net -net axi_gpio_video_ip2intc_irpt [get_bd_pins axi_gpio_video/ip2intc_irpt] [get_bd_pins microblaze_0_xlconcat/In4]
   connect_bd_net -net axi_timer_0_interrupt [get_bd_pins axi_timer_0/interrupt] [get_bd_pins microblaze_0_xlconcat/In5]
@@ -956,6 +957,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net superresolution_0_master_red_o [get_bd_pins rgb2stream_4/r] [get_bd_pins superresolution_0/master_red_o]
   connect_bd_net -net superresolution_0_master_valid_o [get_bd_pins rgb2stream_4/rgb_valid] [get_bd_pins superresolution_0/master_valid_o]
   connect_bd_net -net superresolution_0_slave_ready_o [get_bd_pins stream2rgb_4/rgb_ready] [get_bd_pins superresolution_0/slave_ready_o]
+  connect_bd_net -net swt_1 [get_bd_ports swt] [get_bd_pins axi_gpio_0/gpio_io_i]
   connect_bd_net -net sys_clk_i_1 [get_bd_ports sys_clk_i] [get_bd_pins mig_7series_0/sys_clk_i]
   connect_bd_net -net v_tc_0_irq [get_bd_pins microblaze_0_xlconcat/In2] [get_bd_pins v_tc_0/irq]
   connect_bd_net -net v_tc_1_irq [get_bd_pins microblaze_0_xlconcat/In3] [get_bd_pins v_tc_1/irq]

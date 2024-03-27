@@ -1,4 +1,4 @@
-00:08:21 **** Auto Build of project upscaler_bsp ****
+01:14:32 **** Auto Build of project upscaler_bsp ****
 make -k all 
 "Running Make include in microblaze_0/libsrc/axidma_v9_7/src"
 make -C microblaze_0/libsrc/axidma_v9_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
@@ -23,6 +23,7 @@ make -C microblaze_0/libsrc/vtc_v7_2/src -s include  "SHELL=CMD" "COMPILER=mb-gc
 "Running Make libs in microblaze_0/libsrc/axidma_v9_7/src"
 make -C microblaze_0/libsrc/axidma_v9_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
 "Compiling axidma"
+mb-ar: creating ../../../lib/libxil.a
 "Running Make libs in microblaze_0/libsrc/axivdma_v6_5/src"
 make -C microblaze_0/libsrc/axivdma_v6_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
 "Compiling axivdma"
@@ -41,9 +42,9 @@ make -C microblaze_0/libsrc/intc_v3_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc"
 "Running Make libs in microblaze_0/libsrc/standalone_v6_7/src"
 make -C microblaze_0/libsrc/standalone_v6_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
 "Compiling standalone";
-microblaze_sleep.c:74:9: note: #pragma message: For the sleep routines, assembly instructions are used
- #pragma message ("For the sleep routines, assembly instructions are used")
-         ^~~~~~~
+microblaze_sleep.c:69:2: warning: #warning "May wait for more than the specified delay" [-Wcpp]
+ #warning "May wait for more than the specified delay"
+  ^~~~~~~
 "Running Make libs in microblaze_0/libsrc/tmrctr_v4_4/src"
 make -C microblaze_0/libsrc/tmrctr_v4_4/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
 "Compiling tmrctr"
@@ -55,5 +56,5 @@ make -C microblaze_0/libsrc/vtc_v7_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" 
 "Compiling video timing controller"
 'Finished building libraries'
 
-00:08:27 Build Finished (took 5s.837ms)
+01:14:38 Build Finished (took 5s.730ms)
 

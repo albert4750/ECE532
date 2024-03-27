@@ -293,8 +293,8 @@ void DemoRun()
 	char userInput = 0;
 	u32 locked;
 	XGpio *GpioPtr = &videoCapt.gpio;
-	volatile u32* led = XPAR_AXI_GPIO_0_BASEADDR;
-	volatile u32* swt = XPAR_AXI_GPIO_0_BASEADDR + 8;
+	volatile u8* led = (u8*)(XPAR_AXI_GPIO_0_BASEADDR + 8);
+	volatile u8* swt = (u8*)XPAR_AXI_GPIO_0_BASEADDR;
 
 	/* Flush UART FIFO */
 	while (!XUartLite_IsReceiveEmpty(UART_BASEADDR))

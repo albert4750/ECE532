@@ -17,6 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param tcl.collectionResultDisplayLimit 0
+set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a200tsbg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -108,9 +110,6 @@ set_property used_in_implementation false [get_files -all c:/Users/Albert/Docume
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_4_0/hdmi_axi_dma_4_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_4_0/hdmi_axi_dma_4_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_4_0/hdmi_axi_dma_4_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_gpio_0_0/hdmi_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_gpio_0_0/hdmi_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_gpio_0_0/hdmi_axi_gpio_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_timer_1_1/hdmi_axi_timer_1_1.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_timer_1_1/hdmi_axi_timer_1_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_dma_4_1/hdmi_axi_dma_4_1_ooc.xdc]
@@ -119,6 +118,9 @@ set_property used_in_implementation false [get_files -all c:/Users/Albert/Docume
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_clk_wiz_0_0/hdmi_clk_wiz_0_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_clk_wiz_0_0/hdmi_clk_wiz_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_clk_wiz_0_0/hdmi_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_gpio_0_1/hdmi_axi_gpio_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_gpio_0_1/hdmi_axi_gpio_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_axi_gpio_0_1/hdmi_axi_gpio_0_1.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_m00_regslice_0/hdmi_m00_regslice_0_clocks.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_m00_regslice_0/hdmi_m00_regslice_0_ooc.xdc]
 set_property used_in_synthesis false [get_files -all c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_auto_ds_0/hdmi_auto_ds_0_clocks.xdc]

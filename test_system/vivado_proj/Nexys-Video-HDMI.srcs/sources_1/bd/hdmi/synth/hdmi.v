@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-//Date        : Tue Mar 26 23:43:54 2024
+//Date        : Wed Mar 27 01:45:22 2024
 //Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
 //Command     : generate_target hdmi.bd
 //Design      : hdmi
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "hdmi,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=hdmi,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=109,numReposBlks=72,numNonXlnxBlks=6,numHierBlks=37,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=32,da_board_cnt=4,da_clkrst_cnt=27,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "hdmi.hwdef" *) 
+(* CORE_GENERATION_INFO = "hdmi,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=hdmi,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=109,numReposBlks=72,numNonXlnxBlks=6,numHierBlks=37,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=33,da_board_cnt=4,da_clkrst_cnt=27,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "hdmi.hwdef" *) 
 module hdmi
    (DDC_scl_i,
     DDC_scl_o,
@@ -39,13 +39,11 @@ module hdmi
     TMDS_OUT_clk_p,
     TMDS_OUT_data_n,
     TMDS_OUT_data_p,
-    dip_switches_8bits_tri_i,
     hdmi_hpd,
     hdmi_rx_txen,
-    led_8bits_tri_i,
-    led_8bits_tri_o,
-    led_8bits_tri_t,
+    led,
     reset,
+    swt,
     sys_clk_i,
     usb_uart_rxd,
     usb_uart_txd);
@@ -77,13 +75,11 @@ module hdmi
   (* X_INTERFACE_INFO = "digilentinc.com:interface:tmds:1.0 TMDS_OUT CLK_P" *) output TMDS_OUT_clk_p;
   (* X_INTERFACE_INFO = "digilentinc.com:interface:tmds:1.0 TMDS_OUT DATA_N" *) output [2:0]TMDS_OUT_data_n;
   (* X_INTERFACE_INFO = "digilentinc.com:interface:tmds:1.0 TMDS_OUT DATA_P" *) output [2:0]TMDS_OUT_data_p;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 dip_switches_8bits TRI_I" *) input [7:0]dip_switches_8bits_tri_i;
   output [0:0]hdmi_hpd;
   output [0:0]hdmi_rx_txen;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_8bits TRI_I" *) input [7:0]led_8bits_tri_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_8bits TRI_O" *) output [7:0]led_8bits_tri_o;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 led_8bits TRI_T" *) output [7:0]led_8bits_tri_t;
+  output [7:0]led;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RESET RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RESET, POLARITY ACTIVE_LOW" *) input reset;
+  input [7:0]swt;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.SYS_CLK_I CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.SYS_CLK_I, CLK_DOMAIN /clk_wiz_0_clk_out1, FREQ_HZ 200000000, PHASE 0.0" *) input sys_clk_i;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart RxD" *) input usb_uart_rxd;
   (* X_INTERFACE_INFO = "xilinx.com:interface:uart:1.0 usb_uart TxD" *) output usb_uart_txd;
@@ -293,10 +289,7 @@ module hdmi
   wire axi_dma_6_M_AXI_S2MM_WVALID;
   wire axi_dynclk_0_PXL_CLK_5X_O;
   wire axi_dynclk_0_PXL_CLK_O;
-  wire [7:0]axi_gpio_0_GPIO2_TRI_I;
-  wire [7:0]axi_gpio_0_GPIO_TRI_I;
-  wire [7:0]axi_gpio_0_GPIO_TRI_O;
-  wire [7:0]axi_gpio_0_GPIO_TRI_T;
+  wire [7:0]axi_gpio_0_gpio2_io_o;
   wire [0:0]axi_gpio_video_gpio_io_o;
   wire axi_gpio_video_ip2intc_irpt;
   wire [28:0]axi_mem_intercon_M00_AXI_ARADDR;
@@ -861,6 +854,7 @@ module hdmi
   wire [7:0]superresolution_0_master_red_o;
   wire superresolution_0_master_valid_o;
   wire superresolution_0_slave_ready_o;
+  wire [7:0]swt_1;
   wire sys_clk_i_1;
   wire v_axi4s_vid_out_0_vid_io_out_ACTIVE_VIDEO;
   wire [23:0]v_axi4s_vid_out_0_vid_io_out_DATA;
@@ -906,16 +900,14 @@ module hdmi
   assign TMDS_OUT_clk_p = rgb2dvi_0_TMDS_CLK_P;
   assign TMDS_OUT_data_n[2:0] = rgb2dvi_0_TMDS_DATA_N;
   assign TMDS_OUT_data_p[2:0] = rgb2dvi_0_TMDS_DATA_P;
-  assign axi_gpio_0_GPIO2_TRI_I = dip_switches_8bits_tri_i[7:0];
-  assign axi_gpio_0_GPIO_TRI_I = led_8bits_tri_i[7:0];
   assign axi_uartlite_0_UART_RxD = usb_uart_rxd;
   assign dvi2rgb_0_DDC_SCL_I = DDC_scl_i;
   assign dvi2rgb_0_DDC_SDA_I = DDC_sda_i;
   assign hdmi_hpd[0] = axi_gpio_video_gpio_io_o;
   assign hdmi_rx_txen[0] = xlconstant_0_dout;
-  assign led_8bits_tri_o[7:0] = axi_gpio_0_GPIO_TRI_O;
-  assign led_8bits_tri_t[7:0] = axi_gpio_0_GPIO_TRI_T;
+  assign led[7:0] = axi_gpio_0_gpio2_io_o;
   assign reset_1 = reset;
+  assign swt_1 = swt[7:0];
   assign sys_clk_i_1 = sys_clk_i;
   assign usb_uart_txd = axi_uartlite_0_UART_TxD;
   hdmi_axi_dma_0_0 axi_dma_0
@@ -1297,11 +1289,9 @@ module hdmi
         .s00_axi_wready(microblaze_0_axi_periph_M04_AXI_WREADY),
         .s00_axi_wstrb(microblaze_0_axi_periph_M04_AXI_WSTRB),
         .s00_axi_wvalid(microblaze_0_axi_periph_M04_AXI_WVALID));
-  hdmi_axi_gpio_0_0 axi_gpio_0
-       (.gpio2_io_i(axi_gpio_0_GPIO2_TRI_I),
-        .gpio_io_i(axi_gpio_0_GPIO_TRI_I),
-        .gpio_io_o(axi_gpio_0_GPIO_TRI_O),
-        .gpio_io_t(axi_gpio_0_GPIO_TRI_T),
+  hdmi_axi_gpio_0_1 axi_gpio_0
+       (.gpio2_io_o(axi_gpio_0_gpio2_io_o),
+        .gpio_io_i(swt_1),
         .s_axi_aclk(mig_7series_0_ui_clk),
         .s_axi_araddr(microblaze_0_axi_periph_M09_AXI_ARADDR[8:0]),
         .s_axi_aresetn(rst_mig_7series_0_100M_peripheral_aresetn),

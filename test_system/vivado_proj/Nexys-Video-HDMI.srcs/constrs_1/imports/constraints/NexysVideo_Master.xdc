@@ -17,6 +17,22 @@ create_clock -period 10.000 -name sys_clk_i -waveform {0.000 5.000} -add [get_po
 #set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS25 } [get_ports { led[5] }]; #IO_L16N_T2_13 Sch=led[5]
 #set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS25 } [get_ports { led[6] }]; #IO_L16P_T2_13 Sch=led[6]
 #set_property -dict { PACKAGE_PIN Y13   IOSTANDARD LVCMOS25 } [get_ports { led[7] }]; #IO_L5P_T0_13 Sch=led[7]
+set_property package_pin T14 [get_ports {led[0]}];
+set_property iostandard LVCMOS25 [get_ports [list {led[0]}]];
+set_property package_pin T15 [get_ports {led[1]}];
+set_property iostandard LVCMOS25 [get_ports [list {led[1]}]];
+set_property package_pin T16 [get_ports {led[2]}];
+set_property iostandard LVCMOS25 [get_ports [list {led[2]}]];
+set_property package_pin U16 [get_ports {led[3]}];
+set_property iostandard LVCMOS25 [get_ports [list {led[3]}]];
+set_property package_pin V15 [get_ports {led[4]}];
+set_property iostandard LVCMOS25 [get_ports [list {led[4]}]];
+set_property package_pin W16 [get_ports {led[5]}];
+set_property iostandard LVCMOS25 [get_ports [list {led[5]}]];
+set_property package_pin W15 [get_ports {led[6]}];
+set_property iostandard LVCMOS25 [get_ports [list {led[6]}]];
+set_property package_pin Y13 [get_ports {led[7]}];
+set_property iostandard LVCMOS25 [get_ports [list {led[7]}]];
 
 
 ## Buttons
@@ -28,14 +44,30 @@ create_clock -period 10.000 -name sys_clk_i -waveform {0.000 5.000} -add [get_po
 #set_property -dict { PACKAGE_PIN G4  IOSTANDARD LVCMOS15 } [get_ports { cpu_resetn }]; #IO_L12N_T1_MRCC_35 Sch=cpu_resetn
 
 ##Switches
-#set_property -dict { PACKAGE_PIN E22  } [get_ports { sw[0] }]; #IO_L22P_T3_16 Sch=sw[0]
-#set_property -dict { PACKAGE_PIN F21  } [get_ports { sw[1] }]; #IO_25_16 Sch=sw[1]
-#set_property -dict { PACKAGE_PIN G21  } [get_ports { sw[2] }]; #IO_L24P_T3_16 Sch=sw[2]
-#set_property -dict { PACKAGE_PIN G22  } [get_ports { sw[3] }]; #IO_L24N_T3_16 Sch=sw[3]
-#set_property -dict { PACKAGE_PIN H17  } [get_ports { sw[4] }]; #IO_L6P_T0_15 Sch=sw[4]
-#set_property -dict { PACKAGE_PIN J16  } [get_ports { sw[5] }]; #IO_0_15 Sch=sw[5]
-#set_property -dict { PACKAGE_PIN K13  } [get_ports { sw[6] }]; #IO_L19P_T3_A22_15 Sch=sw[6]
-#set_property -dict { PACKAGE_PIN M17  } [get_ports { sw[7] }]; #IO_25_15 Sch=sw[7]
+#set_property -dict { PACKAGE_PIN E22  } [get_ports { swt[0] }]; #IO_L22P_T3_16 Sch=sw[0]
+#set_property -dict { PACKAGE_PIN F21  } [get_ports { swt[1] }]; #IO_25_16 Sch=sw[1]
+#set_property -dict { PACKAGE_PIN G21  } [get_ports { swt[2] }]; #IO_L24P_T3_16 Sch=sw[2]
+#set_property -dict { PACKAGE_PIN G22  } [get_ports { swt[3] }]; #IO_L24N_T3_16 Sch=sw[3]
+#set_property -dict { PACKAGE_PIN H17  } [get_ports { swt[4] }]; #IO_L6P_T0_15 Sch=sw[4]
+#set_property -dict { PACKAGE_PIN J16  } [get_ports { swt[5] }]; #IO_0_15 Sch=sw[5]
+#set_property -dict { PACKAGE_PIN K13  } [get_ports { swt[6] }]; #IO_L19P_T3_A22_15 Sch=sw[6]
+#set_property -dict { PACKAGE_PIN M17  } [get_ports { swt[7] }]; #IO_25_15 Sch=sw[7]
+set_property package_pin E22 [get_ports {swt[0]}];
+set_property iostandard LVCMOS12 [get_ports [list {swt[0]}]];
+set_property package_pin F21 [get_ports {swt[1]}];
+set_property iostandard LVCMOS12 [get_ports [list {swt[1]}]];
+set_property package_pin G21 [get_ports {swt[2]}];
+set_property iostandard LVCMOS12 [get_ports [list {swt[2]}]];
+set_property package_pin G22 [get_ports {swt[3]}];
+set_property iostandard LVCMOS12 [get_ports [list {swt[3]}]];
+set_property package_pin H17 [get_ports {swt[4]}];
+set_property iostandard LVCMOS12 [get_ports [list {swt[4]}]];
+set_property package_pin J16 [get_ports {swt[5]}];
+set_property iostandard LVCMOS12 [get_ports [list {swt[5]}]];
+set_property package_pin K13 [get_ports {swt[6]}];
+set_property iostandard LVCMOS12 [get_ports [list {swt[6]}]];
+set_property package_pin M17 [get_ports {swt[7]}];
+set_property iostandard LVCMOS12 [get_ports [list {swt[7]}]];
 
 
 ##OLED Display
