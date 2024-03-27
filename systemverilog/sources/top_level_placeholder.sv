@@ -30,9 +30,11 @@ module top_level_placeholder (
     assign master_data_placeholder_o = ^{master_red, master_green, master_blue, master_last};
 
     superresolution #(
-        .Height (Height),
-        .Width  (Width),
-        .Variant("small")
+        .Variant("large"),
+        .Height(Height),
+        .Width(Width),
+        .InternalActivationWidth(16),
+        .InternalActivationShift(6)
     ) superresolution_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),

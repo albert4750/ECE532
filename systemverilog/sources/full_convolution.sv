@@ -12,6 +12,10 @@
 //   InWidth + PaddingLeft + PaddingRight - KernelWidth + 1) elements, each element of
 //   (OutChannels, ActivationWidth) bits.
 
+`include "constants.svh"
+
+import constants::*;
+
 module full_convolution #(
     parameter int InChannels = 3,
     parameter int OutChannels = 3,
@@ -23,15 +27,14 @@ module full_convolution #(
     parameter int PaddingRight = 1,
     parameter bit signed [ActivationWidth-1:0] PaddingValue = 0,
     parameter int ActivationWidth = 16,
-    parameter int WeightWidth = 20,
-    parameter int SumWidth = 37,
     parameter int InHeight = 480,
     parameter int InWidth = 640,
     /* verilator lint_off ASCRANGE */
     parameter bit signed [0:OutChannels-1][0:InChannels-1][0:KernelHeight-1][0:KernelWidth-1]
-        [WeightWidth-1:0] Weight =
-        {OutChannels{{InChannels{{KernelHeight{{KernelWidth{WeightWidth'(0)}}}}}}}},
-    parameter bit signed [0:OutChannels-1][SumWidth-1:0] Bias = {OutChannels{SumWidth'(0)}},
+        [DSPInputAWidth-1:0] Weight =
+        {OutChannels{{InChannels{{KernelHeight{{KernelWidth{DSPInputAWidth'(0)}}}}}}}},
+    parameter bit signed [0:OutChannels-1][DSPOutputWidth-1:0] Bias =
+        {OutChannels{DSPInputAWidth'(0)}},
     /* verilator lint_on ASCRANGE */
     parameter int RightShift = 0,
     parameter bit ReLU = 0,
@@ -144,7 +147,7 @@ module full_convolution #(
 
     /* verilator lint_off ASCRANGE */
     typedef bit [0:OutChannels-1][0:KernelHeight-1][0:InChannels-1][0:KernelWidth-1]
-        [WeightWidth-1:0] permuted_weight_t;
+        [DSPInputAWidth-1:0] permuted_weight_t;
     /* verilator lint_on ASCRANGE */
 
     function automatic permuted_weight_t permute_weight();
@@ -169,8 +172,6 @@ module full_convolution #(
         .OutChannels(OutChannels),
         .KernelWidth(KernelWidth),
         .ActivationWidth(ActivationWidth),
-        .WeightWidth(WeightWidth),
-        .SumWidth(SumWidth),
         .InWidth(InWidth + PaddingLeft + PaddingRight),
         .Weight(PermutedWeight),
         .Bias(Bias),

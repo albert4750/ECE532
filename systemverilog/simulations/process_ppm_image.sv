@@ -33,9 +33,11 @@ module process_ppm_image;
     bit out_last;
 
     superresolution #(
-        .Height (Height),
-        .Width  (Width),
-        .Variant("small")
+        .Height(Height),
+        .Width(Width),
+        .Variant("small"),
+        .InternalActivationWidth(16),
+        .InternalActivationShift(6)
     ) superresolution_inst (
         .clock_i(clock),
         .reset_i(reset),
