@@ -4,16 +4,10 @@
 //
 // This module is a large-scale implementation of the SRCNN algorithm.
 
-`include "constants.svh"
-`include "utilities.svh"
-
-import constants::*;
-import utilities::*;
-
 module srcnn_large #(
-    parameter int Height = 600,
-    parameter int Width = 800,
-    localparam int ActivationWidth = 10,
+    parameter int Height = 480,
+    parameter int Width = 640,
+    localparam int ActivationWidth = 16,
     localparam int WeightWidth = 20
 ) (
     input bit clock_i,
@@ -21,18 +15,21 @@ module srcnn_large #(
 
     input bit slave_valid_i,
     output bit slave_ready_o,
-    input bit [3*ActivationWidth-1:0] slave_data_i,
+    input bit [2:0][ActivationWidth-1:0] slave_data_i,
 
     output bit master_valid_o,
     input bit master_ready_i,
-    output bit [3*ActivationWidth-1:0] master_data_o
+    output bit [2:0][ActivationWidth-1:0] master_data_o
 );
 
     localparam int N1 = 9, N2 = 12;
     localparam int F1 = 8, F2 = 1, F3 = 3;
 
+    localparam int SumWidth = 37;
+    localparam int WeightSharing = 3;
+
     /* verilator lint_off ASCRANGE */
-    localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][WeightWidth-1:0] Convolve1Weight =
+    localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][WeightWidth-1:0] Weight1 =
         {N1{{3{
             20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
             20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
@@ -43,38 +40,28 @@ module srcnn_large #(
             20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
             20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1
         }}}};
-    localparam int Convolve1ProductWidth = get_convolution_product_width(
-        ActivationWidth, WeightWidth, F1 * F1 * 3, 1
-    );
-    localparam bit signed [0:N1-1][Convolve1ProductWidth-1:0] Convolve1Bias = '{default: 0};
+    localparam bit signed [0:N1-1][SumWidth-1:0] Bias1 = '{default: 0};
 
-    localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][WeightWidth-1:0] Convolve2Weight =
+    localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][WeightWidth-1:0] Weight2 =
         {N2{20'd4, 20'd4, 20'd4, 20'd4, 20'd0, 20'd4, 20'd4, 20'd4, 20'd4}};
-    localparam int Convolve2ProductWidth = get_convolution_product_width(
-        ActivationWidth, WeightWidth, F2 * F2 * N1, 1
-    );
-    localparam bit signed [0:N2-1][Convolve2ProductWidth-1:0] Convolve2Bias = '{default: 0};
+    localparam bit signed [0:N2-1][SumWidth-1:0] Bias2 = '{default: 0};
 
-    localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][WeightWidth-1:0] Convolve3Weight =
+    localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][WeightWidth-1:0] Weight3 =
         {3{{N2{
             20'd4, 20'd4, 20'd4,
             20'd4, 20'd0, 20'd4,
             20'd4, 20'd4, 20'd4
         }}}};
-    localparam int Convolve3ProductWidth = get_convolution_product_width(
-        ActivationWidth, WeightWidth, F3 * F3 * N2, 1
-    );
-    localparam bit signed [0:2][Convolve3ProductWidth-1:0] Convolve3Bias = '{default: 0};
+    localparam bit signed [0:2][SumWidth-1:0] Bias3 = '{default: 0};
     /* verilator lint_on ASCRANGE */
 
-    bit queue1_valid;
-    bit queue1_ready;
-    bit [3*ActivationWidth-1:0] queue1_data;
+    bit slice1_valid;
+    bit slice1_ready;
+    bit [2:0][ActivationWidth-1:0] slice1_data;
 
-    fifo_queue #(
-        .Capacity (1),
+    register_slice #(
         .DataWidth(3 * ActivationWidth)
-    ) queue1_inst (
+    ) slice1_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
@@ -82,280 +69,189 @@ module srcnn_large #(
         .slave_ready_o(slave_ready_o),
         .slave_data_i (slave_data_i),
 
-        .master_valid_o(queue1_valid),
-        .master_ready_i(queue1_ready),
-        .master_data_o (queue1_data)
+        .master_valid_o(slice1_valid),
+        .master_ready_i(slice1_ready),
+        .master_data_o (slice1_data)
     );
 
-    bit buffer1_valid;
-    bit buffer1_ready;
-    bit [3*ActivationWidth-1:0] buffer1_data;
+    bit conv1_valid;
+    bit conv1_ready;
+    bit [N1-1:0][ActivationWidth-1:0] conv1_data;
 
-    delay_buffer #(
-        .Size(4),
-        .DataWidth(3 * ActivationWidth)
-    ) buffer1_inst (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-
-        .slave_valid_i(queue1_valid),
-        .slave_ready_o(queue1_ready),
-        .slave_data_i (queue1_data),
-
-        .master_valid_o(buffer1_valid),
-        .master_ready_i(buffer1_ready),
-        .master_data_o (buffer1_data)
-    );
-
-    bit convolve1_valid;
-    bit convolve1_ready;
-    bit [N1*ActivationWidth-1:0] convolve1_data;
-
-    localparam int Convolve1Cascades = 3;
-    localparam int Convolve1DSPsInColumn[Convolve1Cascades][MaxDSPColumns] = '{
-        '{30, 30, 30, 10, 30, 30, 30, 2, 0, 0},
-        '{8, 30, 30, 30, 10, 30, 30, 24, 0, 0},
-        '{30, 6, 30, 30, 30, 30, 30, 6, 0, 0}
-    };
-    localparam int Convolve1LatenciesBetweenColumns[Convolve1Cascades][MaxDSPColumns-1] = '{
-        '{3, 3, 3, 3, 3, 3, 3, 0, 0},
-        '{3, 3, 3, 3, 3, 3, 3, 0, 0},
-        '{3, 3, 3, 3, 3, 3, 3, 0, 0}
+    localparam int Conv1MaxDSPColumnsInCascade = 3;
+    localparam int Conv1DSPsInColumn[N1][Conv1MaxDSPColumnsInCascade] = '{default: '{30, 30, 4}};
+    localparam int Conv1LatenciesBetweenDSPColumns[N1][Conv1MaxDSPColumnsInCascade+1] = '{
+        default: '{0, 4, 4, 0}
     };
 
-    convolve #(
+    full_convolution #(
         .InChannels(3),
         .OutChannels(N1),
         .KernelHeight(F1),
         .KernelWidth(F1),
-        .InHeight(Height),
-        .InWidth(Width),
         .PaddingTop(3),
         .PaddingBottom(4),
         .PaddingLeft(3),
         .PaddingRight(4),
+        .PaddingValue(0),
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
-        .Weight(Convolve1Weight),
-        .Bias(Convolve1Bias),
+        .SumWidth(SumWidth),
+        .InHeight(Height),
+        .InWidth(Width),
+        .Weight(Weight1),
+        .Bias(Bias1),
         .RightShift(6),
         .ReLU(1),
-        .PaddingValue(0),
-        .DSPCascades(Convolve1Cascades),
-        .DSPsInColumn(Convolve1DSPsInColumn),
-        .LatenciesBetweenColumns(Convolve1LatenciesBetweenColumns)
-    ) convolve1_inst (
+        .WeightSharing(WeightSharing),
+        .MaxDSPColumnsInCascade(Conv1MaxDSPColumnsInCascade),
+        .DSPsInColumn(Conv1DSPsInColumn),
+        .LatenciesBetweenDSPColumns(Conv1LatenciesBetweenDSPColumns)
+    ) conv1_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(buffer1_valid),
-        .slave_ready_o(buffer1_ready),
-        .slave_data_i (buffer1_data),
+        .slave_valid_i(slice1_valid),
+        .slave_ready_o(slice1_ready),
+        .slave_data_i (slice1_data),
 
-        .master_valid_o(convolve1_valid),
-        .master_ready_i(convolve1_ready),
-        .master_data_o (convolve1_data)
+        .master_valid_o(conv1_valid),
+        .master_ready_i(conv1_ready),
+        .master_data_o (conv1_data)
     );
 
-    bit queue2_valid;
-    bit queue2_ready;
-    bit [N1*ActivationWidth-1:0] queue2_data;
+    bit slice2_valid;
+    bit slice2_ready;
+    bit [N1-1:0][ActivationWidth-1:0] slice2_data;
 
-    fifo_queue #(
-        .Capacity (1),
+    register_slice #(
         .DataWidth(N1 * ActivationWidth)
-    ) queue2_inst (
+    ) slice2_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(convolve1_valid),
-        .slave_ready_o(convolve1_ready),
-        .slave_data_i (convolve1_data),
+        .slave_valid_i(conv1_valid),
+        .slave_ready_o(conv1_ready),
+        .slave_data_i (conv1_data),
 
-        .master_valid_o(queue2_valid),
-        .master_ready_i(queue2_ready),
-        .master_data_o (queue2_data)
+        .master_valid_o(slice2_valid),
+        .master_ready_i(slice2_ready),
+        .master_data_o (slice2_data)
     );
 
-    bit buffer2_valid;
-    bit buffer2_ready;
-    bit [N1*ActivationWidth-1:0] buffer2_data;
+    bit conv2_valid;
+    bit conv2_ready;
+    bit [N2-1:0][ActivationWidth-1:0] conv2_data;
 
-    delay_buffer #(
-        .Size(4),
-        .DataWidth(N1 * ActivationWidth)
-    ) buffer2_inst (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-
-        .slave_valid_i(queue2_valid),
-        .slave_ready_o(queue2_ready),
-        .slave_data_i (queue2_data),
-
-        .master_valid_o(buffer2_valid),
-        .master_ready_i(buffer2_ready),
-        .master_data_o (buffer2_data)
-    );
-
-    bit convolve2_valid;
-    bit convolve2_ready;
-    bit [N2*ActivationWidth-1:0] convolve2_data;
-
-    localparam int Convolve2Cascades = 4;
-    localparam int Convolve2DSPsInColumn[Convolve2Cascades][MaxDSPColumns] = '{
-        '{9, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{9, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{9, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{9, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
-    localparam int Convolve2LatenciesBetweenColumns[Convolve2Cascades][MaxDSPColumns-1] = '{
-        '{0, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{0, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{0, 0, 0, 0, 0, 0, 0, 0, 0},
-        '{0, 0, 0, 0, 0, 0, 0, 0, 0}
+    localparam int Conv2MaxDSPColumnsInCascade = 1;
+    localparam int Conv2DSPsInColumn[N2][Conv2MaxDSPColumnsInCascade] = '{default: '{3}};
+    localparam int Conv2LatenciesBetweenDSPColumns[N2][Conv2MaxDSPColumnsInCascade+1] = '{
+        default: '{0, 0}
     };
 
-    pointwise_convolve #(
+    horizontal_convolution #(
         .InChannels(N1),
         .OutChannels(N2),
+        .KernelWidth(1),
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
-        .Weight(Convolve2Weight),
-        .Bias(Convolve2Bias),
+        .SumWidth(SumWidth),
+        .InWidth(Width),
+        .Weight(Weight2),
+        .Bias(Bias2),
         .RightShift(8),
         .ReLU(1),
-        .DSPCascades(Convolve2Cascades),
-        .DSPsInColumn(Convolve2DSPsInColumn),
-        .LatenciesBetweenColumns(Convolve2LatenciesBetweenColumns)
-    ) convolve2_inst (
+        .WeightSharing(WeightSharing),
+        .MaxDSPColumnsInCascade(Conv2MaxDSPColumnsInCascade),
+        .DSPsInColumn(Conv2DSPsInColumn),
+        .LatenciesBetweenDSPColumns(Conv2LatenciesBetweenDSPColumns)
+    ) conv2_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(buffer2_valid),
-        .slave_ready_o(buffer2_ready),
-        .slave_data_i (buffer2_data),
+        .slave_valid_i(slice2_valid),
+        .slave_ready_o(slice2_ready),
+        .slave_data_i (slice2_data),
 
-        .master_valid_o(convolve2_valid),
-        .master_ready_i(convolve2_ready),
-        .master_data_o (convolve2_data)
+        .master_valid_o(conv2_valid),
+        .master_ready_i(conv2_ready),
+        .master_data_o (conv2_data)
     );
 
-    bit queue3_valid;
-    bit queue3_ready;
-    bit [N2*ActivationWidth-1:0] queue3_data;
+    bit slice3_valid;
+    bit slice3_ready;
+    bit [N2-1:0][ActivationWidth-1:0] slice3_data;
 
-    fifo_queue #(
-        .Capacity (1),
+    register_slice #(
         .DataWidth(N2 * ActivationWidth)
-    ) queue3_inst (
+    ) slice3_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(convolve2_valid),
-        .slave_ready_o(convolve2_ready),
-        .slave_data_i (convolve2_data),
+        .slave_valid_i(conv2_valid),
+        .slave_ready_o(conv2_ready),
+        .slave_data_i (conv2_data),
 
-        .master_valid_o(queue3_valid),
-        .master_ready_i(queue3_ready),
-        .master_data_o (queue3_data)
+        .master_valid_o(slice3_valid),
+        .master_ready_i(slice3_ready),
+        .master_data_o (slice3_data)
     );
 
-    bit buffer3_valid;
-    bit buffer3_ready;
-    bit [N2*ActivationWidth-1:0] buffer3_data;
+    bit conv3_valid;
+    bit conv3_ready;
+    bit [2:0][ActivationWidth-1:0] conv3_data;
 
-    delay_buffer #(
-        .Size(4),
-        .DataWidth(N2 * ActivationWidth)
-    ) buffer3_inst (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-
-        .slave_valid_i(queue3_valid),
-        .slave_ready_o(queue3_ready),
-        .slave_data_i (queue3_data),
-
-        .master_valid_o(buffer3_valid),
-        .master_ready_i(buffer3_ready),
-        .master_data_o (buffer3_data)
-    );
-
-    bit convolve3_valid;
-    bit convolve3_ready;
-    bit [3*ActivationWidth-1:0] convolve3_data;
-
-    localparam int Convolve3Cascades = 1;
-    localparam int Convolve3DSPsInColumn[Convolve3Cascades][MaxDSPColumns] = '{
-        '{8, 30, 30, 30, 10, 0, 0, 0, 0, 0}
-    };
-    localparam int Convolve3LatenciesBetweenColumns[Convolve3Cascades][MaxDSPColumns-1] = '{
-        '{3, 3, 3, 3, 0, 0, 0, 0, 0}
+    localparam int Conv3MaxDSPColumnsInCascade = 2;
+    localparam int Conv3DSPsInColumn[3][Conv3MaxDSPColumnsInCascade] = '{default: '{30, 6}};
+    localparam int Conv3LatenciesBetweenDSPColumns[3][Conv3MaxDSPColumnsInCascade+1] = '{
+        default: '{0, 4, 0}
     };
 
-    convolve #(
+    full_convolution #(
         .InChannels(N2),
         .OutChannels(3),
         .KernelHeight(F3),
         .KernelWidth(F3),
-        .InHeight(Height),
-        .InWidth(Width),
         .PaddingTop(F3 / 2),
         .PaddingBottom(F3 / 2),
         .PaddingLeft(F3 / 2),
         .PaddingRight(F3 / 2),
+        .PaddingValue(0),
         .ActivationWidth(ActivationWidth),
         .WeightWidth(WeightWidth),
-        .Weight(Convolve3Weight),
-        .Bias(Convolve3Bias),
+        .SumWidth(SumWidth),
+        .InHeight(Height),
+        .InWidth(Width),
+        .Weight(Weight3),
+        .Bias(Bias3),
         .RightShift(8),
         .ReLU(0),
-        .PaddingValue(0),
-        .DSPCascades(Convolve3Cascades),
-        .DSPsInColumn(Convolve3DSPsInColumn),
-        .LatenciesBetweenColumns(Convolve3LatenciesBetweenColumns)
-    ) convolve3_inst (
+        .WeightSharing(WeightSharing),
+        .MaxDSPColumnsInCascade(Conv3MaxDSPColumnsInCascade),
+        .DSPsInColumn(Conv3DSPsInColumn),
+        .LatenciesBetweenDSPColumns(Conv3LatenciesBetweenDSPColumns)
+    ) conv3_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(buffer3_valid),
-        .slave_ready_o(buffer3_ready),
-        .slave_data_i (buffer3_data),
+        .slave_valid_i(slice3_valid),
+        .slave_ready_o(slice3_ready),
+        .slave_data_i (slice3_data),
 
-        .master_valid_o(convolve3_valid),
-        .master_ready_i(convolve3_ready),
-        .master_data_o (convolve3_data)
+        .master_valid_o(conv3_valid),
+        .master_ready_i(conv3_ready),
+        .master_data_o (conv3_data)
     );
 
-    bit queue4_valid;
-    bit queue4_ready;
-    bit [3*ActivationWidth-1:0] queue4_data;
-
-    fifo_queue #(
-        .Capacity (1),
+    register_slice #(
         .DataWidth(3 * ActivationWidth)
-    ) queue4_inst (
+    ) slice4_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),
 
-        .slave_valid_i(convolve3_valid),
-        .slave_ready_o(convolve3_ready),
-        .slave_data_i (convolve3_data),
-
-        .master_valid_o(queue4_valid),
-        .master_ready_i(queue4_ready),
-        .master_data_o (queue4_data)
-    );
-
-    delay_buffer #(
-        .Size(4),
-        .DataWidth(3 * ActivationWidth)
-    ) buffer4_inst (
-        .clock_i(clock_i),
-        .reset_i(reset_i),
-
-        .slave_valid_i(queue4_valid),
-        .slave_ready_o(queue4_ready),
-        .slave_data_i (queue4_data),
+        .slave_valid_i(conv3_valid),
+        .slave_ready_o(conv3_ready),
+        .slave_data_i (conv3_data),
 
         .master_valid_o(master_valid_o),
         .master_ready_i(master_ready_i),

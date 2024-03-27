@@ -6,7 +6,7 @@
 <Project Version="7" Minor="38" Path="/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="a571338de58b498c9dd808925b2dc9b9"/>
+    <Option Name="Id" Val="9d80bb6853a447a7b15c7d1251f725f7"/>
     <Option Name="Part" Val="xc7a200tsbg484-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -21,7 +21,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PSRCDIR/sources_1"/>
+    <Option Name="IPRepoPath" Val="$PSRCDIR/sources_1/imports/sources"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -40,13 +40,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="3"/>
-    <Option Name="WTModelSimExportSim" Val="3"/>
-    <Option Name="WTQuestaExportSim" Val="3"/>
-    <Option Name="WTIesExportSim" Val="3"/>
-    <Option Name="WTVcsExportSim" Val="3"/>
-    <Option Name="WTRivieraExportSim" Val="3"/>
-    <Option Name="WTActivehdlExportSim" Val="3"/>
+    <Option Name="WTXSimExportSim" Val="2"/>
+    <Option Name="WTModelSimExportSim" Val="2"/>
+    <Option Name="WTQuestaExportSim" Val="2"/>
+    <Option Name="WTIesExportSim" Val="2"/>
+    <Option Name="WTVcsExportSim" Val="2"/>
+    <Option Name="WTRivieraExportSim" Val="2"/>
+    <Option Name="WTActivehdlExportSim" Val="2"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -61,80 +61,45 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/imports/sources/constant_pad.sv">
+      <File Path="$PSRCDIR/sources_1/imports/sources/constant_padding.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/constant_pad.sv"/>
-          <Attr Name="ImportTime" Val="1710894029"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/constant_padding.sv"/>
+          <Attr Name="ImportTime" Val="1711463167"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/utilities.svh">
+      <File Path="$PSRCDIR/sources_1/imports/sources/full_convolution.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/utilities.svh"/>
-          <Attr Name="ImportTime" Val="1711119987"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/full_convolution.sv"/>
+          <Attr Name="ImportTime" Val="1711485266"/>
           <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources/constants.svh">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/constants.svh"/>
-          <Attr Name="ImportTime" Val="1710952642"/>
+          <Attr Name="ImportTime" Val="1711456714"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/convolve.sv">
+      <File Path="$PSRCDIR/sources_1/imports/sources/horizontal_convolution.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/convolve.sv"/>
-          <Attr Name="ImportTime" Val="1711154447"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/delay_buffer.sv">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/delay_buffer.sv"/>
-          <Attr Name="ImportTime" Val="1711156571"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/horizontal_convolution.sv"/>
+          <Attr Name="ImportTime" Val="1711485270"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/dual_port_ram.sv">
+      <File Path="$PSRCDIR/sources_1/imports/sources/register_slice.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/dual_port_ram.sv"/>
-          <Attr Name="ImportTime" Val="1711156581"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/fifo_queue.sv">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/fifo_queue.sv"/>
-          <Attr Name="ImportTime" Val="1711156590"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/pointwise_convolve.sv">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/pointwise_convolve.sv"/>
-          <Attr Name="ImportTime" Val="1711147957"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/sliding_window.sv">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/sliding_window.sv"/>
-          <Attr Name="ImportTime" Val="1711156599"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/register_slice.sv"/>
+          <Attr Name="ImportTime" Val="1711457595"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -143,16 +108,73 @@
       <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_large.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_large.sv"/>
-          <Attr Name="ImportTime" Val="1711155665"/>
+          <Attr Name="ImportTime" Val="1711485273"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/bias3.svh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/bias3.svh"/>
+          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/weight3.svh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/weight3.svh"/>
+          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/bias2.svh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/bias2.svh"/>
+          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/weight1.svh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/weight1.svh"/>
+          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/weight2.svh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/weight2.svh"/>
+          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/bias1.svh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/bias1.svh"/>
+          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small.sv"/>
-          <Attr Name="ImportTime" Val="1711154457"/>
+          <Attr Name="ImportTime" Val="1711485278"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources/vertical_sliding_window.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/vertical_sliding_window.sv"/>
+          <Attr Name="ImportTime" Val="1711462003"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -161,13 +183,13 @@
       <File Path="$PSRCDIR/sources_1/imports/sources/superresolution.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/superresolution.sv"/>
-          <Attr Name="ImportTime" Val="1711164991"/>
+          <Attr Name="ImportTime" Val="1711485399"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/component.xml">
+      <File Path="$PSRCDIR/sources_1/imports/sources/component.xml">
         <FileInfo SFType="IPXACT"/>
       </File>
       <Config>
@@ -216,19 +238,6 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="xbip_dsp48_macro_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="axis_data_fifo_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_data_fifo_0">
-      <File Path="$PSRCDIR/sources_1/ip/axis_data_fifo_0/axis_data_fifo_0.xci">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="axis_data_fifo_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -290,17 +299,6 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="axis_data_fifo_0_synth_1" Type="Ft3:Synth" SrcSet="axis_data_fifo_0" Part="xc7a200tsbg484-1" ConstrsSet="axis_data_fifo_0" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/axis_data_fifo_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
@@ -338,24 +336,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="xbip_dsp48_macro_1_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="xbip_dsp48_macro_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="xbip_dsp48_macro_1_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2018"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="axis_data_fifo_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tsbg484-1" ConstrsSet="axis_data_fifo_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="axis_data_fifo_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
           <Desc>Default settings for Implementation.</Desc>
