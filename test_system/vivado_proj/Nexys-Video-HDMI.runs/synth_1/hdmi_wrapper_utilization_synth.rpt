@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-| Date         : Wed Mar 27 01:36:20 2024
+| Date         : Wed Mar 27 02:10:26 2024
 | Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
 | Command      : report_utilization -file hdmi_wrapper_utilization_synth.rpt -pb hdmi_wrapper_utilization_synth.pb
 | Design       : hdmi_wrapper
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |    7 |     0 |       285 |  2.46 |
+| Bonded IOB                  |   23 |     0 |       285 |  8.07 |
 | Bonded IPADs                |    0 |     0 |        14 |  0.00 |
 | Bonded OPADs                |    0 |     0 |         8 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |        10 |  0.00 |
@@ -149,8 +149,8 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| IBUF     |    4 |                  IO |
-| OBUF     |    3 |                  IO |
+| IBUF     |   12 |                  IO |
+| OBUF     |   11 |                  IO |
 | OBUFT    |    2 |                  IO |
 +----------+------+---------------------+
 

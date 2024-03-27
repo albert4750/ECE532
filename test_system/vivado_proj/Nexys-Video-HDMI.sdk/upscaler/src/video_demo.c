@@ -96,7 +96,12 @@ XAxiDma brightness;
 XAxiDma sharper;
 XAxiDma upscaling;
 u8 dmaMode;
+u8 dmaStreaming;
+u8 curr;
 u8 wOrB;
+u32 pad0;
+u32 pad1;
+u32 pad2;
 // Albert End
 
 /* ------------------------------------------------------------ */
@@ -144,6 +149,8 @@ void DemoInitialize()
 	xil_printf("wOrB is at %x\r\n", &wOrB);
 	wOrB = 0;
 	dmaMode = 0;
+	dmaStreaming = 1;
+	curr = 1;
 	// Albert End
 
 	/*
@@ -309,8 +316,9 @@ void DemoRun()
 
 		/* Wait for data on UART */
 		while (XUartLite_IsReceiveEmpty(UART_BASEADDR) && !fRefresh){
-			doDMA(0);
-			usleep(25000);
+			if(dmaStreaming){
+				doDMA(0);
+			}
 		}
 
 		/* Store the first character in the UART receive FIFO and echo it */
@@ -387,9 +395,12 @@ void DemoRun()
 			break;
 		case 's':
 			xil_printf("\n\rSwitching DMA mode\n\r");
-			*led = *swt;
-			dmaMode = (dmaMode + 1) % 6;
+			dmaMode = *swt;
+			*led = dmaMode;
 			xil_printf("DMA mode is now %u\n\r", dmaMode);
+			break;
+		case 't':
+			dmaStreaming = !dmaStreaming;
 			break;
 		case 'q':
 			break;
@@ -412,50 +423,210 @@ void doDMA(u8 debug){
 	u32 ret;
 	u32 length = sizeof(u8) * DEMO_MAX_FRAME;
 	if(debug) xil_printf("\n\rTrying to initiate DMA DATA Transfer\n\r");
-	XAxiDma* dma;
+//	XAxiDma* dma;
+	u8 dmaEnable[5] = {0};
+	u8 nextFrame;
 
+	// select which frame we would be writing to
+	// write to next frame
+	if(curr == 1){
+		if(debug) xil_printf("\n\rcurr == 1\n\r");
+		nextFrame = 2;
+	}
+	else if(curr == 2){
+		if(debug) xil_printf("\n\rcurr == 2\n\r");
+		nextFrame = 1;
+	}
+	else{
+		xil_printf("\n\rsomething wrong with frame buffer\n\r");
+	}
+
+	// determine dma mode
+	// dmaMode[0] brightness
+	// dmaMode[1] grayScale_new
+	// dmaMode[2] gaussianBlur
+	// dmaMode[3] sharper
+	// dmaMode[4] upscaling
+
+	ret = dmaMode;
+	for(int i = 0; i < 5; i++){
+		dmaEnable[i] = ret & 1;
+		ret = ret >> 1;
+	}
+
+	// if dmaMode is 0 then we are in passthrough
 	if(dmaMode == 0){
-		dma = &passThrough;
+		// start reading
+		ret = XAxiDma_SimpleTransfer(&passThrough, (u32)pFrames[0], length, XAXIDMA_DMA_TO_DEVICE);
+		if(debug) {
+			if(ret != XST_SUCCESS){
+				xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+			}
+			else{
+				xil_printf("DMA to device transfer Successfully registered\n\r");
+			}
+		}
+
+		// start writing
+		ret = XAxiDma_SimpleTransfer(&passThrough, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+		if(debug){
+			if(ret != XST_SUCCESS){
+				xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+			}
+			else{
+				xil_printf("device to DMA transfer Successfully registered\n\r");
+			}
+		}
+		while(XAxiDma_Busy(&passThrough, XAXIDMA_DEVICE_TO_DMA));
 	}
-	else if(dmaMode == 1){
-		dma = &brightness;
-	}
-	else if(dmaMode == 2){
-		dma = &grayScale_new;
-	}
-	else if(dmaMode == 3){
-		dma = &gaussianBlur;
-	}
-	else if (dmaMode == 4){
-		dma = &sharper;
-	}
-	else if (dmaMode == 5){
-		dma = &upscaling;
+	// in the case of not passthrough
+	else{
+		u8 fromFrame = 0;	// first dma need to grab new frame from source
+
+		// if brightness enabled
+		if(dmaEnable[0]){
+			// start reading
+			ret = XAxiDma_SimpleTransfer(&brightness, (u32)pFrames[fromFrame], length, XAXIDMA_DMA_TO_DEVICE);
+			if(debug) {
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("DMA to device transfer Successfully registered\n\r");
+				}
+			}
+
+			// start writing
+			ret = XAxiDma_SimpleTransfer(&brightness, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+			if(debug){
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("device to DMA transfer Successfully registered\n\r");
+				}
+			}
+
+			fromFrame = nextFrame;
+			while(XAxiDma_Busy(&brightness, XAXIDMA_DEVICE_TO_DMA));
+		}
+
+		// if gray scale enabled
+		if(dmaEnable[1]){
+			// start reading
+			ret = XAxiDma_SimpleTransfer(&grayScale_new, (u32)pFrames[fromFrame], length, XAXIDMA_DMA_TO_DEVICE);
+			if(debug) {
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("DMA to device transfer Successfully registered\n\r");
+				}
+			}
+
+			// start writing
+			ret = XAxiDma_SimpleTransfer(&grayScale_new, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+			if(debug){
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("device to DMA transfer Successfully registered\n\r");
+				}
+			}
+
+			fromFrame = nextFrame;
+			while(XAxiDma_Busy(&grayScale_new, XAXIDMA_DEVICE_TO_DMA));
+		}
+
+		// if gaussian blur enabled
+		if(dmaEnable[2]){
+			// start reading
+			ret = XAxiDma_SimpleTransfer(&gaussianBlur, (u32)pFrames[fromFrame], length, XAXIDMA_DMA_TO_DEVICE);
+			if(debug) {
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("DMA to device transfer Successfully registered\n\r");
+				}
+			}
+
+			// start writing
+			ret = XAxiDma_SimpleTransfer(&gaussianBlur, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+			if(debug){
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("device to DMA transfer Successfully registered\n\r");
+				}
+			}
+
+			fromFrame = nextFrame;
+			while(XAxiDma_Busy(&gaussianBlur, XAXIDMA_DEVICE_TO_DMA));
+		}
+
+		// if sharpness enabled
+		if(dmaEnable[3]){
+			// start reading
+			ret = XAxiDma_SimpleTransfer(&sharper, (u32)pFrames[fromFrame], length, XAXIDMA_DMA_TO_DEVICE);
+			if(debug) {
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("DMA to device transfer Successfully registered\n\r");
+				}
+			}
+
+			// start writing
+			ret = XAxiDma_SimpleTransfer(&sharper, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+			if(debug){
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("device to DMA transfer Successfully registered\n\r");
+				}
+			}
+
+			fromFrame = nextFrame;
+			while(XAxiDma_Busy(&sharper, XAXIDMA_DEVICE_TO_DMA));
+		}
+
+		// if upscaling enabled
+		if(dmaEnable[4]){
+			// start reading
+			ret = XAxiDma_SimpleTransfer(&upscaling, (u32)pFrames[fromFrame], length, XAXIDMA_DMA_TO_DEVICE);
+			if(debug) {
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("DMA to device transfer Successfully registered\n\r");
+				}
+			}
+
+			// start writing
+			ret = XAxiDma_SimpleTransfer(&upscaling, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+			if(debug){
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("device to DMA transfer Successfully registered\n\r");
+				}
+			}
+
+			fromFrame = nextFrame;
+			while(XAxiDma_Busy(&upscaling, XAXIDMA_DEVICE_TO_DMA));
+		}
 	}
 
-
-	// start reading
-	ret = XAxiDma_SimpleTransfer(dma, (u32)pFrames[0], length, XAXIDMA_DMA_TO_DEVICE);
-	if(debug) {
-		if(ret != XST_SUCCESS){
-			xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
-		}
-		else{
-			xil_printf("DMA to device transfer Successfully registered\n\r");
-		}
-	}
-
-	// start writing
-	ret = XAxiDma_SimpleTransfer(dma, (u32)pFrames[1], length, XAXIDMA_DEVICE_TO_DMA);
-	if(debug){
-		if(ret != XST_SUCCESS){
-			xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
-		}
-		else{
-			xil_printf("device to DMA transfer Successfully registered\n\r");
-		}
-	}
-
+	// dma completed, now we swap buffer
+	DisplayChangeFrame(&dispCtrl, nextFrame);
+	curr = nextFrame;
 }
 // Albert End
 
@@ -490,6 +661,7 @@ void DemoPrintMenu()
 	xil_printf("9 - Print black or white in buffer order\n\r");
 	xil_printf("d - DMA go\n\r");
 	xil_printf("s - switch DMA mode\n\r");
+	xil_printf("t - start/stop dma streaming\n\r");
 	xil_printf("q - Quit\n\r");
 	xil_printf("\n\r");
 	xil_printf("\n\r");

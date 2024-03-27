@@ -272,9 +272,9 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>swt</spirit:name>
+          <spirit:name>led</spirit:name>
           <spirit:wire>
-            <spirit:direction>in</spirit:direction>
+            <spirit:direction>out</spirit:direction>
             <spirit:vector>
               <spirit:left>7</spirit:left>
               <spirit:right>0</spirit:right>
@@ -282,9 +282,9 @@
           </spirit:wire>
         </spirit:port>
         <spirit:port>
-          <spirit:name>led</spirit:name>
+          <spirit:name>swt</spirit:name>
           <spirit:wire>
-            <spirit:direction>out</spirit:direction>
+            <spirit:direction>in</spirit:direction>
             <spirit:vector>
               <spirit:left>7</spirit:left>
               <spirit:right>0</spirit:right>
@@ -1222,6 +1222,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_dma_6" spirit:portRef="m_axi_mm2s_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_6" spirit:portRef="m_axi_s2mm_aclk"/>
         <spirit:internalPortReference spirit:componentRef="superresolution_0" spirit:portRef="clock_i"/>
+        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aclk"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="M00_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S00_ACLK"/>
@@ -1259,7 +1260,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S15_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M14_ACLK"/>
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M15_ACLK"/>
-        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aclk"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>mig_7series_0_ui_clk_sync_rst</spirit:name>
@@ -1314,6 +1314,7 @@
         <spirit:internalPortReference spirit:componentRef="axi_dma_5" spirit:portRef="axi_resetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_dma_6" spirit:portRef="axi_resetn"/>
         <spirit:internalPortReference spirit:componentRef="superresolution_0" spirit:portRef="reset_i"/>
+        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aresetn"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="M00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S00_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S01_ARESETN"/>
@@ -1348,7 +1349,6 @@
         <spirit:internalPortReference spirit:componentRef="axi_mem_intercon" spirit:portRef="S15_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M14_ARESETN"/>
         <spirit:internalPortReference spirit:componentRef="microblaze_0_axi_periph" spirit:portRef="M15_ARESETN"/>
-        <spirit:internalPortReference spirit:componentRef="axi_gpio_0" spirit:portRef="s_axi_aresetn"/>
       </spirit:adHocConnection>
       <spirit:adHocConnection>
         <spirit:name>rst_mig_7series_0_pxl_peripheral_aresetn</spirit:name>

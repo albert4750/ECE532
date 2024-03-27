@@ -65,9 +65,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param tcl.collectionResultDisplayLimit 0
-  set_param board.repoPaths C:/Xilinx/Vivado/2018.2/data/boards/board_files
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a200tsbg484-1
   set_property board_part_repo_paths C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.board [current_project]
   set_property board_part digilentinc.com:nexys_video:part0:1.1 [current_project]

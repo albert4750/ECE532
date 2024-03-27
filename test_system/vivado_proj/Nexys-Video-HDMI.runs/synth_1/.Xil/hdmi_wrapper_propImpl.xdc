@@ -14,70 +14,38 @@ set_property src_info {type:XDC file:1 line:8 export:INPUT save:INPUT read:READ}
 set_false_path -from [get_cells -hierarchical  -filter "NAME =~*axi_vdma_0*S2MM*LB_BUILT_IN*/*rstbt*/*rst_reg[*]"]
 set_property src_info {type:XDC file:2 line:8 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN R4    IOSTANDARD LVCMOS33 } [get_ports { sys_clk_i }]; #IO_L13P_T2_MRCC_34 Sch=sysclk
-set_property src_info {type:XDC file:2 line:20 export:INPUT save:INPUT read:READ} [current_design]
-set_property package_pin T14 [get_ports {led[0]}];
-set_property src_info {type:XDC file:2 line:21 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS25 [get_ports [list {led[0]}]];
-set_property src_info {type:XDC file:2 line:22 export:INPUT save:INPUT read:READ} [current_design]
-set_property package_pin T15 [get_ports {led[1]}];
-set_property src_info {type:XDC file:2 line:23 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS25 [get_ports [list {led[1]}]];
-set_property src_info {type:XDC file:2 line:24 export:INPUT save:INPUT read:READ} [current_design]
-set_property package_pin T16 [get_ports {led[2]}];
-set_property src_info {type:XDC file:2 line:25 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS25 [get_ports [list {led[2]}]];
-set_property src_info {type:XDC file:2 line:26 export:INPUT save:INPUT read:READ} [current_design]
-set_property package_pin U16 [get_ports {led[3]}];
-set_property src_info {type:XDC file:2 line:27 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS25 [get_ports [list {led[3]}]];
-set_property src_info {type:XDC file:2 line:28 export:INPUT save:INPUT read:READ} [current_design]
-set_property package_pin V15 [get_ports {led[4]}];
-set_property src_info {type:XDC file:2 line:29 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS25 [get_ports [list {led[4]}]];
-set_property src_info {type:XDC file:2 line:30 export:INPUT save:INPUT read:READ} [current_design]
-set_property package_pin W16 [get_ports {led[5]}];
-set_property src_info {type:XDC file:2 line:31 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS25 [get_ports [list {led[5]}]];
-set_property src_info {type:XDC file:2 line:32 export:INPUT save:INPUT read:READ} [current_design]
-set_property package_pin W15 [get_ports {led[6]}];
-set_property src_info {type:XDC file:2 line:33 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS25 [get_ports [list {led[6]}]];
-set_property src_info {type:XDC file:2 line:34 export:INPUT save:INPUT read:READ} [current_design]
-set_property package_pin Y13 [get_ports {led[7]}];
-set_property src_info {type:XDC file:2 line:35 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS25 [get_ports [list {led[7]}]];
+set_property src_info {type:XDC file:2 line:12 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN T14   IOSTANDARD LVCMOS25 } [get_ports { led[0] }]; #IO_L15P_T2_DQS_13 Sch=led[0]
+set_property src_info {type:XDC file:2 line:13 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN T15   IOSTANDARD LVCMOS25 } [get_ports { led[1] }]; #IO_L15N_T2_DQS_13 Sch=led[1]
+set_property src_info {type:XDC file:2 line:14 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN T16   IOSTANDARD LVCMOS25 } [get_ports { led[2] }]; #IO_L17P_T2_13 Sch=led[2]
+set_property src_info {type:XDC file:2 line:15 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN U16   IOSTANDARD LVCMOS25 } [get_ports { led[3] }]; #IO_L17N_T2_13 Sch=led[3]
+set_property src_info {type:XDC file:2 line:16 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN V15   IOSTANDARD LVCMOS25 } [get_ports { led[4] }]; #IO_L14N_T2_SRCC_13 Sch=led[4]
+set_property src_info {type:XDC file:2 line:17 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN W16   IOSTANDARD LVCMOS25 } [get_ports { led[5] }]; #IO_L16N_T2_13 Sch=led[5]
+set_property src_info {type:XDC file:2 line:18 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN W15   IOSTANDARD LVCMOS25 } [get_ports { led[6] }]; #IO_L16P_T2_13 Sch=led[6]
+set_property src_info {type:XDC file:2 line:19 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN Y13   IOSTANDARD LVCMOS25 } [get_ports { led[7] }]; #IO_L5P_T0_13 Sch=led[7]
 set_property src_info {type:XDC file:2 line:55 export:INPUT save:INPUT read:READ} [current_design]
 set_property package_pin E22 [get_ports {swt[0]}];
-set_property src_info {type:XDC file:2 line:56 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS12 [get_ports [list {swt[0]}]];
 set_property src_info {type:XDC file:2 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_property package_pin F21 [get_ports {swt[1]}];
-set_property src_info {type:XDC file:2 line:58 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS12 [get_ports [list {swt[1]}]];
 set_property src_info {type:XDC file:2 line:59 export:INPUT save:INPUT read:READ} [current_design]
 set_property package_pin G21 [get_ports {swt[2]}];
-set_property src_info {type:XDC file:2 line:60 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS12 [get_ports [list {swt[2]}]];
 set_property src_info {type:XDC file:2 line:61 export:INPUT save:INPUT read:READ} [current_design]
 set_property package_pin G22 [get_ports {swt[3]}];
-set_property src_info {type:XDC file:2 line:62 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS12 [get_ports [list {swt[3]}]];
 set_property src_info {type:XDC file:2 line:63 export:INPUT save:INPUT read:READ} [current_design]
 set_property package_pin H17 [get_ports {swt[4]}];
-set_property src_info {type:XDC file:2 line:64 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS12 [get_ports [list {swt[4]}]];
 set_property src_info {type:XDC file:2 line:65 export:INPUT save:INPUT read:READ} [current_design]
 set_property package_pin J16 [get_ports {swt[5]}];
-set_property src_info {type:XDC file:2 line:66 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS12 [get_ports [list {swt[5]}]];
 set_property src_info {type:XDC file:2 line:67 export:INPUT save:INPUT read:READ} [current_design]
 set_property package_pin K13 [get_ports {swt[6]}];
-set_property src_info {type:XDC file:2 line:68 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS12 [get_ports [list {swt[6]}]];
 set_property src_info {type:XDC file:2 line:69 export:INPUT save:INPUT read:READ} [current_design]
 set_property package_pin M17 [get_ports {swt[7]}];
-set_property src_info {type:XDC file:2 line:70 export:INPUT save:INPUT read:READ} [current_design]
-set_property iostandard LVCMOS12 [get_ports [list {swt[7]}]];
 set_property src_info {type:XDC file:2 line:84 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN W4    IOSTANDARD TMDS_33     } [get_ports { TMDS_IN_clk_n }]; #IO_L12N_T1_MRCC_34 Sch=hdmi_rx_clk_n
 set_property src_info {type:XDC file:2 line:85 export:INPUT save:INPUT read:READ} [current_design]

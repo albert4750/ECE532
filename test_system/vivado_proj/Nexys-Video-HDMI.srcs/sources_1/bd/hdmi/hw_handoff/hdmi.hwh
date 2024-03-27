@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 27 00:46:26 2024" VIVADOVERSION="2018.2.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 27 02:09:21 2024" VIVADOVERSION="2018.2.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys_video:part0:1.1" DEVICE="7a200t" NAME="hdmi" PACKAGE="sbg484" SPEEDGRADE="-1"/>
 
