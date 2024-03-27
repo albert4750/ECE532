@@ -56,6 +56,39 @@ module process_ppm_image;
         .master_last_o (out_last)
     );
 
+    // convolution_image_filter #(
+    //     .KernelSize(3),
+    //     .Height(Height),
+    //     .Width(Width),
+    //     .RightShift(0),
+    //     .WeightWidth(5),
+    //     .Weight11(-5'd1),
+    //     .Weight12(-5'd1),
+    //     .Weight13(-5'd1),
+    //     .Weight21(-5'd1),
+    //     .Weight22(5'd9),
+    //     .Weight23(-5'd1),
+    //     .Weight31(-5'd1),
+    //     .Weight32(-5'd1),
+    //     .Weight33(-5'd1)
+    // ) convolution_image_filter_inst (
+    //     .clock_i(clock),
+    //     .reset_i(reset),
+
+    //     .slave_valid_i(in_valid),
+    //     .slave_ready_o(in_ready),
+    //     .slave_red_i  (in_red),
+    //     .slave_green_i(in_green),
+    //     .slave_blue_i (in_blue),
+
+    //     .master_valid_o(out_valid),
+    //     .master_ready_i(out_ready),
+    //     .master_red_o  (out_red),
+    //     .master_green_o(out_green),
+    //     .master_blue_o (out_blue),
+    //     .master_last_o (out_last)
+    // );
+
     bit reader_finished;
     ppm_reader #(
         .Height(Height),

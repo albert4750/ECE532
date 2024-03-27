@@ -165,7 +165,7 @@ module horizontal_convolution #(
 
     function automatic activation_t right_shift_and_activation(dsp_output_t value);
         // Applies a right shift and an optional ReLU activation function to an output value.
-        localparam dsp_output_t MaxActivation = 1 << (ActivationWidth - 1) - 1;
+        localparam dsp_output_t MaxActivation = (1 << (ActivationWidth - 1)) - 1;
         localparam dsp_output_t MinActivation = ReLU ? 0 : (-1 << (ActivationWidth - 1));
 
         dsp_output_t shifted_value = value >>> RightShift;
