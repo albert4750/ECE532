@@ -5,9 +5,11 @@
 // This module is the top-level module for the superresolution IP in Vivado.
 
 module superresolution #(
+    parameter Variant = "small",
     parameter int Height = 480,
     parameter int Width = 640,
-    parameter Variant = "small"
+    parameter int InternalActivationWidth = 16,
+    parameter int InternalActivationShift = 6
 ) (
     input bit clock_i,
     input bit reset_i,
@@ -26,35 +28,36 @@ module superresolution #(
     output bit master_last_o
 );
 
-    typedef bit signed [15:0] int16_t;
+    typedef bit signed [InternalActivationWidth-1:0] activation_t;
     typedef bit [$clog2(Height)-1:0] row_t;
     typedef bit [$clog2(Width)-1:0] column_t;
 
-    function automatic bit [7:0] right_shift_and_clip(int16_t value);
-        int16_t shifted_value = value >>> 6;
-        if (shifted_value >= int16_t'(255)) begin
+    function automatic bit [7:0] right_shift_and_clip(activation_t value);
+        activation_t shifted_value = value >>> InternalActivationShift;
+        if (shifted_value >= activation_t'(255)) begin
             return 8'd255;
-        end else if (shifted_value <= int16_t'(0)) begin
+        end else if (shifted_value <= activation_t'(0)) begin
             return 8'd0;
         end else begin
             return 8'(shifted_value);
         end
     endfunction : right_shift_and_clip
 
-    bit [2:0][15:0] scaled_input;
-    assign scaled_input[0] = int16_t'(slave_red_i) <<< 6;
-    assign scaled_input[1] = int16_t'(slave_green_i) <<< 6;
-    assign scaled_input[2] = int16_t'(slave_blue_i) <<< 6;
+    bit [2:0][InternalActivationWidth-1:0] scaled_input;
+    assign scaled_input[0] = activation_t'(slave_red_i) <<< InternalActivationShift;
+    assign scaled_input[1] = activation_t'(slave_green_i) <<< InternalActivationShift;
+    assign scaled_input[2] = activation_t'(slave_blue_i) <<< InternalActivationShift;
 
-    bit [2:0][15:0] scaled_output;
+    bit [2:0][InternalActivationWidth-1:0] scaled_output;
     assign master_red_o   = right_shift_and_clip(scaled_output[0]);
     assign master_green_o = right_shift_and_clip(scaled_output[1]);
     assign master_blue_o  = right_shift_and_clip(scaled_output[2]);
 
     if (Variant == "small") begin : gen_srcnn_small
         srcnn_small #(
+            .ActivationWidth(InternalActivationWidth),
             .Height(Height),
-            .Width (Width)
+            .Width(Width)
         ) srcnn_small_inst (
             .clock_i(clock_i),
             .reset_i(reset_i),
@@ -70,8 +73,9 @@ module superresolution #(
     end : gen_srcnn_small
     else if (Variant == "large") begin : gen_srcnn_large
         srcnn_large #(
+            .ActivationWidth(InternalActivationWidth),
             .Height(Height),
-            .Width (Width)
+            .Width(Width)
         ) srcnn_large_inst (
             .clock_i(clock_i),
             .reset_i(reset_i),

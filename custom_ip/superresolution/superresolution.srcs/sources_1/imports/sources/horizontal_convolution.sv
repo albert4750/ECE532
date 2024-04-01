@@ -18,13 +18,12 @@ module horizontal_convolution #(
     parameter int OutChannels = 3,
     parameter int KernelWidth = 3,
     parameter int ActivationWidth = 16,
-    parameter int WeightWidth = 20,
-    parameter int SumWidth = 37,
     parameter int InWidth = 640,
     /* verilator lint_off ASCRANGE */
-    parameter bit signed [0:OutChannels-1][0:InChannels-1][0:KernelWidth-1][WeightWidth-1:0]
-        Weight = {OutChannels{{InChannels{{KernelWidth{WeightWidth'(0)}}}}}},
-    parameter bit signed [0:OutChannels-1][SumWidth-1:0] Bias = {OutChannels{SumWidth'(0)}},
+    parameter bit signed [0:OutChannels-1][0:InChannels-1][0:KernelWidth-1][DSPInputAWidth-1:0]
+        Weight = {OutChannels{{InChannels{{KernelWidth{DSPInputAWidth'(0)}}}}}},
+    parameter bit signed [0:OutChannels-1][DSPOutputWidth-1:0] Bias =
+        {OutChannels{DSPOutputWidth'(0)}},
     /* verilator lint_on ASCRANGE */
     parameter int RightShift = 0,
     parameter bit ReLU = 0,
@@ -52,8 +51,6 @@ module horizontal_convolution #(
     localparam int StateWidth = WeightSharing > 1 ? $clog2(WeightSharing) : 1;
 
     typedef bit signed [ActivationWidth-1:0] activation_t;
-    typedef bit signed [WeightWidth-1:0] weight_t;
-    typedef bit signed [SumWidth-1:0] sum_t;
     typedef bit signed [DSPInputAWidth-1:0] dsp_input_a_t;
     typedef bit signed [DSPInputBWidth-1:0] dsp_input_b_t;
     typedef bit signed [DSPOutputWidth-1:0] dsp_output_t;
@@ -168,7 +165,7 @@ module horizontal_convolution #(
 
     function automatic activation_t right_shift_and_activation(dsp_output_t value);
         // Applies a right shift and an optional ReLU activation function to an output value.
-        localparam dsp_output_t MaxActivation = 1 << (ActivationWidth - 1) - 1;
+        localparam dsp_output_t MaxActivation = (1 << (ActivationWidth - 1)) - 1;
         localparam dsp_output_t MinActivation = ReLU ? 0 : (-1 << (ActivationWidth - 1));
 
         dsp_output_t shifted_value = value >>> RightShift;
@@ -227,7 +224,7 @@ module horizontal_convolution #(
             localparam int ReverseIndexInGroup = KernelWidth - 1 - IndexInGroup;
             localparam int InputLatency = get_dsp_input_latency(OutChannel, IndexInCascade);
 
-            weight_t weight[WeightSharing];
+            dsp_input_a_t weight[WeightSharing];
             for (genvar I = 0; I < WeightSharing; ++I) begin : gen_weight
                 localparam int InChannel = GroupIndex * WeightSharing + I;
                 if (InChannel < InChannels) begin : gen_weight_valid
@@ -238,10 +235,8 @@ module horizontal_convolution #(
                 end : gen_weight_zero
             end : gen_weight
 
-            weight_t input_a_narrow;
-            assign input_a_narrow = weight[delayed_input_state[InputLatency]];
-
-            assign dsp_input_a[OutChannel][IndexInCascade] = dsp_input_a_t'(input_a_narrow);
+            assign dsp_input_a[OutChannel][IndexInCascade] =
+                weight[delayed_input_state[InputLatency]];
         end : gen_dsp_input_a_index_in_cascade
     end : gen_dsp_input_a_out_channel
 
@@ -298,7 +293,7 @@ module horizontal_convolution #(
     dsp_output_t dsp_output_p[OutChannels][DSPsPerCascade];
 
     for (genvar OutChannel = 0; OutChannel < OutChannels; ++OutChannel) begin : gen_dsp_input_bias
-        assign dsp_input_bias[OutChannel][0] = dsp_output_t'(sum_t'(Bias[OutChannel]));
+        assign dsp_input_bias[OutChannel][0] = Bias[OutChannel];
 
         for (
             genvar IndexInCascade = 1; IndexInCascade < DSPsPerCascade; ++IndexInCascade

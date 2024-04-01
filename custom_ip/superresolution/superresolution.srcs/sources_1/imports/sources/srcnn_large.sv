@@ -4,11 +4,14 @@
 //
 // This module is a large-scale implementation of the SRCNN algorithm.
 
+`include "constants.svh"
+
+import constants::*;
+
 module srcnn_large #(
+    parameter int ActivationWidth = 16,
     parameter int Height = 480,
-    parameter int Width = 640,
-    localparam int ActivationWidth = 16,
-    localparam int WeightWidth = 20
+    parameter int Width = 640
 ) (
     input bit clock_i,
     input bit reset_i,
@@ -25,34 +28,33 @@ module srcnn_large #(
     localparam int N1 = 9, N2 = 12;
     localparam int F1 = 8, F2 = 1, F3 = 3;
 
-    localparam int SumWidth = 37;
     localparam int WeightSharing = 3;
 
     /* verilator lint_off ASCRANGE */
-    localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][WeightWidth-1:0] Weight1 =
+    localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][DSPInputAWidth-1:0] Weight1 =
         {N1{{3{
-            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
-            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
-            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
-            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
-            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
-            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
-            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1,
-            20'd4, 20'd1, 20'd4, 20'd1, -20'd1, 20'd1, 20'd4, 20'd1
+            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
+            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
+            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
+            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
+            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
+            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
+            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
+            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1
         }}}};
-    localparam bit signed [0:N1-1][SumWidth-1:0] Bias1 = '{default: 0};
+    localparam bit signed [0:N1-1][DSPOutputWidth-1:0] Bias1 = '{default: 0};
 
-    localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][WeightWidth-1:0] Weight2 =
-        {N2{20'd4, 20'd4, 20'd4, 20'd4, 20'd0, 20'd4, 20'd4, 20'd4, 20'd4}};
-    localparam bit signed [0:N2-1][SumWidth-1:0] Bias2 = '{default: 0};
+    localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][DSPInputAWidth-1:0] Weight2 =
+        {N2{25'd4, 25'd4, 25'd4, 25'd4, 25'd0, 25'd4, 25'd4, 25'd4, 25'd4}};
+    localparam bit signed [0:N2-1][DSPOutputWidth-1:0] Bias2 = '{default: 0};
 
-    localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][WeightWidth-1:0] Weight3 =
+    localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][DSPInputAWidth-1:0] Weight3 =
         {3{{N2{
-            20'd4, 20'd4, 20'd4,
-            20'd4, 20'd0, 20'd4,
-            20'd4, 20'd4, 20'd4
+            25'd4, 25'd4, 25'd4,
+            25'd4, 25'd0, 25'd4,
+            25'd4, 25'd4, 25'd4
         }}}};
-    localparam bit signed [0:2][SumWidth-1:0] Bias3 = '{default: 0};
+    localparam bit signed [0:2][DSPOutputWidth-1:0] Bias3 = '{default: 0};
     /* verilator lint_on ASCRANGE */
 
     bit slice1_valid;
@@ -95,8 +97,6 @@ module srcnn_large #(
         .PaddingRight(4),
         .PaddingValue(0),
         .ActivationWidth(ActivationWidth),
-        .WeightWidth(WeightWidth),
-        .SumWidth(SumWidth),
         .InHeight(Height),
         .InWidth(Width),
         .Weight(Weight1),
@@ -154,8 +154,6 @@ module srcnn_large #(
         .OutChannels(N2),
         .KernelWidth(1),
         .ActivationWidth(ActivationWidth),
-        .WeightWidth(WeightWidth),
-        .SumWidth(SumWidth),
         .InWidth(Width),
         .Weight(Weight2),
         .Bias(Bias2),
@@ -218,8 +216,6 @@ module srcnn_large #(
         .PaddingRight(F3 / 2),
         .PaddingValue(0),
         .ActivationWidth(ActivationWidth),
-        .WeightWidth(WeightWidth),
-        .SumWidth(SumWidth),
         .InHeight(Height),
         .InWidth(Width),
         .Weight(Weight3),

@@ -6,7 +6,7 @@
 <Project Version="7" Minor="38" Path="/home/yunhao/Documents/ECE532-Digital-Systems-Design/ECE532-main/custom_ip/superresolution/superresolution.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="0c2866e5bdad43d5b02cbabac7cf2a91"/>
+    <Option Name="Id" Val="b0e71dd31d614dcab19aee2a161af2c2"/>
     <Option Name="Part" Val="xc7a200tsbg484-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -70,27 +70,27 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/full_convolution.sv">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/full_convolution.sv"/>
-          <Attr Name="ImportTime" Val="1711485266"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources/constants.svh">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/constants.svh"/>
-          <Attr Name="ImportTime" Val="1711456714"/>
+          <Attr Name="ImportTime" Val="1711544473"/>
           <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/sources/full_convolution.sv">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/full_convolution.sv"/>
+          <Attr Name="ImportTime" Val="1711543220"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/sources/horizontal_convolution.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/horizontal_convolution.sv"/>
-          <Attr Name="ImportTime" Val="1711499542"/>
+          <Attr Name="ImportTime" Val="1711558631"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -108,56 +108,56 @@
       <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_large.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_large.sv"/>
-          <Attr Name="ImportTime" Val="1711485273"/>
+          <Attr Name="ImportTime" Val="1711544420"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/bias3.svh">
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn/small/bias3.svh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/bias3.svh"/>
-          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn/small/bias3.svh"/>
+          <Attr Name="ImportTime" Val="1712012426"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/weight3.svh">
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn/small/weight3.svh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/weight3.svh"/>
-          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn/small/weight3.svh"/>
+          <Attr Name="ImportTime" Val="1712012426"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/bias2.svh">
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn/small/bias2.svh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/bias2.svh"/>
-          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn/small/bias2.svh"/>
+          <Attr Name="ImportTime" Val="1712012426"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/weight1.svh">
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn/small/weight2.svh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/weight1.svh"/>
-          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn/small/weight2.svh"/>
+          <Attr Name="ImportTime" Val="1712012426"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/weight2.svh">
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn/small/weight1.svh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/weight2.svh"/>
-          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn/small/weight1.svh"/>
+          <Attr Name="ImportTime" Val="1712012426"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small/bias1.svh">
+      <File Path="$PSRCDIR/sources_1/imports/sources/srcnn/small/bias1.svh">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small/bias1.svh"/>
-          <Attr Name="ImportTime" Val="1711482122"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn/small/bias1.svh"/>
+          <Attr Name="ImportTime" Val="1712012426"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -165,7 +165,7 @@
       <File Path="$PSRCDIR/sources_1/imports/sources/srcnn_small.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/srcnn_small.sv"/>
-          <Attr Name="ImportTime" Val="1711485278"/>
+          <Attr Name="ImportTime" Val="1711544363"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -183,7 +183,7 @@
       <File Path="$PSRCDIR/sources_1/imports/sources/superresolution.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../ECE532/systemverilog/sources/superresolution.sv"/>
-          <Attr Name="ImportTime" Val="1711485399"/>
+          <Attr Name="ImportTime" Val="1711545167"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

@@ -5,10 +5,9 @@
 // This module is a small-scale implementation of the SRCNN algorithm.
 
 module srcnn_small #(
+    parameter int ActivationWidth = 16,
     parameter int Height = 480,
-    parameter int Width = 640,
-    localparam int ActivationWidth = 16,
-    localparam int WeightWidth = 20
+    parameter int Width = 640
 ) (
     input bit clock_i,
     input bit reset_i,
@@ -25,16 +24,15 @@ module srcnn_small #(
     localparam int N1 = 8, N2 = 8;
     localparam int F1 = 3, F2 = 3, F3 = 3;
 
-    localparam int SumWidth = 37;
     localparam int WeightSharing = 2;
 
     /* verilator lint_off ASCRANGE */
-    `include "./srcnn_small/weight1.svh"
-    `include "./srcnn_small/bias1.svh"
-    `include "./srcnn_small/weight2.svh"
-    `include "./srcnn_small/bias2.svh"
-    `include "./srcnn_small/weight3.svh"
-    `include "./srcnn_small/bias3.svh"
+    `include "./srcnn/small/weight1.svh"
+    `include "./srcnn/small/bias1.svh"
+    `include "./srcnn/small/weight2.svh"
+    `include "./srcnn/small/bias2.svh"
+    `include "./srcnn/small/weight3.svh"
+    `include "./srcnn/small/bias3.svh"
     /* verilator lint_on ASCRANGE */
 
     bit slice1_valid;
@@ -77,8 +75,6 @@ module srcnn_small #(
         .PaddingRight(F1 / 2),
         .PaddingValue(0),
         .ActivationWidth(ActivationWidth),
-        .WeightWidth(WeightWidth),
-        .SumWidth(SumWidth),
         .InHeight(Height),
         .InWidth(Width),
         .Weight(Weight1),
@@ -142,8 +138,6 @@ module srcnn_small #(
         .PaddingRight(F2 / 2),
         .PaddingValue(0),
         .ActivationWidth(ActivationWidth),
-        .WeightWidth(WeightWidth),
-        .SumWidth(SumWidth),
         .InHeight(Height),
         .InWidth(Width),
         .Weight(Weight2),
@@ -207,8 +201,6 @@ module srcnn_small #(
         .PaddingRight(F3 / 2),
         .PaddingValue(0),
         .ActivationWidth(ActivationWidth),
-        .WeightWidth(WeightWidth),
-        .SumWidth(SumWidth),
         .InHeight(Height),
         .InWidth(Width),
         .Weight(Weight3),
