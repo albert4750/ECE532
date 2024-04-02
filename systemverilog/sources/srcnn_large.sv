@@ -139,7 +139,7 @@ module srcnn_large #(
         .InWidth(Width),
         .Weight(Weight2),
         .Bias(Bias2),
-        .RightShift(23),
+        .RightShift(22),
         .ReLU(1),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv2MaxDSPColumnsInCascade),
