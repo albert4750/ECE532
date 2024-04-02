@@ -1,0 +1,24 @@
+name: ece532-srcnn
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - black
+  - isort
+  - jupyter
+  - matplotlib
+  - numpy
+  - opencv
+  - pandas
+  - pillow
+  - pylint
+  - pytorch
+  - pytorch-cuda=12.1
+  - scikit-learn
+  - scipy
+  - torchaudio
+  - torchvision
+  - tqdm
