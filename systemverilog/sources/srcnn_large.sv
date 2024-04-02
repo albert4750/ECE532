@@ -25,34 +25,37 @@ module srcnn_large #(
     output bit [2:0][ActivationWidth-1:0] master_data_o
 );
 
-    localparam int N1 = 9, N2 = 12;
-    localparam int F1 = 8, F2 = 1, F3 = 3;
+    localparam int N1 = 64, N2 = 32;
+    localparam int F1 = 9, F2 = 1, F3 = 5;
 
-    localparam int WeightSharing = 3;
+    localparam int WeightSharing = 32;
 
     /* verilator lint_off ASCRANGE */
     localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][DSPInputAWidth-1:0] Weight1 =
         {N1{{3{
-            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
-            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
-            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
-            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
-            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
-            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
-            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1,
-            25'd4, 25'd1, 25'd4, 25'd1, -25'd1, 25'd1, 25'd4, 25'd1
+            25'd1, 25'd2, 25'd4, 25'd8, 25'd16, 25'd8, 25'd4, 25'd2, 25'd1,
+            25'd2, 25'd4, 25'd8, 25'd16, 25'd32, 25'd16, 25'd8, 25'd4, 25'd2,
+            25'd4, 25'd8, 25'd16, 25'd32, 25'd64, 25'd32, 25'd16, 25'd8, 25'd4,
+            25'd8, 25'd16, 25'd32, 25'd64, 25'd128, 25'd64, 25'd32, 25'd16, 25'd8,
+            25'd16, 25'd32, 25'd64, 25'd128, 25'd256, 25'd128, 25'd64, 25'd32, 25'd16,
+            25'd8, 25'd16, 25'd32, 25'd64, 25'd128, 25'd64, 25'd32, 25'd16, 25'd8,
+            25'd4, 25'd8, 25'd16, 25'd32, 25'd64, 25'd32, 25'd16, 25'd8, 25'd4,
+            25'd2, 25'd4, 25'd8, 25'd16, 25'd32, 25'd16, 25'd8, 25'd4, 25'd2,
+            25'd1, 25'd2, 25'd4, 25'd8, 25'd16, 25'd8, 25'd4, 25'd2, 25'd1
         }}}};
     localparam bit signed [0:N1-1][DSPOutputWidth-1:0] Bias1 = '{default: 0};
 
     localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][DSPInputAWidth-1:0] Weight2 =
-        {N2{25'd4, 25'd4, 25'd4, 25'd4, 25'd0, 25'd4, 25'd4, 25'd4, 25'd4}};
+        {N2{{N1{25'd1}}}};
     localparam bit signed [0:N2-1][DSPOutputWidth-1:0] Bias2 = '{default: 0};
 
     localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][DSPInputAWidth-1:0] Weight3 =
         {3{{N2{
-            25'd4, 25'd4, 25'd4,
-            25'd4, 25'd0, 25'd4,
-            25'd4, 25'd4, 25'd4
+            25'd1, 25'd2, 25'd4, 25'd2, 25'd1,
+            25'd2, 25'd4, 25'd8, 25'd4, 25'd2,
+            25'd4, 25'd8, 25'd16, 25'd8, 25'd4,
+            25'd2, 25'd4, 25'd8, 25'd4, 25'd2,
+            25'd1, 25'd2, 25'd4, 25'd2, 25'd1
         }}}};
     localparam bit signed [0:2][DSPOutputWidth-1:0] Bias3 = '{default: 0};
     /* verilator lint_on ASCRANGE */
@@ -80,10 +83,10 @@ module srcnn_large #(
     bit conv1_ready;
     bit [N1-1:0][ActivationWidth-1:0] conv1_data;
 
-    localparam int Conv1MaxDSPColumnsInCascade = 3;
-    localparam int Conv1DSPsInColumn[N1][Conv1MaxDSPColumnsInCascade] = '{default: '{30, 30, 4}};
+    localparam int Conv1MaxDSPColumnsInCascade = 1;
+    localparam int Conv1DSPsInColumn[N1][Conv1MaxDSPColumnsInCascade] = '{default: '{9}};
     localparam int Conv1LatenciesBetweenDSPColumns[N1][Conv1MaxDSPColumnsInCascade+1] = '{
-        default: '{0, 4, 4, 0}
+        default: '{0, 0}
     };
 
     full_convolution #(
@@ -91,17 +94,17 @@ module srcnn_large #(
         .OutChannels(N1),
         .KernelHeight(F1),
         .KernelWidth(F1),
-        .PaddingTop(3),
-        .PaddingBottom(4),
-        .PaddingLeft(3),
-        .PaddingRight(4),
+        .PaddingTop(F1 / 2),
+        .PaddingBottom(F1 / 2),
+        .PaddingLeft(F1 / 2),
+        .PaddingRight(F1 / 2),
         .PaddingValue(0),
         .ActivationWidth(ActivationWidth),
         .InHeight(Height),
         .InWidth(Width),
         .Weight(Weight1),
         .Bias(Bias1),
-        .RightShift(6),
+        .RightShift(12),
         .ReLU(1),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv1MaxDSPColumnsInCascade),
@@ -144,7 +147,7 @@ module srcnn_large #(
     bit [N2-1:0][ActivationWidth-1:0] conv2_data;
 
     localparam int Conv2MaxDSPColumnsInCascade = 1;
-    localparam int Conv2DSPsInColumn[N2][Conv2MaxDSPColumnsInCascade] = '{default: '{3}};
+    localparam int Conv2DSPsInColumn[N2][Conv2MaxDSPColumnsInCascade] = '{default: '{2}};
     localparam int Conv2LatenciesBetweenDSPColumns[N2][Conv2MaxDSPColumnsInCascade+1] = '{
         default: '{0, 0}
     };
@@ -157,7 +160,7 @@ module srcnn_large #(
         .InWidth(Width),
         .Weight(Weight2),
         .Bias(Bias2),
-        .RightShift(8),
+        .RightShift(6),
         .ReLU(1),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv2MaxDSPColumnsInCascade),
@@ -199,10 +202,10 @@ module srcnn_large #(
     bit conv3_ready;
     bit [2:0][ActivationWidth-1:0] conv3_data;
 
-    localparam int Conv3MaxDSPColumnsInCascade = 2;
-    localparam int Conv3DSPsInColumn[3][Conv3MaxDSPColumnsInCascade] = '{default: '{30, 6}};
+    localparam int Conv3MaxDSPColumnsInCascade = 1;
+    localparam int Conv3DSPsInColumn[3][Conv3MaxDSPColumnsInCascade] = '{default: '{25}};
     localparam int Conv3LatenciesBetweenDSPColumns[3][Conv3MaxDSPColumnsInCascade+1] = '{
-        default: '{0, 4, 0}
+        default: '{0, 0}
     };
 
     full_convolution #(
@@ -220,7 +223,7 @@ module srcnn_large #(
         .InWidth(Width),
         .Weight(Weight3),
         .Bias(Bias3),
-        .RightShift(8),
+        .RightShift(12),
         .ReLU(0),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv3MaxDSPColumnsInCascade),
