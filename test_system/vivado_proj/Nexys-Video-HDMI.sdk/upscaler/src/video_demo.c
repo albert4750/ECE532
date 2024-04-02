@@ -46,6 +46,7 @@
 
 // Albert Start
 #include "xaxidma.h"
+#include "xtmrctr.h"
 // Albert End
 #define DYNCLK_BASEADDR XPAR_AXI_DYNCLK_0_BASEADDR
 #define VGA_VDMA_ID XPAR_AXIVDMA_0_DEVICE_ID
@@ -99,9 +100,14 @@ u8 dmaMode;
 u8 dmaStreaming;
 u8 curr;
 u8 wOrB;
+u8 fpsCtr;
+XTmrCtr fpsTimer;
 u32 pad0;
 u32 pad1;
 u32 pad2;
+u32 pad3;
+u32 pad4;
+u32 pad5;
 // Albert End
 
 /* ------------------------------------------------------------ */
@@ -151,6 +157,16 @@ void DemoInitialize()
 	dmaMode = 0;
 	dmaStreaming = 1;
 	curr = 1;
+	fpsCtr = 0;
+
+	Status = XTmrCtr_Initialize(&fpsTimer, XPAR_AXI_TIMER_1_DEVICE_ID);
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("FPS Timer Initialization failed %d\r\n", Status);
+		return;
+	}
+	XTmrCtr_SetResetValue(&fpsTimer, 0, 0);
+	XTmrCtr_Reset(&fpsTimer, 0);
 	// Albert End
 
 	/*
@@ -317,7 +333,14 @@ void DemoRun()
 		/* Wait for data on UART */
 		while (XUartLite_IsReceiveEmpty(UART_BASEADDR) && !fRefresh){
 			if(dmaStreaming){
+				if(fpsCtr == 0) XTmrCtr_Start(&fpsTimer, 0);
 				doDMA(0);
+				if(fpsCtr == 0){
+					XTmrCtr_Stop(&fpsTimer, 0);
+					u32 fps = 1000000000/XTmrCtr_GetValue(&fpsTimer, 0);
+					xil_printf("\r(FPS: %2d.%dHz; dmaMode: %x) Enter a selection:", (fps/10), (fps%10), dmaMode);
+				}
+				fpsCtr = (fpsCtr+1)%8;
 			}
 		}
 
@@ -397,6 +420,7 @@ void DemoRun()
 			xil_printf("\n\rSwitching DMA mode\n\r");
 			dmaMode = *swt;
 			*led = dmaMode;
+			dmaMode = dmaMode & 0x1F;
 			xil_printf("DMA mode is now %u\n\r", dmaMode);
 			break;
 		case 't':

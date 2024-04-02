@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
 -- Date        : Tue Mar 19 01:58:25 2024
 -- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_microblaze_0_xlconcat_0/hdmi_microblaze_0_xlconcat_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top hdmi_microblaze_0_xlconcat_0 -prefix
+--               hdmi_microblaze_0_xlconcat_0_ hdmi_microblaze_0_xlconcat_0_stub.vhdl
 -- Design      : hdmi_microblaze_0_xlconcat_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a200tsbg484-1

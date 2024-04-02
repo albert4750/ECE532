@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
 -- Date        : Wed Feb 28 04:48:31 2024
 -- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_rgb2stream_0_0/hdmi_rgb2stream_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_rgb2stream_0_0 -prefix
+--               hdmi_rgb2stream_0_0_ hdmi_rgb2stream_0_0_sim_netlist.vhdl
 -- Design      : hdmi_rgb2stream_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -27,8 +27,6 @@ entity hdmi_rgb2stream_0_0_rgb2stream_top is
     D : in STD_LOGIC_VECTOR ( 23 downto 0 );
     rgb_last : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of hdmi_rgb2stream_0_0_rgb2stream_top : entity is "rgb2stream_top";
 end hdmi_rgb2stream_0_0_rgb2stream_top;
 
 architecture STRUCTURE of hdmi_rgb2stream_0_0_rgb2stream_top is

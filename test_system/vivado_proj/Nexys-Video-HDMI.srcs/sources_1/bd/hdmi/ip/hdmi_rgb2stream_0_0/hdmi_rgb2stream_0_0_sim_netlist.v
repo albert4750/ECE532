@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
 // Date        : Wed Feb 28 04:48:31 2024
 // Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.srcs/sources_1/bd/hdmi/ip/hdmi_rgb2stream_0_0/hdmi_rgb2stream_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top hdmi_rgb2stream_0_0 -prefix
+//               hdmi_rgb2stream_0_0_ hdmi_rgb2stream_0_0_sim_netlist.v
 // Design      : hdmi_rgb2stream_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -67,7 +67,6 @@ module hdmi_rgb2stream_0_0
         .rgb_valid(rgb_valid));
 endmodule
 
-(* ORIG_REF_NAME = "rgb2stream_top" *) 
 module hdmi_rgb2stream_0_0_rgb2stream_top
    (rgb_ready,
     m_axis_valid,

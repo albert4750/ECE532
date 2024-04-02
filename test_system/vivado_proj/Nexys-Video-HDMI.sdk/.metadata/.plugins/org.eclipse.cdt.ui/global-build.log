@@ -4281,3 +4281,1858 @@ mb-size upscaler.elf  |tee "upscaler.elf.size"
  104892	   2112	18808148	18915152	1209f50	upscaler.elf
 'Finished building: upscaler.elf.size'
 ' '
+00:46:51 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_capture/video_capture.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_capture/video_capture.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_capture/video_capture.d" -MT"src/video_capture/video_capture.o" -o "src/video_capture/video_capture.o" "../src/video_capture/video_capture.c"
+In file included from ../src/video_capture/video_capture.c:105:0:
+../src/video_capture/video_capture.h:74:10: fatal error: xil_types.h: No such file or directory
+ #include "xil_types.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/video_capture/video_capture.o] Error 1
+02:43:44 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_capture/video_capture.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_capture/video_capture.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_capture/video_capture.d" -MT"src/video_capture/video_capture.o" -o "src/video_capture/video_capture.o" "../src/video_capture/video_capture.c"
+In file included from ../src/video_capture/video_capture.c:105:0:
+../src/video_capture/video_capture.h:74:10: fatal error: xil_types.h: No such file or directory
+ #include "xil_types.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/video_capture/video_capture.o] Error 1
+02:45:26 **** Auto Build of project upscaler_bsp ****
+make -k all 
+"Running Make include in microblaze_0/libsrc/axidma_v9_7/src"
+make -C microblaze_0/libsrc/axidma_v9_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/axivdma_v6_5/src"
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/cpu_v2_7/src"
+make -C microblaze_0/libsrc/cpu_v2_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/gpio_v4_3/src"
+make -C microblaze_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/intc_v3_7/src"
+make -C microblaze_0/libsrc/intc_v3_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/standalone_v6_7/src"
+make -C microblaze_0/libsrc/standalone_v6_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/tmrctr_v4_4/src"
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/vtc_v7_2/src"
+make -C microblaze_0/libsrc/vtc_v7_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make libs in microblaze_0/libsrc/axidma_v9_7/src"
+make -C microblaze_0/libsrc/axidma_v9_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling axidma"
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxidma_hw.h:69,
+                 from xaxidma_bd.h:117,
+                 from xaxidma_bdring.h:87,
+                 from xaxidma.h:492,
+                 from xaxidma.c:92:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxidma_hw.h:69,
+                 from xaxidma_bd.h:117,
+                 from xaxidma_bdring.h:87,
+                 from xaxidma.h:492,
+                 from xaxidma.c:92:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxidma_hw.h:69,
+                 from xaxidma_bd.h:117,
+                 from xaxidma_bd.c:64:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxidma_hw.h:69,
+                 from xaxidma_bd.h:117,
+                 from xaxidma_bd.c:64:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxidma_hw.h:69,
+                 from xaxidma_bd.h:117,
+                 from xaxidma_bdring.h:87,
+                 from xaxidma_bdring.c:78:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxidma_hw.h:69,
+                 from xaxidma_bd.h:117,
+                 from xaxidma_bdring.h:87,
+                 from xaxidma_bdring.c:78:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xaxidma_g.c:64:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxidma_hw.h:69,
+                 from xaxidma_bd.h:117,
+                 from xaxidma_bdring.h:87,
+                 from xaxidma.h:492,
+                 from xaxidma_g.c:65:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxidma_hw.h:69,
+                 from xaxidma_bd.h:117,
+                 from xaxidma_bdring.h:87,
+                 from xaxidma.h:492,
+                 from xaxidma_g.c:65:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxidma_selftest.c:53:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxidma_selftest.c:53:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xaxidma_sinit.c:62:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxidma_hw.h:69,
+                 from xaxidma_bd.h:117,
+                 from xaxidma_bdring.h:87,
+                 from xaxidma.h:492,
+                 from xaxidma_sinit.c:63:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxidma_hw.h:69,
+                 from xaxidma_bd.h:117,
+                 from xaxidma_bdring.h:87,
+                 from xaxidma.h:492,
+                 from xaxidma_sinit.c:63:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [libs] Error 1
+make: *** [microblaze_0/libsrc/axidma_v9_7/src/make.libs] Error 2
+"Running Make libs in microblaze_0/libsrc/axivdma_v6_5/src"
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling axivdma"
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxivdma_hw.h:82,
+                 from xaxivdma.h:317,
+                 from xaxivdma.c:79:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxivdma_hw.h:82,
+                 from xaxivdma.h:317,
+                 from xaxivdma.c:79:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxivdma_hw.h:82,
+                 from xaxivdma_channel.c:83:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxivdma_hw.h:82,
+                 from xaxivdma_channel.c:83:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxivdma_hw.h:82,
+                 from xaxivdma.h:317,
+                 from xaxivdma_g.c:69:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxivdma_hw.h:82,
+                 from xaxivdma.h:317,
+                 from xaxivdma_g.c:69:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxivdma_hw.h:82,
+                 from xaxivdma.h:317,
+                 from xaxivdma_intr.c:61:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxivdma_hw.h:82,
+                 from xaxivdma.h:317,
+                 from xaxivdma_intr.c:61:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxivdma_selftest.c:53:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxivdma_selftest.c:53:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xaxivdma_hw.h:82,
+                 from xaxivdma.h:317,
+                 from xaxivdma_sinit.c:60:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xaxivdma_hw.h:82,
+                 from xaxivdma.h:317,
+                 from xaxivdma_sinit.c:60:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [libs] Error 1
+make: *** [microblaze_0/libsrc/axivdma_v6_5/src/make.libs] Error 2
+"Running Make libs in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling bram"
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xbram_hw.h:63,
+                 from xbram.h:139,
+                 from xbram.c:62:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xbram_hw.h:63,
+                 from xbram.h:139,
+                 from xbram.c:62:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xbram_hw.h:63,
+                 from xbram.h:139,
+                 from xbram_g.c:54:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xbram_hw.h:63,
+                 from xbram.h:139,
+                 from xbram_g.c:54:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xbram_hw.h:63,
+                 from xbram.h:139,
+                 from xbram_intr.c:58:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xbram_hw.h:63,
+                 from xbram.h:139,
+                 from xbram_intr.c:58:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xbram_hw.h:63,
+                 from xbram.h:139,
+                 from xbram_selftest.c:72:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xbram_hw.h:63,
+                 from xbram.h:139,
+                 from xbram_selftest.c:72:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xbram_sinit.c:60:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xbram_hw.h:63,
+                 from xbram.h:139,
+                 from xbram_sinit.c:61:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xbram_hw.h:63,
+                 from xbram.h:139,
+                 from xbram_sinit.c:61:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [libs] Error 1
+make: *** [microblaze_0/libsrc/bram_v4_2/src/make.libs] Error 2
+"Running Make libs in microblaze_0/libsrc/cpu_v2_7/src"
+make -C microblaze_0/libsrc/cpu_v2_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling cpu"
+mb-ar: creating ../../../lib/libxil.a
+"Running Make libs in microblaze_0/libsrc/gpio_v4_3/src"
+make -C microblaze_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling gpio"
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio.c:74:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio.c:74:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio_extra.c:64:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio_extra.c:64:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio_g.c:58:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio_g.c:58:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio_intr.c:63:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio_intr.c:63:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio_selftest.c:59:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio_selftest.c:59:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xgpio_sinit.c:61:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio_i.h:64,
+                 from xgpio_sinit.c:62:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xgpio_l.h:87,
+                 from xgpio.h:136,
+                 from xgpio_i.h:64,
+                 from xgpio_sinit.c:62:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [libs] Error 1
+make: *** [microblaze_0/libsrc/gpio_v4_3/src/make.libs] Error 2
+"Running Make libs in microblaze_0/libsrc/intc_v3_7/src"
+make -C microblaze_0/libsrc/intc_v3_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling intc"
+In file included from xintc.h:234:0,
+                 from xintc.c:83:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xintc_l.h:98:0,
+                 from xintc.h:236,
+                 from xintc.c:83:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc.c:83:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc.c:83:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xintc.h:234:0,
+                 from xintc_g.c:72:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xintc_l.h:98:0,
+                 from xintc.h:236,
+                 from xintc_g.c:72:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc_g.c:72:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc_g.c:72:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xintc_intr.c:100:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xintc.h:234:0,
+                 from xintc_intr.c:101:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xintc_l.h:98:0,
+                 from xintc.h:236,
+                 from xintc_intr.c:101:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc_intr.c:101:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc_intr.c:101:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xintc_l.c:83:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xintc.h:234:0,
+                 from xintc_l.c:86:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xintc_l.h:98:0,
+                 from xintc.h:236,
+                 from xintc_l.c:86:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc_l.c:86:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc_l.c:86:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xintc.h:234:0,
+                 from xintc_options.c:64:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xintc_l.h:98:0,
+                 from xintc.h:236,
+                 from xintc_options.c:64:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc_options.c:64:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc_options.c:64:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xintc.h:234:0,
+                 from xintc_selftest.c:62:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xintc_l.h:98:0,
+                 from xintc.h:236,
+                 from xintc_selftest.c:62:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc_selftest.c:62:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xintc_l.h:99,
+                 from xintc.h:236,
+                 from xintc_selftest.c:62:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [libs] Error 1
+make: *** [microblaze_0/libsrc/intc_v3_7/src/make.libs] Error 2
+"Running Make libs in microblaze_0/libsrc/standalone_v6_7/src"
+make -C microblaze_0/libsrc/standalone_v6_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling standalone";
+In file included from microblaze_interrupts_g.c:51:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_sleep.h:70:0,
+                 from microblaze_sleep.c:60:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xil_printf.h:12:0,
+                 from xil_io.h:65,
+                 from sleep.h:56,
+                 from microblaze_sleep.h:71,
+                 from microblaze_sleep.c:60:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xil_io.h:65:0,
+                 from sleep.h:56,
+                 from microblaze_sleep.h:71,
+                 from microblaze_sleep.c:60:
+xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xil_printf.h:12:0,
+                 from print.c:20:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from print.c:20:0:
+xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from pvr.c:41:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from pvr.h:63:0,
+                 from pvr.c:42:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from pvr.c:42:0:
+pvr.h:65:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xil_cache.h:78:0,
+                 from xil_cache.c:57:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xil_printf.h:12:0,
+                 from xil_io.h:65,
+                 from xil_io.c:55:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xil_io.h:65:0,
+                 from xil_io.c:55:
+xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xil_printf.h:12:0,
+                 from xil_io.h:65,
+                 from xil_misc_psreset_api.h:58,
+                 from xil_misc_psreset_api.c:55:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xil_io.h:65:0,
+                 from xil_misc_psreset_api.h:58,
+                 from xil_misc_psreset_api.c:55:
+xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xil_printf.h:12:0,
+                 from xil_printf.c:8:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xil_printf.c:8:0:
+xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xil_printf.h:12:0,
+                 from xil_io.h:65,
+                 from xil_sleepcommon.c:50:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xil_io.h:65:0,
+                 from xil_sleepcommon.c:50:
+xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xil_printf.h:12:0,
+                 from xil_io.h:65,
+                 from xil_testio.c:52:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xil_io.h:65:0,
+                 from xil_testio.c:52:
+xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xil_printf.h:12:0,
+                 from xil_io.h:65,
+                 from xil_testmem.c:51:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xil_io.h:65:0,
+                 from xil_testmem.c:51:
+xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xil_printf.h:12:0,
+                 from xil_io.h:65,
+                 from xplatform_info.c:62:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from xil_io.h:65:0,
+                 from xplatform_info.c:62:
+xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from hw_exception_handler.S:44:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_disable_dcache.S:43:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_disable_exceptions.S:39:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_disable_icache.S:45:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_disable_interrupts.S:56:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_enable_dcache.S:45:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_enable_exceptions.S:39:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_enable_icache.S:44:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_enable_interrupts.S:57:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_flush_cache_ext.S:41:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_flush_cache_ext_range.S:44:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_flush_dcache.S:41:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_flush_dcache_range.S:44:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_init_dcache_range.S:45:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_init_icache_range.S:46:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_invalidate_cache_ext.S:41:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_invalidate_cache_ext_range.S:44:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_invalidate_dcache.S:41:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_invalidate_dcache_range.S:46:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_invalidate_icache.S:42:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_invalidate_icache_range.S:46:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_scrub.S:51:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_update_dcache.S:61:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from microblaze_update_icache.S:60:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+make[1]: *** [standalone_libs] Error 1
+make[1]: Target `libs' not remade because of errors.
+make: *** [microblaze_0/libsrc/standalone_v6_7/src/make.libs] Error 2
+"Running Make libs in microblaze_0/libsrc/tmrctr_v4_4/src"
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling tmrctr"
+In file included from xtmrctr.c:73:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr.c:74:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr.c:74:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr_g.c:57:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr_g.c:57:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr_intr.c:58:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr_intr.c:58:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr_l.c:58:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr_l.c:58:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr_options.c:57:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr_options.c:57:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xtmrctr_selftest.c:56:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xtmrctr_selftest.c:56:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xtmrctr_sinit.c:56:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr_sinit.c:57:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr_sinit.c:57:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr_stats.c:55:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xtmrctr_l.h:77,
+                 from xtmrctr.h:179,
+                 from xtmrctr_stats.c:55:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [libs] Error 1
+make: *** [microblaze_0/libsrc/tmrctr_v4_4/src/make.libs] Error 2
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling uartlite"
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xuartlite_l.h:73,
+                 from xuartlite_i.h:69,
+                 from xuartlite.c:85:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xuartlite_l.h:73,
+                 from xuartlite_i.h:69,
+                 from xuartlite.c:85:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xuartlite_g.c:57:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+xuartlite_g.c:76:40: error: 'XPAR_XUARTLITE_NUM_INSTANCES' undeclared here (not in a function)
+ XUartLite_Config XUartLite_ConfigTable[XPAR_XUARTLITE_NUM_INSTANCES] =
+                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xuartlite_g.c:79:3: error: 'XPAR_UARTLITE_0_DEVICE_ID' undeclared here (not in a function); did you mean 'XPAR_XUARTLITE_NUM_INSTANCES'?
+   XPAR_UARTLITE_0_DEVICE_ID, /* Unique ID of device */
+   ^~~~~~~~~~~~~~~~~~~~~~~~~
+   XPAR_XUARTLITE_NUM_INSTANCES
+xuartlite_g.c:80:3: error: 'XPAR_UARTLITE_0_BASEADDR' undeclared here (not in a function); did you mean 'XPAR_UARTLITE_0_DEVICE_ID'?
+   XPAR_UARTLITE_0_BASEADDR, /* Device base address */
+   ^~~~~~~~~~~~~~~~~~~~~~~~
+   XPAR_UARTLITE_0_DEVICE_ID
+xuartlite_g.c:81:3: error: 'XPAR_UARTLITE_0_BAUDRATE' undeclared here (not in a function); did you mean 'XPAR_UARTLITE_0_BASEADDR'?
+   XPAR_UARTLITE_0_BAUDRATE, /* Fixed baud rate */
+   ^~~~~~~~~~~~~~~~~~~~~~~~
+   XPAR_UARTLITE_0_BASEADDR
+xuartlite_g.c:82:3: error: 'XPAR_UARTLITE_0_USE_PARITY' undeclared here (not in a function); did you mean 'XPAR_UARTLITE_0_BAUDRATE'?
+   XPAR_UARTLITE_0_USE_PARITY, /* Fixed parity */
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+   XPAR_UARTLITE_0_BAUDRATE
+xuartlite_g.c:83:3: error: 'XPAR_UARTLITE_0_ODD_PARITY' undeclared here (not in a function); did you mean 'XPAR_UARTLITE_0_USE_PARITY'?
+   XPAR_UARTLITE_0_ODD_PARITY, /* Fixed parity type */
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+   XPAR_UARTLITE_0_USE_PARITY
+xuartlite_g.c:84:3: error: 'XPAR_UARTLITE_0_DATA_BITS' undeclared here (not in a function); did you mean 'XPAR_UARTLITE_0_ODD_PARITY'?
+   XPAR_UARTLITE_0_DATA_BITS /* Fixed data bits */
+   ^~~~~~~~~~~~~~~~~~~~~~~~~
+   XPAR_UARTLITE_0_ODD_PARITY
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xuartlite_l.h:73,
+                 from xuartlite_i.h:69,
+                 from xuartlite_intr.c:61:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xuartlite_l.h:73,
+                 from xuartlite_i.h:69,
+                 from xuartlite_intr.c:61:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xuartlite_l.h:73,
+                 from xuartlite_l.c:60:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xuartlite_l.h:73,
+                 from xuartlite_l.c:60:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xuartlite_l.h:73,
+                 from xuartlite_i.h:69,
+                 from xuartlite_selftest.c:65:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xuartlite_l.h:73,
+                 from xuartlite_i.h:69,
+                 from xuartlite_selftest.c:65:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xuartlite_sinit.c:56:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xuartlite_l.h:73,
+                 from xuartlite_i.h:69,
+                 from xuartlite_sinit.c:57:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xuartlite_l.h:73,
+                 from xuartlite_i.h:69,
+                 from xuartlite_sinit.c:57:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xuartlite_l.h:73,
+                 from xuartlite_i.h:69,
+                 from xuartlite_stats.c:60:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xuartlite_l.h:73,
+                 from xuartlite_i.h:69,
+                 from xuartlite_stats.c:60:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [libs] Error 1
+make: *** [microblaze_0/libsrc/uartlite_v3_2/src/make.libs] Error 2
+"Running Make libs in microblaze_0/libsrc/vtc_v7_2/src"
+make -C microblaze_0/libsrc/vtc_v7_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling video timing controller"
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xvtc_hw.h:167,
+                 from xvtc.h:316,
+                 from xvtc.c:180:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xvtc_hw.h:167,
+                 from xvtc.h:316,
+                 from xvtc.c:180:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from xvtc_g.c:33:0:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xvtc_hw.h:167,
+                 from xvtc.h:316,
+                 from xvtc_g.c:34:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xvtc_hw.h:167,
+                 from xvtc.h:316,
+                 from xvtc_g.c:34:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xvtc_hw.h:167,
+                 from xvtc.h:316,
+                 from xvtc_intr.c:128:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xvtc_hw.h:167,
+                 from xvtc.h:316,
+                 from xvtc_intr.c:128:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xvtc_hw.h:167,
+                 from xvtc.h:316,
+                 from xvtc_selftest.c:56:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xvtc_hw.h:167,
+                 from xvtc.h:316,
+                 from xvtc_selftest.c:56:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+In file included from ../../../include/xil_printf.h:12:0,
+                 from ../../../include/xil_io.h:65,
+                 from xvtc_hw.h:167,
+                 from xvtc.h:316,
+                 from xvtc_sinit.c:64:
+../../../include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../../include/xil_io.h:65:0,
+                 from xvtc_hw.h:167,
+                 from xvtc.h:316,
+                 from xvtc_sinit.c:64:
+../../../include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+make[1]: *** [libs] Error 1
+make: *** [microblaze_0/libsrc/vtc_v7_2/src/make.libs] Error 2
+make: Target `all' not remade because of errors.
+02:45:31 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_capture/video_capture.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_capture/video_capture.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_capture/video_capture.d" -MT"src/video_capture/video_capture.o" -o "src/video_capture/video_capture.o" "../src/video_capture/video_capture.c"
+In file included from ../../upscaler_bsp/microblaze_0/include/xil_printf.h:12:0,
+                 from ../../upscaler_bsp/microblaze_0/include/xil_io.h:65,
+                 from ../../upscaler_bsp/microblaze_0/include/xaxivdma_hw.h:82,
+                 from ../../upscaler_bsp/microblaze_0/include/xaxivdma.h:317,
+                 from ../src/video_capture/video_capture.h:75,
+                 from ../src/video_capture/video_capture.c:105:
+../../upscaler_bsp/microblaze_0/include/xparameters.h:1:0: error: unterminated #ifndef
+ #ifndef XPARAMETERS_H   /* prevent circular inclusions */
+ 
+In file included from ../../upscaler_bsp/microblaze_0/include/xil_io.h:65:0,
+                 from ../../upscaler_bsp/microblaze_0/include/xaxivdma_hw.h:82,
+                 from ../../upscaler_bsp/microblaze_0/include/xaxivdma.h:317,
+                 from ../src/video_capture/video_capture.h:75,
+                 from ../src/video_capture/video_capture.c:105:
+../../upscaler_bsp/microblaze_0/include/xil_printf.h:13:10: fatal error: bspconfig.h: No such file or directory
+ #include "bspconfig.h"
+          ^~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/video_capture/video_capture.o] Error 1
+02:45:47 **** Auto Build of project upscaler_bsp ****
+make -k all 
+"Running Make include in microblaze_0/libsrc/axidma_v9_7/src"
+make -C microblaze_0/libsrc/axidma_v9_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/axivdma_v6_5/src"
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/cpu_v2_7/src"
+make -C microblaze_0/libsrc/cpu_v2_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/gpio_v4_3/src"
+make -C microblaze_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/intc_v3_7/src"
+make -C microblaze_0/libsrc/intc_v3_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/standalone_v6_7/src"
+make -C microblaze_0/libsrc/standalone_v6_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/tmrctr_v4_4/src"
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make include in microblaze_0/libsrc/vtc_v7_2/src"
+make -C microblaze_0/libsrc/vtc_v7_2/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Running Make libs in microblaze_0/libsrc/axidma_v9_7/src"
+make -C microblaze_0/libsrc/axidma_v9_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling axidma"
+mb-ar: creating ../../../lib/libxil.a
+"Running Make libs in microblaze_0/libsrc/axivdma_v6_5/src"
+make -C microblaze_0/libsrc/axivdma_v6_5/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling axivdma"
+"Running Make libs in microblaze_0/libsrc/bram_v4_2/src"
+make -C microblaze_0/libsrc/bram_v4_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling bram"
+"Running Make libs in microblaze_0/libsrc/cpu_v2_7/src"
+make -C microblaze_0/libsrc/cpu_v2_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling cpu"
+"Running Make libs in microblaze_0/libsrc/gpio_v4_3/src"
+make -C microblaze_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in microblaze_0/libsrc/intc_v3_7/src"
+make -C microblaze_0/libsrc/intc_v3_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling intc"
+"Running Make libs in microblaze_0/libsrc/standalone_v6_7/src"
+make -C microblaze_0/libsrc/standalone_v6_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling standalone";
+microblaze_sleep.c:69:2: warning: #warning "May wait for more than the specified delay" [-Wcpp]
+ #warning "May wait for more than the specified delay"
+  ^~~~~~~
+"Running Make libs in microblaze_0/libsrc/tmrctr_v4_4/src"
+make -C microblaze_0/libsrc/tmrctr_v4_4/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling tmrctr"
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_2/src"
+make -C microblaze_0/libsrc/uartlite_v3_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling uartlite"
+"Running Make libs in microblaze_0/libsrc/vtc_v7_2/src"
+make -C microblaze_0/libsrc/vtc_v7_2/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ARCHIVER=mb-ar" "COMPILER_FLAGS=  -O2 -c -mcpu=v10.0 -mhard-float -mlittle-endian -mno-xl-soft-div -mno-xl-soft-mul -mxl-barrel-shift -mxl-float-convert -mxl-float-sqrt -mxl-multiply-high -mxl-pattern-compare" "EXTRA_COMPILER_FLAGS=-ffunction-sections -fdata-sections -Wall -Wextra"
+"Compiling video timing controller"
+'Finished building libraries'
+02:45:53 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_capture/video_capture.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_capture/video_capture.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_capture/video_capture.d" -MT"src/video_capture/video_capture.o" -o "src/video_capture/video_capture.o" "../src/video_capture/video_capture.c"
+'Finished building: ../src/video_capture/video_capture.c'
+' '
+'Building file: ../src/intc/intc.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/intc/intc.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/intc/intc.d" -MT"src/intc/intc.o" -o "src/intc/intc.o" "../src/intc/intc.c"
+'Finished building: ../src/intc/intc.c'
+' '
+'Building file: ../src/dynclk/dynclk.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/dynclk/dynclk.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/dynclk/dynclk.d" -MT"src/dynclk/dynclk.o" -o "src/dynclk/dynclk.o" "../src/dynclk/dynclk.c"
+'Finished building: ../src/dynclk/dynclk.c'
+' '
+'Building file: ../src/display_ctrl/display_ctrl.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display_ctrl/display_ctrl.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/display_ctrl/display_ctrl.d" -MT"src/display_ctrl/display_ctrl.o" -o "src/display_ctrl/display_ctrl.o" "../src/display_ctrl/display_ctrl.c"
+'Finished building: ../src/display_ctrl/display_ctrl.c'
+' '
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 104892	   2112	18808148	18915152	1209f50	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:00:54 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+../src/video_demo.c: In function 'DemoInitialize':
+../src/video_demo.c:163:9: error: void value not ignored as it ought to be
+  Status = XTmrCtr_SetResetValue(&fpsTimer, 0, 0);
+         ^
+make: *** [src/video_demo.o] Error 1
+03:01:23 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 106208	   2140	18808180	18916528	120a4b0	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:02:13 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+../src/video_demo.c: In function 'DemoInitialize':
+../src/video_demo.c:170:2: error: expected ';' before 'for'
+  for (i = 0; i < DISPLAY_NUM_FRAMES; i++)
+  ^~~
+../src/video_demo.c:136:6: warning: unused variable 'i' [-Wunused-variable]
+  int i;
+      ^
+make: *** [src/video_demo.o] Error 1
+03:02:17 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 106472	   2140	18808180	18916792	120a5b8	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:11:45 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   2140	18808180	18917712	120a950	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:12:03 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:13:02 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   2140	18808148	18917680	120a930	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:13:06 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:13:25 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   2140	18808148	18917680	120a930	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:13:34 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:13:59 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   2140	18808180	18917712	120a950	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:14:03 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:14:36 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   2140	18808148	18917680	120a930	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:14:41 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:15:02 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   2140	18808180	18917712	120a950	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:15:06 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:15:25 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   2140	18808180	18917712	120a950	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:15:31 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:15:59 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   2140	18808180	18917712	120a950	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:16:03 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:16:30 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   2140	18808180	18917712	120a950	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:16:38 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:16:59 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107392	   2140	18808180	18917712	120a950	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:17:02 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:17:47 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107388	   2140	18808184	18917712	120a950	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:17:54 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:24:26 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+../src/video_demo.c: In function 'DemoRun':
+../src/video_demo.c:338:9: warning: unused variable 'fps' [-Wunused-variable]
+     u32 fps = 100000000/cnt;
+         ^~~
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107408	   2140	18808180	18917728	120a960	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:24:58 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107416	   2140	18808180	18917736	120a968	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:25:07 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107412	   2140	18808184	18917736	120a968	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:26:20 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107476	   2140	18808184	18917800	120a9a8	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:26:28 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:30:35 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107476	   2140	18808184	18917800	120a9a8	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:30:44 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:31:21 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107484	   2140	18808184	18917808	120a9b0	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:32:28 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107552	   2140	18808180	18917872	120a9f0	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:34:05 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107580	   2140	18808184	18917904	120aa10	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:34:22 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.
+03:36:11 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107604	   2140	18808184	18917928	120aa28	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:36:26 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107604	   2140	18808184	18917928	120aa28	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:36:57 **** Auto Build of configuration Debug for project upscaler ****
+make all 
+'Building file: ../src/video_demo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/video_demo.o" -I../../upscaler_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/video_demo.d" -MT"src/video_demo.o" -o "src/video_demo.o" "../src/video_demo.c"
+'Finished building: ../src/video_demo.c'
+' '
+'Building target: upscaler.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../upscaler_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v10.0 -mno-xl-soft-mul -mxl-multiply-high -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "upscaler.elf"  ./src/video_capture/video_capture.o  ./src/timer_ps/timer_ps.o  ./src/intc/intc.o  ./src/dynclk/dynclk.o  ./src/display_ctrl/display_ctrl.o  ./src/video_demo.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: upscaler.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size upscaler.elf  |tee "upscaler.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 107604	   2140	18808184	18917928	120aa28	upscaler.elf
+'Finished building: upscaler.elf.size'
+' '
+03:37:02 **** Incremental Build of configuration Debug for project upscaler ****
+make all 
+make: Nothing to be done for `all'.

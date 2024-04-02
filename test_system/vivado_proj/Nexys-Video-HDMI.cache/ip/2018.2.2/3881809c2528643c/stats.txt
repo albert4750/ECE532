@@ -1,4 +1,4 @@
-NumberHits:1
-Timestamp: Wed Feb 14 12:07:39 UTC 2024
+NumberHits:2
+Timestamp: Tue Apr 02 04:00:10 UTC 2024
 VLNV: xilinx.com:ip:v_vid_in_axi4s:4.0
 SynthRuntime: 41

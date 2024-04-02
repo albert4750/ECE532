@@ -1,4 +1,4 @@
-NumberHits:1
-Timestamp: Wed Feb 14 12:07:23 UTC 2024
+NumberHits:2
+Timestamp: Tue Apr 02 04:00:00 UTC 2024
 VLNV: xilinx.com:ip:axi_uartlite:2.0
 SynthRuntime: 41

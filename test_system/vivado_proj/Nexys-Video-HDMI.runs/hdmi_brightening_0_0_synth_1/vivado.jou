@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
-# Vivado v2018.2 (64-bit)
-# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
-# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sun Mar  3 23:17:08 2024
-# Process ID: 735093
-# Current directory: /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_brightening_0_0_synth_1
-# Command line: vivado -log hdmi_brightening_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_brightening_0_0.tcl
-# Log file: /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_brightening_0_0_synth_1/hdmi_brightening_0_0.vds
-# Journal file: /home/ece532/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_brightening_0_0_synth_1/vivado.jou
+# Vivado v2018.2.2 (64-bit)
+# SW Build 2348494 on Mon Oct  1 18:25:44 MDT 2018
+# IP Build 2318053 on Mon Oct  1 21:44:26 MDT 2018
+# Start of session at: Tue Apr  2 00:01:03 2024
+# Process ID: 12628
+# Current directory: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_brightening_0_0_synth_1
+# Command line: vivado.exe -log hdmi_brightening_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_brightening_0_0.tcl
+# Log file: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_brightening_0_0_synth_1/hdmi_brightening_0_0.vds
+# Journal file: C:/Users/Albert/Documents/GitHub/ECE532/test_system/vivado_proj/Nexys-Video-HDMI.runs/hdmi_brightening_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source hdmi_brightening_0_0.tcl -notrace

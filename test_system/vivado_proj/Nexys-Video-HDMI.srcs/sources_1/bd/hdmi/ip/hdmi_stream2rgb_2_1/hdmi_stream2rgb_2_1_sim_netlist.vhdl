@@ -1,11 +1,11 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
--- Date        : Sat Mar  2 17:37:13 2024
--- Host        : ece532-Inspiron-16-7610 running 64-bit Ubuntu 22.04.3 LTS
+-- Tool Version: Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+-- Date        : Wed Feb 28 04:48:30 2024
+-- Host        : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top hdmi_stream2rgb_2_1 -prefix
---               hdmi_stream2rgb_2_1_ hdmi_stream2rgb_1_0_sim_netlist.vhdl
--- Design      : hdmi_stream2rgb_1_0
+--               hdmi_stream2rgb_2_1_ hdmi_stream2rgb_0_0_sim_netlist.vhdl
+-- Design      : hdmi_stream2rgb_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7a200tsbg484-1
@@ -5282,13 +5282,13 @@ entity hdmi_stream2rgb_2_1 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of hdmi_stream2rgb_2_1 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of hdmi_stream2rgb_2_1 : entity is "hdmi_stream2rgb_1_0,stream2rgb_top,{}";
+  attribute CHECK_LICENSE_TYPE of hdmi_stream2rgb_2_1 : entity is "hdmi_stream2rgb_0_0,stream2rgb_top,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of hdmi_stream2rgb_2_1 : entity is "yes";
   attribute IP_DEFINITION_SOURCE : string;
   attribute IP_DEFINITION_SOURCE of hdmi_stream2rgb_2_1 : entity is "package_project";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of hdmi_stream2rgb_2_1 : entity is "stream2rgb_top,Vivado 2018.2";
+  attribute X_CORE_INFO of hdmi_stream2rgb_2_1 : entity is "stream2rgb_top,Vivado 2018.2.2";
 end hdmi_stream2rgb_2_1;
 
 architecture STRUCTURE of hdmi_stream2rgb_2_1 is

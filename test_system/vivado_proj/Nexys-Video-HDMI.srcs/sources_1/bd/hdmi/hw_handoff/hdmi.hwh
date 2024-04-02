@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Mar 27 02:09:21 2024" VIVADOVERSION="2018.2.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr  2 00:14:07 2024" VIVADOVERSION="2018.2.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys_video:part0:1.1" DEVICE="7a200t" NAME="hdmi" PACKAGE="sbg484" SPEEDGRADE="-1"/>
 
@@ -23219,8 +23219,8 @@
             <CONNECTION INSTANCE="axi_dma_6" PORT="s_axi_lite_aclk"/>
             <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_mm2s_aclk"/>
             <CONNECTION INSTANCE="axi_dma_6" PORT="m_axi_s2mm_aclk"/>
-            <CONNECTION INSTANCE="superresolution_0" PORT="clock_i"/>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="superresolution_0" PORT="clock_i"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ACLK"/>
@@ -24326,8 +24326,8 @@
             <CONNECTION INSTANCE="axi_dma_4" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="axi_dma_5" PORT="axi_resetn"/>
             <CONNECTION INSTANCE="axi_dma_6" PORT="axi_resetn"/>
-            <CONNECTION INSTANCE="superresolution_0" PORT="reset_i"/>
             <CONNECTION INSTANCE="axi_gpio_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="superresolution_0" PORT="reset_i"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S01_ARESETN"/>
@@ -24987,12 +24987,14 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/superresolution_0" HWVERSION="1.6" INSTANCE="superresolution_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="superresolution" VLNV="ece532.group3.org:ece532:superresolution:1.6">
+    <MODULE FULLNAME="/superresolution_0" HWVERSION="1.7" INSTANCE="superresolution_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="superresolution" VLNV="ece532.group3.org:ece532:superresolution:1.7">
       <DOCUMENTS/>
       <PARAMETERS>
+        <PARAMETER NAME="Variant" VALUE="small"/>
         <PARAMETER NAME="Height" VALUE="1080"/>
         <PARAMETER NAME="Width" VALUE="1920"/>
-        <PARAMETER NAME="Variant" VALUE="small"/>
+        <PARAMETER NAME="InternalActivationWidth" VALUE="16"/>
+        <PARAMETER NAME="InternalActivationShift" VALUE="6"/>
         <PARAMETER NAME="Component_Name" VALUE="hdmi_superresolution_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
