@@ -3,6 +3,7 @@ Convolutional Networks."""
 
 import torch
 from torch import Tensor, nn
+from torch.nn import functional as F
 
 
 class SRCNN(nn.Module):
@@ -18,12 +19,12 @@ class SRCNN(nn.Module):
         qconfig: torch.ao.quantization.QConfig,
     ) -> None:
         super().__init__()
-        self.conv_layers = nn.Sequential(
-            nn.Conv2d(3, n1, kernel_size=f1, padding=f1 // 2),
-            nn.ReLU(),
-            nn.Conv2d(n1, n2, kernel_size=f2, padding=f2 // 2),
-            nn.ReLU(),
-            nn.Conv2d(n2, 3, kernel_size=f3, padding=f3 // 2),
+        self.conv_layers = nn.ModuleList(
+            [
+                nn.Conv2d(3, n1, kernel_size=f1, padding=f1 // 2),
+                nn.Conv2d(n1, n2, kernel_size=f2, padding=f2 // 2),
+                nn.Conv2d(n2, 3, kernel_size=f3, padding=f3 // 2),
+            ]
         )
 
         self.qconfig = qconfig
@@ -38,7 +39,11 @@ class SRCNN(nn.Module):
         """
         if quant:
             x = self.quant(x)
-        x = self.conv_layers(x)
+        x = self.conv_layers[0](x)
+        x = F.relu(x)
+        x = self.conv_layers[1](x)
+        x = F.relu(x)
+        x = self.conv_layers[2](x)
         if quant:
             x = self.dequant(x)
         return x

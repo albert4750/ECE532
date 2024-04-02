@@ -31,33 +31,12 @@ module srcnn_large #(
     localparam int WeightSharing = 32;
 
     /* verilator lint_off ASCRANGE */
-    localparam bit signed [0:N1-1][0:2][0:F1-1][0:F1-1][DSPInputAWidth-1:0] Weight1 =
-        {N1{{3{
-            25'd1, 25'd2, 25'd4, 25'd8, 25'd16, 25'd8, 25'd4, 25'd2, 25'd1,
-            25'd2, 25'd4, 25'd8, 25'd16, 25'd32, 25'd16, 25'd8, 25'd4, 25'd2,
-            25'd4, 25'd8, 25'd16, 25'd32, 25'd64, 25'd32, 25'd16, 25'd8, 25'd4,
-            25'd8, 25'd16, 25'd32, 25'd64, 25'd128, 25'd64, 25'd32, 25'd16, 25'd8,
-            25'd16, 25'd32, 25'd64, 25'd128, 25'd256, 25'd128, 25'd64, 25'd32, 25'd16,
-            25'd8, 25'd16, 25'd32, 25'd64, 25'd128, 25'd64, 25'd32, 25'd16, 25'd8,
-            25'd4, 25'd8, 25'd16, 25'd32, 25'd64, 25'd32, 25'd16, 25'd8, 25'd4,
-            25'd2, 25'd4, 25'd8, 25'd16, 25'd32, 25'd16, 25'd8, 25'd4, 25'd2,
-            25'd1, 25'd2, 25'd4, 25'd8, 25'd16, 25'd8, 25'd4, 25'd2, 25'd1
-        }}}};
-    localparam bit signed [0:N1-1][DSPOutputWidth-1:0] Bias1 = '{default: 0};
-
-    localparam bit signed [0:N2-1][0:N1-1][0:F2-1][0:F2-1][DSPInputAWidth-1:0] Weight2 =
-        {N2{{N1{25'd1}}}};
-    localparam bit signed [0:N2-1][DSPOutputWidth-1:0] Bias2 = '{default: 0};
-
-    localparam bit signed [0:2][0:N2-1][0:F3-1][0:F3-1][DSPInputAWidth-1:0] Weight3 =
-        {3{{N2{
-            25'd1, 25'd2, 25'd4, 25'd2, 25'd1,
-            25'd2, 25'd4, 25'd8, 25'd4, 25'd2,
-            25'd4, 25'd8, 25'd16, 25'd8, 25'd4,
-            25'd2, 25'd4, 25'd8, 25'd4, 25'd2,
-            25'd1, 25'd2, 25'd4, 25'd2, 25'd1
-        }}}};
-    localparam bit signed [0:2][DSPOutputWidth-1:0] Bias3 = '{default: 0};
+    `include "./srcnn/large/weight1.svh"
+    `include "./srcnn/large/bias1.svh"
+    `include "./srcnn/large/weight2.svh"
+    `include "./srcnn/large/bias2.svh"
+    `include "./srcnn/large/weight3.svh"
+    `include "./srcnn/large/bias3.svh"
     /* verilator lint_on ASCRANGE */
 
     bit slice1_valid;
@@ -104,7 +83,7 @@ module srcnn_large #(
         .InWidth(Width),
         .Weight(Weight1),
         .Bias(Bias1),
-        .RightShift(12),
+        .RightShift(30),
         .ReLU(1),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv1MaxDSPColumnsInCascade),
@@ -160,7 +139,7 @@ module srcnn_large #(
         .InWidth(Width),
         .Weight(Weight2),
         .Bias(Bias2),
-        .RightShift(6),
+        .RightShift(23),
         .ReLU(1),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv2MaxDSPColumnsInCascade),
@@ -223,7 +202,7 @@ module srcnn_large #(
         .InWidth(Width),
         .Weight(Weight3),
         .Bias(Bias3),
-        .RightShift(12),
+        .RightShift(23),
         .ReLU(0),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv3MaxDSPColumnsInCascade),
