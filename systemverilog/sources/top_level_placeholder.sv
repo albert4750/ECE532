@@ -33,8 +33,8 @@ module top_level_placeholder (
         .Variant("large"),
         .Height(Height),
         .Width(Width),
-        .InternalActivationWidth(16),
-        .InternalActivationShift(6)
+        .InternalActivationWidth(12),
+        .InternalActivationShift(2)
     ) superresolution_inst (
         .clock_i(clock_i),
         .reset_i(reset_i),

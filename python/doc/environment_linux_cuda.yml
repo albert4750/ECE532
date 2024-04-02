@@ -19,6 +19,8 @@ dependencies:
   - pytorch-cuda=12.1
   - scikit-learn
   - scipy
+  - tensorflow-cpu
+  - tensorflow-datasets
   - torchaudio
   - torchvision
   - tqdm
