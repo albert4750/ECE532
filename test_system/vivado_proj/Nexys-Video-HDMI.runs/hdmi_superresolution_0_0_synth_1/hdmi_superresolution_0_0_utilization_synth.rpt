@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
-| Date         : Tue Apr  2 00:04:50 2024
+| Date         : Wed Apr  3 12:22:58 2024
 | Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
 | Command      : report_utilization -file hdmi_superresolution_0_0_utilization_synth.rpt -pb hdmi_superresolution_0_0_utilization_synth.pb
 | Design       : hdmi_superresolution_0_0
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                |  6622 |     0 |    134600 |  4.92 |
-|   LUT as Logic             |  4729 |     0 |    134600 |  3.51 |
+| Slice LUTs*                |  6686 |     0 |    134600 |  4.97 |
+|   LUT as Logic             |  4793 |     0 |    134600 |  3.56 |
 |   LUT as Memory            |  1893 |     0 |     46200 |  4.10 |
 |     LUT as Distributed RAM |     0 |     0 |           |       |
 |     LUT as Shift Register  |  1893 |     0 |           |       |
-| Slice Registers            | 54061 |     0 |    269200 | 20.08 |
-|   Register as Flip Flop    | 54061 |     0 |    269200 | 20.08 |
+| Slice Registers            | 54099 |     0 |    269200 | 20.10 |
+|   Register as Flip Flop    | 54099 |     0 |    269200 | 20.10 |
 |   Register as Latch        |     0 |     0 |    269200 |  0.00 |
 | F7 Muxes                   |     0 |     0 |     67300 |  0.00 |
 | F8 Muxes                   |     0 |     0 |     33650 |  0.00 |
@@ -59,7 +59,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 54061 |          Yes |       Reset |            - |
+| 54099 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -154,15 +154,15 @@ Table of Contents
 +----------+-------+---------------------+
 | Ref Name |  Used | Functional Category |
 +----------+-------+---------------------+
-| FDRE     | 54061 |        Flop & Latch |
-| LUT3     |  2198 |                 LUT |
+| FDRE     | 54099 |        Flop & Latch |
+| LUT3     |  2216 |                 LUT |
 | SRL16E   |  1633 |  Distributed Memory |
-| LUT2     |  1310 |                 LUT |
+| LUT2     |  1370 |                 LUT |
 | LUT4     |  1277 |                 LUT |
-| LUT5     |   979 |                 LUT |
+| LUT5     |   997 |                 LUT |
 | DSP48E1  |   516 |    Block Arithmetic |
-| CARRY4   |   456 |          CarryLogic |
-| LUT1     |   365 |                 LUT |
+| CARRY4   |   468 |          CarryLogic |
+| LUT1     |   363 |                 LUT |
 | SRLC32E  |   260 |  Distributed Memory |
 | LUT6     |   109 |                 LUT |
 | RAMB36E1 |    34 |        Block Memory |

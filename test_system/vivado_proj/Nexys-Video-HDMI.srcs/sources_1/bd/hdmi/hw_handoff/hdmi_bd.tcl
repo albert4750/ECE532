@@ -770,9 +770,10 @@ proc create_root_design { parentCell } {
   set stream2rgb_4 [ create_bd_cell -type ip -vlnv xilinx.com:user:stream2rgb:1.0 stream2rgb_4 ]
 
   # Create instance: superresolution_0, and set properties
-  set superresolution_0 [ create_bd_cell -type ip -vlnv ece532.group3.org:ece532:superresolution:1.7 superresolution_0 ]
+  set superresolution_0 [ create_bd_cell -type ip -vlnv ece532.group3.org:ece532:superresolution:2.0 superresolution_0 ]
   set_property -dict [ list \
    CONFIG.Height {1080} \
+   CONFIG.InternalActivationShift {0} \
    CONFIG.Width {1920} \
  ] $superresolution_0
 

@@ -1,6 +1,27 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
+| Date         : Wed Apr  3 11:44:30 2024
+| Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a200tsbg484-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'hdmi_superresolution_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of hdmi_superresolution_0_0 from ece532.group3.org:ece532:superresolution:1.7 (Rev. 3) to ece532.group3.org:ece532:superresolution:2.0 (Rev. 2)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2.2 (win64) Build 2348494 Mon Oct  1 18:25:44 MDT 2018
 | Date         : Mon Apr  1 23:59:33 2024
 | Host         : DESKTOP-Q9UC3EP running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

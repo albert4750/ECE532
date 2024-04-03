@@ -47,8 +47,8 @@
 // DO NOT MODIFY THIS FILE.
 
 
-// IP VLNV: ece532.group3.org:ece532:superresolution:1.7
-// IP Revision: 3
+// IP VLNV: ece532.group3.org:ece532:superresolution:2.0
+// IP Revision: 2
 
 `timescale 1ns/1ps
 
@@ -93,7 +93,7 @@ output wire master_last_o;
     .Height(1080),
     .Width(1920),
     .InternalActivationWidth(16),
-    .InternalActivationShift(6)
+    .InternalActivationShift(0)
   ) inst (
     .clock_i(clock_i),
     .reset_i(reset_i),

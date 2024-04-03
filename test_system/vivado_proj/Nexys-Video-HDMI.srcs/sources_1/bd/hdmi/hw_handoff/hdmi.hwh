@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Apr  2 00:14:07 2024" VIVADOVERSION="2018.2.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Wed Apr  3 12:19:02 2024" VIVADOVERSION="2018.2.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys_video:part0:1.1" DEVICE="7a200t" NAME="hdmi" PACKAGE="sbg484" SPEEDGRADE="-1"/>
 
@@ -24987,14 +24987,14 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE FULLNAME="/superresolution_0" HWVERSION="1.7" INSTANCE="superresolution_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="superresolution" VLNV="ece532.group3.org:ece532:superresolution:1.7">
+    <MODULE FULLNAME="/superresolution_0" HWVERSION="2.0" INSTANCE="superresolution_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="superresolution" VLNV="ece532.group3.org:ece532:superresolution:2.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Variant" VALUE="small"/>
         <PARAMETER NAME="Height" VALUE="1080"/>
         <PARAMETER NAME="Width" VALUE="1920"/>
         <PARAMETER NAME="InternalActivationWidth" VALUE="16"/>
-        <PARAMETER NAME="InternalActivationShift" VALUE="6"/>
+        <PARAMETER NAME="InternalActivationShift" VALUE="0"/>
         <PARAMETER NAME="Component_Name" VALUE="hdmi_superresolution_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
