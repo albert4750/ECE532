@@ -24,16 +24,20 @@ class VideoFrameDataset(Dataset):
             success, frame = capture.read()
             if not success:
                 break
-            if transform is not None:
-                frame = transform(frame)
+            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             self.frames.append(frame)
             progress_bar.update(1)
+
+        self.transform = transform
 
     def __len__(self) -> int:
         return len(self.frames)
 
     def __getitem__(self, index: int):
-        return self.frames[index]
+        frame = self.frames[index]
+        if self.transform is not None:
+            frame = self.transform(frame)
+        return frame
 
 
 class PickleDataset(Dataset):
