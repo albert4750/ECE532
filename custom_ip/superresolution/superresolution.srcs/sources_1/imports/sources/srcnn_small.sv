@@ -27,12 +27,12 @@ module srcnn_small #(
     localparam int WeightSharing = 2;
 
     /* verilator lint_off ASCRANGE */
-    `include "./srcnn/small/weight1.svh"
-    `include "./srcnn/small/bias1.svh"
-    `include "./srcnn/small/weight2.svh"
-    `include "./srcnn/small/bias2.svh"
-    `include "./srcnn/small/weight3.svh"
-    `include "./srcnn/small/bias3.svh"
+    `include "./srcnn/small/small_weight1.svh"
+    `include "./srcnn/small/small_bias1.svh"
+    `include "./srcnn/small/small_weight2.svh"
+    `include "./srcnn/small/small_bias2.svh"
+    `include "./srcnn/small/small_weight3.svh"
+    `include "./srcnn/small/small_bias3.svh"
     /* verilator lint_on ASCRANGE */
 
     bit slice1_valid;
