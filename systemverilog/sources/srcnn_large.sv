@@ -31,12 +31,12 @@ module srcnn_large #(
     localparam int WeightSharing = 32;
 
     /* verilator lint_off ASCRANGE */
-    `include "./srcnn/large/weight1.svh"
-    `include "./srcnn/large/bias1.svh"
-    `include "./srcnn/large/weight2.svh"
-    `include "./srcnn/large/bias2.svh"
-    `include "./srcnn/large/weight3.svh"
-    `include "./srcnn/large/bias3.svh"
+    `include "./srcnn/large/large_weight1.svh"
+    `include "./srcnn/large/large_bias1.svh"
+    `include "./srcnn/large/large_weight2.svh"
+    `include "./srcnn/large/large_bias2.svh"
+    `include "./srcnn/large/large_weight3.svh"
+    `include "./srcnn/large/large_bias3.svh"
     /* verilator lint_on ASCRANGE */
 
     bit slice1_valid;
@@ -83,7 +83,7 @@ module srcnn_large #(
         .InWidth(Width),
         .Weight(Weight1),
         .Bias(Bias1),
-        .RightShift(21),
+        .RightShift(13),
         .ReLU(1),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv1MaxDSPColumnsInCascade),
@@ -202,7 +202,7 @@ module srcnn_large #(
         .InWidth(Width),
         .Weight(Weight3),
         .Bias(Bias3),
-        .RightShift(14),
+        .RightShift(13),
         .ReLU(0),
         .WeightSharing(WeightSharing),
         .MaxDSPColumnsInCascade(Conv3MaxDSPColumnsInCascade),

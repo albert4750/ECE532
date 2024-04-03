@@ -60,6 +60,7 @@ def main():
     weights_file = Path(args.weights_file)
     biases_file = Path(args.biases_file)
     out_dir = Path(args.out_dir)
+    prefix = out_dir.resolve().name + "_"
 
     with weights_file.open("rb") as fp:
         weights = pickle.load(fp)
@@ -78,34 +79,46 @@ def main():
     n1, _, f1, _ = weight1.shape
     assert weight1.shape == (n1, 3, f1, f1)
     assert weight1.min() >= weight_min and weight1.max() <= weight_max
-    write_tensor_to_svh(out_dir / "weight1.svh", DSP_INPUT_A_WIDTH, "Weight1", weight1)
+    write_tensor_to_svh(
+        out_dir / f"{prefix}weight1.svh", DSP_INPUT_A_WIDTH, "Weight1", weight1
+    )
 
     bias1 = biases[0].round().to(torch.int64)
     assert bias1.shape == (n1,)
     assert bias1.min() >= bias_min and bias1.max() <= bias_max
-    write_tensor_to_svh(out_dir / "bias1.svh", DSP_OUTPUT_WIDTH, "Bias1", bias1)
+    write_tensor_to_svh(
+        out_dir / f"{prefix}bias1.svh", DSP_OUTPUT_WIDTH, "Bias1", bias1
+    )
 
     weight2 = weights[1].round().to(torch.int64)
     n2, _, f2, _ = weight2.shape
     assert weight2.shape == (n2, n1, f2, f2)
     assert weight2.min() >= weight_min and weight2.max() <= weight_max
-    write_tensor_to_svh(out_dir / "weight2.svh", DSP_INPUT_A_WIDTH, "Weight2", weight2)
+    write_tensor_to_svh(
+        out_dir / f"{prefix}weight2.svh", DSP_INPUT_A_WIDTH, "Weight2", weight2
+    )
 
     bias2 = biases[1].round().to(torch.int64)
     assert bias2.shape == (n2,)
     assert bias2.min() >= bias_min and bias2.max() <= bias_max
-    write_tensor_to_svh(out_dir / "bias2.svh", DSP_OUTPUT_WIDTH, "Bias2", bias2)
+    write_tensor_to_svh(
+        out_dir / f"{prefix}bias2.svh", DSP_OUTPUT_WIDTH, "Bias2", bias2
+    )
 
     weight3 = weights[2].round().to(torch.int64)
     _, _, f3, _ = weight3.shape
     assert weight3.shape == (3, n2, f3, f3)
     assert weight3.min() >= weight_min and weight3.max() <= weight_max
-    write_tensor_to_svh(out_dir / "weight3.svh", DSP_INPUT_A_WIDTH, "Weight3", weight3)
+    write_tensor_to_svh(
+        out_dir / f"{prefix}weight3.svh", DSP_INPUT_A_WIDTH, "Weight3", weight3
+    )
 
     bias3 = biases[2].round().to(torch.int64)
     assert bias3.shape == (3,)
     assert bias3.min() >= bias_min and bias3.max() <= bias_max
-    write_tensor_to_svh(out_dir / "bias3.svh", DSP_OUTPUT_WIDTH, "Bias3", bias3)
+    write_tensor_to_svh(
+        out_dir / f"{prefix}bias3.svh", DSP_OUTPUT_WIDTH, "Bias3", bias3
+    )
 
     print(f"{n1=}, {n2=}, {f1=}, {f2=}, {f3=}")
 

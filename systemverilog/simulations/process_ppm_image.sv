@@ -7,8 +7,8 @@
 
 module process_ppm_image;
 
-    localparam int Height = 1080;
-    localparam int Width = 1920;
+    localparam int Height = 720;
+    localparam int Width = 1280;
     localparam InputFile = "input.ppm";
     localparam OutputFile = "output.ppm";
 
@@ -33,11 +33,11 @@ module process_ppm_image;
     bit out_last;
 
     superresolution #(
+        .Variant("large"),
         .Height(Height),
         .Width(Width),
-        .Variant("large"),
         .InternalActivationWidth(12),
-        .InternalActivationShift(2)
+        .InternalActivationShift(0)
     ) superresolution_inst (
         .clock_i(clock),
         .reset_i(reset),
