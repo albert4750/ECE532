@@ -1,1 +1,1 @@
-localparam bit signed [0:2][47:0] Bias3 = '{-48'd82362, -48'd71897, -48'd196775};
+localparam bit signed [0:2][47:0] Bias3 = '{48'd236097, 48'd2006738, 48'd368489};

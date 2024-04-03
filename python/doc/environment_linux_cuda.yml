@@ -17,6 +17,7 @@ dependencies:
   - pylint
   - pytorch
   - pytorch-cuda=12.1
+  - scikit-image
   - scikit-learn
   - scipy
   - tensorflow-cpu
