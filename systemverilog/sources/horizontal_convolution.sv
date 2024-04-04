@@ -293,7 +293,14 @@ module horizontal_convolution #(
     dsp_output_t dsp_output_p[OutChannels][DSPsPerCascade];
 
     for (genvar OutChannel = 0; OutChannel < OutChannels; ++OutChannel) begin : gen_dsp_input_bias
-        assign dsp_input_bias[OutChannel][0] = Bias[OutChannel];
+        if (WeightSharing == 1) begin : gen_first_dsp_input_bias_no_weight_sharing
+            assign dsp_input_bias[OutChannel][0] = Bias[OutChannel];
+        end : gen_first_dsp_input_bias_no_weight_sharing
+        else begin : gen_first_dsp_input_bias_with_weight_sharing
+            localparam int BiasLatency = get_dsp_input_latency(OutChannel, 0) + 2;
+            assign dsp_input_bias[OutChannel][0] =
+                delayed_input_state[BiasLatency] == 0 ? Bias[OutChannel] : 0;
+        end : gen_first_dsp_input_bias_with_weight_sharing
 
         for (
             genvar IndexInCascade = 1; IndexInCascade < DSPsPerCascade; ++IndexInCascade

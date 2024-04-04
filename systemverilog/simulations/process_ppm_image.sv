@@ -36,8 +36,7 @@ module process_ppm_image;
         .Variant("large"),
         .Height(Height),
         .Width(Width),
-        .InternalActivationWidth(12),
-        .InternalActivationShift(0)
+        .InternalActivationWidth(9)
     ) superresolution_inst (
         .clock_i(clock),
         .reset_i(reset),

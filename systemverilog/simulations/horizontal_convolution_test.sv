@@ -28,12 +28,12 @@ module horizontal_convolution_test;
         .ActivationWidth(8),
         .InWidth(3),
         .Weight({3{{3{25'd0}}}}),
-        .Bias(48'd3),
+        .Bias({48'd1}),
         .RightShift(0),
         .ReLU(0),
-        .WeightSharing(1),
+        .WeightSharing(2),
         .MaxDSPColumnsInCascade(1),
-        .DSPsInColumn('{'{9}}),
+        .DSPsInColumn('{'{6}}),
         .LatenciesBetweenDSPColumns('{'{0, 0}})
     ) dut (
         .clock_i(clock),
@@ -48,21 +48,30 @@ module horizontal_convolution_test;
         .master_data_o (out_data)
     );
 
+    `define RANDOM_PAUSE(min_cycles, max_cycles)                                 \
+        begin                                                                    \
+            automatic int pause_cycles = $urandom_range(min_cycles, max_cycles); \
+            for (int i = 0; i < pause_cycles; ++i) begin                         \
+                @(negedge clock);                                                \
+            end                                                                  \
+        end
+
     bit sender_finished = 0;
     initial begin
         in_valid = 0;
         #30;
 
-        @(negedge clock);
-        in_valid = 1;
         for (int i = 0; i < 3; ++i) begin
+            @(negedge clock);
+            in_valid = 1;
             do begin
                 @(posedge clock);
             end while (!in_ready);
+            @(negedge clock);
+            in_valid = 0;
+            `RANDOM_PAUSE(0, 10);
         end
 
-        @(negedge clock);
-        in_valid = 0;
         sender_finished = 1;
     end
 
@@ -76,6 +85,10 @@ module horizontal_convolution_test;
         do begin
             @(posedge clock);
         end while (!out_valid);
+
+        if (out_data != 8'd1) begin
+            $display("Error: Expected 1, got %d", out_data);
+        end
 
         @(negedge clock);
         out_ready = 0;
