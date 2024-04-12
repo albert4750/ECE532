@@ -67,21 +67,17 @@ Setup
 
 | Setting                                                | Value                                      |
 | -                                                      | -                                          |
-| From directory                                         | \<archive extracted location\>/sdk_appsrc  |
-| Files to import pane: sdk_appsrc                       | Checked box                                |
+| From directory                                         | \<archive extracted location\>/appsrc  |
+| Files to import pane: appsrc                       | Checked box                                |
 | Into folder                                            | Nexys-Video-HDMI/src                       |
 | Options: Overwrite existing resources without warning  | Checked box                                |
 | Options: Create top-level folder                       | Unchecked box                              |
 
 15. Click **Finish**.
-
-<Note for maintainers: This project does not require any additional configuration of application or bsp projects. Projects that require any of this configuration should have the steps required to do so described here.>
-
 16. Plug in the HDMI IN/OUT cables as well as the HDMI capable Monitor/TV.
 17. Open a serial terminal application (such as [TeraTerm](https://ttssh2.osdn.jp/index.html.en) and connect it to the Nexys Video's serial port, using a baud rate of 115200.
-18. In the toolbar at the top of the SDK window, select **Xilinx -> Program FPGA**. Leave all fields as their defaults and click "Program".
-19. In the Project Explorer pane, right click on the "Nexys-Video-HDMI" application project and select "Run As -> Launch on Hardware (System Debugger)".
-20. The application will now be running on the Nexys Video. It can be interacted with as described in the first section of this README.
+18. In the Project Explorer pane, right click on the "Nexys-Video-HDMI" application project and select "Run As -> Launch on Hardware (System Debugger)".
+19. The application will now be running on the Nexys Video. It can be interacted with as described in the first section of this README.
 
 Next Steps
 ----------
