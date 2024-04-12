@@ -1,25 +1,29 @@
-Nexys Video HDMI Demo
+Real Time Video Processing
 ====================
+This project is built upon the digilent Nexys Video HDMI Demo that could be found [here](https://digilent.com/reference/learn/programmable-logic/tutorials/nexys-video-hdmi-demo/start).
+
+Our project is built on top of the example project. According to Digilent Reference all demo projects are free to use. If there are any reference needs please let us know.
+
+This whole readme is also largely built upon the readme of the demo project.
 
 Description
 -----------
 
-This project demonstrates how to use the USB-UART Bridge, HDMI Sink and HDMI Source with the ZYNQ processor. Vivado is used to build the demo's hardware platform, and Xilinx SDK is used to program the bitstream onto the board and to build and deploy a C application. Video data streams in through the HDMI in port and out through the HDMI out port. A UART interface is available to configure what is output through HDMI.
-There are 3 display frame buffers that the user can choose to display or write to. The configuring options are shown in the table below.
+This project provides a functioning video processing system that could support brightening, blurring, sharpening, super resolution, and other filters. Vivado is used to build the hardware platform, and Xilinx SDK is used to program the bitstream onto the board and to build and deploy a C application. Video data streams in through the HDMI in port, gets processed based on configuration set through switches, and out through the HDMI out port. A UART interface is available to configure the system.
 
 The demo uses the usb-uart bridge to configure the HDMI Display , the Nexys Video must be connected to a computer over MicroUSB, which must be running a serial terminal. For more information on how to set up and use a serial terminal, such as Tera Term or PuTTY, refer to [this tutorial](https://reference.digilentinc.com/learn/programmable-logic/tutorials/tera-term).
 
 | Option    | Function                                                                                                                 |
 | --------- | ------------------------------------------------------------------------------------------------------------------------ |
 | 1         | Change the resolution of the HDMI output to the monitor.                                                                 |
-| 2         | Change the frame buffer index.                                                                                           |
+| 2         | Change the frame buffer index. (Does not work)                                                                                          |
 | 3/4       | Store a test pattern in the chosen video frame buffer - color bar or blended.                                            |
 | 5         | Start/Stop streaming video data from HDMI to the chosen video frame buffer.                                              |
-| 6         | Change the video frame buffer that HDMI data is streamed into.                                                           |
+| 6         | Change the video frame buffer that HDMI data is streamed into. (Does work but system assumes inputs to frame buffer 0)                                                          |
 | 7         | Invert and store the current video frame into the next video frame buffer and display it.                                |
 | 8         | Scale the current video frame to the display resolution, store it into the next video frame buffer, and then display it. |
 
-NOTE: The drawing functions (Functions 3, 4, 7, and 8) were designed for the Zynq processor. In its current state, these functions run VERY slowly on the Microblaze processor, so it is advised not to use these functions for the time being. It is possible that the floating point calculations are slowing these functions down. 
+NOTE: The drawing functions (Functions 3, 4, 7, and 8) were designed for the Zynq processor. In its current state, these functions run VERY slowly on the Microblaze processor, so it is advised not to use these functions for the time being.
 
 
 
@@ -32,13 +36,13 @@ Requirements
 * **2 HDMI Cables**
 * **HDMI capable Monitor/TV**
 
-Demo Setup
+Setup
 ----------
 
-1. Download the most recent release ZIP archive ("Nexys-Video-HDMI-2018.2-*.zip") from the repo's [releases page](https://github.com/Digilent/Nexys-Video-HDMI/releases).
-2. Extract the downloaded ZIP.
-3. Open the XPR project file, found at \<archive extracted location\>/vivado_proj/Nexys-Video-HDMI.xpr, included in the extracted release archive in Vivado 2018.2.
-4. In the toolbar at the top of the Vivado window, select **File -> Export -> Export Hardware**. Select **\<Local to Project\>** as the Exported Location and make sure that the **Include bitstream** box is checked, then click **OK**.
+1. Clone this repo.
+2. Open the XPR project file, found at \<archive extracted location\>/test_system/vivado_proj/Nexys-Video-HDMI.xpr.
+3. Delete the \<archive extracted location\>/test_system/vivado_proj/Nexys-Video-HDMI.sdk folder
+4. In the toolbar at the top of the Vivado window, select **File -> Export -> Export Hardware**. Select **\<Local to Project\>** as the Exported Location. Open hardware manager and program the fpga. Vivado would say synthesis and implementation outdated but that could be safely ignored.
 5. In the toolbar at the top of the Vivado window, select **File -> Launch SDK**. Select **\<Local to Project\>** as both the workspace location and exported location, then click **OK**.
 6. With Vivado SDK opened, wait for the hardware platform exported by Vivado to be imported.
 7. In the toolbar at the top of the SDK window, select **File -> New -> Application Project**.
@@ -81,14 +85,4 @@ Demo Setup
 
 Next Steps
 ----------
-This demo can be used as a basis for other projects by modifying the hardware platform in the Vivado project's block design or by modifying the SDK application project.
-
-Check out the Nexys Video's [Resource Center](https://reference.digilentinc.com/reference/programmable-logic/nexys-video/start) to find more documentation, demos, and tutorials.
-
-For technical support or questions, please post on the [Digilent Forum](forum.digilentinc.com).
-
-Additional Notes
-----------------
-For more information on how this project is version controlled, refer to the [digilent-vivado-scripts repo](https://github.com/digilent/digilent-vivado-scripts).
-<!--- This project does not meet timing in Vivado 2018.2 --->
-<!--- 03/12/2019(ArtVVB): Validated on hardware with Vivado 2018.2 --->
+The super-resolution module presented in the current project is limited to 2000 parameters due to the limited amount of silicon that the nexys video board has. Future development would be working on having the system work with a bigger board that have more silicon, namely more DSP so a larger model with more parameters could fit in the fpga fabric

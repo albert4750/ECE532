@@ -43,15 +43,21 @@
 /*
  * XPAR redefines
  */
+
+// Albert Start
+#include "xaxidma.h"
+#include "xtmrctr.h"
+// Albert End
 #define DYNCLK_BASEADDR XPAR_AXI_DYNCLK_0_BASEADDR
 #define VGA_VDMA_ID XPAR_AXIVDMA_0_DEVICE_ID
 #define DISP_VTC_ID XPAR_VTC_0_DEVICE_ID
 #define VID_VTC_ID XPAR_VTC_1_DEVICE_ID
 #define VID_GPIO_ID XPAR_AXI_GPIO_VIDEO_DEVICE_ID
 #define VID_VTC_IRPT_ID XPAR_INTC_0_VTC_1_VEC_ID
-#define VID_GPIO_IRPT_ID XPAR_INTC_0_GPIO_0_VEC_ID
+#define VID_GPIO_IRPT_ID XPAR_INTC_0_GPIO_1_VEC_ID
 #define SCU_TIMER_ID XPAR_AXI_TIMER_0_DEVICE_ID
 #define UART_BASEADDR XPAR_UARTLITE_0_BASEADDR
+
 
 /* ------------------------------------------------------------ */
 /*				Global Variables								*/
@@ -66,11 +72,13 @@ VideoCapture videoCapt;
 INTC intc;
 char fRefresh; //flag used to trigger a refresh of the Menu on video detect
 
+
 /*
  * Framebuffers for video data
  */
 u8 frameBuf[DISPLAY_NUM_FRAMES][DEMO_MAX_FRAME];
 u8 *pFrames[DISPLAY_NUM_FRAMES]; //array of pointers to the frame buffers
+
 
 /*
  * Interrupt vector table
@@ -79,6 +87,28 @@ const ivt_t ivt[] = {
 	videoGpioIvt(VID_GPIO_IRPT_ID, &videoCapt),
 	videoVtcIvt(VID_VTC_IRPT_ID, &(videoCapt.vtc))
 };
+
+// Albert Start
+// For AxiDMA
+XAxiDma passThrough;
+XAxiDma gaussianBlur;
+XAxiDma grayScale_new;
+XAxiDma brightness;
+XAxiDma sharper;
+XAxiDma upscaling;
+u8 dmaMode;
+u8 dmaStreaming;
+u8 curr;
+u8 wOrB;
+u8 fpsCtr;
+XTmrCtr fpsTimer;
+u32 pad0;
+u32 pad1;
+u32 pad2;
+u32 pad3;
+u32 pad4;
+u32 pad5;
+// Albert End
 
 /* ------------------------------------------------------------ */
 /*				Procedure Definitions							*/
@@ -101,7 +131,43 @@ void DemoInitialize()
 {
 	int Status;
 	XAxiVdma_Config *vdmaConfig;
+	XAxiDma_Config* passThroughConfig;
+	XAxiDma_Config* grayScaleNewConfig;
+	XAxiDma_Config* brightnessConfig;
+	XAxiDma_Config* gaussianBlurConfig;
+	XAxiDma_Config* sharperConfig;
+	XAxiDma_Config* upscalingConfig;
 	int i;
+
+	// Albert Start
+	xil_printf("dispCtrl is at %x\r\n", &dispCtrl);
+	xil_printf("vdma is at %x\r\n", &vdma);
+	xil_printf("videoCapt is at %x\r\n", &videoCapt);
+	xil_printf("intc is at %x\r\n", &intc);
+	xil_printf("fRefresh is at %x\r\n", &fRefresh);
+	xil_printf("passThrough is at %x\r\n", &passThrough);
+	xil_printf("grayScale is at %x\r\n", &grayScale_new);
+	xil_printf("brightness is at %x\r\n", &brightness);
+	xil_printf("gaussianBlur is at %x\r\n", &gaussianBlur);
+	xil_printf("sharper is at %x\r\n", &sharper);
+	xil_printf("upscaling is at %x\r\n", &upscaling);
+	xil_printf("dmaMode is at %x\r\n", &dmaMode);
+	xil_printf("wOrB is at %x\r\n", &wOrB);
+	wOrB = 0;
+	dmaMode = 0;
+	dmaStreaming = 1;
+	curr = 1;
+	fpsCtr = 0;
+
+	Status = XTmrCtr_Initialize(&fpsTimer, XPAR_AXI_TIMER_1_DEVICE_ID);
+	if (Status != XST_SUCCESS)
+	{
+		xil_printf("FPS Timer Initialization failed %d\r\n", Status);
+		return;
+	}
+	XTmrCtr_SetResetValue(&fpsTimer, 0, 0);
+	XTmrCtr_Reset(&fpsTimer, 0);
+	// Albert End
 
 	/*
 	 * Initialize an array of pointers to the 3 frame buffers
@@ -163,12 +229,83 @@ void DemoInitialize()
 		return;
 	}
 
+	// Albert Start
+	// Initialize DMA
+	// Initialize DMA for our custom block
+	passThroughConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_0_DEVICE_ID);
+	if (!passThroughConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_0_DEVICE_ID);
+		return;
+	}
+	Status = XAxiDma_CfgInitialize(&passThrough, passThroughConfig);
+	if (Status != XST_SUCCESS)	{
+		xil_printf("Pass Through DMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
+
+	gaussianBlurConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_4_DEVICE_ID);
+	if (!gaussianBlurConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_4_DEVICE_ID);
+		return;
+	}
+	Status = XAxiDma_CfgInitialize(&gaussianBlur, gaussianBlurConfig);
+	if (Status != XST_SUCCESS)	{
+		xil_printf("gaussianBlur DMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
+
+	sharperConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_5_DEVICE_ID);
+	if (!sharperConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_5_DEVICE_ID);
+		return;
+	}
+	Status = XAxiDma_CfgInitialize(&sharper, sharperConfig);
+	if (Status != XST_SUCCESS)	{
+		xil_printf("sharper DMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
+
+	upscalingConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_6_DEVICE_ID);
+	if (!upscalingConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_6_DEVICE_ID);
+		return;
+	}
+	Status = XAxiDma_CfgInitialize(&upscaling, upscalingConfig);
+	if (Status != XST_SUCCESS)	{
+		xil_printf("upscaling DMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
+
+	grayScaleNewConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_2_DEVICE_ID);
+	if (!grayScaleNewConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_2_DEVICE_ID);
+		return;
+	}
+	Status = XAxiDma_CfgInitialize(&grayScale_new, grayScaleNewConfig);
+	if (Status != XST_SUCCESS)	{
+		xil_printf("New Gray Scale DMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
+
+	brightnessConfig = XAxiDma_LookupConfig(XPAR_AXI_DMA_3_DEVICE_ID);
+	if (!brightnessConfig)	{
+		xil_printf("No DMA found for ID %d\r\n", XPAR_AXI_DMA_3_DEVICE_ID);
+		return;
+	}
+	Status = XAxiDma_CfgInitialize(&brightness, brightnessConfig);
+	if (Status != XST_SUCCESS)	{
+		xil_printf("New Brightness DMA Configuration Initialization failed %d\r\n", Status);
+		return;
+	}
+	// Albert End
+
 	/*
 	 * Set the Video Detect callback to trigger the menu to reset, displaying the new detected resolution
 	 */
 	VideoSetCallback(&videoCapt, DemoISR, &fRefresh);
 
 	DemoPrintTest(dispCtrl.framePtr[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, dispCtrl.stride, DEMO_PATTERN_1);
+
 
 	return;
 }
@@ -179,20 +316,33 @@ void DemoRun()
 	char userInput = 0;
 	u32 locked;
 	XGpio *GpioPtr = &videoCapt.gpio;
+	volatile u8* led = (u8*)(XPAR_AXI_GPIO_0_BASEADDR + 8);
+	volatile u8* swt = (u8*)XPAR_AXI_GPIO_0_BASEADDR;
 
 	/* Flush UART FIFO */
 	while (!XUartLite_IsReceiveEmpty(UART_BASEADDR))
 	{
 		XUartLite_ReadReg(UART_BASEADDR, XUL_RX_FIFO_OFFSET);
 	}
+	DemoPrintMenu();
 	while (userInput != 'q')
 	{
 		fRefresh = 0;
 		DemoPrintMenu();
 
 		/* Wait for data on UART */
-		while (XUartLite_IsReceiveEmpty(UART_BASEADDR) && !fRefresh)
-		{}
+		while (XUartLite_IsReceiveEmpty(UART_BASEADDR) && !fRefresh){
+			if(dmaStreaming){
+				if(fpsCtr == 0) XTmrCtr_Start(&fpsTimer, 0);
+				doDMA(0);
+				if(fpsCtr == 0){
+					XTmrCtr_Stop(&fpsTimer, 0);
+					u32 fps = 1000000000/XTmrCtr_GetValue(&fpsTimer, 0);
+					xil_printf("\r(FPS: %2d.%dHz; dmaMode: %x) Enter a selection:", (fps/10), (fps%10), dmaMode);
+				}
+				fpsCtr = (fpsCtr+1)%8;
+			}
+		}
 
 		/* Store the first character in the UART receive FIFO and echo it */
 		if (!XUartLite_IsReceiveEmpty(UART_BASEADDR))
@@ -260,6 +410,22 @@ void DemoRun()
 			VideoStart(&videoCapt);
 			DisplayChangeFrame(&dispCtrl, nextFrame);
 			break;
+		case '9':
+			DemoPrintTest(pFrames[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE, 2);
+			break;
+		case 'd':
+			doDMA(1);
+			break;
+		case 's':
+			xil_printf("\n\rSwitching DMA mode\n\r");
+			dmaMode = *swt;
+			*led = dmaMode;
+			dmaMode = dmaMode & 0x1F;
+			xil_printf("DMA mode is now %u\n\r", dmaMode);
+			break;
+		case 't':
+			dmaStreaming = !dmaStreaming;
+			break;
 		case 'q':
 			break;
 		case 'r':
@@ -271,12 +437,226 @@ void DemoRun()
 			usleep(50000);
 		}
 	}
+	xil_printf("\n\rSession Terminated\n\n\n\r");
 
 	return;
 }
 
+// Albert Start
+void doDMA(u8 debug){
+	u32 ret;
+	u32 length = sizeof(u8) * DEMO_MAX_FRAME;
+	if(debug) xil_printf("\n\rTrying to initiate DMA DATA Transfer\n\r");
+//	XAxiDma* dma;
+	u8 dmaEnable[5] = {0};
+	u8 nextFrame;
+
+	// select which frame we would be writing to
+	// write to next frame
+	if(curr == 1){
+		if(debug) xil_printf("\n\rcurr == 1\n\r");
+		nextFrame = 2;
+	}
+	else if(curr == 2){
+		if(debug) xil_printf("\n\rcurr == 2\n\r");
+		nextFrame = 1;
+	}
+	else{
+		xil_printf("\n\rsomething wrong with frame buffer\n\r");
+	}
+
+	// determine dma mode
+	// dmaMode[0] brightness
+	// dmaMode[1] grayScale_new
+	// dmaMode[2] gaussianBlur
+	// dmaMode[3] sharper
+	// dmaMode[4] upscaling
+
+	ret = dmaMode;
+	for(int i = 0; i < 5; i++){
+		dmaEnable[i] = ret & 1;
+		ret = ret >> 1;
+	}
+
+	// if dmaMode is 0 then we are in passthrough
+	if(dmaMode == 0){
+		// start reading
+		ret = XAxiDma_SimpleTransfer(&passThrough, (u32)pFrames[0], length, XAXIDMA_DMA_TO_DEVICE);
+		if(debug) {
+			if(ret != XST_SUCCESS){
+				xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+			}
+			else{
+				xil_printf("DMA to device transfer Successfully registered\n\r");
+			}
+		}
+
+		// start writing
+		ret = XAxiDma_SimpleTransfer(&passThrough, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+		if(debug){
+			if(ret != XST_SUCCESS){
+				xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+			}
+			else{
+				xil_printf("device to DMA transfer Successfully registered\n\r");
+			}
+		}
+		while(XAxiDma_Busy(&passThrough, XAXIDMA_DEVICE_TO_DMA));
+	}
+	// in the case of not passthrough
+	else{
+		u8 fromFrame = 0;	// first dma need to grab new frame from source
+
+		// if brightness enabled
+		if(dmaEnable[0]){
+			// start reading
+			ret = XAxiDma_SimpleTransfer(&brightness, (u32)pFrames[fromFrame], length, XAXIDMA_DMA_TO_DEVICE);
+			if(debug) {
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("DMA to device transfer Successfully registered\n\r");
+				}
+			}
+
+			// start writing
+			ret = XAxiDma_SimpleTransfer(&brightness, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+			if(debug){
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("device to DMA transfer Successfully registered\n\r");
+				}
+			}
+
+			fromFrame = nextFrame;
+			while(XAxiDma_Busy(&brightness, XAXIDMA_DEVICE_TO_DMA));
+		}
+
+		// if gray scale enabled
+		if(dmaEnable[1]){
+			// start reading
+			ret = XAxiDma_SimpleTransfer(&grayScale_new, (u32)pFrames[fromFrame], length, XAXIDMA_DMA_TO_DEVICE);
+			if(debug) {
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("DMA to device transfer Successfully registered\n\r");
+				}
+			}
+
+			// start writing
+			ret = XAxiDma_SimpleTransfer(&grayScale_new, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+			if(debug){
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("device to DMA transfer Successfully registered\n\r");
+				}
+			}
+
+			fromFrame = nextFrame;
+			while(XAxiDma_Busy(&grayScale_new, XAXIDMA_DEVICE_TO_DMA));
+		}
+
+		// if gaussian blur enabled
+		if(dmaEnable[2]){
+			// start reading
+			ret = XAxiDma_SimpleTransfer(&gaussianBlur, (u32)pFrames[fromFrame], length, XAXIDMA_DMA_TO_DEVICE);
+			if(debug) {
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("DMA to device transfer Successfully registered\n\r");
+				}
+			}
+
+			// start writing
+			ret = XAxiDma_SimpleTransfer(&gaussianBlur, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+			if(debug){
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("device to DMA transfer Successfully registered\n\r");
+				}
+			}
+
+			fromFrame = nextFrame;
+			while(XAxiDma_Busy(&gaussianBlur, XAXIDMA_DEVICE_TO_DMA));
+		}
+
+		// if sharpness enabled
+		if(dmaEnable[3]){
+			// start reading
+			ret = XAxiDma_SimpleTransfer(&sharper, (u32)pFrames[fromFrame], length, XAXIDMA_DMA_TO_DEVICE);
+			if(debug) {
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("DMA to device transfer Successfully registered\n\r");
+				}
+			}
+
+			// start writing
+			ret = XAxiDma_SimpleTransfer(&sharper, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+			if(debug){
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("device to DMA transfer Successfully registered\n\r");
+				}
+			}
+
+			fromFrame = nextFrame;
+			while(XAxiDma_Busy(&sharper, XAXIDMA_DEVICE_TO_DMA));
+		}
+
+		// if upscaling enabled
+		if(dmaEnable[4]){
+			// start reading
+			ret = XAxiDma_SimpleTransfer(&upscaling, (u32)pFrames[fromFrame], length, XAXIDMA_DMA_TO_DEVICE);
+			if(debug) {
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting DMA to device transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("DMA to device transfer Successfully registered\n\r");
+				}
+			}
+
+			// start writing
+			ret = XAxiDma_SimpleTransfer(&upscaling, (u32)pFrames[nextFrame], length, XAXIDMA_DEVICE_TO_DMA);
+			if(debug){
+				if(ret != XST_SUCCESS){
+					xil_printf("Error starting device to DMA transfer with code %x\n\r", ret);
+				}
+				else{
+					xil_printf("device to DMA transfer Successfully registered\n\r");
+				}
+			}
+
+			fromFrame = nextFrame;
+			while(XAxiDma_Busy(&upscaling, XAXIDMA_DEVICE_TO_DMA));
+		}
+	}
+
+	// dma completed, now we swap buffer
+	DisplayChangeFrame(&dispCtrl, nextFrame);
+	curr = nextFrame;
+}
+// Albert End
+
 void DemoPrintMenu()
 {
+	// Albert Start
 	xil_printf("\x1B[H"); //Set cursor to top left of terminal
 	xil_printf("\x1B[2J"); //Clear terminal
 	xil_printf("**************************************************\n\r");
@@ -289,6 +669,10 @@ void DemoPrintMenu()
 	else xil_printf("*Video Capture Resolution: %17dx%-4d*\n\r", videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo);
 	xil_printf("*Video Frame Index: %29d*\n\r", videoCapt.curFrame);
 	xil_printf("**************************************************\n\r");
+	for(int i = 0; i < 3; i++){
+		xil_printf("pFrames[%d] at %x \n\r", i, pFrames[i]);
+		xil_printf("frameBuf[%d] at %x \n\r", i, frameBuf[i]);
+	}
 	xil_printf("\n\r");
 	xil_printf("1 - Change Display Resolution\n\r");
 	xil_printf("2 - Change Display Framebuffer Index\n\r");
@@ -298,10 +682,15 @@ void DemoPrintMenu()
 	xil_printf("6 - Change Video Framebuffer Index\n\r");
 	xil_printf("7 - Grab Video Frame and invert colors\n\r");
 	xil_printf("8 - Grab Video Frame and scale to Display resolution\n\r");
+	xil_printf("9 - Print black or white in buffer order\n\r");
+	xil_printf("d - DMA go\n\r");
+	xil_printf("s - switch DMA mode\n\r");
+	xil_printf("t - start/stop dma streaming\n\r");
 	xil_printf("q - Quit\n\r");
 	xil_printf("\n\r");
 	xil_printf("\n\r");
 	xil_printf("Enter a selection:");
+	// Albert End
 }
 
 void DemoChangeRes()
@@ -500,6 +889,7 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 	u32 xLeft, xMid, xRight, xInt;
 	u32 yMid, yInt;
 	double xInc, yInc;
+	u8 color;
 
 
 	switch (pattern)
@@ -641,6 +1031,19 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 		 */
 		Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
 		break;
+	case 2:
+		color = wOrB? 255 : 0;
+
+		for(int i = 0; i < DEMO_MAX_FRAME; i++)
+			frame[i] = color;
+
+		wOrB = !wOrB;
+		/*
+		 * Flush the framebuffer memory range to ensure changes are written to the
+		 * actual memory, and therefore accessible by the VDMA.
+		 */
+		Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
+		break;
 	default :
 		xil_printf("Error: invalid pattern passed to DemoPrintTest");
 	}
@@ -651,5 +1054,3 @@ void DemoISR(void *callBackRef, void *pVideo)
 	char *data = (char *) callBackRef;
 	*data = 1; //set fRefresh to 1
 }
-
-
